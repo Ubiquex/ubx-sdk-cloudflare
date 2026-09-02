@@ -1,1 +1,2906 @@
-{"overrides": {}, "services": {}}
+{
+ "overrides": {
+  "cloudflare_aaa_alerts_response_collection": {
+   "label": "Notification Alert Types"
+  },
+  "cloudflare_aaa_audit_logs_response_collection": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_audit_logs_v2": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_audit_logs_v2_org": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_audit_logs_v2_org_response_collection": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_audit_logs_v2_product_category": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_audit_logs_v2_response_collection": {
+   "label": "Audit Logs"
+  },
+  "cloudflare_aaa_components_schemas_response_collection": {
+   "label": "Notification Destinations with PagerDuty"
+  },
+  "cloudflare_aaa_id_response": {
+   "label": "Notification Destinations with PagerDuty"
+  },
+  "cloudflare_aaa_policies_components_schemas_response_collection": {
+   "label": "Notification Policies"
+  },
+  "cloudflare_aaa_schemas_response_collection": {
+   "label": "Notification Mechanism Eligibility"
+  },
+  "cloudflare_aaa_schemas_single_response": {
+   "label": "Notification Webhooks"
+  },
+  "cloudflare_aaa_silences_components_schemas_response_collection": {
+   "label": "Notification Silences"
+  },
+  "cloudflare_aaa_single_response": {
+   "label": "Notification Policies"
+  },
+  "cloudflare_aaa_unsubscribe_email_single_response": {
+   "label": "Notification Policies"
+  },
+  "cloudflare_aaa_webhooks_components_schemas_response_collection": {
+   "label": "Notification Webhooks"
+  },
+  "cloudflare_abuse_report": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_abuse_reports_email_list_response": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_abuse_reports_submitted_abuse_report_detail_response": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_abuse_reports_submitted_abuse_report_list_response": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_access_active_session_response": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_access_active_sessions_response": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_access_certificate_set_list_response": {
+   "label": "Access SAML Encryption Certificates"
+  },
+  "cloudflare_access_failed_login_response": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_access_idp_federation_grant_list_response": {
+   "label": "Access IdP Federation Grants"
+  },
+  "cloudflare_access_idp_federation_grant_response": {
+   "label": "Access IdP Federation Grants"
+  },
+  "cloudflare_access_last_seen_identity_response": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_access_policy_check_response": {
+   "label": "Access Applications"
+  },
+  "cloudflare_access_policy_check_response_2": {
+   "label": "Zone-Level Access Applications"
+  },
+  "cloudflare_access_policy_update_resp": {
+   "label": "Access Policy Tester"
+  },
+  "cloudflare_access_policy_users_resp": {
+   "label": "Access Policy Tester"
+  },
+  "cloudflare_access_response_collection": {
+   "label": "Access Identity Providers"
+  },
+  "cloudflare_access_response_collection_10": {
+   "label": "Access Custom Pages"
+  },
+  "cloudflare_access_response_collection_11": {
+   "label": "Access Authentication Logs"
+  },
+  "cloudflare_access_response_collection_12": {
+   "label": "Access JIT Request Logs"
+  },
+  "cloudflare_access_response_collection_14": {
+   "label": "Access Bookmark Applications (Deprecated)"
+  },
+  "cloudflare_access_response_collection_15": {
+   "label": "Access Tags"
+  },
+  "cloudflare_access_response_collection_16": {
+   "label": "Access Authenticator Device AAGUIDs"
+  },
+  "cloudflare_access_response_collection_17": {
+   "label": "Zone-Level Access Identity Providers"
+  },
+  "cloudflare_access_response_collection_18": {
+   "label": "Zone-Level Access Groups"
+  },
+  "cloudflare_access_response_collection_19": {
+   "label": "Zone-Level Access Service Tokens"
+  },
+  "cloudflare_access_response_collection_2": {
+   "label": "Access Groups"
+  },
+  "cloudflare_access_response_collection_20": {
+   "label": "Zone-Level Access Short-Lived Certificate CAs"
+  },
+  "cloudflare_access_response_collection_21": {
+   "label": "Zone-Level Access mTLS Authentication"
+  },
+  "cloudflare_access_response_collection_22": {
+   "label": "Zone-Level Access Applications"
+  },
+  "cloudflare_access_response_collection_23": {
+   "label": "Zone-Level Access Policies"
+  },
+  "cloudflare_access_response_collection_24": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_access_response_collection_3": {
+   "label": "Access Service Tokens"
+  },
+  "cloudflare_access_response_collection_4": {
+   "label": "Access Short-Lived Certificate CAs"
+  },
+  "cloudflare_access_response_collection_5": {
+   "label": "Access mTLS Authentication"
+  },
+  "cloudflare_access_response_collection_6": {
+   "label": "Gateway CA"
+  },
+  "cloudflare_access_response_collection_7": {
+   "label": "Access Applications"
+  },
+  "cloudflare_access_response_collection_8": {
+   "label": "Access Application-Scoped Policies"
+  },
+  "cloudflare_access_response_collection_9": {
+   "label": "Access Reusable Policies"
+  },
+  "cloudflare_access_response_collection_hostnames": {
+   "label": "Access mTLS Authentication"
+  },
+  "cloudflare_access_response_collection_hostnames_2": {
+   "label": "Zone-Level Access mTLS Authentication"
+  },
+  "cloudflare_access_response_single": {
+   "label": "Access JIT Request Logs"
+  },
+  "cloudflare_access_scim_groups_response": {
+   "label": "Access Identity Providers"
+  },
+  "cloudflare_access_scim_update_logs_response": {
+   "label": "Access SCIM Update Logs"
+  },
+  "cloudflare_access_scim_users_response": {
+   "label": "Access Identity Providers"
+  },
+  "cloudflare_access_single_response": {
+   "label": "Zero Trust Organization"
+  },
+  "cloudflare_access_single_response_10": {
+   "label": "Access Reusable Policies"
+  },
+  "cloudflare_access_single_response_11": {
+   "label": "Access Custom Pages"
+  },
+  "cloudflare_access_single_response_12": {
+   "label": "Access Key Configuration"
+  },
+  "cloudflare_access_single_response_14": {
+   "label": "Access Tags"
+  },
+  "cloudflare_access_single_response_15": {
+   "label": "Zone-Level Zero Trust Organization"
+  },
+  "cloudflare_access_single_response_17": {
+   "label": "Zone-Level Access Groups"
+  },
+  "cloudflare_access_single_response_18": {
+   "label": "Zone-Level Access Service Tokens"
+  },
+  "cloudflare_access_single_response_19": {
+   "label": "Zone-Level Access Short-Lived Certificate CAs"
+  },
+  "cloudflare_access_single_response_2": {
+   "label": "Access Service Tokens"
+  },
+  "cloudflare_access_single_response_20": {
+   "label": "Zone-Level Access mTLS Authentication"
+  },
+  "cloudflare_access_single_response_22": {
+   "label": "Zone-Level Access Policies"
+  },
+  "cloudflare_access_single_response_4": {
+   "label": "Access Groups"
+  },
+  "cloudflare_access_single_response_5": {
+   "label": "Access Short-Lived Certificate CAs"
+  },
+  "cloudflare_access_single_response_6": {
+   "label": "Access mTLS Authentication"
+  },
+  "cloudflare_access_single_user_response": {
+   "label": "Zero Trust Users"
+  },
+  "cloudflare_account": {
+   "label": "Organizations"
+  },
+  "cloudflare_account_mapping": {
+   "label": "DLP Email"
+  },
+  "cloudflare_account_setting": {
+   "label": "Worker Account Settings"
+  },
+  "cloudflare_activate": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_active_livestream": {
+   "label": "Live Streams"
+  },
+  "cloudflare_active_livestream_session": {
+   "label": "Live Streams"
+  },
+  "cloudflare_active_recording": {
+   "label": "Recordings"
+  },
+  "cloudflare_active_session": {
+   "label": "Active Session"
+  },
+  "cloudflare_addressing_advertised_response": {
+   "label": "IP Address Management Dynamic Advertisement"
+  },
+  "cloudflare_addressing_full_response": {
+   "label": "IP Address Management Address Maps"
+  },
+  "cloudflare_addressing_response_collection": {
+   "label": "IP Address Management Prefixes"
+  },
+  "cloudflare_addressing_response_collection_2": {
+   "label": "IP Address Management Prefix Delegation"
+  },
+  "cloudflare_addressing_response_collection_3": {
+   "label": "IP Address Management Address Maps"
+  },
+  "cloudflare_addressing_response_collection_4": {
+   "label": "IP Address Management Leases"
+  },
+  "cloudflare_addressing_response_collection_bgp": {
+   "label": "IP Address Management BGP Prefixes"
+  },
+  "cloudflare_addressing_single_response": {
+   "label": "IP Address Management Prefixes"
+  },
+  "cloudflare_addressing_single_response_bgp": {
+   "label": "IP Address Management BGP Prefixes"
+  },
+  "cloudflare_aegi": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_aggregate": {
+   "label": "Event"
+  },
+  "cloudflare_aig_billing_get_credit_balance_response": {
+   "label": "AI Gateway"
+  },
+  "cloudflare_aig_billing_get_invoice_preview_response": {
+   "label": "AI Gateway"
+  },
+  "cloudflare_aig_billing_get_spending_limit_response": {
+   "label": "AI Gateway"
+  },
+  "cloudflare_aig_billing_get_topup_config_response": {
+   "label": "AI Gateway"
+  },
+  "cloudflare_aig_billing_get_topup_limits_response": {
+   "label": "AI Gateway"
+  },
+  "cloudflare_alexandria_get_application_response": {
+   "label": "Applications"
+  },
+  "cloudflare_alexandria_get_applications_response": {
+   "label": "Applications"
+  },
+  "cloudflare_alexandria_get_categories_response": {
+   "label": "Category"
+  },
+  "cloudflare_alexandria_get_category_response": {
+   "label": "Category"
+  },
+  "cloudflare_allow_policy": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_analytics_engine_json_format_response": {
+   "label": "Analytics Engine"
+  },
+  "cloudflare_annotation": {
+   "label": "Radar Annotations"
+  },
+  "cloudflare_api_shield_public_schema_success_result": {
+   "label": "Schema Validation"
+  },
+  "cloudflare_api_shield_schema_response_with_thresholds": {
+   "label": "API Shield Endpoint Management"
+  },
+  "cloudflare_api_shield_single_operation_response": {
+   "label": "API Shield Endpoint Management"
+  },
+  "cloudflare_app": {
+   "label": "Apps"
+  },
+  "cloudflare_application": {
+   "label": "Applications"
+  },
+  "cloudflare_arc": {
+   "label": "Radar Email Routing"
+  },
+  "cloudflare_argo_analytics_response_single": {
+   "label": "Argo Analytics for Zone"
+  },
+  "cloudflare_argo_config_api_response_single": {
+   "label": "Argo Smart Routing"
+  },
+  "cloudflare_article": {
+   "label": "Threat Signals"
+  },
+  "cloudflare_as_set": {
+   "label": "Radar Autonomous Systems"
+  },
+  "cloudflare_ase": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_asn": {
+   "label": "Radar Autonomous Systems"
+  },
+  "cloudflare_asset": {
+   "label": "Request for Information (RFI)"
+  },
+  "cloudflare_attack": {
+   "label": "Radar Layer 3 Attacks"
+  },
+  "cloudflare_attacker": {
+   "label": "Attacker"
+  },
+  "cloudflare_authority": {
+   "label": "Radar Certificate Transparency"
+  },
+  "cloudflare_automatic_platform_optimization": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_available_plan": {
+   "label": "Zone Rate Plan"
+  },
+  "cloudflare_banner": {
+   "label": "Scans"
+  },
+  "cloudflare_behavior": {
+   "label": "Zero Trust Risk Scoring"
+  },
+  "cloudflare_bill_subs_api_account_credits_response": {
+   "label": "Account Billing"
+  },
+  "cloudflare_bill_subs_api_account_subscription_response_collection": {
+   "label": "Account Subscriptions"
+  },
+  "cloudflare_bill_subs_api_account_subscription_response_single": {
+   "label": "Account Subscriptions"
+  },
+  "cloudflare_bill_subs_api_bad_debt_response_single": {
+   "label": "Account Billing"
+  },
+  "cloudflare_bill_subs_api_billing_response_single": {
+   "label": "Account Billing Profile"
+  },
+  "cloudflare_bill_subs_api_cancel_reason_response_single": {
+   "label": "Account Subscriptions"
+  },
+  "cloudflare_bill_subs_api_payment_method_response_collection": {
+   "label": "Account Payment Methods"
+  },
+  "cloudflare_bill_subs_api_payment_method_response_single": {
+   "label": "Account Payment Methods"
+  },
+  "cloudflare_bill_subs_api_plan_response_collection": {
+   "label": "Zone Rate Plan"
+  },
+  "cloudflare_bill_subs_api_rate_plan_simple_response": {
+   "label": "Rate Plans"
+  },
+  "cloudflare_bill_subs_api_unpaid_invoices_response_single": {
+   "label": "Account Billing"
+  },
+  "cloudflare_binary_ast": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_binding": {
+   "label": "IP Address Management Service Bindings"
+  },
+  "cloudflare_bitrate": {
+   "label": "Radar Layer 3 Attacks"
+  },
+  "cloudflare_blob": {
+   "label": "Images"
+  },
+  "cloudflare_block_sender": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_bookmark": {
+   "label": "D1"
+  },
+  "cloudflare_bot": {
+   "label": "Radar Bots"
+  },
+  "cloudflare_bot_clas": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_bot_management_bot_management_response_body": {
+   "label": "Bot Settings"
+  },
+  "cloudflare_botnet_threat_feed": {
+   "label": "Radar Autonomous Systems"
+  },
+  "cloudflare_brand_protection_api_error": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_brand_protection_api_logo_match": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_brand_protection_api_query_match": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_brand_protection_api_urlinfo": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_brex_config_response": {
+   "label": "Browser Extension Config"
+  },
+  "cloudflare_browser": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_browser_family": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_bucket": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_build": {
+   "label": "Builds"
+  },
+  "cloudflare_bulk": {
+   "label": "Email Security"
+  },
+  "cloudflare_by_tag": {
+   "label": "Account Rulesets"
+  },
+  "cloudflare_bytime": {
+   "label": "DNS Firewall Analytics"
+  },
+  "cloudflare_cache_api_response_single_id": {
+   "label": "Automatic SSL/TLS"
+  },
+  "cloudflare_cache_auto_origin_tls_kex_response": {
+   "label": "Origin TLS"
+  },
+  "cloudflare_cache_hit": {
+   "label": "Radar DNS"
+  },
+  "cloudflare_cache_reserve": {
+   "label": "Zone Cache Settings"
+  },
+  "cloudflare_cache_reserve_clear": {
+   "label": "Zone Cache Settings"
+  },
+  "cloudflare_cache_rules_origin_h2_max_streams_response_value": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_calls_app_response_collection": {
+   "label": "Calls Apps"
+  },
+  "cloudflare_calls_app_response_single": {
+   "label": "Calls Apps"
+  },
+  "cloudflare_calls_turn_key_collection": {
+   "label": "Calls TURN Keys"
+  },
+  "cloudflare_calls_turn_key_response_single": {
+   "label": "Calls TURN Keys"
+  },
+  "cloudflare_catalog": {
+   "label": "Category"
+  },
+  "cloudflare_category": {
+   "label": "Category"
+  },
+  "cloudflare_change": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_chat": {
+   "label": "Sessions"
+  },
+  "cloudflare_chunk": {
+   "label": "AI Search Instances Items"
+  },
+  "cloudflare_client_side_security_get_zone_policy_response": {
+   "label": "Client-Side Security"
+  },
+  "cloudflare_client_version": {
+   "label": "Client Versions"
+  },
+  "cloudflare_close": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_cloudforce_one_account_exemptions": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_events_field_definition": {
+   "label": "TagCategory"
+  },
+  "cloudflare_cloudforce_one_rule_approval_detail_response": {
+   "label": "Approvals"
+  },
+  "cloudflare_cloudforce_one_rule_approvals_list_response": {
+   "label": "Approvals"
+  },
+  "cloudflare_cloudforce_one_rule_meta_entry": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_rule_preview": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_rule_search_result": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_stats_response": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_tree_node": {
+   "label": "Rules"
+  },
+  "cloudflare_cloudforce_one_whois_schemas_single_response": {
+   "label": "WHOIS Record"
+  },
+  "cloudflare_collection": {
+   "label": "Collections"
+  },
+  "cloudflare_colo": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_command": {
+   "label": "DEX Remote Commands"
+  },
+  "cloudflare_commit": {
+   "label": "Artifacts"
+  },
+  "cloudflare_compromised": {
+   "label": "Radar Leaked Credential Checks"
+  },
+  "cloudflare_config": {
+   "label": "Hyperdrive"
+  },
+  "cloudflare_config_autofill": {
+   "label": "GitHub Integration"
+  },
+  "cloudflare_configuration": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_constant": {
+   "label": "Request for Information (RFI)"
+  },
+  "cloudflare_consumer": {
+   "label": "Queue"
+  },
+  "cloudflare_content": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_content_policy": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_context": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_cor": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_cost": {
+   "label": "AI Gateway Account Provider Costs"
+  },
+  "cloudflare_country": {
+   "label": "Cloudforce One"
+  },
+  "cloudflare_cps_communication_preferences_response": {
+   "label": "Communication Preferences"
+  },
+  "cloudflare_crawl": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_credential": {
+   "label": "Credentials"
+  },
+  "cloudflare_credential_set": {
+   "label": "Credential Sets"
+  },
+  "cloudflare_csam_config_service_csam_scanner_single_response": {
+   "label": "CSAM Scanner Settings"
+  },
+  "cloudflare_custom": {
+   "label": "DLP Profiles"
+  },
+  "cloudflare_custom_domain": {
+   "label": "AI Gateway Custom Domains"
+  },
+  "cloudflare_custom_indicator_feeds_indicator_feed_metadata_response": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_custom_indicator_feeds_indicator_feed_response": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_custom_indicator_feeds_permission_list_item_response": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_custom_indicator_feeds_update_feed_response": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_custom_indicator_feeds_upload_status_response": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_custom_pages_custom_asset_result": {
+   "label": "Custom Assets for an Account"
+  },
+  "cloudflare_custom_pages_custom_asset_result_list": {
+   "label": "Custom Assets for an Account"
+  },
+  "cloudflare_custom_pages_custom_page": {
+   "label": "Custom Pages for a Zone"
+  },
+  "cloudflare_custom_pages_custom_page_result": {
+   "label": "Custom Pages for an Account"
+  },
+  "cloudflare_custom_pages_custom_page_result_list": {
+   "label": "Custom Pages for an Account"
+  },
+  "cloudflare_custom_prompt_topic": {
+   "label": "DLP Custom Prompt Topics"
+  },
+  "cloudflare_custom_provider": {
+   "label": "AI Gateway Account Providers"
+  },
+  "cloudflare_dag": {
+   "label": "Workflows"
+  },
+  "cloudflare_data": {
+   "label": "Custom Indicator Feeds"
+  },
+  "cloudflare_data_class": {
+   "label": "DLP Data Classes"
+  },
+  "cloudflare_data_tag": {
+   "label": "DLP Data Tags"
+  },
+  "cloudflare_data_tag_category": {
+   "label": "DLP Data Tag Categories"
+  },
+  "cloudflare_data_tag_category_template": {
+   "label": "DLP Data Tag Category Templates"
+  },
+  "cloudflare_database": {
+   "label": "D1"
+  },
+  "cloudflare_dataset": {
+   "label": "AI Gateway Datasets"
+  },
+  "cloudflare_day_report": {
+   "label": "Botnet Threat Feed"
+  },
+  "cloudflare_daywise": {
+   "label": "Analytics"
+  },
+  "cloudflare_deploy_hook": {
+   "label": "Deploy Hooks"
+  },
+  "cloudflare_deployment": {
+   "label": "Pages Deployment"
+  },
+  "cloudflare_deployment_group": {
+   "label": "Deployment Groups"
+  },
+  "cloudflare_destination": {
+   "label": "Destinations"
+  },
+  "cloudflare_device": {
+   "label": "DEX Remote Commands"
+  },
+  "cloudflare_device_type": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_digital_experience_monitoring_device": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_digital_experience_monitoring_dex_response_collection": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_digital_experience_monitoring_dex_single_response": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_digital_experience_monitoring_fleet_status_devices_response": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_digital_experience_monitoring_fleet_status_live_response": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_digital_experience_monitoring_fleet_status_over_time_response": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_directive": {
+   "label": "Radar Robots.txt"
+  },
+  "cloudflare_dkim": {
+   "label": "Radar Email Routing"
+  },
+  "cloudflare_dls_prefix_binding_paginated_list_response": {
+   "label": "Prefix Bindings"
+  },
+  "cloudflare_dls_prefix_binding_response": {
+   "label": "Prefix Bindings"
+  },
+  "cloudflare_dmarc": {
+   "label": "Radar Email Routing"
+  },
+  "cloudflare_dmarc_report": {
+   "label": "Email Auth"
+  },
+  "cloudflare_dn": {
+   "label": "Email Routing Settings"
+  },
+  "cloudflare_dns_custom_nameservers_acns_response_collection": {
+   "label": "Account-Level Custom Nameservers"
+  },
+  "cloudflare_dns_custom_nameservers_get_response": {
+   "label": "Account-Level Custom Nameservers Usage for a Zone"
+  },
+  "cloudflare_dns_custom_nameservers_tcns_response_collection": {
+   "label": "Tenant-Level Custom Nameservers"
+  },
+  "cloudflare_dns_firewall_dns_firewall_response_collection": {
+   "label": "DNS Firewall"
+  },
+  "cloudflare_dns_firewall_dns_firewall_reverse_dns_response": {
+   "label": "DNS Firewall"
+  },
+  "cloudflare_dns_records_dns_response_collection": {
+   "label": "DNS Records for a Zone"
+  },
+  "cloudflare_dns_settings_dns_response_single": {
+   "label": "DNS Settings for an Account"
+  },
+  "cloudflare_dns_settings_dns_response_single_2": {
+   "label": "DNS Settings for a Zone"
+  },
+  "cloudflare_dns_settings_dns_view_response_collection": {
+   "label": "DNS Internal Views for an Account"
+  },
+  "cloudflare_dnssec": {
+   "label": "Radar AS112"
+  },
+  "cloudflare_dnssec_aware": {
+   "label": "Radar DNS"
+  },
+  "cloudflare_dnssec_dnssec_response_single": {
+   "label": "DNSSEC"
+  },
+  "cloudflare_dnssec_dnssec_zsk_response_collection": {
+   "label": "DNSSEC"
+  },
+  "cloudflare_dnssec_e2e": {
+   "label": "Radar DNS"
+  },
+  "cloudflare_document_fingerprint": {
+   "label": "DLP Document Fingerprints"
+  },
+  "cloudflare_doh": {
+   "label": "Zero Trust Organization"
+  },
+  "cloudflare_dom": {
+   "label": "URL Scanner"
+  },
+  "cloudflare_domain": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_domain_category": {
+   "label": "Radar Robots.txt"
+  },
+  "cloudflare_dos_dns_protection_rule_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_dns_protection_rule_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_expression_filter_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_expression_filter_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_infra_prefix_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_infra_prefix_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_prefix_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_prefix_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_protection_status_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_syn_protection_rule_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_syn_protection_rule_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_tcp_flow_protection_rule_list_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_dos_tcp_flow_protection_rule_response": {
+   "label": "DDoS Protection"
+  },
+  "cloudflare_download": {
+   "label": "IP Address Management Prefixes"
+  },
+  "cloudflare_duration": {
+   "label": "Radar Layer 3 Attacks"
+  },
+  "cloudflare_edn": {
+   "label": "Radar AS112"
+  },
+  "cloudflare_effective_redirect_uri": {
+   "label": "MCP Portal"
+  },
+  "cloudflare_email": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_email_account_rules_response_collection": {
+   "label": "Email Routing Routing Rules"
+  },
+  "cloudflare_email_catch_all_rule_response_single": {
+   "label": "Email Routing Routing Rules"
+  },
+  "cloudflare_email_destination_address_response_single": {
+   "label": "Email Routing Destination Addresses"
+  },
+  "cloudflare_email_destination_addresses_response_collection": {
+   "label": "Email Routing Destination Addresses"
+  },
+  "cloudflare_email_dns_settings_response_collection": {
+   "label": "Email Sending Subdomains"
+  },
+  "cloudflare_email_email_settings_response_single": {
+   "label": "Email Routing Settings"
+  },
+  "cloudflare_email_rule_response_single": {
+   "label": "Email Routing Routing Rules"
+  },
+  "cloudflare_email_rules_response_collection": {
+   "label": "Email Routing Routing Rules"
+  },
+  "cloudflare_email_sending_limits_response_single": {
+   "label": "Email Sending"
+  },
+  "cloudflare_email_sending_subdomain_dns_status_response": {
+   "label": "Email Sending Subdomains"
+  },
+  "cloudflare_email_sending_subdomain_reputation_complaints_response": {
+   "label": "Email Sending Subdomains"
+  },
+  "cloudflare_email_sending_subdomain_response_single": {
+   "label": "Email Sending Subdomains"
+  },
+  "cloudflare_email_sending_subdomains_response_collection": {
+   "label": "Email Sending Subdomains"
+  },
+  "cloudflare_embed": {
+   "label": "Stream Videos"
+  },
+  "cloudflare_encrypted": {
+   "label": "Radar Email Routing"
+  },
+  "cloudflare_entitlements_entitlements_response": {
+   "label": "Account Entitlements"
+  },
+  "cloudflare_entry": {
+   "label": "DLP Entries"
+  },
+  "cloudflare_entrypoint": {
+   "label": "Account Rulesets"
+  },
+  "cloudflare_environment_variable": {
+   "label": "Environment Variables"
+  },
+  "cloudflare_evaluation": {
+   "label": "AI Gateway Evaluations"
+  },
+  "cloudflare_evaluation_type": {
+   "label": "AI Gateway Evaluations"
+  },
+  "cloudflare_event": {
+   "label": "Event"
+  },
+  "cloudflare_example": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_export": {
+   "label": "Collections"
+  },
+  "cloudflare_feedback": {
+   "label": "Feedback"
+  },
+  "cloudflare_file": {
+   "label": "Artifacts"
+  },
+  "cloudflare_finetune": {
+   "label": "Workers AI Finetune"
+  },
+  "cloudflare_finetune_asset": {
+   "label": "Finetune Asset"
+  },
+  "cloudflare_firewall_filter_response_collection": {
+   "label": "Filters"
+  },
+  "cloudflare_firewall_filter_response_single": {
+   "label": "Filters"
+  },
+  "cloudflare_firewall_filter_rules_response_collection": {
+   "label": "Firewall Rules"
+  },
+  "cloudflare_firewall_filter_rules_single_response": {
+   "label": "Firewall Rules"
+  },
+  "cloudflare_firewall_firewalluablock_response_collection": {
+   "label": "User Agent Blocking Rules"
+  },
+  "cloudflare_firewall_firewalluablock_response_single": {
+   "label": "User Agent Blocking Rules"
+  },
+  "cloudflare_firewall_override_response_collection": {
+   "label": "WAF Overrides"
+  },
+  "cloudflare_firewall_override_response_single": {
+   "label": "WAF Overrides"
+  },
+  "cloudflare_firewall_package_response_collection": {
+   "label": "WAF Packages"
+  },
+  "cloudflare_firewall_package_response_single": {
+   "label": "WAF Packages"
+  },
+  "cloudflare_firewall_ratelimit_response_collection": {
+   "label": "Rate Limits for a Zone"
+  },
+  "cloudflare_firewall_ratelimit_response_single": {
+   "label": "Rate Limits for a Zone"
+  },
+  "cloudflare_firewall_response_collection": {
+   "label": "IP Access Rules for an Account"
+  },
+  "cloudflare_firewall_response_single": {
+   "label": "IP Access Rules for an Account"
+  },
+  "cloudflare_firewall_rule_collection_response": {
+   "label": "IP Access Rules for a User"
+  },
+  "cloudflare_firewall_rule_single_response": {
+   "label": "IP Access Rules for a User"
+  },
+  "cloudflare_firewall_zonelockdown_response_collection": {
+   "label": "Zone Lockdown"
+  },
+  "cloudflare_firewall_zonelockdown_response_single": {
+   "label": "Zone Lockdown"
+  },
+  "cloudflare_flag": {
+   "label": "Flags"
+  },
+  "cloudflare_flagship_app": {
+   "label": "Apps"
+  },
+  "cloudflare_flagship_changelog_entry": {
+   "label": "Changelog"
+  },
+  "cloudflare_flagship_evaluation_result": {
+   "label": "Evaluation"
+  },
+  "cloudflare_flagship_flag": {
+   "label": "Flags"
+  },
+  "cloudflare_flagship_flag_definitions": {
+   "label": "Definitions"
+  },
+  "cloudflare_flow": {
+   "label": "Images"
+  },
+  "cloudflare_font": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_fraud_fraud_settings_response_body": {
+   "label": "Fraud Detection"
+  },
+  "cloudflare_full_report": {
+   "label": "Botnet Threat Feed"
+  },
+  "cloudflare_gateway": {
+   "label": "AI Gateway Gateways"
+  },
+  "cloudflare_geolocation": {
+   "label": "Radar Geolocations"
+  },
+  "cloudflare_global": {
+   "label": "Radar Search"
+  },
+  "cloudflare_graph": {
+   "label": "Events"
+  },
+  "cloudflare_group": {
+   "label": "Groups"
+  },
+  "cloudflare_h2_prioritization": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_har": {
+   "label": "URL Scanner (Deprecated)"
+  },
+  "cloudflare_healthchecks_response_collection": {
+   "label": "Health Checks"
+  },
+  "cloudflare_healthchecks_single_response": {
+   "label": "Health Checks"
+  },
+  "cloudflare_histogram": {
+   "label": "Radar Quality"
+  },
+  "cloudflare_hold": {
+   "label": "Zone Holds"
+  },
+  "cloudflare_http_method": {
+   "label": "Radar Layer 7 Attacks"
+  },
+  "cloudflare_http_protocol": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_http_test": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_http_version": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_iam_collection_member_response_with_policies": {
+   "label": "Account Members"
+  },
+  "cloudflare_iam_collection_oauth_client_response": {
+   "label": "OAuth Clients"
+  },
+  "cloudflare_iam_collection_organization_response": {
+   "label": "User's Organizations"
+  },
+  "cloudflare_iam_collection_permission_groups_response": {
+   "label": "Account Permission Groups"
+  },
+  "cloudflare_iam_collection_role_response": {
+   "label": "Account Roles"
+  },
+  "cloudflare_iam_collection_tokens_response": {
+   "label": "Account Owned API Tokens"
+  },
+  "cloudflare_iam_permissions_group_response_collection": {
+   "label": "Account Owned API Tokens"
+  },
+  "cloudflare_iam_response_collection_accounts": {
+   "label": "Accounts"
+  },
+  "cloudflare_iam_response_single_account": {
+   "label": "Accounts"
+  },
+  "cloudflare_iam_scim_authentication_scheme": {
+   "label": "SCIM Discovery"
+  },
+  "cloudflare_iam_scim_group": {
+   "label": "SCIM Groups"
+  },
+  "cloudflare_iam_scim_group_summary": {
+   "label": "SCIM Groups"
+  },
+  "cloudflare_iam_scim_resource_type": {
+   "label": "SCIM Discovery"
+  },
+  "cloudflare_iam_scim_schema": {
+   "label": "SCIM Discovery"
+  },
+  "cloudflare_iam_scim_schema_attr": {
+   "label": "SCIM Discovery"
+  },
+  "cloudflare_iam_scim_schema_extension": {
+   "label": "SCIM Discovery"
+  },
+  "cloudflare_iam_scim_user": {
+   "label": "SCIM Users"
+  },
+  "cloudflare_iam_single_invite_response": {
+   "label": "User's Invites"
+  },
+  "cloudflare_iam_single_membership_response_with_policies": {
+   "label": "User's Account Memberships"
+  },
+  "cloudflare_iam_single_organization_response": {
+   "label": "User's Organizations"
+  },
+  "cloudflare_iam_single_permission_groups_response": {
+   "label": "Account Permission Groups"
+  },
+  "cloudflare_iam_single_role_response": {
+   "label": "Account Roles"
+  },
+  "cloudflare_iam_single_token_response": {
+   "label": "User API Tokens"
+  },
+  "cloudflare_iam_sso_connector_collection_response": {
+   "label": "SSO"
+  },
+  "cloudflare_iam_sso_connector_response": {
+   "label": "SSO"
+  },
+  "cloudflare_iam_token_verify_response_single_segment": {
+   "label": "Account Owned API Tokens"
+  },
+  "cloudflare_image": {
+   "label": "Images"
+  },
+  "cloudflare_image_resizing": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_images_image_key_response_collection": {
+   "label": "Cloudflare Images Keys"
+  },
+  "cloudflare_images_image_response_single": {
+   "label": "Cloudflare Images"
+  },
+  "cloudflare_images_image_variant_flat_response": {
+   "label": "Cloudflare Images Variants"
+  },
+  "cloudflare_images_image_variant_list_response": {
+   "label": "Cloudflare Images Variants"
+  },
+  "cloudflare_images_image_variant_simple_response": {
+   "label": "Cloudflare Images Variants"
+  },
+  "cloudflare_images_images_list_response": {
+   "label": "Cloudflare Images"
+  },
+  "cloudflare_images_images_list_response_v2": {
+   "label": "Cloudflare Images"
+  },
+  "cloudflare_images_images_stats_response": {
+   "label": "Cloudflare Images"
+  },
+  "cloudflare_images_metadata_keys_response": {
+   "label": "Cloudflare Images"
+  },
+  "cloudflare_images_sourcingkit_connectivity_check_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_migration_list_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_migration_log_list_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_migration_progress_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_migration_single_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_source_list_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_images_sourcingkit_source_single_response": {
+   "label": "Cloudflare Images Sourcing Kit"
+  },
+  "cloudflare_impersonation_registry": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_index": {
+   "label": "Vectorize Beta (Deprecated)"
+  },
+  "cloudflare_indicator": {
+   "label": "Indicator"
+  },
+  "cloudflare_indicator_type": {
+   "label": "Indicator Types"
+  },
+  "cloudflare_industry": {
+   "label": "Reporting"
+  },
+  "cloudflare_info": {
+   "label": "Vectorize"
+  },
+  "cloudflare_insight": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_inspect": {
+   "label": "Email Auth"
+  },
+  "cloudflare_instance": {
+   "label": "AI Search Instances"
+  },
+  "cloudflare_integration": {
+   "label": "Zero Trust Risk Scoring Integrations"
+  },
+  "cloudflare_intel_asn_components_schemas_response": {
+   "label": "ASN Intelligence"
+  },
+  "cloudflare_intel_collection_response": {
+   "label": "Domain Intelligence"
+  },
+  "cloudflare_intel_components_schemas_response": {
+   "label": "IP List"
+  },
+  "cloudflare_intel_components_schemas_single_response": {
+   "label": "Passive DNS by IP"
+  },
+  "cloudflare_intel_response": {
+   "label": "Domain History"
+  },
+  "cloudflare_intel_schemas_response": {
+   "label": "IP Intelligence"
+  },
+  "cloudflare_intel_single_response": {
+   "label": "Domain Intelligence"
+  },
+  "cloudflare_intel_sinkholes_ingress_collection_response": {
+   "label": "Sinkhole Config"
+  },
+  "cloudflare_intel_sinkholes_ingress_single_response": {
+   "label": "Sinkhole Config"
+  },
+  "cloudflare_intel_sinkholes_sinkhole_collection_response": {
+   "label": "Sinkhole Config"
+  },
+  "cloudflare_intel_sinkholes_sinkhole_single_response": {
+   "label": "Sinkhole Config"
+  },
+  "cloudflare_intel_url_intelligence_single_response": {
+   "label": "URL Intelligence"
+  },
+  "cloudflare_investigate": {
+   "label": "Email Security"
+  },
+  "cloudflare_ip": {
+   "label": "Cloudflare IPs"
+  },
+  "cloudflare_ip_profile": {
+   "label": "IP Profiles"
+  },
+  "cloudflare_ip_version": {
+   "label": "Radar AS112"
+  },
+  "cloudflare_isp": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_issue": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_issue_type": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_item": {
+   "label": "AI Search Instances Items"
+  },
+  "cloudflare_job": {
+   "label": "AI Search Instances Jobs"
+  },
+  "cloudflare_json": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_kamino_environments_response": {
+   "label": "Zone Environments"
+  },
+  "cloudflare_key": {
+   "label": "Workers KV Namespace"
+  },
+  "cloudflare_label": {
+   "label": "API Shield Labels"
+  },
+  "cloudflare_latest": {
+   "label": "Builds"
+  },
+  "cloudflare_letter": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_level": {
+   "label": "DLP Sensitivity Levels"
+  },
+  "cloudflare_level_order": {
+   "label": "DLP Sensitivity Groups"
+  },
+  "cloudflare_lex_available_destination_list_response": {
+   "label": "Log Explorer Datasets"
+  },
+  "cloudflare_lex_dataset_detail_response": {
+   "label": "Log Explorer Datasets"
+  },
+  "cloudflare_lex_dataset_summary_list_response": {
+   "label": "Log Explorer Datasets"
+  },
+  "cloudflare_lex_query_response": {
+   "label": "Log Explorer Queries"
+  },
+  "cloudflare_lex_v4_error_2": {
+   "label": "Log Explorer Datasets"
+  },
+  "cloudflare_lifecycle": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_limit": {
+   "label": "Account"
+  },
+  "cloudflare_list": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_lists_items_list_response_collection": {
+   "label": "Lists"
+  },
+  "cloudflare_lists_list_response_collection": {
+   "label": "Lists"
+  },
+  "cloudflare_lists_lists_response_collection": {
+   "label": "Lists"
+  },
+  "cloudflare_livestream": {
+   "label": "Live Streams"
+  },
+  "cloudflare_livestream_session": {
+   "label": "Live Streams"
+  },
+  "cloudflare_load_balancing_components_schemas_response_collection": {
+   "label": "Load Balancer Healthcheck Events"
+  },
+  "cloudflare_load_balancing_components_schemas_single_response": {
+   "label": "Load Balancer Regions"
+  },
+  "cloudflare_load_balancing_health_details": {
+   "label": "Account Load Balancer Pools"
+  },
+  "cloudflare_load_balancing_load_balancer_components_schemas_response_collection": {
+   "label": "Account Load Balancers"
+  },
+  "cloudflare_load_balancing_load_balancer_components_schemas_single_response": {
+   "label": "Load Balancers"
+  },
+  "cloudflare_load_balancing_monitor_group_references_response": {
+   "label": "Account Load Balancer Monitor Groups"
+  },
+  "cloudflare_load_balancing_monitor_group_response_collection": {
+   "label": "Account Load Balancer Monitor Groups"
+  },
+  "cloudflare_load_balancing_monitor_group_single_response": {
+   "label": "Account Load Balancer Monitor Groups"
+  },
+  "cloudflare_load_balancing_monitor_references_response": {
+   "label": "Account Load Balancer Monitors"
+  },
+  "cloudflare_load_balancing_monitor_response_collection": {
+   "label": "Account Load Balancer Monitors"
+  },
+  "cloudflare_load_balancing_monitor_response_single": {
+   "label": "Load Balancer Monitors"
+  },
+  "cloudflare_load_balancing_pools_references_response": {
+   "label": "Account Load Balancer Pools"
+  },
+  "cloudflare_load_balancing_preview_result_response": {
+   "label": "Account Load Balancer Monitors"
+  },
+  "cloudflare_load_balancing_schemas_response_collection": {
+   "label": "Account Load Balancer Pools"
+  },
+  "cloudflare_load_balancing_schemas_single_response": {
+   "label": "Account Load Balancer Pools"
+  },
+  "cloudflare_local_upload": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_location": {
+   "label": "Radar Locations"
+  },
+  "cloudflare_lock": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_log": {
+   "label": "AI Gateway Logs"
+  },
+  "cloudflare_logcontrol_cmb_config_response_single": {
+   "label": "Logcontrol CMB Config for an Account"
+  },
+  "cloudflare_logcontrol_retention_flag_response_single": {
+   "label": "Logs Received"
+  },
+  "cloudflare_logging_state": {
+   "label": "Account"
+  },
+  "cloudflare_logpush_instant_logs_job_response_collection": {
+   "label": "Instant Logs Jobs for a Zone"
+  },
+  "cloudflare_logpush_logpush_field_response_collection": {
+   "label": "Logpush Jobs for an Account"
+  },
+  "cloudflare_logpush_logpush_job_response_collection": {
+   "label": "Logpush Jobs for an Account"
+  },
+  "cloudflare_logpush_logpush_job_response_single": {
+   "label": "Logpush Jobs for an Account"
+  },
+  "cloudflare_logpush_transformer_content_response": {
+   "label": "Logpush Transformers"
+  },
+  "cloudflare_logpush_transformer_response_collection": {
+   "label": "Logpush Transformers"
+  },
+  "cloudflare_logpush_transformer_response_single": {
+   "label": "Logpush Transformers"
+  },
+  "cloudflare_logpush_transformer_version_response_collection": {
+   "label": "Logpush Transformers"
+  },
+  "cloudflare_logshare_fields_response": {
+   "label": "Logs Received"
+  },
+  "cloudflare_logshare_logs_response_json_lines": {
+   "label": "Logs Received"
+  },
+  "cloudflare_magic_acl_single_response": {
+   "label": "Magic Site ACLs"
+  },
+  "cloudflare_magic_acls_collection_response": {
+   "label": "Magic Site ACLs"
+  },
+  "cloudflare_magic_app_configs_collection_response": {
+   "label": "Magic Site App Configs"
+  },
+  "cloudflare_magic_apps_collection_response": {
+   "label": "Magic Account Apps"
+  },
+  "cloudflare_magic_cf1_site_ramps_collection_response": {
+   "label": "Magic CF1 Site Ramps"
+  },
+  "cloudflare_magic_cf1_sites_collection_response": {
+   "label": "Magic CF1 Sites"
+  },
+  "cloudflare_magic_components_schemas_tunnel_single_response": {
+   "label": "Magic Interconnects"
+  },
+  "cloudflare_magic_components_schemas_tunnels_collection_response": {
+   "label": "Magic Interconnects"
+  },
+  "cloudflare_magic_lan_single_response": {
+   "label": "Magic Site LANs"
+  },
+  "cloudflare_magic_lans_collection_response": {
+   "label": "Magic Site LANs"
+  },
+  "cloudflare_magic_magic_bgp_filter_profile_response": {
+   "label": "Magic BGP Filter Profiles"
+  },
+  "cloudflare_magic_magic_bgp_filter_profiles_list_response": {
+   "label": "Magic BGP Filter Profiles"
+  },
+  "cloudflare_magic_magic_bgp_settings_response": {
+   "label": "Magic BGP Settings"
+  },
+  "cloudflare_magic_netflow_config_single_response": {
+   "label": "Magic Site NetFlow Config"
+  },
+  "cloudflare_magic_redundancy_group_with_members_response": {
+   "label": "Magic Redundancy Groups"
+  },
+  "cloudflare_magic_redundancy_groups_collection_response": {
+   "label": "Magic Redundancy Groups"
+  },
+  "cloudflare_magic_route_single_response": {
+   "label": "Magic Static Routes"
+  },
+  "cloudflare_magic_routes_collection_response": {
+   "label": "Magic Static Routes"
+  },
+  "cloudflare_magic_schemas_tunnels_collection_response": {
+   "label": "Magic IPsec Tunnels"
+  },
+  "cloudflare_magic_site_single_response": {
+   "label": "Magic Sites"
+  },
+  "cloudflare_magic_sites_collection_response": {
+   "label": "Magic Sites"
+  },
+  "cloudflare_magic_transit_endpoint_health_check_response_single": {
+   "label": "Endpoint Health Checks"
+  },
+  "cloudflare_magic_tunnel_single_response": {
+   "label": "Magic GRE Tunnels"
+  },
+  "cloudflare_magic_tunnels_collection_response": {
+   "label": "Magic GRE Tunnels"
+  },
+  "cloudflare_magic_visibility_mnm_mnm_config_single_response": {
+   "label": "Magic Network Monitoring Configuration"
+  },
+  "cloudflare_magic_visibility_mnm_mnm_rules_collection_response": {
+   "label": "Magic Network Monitoring Rules"
+  },
+  "cloudflare_magic_visibility_mnm_mnm_rules_single_response": {
+   "label": "Magic Network Monitoring Rules"
+  },
+  "cloudflare_magic_visibility_pcaps_pcaps_collection_response": {
+   "label": "Magic PCAP Collection"
+  },
+  "cloudflare_magic_visibility_pcaps_pcaps_ownership_collection": {
+   "label": "Magic PCAP Collection"
+  },
+  "cloudflare_magic_wan_single_response": {
+   "label": "Magic Site WANs"
+  },
+  "cloudflare_magic_wans_collection_response": {
+   "label": "Magic Site WANs"
+  },
+  "cloudflare_maintenance_config": {
+   "label": "Maintenance Configuration"
+  },
+  "cloudflare_maliciou": {
+   "label": "Radar Email Security"
+  },
+  "cloudflare_managed": {
+   "label": "Rules"
+  },
+  "cloudflare_managed_header": {
+   "label": "Managed Transforms"
+  },
+  "cloudflare_managed_rule": {
+   "label": "Radar Layer 7 Attacks"
+  },
+  "cloudflare_match": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_matching_answer": {
+   "label": "Radar DNS"
+  },
+  "cloudflare_mcn_catalog_syncs_prebuilt_policies_response": {
+   "label": "Catalog Sync"
+  },
+  "cloudflare_mcn_get_magic_wan_address_space_response": {
+   "label": "On-Ramps"
+  },
+  "cloudflare_mcn_get_onramp_response": {
+   "label": "On-Ramps"
+  },
+  "cloudflare_mcn_list_onramps_response": {
+   "label": "On-Ramps"
+  },
+  "cloudflare_mcn_provider_initial_setup_response": {
+   "label": "Cloud Integrations"
+  },
+  "cloudflare_mcn_read_account_catalog_sync_response": {
+   "label": "Catalog Sync"
+  },
+  "cloudflare_mcn_read_account_catalog_syncs_response": {
+   "label": "Catalog Sync"
+  },
+  "cloudflare_mcn_read_account_provider_response": {
+   "label": "Cloud Integrations"
+  },
+  "cloudflare_mcn_read_account_providers_response": {
+   "label": "Cloud Integrations"
+  },
+  "cloudflare_mcn_read_account_resource_response": {
+   "label": "Resources"
+  },
+  "cloudflare_mcn_read_account_resources_response": {
+   "label": "Resources"
+  },
+  "cloudflare_mconn_connector_interrupts_list_response": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_connectors_list_response": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_events_get_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_events_latest_get_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_events_list_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_snapshots_get_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_snapshots_latest_get_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_mconn_customer_snapshots_list_success": {
+   "label": "Magic Connectors"
+  },
+  "cloudflare_meeting": {
+   "label": "Meetings"
+  },
+  "cloudflare_member": {
+   "label": "Groups"
+  },
+  "cloudflare_membership": {
+   "label": "User's Account Memberships"
+  },
+  "cloudflare_memory": {
+   "label": "Memory"
+  },
+  "cloudflare_message": {
+   "label": "Email Security"
+  },
+  "cloudflare_metadata": {
+   "label": "Workers KV Namespace"
+  },
+  "cloudflare_metric": {
+   "label": "Queue"
+  },
+  "cloudflare_metricsexport": {
+   "label": "Metrics Export"
+  },
+  "cloudflare_mitigation": {
+   "label": "Abuse Reports"
+  },
+  "cloudflare_mitigation_product": {
+   "label": "Radar Layer 7 Attacks"
+  },
+  "cloudflare_moa": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_model": {
+   "label": "Radar AI Inference"
+  },
+  "cloudflare_monolith_health_response": {
+   "label": "Health"
+  },
+  "cloudflare_namespace": {
+   "label": "Namespaces"
+  },
+  "cloudflare_nel_config_nel_setting_response": {
+   "label": "NEL Settings"
+  },
+  "cloudflare_network_path": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_nsc_cni": {
+   "label": "CNIs"
+  },
+  "cloudflare_nsc_default_name_response": {
+   "label": "Interconnects"
+  },
+  "cloudflare_nsc_interconnect": {
+   "label": "Interconnects"
+  },
+  "cloudflare_nsc_settings": {
+   "label": "Settings"
+  },
+  "cloudflare_nsc_slot_info": {
+   "label": "Slots"
+  },
+  "cloudflare_nsc_status_info": {
+   "label": "Interconnects"
+  },
+  "cloudflare_o": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_object": {
+   "label": "R2 Object"
+  },
+  "cloudflare_observatory_availabilities_response": {
+   "label": "Observatory"
+  },
+  "cloudflare_observatory_page_test_response_collection": {
+   "label": "Observatory"
+  },
+  "cloudflare_observatory_page_test_response_single": {
+   "label": "Observatory"
+  },
+  "cloudflare_observatory_pages_response_collection": {
+   "label": "Observatory"
+  },
+  "cloudflare_observatory_trend_response": {
+   "label": "Observatory"
+  },
+  "cloudflare_one_application_detail_response": {
+   "label": "Applications"
+  },
+  "cloudflare_one_application_list": {
+   "label": "Applications"
+  },
+  "cloudflare_one_auth_method_detail": {
+   "label": "Applications"
+  },
+  "cloudflare_one_integration_detail_response": {
+   "label": "Integrations"
+  },
+  "cloudflare_one_integration_v2_list_item": {
+   "label": "Integrations"
+  },
+  "cloudflare_one_setup_flow": {
+   "label": "Applications"
+  },
+  "cloudflare_organization": {
+   "label": "Organizations"
+  },
+  "cloudflare_organizations_api_v4_message": {
+   "label": "Accounts"
+  },
+  "cloudflare_origin": {
+   "label": "Radar Origins"
+  },
+  "cloudflare_origin_cloud_region": {
+   "label": "Origin Cloud Regions"
+  },
+  "cloudflare_origin_max_http_version": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_origin_post_quantum_encryption": {
+   "label": "Origin Post-Quantum"
+  },
+  "cloudflare_origin_tls_compliance_mode": {
+   "label": "Origin TLS"
+  },
+  "cloudflare_outage": {
+   "label": "Radar Annotations"
+  },
+  "cloudflare_over_time": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_overall": {
+   "label": "Live Streams"
+  },
+  "cloudflare_override_code": {
+   "label": "Devices"
+  },
+  "cloudflare_overview": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_page_shield": {
+   "label": "Client-Side Security"
+  },
+  "cloudflare_pagerule": {
+   "label": "Page Rules"
+  },
+  "cloudflare_participant": {
+   "label": "Meetings"
+  },
+  "cloudflare_path": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_pay_per_crawl_get_config_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_pay_per_crawl_get_stripe_config_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_pay_per_crawl_get_terms_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_pay_per_crawl_get_terms_signature_link_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_pay_per_crawl_get_terms_signature_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_pay_per_crawl_list_crawlers_response": {
+   "label": "Pay Per Crawl"
+  },
+  "cloudflare_payload_log": {
+   "label": "DLP Settings"
+  },
+  "cloudflare_pdf": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_peer_report": {
+   "label": "Sessions"
+  },
+  "cloudflare_pem": {
+   "label": "Access SAML Encryption Certificates"
+  },
+  "cloudflare_percentile": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_permission": {
+   "label": "Permissions"
+  },
+  "cloudflare_pfx2a": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_physical_device": {
+   "label": "Physical Devices"
+  },
+  "cloudflare_pipeline": {
+   "label": "Pipelines"
+  },
+  "cloudflare_pipelines_workers_pipelines_pipeline": {
+   "label": "Pipelines"
+  },
+  "cloudflare_policy": {
+   "label": "Device Posture"
+  },
+  "cloudflare_portal": {
+   "label": "MCP Portal"
+  },
+  "cloudflare_post_quantum": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_posture_api_export_job_response": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_finding_instance_response": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_finding_response": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_finding_type_response": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_content_asset_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_export_job_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_finding_instance_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_finding_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_finding_type_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_paginated_remediation_type_list": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_remediation_job": {
+   "label": "Device Posture"
+  },
+  "cloudflare_posture_api_webhook_list_response": {
+   "label": "Webhooks"
+  },
+  "cloudflare_posture_api_webhook_response": {
+   "label": "Webhooks"
+  },
+  "cloudflare_precursor_precursor_config_response_body": {
+   "label": "Precursor"
+  },
+  "cloudflare_prefix": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_preset": {
+   "label": "Presets"
+  },
+  "cloudflare_priority": {
+   "label": "Priority Intelligence Requirements (PIR)"
+  },
+  "cloudflare_profile": {
+   "label": "DLP Profiles"
+  },
+  "cloudflare_progres": {
+   "label": "R2 Super Slurper"
+  },
+  "cloudflare_project": {
+   "label": "Pages Project"
+  },
+  "cloudflare_protocol": {
+   "label": "Browser Rendering"
+  },
+  "cloudflare_provider_config": {
+   "label": "AI Gateway Provider Configs"
+  },
+  "cloudflare_public": {
+   "label": "Workers AI Finetune"
+  },
+  "cloudflare_purge": {
+   "label": "Queue"
+  },
+  "cloudflare_query": {
+   "label": "Event"
+  },
+  "cloudflare_query_type": {
+   "label": "Radar AS112"
+  },
+  "cloudflare_queue": {
+   "label": "Queue"
+  },
+  "cloudflare_r2_catalog": {
+   "label": "R2 Catalog Management"
+  },
+  "cloudflare_r2_r2_object": {
+   "label": "R2 Object"
+  },
+  "cloudflare_raw": {
+   "label": "Artifacts"
+  },
+  "cloudflare_realtime": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_realtimekit_webhook": {
+   "label": "Webhooks"
+  },
+  "cloudflare_realtimekit_webhook_events_success_response": {
+   "label": "Webhooks"
+  },
+  "cloudflare_realtimekit_webhook_success_response": {
+   "label": "Webhooks"
+  },
+  "cloudflare_recording": {
+   "label": "Recordings"
+  },
+  "cloudflare_reference_id": {
+   "label": "Zero Trust Risk Scoring Integrations"
+  },
+  "cloudflare_regional_hostname": {
+   "label": "DLS Regional Services"
+  },
+  "cloudflare_regional_tiered_cache": {
+   "label": "Zone Cache Settings"
+  },
+  "cloudflare_registrar_api_domain_response_collection": {
+   "label": "Registrar Domains"
+  },
+  "cloudflare_registrar_api_domain_search_response": {
+   "label": "Domain Discovery"
+  },
+  "cloudflare_registrar_api_extension_response_collection": {
+   "label": "Extension"
+  },
+  "cloudflare_registrar_api_extension_response_single": {
+   "label": "Extension"
+  },
+  "cloudflare_registrar_api_registration_response_collection": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registrar_api_registration_response_single": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registrar_api_sandbox_domain_search_response": {
+   "label": "Domain Discovery"
+  },
+  "cloudflare_registrar_api_sandbox_extension_response_collection": {
+   "label": "Extension"
+  },
+  "cloudflare_registrar_api_sandbox_extension_response_single": {
+   "label": "Extension"
+  },
+  "cloudflare_registrar_api_sandbox_registration_response_collection": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registrar_api_sandbox_registration_response_single": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registrar_api_sandbox_workflow_status_response_single": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registrar_api_workflow_status_response_single": {
+   "label": "Registrar Registration"
+  },
+  "cloudflare_registration": {
+   "label": "Registrations"
+  },
+  "cloudflare_rel": {
+   "label": "Radar Autonomous Systems"
+  },
+  "cloudflare_relationship": {
+   "label": "Indicator"
+  },
+  "cloudflare_relay": {
+   "label": "MoQ Relays"
+  },
+  "cloudflare_repo": {
+   "label": "Artifacts"
+  },
+  "cloudflare_report": {
+   "label": "DNS Firewall Analytics"
+  },
+  "cloudflare_reports_policies_list_response": {
+   "label": "Reporting"
+  },
+  "cloudflare_reports_policy_single_response": {
+   "label": "Reporting"
+  },
+  "cloudflare_reports_report_single_response": {
+   "label": "Reporting"
+  },
+  "cloudflare_reports_reports_list_response": {
+   "label": "Reporting"
+  },
+  "cloudflare_request": {
+   "label": "Request for Information (RFI)"
+  },
+  "cloudflare_resource_group": {
+   "label": "Account Resource Groups"
+  },
+  "cloudflare_resource_sharing_share_excluded_recipient_response_collection": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_excluded_recipient_response_single": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_recipient_response_collection": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_recipient_response_single": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_resource_response_collection": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_resource_response_single": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_response_collection": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_sharing_share_response_single": {
+   "label": "Resource Sharing"
+  },
+  "cloudflare_resource_tagging_tag_key_summary_response_collection": {
+   "label": "Resource Tagging"
+  },
+  "cloudflare_resource_tagging_tag_keys_response_collection": {
+   "label": "Resource Tagging"
+  },
+  "cloudflare_resource_tagging_tag_values_response_collection": {
+   "label": "Resource Tagging"
+  },
+  "cloudflare_resource_tagging_tagged_resource_response_collection": {
+   "label": "Resource Tagging"
+  },
+  "cloudflare_resource_tagging_tagged_resource_response_single": {
+   "label": "Resource Tagging"
+  },
+  "cloudflare_response": {
+   "label": "AI Gateway Logs"
+  },
+  "cloudflare_response_code": {
+   "label": "Radar AS112"
+  },
+  "cloudflare_response_ttl": {
+   "label": "Radar DNS"
+  },
+  "cloudflare_result": {
+   "label": "Scans"
+  },
+  "cloudflare_rlanalytics_rate_limit_analytics_timeseries_point": {
+   "label": "Rate Limiting Analytics"
+  },
+  "cloudflare_robot": {
+   "label": "AI Audit"
+  },
+  "cloudflare_route": {
+   "label": "AI Gateway Dynamic Routes"
+  },
+  "cloudflare_rule": {
+   "label": "DEX Rules"
+  },
+  "cloudflare_ruleset": {
+   "label": "Account Rulesets"
+  },
+  "cloudflare_rum_empty_response": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_rum_rules_response_collection": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_rum_rum_site_response_single": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_rum_site_response_single": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_rum_site_tag_list_response": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_rum_sites_response_collection": {
+   "label": "Web Analytics"
+  },
+  "cloudflare_scan": {
+   "label": "URL Scanner (Deprecated)"
+  },
+  "cloudflare_schedule": {
+   "label": "Worker Cron Trigger"
+  },
+  "cloudflare_schema": {
+   "label": "Workers AI"
+  },
+  "cloudflare_screenshot": {
+   "label": "URL Scanner (Deprecated)"
+  },
+  "cloudflare_script": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_scripts_search": {
+   "label": "Worker Script"
+  },
+  "cloudflare_search": {
+   "label": "Workers AI"
+  },
+  "cloudflare_secondary_dns_enable_transfer_response": {
+   "label": "Secondary DNS (Primary Zone)"
+  },
+  "cloudflare_secondary_dns_response_collection": {
+   "label": "Secondary DNS (TSIG)"
+  },
+  "cloudflare_secondary_dns_response_collection_2": {
+   "label": "Secondary DNS (Peer)"
+  },
+  "cloudflare_secondary_dns_response_collection_3": {
+   "label": "Secondary DNS (ACL)"
+  },
+  "cloudflare_secondary_dns_single_response": {
+   "label": "Secondary DNS (TSIG)"
+  },
+  "cloudflare_secondary_dns_single_response_2": {
+   "label": "Secondary DNS (Peer)"
+  },
+  "cloudflare_secondary_dns_single_response_3": {
+   "label": "Secondary DNS (ACL)"
+  },
+  "cloudflare_secondary_dns_single_response_incoming": {
+   "label": "Secondary DNS (Secondary Zone)"
+  },
+  "cloudflare_secondary_dns_single_response_outgoing": {
+   "label": "Secondary DNS (Primary Zone)"
+  },
+  "cloudflare_secret": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_secrets_store_secret_response": {
+   "label": "Secrets Store"
+  },
+  "cloudflare_secrets_store_secrets_response_collection": {
+   "label": "Secrets Store"
+  },
+  "cloudflare_secrets_store_store_response": {
+   "label": "Secrets Store"
+  },
+  "cloudflare_secrets_store_stores_response_collection": {
+   "label": "Secrets Store"
+  },
+  "cloudflare_security_center_value_counts_response": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_securitytxt": {
+   "label": "Security.txt"
+  },
+  "cloudflare_sending_domain_restriction": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_sensitivity_group": {
+   "label": "DLP Sensitivity Groups"
+  },
+  "cloudflare_server": {
+   "label": "MCP Portal Servers"
+  },
+  "cloudflare_service": {
+   "label": "IP Address Management Service Bindings"
+  },
+  "cloudflare_session": {
+   "label": "Live Streams"
+  },
+  "cloudflare_setting": {
+   "label": "DLP Settings"
+  },
+  "cloudflare_sink": {
+   "label": "Pipelines"
+  },
+  "cloudflare_sippy": {
+   "label": "R2 Bucket"
+  },
+  "cloudflare_smart_shield": {
+   "label": "Smart Shield Settings"
+  },
+  "cloudflare_smartshield_response_collection": {
+   "label": "Health Checks"
+  },
+  "cloudflare_smartshield_single_hc_response": {
+   "label": "Health Checks"
+  },
+  "cloudflare_snapshot": {
+   "label": "Radar BGP"
+  },
+  "cloudflare_snippet": {
+   "label": "Zone Snippets"
+  },
+  "cloudflare_snippet_rule": {
+   "label": "Zone Snippets"
+  },
+  "cloudflare_spam": {
+   "label": "Radar Email Security"
+  },
+  "cloudflare_spectrum_analytics_query_response_aggregate": {
+   "label": "Spectrum Analytics"
+  },
+  "cloudflare_spectrum_analytics_query_response_single": {
+   "label": "Spectrum Analytics"
+  },
+  "cloudflare_spectrum_analytics_zones_report_response": {
+   "label": "Spectrum Analytics"
+  },
+  "cloudflare_spectrum_config_app_config_collection": {
+   "label": "Spectrum Applications"
+  },
+  "cloudflare_spectrum_config_protocol_collection": {
+   "label": "Spectrum Applications"
+  },
+  "cloudflare_speed_brain": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_spf": {
+   "label": "Radar Email Routing"
+  },
+  "cloudflare_spoof": {
+   "label": "Radar Email Security"
+  },
+  "cloudflare_stat": {
+   "label": "AI Search Instances"
+  },
+  "cloudflare_state": {
+   "label": "Security Center Insights"
+  },
+  "cloudflare_step": {
+   "label": "Workflows"
+  },
+  "cloudflare_stream": {
+   "label": "Pipelines"
+  },
+  "cloudflare_stream_downloads_response": {
+   "label": "Stream MP4 Downloads"
+  },
+  "cloudflare_stream_key_response_collection": {
+   "label": "Stream Signing Keys"
+  },
+  "cloudflare_stream_language_response_collection": {
+   "label": "Stream Subtitles/Captions"
+  },
+  "cloudflare_stream_language_response_single": {
+   "label": "Stream Subtitles/Captions"
+  },
+  "cloudflare_stream_list_audio_track_response": {
+   "label": "Stream Audio Tracks"
+  },
+  "cloudflare_stream_live_input_response_collection": {
+   "label": "Stream Live Inputs"
+  },
+  "cloudflare_stream_live_input_response_single": {
+   "label": "Stream Live Inputs"
+  },
+  "cloudflare_stream_output_response_collection": {
+   "label": "Stream Live Inputs"
+  },
+  "cloudflare_stream_storage_use_response": {
+   "label": "Stream Videos"
+  },
+  "cloudflare_stream_video_response_collection": {
+   "label": "Stream Videos"
+  },
+  "cloudflare_stream_video_response_single": {
+   "label": "Stream Videos"
+  },
+  "cloudflare_stream_watermark_response_collection": {
+   "label": "Stream Watermark Profile"
+  },
+  "cloudflare_stream_watermark_response_single": {
+   "label": "Stream Watermark Profile"
+  },
+  "cloudflare_stream_webhook_response_single": {
+   "label": "Stream Webhook"
+  },
+  "cloudflare_subdomain": {
+   "label": "Worker Script"
+  },
+  "cloudflare_submission": {
+   "label": "Email Security"
+  },
+  "cloudflare_subnet": {
+   "label": "ASN Intelligence"
+  },
+  "cloudflare_subscription": {
+   "label": "Queue"
+  },
+  "cloudflare_summary": {
+   "label": "Radar Agent Readiness"
+  },
+  "cloudflare_support": {
+   "label": "Radar Post-Quantum"
+  },
+  "cloudflare_supported": {
+   "label": "Workers AI"
+  },
+  "cloudflare_suppression": {
+   "label": "Email Routing Suppressions"
+  },
+  "cloudflare_table": {
+   "label": "Table Management"
+  },
+  "cloudflare_tag": {
+   "label": "Tag"
+  },
+  "cloudflare_tag_category": {
+   "label": "Threat Signals"
+  },
+  "cloudflare_tail": {
+   "label": "Worker Tail Logs"
+  },
+  "cloudflare_takedown_notice": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_target": {
+   "label": "Infrastructure Access Targets"
+  },
+  "cloudflare_target_environment": {
+   "label": "Target Environments"
+  },
+  "cloudflare_target_industry": {
+   "label": "Target Industry"
+  },
+  "cloudflare_task": {
+   "label": "Radar AI Inference"
+  },
+  "cloudflare_teams_devices_components_schemas_response_collection": {
+   "label": "Device Managed Networks"
+  },
+  "cloudflare_teams_devices_components_schemas_single_response": {
+   "label": "Device Managed Networks"
+  },
+  "cloudflare_teams_devices_default_device_settings_response": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_device_response": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_device_settings_response": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_device_settings_response_collection": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_devices_policy_certificates_single": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_devices_response": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_fallback_domain_response_collection": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_global_warp_override_response": {
+   "label": "Devices Resilience"
+  },
+  "cloudflare_teams_devices_override_codes_response": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_response_collection": {
+   "label": "Device Posture Rules"
+  },
+  "cloudflare_teams_devices_schemas_response_collection": {
+   "label": "Device Posture Integrations"
+  },
+  "cloudflare_teams_devices_schemas_single_response": {
+   "label": "Device Posture Integrations"
+  },
+  "cloudflare_teams_devices_single_response": {
+   "label": "Device Posture Rules"
+  },
+  "cloudflare_teams_devices_split_tunnel_include_response_collection": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_split_tunnel_response_collection": {
+   "label": "Devices"
+  },
+  "cloudflare_teams_devices_zero_trust_account_device_settings_response": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_template": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_tenant": {
+   "label": "Tenants"
+  },
+  "cloudflare_terminate": {
+   "label": "Workflows"
+  },
+  "cloudflare_threat_category": {
+   "label": "Radar Email Security"
+  },
+  "cloudflare_tiered_cache_smart_topology_enable": {
+   "label": "Smart Tiered Cache"
+  },
+  "cloudflare_tiered_caching": {
+   "label": "Tiered Caching"
+  },
+  "cloudflare_timeseries_group": {
+   "label": "Radar AI Bots"
+  },
+  "cloudflare_timesery": {
+   "label": "MCP Portal Analytics"
+  },
+  "cloudflare_tld": {
+   "label": "Radar Top-Level Domains"
+  },
+  "cloudflare_tls_certificates_and_hostnames_association_response_collection": {
+   "label": "mTLS Certificate Management"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_pack_response_collection": {
+   "label": "Certificate Packs"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_pack_response_single": {
+   "label": "Certificate Packs"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_collection": {
+   "label": "Custom SSL for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_2": {
+   "label": "Origin CA"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_3": {
+   "label": "Zone-Level Authenticated Origin Pulls"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_4": {
+   "label": "Per-Hostname Authenticated Origin Pull"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_5": {
+   "label": "mTLS Certificate Management"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single": {
+   "label": "Custom SSL for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single_2": {
+   "label": "Origin CA"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single_3": {
+   "label": "Zone-Level Authenticated Origin Pulls"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single_4": {
+   "label": "Per-Hostname Authenticated Origin Pull"
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single_5": {
+   "label": "mTLS Certificate Management"
+  },
+  "cloudflare_tls_certificates_and_hostnames_client_certificate_response_collection": {
+   "label": "API Shield Client Certificates for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_client_certificate_response_single": {
+   "label": "API Shield Client Certificates for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_ct_alerting_subscription_response_single": {
+   "label": "CT Alerting"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_csr_response_collection": {
+   "label": "Custom CSRs for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_csr_response_collection_2": {
+   "label": "Custom CSRs for an Account"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_csr_response_single": {
+   "label": "Custom CSRs for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_csr_response_single_2": {
+   "label": "Custom CSRs for an Account"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_hostname_response_collection": {
+   "label": "Custom Hostname for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_hostname_response_single": {
+   "label": "Custom Hostname for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_trust_store_response_collection": {
+   "label": "Custom Origin Trust Store"
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_trust_store_response_single": {
+   "label": "Custom Origin Trust Store"
+  },
+  "cloudflare_tls_certificates_and_hostnames_dcv_delegation_response": {
+   "label": "DCV Delegation"
+  },
+  "cloudflare_tls_certificates_and_hostnames_enabled_response": {
+   "label": "Zone-Level Authenticated Origin Pulls"
+  },
+  "cloudflare_tls_certificates_and_hostnames_fallback_origin_response": {
+   "label": "Custom Hostname Fallback Origin for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_hostname_aop_single_response": {
+   "label": "Per-Hostname Authenticated Origin Pull"
+  },
+  "cloudflare_tls_certificates_and_hostnames_hostname_assoc_response_collection": {
+   "label": "Per-Hostname Authenticated Origin Pull"
+  },
+  "cloudflare_tls_certificates_and_hostnames_hostname_associations_response": {
+   "label": "API Shield Client Certificates for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_keyless_response_collection": {
+   "label": "Keyless SSL for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_keyless_response_single": {
+   "label": "Keyless SSL for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_per_hostname_settings_response": {
+   "label": "Per-Hostname TLS Settings"
+  },
+  "cloudflare_tls_certificates_and_hostnames_per_hostname_settings_response_collection": {
+   "label": "Per-Hostname TLS Settings"
+  },
+  "cloudflare_tls_certificates_and_hostnames_ssl_universal_settings_response": {
+   "label": "Universal SSL Settings for a Zone"
+  },
+  "cloudflare_tls_certificates_and_hostnames_ssl_verification_response_collection": {
+   "label": "SSL Verification"
+  },
+  "cloudflare_tls_certificates_and_hostnames_total_tls_settings_response": {
+   "label": "Total TLS"
+  },
+  "cloudflare_tls_version": {
+   "label": "Radar HTTP"
+  },
+  "cloudflare_token": {
+   "label": "AI Search Tokens"
+  },
+  "cloudflare_top": {
+   "label": "Radar Internet Services Ranking"
+  },
+  "cloudflare_total_query": {
+   "label": "Brand Protection"
+  },
+  "cloudflare_traceroute_test": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_traffic_anomaly": {
+   "label": "Radar Traffic Anomalies"
+  },
+  "cloudflare_transcript": {
+   "label": "Sessions"
+  },
+  "cloudflare_transformation": {
+   "label": "Account Settings"
+  },
+  "cloudflare_transformations_allowed_origin": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_transformations_c2pa": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_transformations_config": {
+   "label": "Zone Settings"
+  },
+  "cloudflare_tree": {
+   "label": "Artifacts"
+  },
+  "cloudflare_trigger": {
+   "label": "Workflows"
+  },
+  "cloudflare_trusted_domain": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_tunnel_cfd_tunnel_response_collection": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_cfd_tunnel_response_single": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_configuration_response": {
+   "label": "Cloudflare Tunnel Configuration"
+  },
+  "cloudflare_tunnel_hostname_route_response_collection": {
+   "label": "Zero Trust Hostname Route"
+  },
+  "cloudflare_tunnel_hostname_route_response_single": {
+   "label": "Zero Trust Hostname Route"
+  },
+  "cloudflare_tunnel_mesh_configuration_response_single": {
+   "label": "Cloudflare Tunnel Configuration"
+  },
+  "cloudflare_tunnel_route_response_single": {
+   "label": "Tunnel Routing"
+  },
+  "cloudflare_tunnel_subnet_response_collection": {
+   "label": "Zero Trust Subnets"
+  },
+  "cloudflare_tunnel_subnet_response_single": {
+   "label": "Zero Trust Subnets"
+  },
+  "cloudflare_tunnel_teamnet_response_collection": {
+   "label": "Tunnel Routing"
+  },
+  "cloudflare_tunnel_teamnet_response_single": {
+   "label": "Tunnel Routing"
+  },
+  "cloudflare_tunnel_tunnel_client_response": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_tunnel_connections_response": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_tunnel_response_collection": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_tunnel_response_token": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_tunnel_warp_connector_client_response": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_tunnel_warp_connector_connections_response": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_vnet_response_collection": {
+   "label": "Tunnel Virtual Network"
+  },
+  "cloudflare_tunnel_vnet_response_single": {
+   "label": "Tunnel Virtual Network"
+  },
+  "cloudflare_tunnel_warp_connector_response_collection": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_warp_connector_response_single": {
+   "label": "Cloudflare Tunnel"
+  },
+  "cloudflare_tunnel_zero_trust_connectivity_settings_response": {
+   "label": "Zero Trust Connectivity Settings"
+  },
+  "cloudflare_type": {
+   "label": "Request for Information (RFI)"
+  },
+  "cloudflare_unique_device": {
+   "label": "DEX Synthetic Application Monitoring"
+  },
+  "cloudflare_upload_token": {
+   "label": "Pages Project"
+  },
+  "cloudflare_url": {
+   "label": "AI Gateway Gateways"
+  },
+  "cloudflare_url_ignore_pattern": {
+   "label": "Email Security Settings"
+  },
+  "cloudflare_url_normalization": {
+   "label": "URL Normalization"
+  },
+  "cloudflare_user_agent": {
+   "label": "Radar AI Bots"
+  },
+  "cloudflare_user_group": {
+   "label": "Account User Groups"
+  },
+  "cloudflare_user_schema": {
+   "label": "API Shield Schema Validation 2.0"
+  },
+  "cloudflare_ut_billing": {
+   "label": "Account Settings"
+  },
+  "cloudflare_v2": {
+   "label": "Worker Script"
+  },
+  "cloudflare_variant": {
+   "label": "Zone Cache Settings"
+  },
+  "cloudflare_vector": {
+   "label": "Radar Layer 3 Attacks"
+  },
+  "cloudflare_version": {
+   "label": "AI Gateway Dynamic Routes"
+  },
+  "cloudflare_vertical": {
+   "label": "Radar Layer 3 Attacks"
+  },
+  "cloudflare_vtt": {
+   "label": "Stream Subtitles/Captions"
+  },
+  "cloudflare_waf_managed_rules_rule_group_response_collection": {
+   "label": "WAF Rule Groups"
+  },
+  "cloudflare_waf_managed_rules_rule_group_response_single": {
+   "label": "WAF Rule Groups"
+  },
+  "cloudflare_waf_managed_rules_rule_response_collection": {
+   "label": "WAF Rules"
+  },
+  "cloudflare_waf_managed_rules_rule_response_single": {
+   "label": "WAF Rules"
+  },
+  "cloudflare_waf_product_api_bundle_response_custom_detection": {
+   "label": "Leaked Credential Checks"
+  },
+  "cloudflare_waf_product_api_bundle_response_custom_detection_collection": {
+   "label": "Leaked Credential Checks"
+  },
+  "cloudflare_waf_product_api_bundle_response_custom_scan_collection": {
+   "label": "Content Scanning"
+  },
+  "cloudflare_waf_product_api_bundle_response_custom_topics": {
+   "label": "AI Security for Apps"
+  },
+  "cloudflare_waf_product_api_bundle_response_settings": {
+   "label": "AI Security for Apps"
+  },
+  "cloudflare_waf_product_api_bundle_response_status": {
+   "label": "Leaked Credential Checks"
+  },
+  "cloudflare_waf_product_api_bundle_response_status_2": {
+   "label": "Content Scanning"
+  },
+  "cloudflare_waitingroom_event_response": {
+   "label": "Waiting Room"
+  },
+  "cloudflare_waitingroom_response_collection": {
+   "label": "Waiting Room"
+  },
+  "cloudflare_waitingroom_rules_response_collection": {
+   "label": "Waiting Room"
+  },
+  "cloudflare_waitingroom_single_response": {
+   "label": "Waiting Room"
+  },
+  "cloudflare_waitingroom_status_response": {
+   "label": "Waiting Room"
+  },
+  "cloudflare_web3_collection_response": {
+   "label": "Web3 Hostname"
+  },
+  "cloudflare_web3_content_list_details_response": {
+   "label": "Web3 Hostname"
+  },
+  "cloudflare_web3_content_list_entry_collection_response": {
+   "label": "Web3 Hostname"
+  },
+  "cloudflare_web3_content_list_entry_single_response": {
+   "label": "Web3 Hostname"
+  },
+  "cloudflare_web3_single_response": {
+   "label": "Web3 Hostname"
+  },
+  "cloudflare_widget": {
+   "label": "Turnstile"
+  },
+  "cloudflare_worker": {
+   "label": "Workers"
+  },
+  "cloudflare_workers_kv_value": {
+   "label": "Workers KV Namespace"
+  },
+  "cloudflare_workers_namespace_list_response": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_workers_namespace_script_response_single": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_workers_namespace_single_response": {
+   "label": "Workers for Platforms"
+  },
+  "cloudflare_workers_observability_query": {
+   "label": "Saved Queries"
+  },
+  "cloudflare_workers_script_and_version_settings_response": {
+   "label": "Worker Script"
+  },
+  "cloudflare_workers_script_response_collection": {
+   "label": "Worker Script"
+  },
+  "cloudflare_workers_script_settings_response": {
+   "label": "Worker Script"
+  },
+  "cloudflare_workers_versions_list_response": {
+   "label": "Worker Versions"
+  },
+  "cloudflare_workers_versions_single_response": {
+   "label": "Worker Versions"
+  },
+  "cloudflare_workflow": {
+   "label": "Workflows"
+  },
+  "cloudflare_zaraz_zaraz_config_response": {
+   "label": "Zaraz"
+  },
+  "cloudflare_zaraz_zaraz_config_return": {
+   "label": "Zaraz"
+  },
+  "cloudflare_zaraz_zaraz_workflow_response": {
+   "label": "Zaraz"
+  },
+  "cloudflare_zero_trust_gateway_applications_review_status_response": {
+   "label": "Zero Trust Applications Review Status"
+  },
+  "cloudflare_zero_trust_gateway_custom_certificate_settings": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_zero_trust_gateway_gateway_account": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_zero_trust_gateway_gateway_account_config": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_zero_trust_gateway_gateway_account_egress_cidr_pair_list_response": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_zero_trust_gateway_gateway_account_logging_settings_response": {
+   "label": "Zero Trust Accounts"
+  },
+  "cloudflare_zero_trust_gateway_list_item_response_collection": {
+   "label": "Zero Trust Lists"
+  },
+  "cloudflare_zero_trust_gateway_list_single_response": {
+   "label": "Zero Trust Lists"
+  },
+  "cloudflare_zero_trust_gateway_response_collection": {
+   "label": "Zero Trust Certificates"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_10": {
+   "label": "Zero Trust Gateway PAC Files"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_2": {
+   "label": "Zero Trust Gateway DNS Destination IPv4 Address Pairs"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_3": {
+   "label": "Zero Trust Lists"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_4": {
+   "label": "Zero Trust Gateway Operations"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_5": {
+   "label": "Zero Trust Gateway Locations"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_6": {
+   "label": "Zero Trust Gateway Rules"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_7": {
+   "label": "Zero Trust Gateway Application and Application Type Mappings"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_8": {
+   "label": "Zero Trust Gateway Categories"
+  },
+  "cloudflare_zero_trust_gateway_response_collection_9": {
+   "label": "Zero Trust Gateway Proxy Endpoints"
+  },
+  "cloudflare_zero_trust_gateway_single_response": {
+   "label": "Zero Trust Certificates"
+  },
+  "cloudflare_zero_trust_gateway_single_response_2": {
+   "label": "Zero Trust Gateway Operations"
+  },
+  "cloudflare_zero_trust_gateway_single_response_3": {
+   "label": "Zero Trust Gateway Locations"
+  },
+  "cloudflare_zero_trust_gateway_single_response_4": {
+   "label": "Zero Trust Gateway Rules"
+  },
+  "cloudflare_zero_trust_gateway_single_response_5": {
+   "label": "Zero Trust Gateway Proxy Endpoints"
+  },
+  "cloudflare_zero_trust_gateway_single_response_6": {
+   "label": "Zero Trust SSH Settings"
+  },
+  "cloudflare_zero_trust_gateway_single_response_7": {
+   "label": "Zero Trust Gateway PAC Files"
+  },
+  "cloudflare_zone": {
+   "label": "Zone"
+  },
+  "cloudflare_zt_risk_scoring": {
+   "label": "Zero Trust Risk Scoring"
+  }
+ },
+ "services": {}
+}
