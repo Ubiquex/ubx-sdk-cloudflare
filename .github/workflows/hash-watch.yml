@@ -1,0 +1,399 @@
+name: hash-watch
+
+# Weekly check against Cloudflare's own real, live OpenAPI spec URL for
+# content drift. Cloudflare publishes no discrete, pinnable release for
+# this spec (github.com/cloudflare/api-schemas, openapi.yaml on that
+# repo's own main branch) -- there is no version number to poll the way
+# version-watch.yml does for the four Terraform-provider-sourced repos
+# (ubx-sdk-aws/-google/-kubernetes/-azure). Instead: re-fetch the same
+# spec bytes, hash them, and compare against VERSION's committed
+# spec-sha256. On a hash change: bumps VERSION, re-runs
+# `ubx sdk gen --lang go|ts|py --out .` against it (all three languages,
+# one PR), and opens a PR with the combined diff for review. Never
+# auto-merges, same as every other repo in this org.
+#
+# Unlike DigitalOcean, this spec loads cleanly through
+# ubx-provider-dynamic's own openapi.Load as published -- no Redocly
+# bundling step needed here, hashing the raw fetched document directly
+# is already equivalent to what real generation parses.
+#
+# namespace_from_tags = true (UBI-222) -- a real, flagged judgment call,
+# not a clean win the way it was for DigitalOcean. See this repo's own
+# README.md and sdk/providers/.onboarding/cloudflare.json in ubiquex
+# for the full real numbers.
+#
+# Canonicalized-content hashing (sort_keys, compact separators, ISO
+# dates) matches every other repo's own real convention in this org.
+#
+# UBIQUEX_SOURCE_TOKEN is not needed -- ubiquex and ubx-provider-dynamic
+# are public repos, a plain unauthenticated clone works. --recurse-
+# submodules is required on the ubiquex clone (its own sdk/go, sdk/py,
+# sdk/ts are real git submodules; a bare clone leaves them empty and
+# `go build ./cmd/ubx` fails). Same ubx-provider-dynamic checkout
+# requirement as every dynamic-provider entry (cli/dynamicprovider.go's
+# own UBX_PROVIDER_DYNAMIC_REPO convention).
+
+on:
+  schedule:
+    - cron: "0 6 * * 2" # every Tuesday, 06:00 UTC -- offset from
+      # ubx-sdk-digitalocean's own Monday slot so a shared runner queue
+      # doesn't stack every real dynamic-provider repo's own regen on
+      # the same day.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  ERROR_ISSUE_LABEL: hash-watch-error
+
+jobs:
+  check-and-regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-cloudflare
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch the real Cloudflare OpenAPI spec and compute its canonicalized-content spec-sha256
+        id: spec
+        run: |
+          set +e
+          SOURCE_URL="https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.yaml"
+          fetched="${{ runner.temp }}/cloudflare-openapi.yaml"
+
+          # UBI-222: this whole step must never hard-fail the job -- a
+          # failure here has to reach the compare step as a real,
+          # reportable error state, not kill the run before compare
+          # (and everything after it, including the error-surfacing
+          # steps below) ever gets to run at all. set +e and an explicit
+          # exit-code check, not set -euo pipefail, for exactly that
+          # reason.
+          fetch_err="$(curl -sf --retry 5 --retry-all-errors -o "$fetched" "$SOURCE_URL" 2>&1)"
+          if [ $? -ne 0 ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            printf 'error=fetch failed: %s\n' "$(echo "$fetch_err" | tr '\n' ' ' | head -c 500)" >> "$GITHUB_OUTPUT"
+            echo "FAILED to fetch the real live spec: $fetch_err"
+            exit 0
+          fi
+
+          pip install --quiet pyyaml
+
+          python3 - <<PYEOF
+          import hashlib, json, os, datetime, yaml
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(doc):
+              # Same revision-key strip as every other repo's own
+              # canonicalize() this session -- a real no-op here (checked
+              # directly: this document has no top-level "revision" key),
+              # kept only so every repo runs identical logic.
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          try:
+              with open("$fetched") as f:
+                  doc = yaml.safe_load(f)
+              h = hashlib.sha256()
+              h.update(canonicalize(doc))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write("ok=true\n")
+                  out.write(f"hash={h.hexdigest()}\n")
+              print(f"Live canonicalized spec-sha256: {h.hexdigest()}")
+          except Exception as e:
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write("ok=false\n")
+                  out.write(f"error={e!r}\n")
+              print(f"FAILED to hash the real live spec: {e!r}")
+          PYEOF
+
+      - name: Compare against this repo's committed hash
+        id: compare
+        run: |
+          set -euo pipefail
+          current="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from spec-sha256: $current"
+          if [ "${{ steps.spec.outputs.ok }}" != "true" ]; then
+            echo "state=error" >> "$GITHUB_OUTPUT"
+            echo "detail=could not fetch/hash the real live spec: ${{ steps.spec.outputs.error }}" >> "$GITHUB_OUTPUT"
+          elif [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
+            echo "state=clean" >> "$GITHUB_OUTPUT"
+            echo "detail=live spec-sha256 matches VERSION." >> "$GITHUB_OUTPUT"
+            echo "Already current -- nothing to do."
+          else
+            echo "state=drift" >> "$GITHUB_OUTPUT"
+            echo "detail=live spec-sha256 ${{ steps.spec.outputs.hash }} does not match VERSION's own $current." >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Find any existing error tracking issue
+        id: existing
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          error_number="$(gh issue list --label "$ERROR_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          echo "error_number=$error_number" >> "$GITHUB_OUTPUT"
+
+      - name: Surface an error state -- never allowed to look like "nothing to report"
+        if: steps.compare.outputs.state == 'error'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**hash-watch could not check this repo for drift.**
+
+          ${{ steps.compare.outputs.detail }}
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.error_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.error_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: unable to check for drift" --label "$ERROR_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale error tracking issue once checking works again
+        if: steps.compare.outputs.state != 'error' && steps.existing.outputs.error_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.error_number }}" \
+            --comment "hash-watch checked successfully on this run (state: ${{ steps.compare.outputs.state }}) -- closing."
+
+      - name: Fail this run's own status on error, so it never shows green by accident
+        if: steps.compare.outputs.state == 'error'
+        run: |
+          echo "state: error -- ${{ steps.compare.outputs.detail }}"
+          exit 1
+
+      # --- everything below only runs when the schema content changed ---
+
+      - name: Check out ubiquex (to build ubx from source)
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+          git clone --depth=1 \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+      - name: Set up Go
+        if: steps.compare.outputs.state == 'drift'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Set up Deno
+        if: steps.compare.outputs.state == 'drift'
+        uses: denoland/setup-deno@v2.0.5
+        with:
+          deno-version: "2.x"
+
+      - name: Build ubx
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Regenerate bindings (all three languages)
+        if: steps.compare.outputs.state == 'drift'
+        env:
+          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir/.ubx"
+          cat > "$gendir/.ubx/config" <<EOF
+          [dynamic_providers.cloudflare]
+          schema_source = "openapi"
+          schema_url = "https://raw.githubusercontent.com/cloudflare/api-schemas/main/openapi.yaml"
+          base_url = "https://api.cloudflare.com/client/v4"
+          namespace_from_tags = true
+          EOF
+
+          # Each language's own semver `version` field is owned by
+          # publish.yml, not by codegen -- codegen always writes "0.0.0".
+          # Capture the real, currently-committed values before regen
+          # overwrites them, restore after.
+          own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
+          own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
+
+          mkdir -p "$gendir/out/cloudflare/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/cloudflare/sdk/go/go.mod"
+
+          # artifacts/cloudflare/ lives in this repo -- an absolute path,
+          # since the actual sdk gen invocation below runs from $gendir,
+          # not here.
+          descriptions_dir="$PWD/artifacts/cloudflare"
+
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only cloudflare --lang go --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only cloudflare --lang ts --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only cloudflare --lang py --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
+
+          # UBI-197: real ubx-provider-dynamic provenance (source, commit,
+          # dirty, unpushed) -- --require-clean-provenance above already
+          # refuses on anything but a clean, pushed commit, so this is
+          # real confirmation, not just a record of an unverified claim.
+          # Committed to this repo's own root, sibling to VERSION.
+          cp "$gendir/out/cloudflare/PROVENANCE.json" PROVENANCE.json
+
+          rsync -a --delete \
+            --exclude='go.sum' \
+            "$gendir/out/cloudflare/sdk/go/" sdk/go/
+          rsync -a --delete \
+            --exclude='deno.json' --exclude='deno.lock' \
+            "$gendir/out/cloudflare/sdk/typescript/" sdk/typescript/
+          rsync -a --delete \
+            "$gendir/out/cloudflare/sdk/python/" sdk/python/
+
+          python3 -c "
+          import json
+          p = 'sdk/typescript/package.json'
+          d = json.load(open(p))
+          d['version'] = '$own_ts_version'
+          json.dump(d, open(p, 'w'), indent=2)
+          open(p, 'a').write('\n')
+          "
+          python3 -c "
+          import re
+          p = 'sdk/python/pyproject.toml'
+          content = open(p).read()
+          content = re.sub(r'version = \"[^\"]+\"', 'version = \"$own_py_version\"', content, count=1)
+          open(p, 'w').write(content)
+          "
+
+          cat > VERSION <<EOF
+          spec-sha256: ${{ steps.spec.outputs.hash }}
+          fetched: $(date -u +%Y-%m-%d)
+          source: https://github.com/cloudflare/api-schemas (openapi.yaml)
+          EOF
+
+      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import json, os
+
+          with open("sdk/typescript/deno.json") as fh:
+              cfg = json.load(fh)
+
+          exports = {}
+          for dirpath, _, filenames in os.walk("sdk/typescript/cloudflare"):
+              for f in sorted(filenames):
+                  if not f.endswith(".ts"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
+                  exports["./" + rel[:-3]] = "./" + rel
+
+          cfg["exports"] = exports
+
+          with open("sdk/typescript/deno.json", "w") as fh:
+              json.dump(cfg, fh, indent=2)
+              fh.write("\n")
+
+          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
+          PYEOF
+
+      - name: Regenerate sdk/go/go.sum
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go mod tidy
+
+      - name: Sanity-check the regenerated Go tree still builds
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go build ./...
+          go vet ./...
+
+      - name: Sanity-check the regenerated TS tree still typechecks
+        if: steps.compare.outputs.state == 'drift'
+        run: |
+          set -euo pipefail
+          cd sdk/typescript
+          find . -name "*.ts" -print0 | xargs -0 deno cache
+          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
+
+      - name: Sanity-check the regenerated Python tree -- real import of every module
+        if: steps.compare.outputs.state == 'drift'
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          set -euo pipefail
+          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
+          pip install $deps
+          python3 - <<'PYEOF'
+          import os, sys, importlib
+
+          repo_root = os.path.join(os.getcwd(), "sdk", "python")
+          sys.path.insert(0, repo_root)
+
+          count = 0
+          errors = []
+          for dirpath, dirnames, filenames in os.walk(repo_root):
+              for f in filenames:
+                  if not f.endswith(".py"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
+                  mod = rel[:-3].replace(os.sep, ".")
+                  if mod.endswith(".__init__"):
+                      mod = mod[: -len(".__init__")]
+                  try:
+                      importlib.import_module(mod)
+                      count += 1
+                  except Exception as e:
+                      errors.append((mod, str(e)))
+
+          print(f"imported {count} modules OK")
+          if errors:
+              print(f"{len(errors)} ERRORS:")
+              for m, e in errors:
+                  print(f"  {m}: {e}")
+              sys.exit(1)
+          print("ZERO errors")
+          PYEOF
+
+      - name: Open PR
+        if: steps.compare.outputs.state == 'drift'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          short="$(echo "${{ steps.spec.outputs.hash }}" | cut -c1-12)"
+          branch="sdk-regen/cloudflare-$short"
+          git checkout -b "$branch"
+          git add -A
+          git commit -m "sdk: regenerate from Cloudflare OpenAPI spec $short"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "sdk: regenerate from Cloudflare OpenAPI spec $short" \
+            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on Cloudflare's own live main-branch OpenAPI spec (github.com/cloudflare/api-schemas) -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+
+          Previous spec-sha256: \`${{ steps.compare.outputs.current }}\`
+          New spec-sha256: \`${{ steps.spec.outputs.hash }}\`
+
+          New files = new resource type. Modified files = an existing resource's schema changed. This never auto-merges -- review the diff before merging." \
+            --base main --head "$branch"

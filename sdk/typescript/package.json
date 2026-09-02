@@ -1,0 +1,9 @@
+{
+  "name": "@ubx/sdk-cloudflare",
+  "version": "1.0.0",
+  "description": "Generated TypeScript bindings for cloudflare@dynamic (ubx sdk gen). DO NOT EDIT.",
+  "type": "module",
+  "dependencies": {
+    "@ubx/sdk": "^1.0.0"
+  }
+}
