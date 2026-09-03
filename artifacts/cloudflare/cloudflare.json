@@ -122,6 +122,7 @@
     "headers": "The HTTP headers sent with every request to the custom provider.",
     "js_example": "An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard.",
     "link": "A link to the custom provider's own documentation.",
+    "name": "The name of the custom provider.",
     "position": "The display order of the custom provider in the dashboard.",
     "result": "The requested resource or collection of resources.",
     "slug": "A URL-safe identifier for the custom provider.",
