@@ -9,6 +9,9 @@
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_category": {
+    "uuid": "The unique identifier of the resource."
+  },
   "cloudflare_cloudforce_one_rule_preview": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
@@ -73,6 +76,9 @@
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any."
   },
+  "cloudflare_domain": {
+    "integration_id": "The unique identifier of the integration."
+  },
   "cloudflare_evaluation": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
     "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
@@ -91,7 +97,8 @@
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
   "cloudflare_event": {
-    "created_at": "The timestamp when the resource was created, in RFC 3339 format."
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "uuid": "The unique identifier of the resource."
   },
   "cloudflare_finetune_asset": {
     "result": "The requested resource or collection of resources.",
@@ -122,7 +129,8 @@
   },
   "cloudflare_group": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
-    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format.",
+    "uuid": "The unique identifier of the resource."
   },
   "cloudflare_image": {
     "result": "The requested resource or collection of resources.",
