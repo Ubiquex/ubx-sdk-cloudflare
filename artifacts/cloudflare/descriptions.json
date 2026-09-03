@@ -367,6 +367,10 @@
   "source": "ai-sdk-inferred",
   "text": "A link to the custom provider's own documentation."
  },
+ "cloudflare_custom_provider.name": {
+  "source": "ai-sdk-inferred",
+  "text": "The name of the custom provider."
+ },
  "cloudflare_custom_provider.position": {
   "source": "ai-sdk-inferred",
   "text": "The display order of the custom provider in the dashboard."
@@ -3675,6 +3679,134 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_digital_experience_monitoring_device.always_on": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether the WARP client is configured to always stay connected."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.battery_charging": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether the device's own battery is currently charging."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.battery_cycles": {
+  "source": "ai-sdk-inferred",
+  "text": "The number of charge cycles the device's own battery has completed."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.battery_pct": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current battery charge percentage."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.connection_type": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current network connection type (e.g. wifi, cellular)."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.cpu_pct": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current CPU utilization percentage."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.cpu_pct_by_app": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own CPU utilization broken down by application."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.device_ipv4": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current IPv4 address."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.device_ipv6": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current IPv6 address."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.disk_read_bps": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current disk read throughput, in bytes per second."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.disk_usage_pct": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current disk usage percentage."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.disk_write_bps": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current disk write throughput, in bytes per second."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.doh_subdomain": {
+  "source": "ai-sdk-inferred",
+  "text": "The DNS-over-HTTPS subdomain the device's own WARP client is using."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.estimated_loss_pct": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own estimated network packet loss percentage."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.firewall_enabled": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether the device's own local firewall is enabled."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.gateway_ipv4": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current IPv4 default gateway."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.gateway_ipv6": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current IPv6 default gateway."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.handshake_latency_ms": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current WARP tunnel handshake latency, in milliseconds."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.isp_ipv4": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current public IPv4 address as seen by its ISP."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.isp_ipv6": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current public IPv6 address as seen by its ISP."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.metal": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether the device is a bare-metal machine rather than a virtual machine."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.network_rcvd_bps": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current network receive throughput, in bytes per second."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.network_sent_bps": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current network send throughput, in bytes per second."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.network_ssid": {
+  "source": "ai-sdk-inferred",
+  "text": "The Wi-Fi network name the device is currently connected to."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.ram_available_kb": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own currently available RAM, in kilobytes."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.ram_used_pct": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current RAM usage percentage."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.ram_used_pct_by_app": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own RAM usage broken down by application."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.switch_locked": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether the device's own WARP client switch is locked (the user cannot disable it)."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.timestamp": {
+  "source": "ai-sdk-inferred",
+  "text": "The time this fleet-status snapshot was captured."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.tunnel_type": {
+  "source": "ai-sdk-inferred",
+  "text": "The type of tunnel the device's own WARP client is using."
+ },
+ "data_cloudflare_digital_experience_monitoring_device.wifi_strength_dbm": {
+  "source": "ai-sdk-inferred",
+  "text": "The device's own current Wi-Fi signal strength, in dBm."
+ },
+ "data_cloudflare_digital_experience_monitoring_dex_response_collection.kind": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by test kind."
+ },
  "data_cloudflare_digital_experience_monitoring_dex_response_collection.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -3682,6 +3814,10 @@
  "data_cloudflare_digital_experience_monitoring_dex_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_digital_experience_monitoring_dex_response_collection.test_name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact test name match."
  },
  "data_cloudflare_digital_experience_monitoring_fleet_status_devices_response.from": {
   "source": "ai-sdk-inferred",
@@ -3755,9 +3891,21 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_domain.active_delivery_mode": {
+  "source": "ai-sdk-inferred",
+  "text": "The delivery mode currently active for this domain."
+ },
+ "data_cloudflare_domain.allowed_delivery_mode": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to domains allowing this delivery mode."
+ },
  "data_cloudflare_domain.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_domain.domain": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this domain."
  },
  "data_cloudflare_domain.integration_id": {
   "source": "ai-sdk-inferred",
@@ -3778,6 +3926,10 @@
  "data_cloudflare_domain.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_domain.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by domain status."
  },
  "data_cloudflare_domain_category.result": {
   "source": "ai-sdk-inferred",
@@ -3806,6 +3958,10 @@
  "data_cloudflare_dos_expression_filter_list_response.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_dos_expression_filter_list_response.mode": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by filter mode."
  },
  "data_cloudflare_dos_expression_filter_list_response.order": {
   "source": "ai-sdk-inferred",
@@ -3939,6 +4095,14 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_email_sending_subdomain_reputation_complaints_response.end_at": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_email_sending_subdomain_reputation_complaints_response.start_at": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
  "data_cloudflare_encrypted.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
@@ -3951,6 +4115,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_evaluation.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact evaluation name match."
+ },
  "data_cloudflare_evaluation.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -3958,6 +4126,10 @@
  "data_cloudflare_evaluation.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_evaluation.processed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by whether the evaluation has been processed."
  },
  "data_cloudflare_evaluation.result": {
   "source": "ai-sdk-inferred",
@@ -3974,6 +4146,10 @@
  "data_cloudflare_evaluation_type.order_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_evaluation_type.order_by_direction": {
+  "source": "ai-sdk-inferred",
+  "text": "The direction to sort results, ascending or descending."
  },
  "data_cloudflare_evaluation_type.page": {
   "source": "ai-sdk-inferred",
@@ -3999,6 +4175,26 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_example.templates": {
+  "source": "ai-sdk-inferred",
+  "text": "The example letter templates."
+ },
+ "data_cloudflare_file.name": {
+  "source": "ai-sdk-inferred",
+  "text": "The repository this file belongs to."
+ },
+ "data_cloudflare_file.namespace": {
+  "source": "ai-sdk-inferred",
+  "text": "The namespace the repository belongs to."
+ },
+ "data_cloudflare_file.path": {
+  "source": "ai-sdk-inferred",
+  "text": "The path of the file within the repository."
+ },
+ "data_cloudflare_file.ref": {
+  "source": "ai-sdk-inferred",
+  "text": "The git ref (branch, tag, or commit) to fetch the file at."
+ },
  "data_cloudflare_finetune.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
@@ -4010,6 +4206,38 @@
  "data_cloudflare_finetune.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_firewall_filter_response_collection.paused": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by paused status."
+ },
+ "data_cloudflare_firewall_firewalluablock_response_collection.description": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to descriptions containing this substring."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.description": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to descriptions containing this substring."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.ip": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by IP address."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.ip_range_search": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to rules matching this IP range."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.modified_on": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by last-modified time."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.priority": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by rule priority."
+ },
+ "data_cloudflare_firewall_zonelockdown_response_collection.uri_search": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to rules matching this URL pattern."
  },
  "data_cloudflare_flagship_app.errors": {
   "source": "ai-sdk-inferred",
@@ -4043,6 +4271,18 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_flagship_evaluation_result.reason": {
+  "source": "ai-sdk-inferred",
+  "text": "Why this variant was selected for the evaluated context."
+ },
+ "data_cloudflare_flagship_evaluation_result.value": {
+  "source": "ai-sdk-inferred",
+  "text": "The resolved value of the flag for the evaluated context."
+ },
+ "data_cloudflare_flagship_evaluation_result.variant": {
+  "source": "ai-sdk-inferred",
+  "text": "The name of the variant resolved for the evaluated context."
+ },
  "data_cloudflare_flagship_flag.errors": {
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
@@ -4059,6 +4299,10 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_flagship_flag_definitions.flags": {
+  "source": "ai-sdk-inferred",
+  "text": "The full flag definitions for the application."
+ },
  "data_cloudflare_flow.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4066,6 +4310,10 @@
  "data_cloudflare_flow.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_full_report.asn_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Autonomous System to fetch the full report for."
  },
  "data_cloudflare_gateway.account_id": {
   "source": "ai-sdk-inferred",
@@ -4167,6 +4415,10 @@
   "source": "ai-sdk-inferred",
   "text": "The start of the time range to query."
  },
+ "data_cloudflare_http_test.interval": {
+  "source": "ai-sdk-inferred",
+  "text": "The polling interval the HTTP test runs at."
+ },
  "data_cloudflare_http_test.to": {
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
@@ -4179,6 +4431,90 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_iam_collection_tokens_response.include_expired": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include expired tokens in the response."
+ },
+ "data_cloudflare_iam_permissions_group_response_collection.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact permission group name match."
+ },
+ "data_cloudflare_iam_permissions_group_response_collection.scope": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to permission groups within this scope."
+ },
+ "data_cloudflare_iam_scim_authentication_scheme.authentication_schemes": {
+  "source": "ai-sdk-inferred",
+  "text": "The authentication schemes supported by this account's own SCIM endpoint."
+ },
+ "data_cloudflare_iam_scim_authentication_scheme.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this configuration resource conforms to."
+ },
+ "data_cloudflare_iam_scim_group_summary.resources": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM Groups matching the query."
+ },
+ "data_cloudflare_iam_scim_group_summary.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this list response conforms to."
+ },
+ "data_cloudflare_iam_scim_resource_type.items_per_page": {
+  "source": "ai-sdk-inferred",
+  "text": "The number of resources returned in this page."
+ },
+ "data_cloudflare_iam_scim_resource_type.resources": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM resource types supported by this account's own SCIM endpoint."
+ },
+ "data_cloudflare_iam_scim_resource_type.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this list response conforms to."
+ },
+ "data_cloudflare_iam_scim_resource_type.start_index": {
+  "source": "ai-sdk-inferred",
+  "text": "The 1-based index of the first result in this page."
+ },
+ "data_cloudflare_iam_scim_resource_type.total_results": {
+  "source": "ai-sdk-inferred",
+  "text": "The total number of results matching the query."
+ },
+ "data_cloudflare_iam_scim_schema.items_per_page": {
+  "source": "ai-sdk-inferred",
+  "text": "The number of resources returned in this page."
+ },
+ "data_cloudflare_iam_scim_schema.resources": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schemas supported by this account's own SCIM endpoint."
+ },
+ "data_cloudflare_iam_scim_schema.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this list response conforms to."
+ },
+ "data_cloudflare_iam_scim_schema.start_index": {
+  "source": "ai-sdk-inferred",
+  "text": "The 1-based index of the first result in this page."
+ },
+ "data_cloudflare_iam_scim_schema.total_results": {
+  "source": "ai-sdk-inferred",
+  "text": "The total number of results matching the query."
+ },
+ "data_cloudflare_iam_scim_schema_attr.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this resource conforms to."
+ },
+ "data_cloudflare_iam_scim_schema_extension.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this resource conforms to."
+ },
+ "data_cloudflare_iam_scim_user.resources": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM Users matching the query."
+ },
+ "data_cloudflare_iam_scim_user.schemas": {
+  "source": "ai-sdk-inferred",
+  "text": "The SCIM schema URIs this list response conforms to."
+ },
  "data_cloudflare_image.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4186,6 +4522,10 @@
  "data_cloudflare_image.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_images_image_variant_flat_response.variant_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The image variant to fetch in flattened form."
  },
  "data_cloudflare_impersonation_registry.direction": {
   "source": "ai-sdk-inferred",
@@ -4203,9 +4543,21 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_impersonation_registry.provenance": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by how the entry was added (e.g. manually, automatically detected)."
+ },
  "data_cloudflare_impersonation_registry.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_indicator.indicator_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by indicator type."
+ },
+ "data_cloudflare_indicator.indicators": {
+  "source": "ai-sdk-inferred",
+  "text": "The threat indicators matching the query."
  },
  "data_cloudflare_indicator.page": {
   "source": "ai-sdk-inferred",
@@ -4214,6 +4566,18 @@
  "data_cloudflare_indicator.page_size": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_indicator.pagination": {
+  "source": "ai-sdk-inferred",
+  "text": "Pagination metadata for the result."
+ },
+ "data_cloudflare_indicator_type.items": {
+  "source": "ai-sdk-inferred",
+  "text": "The indicator types matching the query."
+ },
+ "data_cloudflare_indicator_type.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by indicator type category."
  },
  "data_cloudflare_industry.errors": {
   "source": "ai-sdk-inferred",
@@ -4227,6 +4591,22 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_info.index_name": {
+  "source": "ai-sdk-inferred",
+  "text": "The Vectorize index to fetch metadata for."
+ },
+ "data_cloudflare_insight.dismissed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by dismissed status."
+ },
+ "data_cloudflare_insight.issue_class": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue class."
+ },
+ "data_cloudflare_insight.issue_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue type."
+ },
  "data_cloudflare_insight.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4234,6 +4614,22 @@
  "data_cloudflare_insight.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_insight.product": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this product."
+ },
+ "data_cloudflare_insight.severity": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by severity."
+ },
+ "data_cloudflare_insight.subject": {
+  "source": "ai-sdk-inferred",
+  "text": "The dimension to group counts by."
+ },
+ "data_cloudflare_inspect.id": {
+  "source": "ai-sdk-inferred",
+  "text": "The SPF record to inspect."
  },
  "data_cloudflare_instance.account_id": {
   "source": "ai-sdk-inferred",
@@ -4255,9 +4651,93 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_intel_asn_components_schemas_response.asn": {
+  "source": "ai-sdk-inferred",
+  "text": "The Autonomous System Number to look up."
+ },
+ "data_cloudflare_intel_collection_response.domain": {
+  "source": "ai-sdk-inferred",
+  "text": "The domains to look up."
+ },
+ "data_cloudflare_intel_collection_response.include_ranking": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include popularity ranking data in the response."
+ },
+ "data_cloudflare_intel_collection_response.skip_ranking": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to skip popularity ranking lookup."
+ },
+ "data_cloudflare_intel_components_schemas_single_response.ipv4": {
+  "source": "ai-sdk-inferred",
+  "text": "The IPv4 address to look up passive DNS records for."
+ },
+ "data_cloudflare_intel_response.domain": {
+  "source": "ai-sdk-inferred",
+  "text": "The domain to fetch history for."
+ },
+ "data_cloudflare_intel_schemas_response.ipv4": {
+  "source": "ai-sdk-inferred",
+  "text": "The IPv4 address to look up."
+ },
+ "data_cloudflare_intel_schemas_response.ipv6": {
+  "source": "ai-sdk-inferred",
+  "text": "The IPv6 address to look up."
+ },
+ "data_cloudflare_intel_single_response.domain": {
+  "source": "ai-sdk-inferred",
+  "text": "The domain to look up."
+ },
+ "data_cloudflare_intel_single_response.skip_dns": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to skip DNS lookup for this domain."
+ },
+ "data_cloudflare_intel_single_response.skip_ranking": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to skip popularity ranking lookup."
+ },
+ "data_cloudflare_intel_sinkholes_ingress_collection_response.sinkhole_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The sinkhole to fetch ingress rules for."
+ },
+ "data_cloudflare_intel_url_intelligence_single_response.url": {
+  "source": "ai-sdk-inferred",
+  "text": "The URL to look up."
+ },
+ "data_cloudflare_investigate.alert_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to investigations triggered by this alert."
+ },
  "data_cloudflare_investigate.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
+ },
+ "data_cloudflare_investigate.detections_only": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include only messages with a real detection."
+ },
+ "data_cloudflare_investigate.domain": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this domain."
+ },
+ "data_cloudflare_investigate.end": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_investigate.final_disposition": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the message's own final disposition."
+ },
+ "data_cloudflare_investigate.message_action": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the action taken on the message."
+ },
+ "data_cloudflare_investigate.message_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this message."
+ },
+ "data_cloudflare_investigate.metric": {
+  "source": "ai-sdk-inferred",
+  "text": "The metric to aggregate results by."
  },
  "data_cloudflare_investigate.page": {
   "source": "ai-sdk-inferred",
@@ -4266,6 +4746,34 @@
  "data_cloudflare_investigate.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_investigate.query": {
+  "source": "ai-sdk-inferred",
+  "text": "A search term used to filter results."
+ },
+ "data_cloudflare_investigate.recipient": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this recipient."
+ },
+ "data_cloudflare_investigate.sender": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this sender."
+ },
+ "data_cloudflare_investigate.smtp_helo_ip": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the sending server's own SMTP HELO IP address."
+ },
+ "data_cloudflare_investigate.start": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_investigate.subject": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to subjects containing this substring."
+ },
+ "data_cloudflare_ip.networks": {
+  "source": "ai-sdk-inferred",
+  "text": "The real, current IPv4/IPv6 network ranges Cloudflare's own edge operates from."
  },
  "data_cloudflare_ip_profile.account_id": {
   "source": "ai-sdk-inferred",
@@ -4323,6 +4831,18 @@
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
  },
+ "data_cloudflare_issue.dismissed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by dismissed status."
+ },
+ "data_cloudflare_issue.issue_class": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue class."
+ },
+ "data_cloudflare_issue.issue_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue type."
+ },
  "data_cloudflare_issue.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4331,9 +4851,25 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_issue.product": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this product."
+ },
+ "data_cloudflare_issue.severity": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by severity."
+ },
+ "data_cloudflare_issue.subject": {
+  "source": "ai-sdk-inferred",
+  "text": "The dimension to group counts by."
+ },
  "data_cloudflare_item.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_item.name": {
+  "source": "ai-sdk-inferred",
+  "text": "The namespace the item belongs to."
  },
  "data_cloudflare_item.page": {
   "source": "ai-sdk-inferred",
@@ -4354,6 +4890,10 @@
  "data_cloudflare_item.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_item.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by item processing status."
  },
  "data_cloudflare_item.success": {
   "source": "ai-sdk-inferred",
@@ -4399,6 +4939,10 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_label.filter": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by label ownership source."
+ },
  "data_cloudflare_label.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4407,17 +4951,37 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_label.with_mapped_resource_counts": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include the number of resources mapped to each label."
+ },
  "data_cloudflare_letter.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_letter.letters": {
+  "source": "ai-sdk-inferred",
+  "text": "The letters matching the query."
+ },
+ "data_cloudflare_letter.notice_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The takedown notice these letters belong to."
  },
  "data_cloudflare_level.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_level.sensitivity_group_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The sensitivity group these levels belong to."
+ },
  "data_cloudflare_level_order.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_level_order.sensitivity_group_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The sensitivity group whose level ordering is being fetched."
  },
  "data_cloudflare_lex_available_destination_list_response.account_id": {
   "source": "ai-sdk-inferred",
@@ -4447,6 +5011,10 @@
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
  },
+ "data_cloudflare_lex_dataset_summary_list_response.include_zones": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include zone-scoped datasets in the response."
+ },
  "data_cloudflare_lex_dataset_summary_list_response.messages": {
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
@@ -4471,6 +5039,10 @@
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
  },
+ "data_cloudflare_lex_query_response.query": {
+  "source": "ai-sdk-inferred",
+  "text": "The SQL query executed against the Log Explorer dataset."
+ },
  "data_cloudflare_lex_query_response.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4478,6 +5050,10 @@
  "data_cloudflare_lex_query_response.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_lex_v4_error_2.dataset_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Log Explorer dataset to fetch."
  },
  "data_cloudflare_lex_v4_error_2.errors": {
   "source": "ai-sdk-inferred",
@@ -4499,6 +5075,18 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare zone this request is scoped to."
  },
+ "data_cloudflare_livestream.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The livestreams matching the query."
+ },
+ "data_cloudflare_livestream.end_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_livestream.exclude_meetings": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to exclude livestreams tied to meetings."
+ },
  "data_cloudflare_livestream.page_no": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4511,9 +5099,21 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_livestream.start_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_livestream.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by livestream status."
+ },
  "data_cloudflare_livestream.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_livestream_session.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The livestream sessions matching the query."
  },
  "data_cloudflare_livestream_session.page_no": {
   "source": "ai-sdk-inferred",
@@ -4539,13 +5139,33 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Load Balancing pool."
  },
+ "data_cloudflare_load_balancing_load_balancer_components_schemas_single_response.load_balancer_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Load Balancer to fetch."
+ },
  "data_cloudflare_load_balancing_load_balancer_components_schemas_single_response.zone_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare zone this request is scoped to."
  },
+ "data_cloudflare_load_balancing_monitor_group_references_response.monitor_group_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The monitor group to fetch references for."
+ },
+ "data_cloudflare_load_balancing_monitor_references_response.monitor_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The monitor to fetch references for."
+ },
+ "data_cloudflare_load_balancing_monitor_response_single.monitor_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The monitor to fetch."
+ },
  "data_cloudflare_load_balancing_pools_references_response.pool_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Load Balancing pool."
+ },
+ "data_cloudflare_load_balancing_preview_result_response.preview_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Load Balancing preview run to fetch results for."
  },
  "data_cloudflare_load_balancing_schemas_single_response.pool_id": {
   "source": "ai-sdk-inferred",
@@ -4555,13 +5175,85 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_log.cached": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by cache-hit status."
+ },
  "data_cloudflare_log.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_log.end_date": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the date range to query."
+ },
+ "data_cloudflare_log.feedback": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by recorded feedback."
+ },
+ "data_cloudflare_log.filters": {
+  "source": "ai-sdk-inferred",
+  "text": "Additional structured filters applied to the query."
+ },
+ "data_cloudflare_log.max_cost": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests costing at most this amount."
+ },
+ "data_cloudflare_log.max_duration": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests taking at most this duration."
+ },
+ "data_cloudflare_log.max_tokens_in": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at most this many input tokens."
+ },
+ "data_cloudflare_log.max_tokens_out": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at most this many output tokens."
+ },
+ "data_cloudflare_log.max_total_tokens": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at most this many total tokens."
+ },
+ "data_cloudflare_log.meta_info": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include additional metadata in each returned log entry."
+ },
+ "data_cloudflare_log.min_cost": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests costing at least this amount."
+ },
+ "data_cloudflare_log.min_duration": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests taking at least this duration."
+ },
+ "data_cloudflare_log.min_tokens_in": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at least this many input tokens."
+ },
+ "data_cloudflare_log.min_tokens_out": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at least this many output tokens."
+ },
+ "data_cloudflare_log.min_total_tokens": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests with at least this many total tokens."
+ },
+ "data_cloudflare_log.model": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests using this model."
+ },
+ "data_cloudflare_log.model_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by model type."
+ },
  "data_cloudflare_log.order_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_log.order_by_direction": {
+  "source": "ai-sdk-inferred",
+  "text": "The direction to sort results, ascending or descending."
  },
  "data_cloudflare_log.page": {
   "source": "ai-sdk-inferred",
@@ -4570,6 +5262,18 @@
  "data_cloudflare_log.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_log.provider": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to requests routed through this provider."
+ },
+ "data_cloudflare_log.request_content_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by request content type."
+ },
+ "data_cloudflare_log.response_content_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by response content type."
  },
  "data_cloudflare_log.result": {
   "source": "ai-sdk-inferred",
@@ -4582,6 +5286,10 @@
  "data_cloudflare_log.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_log.start_date": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the date range to query."
  },
  "data_cloudflare_log.success": {
   "source": "ai-sdk-inferred",
@@ -4599,9 +5307,17 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_logpush_transformer_content_response.version_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The transformer version to fetch content for."
+ },
  "data_cloudflare_logpush_transformer_version_response_collection.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_logshare_fields_response.key": {
+  "source": "ai-sdk-inferred",
+  "text": "The API key used to authenticate the Logshare request."
  },
  "data_cloudflare_magic_visibility_mnm_mnm_config_single_response.account_id": {
   "source": "ai-sdk-inferred",
@@ -4619,6 +5335,14 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_managed.metadata": {
+  "source": "ai-sdk-inferred",
+  "text": "Metadata about the managed rule catalog."
+ },
+ "data_cloudflare_managed.rules": {
+  "source": "ai-sdk-inferred",
+  "text": "The Cloudflare-managed rules available."
+ },
  "data_cloudflare_managed_rule.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4631,9 +5355,21 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_match.include_dismissed": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include dismissed matches in the response."
+ },
+ "data_cloudflare_match.include_domain_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include the matched domain's own ID in the response."
+ },
  "data_cloudflare_match.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_match.matches": {
+  "source": "ai-sdk-inferred",
+  "text": "The domain matches found."
  },
  "data_cloudflare_match.offset": {
   "source": "ai-sdk-inferred",
@@ -4651,6 +5387,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_mcn_catalog_syncs_prebuilt_policies_response.destination_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to prebuilt policies for this destination type."
+ },
  "data_cloudflare_mcn_get_magic_wan_address_space_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
@@ -4659,13 +5399,29 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_mcn_list_onramps_response.desc": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to sort results in descending order."
+ },
  "data_cloudflare_mcn_list_onramps_response.order_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
  },
+ "data_cloudflare_mcn_list_onramps_response.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by onramp status."
+ },
+ "data_cloudflare_mcn_list_onramps_response.vpcs": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to onramps attached to these VPCs."
+ },
  "data_cloudflare_mcn_provider_initial_setup_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_mcn_provider_initial_setup_response.provider_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The cloud provider registration to fetch setup instructions for."
  },
  "data_cloudflare_mcn_read_account_catalog_syncs_response.account_id": {
   "source": "ai-sdk-inferred",
@@ -4675,17 +5431,49 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_mcn_read_account_providers_response.cloudflare": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to Cloudflare-managed provider registrations."
+ },
+ "data_cloudflare_mcn_read_account_providers_response.desc": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to sort results in descending order."
+ },
  "data_cloudflare_mcn_read_account_providers_response.order_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_mcn_read_account_providers_response.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by provider registration status."
  },
  "data_cloudflare_mcn_read_account_resource_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_mcn_read_account_resource_response.resource_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The resource to fetch."
+ },
+ "data_cloudflare_mcn_read_account_resource_response.v2": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to use the v2 resource shape."
+ },
  "data_cloudflare_mcn_read_account_resources_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.cloudflare": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to Cloudflare-managed resources."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.desc": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to sort results in descending order."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.managed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by whether the resource is Cloudflare-managed."
  },
  "data_cloudflare_mcn_read_account_resources_response.order_by": {
   "source": "ai-sdk-inferred",
@@ -4699,17 +5487,53 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_mcn_read_account_resources_response.provider_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to resources from this provider registration."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.region": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to resources in this region."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.resource_group": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this resource group."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.resource_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this resource."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.resource_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by resource type."
+ },
  "data_cloudflare_mcn_read_account_resources_response.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_mcn_read_account_resources_response.v2": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to use the v2 resource shape."
  },
  "data_cloudflare_mconn_connector_interrupts_list_response.connector_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Magic Connector."
  },
+ "data_cloudflare_mconn_customer_connectors_list_response.device_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by connector device type."
+ },
  "data_cloudflare_mconn_customer_events_get_success.connector_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Magic Connector."
+ },
+ "data_cloudflare_mconn_customer_events_get_success.event_n": {
+  "source": "ai-sdk-inferred",
+  "text": "The event number to fetch."
+ },
+ "data_cloudflare_mconn_customer_events_get_success.event_t": {
+  "source": "ai-sdk-inferred",
+  "text": "The event type to fetch."
  },
  "data_cloudflare_mconn_customer_events_latest_get_success.connector_id": {
   "source": "ai-sdk-inferred",
@@ -4727,6 +5551,10 @@
   "source": "ai-sdk-inferred",
   "text": "The start of the time range to query."
  },
+ "data_cloudflare_mconn_customer_events_list_success.k": {
+  "source": "ai-sdk-inferred",
+  "text": "The event key to filter by."
+ },
  "data_cloudflare_mconn_customer_events_list_success.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
@@ -4738,6 +5566,10 @@
  "data_cloudflare_mconn_customer_snapshots_get_success.connector_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Magic Connector."
+ },
+ "data_cloudflare_mconn_customer_snapshots_get_success.snapshot_t": {
+  "source": "ai-sdk-inferred",
+  "text": "The snapshot type to fetch."
  },
  "data_cloudflare_mconn_customer_snapshots_latest_get_success.connector_id": {
   "source": "ai-sdk-inferred",
@@ -4763,6 +5595,10 @@
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
  },
+ "data_cloudflare_meeting.end_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
  "data_cloudflare_meeting.page_no": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4775,6 +5611,18 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_meeting.start_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_meeting.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by meeting status."
+ },
+ "data_cloudflare_member.group_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The group these members belong to."
+ },
  "data_cloudflare_memory.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4786,6 +5634,10 @@
  "data_cloudflare_message.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_message.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by message status."
  },
  "data_cloudflare_metricsexport.errors": {
   "source": "ai-sdk-inferred",
@@ -4851,6 +5703,10 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_moa.prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "The prefix to look up MOAS anomalies for."
+ },
  "data_cloudflare_moa.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -4907,29 +5763,97 @@
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
  },
+ "data_cloudflare_nsc_cni.items": {
+  "source": "ai-sdk-inferred",
+  "text": "The Cloud Network Interconnects matching the query."
+ },
  "data_cloudflare_nsc_cni.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_nsc_cni.next": {
+  "source": "ai-sdk-inferred",
+  "text": "An opaque token used to fetch the next page of results."
+ },
+ "data_cloudflare_nsc_cni.slot": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this interconnect port slot."
+ },
+ "data_cloudflare_nsc_cni.tunnel_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this tunnel."
+ },
+ "data_cloudflare_nsc_default_name_response.icon": {
+  "source": "ai-sdk-inferred",
+  "text": "The interconnect to fetch the default customer name for."
  },
  "data_cloudflare_nsc_interconnect.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
  },
+ "data_cloudflare_nsc_interconnect.items": {
+  "source": "ai-sdk-inferred",
+  "text": "The interconnects matching the query."
+ },
  "data_cloudflare_nsc_interconnect.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_nsc_interconnect.next": {
+  "source": "ai-sdk-inferred",
+  "text": "An opaque token used to fetch the next page of results."
+ },
+ "data_cloudflare_nsc_interconnect.site": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this site."
+ },
+ "data_cloudflare_nsc_interconnect.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by interconnect type."
  },
  "data_cloudflare_nsc_settings.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_nsc_settings.default_asn": {
+  "source": "ai-sdk-inferred",
+  "text": "The default ASN used for new interconnects."
+ },
+ "data_cloudflare_nsc_slot_info.address_contains": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to slots whose address contains this substring."
+ },
  "data_cloudflare_nsc_slot_info.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
  },
+ "data_cloudflare_nsc_slot_info.items": {
+  "source": "ai-sdk-inferred",
+  "text": "The interconnect port slots matching the query."
+ },
  "data_cloudflare_nsc_slot_info.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_nsc_slot_info.next": {
+  "source": "ai-sdk-inferred",
+  "text": "An opaque token used to fetch the next page of results."
+ },
+ "data_cloudflare_nsc_slot_info.occupied": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by occupancy status."
+ },
+ "data_cloudflare_nsc_slot_info.site": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this site."
+ },
+ "data_cloudflare_nsc_slot_info.speed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by port speed."
+ },
+ "data_cloudflare_nsc_status_info.icon": {
+  "source": "ai-sdk-inferred",
+  "text": "The interconnect to fetch the status of."
  },
  "data_cloudflare_o.success": {
   "source": "ai-sdk-inferred",
@@ -4943,13 +5867,41 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_observatory_page_test_response_collection.region": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tests run from this region."
+ },
+ "data_cloudflare_observatory_trend_response.end": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_observatory_trend_response.metrics": {
+  "source": "ai-sdk-inferred",
+  "text": "The page-speed metrics to include in the trend."
+ },
+ "data_cloudflare_observatory_trend_response.start": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_observatory_trend_response.tz": {
+  "source": "ai-sdk-inferred",
+  "text": "The timezone results are returned in."
+ },
  "data_cloudflare_one_application_detail_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_one_application_detail_response.application_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Zero Trust application to fetch."
+ },
  "data_cloudflare_one_application_list.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_one_application_list.environment": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to applications in this environment."
  },
  "data_cloudflare_one_application_list.page": {
   "source": "ai-sdk-inferred",
@@ -4963,6 +5915,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_one_auth_method_detail.application_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Zero Trust application to fetch authentication methods for."
+ },
  "data_cloudflare_one_auth_method_detail.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -4975,9 +5931,17 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_one_integration_v2_list_item.application": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this SaaS application."
+ },
  "data_cloudflare_one_integration_v2_list_item.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_one_integration_v2_list_item.dlp_enabled": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by DLP-enabled status."
  },
  "data_cloudflare_one_integration_v2_list_item.order": {
   "source": "ai-sdk-inferred",
@@ -4995,9 +5959,29 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_one_integration_v2_list_item.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by integration status."
+ },
+ "data_cloudflare_one_integration_v2_list_item.use_cases": {
+  "source": "ai-sdk-inferred",
+  "text": "The real use cases this SaaS integration supports."
+ },
  "data_cloudflare_one_setup_flow.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_one_setup_flow.application_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Zero Trust application to fetch setup flows for."
+ },
+ "data_cloudflare_one_setup_flow.auth_method": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to setup flows for this authentication method."
+ },
+ "data_cloudflare_one_setup_flow.environment": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to setup flows for this environment."
  },
  "data_cloudflare_one_setup_flow.page": {
   "source": "ai-sdk-inferred",
@@ -5067,9 +6051,25 @@
   "source": "ai-sdk-inferred",
   "text": "The start of the time range to query."
  },
+ "data_cloudflare_over_time.interval": {
+  "source": "ai-sdk-inferred",
+  "text": "The interval to bucket results by."
+ },
  "data_cloudflare_over_time.to": {
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
+ },
+ "data_cloudflare_overall.end_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_overall.filters": {
+  "source": "ai-sdk-inferred",
+  "text": "Additional structured filters applied to the query."
+ },
+ "data_cloudflare_overall.start_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
  },
  "data_cloudflare_overall.success": {
   "source": "ai-sdk-inferred",
@@ -5087,6 +6087,10 @@
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
  },
+ "data_cloudflare_override_code.registration_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The device registration these override codes belong to."
+ },
  "data_cloudflare_override_code.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -5095,6 +6099,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the device."
  },
+ "data_cloudflare_overview.kind": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by test kind."
+ },
  "data_cloudflare_overview.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -5102,6 +6110,10 @@
  "data_cloudflare_overview.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_overview.test_name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact test name match."
  },
  "data_cloudflare_participant.meeting_id": {
   "source": "ai-sdk-inferred",
@@ -5231,6 +6243,10 @@
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
  },
+ "data_cloudflare_pay_per_crawl_get_terms_signature_response.remote": {
+  "source": "ai-sdk-inferred",
+  "text": "The remote signature-collection status."
+ },
  "data_cloudflare_pay_per_crawl_get_terms_signature_response.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -5275,6 +6291,30 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_pdf.letter_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The letter to render as a PDF."
+ },
+ "data_cloudflare_pdf.notice_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The takedown notice the letter belongs to."
+ },
+ "data_cloudflare_peer_report.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The connection quality data for the peer."
+ },
+ "data_cloudflare_peer_report.filters": {
+  "source": "ai-sdk-inferred",
+  "text": "Additional structured filters applied to the query."
+ },
+ "data_cloudflare_peer_report.include_peer_events": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include the peer's own individual events in the response."
+ },
+ "data_cloudflare_peer_report.peer_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The peer to fetch the report for."
+ },
  "data_cloudflare_peer_report.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
@@ -5291,6 +6331,10 @@
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
  },
+ "data_cloudflare_pfx2a.prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "The prefix to look up the originating ASN for."
+ },
  "data_cloudflare_pfx2a.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -5303,6 +6347,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_physical_device.active_registrations": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include only devices with active registrations."
+ },
  "data_cloudflare_physical_device.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
@@ -5310,6 +6358,18 @@
  "data_cloudflare_physical_device.errors": {
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
+ },
+ "data_cloudflare_physical_device.id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this device."
+ },
+ "data_cloudflare_physical_device.include": {
+  "source": "ai-sdk-inferred",
+  "text": "Additional related data to include in the response."
+ },
+ "data_cloudflare_physical_device.last_seen_user_email": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to devices last seen by this user."
  },
  "data_cloudflare_physical_device.messages": {
   "source": "ai-sdk-inferred",
@@ -5327,6 +6387,14 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_physical_device.seen_after": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to devices last seen after this time."
+ },
+ "data_cloudflare_physical_device.seen_before": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to devices last seen before this time."
+ },
  "data_cloudflare_physical_device.sort_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -5334,6 +6402,10 @@
  "data_cloudflare_physical_device.sort_order": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_pipeline.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact pipeline name match."
  },
  "data_cloudflare_pipeline.page": {
   "source": "ai-sdk-inferred",
@@ -5346,6 +6418,10 @@
  "data_cloudflare_pipeline.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
+ },
+ "data_cloudflare_pipelines_workers_pipelines_pipeline.results": {
+  "source": "ai-sdk-inferred",
+  "text": "The pipelines matching the query."
  },
  "data_cloudflare_policy.account_id": {
   "source": "ai-sdk-inferred",
@@ -5383,6 +6459,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_posture_api_finding_type_response.finding_type_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The DSPM finding type to fetch."
+ },
  "data_cloudflare_posture_api_paginated_content_asset_list.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
@@ -5391,9 +6471,21 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_posture_api_paginated_content_asset_list.dlp_profile_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to content flagged by this DLP profile."
+ },
  "data_cloudflare_posture_api_paginated_content_asset_list.integration_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the integration."
+ },
+ "data_cloudflare_posture_api_paginated_content_asset_list.max_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to content flagged on or before this date."
+ },
+ "data_cloudflare_posture_api_paginated_content_asset_list.min_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to content flagged on or after this date."
  },
  "data_cloudflare_posture_api_paginated_content_asset_list.order": {
   "source": "ai-sdk-inferred",
@@ -5427,6 +6519,14 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.archived": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by archived status."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.asset_ids": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to instances on these content assets."
+ },
  "data_cloudflare_posture_api_paginated_finding_instance_list.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
@@ -5434,6 +6534,22 @@
  "data_cloudflare_posture_api_paginated_finding_instance_list.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.finding_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The DSPM finding to fetch instances for."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.finding_instance_ids": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to these specific finding instance IDs."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.max_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to instances flagged on or before this date."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.min_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to instances flagged on or after this date."
  },
  "data_cloudflare_posture_api_paginated_finding_instance_list.order": {
   "source": "ai-sdk-inferred",
@@ -5446,6 +6562,10 @@
  "data_cloudflare_posture_api_paginated_finding_instance_list.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_posture_api_paginated_finding_instance_list.remediation_statuses": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by remediation status."
  },
  "data_cloudflare_posture_api_paginated_finding_instance_list.search": {
   "source": "ai-sdk-inferred",
@@ -5463,9 +6583,29 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_posture_api_paginated_finding_list.finding_type_ids": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to these finding types."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.ignored": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by ignored status."
+ },
  "data_cloudflare_posture_api_paginated_finding_list.integration_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the integration."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.max_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to findings flagged on or before this date."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.min_affliction_date": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to findings flagged on or after this date."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.observation": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the observation that triggered the finding."
  },
  "data_cloudflare_posture_api_paginated_finding_list.order": {
   "source": "ai-sdk-inferred",
@@ -5479,9 +6619,21 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_posture_api_paginated_finding_list.product": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this product."
+ },
  "data_cloudflare_posture_api_paginated_finding_list.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.severity": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by severity."
+ },
+ "data_cloudflare_posture_api_paginated_finding_list.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by finding type."
  },
  "data_cloudflare_posture_api_paginated_finding_type_list.account_id": {
   "source": "ai-sdk-inferred",
@@ -5499,6 +6651,10 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_posture_api_paginated_finding_type_list.vendors": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to finding types from these vendors."
+ },
  "data_cloudflare_posture_api_paginated_remediation_type_list.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
@@ -5506,6 +6662,10 @@
  "data_cloudflare_posture_api_paginated_remediation_type_list.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
+ },
+ "data_cloudflare_posture_api_paginated_remediation_type_list.finding_type_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The DSPM finding type to fetch remediation types for."
  },
  "data_cloudflare_posture_api_paginated_remediation_type_list.integration_id": {
   "source": "ai-sdk-inferred",
@@ -5535,6 +6695,14 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the integration."
  },
+ "data_cloudflare_posture_api_remediation_job.max_updated_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to jobs updated on or before this time."
+ },
+ "data_cloudflare_posture_api_remediation_job.min_updated_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to jobs updated on or after this time."
+ },
  "data_cloudflare_posture_api_remediation_job.order": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -5550,6 +6718,10 @@
  "data_cloudflare_posture_api_remediation_job.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
+ },
+ "data_cloudflare_posture_api_remediation_job.triggered_by_actor": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to jobs triggered by this actor."
  },
  "data_cloudflare_posture_api_webhook_list_response.account_id": {
   "source": "ai-sdk-inferred",
@@ -5579,9 +6751,17 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_profile.all": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include built-in DLP profiles alongside custom ones."
+ },
  "data_cloudflare_progres.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_progres.job_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Slurper job to fetch progress for."
  },
  "data_cloudflare_provider_config.account_id": {
   "source": "ai-sdk-inferred",
@@ -5635,6 +6815,26 @@
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
  },
+ "data_cloudflare_raw.name": {
+  "source": "ai-sdk-inferred",
+  "text": "The repository this file belongs to."
+ },
+ "data_cloudflare_raw.namespace": {
+  "source": "ai-sdk-inferred",
+  "text": "The namespace the repository belongs to."
+ },
+ "data_cloudflare_raw.path": {
+  "source": "ai-sdk-inferred",
+  "text": "The path of the file within the repository."
+ },
+ "data_cloudflare_raw.ref": {
+  "source": "ai-sdk-inferred",
+  "text": "The git ref (branch, tag, or commit) to fetch the file at."
+ },
+ "data_cloudflare_realtime.prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "The prefix to fetch the live BGP routing table snapshot for."
+ },
  "data_cloudflare_realtime.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -5643,13 +6843,29 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_realtimekit_webhook.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The RealtimeKit application's own webhook configuration."
+ },
  "data_cloudflare_realtimekit_webhook.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_realtimekit_webhook_events_success_response.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The real webhook event types supported."
+ },
  "data_cloudflare_realtimekit_webhook_events_success_response.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_recording.end_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_recording.expired": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by whether the recording has expired."
  },
  "data_cloudflare_recording.meeting_id": {
   "source": "ai-sdk-inferred",
@@ -5675,13 +6891,33 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_recording.start_time": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_recording.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by recording status."
+ },
  "data_cloudflare_reference_id.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_reference_id.reference_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The external reference ID to look up the integration by."
+ },
+ "data_cloudflare_registrar_api_domain_search_response.extensions": {
+  "source": "ai-sdk-inferred",
+  "text": "The TLD extensions to restrict the search to."
+ },
  "data_cloudflare_registrar_api_domain_search_response.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_registrar_api_domain_search_response.q": {
+  "source": "ai-sdk-inferred",
+  "text": "The domain name query string."
  },
  "data_cloudflare_registrar_api_extension_response_collection.cursor": {
   "source": "ai-sdk-inferred",
@@ -5691,6 +6927,10 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_registrar_api_extension_response_collection.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact TLD extension name match."
+ },
  "data_cloudflare_registrar_api_extension_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
@@ -5698,6 +6938,10 @@
  "data_cloudflare_registrar_api_extension_response_collection.sort_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_registrar_api_extension_response_single.extension": {
+  "source": "ai-sdk-inferred",
+  "text": "The TLD extension to fetch."
  },
  "data_cloudflare_registrar_api_registration_response_collection.cursor": {
   "source": "ai-sdk-inferred",
@@ -5715,9 +6959,17 @@
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
  },
+ "data_cloudflare_registrar_api_sandbox_domain_search_response.extensions": {
+  "source": "ai-sdk-inferred",
+  "text": "The TLD extensions to restrict the search to."
+ },
  "data_cloudflare_registrar_api_sandbox_domain_search_response.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
+ },
+ "data_cloudflare_registrar_api_sandbox_domain_search_response.q": {
+  "source": "ai-sdk-inferred",
+  "text": "The domain name query string."
  },
  "data_cloudflare_registrar_api_sandbox_extension_response_collection.cursor": {
   "source": "ai-sdk-inferred",
@@ -5727,6 +6979,10 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_registrar_api_sandbox_extension_response_collection.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact TLD extension name match."
+ },
  "data_cloudflare_registrar_api_sandbox_extension_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
@@ -5734,6 +6990,10 @@
  "data_cloudflare_registrar_api_sandbox_extension_response_collection.sort_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_registrar_api_sandbox_extension_response_single.extension": {
+  "source": "ai-sdk-inferred",
+  "text": "The TLD extension to fetch."
  },
  "data_cloudflare_registrar_api_sandbox_registration_response_collection.cursor": {
   "source": "ai-sdk-inferred",
@@ -5767,6 +7027,14 @@
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
  },
+ "data_cloudflare_registration.id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this device registration."
+ },
+ "data_cloudflare_registration.include": {
+  "source": "ai-sdk-inferred",
+  "text": "Additional related data to include in the response."
+ },
  "data_cloudflare_registration.messages": {
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
@@ -5783,6 +7051,14 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_registration.seen_after": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to registrations last seen after this time."
+ },
+ "data_cloudflare_registration.seen_before": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to registrations last seen before this time."
+ },
  "data_cloudflare_registration.sort_by": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -5790,6 +7066,14 @@
  "data_cloudflare_registration.sort_order": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
+ },
+ "data_cloudflare_registration.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by registration status."
+ },
+ "data_cloudflare_registration.user_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to registrations for this user."
  },
  "data_cloudflare_rel.result": {
   "source": "ai-sdk-inferred",
@@ -5806,6 +7090,10 @@
  "data_cloudflare_relationship.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_relay.asc": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to sort results in ascending order."
  },
  "data_cloudflare_relay.created_after": {
   "source": "ai-sdk-inferred",
@@ -5838,6 +7126,10 @@
  "data_cloudflare_repo.messages": {
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
+ },
+ "data_cloudflare_repo.namespace": {
+  "source": "ai-sdk-inferred",
+  "text": "The namespace to list repositories from."
  },
  "data_cloudflare_repo.result": {
   "source": "ai-sdk-inferred",
@@ -5919,6 +7211,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_request.id": {
+  "source": "ai-sdk-inferred",
+  "text": "The AI Gateway log entry to fetch the raw request for."
+ },
  "data_cloudflare_resource_sharing_share_excluded_recipient_response_collection.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -5926,6 +7222,10 @@
  "data_cloudflare_resource_sharing_share_excluded_recipient_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_resource_sharing_share_recipient_response_collection.include_resources": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include each recipient's own resource access in the response."
  },
  "data_cloudflare_resource_sharing_share_recipient_response_collection.page": {
   "source": "ai-sdk-inferred",
@@ -5947,6 +7247,18 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_resource_sharing_share_response_collection.include_recipient_counts": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include recipient counts in the response."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.include_resources": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include resource details in the response."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.kind": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by share kind."
+ },
  "data_cloudflare_resource_sharing_share_response_collection.order": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -5958,6 +7270,22 @@
  "data_cloudflare_resource_sharing_share_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.resource_types": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to shares including these resource types."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by share status."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.tag": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to shares tagged with this value."
+ },
+ "data_cloudflare_resource_sharing_share_response_collection.target_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by recipient target type."
  },
  "data_cloudflare_resource_tagging_tag_key_summary_response_collection.account_id": {
   "source": "ai-sdk-inferred",
@@ -5983,13 +7311,37 @@
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
  },
+ "data_cloudflare_resource_tagging_tag_values_response_collection.tag_key": {
+  "source": "ai-sdk-inferred",
+  "text": "The tag key to fetch values for."
+ },
  "data_cloudflare_resource_tagging_tagged_resource_response_collection.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_resource_tagging_tagged_resource_response_collection.case_insensitive": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether tag matching is case-insensitive."
+ },
  "data_cloudflare_resource_tagging_tagged_resource_response_collection.cursor": {
   "source": "ai-sdk-inferred",
   "text": "An opaque token used to paginate through results, returned by a previous request."
+ },
+ "data_cloudflare_resource_tagging_tagged_resource_response_collection.id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this resource ID."
+ },
+ "data_cloudflare_resource_tagging_tagged_resource_response_collection.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this resource name."
+ },
+ "data_cloudflare_resource_tagging_tagged_resource_response_collection.tag": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to resources tagged with this value."
+ },
+ "data_cloudflare_resource_tagging_tagged_resource_response_collection.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by resource type."
  },
  "data_cloudflare_resource_tagging_tagged_resource_response_single.account_id": {
   "source": "ai-sdk-inferred",
@@ -5998,6 +7350,10 @@
  "data_cloudflare_response.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_response.id": {
+  "source": "ai-sdk-inferred",
+  "text": "The AI Gateway log entry to fetch the raw response for."
  },
  "data_cloudflare_response_code.result": {
   "source": "ai-sdk-inferred",
@@ -6031,6 +7387,10 @@
   "source": "ai-sdk-inferred",
   "text": "The start of the time range to query."
  },
+ "data_cloudflare_rlanalytics_rate_limit_analytics_timeseries_point.time_delta": {
+  "source": "ai-sdk-inferred",
+  "text": "The interval each time series bucket represents."
+ },
  "data_cloudflare_rlanalytics_rate_limit_analytics_timeseries_point.until": {
   "source": "ai-sdk-inferred",
   "text": "The end of the time range to query."
@@ -6038,6 +7398,10 @@
  "data_cloudflare_rlanalytics_rate_limit_analytics_timeseries_point.zone_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare zone this request is scoped to."
+ },
+ "data_cloudflare_robot.subdomain": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this subdomain's own robots.txt directives."
  },
  "data_cloudflare_robot.zone_id": {
   "source": "ai-sdk-inferred",
@@ -6047,9 +7411,21 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_route.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The routes matching the query."
+ },
+ "data_cloudflare_route.gateway_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The AI Gateway to fetch routes for."
+ },
  "data_cloudflare_route.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_rule.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact rule name match."
  },
  "data_cloudflare_rule.page": {
   "source": "ai-sdk-inferred",
@@ -6067,6 +7443,14 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_rum_empty_response.hostname": {
+  "source": "ai-sdk-inferred",
+  "text": "The hostname to validate."
+ },
+ "data_cloudflare_rum_site_tag_list_response.all": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include all site tags, not just active ones."
+ },
  "data_cloudflare_schema.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
@@ -6078,6 +7462,10 @@
  "data_cloudflare_schema.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_script.tags": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to scripts with these tags."
  },
  "data_cloudflare_scripts_search.page": {
   "source": "ai-sdk-inferred",
@@ -6151,6 +7539,10 @@
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
  },
+ "data_cloudflare_secrets_store_secrets_response_collection.scopes": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to secrets scoped to these services."
+ },
  "data_cloudflare_secrets_store_secrets_response_collection.search": {
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
@@ -6178,6 +7570,30 @@
  "data_cloudflare_secrets_store_stores_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_security_center_value_counts_response.dismissed": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by dismissed status."
+ },
+ "data_cloudflare_security_center_value_counts_response.issue_class": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue class."
+ },
+ "data_cloudflare_security_center_value_counts_response.issue_type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by issue type."
+ },
+ "data_cloudflare_security_center_value_counts_response.product": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this product."
+ },
+ "data_cloudflare_security_center_value_counts_response.severity": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by severity."
+ },
+ "data_cloudflare_security_center_value_counts_response.subject": {
+  "source": "ai-sdk-inferred",
+  "text": "The dimension to group counts by."
  },
  "data_cloudflare_sending_domain_restriction.direction": {
   "source": "ai-sdk-inferred",
@@ -6235,6 +7651,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_sink.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact sink name match."
+ },
  "data_cloudflare_sink.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -6242,6 +7662,10 @@
  "data_cloudflare_sink.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_sink.pipeline_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The pipeline these sinks belong to."
  },
  "data_cloudflare_sink.result": {
   "source": "ai-sdk-inferred",
@@ -6315,13 +7739,25 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_step.attempt": {
+  "source": "ai-sdk-inferred",
+  "text": "The attempt number of the step execution."
+ },
  "data_cloudflare_step.errors": {
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
  },
+ "data_cloudflare_step.instance_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Workflow instance this step belongs to."
+ },
  "data_cloudflare_step.messages": {
   "source": "ai-sdk-inferred",
   "text": "A list of informational messages returned by the API, if any."
+ },
+ "data_cloudflare_step.name": {
+  "source": "ai-sdk-inferred",
+  "text": "The name of the step."
  },
  "data_cloudflare_step.result": {
   "source": "ai-sdk-inferred",
@@ -6335,6 +7771,18 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_step.type": {
+  "source": "ai-sdk-inferred",
+  "text": "The type of the step."
+ },
+ "data_cloudflare_step.workflow_name": {
+  "source": "ai-sdk-inferred",
+  "text": "The Workflow this step's own instance belongs to."
+ },
+ "data_cloudflare_stream.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact stream name match."
+ },
  "data_cloudflare_stream.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -6347,21 +7795,53 @@
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
  },
+ "data_cloudflare_stream_video_response_collection.after": {
+  "source": "ai-sdk-inferred",
+  "text": "Only return videos created after this one, for cursor-based pagination."
+ },
  "data_cloudflare_stream_video_response_collection.before": {
   "source": "ai-sdk-inferred",
   "text": "Only return results from before this time."
+ },
+ "data_cloudflare_stream_video_response_collection.id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this video."
  },
  "data_cloudflare_stream_video_response_collection.limit": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return."
  },
+ "data_cloudflare_stream_video_response_collection.live_input_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to videos from this live input."
+ },
+ "data_cloudflare_stream_video_response_collection.name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact video name match."
+ },
  "data_cloudflare_submission.direction": {
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_submission.end": {
+  "source": "ai-sdk-inferred",
+  "text": "The end of the time range to query."
+ },
+ "data_cloudflare_submission.escalated_from_user": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to submissions escalated by a user."
+ },
  "data_cloudflare_submission.order": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
+ },
+ "data_cloudflare_submission.original_disposition": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the message's own original disposition."
+ },
+ "data_cloudflare_submission.outcome_disposition": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the submission's own outcome disposition."
  },
  "data_cloudflare_submission.page": {
   "source": "ai-sdk-inferred",
@@ -6370,6 +7850,42 @@
  "data_cloudflare_submission.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_submission.query": {
+  "source": "ai-sdk-inferred",
+  "text": "A search term used to filter results."
+ },
+ "data_cloudflare_submission.requested_disposition": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the disposition requested in the submission."
+ },
+ "data_cloudflare_submission.start": {
+  "source": "ai-sdk-inferred",
+  "text": "The start of the time range to query."
+ },
+ "data_cloudflare_submission.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by submission status."
+ },
+ "data_cloudflare_submission.submission_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this submission."
+ },
+ "data_cloudflare_submission.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by submission type."
+ },
+ "data_cloudflare_subnet.asn": {
+  "source": "ai-sdk-inferred",
+  "text": "The Autonomous System these subnets belong to."
+ },
+ "data_cloudflare_subnet.ip_count_total": {
+  "source": "ai-sdk-inferred",
+  "text": "The total number of IP addresses across matching subnets."
+ },
+ "data_cloudflare_subnet.subnets": {
+  "source": "ai-sdk-inferred",
+  "text": "The subnets matching the query."
  },
  "data_cloudflare_subscription.direction": {
   "source": "ai-sdk-inferred",
@@ -6386,6 +7902,10 @@
  "data_cloudflare_subscription.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_summary.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The generated session summary."
  },
  "data_cloudflare_summary.session_id": {
   "source": "ai-sdk-inferred",
@@ -6439,9 +7959,25 @@
   "source": "ai-sdk-inferred",
   "text": "The total number of matching results."
  },
+ "data_cloudflare_table.namespace": {
+  "source": "ai-sdk-inferred",
+  "text": "The R2 Data Catalog namespace these tables belong to."
+ },
  "data_cloudflare_table.page_size": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_table.page_token": {
+  "source": "ai-sdk-inferred",
+  "text": "An opaque token used to paginate through results, returned by a previous request."
+ },
+ "data_cloudflare_table.return_details": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include additional table details in the response."
+ },
+ "data_cloudflare_table.return_uuids": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to include each table's own UUID in the response."
  },
  "data_cloudflare_tag_category.account_id": {
   "source": "ai-sdk-inferred",
@@ -6455,6 +7991,10 @@
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
  },
+ "data_cloudflare_tag_category.skill_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Threat Signals skill these tag categories belong to."
+ },
  "data_cloudflare_tag_category.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
@@ -6462,6 +8002,10 @@
  "data_cloudflare_takedown_notice.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_takedown_notice.notices": {
+  "source": "ai-sdk-inferred",
+  "text": "The takedown notices matching the query."
  },
  "data_cloudflare_target.created_after": {
   "source": "ai-sdk-inferred",
@@ -6475,6 +8019,54 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_target.hostname": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact hostname match."
+ },
+ "data_cloudflare_target.hostname_contains": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to hostnames containing this substring."
+ },
+ "data_cloudflare_target.ip_like": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to IP addresses matching this pattern."
+ },
+ "data_cloudflare_target.ip_v4": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this IPv4 address."
+ },
+ "data_cloudflare_target.ip_v6": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this IPv6 address."
+ },
+ "data_cloudflare_target.ips": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to these IP addresses."
+ },
+ "data_cloudflare_target.ipv4_end": {
+  "source": "ai-sdk-inferred",
+  "text": "The upper bound of an IPv4 range to filter results by."
+ },
+ "data_cloudflare_target.ipv4_start": {
+  "source": "ai-sdk-inferred",
+  "text": "The lower bound of an IPv4 range to filter results by."
+ },
+ "data_cloudflare_target.ipv6_end": {
+  "source": "ai-sdk-inferred",
+  "text": "The upper bound of an IPv6 range to filter results by."
+ },
+ "data_cloudflare_target.ipv6_start": {
+  "source": "ai-sdk-inferred",
+  "text": "The lower bound of an IPv6 range to filter results by."
+ },
+ "data_cloudflare_target.modified_after": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to targets modified after this time."
+ },
+ "data_cloudflare_target.modified_before": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to targets modified before this time."
+ },
  "data_cloudflare_target.order": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -6486,6 +8078,14 @@
  "data_cloudflare_target.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_target.target_ids": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to these specific target IDs."
+ },
+ "data_cloudflare_target.virtual_network_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to targets in this virtual network."
  },
  "data_cloudflare_target_environment.account_id": {
   "source": "ai-sdk-inferred",
@@ -6502,6 +8102,14 @@
  "data_cloudflare_target_environment.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
+ },
+ "data_cloudflare_target_industry.items": {
+  "source": "ai-sdk-inferred",
+  "text": "The target industries matching the query."
+ },
+ "data_cloudflare_target_industry.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by industry type."
  },
  "data_cloudflare_task.result": {
   "source": "ai-sdk-inferred",
@@ -6571,6 +8179,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_template.templates": {
+  "source": "ai-sdk-inferred",
+  "text": "The letter templates matching the query."
+ },
  "data_cloudflare_tenant.errors": {
   "source": "ai-sdk-inferred",
   "text": "A list of errors returned by the API. Empty on a successful response."
@@ -6611,6 +8223,10 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_terminate.workflow_name": {
+  "source": "ai-sdk-inferred",
+  "text": "The Workflow whose instances are being terminated."
+ },
  "data_cloudflare_threat_category.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
@@ -6627,6 +8243,18 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_timesery.aggregate": {
+  "source": "ai-sdk-inferred",
+  "text": "The aggregation function applied to the time series."
+ },
+ "data_cloudflare_timesery.granularity": {
+  "source": "ai-sdk-inferred",
+  "text": "The time bucket size for the time series."
+ },
+ "data_cloudflare_timesery.portal_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The MCP portal these analytics belong to."
+ },
  "data_cloudflare_timesery.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -6635,6 +8263,10 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_timesery.tz": {
+  "source": "ai-sdk-inferred",
+  "text": "The timezone results are returned in."
+ },
  "data_cloudflare_tld.result": {
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
@@ -6642,6 +8274,10 @@
  "data_cloudflare_tld.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_tls_certificates_and_hostnames_certificate_response_collection_5.type": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by certificate type."
  },
  "data_cloudflare_tls_version.success": {
   "source": "ai-sdk-inferred",
@@ -6675,6 +8311,10 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_traceroute_test.colo": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to this Cloudflare data center."
+ },
  "data_cloudflare_traceroute_test.device_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the device."
@@ -6682,6 +8322,10 @@
  "data_cloudflare_traceroute_test.from": {
   "source": "ai-sdk-inferred",
   "text": "The start of the time range to query."
+ },
+ "data_cloudflare_traceroute_test.interval": {
+  "source": "ai-sdk-inferred",
+  "text": "The polling interval the traceroute test runs at."
  },
  "data_cloudflare_traceroute_test.to": {
   "source": "ai-sdk-inferred",
@@ -6691,9 +8335,21 @@
   "source": "ai-sdk-inferred",
   "text": "The requested resource or collection of resources."
  },
+ "data_cloudflare_traffic_anomaly.status": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by anomaly status."
+ },
  "data_cloudflare_traffic_anomaly.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_transcript.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The generated transcript."
+ },
+ "data_cloudflare_transcript.format": {
+  "source": "ai-sdk-inferred",
+  "text": "The format the transcript is returned in."
  },
  "data_cloudflare_transcript.session_id": {
   "source": "ai-sdk-inferred",
@@ -6707,6 +8363,14 @@
   "source": "ai-sdk-inferred",
   "text": "The direction to sort results, ascending or descending."
  },
+ "data_cloudflare_trusted_domain.is_recent": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to recently added trusted domains."
+ },
+ "data_cloudflare_trusted_domain.is_similarity": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to domains flagged for similarity to a trusted domain."
+ },
  "data_cloudflare_trusted_domain.order": {
   "source": "ai-sdk-inferred",
   "text": "The field to sort results by."
@@ -6714,6 +8378,10 @@
  "data_cloudflare_trusted_domain.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
+ },
+ "data_cloudflare_trusted_domain.pattern": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to a specific domain pattern."
  },
  "data_cloudflare_trusted_domain.per_page": {
   "source": "ai-sdk-inferred",
@@ -6723,9 +8391,69 @@
   "source": "ai-sdk-inferred",
   "text": "A search term used to filter results."
  },
+ "data_cloudflare_tunnel_cfd_tunnel_response_collection.exclude_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels not matching this name prefix."
+ },
+ "data_cloudflare_tunnel_cfd_tunnel_response_collection.include_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels matching this name prefix."
+ },
+ "data_cloudflare_tunnel_cfd_tunnel_response_collection.was_active_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels active at this time."
+ },
+ "data_cloudflare_tunnel_cfd_tunnel_response_collection.was_inactive_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels inactive at this time."
+ },
+ "data_cloudflare_tunnel_teamnet_response_single.default_virtual_network_fallback": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to fall back to the default virtual network if no match is found."
+ },
+ "data_cloudflare_tunnel_teamnet_response_single.ip": {
+  "source": "ai-sdk-inferred",
+  "text": "The IP address to look up the matching route for."
+ },
+ "data_cloudflare_tunnel_tunnel_response_collection.exclude_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels not matching this name prefix."
+ },
+ "data_cloudflare_tunnel_tunnel_response_collection.include_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels matching this name prefix."
+ },
+ "data_cloudflare_tunnel_tunnel_response_collection.was_active_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels active at this time."
+ },
+ "data_cloudflare_tunnel_tunnel_response_collection.was_inactive_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels inactive at this time."
+ },
+ "data_cloudflare_tunnel_warp_connector_response_collection.exclude_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels not matching this name prefix."
+ },
+ "data_cloudflare_tunnel_warp_connector_response_collection.include_prefix": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels matching this name prefix."
+ },
+ "data_cloudflare_tunnel_warp_connector_response_collection.was_active_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels active at this time."
+ },
+ "data_cloudflare_tunnel_warp_connector_response_collection.was_inactive_at": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to tunnels inactive at this time."
+ },
  "data_cloudflare_unique_device.device_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the device."
+ },
+ "data_cloudflare_unique_device.test_name": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to an exact test name match."
  },
  "data_cloudflare_url_ignore_pattern.page": {
   "source": "ai-sdk-inferred",
@@ -6742,6 +8470,10 @@
  "data_cloudflare_user_agent.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_user_schema.omit_source": {
+  "source": "ai-sdk-inferred",
+  "text": "Whether to omit the raw schema source from the response."
  },
  "data_cloudflare_user_schema.page": {
   "source": "ai-sdk-inferred",
@@ -6763,6 +8495,18 @@
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
  },
+ "data_cloudflare_version.data": {
+  "source": "ai-sdk-inferred",
+  "text": "The route versions matching the query."
+ },
+ "data_cloudflare_version.gateway_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The AI Gateway the route belongs to."
+ },
+ "data_cloudflare_version.id": {
+  "source": "ai-sdk-inferred",
+  "text": "The route to fetch versions for."
+ },
  "data_cloudflare_version.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
@@ -6775,6 +8519,14 @@
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
  },
+ "data_cloudflare_waf_managed_rules_rule_group_response_collection.mode": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by the rule group's own override mode."
+ },
+ "data_cloudflare_waf_managed_rules_rule_response_collection.group_id": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to rules within this group."
+ },
  "data_cloudflare_waitingroom_response_collection.page": {
   "source": "ai-sdk-inferred",
   "text": "The page number of the paginated results to return."
@@ -6782,6 +8534,14 @@
  "data_cloudflare_waitingroom_response_collection.per_page": {
   "source": "ai-sdk-inferred",
   "text": "The maximum number of results to return per page."
+ },
+ "data_cloudflare_waitingroom_rules_response_collection.waiting_room_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Waiting Room these rules belong to."
+ },
+ "data_cloudflare_waitingroom_status_response.waiting_room_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The Waiting Room to fetch the queue status of."
  },
  "data_cloudflare_worker.order": {
   "source": "ai-sdk-inferred",
@@ -6830,6 +8590,14 @@
  "data_cloudflare_workers_observability_query.success": {
   "source": "ai-sdk-inferred",
   "text": "Whether the API call was successful."
+ },
+ "data_cloudflare_workers_script_response_collection.tags": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results to scripts with these tags."
+ },
+ "data_cloudflare_workers_versions_list_response.deployable": {
+  "source": "ai-sdk-inferred",
+  "text": "Filters results by whether the version is deployable."
  },
  "data_cloudflare_workers_versions_list_response.page": {
   "source": "ai-sdk-inferred",
@@ -6938,5 +8706,9 @@
  "data_cloudflare_zt_risk_scoring.account_id": {
   "source": "ai-sdk-inferred",
   "text": "The unique identifier of the Cloudflare account this request is scoped to."
+ },
+ "data_cloudflare_zt_risk_scoring.user_id": {
+  "source": "ai-sdk-inferred",
+  "text": "The user to fetch the current risk score for."
  }
 }
