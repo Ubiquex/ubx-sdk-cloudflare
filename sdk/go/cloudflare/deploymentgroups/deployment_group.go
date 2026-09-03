@@ -28,11 +28,18 @@ type DeploymentGroup_Result struct {
 	VersionConfig any
 }
 
+var DeploymentGroup_Result_VersionConfigFields = ubx.FieldMap{
+		"TargetEnvironment": ubx.FieldSpec{WireName: "target_environment"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
+
 type DeploymentGroupConfig struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
+	// A user-friendly name for the deployment group.
+	Name any
+	// Contains an optional list of policy IDs assigned to a group.
+	PolicyIds any
+	// Contains at least one version configuration.
+	VersionConfig any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -40,15 +47,17 @@ type DeploymentGroupConfig struct {
 }
 
 type DeploymentGroupAttrs struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
 	Errors any
 	Messages any
+	// A user-friendly name for the deployment group.
+	Name any
+	// Contains an optional list of policy IDs assigned to a group.
+	PolicyIds any
 	Result any
 	// Indicates whether the API call was successful.
 	Success any
+	// Contains at least one version configuration.
+	VersionConfig any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -58,8 +67,13 @@ type DeploymentGroupAttrs struct {
 var DeploymentGroup = ubx.ResourceBinding{
 	WireType: "cloudflare_deployment_group",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"DestinationOrganizationId": ubx.FieldSpec{WireName: "destination_organization_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PolicyIds": ubx.FieldSpec{WireName: "policy_ids"},
+		"VersionConfig": ubx.FieldSpec{
+			WireName: "version_config",
+			Kind: "list",
+			Fields: DeploymentGroup_Result_VersionConfigFields,
+		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GroupId": ubx.FieldSpec{WireName: "group_id"},
 	},

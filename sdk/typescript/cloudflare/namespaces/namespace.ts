@@ -24,10 +24,8 @@ export interface Namespace_Result {
 }
 
 export interface NamespaceConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Namespace name. */
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -35,14 +33,12 @@ export interface NamespaceConfig {
 }
 
 export interface NamespaceAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   /** Always empty for a successful response. */
   errors: Namespace_Errors[];
   /** Informational, non-error messages, if any. */
   messages: Namespace_Errors[];
+  /** Namespace name. */
+  name: string;
   result: Namespace_Result;
   /** Always true for a successful response. */
   success: unknown;
@@ -55,8 +51,7 @@ export interface NamespaceAttrs {
 export const Namespace: ResourceBinding<NamespaceConfig, NamespaceAttrs> = {
   wireType: "cloudflare_namespace",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     namespaceName: "namespace_name",
   },

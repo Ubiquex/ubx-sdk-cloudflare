@@ -20,50 +20,58 @@ type Cost_Result struct {
 }
 
 type CostConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	BaseUrl any
+	Beta any
+	CurlExample any
+	Description any
+	Enable any
+	Headers any
+	JsExample any
+	Link any
+	Name any
+	Position any
+	Slug any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
+	// path parameter, not part of the API's own resource representation
+	Id any
 }
 
 type CostAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	BaseUrl any
+	Beta any
+	CurlExample any
+	Description any
+	Enable any
+	Headers any
+	JsExample any
+	Link any
+	Name any
+	Position any
 	Result any
+	Slug any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
+	// path parameter, not part of the API's own resource representation
+	Id any
 }
 
 var Cost = ubx.ResourceBinding{
 	WireType: "cloudflare_cost",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
+		"Beta": ubx.FieldSpec{WireName: "beta"},
+		"CurlExample": ubx.FieldSpec{WireName: "curl_example"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Headers": ubx.FieldSpec{WireName: "headers"},
+		"JsExample": ubx.FieldSpec{WireName: "js_example"},
+		"Link": ubx.FieldSpec{WireName: "link"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Position": ubx.FieldSpec{WireName: "position"},
+		"Slug": ubx.FieldSpec{WireName: "slug"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 	},
 }

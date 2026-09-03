@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .crawl import Crawl, CrawlConfig
-from .list import List, ListConfig

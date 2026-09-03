@@ -118,49 +118,83 @@ class Gateway_Result:
 
 @dataclasses.dataclass
 class GatewayConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    authentication: Any = None
+    cache_invalidate_on_update: Any = None
+    cache_ttl: Any = None
+    collect_logs: Any = None
+    # gateway id
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    log_management: Any = None
+    log_management_strategy: Any = None
+    logpush: Any = None
+    logpush_public_key: Any = None
+    rate_limiting_interval: Any = None
+    rate_limiting_limit: Any = None
+    rate_limiting_technique: Any = None
+    # Backoff strategy for retry delays
+    retry_backoff: Any = None
+    # Delay between retry attempts in milliseconds (0-5000)
+    retry_delay: Any = None
+    # Maximum number of retry attempts for failed requests (1-5)
+    retry_max_attempts: Any = None
+    store_id: Any = None
+    # Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
+    workers_ai_billing_mode: Any = None
+    zdr: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class GatewayAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    authentication: Any = None
+    cache_invalidate_on_update: Any = None
+    cache_ttl: Any = None
+    collect_logs: Any = None
+    # gateway id
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    log_management: Any = None
+    log_management_strategy: Any = None
+    logpush: Any = None
+    logpush_public_key: Any = None
+    rate_limiting_interval: Any = None
+    rate_limiting_limit: Any = None
+    rate_limiting_technique: Any = None
     result: Any = None
+    # Backoff strategy for retry delays
+    retry_backoff: Any = None
+    # Delay between retry attempts in milliseconds (0-5000)
+    retry_delay: Any = None
+    # Maximum number of retry attempts for failed requests (1-5)
+    retry_max_attempts: Any = None
+    store_id: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
+    workers_ai_billing_mode: Any = None
+    zdr: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 Gateway = ubx.ResourceBinding(
     wire_type="cloudflare_gateway",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
+        "authentication": ubx.FieldSpec(wire_name="authentication"),
+        "cache_invalidate_on_update": ubx.FieldSpec(wire_name="cache_invalidate_on_update"),
+        "cache_ttl": ubx.FieldSpec(wire_name="cache_ttl"),
+        "collect_logs": ubx.FieldSpec(wire_name="collect_logs"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "log_management": ubx.FieldSpec(wire_name="log_management"),
+        "log_management_strategy": ubx.FieldSpec(wire_name="log_management_strategy"),
+        "logpush": ubx.FieldSpec(wire_name="logpush"),
+        "logpush_public_key": ubx.FieldSpec(wire_name="logpush_public_key"),
+        "rate_limiting_interval": ubx.FieldSpec(wire_name="rate_limiting_interval"),
+        "rate_limiting_limit": ubx.FieldSpec(wire_name="rate_limiting_limit"),
+        "rate_limiting_technique": ubx.FieldSpec(wire_name="rate_limiting_technique"),
+        "retry_backoff": ubx.FieldSpec(wire_name="retry_backoff"),
+        "retry_delay": ubx.FieldSpec(wire_name="retry_delay"),
+        "retry_max_attempts": ubx.FieldSpec(wire_name="retry_max_attempts"),
+        "store_id": ubx.FieldSpec(wire_name="store_id"),
+        "workers_ai_billing_mode": ubx.FieldSpec(wire_name="workers_ai_billing_mode"),
+        "zdr": ubx.FieldSpec(wire_name="zdr"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
     },
 )

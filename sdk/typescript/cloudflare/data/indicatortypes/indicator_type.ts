@@ -8,14 +8,14 @@ export interface IndicatorType_Items {
 export interface IndicatorTypeConfig {
   /** Account ID. */
   accountId: string | Computed<string>;
-  /** Array of dataset IDs to query indicator types from. If not provided, queries all datasets for the account. */
+  /** Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets. */
   datasetIds?: string[] | Computed<string[]>;
 }
 
 export interface IndicatorTypeAttrs {
   /** Account ID. */
   accountId: string;
-  /** Array of dataset IDs to query indicator types from. If not provided, queries all datasets for the account. */
+  /** Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets. */
   datasetIds: string[];
   items: IndicatorType_Items;
   type: string;

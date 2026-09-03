@@ -7,6 +7,38 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Item_PublicEndpointParams_ChatCompletionsEndpoint:
+    # Disable chat completions endpoint for this public endpoint
+    disabled: Any = None
+
+@dataclasses.dataclass
+class Item_PublicEndpointParams_Mcp:
+    description: Any = None
+    # Disable MCP endpoint for this public endpoint
+    disabled: Any = None
+
+@dataclasses.dataclass
+class Item_PublicEndpointParams_RateLimit:
+    period_ms: Any = None
+    requests: Any = None
+    technique: Any = None
+
+@dataclasses.dataclass
+class Item_PublicEndpointParams:
+    authorized_hosts: Any = None
+    chat_completions_endpoint: Any = None
+    # Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
+    custom_domains: Any = None
+    # When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
+    default_domain_enabled: Any = None
+    enabled: Any = None
+    # Instance IDs exposed through the namespace public endpoint. Empty means nothing is searchable. Every ID must be an existing instance in this namespace, and the list cannot exceed the account's multi-instance search limit.
+    instances_allowed: Any = None
+    mcp: Any = None
+    rate_limit: Any = None
+    search_endpoint: Any = None
+
+@dataclasses.dataclass
 class Item_Result:
     checksum: Any = None
     chunks_count: Any = None
@@ -24,61 +56,89 @@ class Item_Result:
     source_id: Any = None
     status: Any = None
 
+_Item_PublicEndpointParams_ChatCompletionsEndpointFields = {
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Item_PublicEndpointParams_McpFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Item_PublicEndpointParams_RateLimitFields = {
+    "period_ms": ubx.FieldSpec(wire_name="period_ms"),
+    "requests": ubx.FieldSpec(wire_name="requests"),
+    "technique": ubx.FieldSpec(wire_name="technique"),
+}
+
+_Item_PublicEndpointParamsFields = {
+    "authorized_hosts": ubx.FieldSpec(wire_name="authorized_hosts"),
+    "chat_completions_endpoint": ubx.FieldSpec(
+        wire_name="chat_completions_endpoint",
+        kind="object",
+        fields=_Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+    "custom_domains": ubx.FieldSpec(wire_name="custom_domains"),
+    "default_domain_enabled": ubx.FieldSpec(wire_name="default_domain_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "instances_allowed": ubx.FieldSpec(wire_name="instances_allowed"),
+    "mcp": ubx.FieldSpec(
+        wire_name="mcp",
+        kind="object",
+        fields=_Item_PublicEndpointParams_McpFields,
+    ),
+    "rate_limit": ubx.FieldSpec(
+        wire_name="rate_limit",
+        kind="object",
+        fields=_Item_PublicEndpointParams_RateLimitFields,
+    ),
+    "search_endpoint": ubx.FieldSpec(
+        wire_name="search_endpoint",
+        kind="object",
+        fields=_Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+}
+
 @dataclasses.dataclass
 class ItemConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Optional description for the namespace. Max 256 characters.
+    description: Any = None
+    name: Any = None
+    public_endpoint_params: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
-    name: Any = None
+    id: Any = None
     # path parameter, not part of the API's own resource representation
     item_id: Any = None
 
 @dataclasses.dataclass
 class ItemAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    # Optional description for the namespace. Max 256 characters.
+    description: Any = None
+    name: Any = None
+    public_endpoint_params: Any = None
     result: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
-    name: Any = None
+    id: Any = None
     # path parameter, not part of the API's own resource representation
     item_id: Any = None
 
 Item = ubx.ResourceBinding(
     wire_type="cloudflare_item",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
-        "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
+        "public_endpoint_params": ubx.FieldSpec(
+            wire_name="public_endpoint_params",
+            kind="object",
+            fields=_Item_PublicEndpointParamsFields,
+        ),
+        "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
         "item_id": ubx.FieldSpec(wire_name="item_id"),
     },
 )

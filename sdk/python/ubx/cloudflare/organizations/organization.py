@@ -7,16 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Organization_Id:
+    pass
+
+@dataclasses.dataclass
 class Organization_Messages:
     code: Any = None
     message: Any = None
 
 @dataclasses.dataclass
-class Organization_Result_Id:
-    pass
-
-@dataclasses.dataclass
-class Organization_Result_Meta_TenantFlags:
+class Organization_Meta_TenantFlags:
     account_creation: Any = None
     account_creation_applies_tenant_defaults: Any = None
     account_deletion: Any = None
@@ -27,19 +27,19 @@ class Organization_Result_Meta_TenantFlags:
     sub_org_creation: Any = None
 
 @dataclasses.dataclass
-class Organization_Result_Meta:
+class Organization_Meta:
     # Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return `[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.
     hierarchy_tags: Any = None
     managed_by: Any = None
     tenant_flags: Any = None
 
 @dataclasses.dataclass
-class Organization_Result_Parent:
+class Organization_Parent:
     id: Any = None
     name: Any = None
 
 @dataclasses.dataclass
-class Organization_Result_Profile:
+class Organization_Profile:
     business_address: Any = None
     business_email: Any = None
     business_name: Any = None
@@ -55,23 +55,37 @@ class Organization_Result:
     parent: Any = None
     profile: Any = None
 
+_Organization_ParentFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_Organization_ProfileFields = {
+    "business_address": ubx.FieldSpec(wire_name="business_address"),
+    "business_email": ubx.FieldSpec(wire_name="business_email"),
+    "business_name": ubx.FieldSpec(wire_name="business_name"),
+    "business_phone": ubx.FieldSpec(wire_name="business_phone"),
+    "external_metadata": ubx.FieldSpec(wire_name="external_metadata"),
+}
+
 @dataclasses.dataclass
 class OrganizationConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    name: Any = None
+    parent: Any = None
+    profile: Any = None
     # path parameter, not part of the API's own resource representation
     organization_id: Any = None
 
 @dataclasses.dataclass
 class OrganizationAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    create_time: Any = None
     errors: Any = None
+    id: Any = None
     messages: Any = None
+    meta: Any = None
+    name: Any = None
+    parent: Any = None
+    profile: Any = None
     # References an Organization in the Cloudflare data model.
     result: Any = None
     success: Any = None
@@ -81,8 +95,17 @@ class OrganizationAttrs:
 Organization = ubx.ResourceBinding(
     wire_type="cloudflare_organization",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "parent": ubx.FieldSpec(
+            wire_name="parent",
+            kind="object",
+            fields=_Organization_ParentFields,
+        ),
+        "profile": ubx.FieldSpec(
+            wire_name="profile",
+            kind="object",
+            fields=_Organization_ProfileFields,
+        ),
         "organization_id": ubx.FieldSpec(wire_name="organization_id"),
     },
 )

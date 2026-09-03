@@ -13,7 +13,8 @@ type Suppression_Result struct {
 }
 
 type SuppressionConfig struct {
-	DatasetId any
+	Email any
+	ExpiresAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -21,7 +22,8 @@ type SuppressionConfig struct {
 }
 
 type SuppressionAttrs struct {
-	DatasetId any
+	Email any
+	ExpiresAt any
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -32,7 +34,8 @@ type SuppressionAttrs struct {
 var Suppression = ubx.ResourceBinding{
 	WireType: "cloudflare_suppression",
 	Fields: ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"SuppressionId": ubx.FieldSpec{WireName: "suppression_id"},
 	},

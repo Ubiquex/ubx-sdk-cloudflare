@@ -309,10 +309,15 @@ export interface Scan_Result {
 }
 
 export interface ScanConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Country to geo egress from */
+  country?: string | Computed<string>;
+  /** Set custom headers. */
+  customHeaders?: Record<string, string> | Computed<Record<string, string>>;
+  /** Take multiple screenshots targeting different device types. */
+  screenshotsResolutions?: string[] | Computed<string[]>;
+  url: string | Computed<string>;
+  /** The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material. */
+  visibility?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -320,15 +325,20 @@ export interface ScanConfig {
 }
 
 export interface ScanAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
+  /** Country to geo egress from */
+  country: string;
+  /** Set custom headers. */
+  customHeaders: Record<string, string>;
   errors: Scan_Errors[];
   messages: Scan_Errors[];
   result: Scan_Result;
+  /** Take multiple screenshots targeting different device types. */
+  screenshotsResolutions: string[];
   /** Whether request was successful or not */
   success: boolean;
+  url: string;
+  /** The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material. */
+  visibility: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -338,8 +348,11 @@ export interface ScanAttrs {
 export const Scan: ResourceBinding<ScanConfig, ScanAttrs> = {
   wireType: "cloudflare_scan",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    country: "country",
+    customHeaders: "custom_headers",
+    screenshotsResolutions: "screenshots_resolutions",
+    url: "url",
+    visibility: "visibility",
     accountId: "account_id",
     scanId: "scan_id",
   },

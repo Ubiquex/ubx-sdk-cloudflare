@@ -26,49 +26,57 @@ class CustomProvider_Result:
 
 @dataclasses.dataclass
 class CustomProviderConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    base_url: Any = None
+    beta: Any = None
+    curl_example: Any = None
+    description: Any = None
+    enable: Any = None
+    headers: Any = None
+    js_example: Any = None
+    link: Any = None
+    name: Any = None
+    position: Any = None
+    slug: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
+    # path parameter, not part of the API's own resource representation
+    id: Any = None
 
 @dataclasses.dataclass
 class CustomProviderAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    base_url: Any = None
+    beta: Any = None
+    curl_example: Any = None
+    description: Any = None
+    enable: Any = None
+    headers: Any = None
+    js_example: Any = None
+    link: Any = None
+    name: Any = None
+    position: Any = None
     result: Any = None
+    slug: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
+    # path parameter, not part of the API's own resource representation
+    id: Any = None
 
 CustomProvider = ubx.ResourceBinding(
     wire_type="cloudflare_custom_provider",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "base_url": ubx.FieldSpec(wire_name="base_url"),
+        "beta": ubx.FieldSpec(wire_name="beta"),
+        "curl_example": ubx.FieldSpec(wire_name="curl_example"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enable": ubx.FieldSpec(wire_name="enable"),
+        "headers": ubx.FieldSpec(wire_name="headers"),
+        "js_example": ubx.FieldSpec(wire_name="js_example"),
+        "link": ubx.FieldSpec(wire_name="link"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "position": ubx.FieldSpec(wire_name="position"),
+        "slug": ubx.FieldSpec(wire_name="slug"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
     },
 )

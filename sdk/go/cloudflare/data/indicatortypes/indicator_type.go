@@ -10,14 +10,14 @@ type IndicatorType_Items struct {
 type IndicatorTypeConfig struct {
 	// Account ID.
 	AccountId any
-	// Array of dataset IDs to query indicator types from. If not provided, queries all datasets for the account.
+	// Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets.
 	DatasetIds any
 }
 
 type IndicatorTypeAttrs struct {
 	// Account ID.
 	AccountId any
-	// Array of dataset IDs to query indicator types from. If not provided, queries all datasets for the account.
+	// Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets.
 	DatasetIds any
 	Items any
 	Type any

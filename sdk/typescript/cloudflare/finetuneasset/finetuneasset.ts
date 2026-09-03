@@ -7,18 +7,10 @@ export interface Finetuneasset_Result {
 }
 
 export interface FinetuneassetConfig {
-  /** Can set the creator field with an internal user ID. */
-  creator?: string | Computed<string>;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file?: string | Computed<string>;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id?: string | Computed<string>;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata?: unknown | Computed<unknown>;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls?: boolean | Computed<boolean>;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url?: string | Computed<string>;
+  description?: string | Computed<string>;
+  model: string | Computed<string>;
+  name: string | Computed<string>;
+  public?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -28,20 +20,12 @@ export interface FinetuneassetConfig {
 }
 
 export interface FinetuneassetAttrs {
-  /** Can set the creator field with an internal user ID. */
-  creator: string;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file: string;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id: string;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata: unknown;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls: boolean;
+  description: string;
+  model: string;
+  name: string;
+  public: boolean;
   result: Finetuneasset_Result;
   success: boolean;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -53,12 +37,10 @@ export interface FinetuneassetAttrs {
 export const Finetuneasset: ResourceBinding<FinetuneassetConfig, FinetuneassetAttrs> = {
   wireType: "cloudflare_finetune_asset",
   fields: {
-    creator: "creator",
-    file: "file",
-    id: "id",
-    metadata: "metadata",
-    requireSignedUrls: "require_signed_urls",
-    url: "url",
+    description: "description",
+    model: "model",
+    name: "name",
+    public: "public",
     accountId: "account_id",
     finetuneId: "finetune_id",
     fileName: "file_name",

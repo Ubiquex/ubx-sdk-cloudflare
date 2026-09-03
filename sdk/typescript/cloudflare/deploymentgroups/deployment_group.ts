@@ -26,11 +26,18 @@ export interface DeploymentGroup_Result {
   versionConfig: DeploymentGroup_Result_VersionConfig[] | Computed<DeploymentGroup_Result_VersionConfig[]>;
 }
 
+const DeploymentGroup_Result_VersionConfigFields: FieldMap = {
+  targetEnvironment: "target_environment",
+  version: "version",
+};
+
 export interface DeploymentGroupConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** A user-friendly name for the deployment group. */
+  name: string | Computed<string>;
+  /** Contains an optional list of policy IDs assigned to a group. */
+  policyIds?: string[] | Computed<string[]>;
+  /** Contains at least one version configuration. */
+  versionConfig: DeploymentGroup_Result_VersionConfig[] | Computed<DeploymentGroup_Result_VersionConfig[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -38,15 +45,17 @@ export interface DeploymentGroupConfig {
 }
 
 export interface DeploymentGroupAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   errors: DeploymentGroup_Errors[];
   messages: DeploymentGroup_Errors[];
+  /** A user-friendly name for the deployment group. */
+  name: string;
+  /** Contains an optional list of policy IDs assigned to a group. */
+  policyIds: string[];
   result: DeploymentGroup_Result;
   /** Indicates whether the API call was successful. */
   success: boolean;
+  /** Contains at least one version configuration. */
+  versionConfig: DeploymentGroup_Result_VersionConfig[];
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -56,8 +65,13 @@ export interface DeploymentGroupAttrs {
 export const DeploymentGroup: ResourceBinding<DeploymentGroupConfig, DeploymentGroupAttrs> = {
   wireType: "cloudflare_deployment_group",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
+    policyIds: "policy_ids",
+    versionConfig: {
+      wireName: "version_config",
+      kind: "list",
+      fields: DeploymentGroup_Result_VersionConfigFields,
+    },
     accountId: "account_id",
     groupId: "group_id",
   },

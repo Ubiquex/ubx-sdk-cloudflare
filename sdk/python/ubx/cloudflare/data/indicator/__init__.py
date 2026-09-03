@@ -6,3 +6,4 @@ SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .indicator import Indicator, IndicatorConfig
 from .relationship import Relationship, RelationshipConfig
+from .tag import Tag, TagConfig

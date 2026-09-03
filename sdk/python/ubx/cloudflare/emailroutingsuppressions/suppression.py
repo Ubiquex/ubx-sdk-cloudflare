@@ -17,7 +17,8 @@ class Suppression_Result:
 
 @dataclasses.dataclass
 class SuppressionConfig:
-    dataset_id: Any = None
+    email: Any = None
+    expires_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -25,7 +26,8 @@ class SuppressionConfig:
 
 @dataclasses.dataclass
 class SuppressionAttrs:
-    dataset_id: Any = None
+    email: Any = None
+    expires_at: Any = None
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -35,7 +37,8 @@ class SuppressionAttrs:
 Suppression = ubx.ResourceBinding(
     wire_type="cloudflare_suppression",
     fields={
-        "dataset_id": ubx.FieldSpec(wire_name="dataset_id"),
+        "email": ubx.FieldSpec(wire_name="email"),
+        "expires_at": ubx.FieldSpec(wire_name="expires_at"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "suppression_id": ubx.FieldSpec(wire_name="suppression_id"),
     },

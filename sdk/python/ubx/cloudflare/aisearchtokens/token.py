@@ -20,49 +20,36 @@ class Token_Result:
 
 @dataclasses.dataclass
 class TokenConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    cf_api_id: Any = None
+    cf_api_key: Any = None
+    legacy: Any = None
+    name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
+    # path parameter, not part of the API's own resource representation
+    id: Any = None
 
 @dataclasses.dataclass
 class TokenAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    cf_api_id: Any = None
+    cf_api_key: Any = None
+    legacy: Any = None
+    name: Any = None
     result: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
+    # path parameter, not part of the API's own resource representation
+    id: Any = None
 
 Token = ubx.ResourceBinding(
     wire_type="cloudflare_token",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "cf_api_id": ubx.FieldSpec(wire_name="cf_api_id"),
+        "cf_api_key": ubx.FieldSpec(wire_name="cf_api_key"),
+        "legacy": ubx.FieldSpec(wire_name="legacy"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
+        "id": ubx.FieldSpec(wire_name="id"),
     },
 )

@@ -18,7 +18,7 @@ type AggregateConfig struct {
 	AccountId any
 	// Column(s) to aggregate by - single column or comma-separated list (e.g., 'attacker', 'targetIndustry', 'attacker,targetIndustry')
 	AggregateBy any
-	// Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset
+	// Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.
 	DatasetId any
 	// End date for filtering (ISO 8601 format, e.g., '2024-12-31')
 	EndDate any
@@ -37,7 +37,7 @@ type AggregateAttrs struct {
 	AggregateBy any
 	// Array of aggregation results with dynamic fields based on aggregateBy columns
 	Aggregations any
-	// Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset
+	// Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.
 	DatasetId any
 	// Date range used for filtering
 	DateRange any

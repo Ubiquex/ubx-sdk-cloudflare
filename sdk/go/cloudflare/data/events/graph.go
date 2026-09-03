@@ -47,7 +47,7 @@ type GraphConfig struct {
 	AccountId any
 	// Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise.
 	Cursor any
-	// Comma-separated dataset UUIDs to restrict neighbor scope. Intersected with ACL grants.
+	// Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants.
 	DatasetIds any
 	// Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default).
 	Direction any
@@ -70,7 +70,7 @@ type GraphAttrs struct {
 	AccountId any
 	// Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise.
 	Cursor any
-	// Comma-separated dataset UUIDs to restrict neighbor scope. Intersected with ACL grants.
+	// Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants.
 	DatasetIds any
 	// Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default).
 	Direction any

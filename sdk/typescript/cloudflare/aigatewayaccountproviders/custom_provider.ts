@@ -20,50 +20,58 @@ export interface CustomProvider_Result {
 }
 
 export interface CustomProviderConfig {
-  /** Can set the creator field with an internal user ID. */
-  creator?: string | Computed<string>;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file?: string | Computed<string>;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id?: string | Computed<string>;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata?: unknown | Computed<unknown>;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls?: boolean | Computed<boolean>;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url?: string | Computed<string>;
+  baseUrl: string | Computed<string>;
+  beta?: boolean | Computed<boolean>;
+  curlExample?: string | Computed<string>;
+  description?: string | Computed<string>;
+  enable?: boolean | Computed<boolean>;
+  headers?: string | Computed<string>;
+  jsExample?: string | Computed<string>;
+  link?: string | Computed<string>;
+  name: string | Computed<string>;
+  position?: number | Computed<number>;
+  slug: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
+  /** path parameter, not part of the API's own resource representation */
+  id: string | Computed<string>;
 }
 
 export interface CustomProviderAttrs {
-  /** Can set the creator field with an internal user ID. */
-  creator: string;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file: string;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id: string;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata: unknown;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls: boolean;
+  baseUrl: string;
+  beta: boolean;
+  curlExample: string;
+  description: string;
+  enable: boolean;
+  headers: string;
+  jsExample: string;
+  link: string;
+  name: string;
+  position: number;
   result: CustomProvider_Result;
+  slug: string;
   success: boolean;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
+  /** path parameter, not part of the API's own resource representation */
+  id: string;
 }
 
 export const CustomProvider: ResourceBinding<CustomProviderConfig, CustomProviderAttrs> = {
   wireType: "cloudflare_custom_provider",
   fields: {
-    creator: "creator",
-    file: "file",
-    id: "id",
-    metadata: "metadata",
-    requireSignedUrls: "require_signed_urls",
-    url: "url",
+    baseUrl: "base_url",
+    beta: "beta",
+    curlExample: "curl_example",
+    description: "description",
+    enable: "enable",
+    headers: "headers",
+    jsExample: "js_example",
+    link: "link",
+    name: "name",
+    position: "position",
+    slug: "slug",
     accountId: "account_id",
+    id: "id",
   },
 };

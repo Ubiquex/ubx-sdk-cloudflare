@@ -9,4 +9,3 @@ from .active_livestream_session import ActiveLivestreamSession, ActiveLivestream
 from .livestream import Livestream, LivestreamConfig
 from .livestream_session import LivestreamSession, LivestreamSessionConfig
 from .overall import Overall, OverallConfig
-from .session import Session, SessionConfig

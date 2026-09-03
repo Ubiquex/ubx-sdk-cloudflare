@@ -32,10 +32,8 @@ type Memory_Result struct {
 }
 
 type MemoryConfig struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
+	// Namespace name.
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -47,14 +45,12 @@ type MemoryConfig struct {
 }
 
 type MemoryAttrs struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
 	// Always empty for a successful response.
 	Errors any
 	// Informational, non-error messages, if any.
 	Messages any
+	// Namespace name.
+	Name any
 	Result any
 	// Always true for a successful response.
 	Success any
@@ -71,8 +67,7 @@ type MemoryAttrs struct {
 var Memory = ubx.ResourceBinding{
 	WireType: "cloudflare_memory",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"DestinationOrganizationId": ubx.FieldSpec{WireName: "destination_organization_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
 		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},

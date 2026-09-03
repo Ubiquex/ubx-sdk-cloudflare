@@ -30,10 +30,8 @@ class Namespace_Result:
 
 @dataclasses.dataclass
 class NamespaceConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # Namespace name.
+    name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -41,14 +39,12 @@ class NamespaceConfig:
 
 @dataclasses.dataclass
 class NamespaceAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
     # Always empty for a successful response.
     errors: Any = None
     # Informational, non-error messages, if any.
     messages: Any = None
+    # Namespace name.
+    name: Any = None
     result: Any = None
     # Always true for a successful response.
     success: Any = None
@@ -60,8 +56,7 @@ class NamespaceAttrs:
 Namespace = ubx.ResourceBinding(
     wire_type="cloudflare_namespace",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "namespace_name": ubx.FieldSpec(wire_name="namespace_name"),
     },

@@ -88,12 +88,109 @@ class Flag_Result:
     # Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB.
     variations: Any = None
 
+_Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(wire_name="clauses"),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(
+        wire_name="clauses",
+        kind="list",
+        fields=_Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields,
+    ),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(
+        wire_name="clauses",
+        kind="list",
+        fields=_Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields,
+    ),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_Conditions_Clauses_ClausesFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(
+        wire_name="clauses",
+        kind="list",
+        fields=_Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields,
+    ),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_Conditions_ClausesFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(
+        wire_name="clauses",
+        kind="list",
+        fields=_Flag_Result_Rules_Conditions_Clauses_ClausesFields,
+    ),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_ConditionsFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "clauses": ubx.FieldSpec(
+        wire_name="clauses",
+        kind="list",
+        fields=_Flag_Result_Rules_Conditions_ClausesFields,
+    ),
+    "logical_operator": ubx.FieldSpec(wire_name="logical_operator"),
+    "operator": ubx.FieldSpec(wire_name="operator"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Flag_Result_Rules_RolloutFields = {
+    "attribute": ubx.FieldSpec(wire_name="attribute"),
+    "percentage": ubx.FieldSpec(wire_name="percentage"),
+}
+
+_Flag_Result_RulesFields = {
+    "conditions": ubx.FieldSpec(
+        wire_name="conditions",
+        kind="list",
+        fields=_Flag_Result_Rules_ConditionsFields,
+    ),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rollout": ubx.FieldSpec(
+        wire_name="rollout",
+        kind="object",
+        fields=_Flag_Result_Rules_RolloutFields,
+    ),
+    "serve_variation": ubx.FieldSpec(wire_name="serve_variation"),
+}
+
 @dataclasses.dataclass
 class FlagConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
+    default_variation: Any = None
+    description: Any = None
+    # When false, the flag bypasses all rules and always serves `default_variation`.
+    enabled: Any = None
+    # Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
+    key: Any = None
+    # Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
+    rules: Any = None
+    # Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
+    type: Any = None
+    # Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB.
+    variations: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -103,14 +200,23 @@ class FlagConfig:
 
 @dataclasses.dataclass
 class FlagAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
+    default_variation: Any = None
+    description: Any = None
+    # When false, the flag bypasses all rules and always serves `default_variation`.
+    enabled: Any = None
     errors: Any = None
+    # Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
+    key: Any = None
     messages: Any = None
     result: Any = None
+    # Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
+    rules: Any = None
     success: Any = None
+    # Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
+    type: Any = None
+    # Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB.
+    variations: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -121,8 +227,17 @@ class FlagAttrs:
 Flag = ubx.ResourceBinding(
     wire_type="cloudflare_flag",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "default_variation": ubx.FieldSpec(wire_name="default_variation"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "key": ubx.FieldSpec(wire_name="key"),
+        "rules": ubx.FieldSpec(
+            wire_name="rules",
+            kind="list",
+            fields=_Flag_Result_RulesFields,
+        ),
+        "type": ubx.FieldSpec(wire_name="type"),
+        "variations": ubx.FieldSpec(wire_name="variations"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "app_id": ubx.FieldSpec(wire_name="app_id"),
         "flag_key": ubx.FieldSpec(wire_name="flag_key"),

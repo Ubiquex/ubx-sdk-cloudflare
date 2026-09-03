@@ -9,18 +9,10 @@ type Finetuneasset_Result struct {
 }
 
 type FinetuneassetConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	Description any
+	Model any
+	Name any
+	Public any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -30,20 +22,12 @@ type FinetuneassetConfig struct {
 }
 
 type FinetuneassetAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	Description any
+	Model any
+	Name any
+	Public any
 	Result any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -55,12 +39,10 @@ type FinetuneassetAttrs struct {
 var Finetuneasset = ubx.ResourceBinding{
 	WireType: "cloudflare_finetune_asset",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Model": ubx.FieldSpec{WireName: "model"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Public": ubx.FieldSpec{WireName: "public"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"FinetuneId": ubx.FieldSpec{WireName: "finetune_id"},
 		"FileName": ubx.FieldSpec{WireName: "file_name"},

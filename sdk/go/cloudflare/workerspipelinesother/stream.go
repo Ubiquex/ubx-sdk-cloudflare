@@ -3,11 +3,11 @@ package workerspipelinesother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Stream_Result_Http_Cors struct {
+type Stream_Http_Cors struct {
 	Origins any
 }
 
-type Stream_Result_Http struct {
+type Stream_Http struct {
 	// Indicates that authentication is required for the HTTP endpoint.
 	Authentication any
 	// Specifies the CORS options for the HTTP endpoint.
@@ -52,19 +52,49 @@ type Stream_Result struct {
 	WorkerBinding any
 }
 
+var Stream_Http_CorsFields = ubx.FieldMap{
+		"Origins": ubx.FieldSpec{WireName: "origins"},
+	}
+
+var Stream_HttpFields = ubx.FieldMap{
+		"Authentication": ubx.FieldSpec{WireName: "authentication"},
+		"Cors": ubx.FieldSpec{
+			WireName: "cors",
+			Kind: "object",
+			Fields: Stream_Http_CorsFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
+var Stream_Result_Schema_FieldsFields = ubx.FieldMap{
+		"MetadataKey": ubx.FieldSpec{WireName: "metadata_key"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"SqlName": ubx.FieldSpec{WireName: "sql_name"},
+	}
+
+var Stream_Result_SchemaFields = ubx.FieldMap{
+		"Fields": ubx.FieldSpec{
+			WireName: "fields",
+			Kind: "list",
+			Fields: Stream_Result_Schema_FieldsFields,
+		},
+		"Inferred": ubx.FieldSpec{WireName: "inferred"},
+	}
+
+var Stream_Result_WorkerBindingFields = ubx.FieldMap{
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
+
 type StreamConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Defines the data format of the events.
+	Format any
+	Http any
+	// Specifies the name of the Stream.
+	Name any
+	// Defines the schema of the events in the data stream.
+	Schema any
+	WorkerBinding any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -72,21 +102,17 @@ type StreamConfig struct {
 }
 
 type StreamAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	// Defines the data format of the events.
+	Format any
+	Http any
+	// Specifies the name of the Stream.
+	Name any
 	Result any
+	// Defines the schema of the events in the data stream.
+	Schema any
 	// Indicates whether the API call was successful.
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	WorkerBinding any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -96,12 +122,23 @@ type StreamAttrs struct {
 var Stream = ubx.ResourceBinding{
 	WireType: "cloudflare_stream",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Http": ubx.FieldSpec{
+			WireName: "http",
+			Kind: "object",
+			Fields: Stream_HttpFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Schema": ubx.FieldSpec{
+			WireName: "schema",
+			Kind: "object",
+			Fields: Stream_Result_SchemaFields,
+		},
+		"WorkerBinding": ubx.FieldSpec{
+			WireName: "worker_binding",
+			Kind: "object",
+			Fields: Stream_Result_WorkerBindingFields,
+		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
 	},

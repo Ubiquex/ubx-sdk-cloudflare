@@ -4,5 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .asn import Asn, AsnConfig
 from .day_report import DayReport, DayReportConfig
 from .full_report import FullReport, FullReportConfig

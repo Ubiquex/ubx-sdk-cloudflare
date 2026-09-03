@@ -29,19 +29,27 @@ export interface Tree_ResultInfo {
 }
 
 export interface TreeConfig {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch?: string | Computed<string>;
+  description?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   namespace: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
-  name: string | Computed<string>;
-  /** path parameter, not part of the API's own resource representation */
   hash: string | Computed<string>;
 }
 
 export interface TreeAttrs {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch: string;
+  description: string;
   errors: Tree_Errors[];
   messages: Tree_Errors[];
+  name: string;
+  readOnly: boolean;
   result: Tree_Result[];
   resultInfo: Tree_ResultInfo;
   success: boolean;
@@ -50,17 +58,18 @@ export interface TreeAttrs {
   /** path parameter, not part of the API's own resource representation */
   namespace: string;
   /** path parameter, not part of the API's own resource representation */
-  name: string;
-  /** path parameter, not part of the API's own resource representation */
   hash: string;
 }
 
 export const Tree: ResourceBinding<TreeConfig, TreeAttrs> = {
   wireType: "cloudflare_tree",
   fields: {
+    defaultBranch: "default_branch",
+    description: "description",
+    name: "name",
+    readOnly: "read_only",
     accountId: "account_id",
     namespace: "namespace",
-    name: "name",
     hash: "hash",
   },
 };

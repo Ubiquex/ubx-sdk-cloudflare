@@ -29,18 +29,10 @@ type Pipeline_Result struct {
 }
 
 type PipelineConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Specifies the name of the Pipeline.
+	Name any
+	// Specifies SQL for the Pipeline processing flow.
+	Sql any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -48,21 +40,13 @@ type PipelineConfig struct {
 }
 
 type PipelineAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	// Specifies the name of the Pipeline.
+	Name any
 	Result any
+	// Specifies SQL for the Pipeline processing flow.
+	Sql any
 	// Indicates whether the API call was successful.
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -72,12 +56,8 @@ type PipelineAttrs struct {
 var Pipeline = ubx.ResourceBinding{
 	WireType: "cloudflare_pipeline",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Sql": ubx.FieldSpec{WireName: "sql"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
 	},

@@ -83,11 +83,108 @@ export interface Flag_Result {
   variations: Record<string, unknown> | Computed<Record<string, unknown>>;
 }
 
+const Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields: FieldMap = {
+  attribute: "attribute",
+  clauses: "clauses",
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields: FieldMap = {
+  attribute: "attribute",
+  clauses: {
+    wireName: "clauses",
+    kind: "list",
+    fields: Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields,
+  },
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields: FieldMap = {
+  attribute: "attribute",
+  clauses: {
+    wireName: "clauses",
+    kind: "list",
+    fields: Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields,
+  },
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_Conditions_Clauses_ClausesFields: FieldMap = {
+  attribute: "attribute",
+  clauses: {
+    wireName: "clauses",
+    kind: "list",
+    fields: Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields,
+  },
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_Conditions_ClausesFields: FieldMap = {
+  attribute: "attribute",
+  clauses: {
+    wireName: "clauses",
+    kind: "list",
+    fields: Flag_Result_Rules_Conditions_Clauses_ClausesFields,
+  },
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_ConditionsFields: FieldMap = {
+  attribute: "attribute",
+  clauses: {
+    wireName: "clauses",
+    kind: "list",
+    fields: Flag_Result_Rules_Conditions_ClausesFields,
+  },
+  logicalOperator: "logical_operator",
+  operator: "operator",
+  value: "value",
+};
+
+const Flag_Result_Rules_RolloutFields: FieldMap = {
+  attribute: "attribute",
+  percentage: "percentage",
+};
+
+const Flag_Result_RulesFields: FieldMap = {
+  conditions: {
+    wireName: "conditions",
+    kind: "list",
+    fields: Flag_Result_Rules_ConditionsFields,
+  },
+  priority: "priority",
+  rollout: {
+    wireName: "rollout",
+    kind: "object",
+    fields: Flag_Result_Rules_RolloutFields,
+  },
+  serveVariation: "serve_variation",
+};
+
 export interface FlagConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`. */
+  defaultVariation: string | Computed<string>;
+  description?: string | Computed<string>;
+  /** When false, the flag bypasses all rules and always serves `default_variation`. */
+  enabled: boolean | Computed<boolean>;
+  /** Unique identifier for the flag within an app. Used in all evaluation and SDK calls. */
+  key: string | Computed<string>;
+  /** Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`. */
+  rules: Flag_Result_Rules[] | Computed<Flag_Result_Rules[]>;
+  /** Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests. */
+  type?: string | Computed<string>;
+  /** Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB. */
+  variations: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -97,14 +194,23 @@ export interface FlagConfig {
 }
 
 export interface FlagAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
+  /** Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`. */
+  defaultVariation: string;
+  description: string;
+  /** When false, the flag bypasses all rules and always serves `default_variation`. */
+  enabled: boolean;
   errors: Flag_Errors[];
+  /** Unique identifier for the flag within an app. Used in all evaluation and SDK calls. */
+  key: string;
   messages: Flag_Errors[];
   result: Flag_Result;
+  /** Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`. */
+  rules: Flag_Result_Rules[];
   success: boolean;
+  /** Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests. */
+  type: string;
+  /** Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB. */
+  variations: Record<string, unknown>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -116,8 +222,17 @@ export interface FlagAttrs {
 export const Flag: ResourceBinding<FlagConfig, FlagAttrs> = {
   wireType: "cloudflare_flag",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    defaultVariation: "default_variation",
+    description: "description",
+    enabled: "enabled",
+    key: "key",
+    rules: {
+      wireName: "rules",
+      kind: "list",
+      fields: Flag_Result_RulesFields,
+    },
+    type: "type",
+    variations: "variations",
     accountId: "account_id",
     appId: "app_id",
     flagKey: "flag_key",

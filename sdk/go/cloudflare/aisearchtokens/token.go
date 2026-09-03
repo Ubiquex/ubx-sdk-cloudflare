@@ -16,50 +16,37 @@ type Token_Result struct {
 }
 
 type TokenConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	CfApiId any
+	CfApiKey any
+	Legacy any
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
+	// path parameter, not part of the API's own resource representation
+	Id any
 }
 
 type TokenAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	CfApiId any
+	CfApiKey any
+	Legacy any
+	Name any
 	Result any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
+	// path parameter, not part of the API's own resource representation
+	Id any
 }
 
 var Token = ubx.ResourceBinding{
 	WireType: "cloudflare_token",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"CfApiId": ubx.FieldSpec{WireName: "cf_api_id"},
+		"CfApiKey": ubx.FieldSpec{WireName: "cf_api_key"},
+		"Legacy": ubx.FieldSpec{WireName: "legacy"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 	},
 }

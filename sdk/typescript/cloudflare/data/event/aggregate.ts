@@ -16,7 +16,7 @@ export interface AggregateConfig {
   accountId: string | Computed<string>;
   /** Column(s) to aggregate by - single column or comma-separated list (e.g., 'attacker', 'targetIndustry', 'attacker,targetIndustry') */
   aggregateBy: string | Computed<string>;
-  /** Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset */
+  /** Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset. */
   datasetId?: string[] | Computed<string[]>;
   /** End date for filtering (ISO 8601 format, e.g., '2024-12-31') */
   endDate?: string | Computed<string>;
@@ -35,7 +35,7 @@ export interface AggregateAttrs {
   aggregateBy: string;
   /** Array of aggregation results with dynamic fields based on aggregateBy columns */
   aggregations: Aggregate_Aggregations[];
-  /** Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset */
+  /** Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset. */
   datasetId: string[];
   /** Date range used for filtering */
   dateRange: Aggregate_DateRange;

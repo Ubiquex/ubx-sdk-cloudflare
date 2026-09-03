@@ -3,9 +3,25 @@ package workflows
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Workflow_Concurrency struct {
+	// Maximum number of instances of this workflow that can run concurrently. Additional instances are queued and started as running instances complete. Must not exceed the account concurrency limit.
+	Limit any
+}
+
+type Workflow_DefaultRetention struct {
+	// Specifies the duration in milliseconds or as a string like '5 minutes'.
+	ErrorRetention any
+	// Specifies the duration in milliseconds or as a string like '5 minutes'.
+	SuccessRetention any
+}
+
 type Workflow_Errors struct {
 	Code any
 	Message any
+}
+
+type Workflow_Limits struct {
+	Steps any
 }
 
 type Workflow_Result_Schedules struct {
@@ -34,7 +50,35 @@ type Workflow_ResultInfo struct {
 	TotalPages any
 }
 
+type Workflow_Schedules struct {
+	Cron any
+}
+
+var Workflow_ConcurrencyFields = ubx.FieldMap{
+		"Limit": ubx.FieldSpec{WireName: "limit"},
+	}
+
+var Workflow_DefaultRetentionFields = ubx.FieldMap{
+		"ErrorRetention": ubx.FieldSpec{WireName: "error_retention"},
+		"SuccessRetention": ubx.FieldSpec{WireName: "success_retention"},
+	}
+
+var Workflow_LimitsFields = ubx.FieldMap{
+		"Steps": ubx.FieldSpec{WireName: "steps"},
+	}
+
+var Workflow_SchedulesFields = ubx.FieldMap{
+		"Cron": ubx.FieldSpec{WireName: "cron"},
+	}
+
 type WorkflowConfig struct {
+	ClassName any
+	Concurrency any
+	// Default retention applied to instances of this version when they do not set their own retention.
+	DefaultRetention any
+	Limits any
+	Schedules any
+	ScriptName any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -42,10 +86,17 @@ type WorkflowConfig struct {
 }
 
 type WorkflowAttrs struct {
+	ClassName any
+	Concurrency any
+	// Default retention applied to instances of this version when they do not set their own retention.
+	DefaultRetention any
 	Errors any
+	Limits any
 	Messages any
 	Result any
 	ResultInfo any
+	Schedules any
+	ScriptName any
 	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -56,6 +107,28 @@ type WorkflowAttrs struct {
 var Workflow = ubx.ResourceBinding{
 	WireType: "cloudflare_workflow",
 	Fields: ubx.FieldMap{
+		"ClassName": ubx.FieldSpec{WireName: "class_name"},
+		"Concurrency": ubx.FieldSpec{
+			WireName: "concurrency",
+			Kind: "object",
+			Fields: Workflow_ConcurrencyFields,
+		},
+		"DefaultRetention": ubx.FieldSpec{
+			WireName: "default_retention",
+			Kind: "object",
+			Fields: Workflow_DefaultRetentionFields,
+		},
+		"Limits": ubx.FieldSpec{
+			WireName: "limits",
+			Kind: "object",
+			Fields: Workflow_LimitsFields,
+		},
+		"Schedules": ubx.FieldSpec{
+			WireName: "schedules",
+			Kind: "list",
+			Fields: Workflow_SchedulesFields,
+		},
+		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
