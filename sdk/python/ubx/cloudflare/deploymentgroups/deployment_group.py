@@ -31,12 +31,19 @@ class DeploymentGroup_Result:
     # Contains version configurations for different target environments.
     version_config: Any = None
 
+_DeploymentGroup_Result_VersionConfigFields = {
+    "target_environment": ubx.FieldSpec(wire_name="target_environment"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
 @dataclasses.dataclass
 class DeploymentGroupConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # A user-friendly name for the deployment group.
+    name: Any = None
+    # Contains an optional list of policy IDs assigned to a group.
+    policy_ids: Any = None
+    # Contains at least one version configuration.
+    version_config: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -44,15 +51,17 @@ class DeploymentGroupConfig:
 
 @dataclasses.dataclass
 class DeploymentGroupAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
     errors: Any = None
     messages: Any = None
+    # A user-friendly name for the deployment group.
+    name: Any = None
+    # Contains an optional list of policy IDs assigned to a group.
+    policy_ids: Any = None
     result: Any = None
     # Indicates whether the API call was successful.
     success: Any = None
+    # Contains at least one version configuration.
+    version_config: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -61,8 +70,13 @@ class DeploymentGroupAttrs:
 DeploymentGroup = ubx.ResourceBinding(
     wire_type="cloudflare_deployment_group",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "policy_ids": ubx.FieldSpec(wire_name="policy_ids"),
+        "version_config": ubx.FieldSpec(
+            wire_name="version_config",
+            kind="list",
+            fields=_DeploymentGroup_Result_VersionConfigFields,
+        ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "group_id": ubx.FieldSpec(wire_name="group_id"),
     },

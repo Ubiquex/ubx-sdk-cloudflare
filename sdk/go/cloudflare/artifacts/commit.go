@@ -40,19 +40,27 @@ type Commit_ResultInfo struct {
 }
 
 type CommitConfig struct {
+	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
+	DefaultBranch any
+	Description any
+	Name any
+	ReadOnly any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
 	Namespace any
 	// path parameter, not part of the API's own resource representation
-	Name any
-	// path parameter, not part of the API's own resource representation
 	Hash any
 }
 
 type CommitAttrs struct {
+	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
+	DefaultBranch any
+	Description any
 	Errors any
 	Messages any
+	Name any
+	ReadOnly any
 	Result any
 	ResultInfo any
 	Success any
@@ -61,17 +69,18 @@ type CommitAttrs struct {
 	// path parameter, not part of the API's own resource representation
 	Namespace any
 	// path parameter, not part of the API's own resource representation
-	Name any
-	// path parameter, not part of the API's own resource representation
 	Hash any
 }
 
 var Commit = ubx.ResourceBinding{
 	WireType: "cloudflare_commit",
 	Fields: ubx.FieldMap{
+		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Hash": ubx.FieldSpec{WireName: "hash"},
 	},
 }

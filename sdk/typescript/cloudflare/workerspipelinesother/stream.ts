@@ -51,18 +51,10 @@ export interface Stream_Result {
 }
 
 export interface StreamConfig {
-  /** Can set the creator field with an internal user ID. */
-  creator?: string | Computed<string>;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file?: string | Computed<string>;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id?: string | Computed<string>;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata?: unknown | Computed<unknown>;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls?: boolean | Computed<boolean>;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url?: string | Computed<string>;
+  /** Specifies the name of the Pipeline. */
+  name: string | Computed<string>;
+  /** Specifies SQL for the Pipeline processing flow. */
+  sql: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -70,21 +62,13 @@ export interface StreamConfig {
 }
 
 export interface StreamAttrs {
-  /** Can set the creator field with an internal user ID. */
-  creator: string;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file: string;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id: string;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata: unknown;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls: boolean;
+  /** Specifies the name of the Pipeline. */
+  name: string;
   result: Stream_Result;
+  /** Specifies SQL for the Pipeline processing flow. */
+  sql: string;
   /** Indicates whether the API call was successful. */
   success: boolean;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -94,12 +78,8 @@ export interface StreamAttrs {
 export const Stream: ResourceBinding<StreamConfig, StreamAttrs> = {
   wireType: "cloudflare_stream",
   fields: {
-    creator: "creator",
-    file: "file",
-    id: "id",
-    metadata: "metadata",
-    requireSignedUrls: "require_signed_urls",
-    url: "url",
+    name: "name",
+    sql: "sql",
     accountId: "account_id",
     streamId: "stream_id",
   },

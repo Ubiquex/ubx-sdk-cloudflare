@@ -45,7 +45,7 @@ export interface GraphConfig {
   accountId: string | Computed<string>;
   /** Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise. */
   cursor?: string | Computed<string>;
-  /** Comma-separated dataset UUIDs to restrict neighbor scope. Intersected with ACL grants. */
+  /** Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants. */
   datasetIds?: string[] | Computed<string[]>;
   /** Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default). */
   direction?: string | Computed<string>;
@@ -68,7 +68,7 @@ export interface GraphAttrs {
   accountId: string;
   /** Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise. */
   cursor: string;
-  /** Comma-separated dataset UUIDs to restrict neighbor scope. Intersected with ACL grants. */
+  /** Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants. */
   datasetIds: string[];
   /** Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default). */
   direction: string;

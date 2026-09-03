@@ -22,7 +22,7 @@ class AggregateConfig:
     account_id: Any = None
     # Column(s) to aggregate by - single column or comma-separated list (e.g., 'attacker', 'targetIndustry', 'attacker,targetIndustry')
     aggregate_by: Any = None
-    # Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset
+    # Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.
     dataset_id: Any = None
     # End date for filtering (ISO 8601 format, e.g., '2024-12-31')
     end_date: Any = None
@@ -41,7 +41,7 @@ class AggregateAttrs:
     aggregate_by: Any = None
     # Array of aggregation results with dynamic fields based on aggregateBy columns
     aggregations: Any = None
-    # Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset
+    # Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.
     dataset_id: Any = None
     # Date range used for filtering
     date_range: Any = None

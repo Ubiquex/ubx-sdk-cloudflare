@@ -30,10 +30,8 @@ export interface Memory_Result {
 }
 
 export interface MemoryConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Namespace name. */
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -45,14 +43,12 @@ export interface MemoryConfig {
 }
 
 export interface MemoryAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   /** Always empty for a successful response. */
   errors: Memory_Errors[];
   /** Informational, non-error messages, if any. */
   messages: Memory_Errors[];
+  /** Namespace name. */
+  name: string;
   result: Memory_Result;
   /** Always true for a successful response. */
   success: unknown;
@@ -69,8 +65,7 @@ export interface MemoryAttrs {
 export const Memory: ResourceBinding<MemoryConfig, MemoryAttrs> = {
   wireType: "cloudflare_memory",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     namespaceName: "namespace_name",
     profileName: "profile_name",

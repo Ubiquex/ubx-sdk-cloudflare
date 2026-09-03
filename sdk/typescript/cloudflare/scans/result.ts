@@ -5,10 +5,8 @@ export interface Result_Result {
 }
 
 export interface ResultConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Namespace name. */
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -16,12 +14,10 @@ export interface ResultConfig {
 }
 
 export interface ResultAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   errors: string[];
   messages: string[];
+  /** Namespace name. */
+  name: string;
   result: Result_Result;
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
@@ -33,8 +29,7 @@ export interface ResultAttrs {
 export const Result: ResourceBinding<ResultConfig, ResultAttrs> = {
   wireType: "cloudflare_result",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     configId: "config_id",
   },

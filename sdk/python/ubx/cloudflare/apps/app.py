@@ -21,10 +21,7 @@ class App_Result:
 
 @dataclasses.dataclass
 class AppConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -32,12 +29,9 @@ class AppConfig:
 
 @dataclasses.dataclass
 class AppAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
     errors: Any = None
     messages: Any = None
+    name: Any = None
     result: Any = None
     success: Any = None
     # path parameter, not part of the API's own resource representation
@@ -48,8 +42,7 @@ class AppAttrs:
 App = ubx.ResourceBinding(
     wire_type="cloudflare_app",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "app_id": ubx.FieldSpec(wire_name="app_id"),
     },

@@ -309,10 +309,8 @@ export interface Scan_Result {
 }
 
 export interface ScanConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Namespace name. */
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -320,12 +318,10 @@ export interface ScanConfig {
 }
 
 export interface ScanAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   errors: Scan_Errors[];
   messages: Scan_Errors[];
+  /** Namespace name. */
+  name: string;
   result: Scan_Result;
   /** Whether request was successful or not */
   success: boolean;
@@ -338,8 +334,7 @@ export interface ScanAttrs {
 export const Scan: ResourceBinding<ScanConfig, ScanAttrs> = {
   wireType: "cloudflare_scan",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     scanId: "scan_id",
   },

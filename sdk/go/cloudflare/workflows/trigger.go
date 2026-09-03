@@ -35,15 +35,27 @@ type Trigger_ResultInfo struct {
 }
 
 type TriggerConfig struct {
+	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
+	DefaultBranch any
+	Description any
+	Name any
+	ReadOnly any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
 	ScriptName any
+	// path parameter, not part of the API's own resource representation
+	Namespace any
 }
 
 type TriggerAttrs struct {
+	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
+	DefaultBranch any
+	Description any
 	Errors any
 	Messages any
+	Name any
+	ReadOnly any
 	Result any
 	ResultInfo any
 	Success any
@@ -51,12 +63,19 @@ type TriggerAttrs struct {
 	AccountId any
 	// path parameter, not part of the API's own resource representation
 	ScriptName any
+	// path parameter, not part of the API's own resource representation
+	Namespace any
 }
 
 var Trigger = ubx.ResourceBinding{
 	WireType: "cloudflare_trigger",
 	Fields: ubx.FieldMap{
+		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
 	},
 }

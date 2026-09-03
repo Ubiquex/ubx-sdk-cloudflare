@@ -57,18 +57,10 @@ class Stream_Result:
 
 @dataclasses.dataclass
 class StreamConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Specifies the name of the Pipeline.
+    name: Any = None
+    # Specifies SQL for the Pipeline processing flow.
+    sql: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -76,21 +68,13 @@ class StreamConfig:
 
 @dataclasses.dataclass
 class StreamAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    # Specifies the name of the Pipeline.
+    name: Any = None
     result: Any = None
+    # Specifies SQL for the Pipeline processing flow.
+    sql: Any = None
     # Indicates whether the API call was successful.
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -99,12 +83,8 @@ class StreamAttrs:
 Stream = ubx.ResourceBinding(
     wire_type="cloudflare_stream",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "sql": ubx.FieldSpec(wire_name="sql"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "stream_id": ubx.FieldSpec(wire_name="stream_id"),
     },

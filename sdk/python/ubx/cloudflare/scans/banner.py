@@ -12,10 +12,8 @@ class Banner_Result:
 
 @dataclasses.dataclass
 class BannerConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # Namespace name.
+    name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -23,12 +21,10 @@ class BannerConfig:
 
 @dataclasses.dataclass
 class BannerAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
     errors: Any = None
     messages: Any = None
+    # Namespace name.
+    name: Any = None
     result: Any = None
     success: Any = None
     # path parameter, not part of the API's own resource representation
@@ -39,8 +35,7 @@ class BannerAttrs:
 Banner = ubx.ResourceBinding(
     wire_type="cloudflare_banner",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "name": ubx.FieldSpec(wire_name="name"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "config_id": ubx.FieldSpec(wire_name="config_id"),
     },

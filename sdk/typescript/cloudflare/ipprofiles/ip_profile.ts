@@ -28,10 +28,18 @@ export interface IpProfile_Result {
 }
 
 export interface IpProfileConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** An optional description of the Device IP profile. */
+  description?: string | Computed<string>;
+  /** Whether the Device IP profile will be applied to matching devices. */
+  enabled?: boolean | Computed<boolean>;
+  /** The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes". */
+  match: string | Computed<string>;
+  /** A user-friendly name for the Device IP profile. */
+  name: string | Computed<string>;
+  /** The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field. */
+  precedence: number | Computed<number>;
+  /** The ID of the Subnet. */
+  subnetId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -39,13 +47,21 @@ export interface IpProfileConfig {
 }
 
 export interface IpProfileAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
+  /** An optional description of the Device IP profile. */
+  description: string;
+  /** Whether the Device IP profile will be applied to matching devices. */
+  enabled: boolean;
   errors: IpProfile_Errors[];
+  /** The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes". */
+  match: string;
   messages: IpProfile_Errors[];
+  /** A user-friendly name for the Device IP profile. */
+  name: string;
+  /** The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field. */
+  precedence: number;
   result: IpProfile_Result;
+  /** The ID of the Subnet. */
+  subnetId: string;
   /** Whether the API call was successful. */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
@@ -57,8 +73,12 @@ export interface IpProfileAttrs {
 export const IpProfile: ResourceBinding<IpProfileConfig, IpProfileAttrs> = {
   wireType: "cloudflare_ip_profile",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    description: "description",
+    enabled: "enabled",
+    match: "match",
+    name: "name",
+    precedence: "precedence",
+    subnetId: "subnet_id",
     accountId: "account_id",
     profileId: "profile_id",
   },

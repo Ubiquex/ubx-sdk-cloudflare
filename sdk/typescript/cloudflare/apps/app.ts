@@ -15,10 +15,7 @@ export interface App_Result {
 }
 
 export interface AppConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -26,12 +23,9 @@ export interface AppConfig {
 }
 
 export interface AppAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   errors: App_Errors[];
   messages: App_Errors[];
+  name: string;
   result: App_Result;
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
@@ -43,8 +37,7 @@ export interface AppAttrs {
 export const App: ResourceBinding<AppConfig, AppAttrs> = {
   wireType: "cloudflare_app",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     appId: "app_id",
   },

@@ -30,10 +30,18 @@ type IpProfile_Result struct {
 }
 
 type IpProfileConfig struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
+	// An optional description of the Device IP profile.
+	Description any
+	// Whether the Device IP profile will be applied to matching devices.
+	Enabled any
+	// The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
+	Match any
+	// A user-friendly name for the Device IP profile.
+	Name any
+	// The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
+	Precedence any
+	// The ID of the Subnet.
+	SubnetId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -41,13 +49,21 @@ type IpProfileConfig struct {
 }
 
 type IpProfileAttrs struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
+	// An optional description of the Device IP profile.
+	Description any
+	// Whether the Device IP profile will be applied to matching devices.
+	Enabled any
 	Errors any
+	// The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
+	Match any
 	Messages any
+	// A user-friendly name for the Device IP profile.
+	Name any
+	// The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
+	Precedence any
 	Result any
+	// The ID of the Subnet.
+	SubnetId any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation
@@ -59,8 +75,12 @@ type IpProfileAttrs struct {
 var IpProfile = ubx.ResourceBinding{
 	WireType: "cloudflare_ip_profile",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"DestinationOrganizationId": ubx.FieldSpec{WireName: "destination_organization_id"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Match": ubx.FieldSpec{WireName: "match"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Precedence": ubx.FieldSpec{WireName: "precedence"},
+		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
 	},

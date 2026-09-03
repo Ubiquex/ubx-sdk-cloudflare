@@ -7,10 +7,8 @@ type Result_Result struct {
 }
 
 type ResultConfig struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
+	// Namespace name.
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -18,12 +16,10 @@ type ResultConfig struct {
 }
 
 type ResultAttrs struct {
-	// Move these accounts to the destination organization.
-	AccountIds any
-	// Move accounts to this organization ID.
-	DestinationOrganizationId any
 	Errors any
 	Messages any
+	// Namespace name.
+	Name any
 	Result any
 	Success any
 	// path parameter, not part of the API's own resource representation
@@ -35,8 +31,7 @@ type ResultAttrs struct {
 var Result = ubx.ResourceBinding{
 	WireType: "cloudflare_result",
 	Fields: ubx.FieldMap{
-		"AccountIds": ubx.FieldSpec{WireName: "account_ids"},
-		"DestinationOrganizationId": ubx.FieldSpec{WireName: "destination_organization_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
 	},

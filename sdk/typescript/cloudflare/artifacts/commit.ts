@@ -38,19 +38,27 @@ export interface Commit_ResultInfo {
 }
 
 export interface CommitConfig {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch?: string | Computed<string>;
+  description?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   namespace: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
-  name: string | Computed<string>;
-  /** path parameter, not part of the API's own resource representation */
   hash: string | Computed<string>;
 }
 
 export interface CommitAttrs {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch: string;
+  description: string;
   errors: Commit_Errors[];
   messages: Commit_Errors[];
+  name: string;
+  readOnly: boolean;
   result: Commit_Result;
   resultInfo: Commit_ResultInfo;
   success: boolean;
@@ -59,17 +67,18 @@ export interface CommitAttrs {
   /** path parameter, not part of the API's own resource representation */
   namespace: string;
   /** path parameter, not part of the API's own resource representation */
-  name: string;
-  /** path parameter, not part of the API's own resource representation */
   hash: string;
 }
 
 export const Commit: ResourceBinding<CommitConfig, CommitAttrs> = {
   wireType: "cloudflare_commit",
   fields: {
+    defaultBranch: "default_branch",
+    description: "description",
+    name: "name",
+    readOnly: "read_only",
     accountId: "account_id",
     namespace: "namespace",
-    name: "name",
     hash: "hash",
   },
 };

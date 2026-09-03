@@ -34,10 +34,18 @@ class IpProfile_Result:
 
 @dataclasses.dataclass
 class IpProfileConfig:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # An optional description of the Device IP profile.
+    description: Any = None
+    # Whether the Device IP profile will be applied to matching devices.
+    enabled: Any = None
+    # The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
+    match: Any = None
+    # A user-friendly name for the Device IP profile.
+    name: Any = None
+    # The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
+    precedence: Any = None
+    # The ID of the Subnet.
+    subnet_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -45,13 +53,21 @@ class IpProfileConfig:
 
 @dataclasses.dataclass
 class IpProfileAttrs:
-    # Move these accounts to the destination organization.
-    account_ids: Any = None
-    # Move accounts to this organization ID.
-    destination_organization_id: Any = None
+    # An optional description of the Device IP profile.
+    description: Any = None
+    # Whether the Device IP profile will be applied to matching devices.
+    enabled: Any = None
     errors: Any = None
+    # The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
+    match: Any = None
     messages: Any = None
+    # A user-friendly name for the Device IP profile.
+    name: Any = None
+    # The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
+    precedence: Any = None
     result: Any = None
+    # The ID of the Subnet.
+    subnet_id: Any = None
     # Whether the API call was successful.
     success: Any = None
     # path parameter, not part of the API's own resource representation
@@ -62,8 +78,12 @@ class IpProfileAttrs:
 IpProfile = ubx.ResourceBinding(
     wire_type="cloudflare_ip_profile",
     fields={
-        "account_ids": ubx.FieldSpec(wire_name="account_ids"),
-        "destination_organization_id": ubx.FieldSpec(wire_name="destination_organization_id"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "enabled": ubx.FieldSpec(wire_name="enabled"),
+        "match": ubx.FieldSpec(wire_name="match"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "precedence": ubx.FieldSpec(wire_name="precedence"),
+        "subnet_id": ubx.FieldSpec(wire_name="subnet_id"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "profile_id": ubx.FieldSpec(wire_name="profile_id"),
     },

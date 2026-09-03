@@ -33,15 +33,27 @@ export interface Workflow_ResultInfo {
 }
 
 export interface WorkflowConfig {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch?: string | Computed<string>;
+  description?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   workflowName: string | Computed<string>;
+  /** path parameter, not part of the API's own resource representation */
+  namespace: string | Computed<string>;
 }
 
 export interface WorkflowAttrs {
+  /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
+  defaultBranch: string;
+  description: string;
   errors: Workflow_Errors[];
   messages: Workflow_Errors[];
+  name: string;
+  readOnly: boolean;
   result: Workflow_Result;
   resultInfo: Workflow_ResultInfo;
   success: boolean;
@@ -49,12 +61,19 @@ export interface WorkflowAttrs {
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
   workflowName: string;
+  /** path parameter, not part of the API's own resource representation */
+  namespace: string;
 }
 
 export const Workflow: ResourceBinding<WorkflowConfig, WorkflowAttrs> = {
   wireType: "cloudflare_workflow",
   fields: {
+    defaultBranch: "default_branch",
+    description: "description",
+    name: "name",
+    readOnly: "read_only",
     accountId: "account_id",
     workflowName: "workflow_name",
+    namespace: "namespace",
   },
 };

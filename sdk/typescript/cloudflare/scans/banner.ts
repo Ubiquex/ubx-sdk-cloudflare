@@ -5,10 +5,8 @@ export interface Banner_Result {
 }
 
 export interface BannerConfig {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[] | Computed<string[]>;
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string | Computed<string>;
+  /** Namespace name. */
+  name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -16,12 +14,10 @@ export interface BannerConfig {
 }
 
 export interface BannerAttrs {
-  /** Move these accounts to the destination organization. */
-  accountIds: string[];
-  /** Move accounts to this organization ID. */
-  destinationOrganizationId: string;
   errors: string[];
   messages: string[];
+  /** Namespace name. */
+  name: string;
   result: Banner_Result;
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
@@ -33,8 +29,7 @@ export interface BannerAttrs {
 export const Banner: ResourceBinding<BannerConfig, BannerAttrs> = {
   wireType: "cloudflare_banner",
   fields: {
-    accountIds: "account_ids",
-    destinationOrganizationId: "destination_organization_id",
+    name: "name",
     accountId: "account_id",
     configId: "config_id",
   },
