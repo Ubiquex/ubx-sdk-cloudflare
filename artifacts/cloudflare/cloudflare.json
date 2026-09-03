@@ -1,38 +1,93 @@
 {
+  "cloudflare_access_policy_update_resp": {
+    "policies": "The Access policy IDs to include in the test."
+  },
   "cloudflare_access_single_response_11": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
   },
+  "cloudflare_addressing_full_response": {
+    "ips": "The individual IP addresses included in the Address Map."
+  },
   "cloudflare_app": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
+    "name": "The name of the Flagship application.",
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_bulk": {
+    "action": "The remediation action to apply to every matching message (e.g. move, delete).",
+    "comment": "An optional note describing why this bulk remediation job was run.",
+    "destination": "The mailbox or quarantine location matching messages are moved to.",
+    "expected_disposition": "The disposition (e.g. malicious, spam) the bulk job expects matching messages to have.",
+    "search_params": "The search criteria used to select which messages this bulk job applies to."
+  },
   "cloudflare_category": {
+    "kill_chain": "The cyber kill chain stage this category represents.",
+    "mitre_attack": "The MITRE ATT&CK technique this category maps to.",
+    "mitre_capec": "The MITRE CAPEC attack pattern this category maps to.",
+    "name": "The name of the threat event category.",
+    "shortname": "A short, URL-safe identifier for the category.",
     "uuid": "The unique identifier of the resource."
   },
   "cloudflare_cloudforce_one_rule_preview": {
+    "content": "The body of the detection rule.",
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
-    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+    "created_by": "The identifier of the user who created the rule.",
+    "description": "A human-readable description of what the rule detects.",
+    "enabled": "Whether the rule is currently active.",
+    "id": "The unique identifier of the rule.",
+    "meta": "Additional metadata associated with the rule.",
+    "name": "The name of the rule.",
+    "namespaces": "The namespaces the rule is scoped to.",
+    "path": "The path the rule is scoped to within its namespace.",
+    "strings": "The literal strings the rule matches against.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format.",
+    "updated_by": "The identifier of the user who last updated the rule."
   },
   "cloudflare_collection": {
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
   "cloudflare_commit": {
+    "description": "A human-readable description of the repository.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
+    "name": "The name of the repository.",
+    "read_only": "Whether the repository is read-only.",
     "result": "The requested resource or collection of resources.",
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_config": {
+    "caching": "The Hyperdrive configuration's own query-caching settings.",
+    "origin": "The real database Hyperdrive connects to."
+  },
   "cloudflare_cost": {
+    "base_url": "The base URL of the custom AI provider's own API.",
+    "beta": "Whether this provider registration is in beta.",
+    "curl_example": "An example curl command for calling this provider through AI Gateway, shown in the dashboard.",
+    "description": "A human-readable description of the custom provider.",
+    "enable": "Whether the custom provider is enabled.",
+    "headers": "The HTTP headers sent with every request to the custom provider.",
+    "js_example": "An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard.",
+    "link": "A link to the custom provider's own documentation.",
+    "name": "The name of the custom provider.",
+    "position": "The display order of the custom provider in the dashboard.",
     "result": "The requested resource or collection of resources.",
+    "slug": "A URL-safe identifier for the custom provider.",
     "success": "Whether the API call was successful."
   },
   "cloudflare_crawl": {
     "errors": "A list of errors returned by the API. Empty on a successful response."
+  },
+  "cloudflare_custom": {
+    "ai_context_enabled": "Whether AI-based context analysis is enabled for this profile.",
+    "confidence_threshold": "The minimum confidence score a match must reach to trigger this profile.",
+    "entries": "The detection entries that make up this DLP profile.",
+    "name": "The name of the DLP profile.",
+    "ocr_enabled": "Whether OCR-based scanning of images is enabled for this profile."
   },
   "cloudflare_custom_domain": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -51,9 +106,42 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_custom_prompt_topic": {
+    "description": "A human-readable description of the prompt topic.",
+    "enabled": "Whether the prompt topic is active.",
+    "name": "The name of the prompt topic.",
+    "profile_id": "The DLP profile this prompt topic belongs to.",
+    "topic": "The subject matter this topic scans AI prompts for."
+  },
   "cloudflare_custom_provider": {
+    "base_url": "The base URL of the custom AI provider's own API.",
+    "beta": "Whether this provider registration is in beta.",
+    "curl_example": "An example curl command for calling this provider through AI Gateway, shown in the dashboard.",
+    "description": "A human-readable description of the custom provider.",
+    "enable": "Whether the custom provider is enabled.",
+    "headers": "The HTTP headers sent with every request to the custom provider.",
+    "js_example": "An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard.",
+    "link": "A link to the custom provider's own documentation.",
+    "position": "The display order of the custom provider in the dashboard.",
     "result": "The requested resource or collection of resources.",
+    "slug": "A URL-safe identifier for the custom provider.",
     "success": "Whether the API call was successful."
+  },
+  "cloudflare_data_class": {
+    "data_tags": "The data tags associated with this data class.",
+    "description": "A human-readable description of the data class.",
+    "expression": "The detection expression identifying content matching this data class.",
+    "name": "The name of the data class.",
+    "sensitivity_levels": "The sensitivity levels associated with this data class."
+  },
+  "cloudflare_data_tag": {
+    "description": "A human-readable description of the data tag.",
+    "name": "The name of the data tag."
+  },
+  "cloudflare_data_tag_category": {
+    "description": "A human-readable description of the data tag category.",
+    "name": "The name of the data tag category.",
+    "template_id": "The built-in template this category was seeded from, if any."
   },
   "cloudflare_dataset": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -76,8 +164,34 @@
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any."
   },
+  "cloudflare_digital_experience_monitoring_dex_single_response": {
+    "target_policies": "The device policies this DEX test applies to.",
+    "targeted": "Whether this test targets a specific subset of devices rather than the whole fleet."
+  },
+  "cloudflare_document_fingerprint": {
+    "description": "A human-readable description of the document fingerprint.",
+    "match_percent": "The minimum similarity percentage required to trigger a match.",
+    "name": "The name of the document fingerprint."
+  },
   "cloudflare_domain": {
-    "integration_id": "The unique identifier of the integration."
+    "allowed_delivery_modes": "The mail delivery modes permitted for this domain.",
+    "domain": "The domain name this configuration applies to.",
+    "drop_dispositions": "The message dispositions that cause mail to be dropped rather than delivered.",
+    "folder": "The mailbox folder matching mail is delivered to.",
+    "integration_id": "The unique identifier of the integration.",
+    "ip_restrictions": "The IP addresses or ranges allowed to deliver mail for this domain.",
+    "lookback_hops": "The number of mail relay hops inspected when evaluating this domain's own mail flow.",
+    "regions": "The geographic regions this domain's own mail processing is restricted to.",
+    "require_tls_inbound": "Whether inbound mail for this domain must use TLS.",
+    "require_tls_outbound": "Whether outbound mail for this domain must use TLS.",
+    "transport": "The transport mechanism used to deliver mail for this domain."
+  },
+  "cloudflare_entry": {
+    "description": "A human-readable description of the DLP entry.",
+    "enabled": "Whether the DLP entry is active.",
+    "name": "The name of the DLP entry.",
+    "pattern": "The detection pattern this entry matches against.",
+    "profile_id": "The DLP profile this entry belongs to."
   },
   "cloudflare_evaluation": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -97,14 +211,53 @@
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
   "cloudflare_event": {
+    "attacker": "The identified attacker associated with this event.",
+    "attacker_country": "The country associated with the attacker.",
+    "attacker_country_alpha3": "The three-letter ISO country code associated with the attacker.",
+    "category": "The category this event is classified under.",
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "date": "The date the event occurred.",
+    "event": "A description of what happened in this event.",
+    "has_children": "Whether this event has child events referencing it.",
+    "indicator": "The threat indicator value associated with this event.",
+    "indicator_type": "The type of the associated threat indicator.",
+    "indicator_type_id": "The identifier of the associated indicator type.",
+    "insight": "Additional analyst insight about this event.",
+    "kill_chain": "The cyber kill chain stage this event represents.",
+    "mitre_attack": "The MITRE ATT&CK technique this event maps to.",
+    "mitre_capec": "The MITRE CAPEC attack pattern this event maps to.",
+    "num_referenced": "The number of other events this event references.",
+    "num_references": "The number of other events that reference this event.",
+    "raw": "The raw, unprocessed data this event was derived from.",
+    "raw_id": "The identifier of the raw source record this event was derived from.",
+    "referenced": "The other events this event references.",
+    "referenced_ids": "The identifiers of the other events this event references.",
+    "references": "The other events that reference this event.",
+    "references_ids": "The identifiers of the other events that reference this event.",
+    "releasability_id": "The releasability classification controlling who can view this event.",
+    "tags": "The tags applied to this event.",
+    "target_country": "The country targeted by this event.",
+    "target_country_alpha3": "The three-letter ISO country code of the country targeted by this event.",
+    "target_industry": "The industry vertical targeted by this event.",
+    "tlp": "The Traffic Light Protocol classification controlling how this event may be shared.",
     "uuid": "The unique identifier of the resource."
   },
   "cloudflare_finetune_asset": {
+    "description": "A human-readable description of the fine-tune asset.",
+    "model": "The base model this fine-tune asset is associated with.",
+    "name": "The name of the fine-tune asset.",
+    "public": "Whether the fine-tune asset is publicly accessible.",
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_firewall_response_single": {
+    "notes": "A free-text note describing the reason for this IP Access Rule."
+  },
+  "cloudflare_firewall_rule_single_response": {
+    "notes": "A free-text note describing the reason for this IP Access Rule."
+  },
   "cloudflare_flag": {
+    "description": "A human-readable description of the feature flag.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
     "result": "The requested resource or collection of resources.",
@@ -129,22 +282,63 @@
   },
   "cloudflare_group": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "description": "A human-readable description of the group.",
+    "members": "The members belonging to this group.",
+    "name": "The name of the group.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format.",
     "uuid": "The unique identifier of the resource."
+  },
+  "cloudflare_iam_response_single_account": {
+    "type": "The type of the account."
+  },
+  "cloudflare_iam_scim_group": {
+    "schemas": "The SCIM schema URIs this Group resource conforms to."
   },
   "cloudflare_image": {
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_images_image_variant_simple_response": {
+    "id": "The unique identifier of the image variant."
+  },
+  "cloudflare_index": {
+    "config": "The vector dimensionality and distance metric configuration for the index.",
+    "name": "The name of the Vectorize index."
+  },
   "cloudflare_instance": {
+    "ai_gateway_id": "The AI Gateway requests through this AI Search instance are routed through.",
+    "cache": "Whether response caching is enabled for this instance.",
+    "cache_threshold": "The minimum similarity score required for a cached response to be reused.",
+    "chunk": "The chunking configuration used when indexing source content.",
+    "chunk_overlap": "The number of overlapping tokens between adjacent chunks.",
+    "chunk_size": "The maximum size, in tokens, of each indexed chunk.",
+    "custom_metadata": "Arbitrary custom metadata attached to the instance.",
+    "embedding_model": "The model used to generate vector embeddings for indexed content.",
+    "fusion_method": "The method used to combine multiple retrieval signals when ranking results.",
+    "max_num_results": "The maximum number of results returned per query.",
+    "metadata": "Metadata associated with the instance.",
+    "public_endpoint_params": "The configuration for the instance's own public query endpoint.",
+    "reranking": "Whether a reranking pass is applied to retrieved results.",
+    "reranking_model": "The model used to rerank retrieved results.",
     "result": "The requested resource or collection of resources.",
-    "success": "Whether the API call was successful."
+    "rewrite_query": "Whether incoming queries are rewritten before retrieval.",
+    "score_threshold": "The minimum relevance score a result must reach to be returned.",
+    "source": "The data source content is indexed from.",
+    "source_params": "Configuration specific to the instance's own data source.",
+    "success": "Whether the API call was successful.",
+    "token_id": "The AI Search API token used to authenticate requests for this instance.",
+    "type": "The type of AI Search instance."
+  },
+  "cloudflare_integration": {
+    "integration_type": "The type of the Zero Trust Risk Scoring integration."
   },
   "cloudflare_ip_profile": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any."
   },
   "cloudflare_item": {
+    "name": "The name of the namespace item.",
+    "public_endpoint_params": "The configuration for the namespace's own public query endpoint.",
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
