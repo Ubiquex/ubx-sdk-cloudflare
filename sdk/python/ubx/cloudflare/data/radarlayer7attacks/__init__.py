@@ -5,5 +5,6 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .http_method import HttpMethod, HttpMethodConfig
+from .http_version import HttpVersion, HttpVersionConfig
 from .managed_rule import ManagedRule, ManagedRuleConfig
 from .mitigation_product import MitigationProduct, MitigationProductConfig

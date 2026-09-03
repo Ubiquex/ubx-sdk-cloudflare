@@ -86,51 +86,91 @@ class Server_Result:
     # Server-wide tool capability overrides.
     updated_tools: Any = None
 
+_Server_Result_UpdatedPromptsFields = {
+    "alias": ubx.FieldSpec(wire_name="alias"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 @dataclasses.dataclass
 class ServerConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    # Static credential for the upstream MCP server. For auth_type "bearer", either a raw token string (e.g. "sk-abc123"), which is wrapped server-side as `Authorization: Bearer <token>`, or a JSON-encoded object of the form `{"headers":{"Header-Name":"value",...}}` for custom or multiple static headers (e.g. Cloudflare Access service tokens: `{"headers":{"cf-access-client-id":"...","cf-access-client-secret":"..."}}`).
+    auth_credentials: Any = None
+    # Authentication method used to connect to the upstream MCP server.
+    auth_type: Any = None
+    # Pre-registered OAuth client_secret. Write-only - accepted on create/update when auth_credentials.auth_mode is 'manual'. Stored AES-GCM-encrypted in server_oauth_secrets; never returned by read endpoints.
+    client_secret: Any = None
+    # Optional description of the MCP server.
+    description: Any = None
+    # URL of the upstream MCP endpoint.
+    hostname: Any = None
+    # Unique identifier for the MCP server.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
+    is_shared_oauth_callback_enabled: Any = None
+    # Display name for the MCP server.
+    name: Any = None
+    # Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
+    secure_web_gateway: Any = None
+    # Server-wide prompt capability overrides.
+    updated_prompts: Any = None
+    # Server-wide tool capability overrides.
+    updated_tools: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class ServerAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    # Static credential for the upstream MCP server. For auth_type "bearer", either a raw token string (e.g. "sk-abc123"), which is wrapped server-side as `Authorization: Bearer <token>`, or a JSON-encoded object of the form `{"headers":{"Header-Name":"value",...}}` for custom or multiple static headers (e.g. Cloudflare Access service tokens: `{"headers":{"cf-access-client-id":"...","cf-access-client-secret":"..."}}`).
+    auth_credentials: Any = None
+    # Authentication method used to connect to the upstream MCP server.
+    auth_type: Any = None
+    # Pre-registered OAuth client_secret. Write-only - accepted on create/update when auth_credentials.auth_mode is 'manual'. Stored AES-GCM-encrypted in server_oauth_secrets; never returned by read endpoints.
+    client_secret: Any = None
+    # Optional description of the MCP server.
+    description: Any = None
+    # URL of the upstream MCP endpoint.
+    hostname: Any = None
+    # Unique identifier for the MCP server.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    # When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
+    is_shared_oauth_callback_enabled: Any = None
+    # Display name for the MCP server.
+    name: Any = None
     result: Any = None
+    # Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
+    secure_web_gateway: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Server-wide prompt capability overrides.
+    updated_prompts: Any = None
+    # Server-wide tool capability overrides.
+    updated_tools: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 Server = ubx.ResourceBinding(
     wire_type="cloudflare_server",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
+        "auth_credentials": ubx.FieldSpec(wire_name="auth_credentials"),
+        "auth_type": ubx.FieldSpec(wire_name="auth_type"),
+        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "is_shared_oauth_callback_enabled": ubx.FieldSpec(wire_name="is_shared_oauth_callback_enabled"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "secure_web_gateway": ubx.FieldSpec(wire_name="secure_web_gateway"),
+        "updated_prompts": ubx.FieldSpec(
+            wire_name="updated_prompts",
+            kind="list",
+            fields=_Server_Result_UpdatedPromptsFields,
+        ),
+        "updated_tools": ubx.FieldSpec(
+            wire_name="updated_tools",
+            kind="list",
+            fields=_Server_Result_UpdatedPromptsFields,
+        ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
     },
 )

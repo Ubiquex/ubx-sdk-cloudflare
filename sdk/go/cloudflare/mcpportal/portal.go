@@ -93,38 +93,84 @@ type Portal_Result struct {
 	Servers any
 }
 
+type Portal_Servers_UpdatedPrompts struct {
+	Alias any
+	Description any
+	Enabled any
+	Name any
+}
+
+type Portal_Servers struct {
+	DefaultDisabled any
+	OnBehalf any
+	ServerId any
+	UpdatedPrompts any
+	UpdatedTools any
+}
+
+var Portal_Servers_UpdatedPromptsFields = ubx.FieldMap{
+		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
+var Portal_ServersFields = ubx.FieldMap{
+		"DefaultDisabled": ubx.FieldSpec{WireName: "default_disabled"},
+		"OnBehalf": ubx.FieldSpec{WireName: "on_behalf"},
+		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"UpdatedPrompts": ubx.FieldSpec{
+			WireName: "updated_prompts",
+			Kind: "list",
+			Fields: Portal_Servers_UpdatedPromptsFields,
+		},
+		"UpdatedTools": ubx.FieldSpec{
+			WireName: "updated_tools",
+			Kind: "list",
+			Fields: Portal_Servers_UpdatedPromptsFields,
+		},
+	}
+
 type PortalConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	// Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
+	AllowCodeMode any
+	// Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400.
+	CodeMode any
+	// Optional description of the MCP portal.
+	Description any
+	// Hostname where the MCP portal is available.
+	Hostname any
+	// Unique identifier for the MCP portal.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Display name for the MCP portal.
+	Name any
+	// Route outbound MCP traffic through Zero Trust Secure Web Gateway.
+	SecureWebGateway any
+	// MCP servers attached to the portal and their portal-specific settings.
+	Servers any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type PortalAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	// Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
+	AllowCodeMode any
+	// Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400.
+	CodeMode any
+	// Optional description of the MCP portal.
+	Description any
+	// Hostname where the MCP portal is available.
+	Hostname any
+	// Unique identifier for the MCP portal.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	// Display name for the MCP portal.
+	Name any
 	Result any
+	// Route outbound MCP traffic through Zero Trust Secure Web Gateway.
+	SecureWebGateway any
+	// MCP servers attached to the portal and their portal-specific settings.
+	Servers any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -132,12 +178,18 @@ type PortalAttrs struct {
 var Portal = ubx.ResourceBinding{
 	WireType: "cloudflare_portal",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
+		"AllowCodeMode": ubx.FieldSpec{WireName: "allow_code_mode"},
+		"CodeMode": ubx.FieldSpec{WireName: "code_mode"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SecureWebGateway": ubx.FieldSpec{WireName: "secure_web_gateway"},
+		"Servers": ubx.FieldSpec{
+			WireName: "servers",
+			Kind: "list",
+			Fields: Portal_ServersFields,
+		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},
 }

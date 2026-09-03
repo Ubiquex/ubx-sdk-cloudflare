@@ -13,18 +13,10 @@ class Finetuneasset_Result:
 
 @dataclasses.dataclass
 class FinetuneassetConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    description: Any = None
+    model: Any = None
+    name: Any = None
+    public: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -34,20 +26,12 @@ class FinetuneassetConfig:
 
 @dataclasses.dataclass
 class FinetuneassetAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-    id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    description: Any = None
+    model: Any = None
+    name: Any = None
+    public: Any = None
     result: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -58,12 +42,10 @@ class FinetuneassetAttrs:
 Finetuneasset = ubx.ResourceBinding(
     wire_type="cloudflare_finetune_asset",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "model": ubx.FieldSpec(wire_name="model"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "public": ubx.FieldSpec(wire_name="public"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "finetune_id": ubx.FieldSpec(wire_name="finetune_id"),
         "file_name": ubx.FieldSpec(wire_name="file_name"),

@@ -311,8 +311,15 @@ type Scan_Result struct {
 }
 
 type ScanConfig struct {
-	// Namespace name.
-	Name any
+	// Country to geo egress from
+	Country any
+	// Set custom headers.
+	CustomHeaders any
+	// Take multiple screenshots targeting different device types.
+	ScreenshotsResolutions any
+	Url any
+	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
+	Visibility any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -320,13 +327,20 @@ type ScanConfig struct {
 }
 
 type ScanAttrs struct {
+	// Country to geo egress from
+	Country any
+	// Set custom headers.
+	CustomHeaders any
 	Errors any
 	Messages any
-	// Namespace name.
-	Name any
 	Result any
+	// Take multiple screenshots targeting different device types.
+	ScreenshotsResolutions any
 	// Whether request was successful or not
 	Success any
+	Url any
+	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
+	Visibility any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -336,7 +350,11 @@ type ScanAttrs struct {
 var Scan = ubx.ResourceBinding{
 	WireType: "cloudflare_scan",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Country": ubx.FieldSpec{WireName: "country"},
+		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+		"ScreenshotsResolutions": ubx.FieldSpec{WireName: "screenshots_resolutions"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
 	},

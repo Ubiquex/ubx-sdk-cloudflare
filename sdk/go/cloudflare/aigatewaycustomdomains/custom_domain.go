@@ -17,18 +17,29 @@ type CustomDomain_Result struct {
 }
 
 type CustomDomainConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	Authentication any
+	CacheInvalidateOnUpdate any
+	CacheTtl any
+	CollectLogs any
+	// gateway id
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	LogManagement any
+	LogManagementStrategy any
+	Logpush any
+	LogpushPublicKey any
+	RateLimitingInterval any
+	RateLimitingLimit any
+	RateLimitingTechnique any
+	// Backoff strategy for retry delays
+	RetryBackoff any
+	// Delay between retry attempts in milliseconds (0-5000)
+	RetryDelay any
+	// Maximum number of retry attempts for failed requests (1-5)
+	RetryMaxAttempts any
+	StoreId any
+	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
+	WorkersAiBillingMode any
+	Zdr any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,20 +49,31 @@ type CustomDomainConfig struct {
 }
 
 type CustomDomainAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	Authentication any
+	CacheInvalidateOnUpdate any
+	CacheTtl any
+	CollectLogs any
+	// gateway id
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	LogManagement any
+	LogManagementStrategy any
+	Logpush any
+	LogpushPublicKey any
+	RateLimitingInterval any
+	RateLimitingLimit any
+	RateLimitingTechnique any
 	Result any
+	// Backoff strategy for retry delays
+	RetryBackoff any
+	// Delay between retry attempts in milliseconds (0-5000)
+	RetryDelay any
+	// Maximum number of retry attempts for failed requests (1-5)
+	RetryMaxAttempts any
+	StoreId any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
+	WorkersAiBillingMode any
+	Zdr any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -63,12 +85,24 @@ type CustomDomainAttrs struct {
 var CustomDomain = ubx.ResourceBinding{
 	WireType: "cloudflare_custom_domain",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
+		"Authentication": ubx.FieldSpec{WireName: "authentication"},
+		"CacheInvalidateOnUpdate": ubx.FieldSpec{WireName: "cache_invalidate_on_update"},
+		"CacheTtl": ubx.FieldSpec{WireName: "cache_ttl"},
+		"CollectLogs": ubx.FieldSpec{WireName: "collect_logs"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"LogManagement": ubx.FieldSpec{WireName: "log_management"},
+		"LogManagementStrategy": ubx.FieldSpec{WireName: "log_management_strategy"},
+		"Logpush": ubx.FieldSpec{WireName: "logpush"},
+		"LogpushPublicKey": ubx.FieldSpec{WireName: "logpush_public_key"},
+		"RateLimitingInterval": ubx.FieldSpec{WireName: "rate_limiting_interval"},
+		"RateLimitingLimit": ubx.FieldSpec{WireName: "rate_limiting_limit"},
+		"RateLimitingTechnique": ubx.FieldSpec{WireName: "rate_limiting_technique"},
+		"RetryBackoff": ubx.FieldSpec{WireName: "retry_backoff"},
+		"RetryDelay": ubx.FieldSpec{WireName: "retry_delay"},
+		"RetryMaxAttempts": ubx.FieldSpec{WireName: "retry_max_attempts"},
+		"StoreId": ubx.FieldSpec{WireName: "store_id"},
+		"WorkersAiBillingMode": ubx.FieldSpec{WireName: "workers_ai_billing_mode"},
+		"Zdr": ubx.FieldSpec{WireName: "zdr"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
 		"Hostname": ubx.FieldSpec{WireName: "hostname"},

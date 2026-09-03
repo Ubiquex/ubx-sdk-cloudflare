@@ -7,11 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Stream_Result_Http_Cors:
+class Stream_Http_Cors:
     origins: Any = None
 
 @dataclasses.dataclass
-class Stream_Result_Http:
+class Stream_Http:
     # Indicates that authentication is required for the HTTP endpoint.
     authentication: Any = None
     # Specifies the CORS options for the HTTP endpoint.
@@ -55,12 +55,50 @@ class Stream_Result:
     version: Any = None
     worker_binding: Any = None
 
+_Stream_Http_CorsFields = {
+    "origins": ubx.FieldSpec(wire_name="origins"),
+}
+
+_Stream_HttpFields = {
+    "authentication": ubx.FieldSpec(wire_name="authentication"),
+    "cors": ubx.FieldSpec(
+        wire_name="cors",
+        kind="object",
+        fields=_Stream_Http_CorsFields,
+    ),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
+_Stream_Result_Schema_FieldsFields = {
+    "metadata_key": ubx.FieldSpec(wire_name="metadata_key"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "required": ubx.FieldSpec(wire_name="required"),
+    "sql_name": ubx.FieldSpec(wire_name="sql_name"),
+}
+
+_Stream_Result_SchemaFields = {
+    "fields": ubx.FieldSpec(
+        wire_name="fields",
+        kind="list",
+        fields=_Stream_Result_Schema_FieldsFields,
+    ),
+    "inferred": ubx.FieldSpec(wire_name="inferred"),
+}
+
+_Stream_Result_WorkerBindingFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
 @dataclasses.dataclass
 class StreamConfig:
-    # Specifies the name of the Pipeline.
+    # Defines the data format of the events.
+    format: Any = None
+    http: Any = None
+    # Specifies the name of the Stream.
     name: Any = None
-    # Specifies SQL for the Pipeline processing flow.
-    sql: Any = None
+    # Defines the schema of the events in the data stream.
+    schema: Any = None
+    worker_binding: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -68,13 +106,17 @@ class StreamConfig:
 
 @dataclasses.dataclass
 class StreamAttrs:
-    # Specifies the name of the Pipeline.
+    # Defines the data format of the events.
+    format: Any = None
+    http: Any = None
+    # Specifies the name of the Stream.
     name: Any = None
     result: Any = None
-    # Specifies SQL for the Pipeline processing flow.
-    sql: Any = None
+    # Defines the schema of the events in the data stream.
+    schema: Any = None
     # Indicates whether the API call was successful.
     success: Any = None
+    worker_binding: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -83,8 +125,23 @@ class StreamAttrs:
 Stream = ubx.ResourceBinding(
     wire_type="cloudflare_stream",
     fields={
+        "format": ubx.FieldSpec(wire_name="format"),
+        "http": ubx.FieldSpec(
+            wire_name="http",
+            kind="object",
+            fields=_Stream_HttpFields,
+        ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "sql": ubx.FieldSpec(wire_name="sql"),
+        "schema": ubx.FieldSpec(
+            wire_name="schema",
+            kind="object",
+            fields=_Stream_Result_SchemaFields,
+        ),
+        "worker_binding": ubx.FieldSpec(
+            wire_name="worker_binding",
+            kind="object",
+            fields=_Stream_Result_WorkerBindingFields,
+        ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "stream_id": ubx.FieldSpec(wire_name="stream_id"),
     },

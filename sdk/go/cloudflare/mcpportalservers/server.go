@@ -83,38 +83,65 @@ type Server_Result struct {
 	UpdatedTools any
 }
 
+var Server_Result_UpdatedPromptsFields = ubx.FieldMap{
+		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
+
 type ServerConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	// Static credential for the upstream MCP server. For auth_type "bearer", either a raw token string (e.g. "sk-abc123"), which is wrapped server-side as `Authorization: Bearer <token>`, or a JSON-encoded object of the form `{"headers":{"Header-Name":"value",...}}` for custom or multiple static headers (e.g. Cloudflare Access service tokens: `{"headers":{"cf-access-client-id":"...","cf-access-client-secret":"..."}}`).
+	AuthCredentials any
+	// Authentication method used to connect to the upstream MCP server.
+	AuthType any
+	// Pre-registered OAuth client_secret. Write-only - accepted on create/update when auth_credentials.auth_mode is 'manual'. Stored AES-GCM-encrypted in server_oauth_secrets; never returned by read endpoints.
+	ClientSecret any
+	// Optional description of the MCP server.
+	Description any
+	// URL of the upstream MCP endpoint.
+	Hostname any
+	// Unique identifier for the MCP server.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
+	IsSharedOauthCallbackEnabled any
+	// Display name for the MCP server.
+	Name any
+	// Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
+	SecureWebGateway any
+	// Server-wide prompt capability overrides.
+	UpdatedPrompts any
+	// Server-wide tool capability overrides.
+	UpdatedTools any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type ServerAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	// Static credential for the upstream MCP server. For auth_type "bearer", either a raw token string (e.g. "sk-abc123"), which is wrapped server-side as `Authorization: Bearer <token>`, or a JSON-encoded object of the form `{"headers":{"Header-Name":"value",...}}` for custom or multiple static headers (e.g. Cloudflare Access service tokens: `{"headers":{"cf-access-client-id":"...","cf-access-client-secret":"..."}}`).
+	AuthCredentials any
+	// Authentication method used to connect to the upstream MCP server.
+	AuthType any
+	// Pre-registered OAuth client_secret. Write-only - accepted on create/update when auth_credentials.auth_mode is 'manual'. Stored AES-GCM-encrypted in server_oauth_secrets; never returned by read endpoints.
+	ClientSecret any
+	// Optional description of the MCP server.
+	Description any
+	// URL of the upstream MCP endpoint.
+	Hostname any
+	// Unique identifier for the MCP server.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	// When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
+	IsSharedOauthCallbackEnabled any
+	// Display name for the MCP server.
+	Name any
 	Result any
+	// Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
+	SecureWebGateway any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Server-wide prompt capability overrides.
+	UpdatedPrompts any
+	// Server-wide tool capability overrides.
+	UpdatedTools any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -122,12 +149,25 @@ type ServerAttrs struct {
 var Server = ubx.ResourceBinding{
 	WireType: "cloudflare_server",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
+		"AuthCredentials": ubx.FieldSpec{WireName: "auth_credentials"},
+		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"IsSharedOauthCallbackEnabled": ubx.FieldSpec{WireName: "is_shared_oauth_callback_enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SecureWebGateway": ubx.FieldSpec{WireName: "secure_web_gateway"},
+		"UpdatedPrompts": ubx.FieldSpec{
+			WireName: "updated_prompts",
+			Kind: "list",
+			Fields: Server_Result_UpdatedPromptsFields,
+		},
+		"UpdatedTools": ubx.FieldSpec{
+			WireName: "updated_tools",
+			Kind: "list",
+			Fields: Server_Result_UpdatedPromptsFields,
+		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},
 }

@@ -3,6 +3,58 @@ package aisearchinstancesjobs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Job_CustomMetadata struct {
+	DataType any
+	FieldName any
+}
+
+type Job_IndexMethod struct {
+	// Enable keyword (BM25) storage backend.
+	Keyword any
+	// Enable vector (embedding) storage backend.
+	Vector any
+}
+
+type Job_IndexingOptions struct {
+	// Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.
+	KeywordTokenizer any
+}
+
+type Job_Metadata struct {
+	CreatedFromAisearchWizard any
+	WorkerDomain any
+}
+
+type Job_PublicEndpointParams_ChatCompletionsEndpoint struct {
+	// Disable chat completions endpoint for this public endpoint
+	Disabled any
+}
+
+type Job_PublicEndpointParams_Mcp struct {
+	Description any
+	// Disable MCP endpoint for this public endpoint
+	Disabled any
+}
+
+type Job_PublicEndpointParams_RateLimit struct {
+	PeriodMs any
+	Requests any
+	Technique any
+}
+
+type Job_PublicEndpointParams struct {
+	AuthorizedHosts any
+	ChatCompletionsEndpoint any
+	// Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
+	CustomDomains any
+	// When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
+	DefaultDomainEnabled any
+	Enabled any
+	Mcp any
+	RateLimit any
+	SearchEndpoint any
+}
+
 type Job_Result struct {
 	Description any
 	EndReason any
@@ -13,19 +65,231 @@ type Job_Result struct {
 	StartedAt any
 }
 
+type Job_RetrievalOptions_BoostBy struct {
+	Direction any
+	Field any
+}
+
+type Job_RetrievalOptions struct {
+	// Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to 'asc' for numeric/datetime fields and 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
+	BoostBy any
+	// Controls which documents are candidates for BM25 scoring. 'and' restricts candidates to documents containing all query terms; 'or' includes any document containing at least one term, ranked by BM25 relevance. When omitted on an update, the existing stored value is preserved; when never set, search falls back to 'and'.
+	KeywordMatchMode any
+}
+
+type Job_SourceParams_WebCrawler_DiscoverOptions struct {
+	// Maximum link-follow depth from the seed URL.
+	Depth any
+	// Follow links that point outside the source domain. Must stay `false` — discover crawls are restricted to the zone you own.
+	IncludeExternalLinks any
+	// Follow links to subdomains of the source host.
+	IncludeSubdomains any
+	// Maximum number of pages to crawl (1-100000).
+	Limit any
+	// Maximum content age in seconds to accept (0–604800).
+	MaxAge any
+	// Where the crawler looks for URLs: 'sitemaps' reads sitemap XML only, 'links' follows page links only, 'all' does both.
+	Source any
+}
+
+type Job_SourceParams_WebCrawler_ParseOptions_ContentSelector struct {
+	Path any
+	Selector any
+}
+
+type Job_SourceParams_WebCrawler_ParseOptions struct {
+	// List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. Only the matched HTML fragment is stored and indexed. Omit the field to disable content selection — empty arrays are rejected.
+	ContentSelector any
+	// Up to 5 custom HTTP headers sent with each crawl request. Names must be RFC-7230 token characters (no spaces, colons, or control characters); values must be HTAB + printable ASCII (no CR/LF).
+	IncludeHeaders any
+	IncludeImages any
+	// List of specific sitemap URLs to use for crawling. Only valid when parse_type is 'sitemap'.
+	SpecificSitemaps any
+	UseBrowserRendering any
+}
+
+type Job_SourceParams_WebCrawler struct {
+	// Options for parse_type 'discover', where Browser Run discovers URLs by link following and sitemaps. Ignored for 'sitemap'.
+	DiscoverOptions any
+	ParseOptions any
+	// How URLs are discovered. 'sitemap' reads XML sitemaps; 'discover' follows links recursively and requires the source to be a Verified zone on this account.
+	ParseType any
+}
+
+type Job_SourceParams struct {
+	// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced). Most accounts are limited to 10 rules; contact support to raise it.
+	ExcludeItems any
+	// List of path patterns to include. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /blog/** matches /blog/post and /blog/2024/post). Most accounts are limited to 10 rules; contact support to raise it.
+	IncludeItems any
+	Prefix any
+	R2Jurisdiction any
+	WebCrawler any
+}
+
+var Job_CustomMetadataFields = ubx.FieldMap{
+		"DataType": ubx.FieldSpec{WireName: "data_type"},
+		"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	}
+
+var Job_IndexMethodFields = ubx.FieldMap{
+		"Keyword": ubx.FieldSpec{WireName: "keyword"},
+		"Vector": ubx.FieldSpec{WireName: "vector"},
+	}
+
+var Job_IndexingOptionsFields = ubx.FieldMap{
+		"KeywordTokenizer": ubx.FieldSpec{WireName: "keyword_tokenizer"},
+	}
+
+var Job_MetadataFields = ubx.FieldMap{
+		"CreatedFromAisearchWizard": ubx.FieldSpec{WireName: "created_from_aisearch_wizard"},
+		"WorkerDomain": ubx.FieldSpec{WireName: "worker_domain"},
+	}
+
+var Job_PublicEndpointParams_ChatCompletionsEndpointFields = ubx.FieldMap{
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	}
+
+var Job_PublicEndpointParams_McpFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	}
+
+var Job_PublicEndpointParams_RateLimitFields = ubx.FieldMap{
+		"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
+		"Requests": ubx.FieldSpec{WireName: "requests"},
+		"Technique": ubx.FieldSpec{WireName: "technique"},
+	}
+
+var Job_PublicEndpointParamsFields = ubx.FieldMap{
+		"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
+		"ChatCompletionsEndpoint": ubx.FieldSpec{
+			WireName: "chat_completions_endpoint",
+			Kind: "object",
+			Fields: Job_PublicEndpointParams_ChatCompletionsEndpointFields,
+		},
+		"CustomDomains": ubx.FieldSpec{WireName: "custom_domains"},
+		"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Mcp": ubx.FieldSpec{
+			WireName: "mcp",
+			Kind: "object",
+			Fields: Job_PublicEndpointParams_McpFields,
+		},
+		"RateLimit": ubx.FieldSpec{
+			WireName: "rate_limit",
+			Kind: "object",
+			Fields: Job_PublicEndpointParams_RateLimitFields,
+		},
+		"SearchEndpoint": ubx.FieldSpec{
+			WireName: "search_endpoint",
+			Kind: "object",
+			Fields: Job_PublicEndpointParams_ChatCompletionsEndpointFields,
+		},
+	}
+
+var Job_RetrievalOptions_BoostByFields = ubx.FieldMap{
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Field": ubx.FieldSpec{WireName: "field"},
+	}
+
+var Job_RetrievalOptionsFields = ubx.FieldMap{
+		"BoostBy": ubx.FieldSpec{
+			WireName: "boost_by",
+			Kind: "list",
+			Fields: Job_RetrievalOptions_BoostByFields,
+		},
+		"KeywordMatchMode": ubx.FieldSpec{WireName: "keyword_match_mode"},
+	}
+
+var Job_SourceParams_WebCrawler_DiscoverOptionsFields = ubx.FieldMap{
+		"Depth": ubx.FieldSpec{WireName: "depth"},
+		"IncludeExternalLinks": ubx.FieldSpec{WireName: "include_external_links"},
+		"IncludeSubdomains": ubx.FieldSpec{WireName: "include_subdomains"},
+		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+	}
+
+var Job_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields = ubx.FieldMap{
+		"Path": ubx.FieldSpec{WireName: "path"},
+		"Selector": ubx.FieldSpec{WireName: "selector"},
+	}
+
+var Job_SourceParams_WebCrawler_ParseOptionsFields = ubx.FieldMap{
+		"ContentSelector": ubx.FieldSpec{
+			WireName: "content_selector",
+			Kind: "list",
+			Fields: Job_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields,
+		},
+		"IncludeHeaders": ubx.FieldSpec{WireName: "include_headers"},
+		"IncludeImages": ubx.FieldSpec{WireName: "include_images"},
+		"SpecificSitemaps": ubx.FieldSpec{WireName: "specific_sitemaps"},
+		"UseBrowserRendering": ubx.FieldSpec{WireName: "use_browser_rendering"},
+	}
+
+var Job_SourceParams_WebCrawlerFields = ubx.FieldMap{
+		"DiscoverOptions": ubx.FieldSpec{
+			WireName: "discover_options",
+			Kind: "object",
+			Fields: Job_SourceParams_WebCrawler_DiscoverOptionsFields,
+		},
+		"ParseOptions": ubx.FieldSpec{
+			WireName: "parse_options",
+			Kind: "object",
+			Fields: Job_SourceParams_WebCrawler_ParseOptionsFields,
+		},
+		"ParseType": ubx.FieldSpec{WireName: "parse_type"},
+	}
+
+var Job_SourceParamsFields = ubx.FieldMap{
+		"ExcludeItems": ubx.FieldSpec{WireName: "exclude_items"},
+		"IncludeItems": ubx.FieldSpec{WireName: "include_items"},
+		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"R2Jurisdiction": ubx.FieldSpec{WireName: "r2_jurisdiction"},
+		"WebCrawler": ubx.FieldSpec{
+			WireName: "web_crawler",
+			Kind: "object",
+			Fields: Job_SourceParams_WebCrawlerFields,
+		},
+	}
+
 type JobConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	AiGatewayId any
+	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+	AiSearchModel any
+	Cache any
+	CacheThreshold any
+	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+	CacheTtl any
+	Chunk any
+	ChunkOverlap any
+	ChunkSize any
+	CustomMetadata any
+	EmbeddingModel any
+	FusionMethod any
+	// Deprecated — use index_method instead.
+	HybridSearchEnabled any
+	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+	// Controls which storage backends are used during indexing. Defaults to vector-only.
+	IndexMethod any
+	IndexingOptions any
+	MaxNumResults any
 	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	PublicEndpointParams any
+	Reranking any
+	RerankingModel any
+	RetrievalOptions any
+	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+	RewriteModel any
+	RewriteQuery any
+	ScoreThreshold any
+	Source any
+	SourceParams any
+	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+	SyncInterval any
+	TokenId any
+	Type any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -33,20 +297,44 @@ type JobConfig struct {
 }
 
 type JobAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+	AiGatewayId any
+	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+	AiSearchModel any
+	Cache any
+	CacheThreshold any
+	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+	CacheTtl any
+	Chunk any
+	ChunkOverlap any
+	ChunkSize any
+	CustomMetadata any
+	EmbeddingModel any
+	FusionMethod any
+	// Deprecated — use index_method instead.
+	HybridSearchEnabled any
+	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+	// Controls which storage backends are used during indexing. Defaults to vector-only.
+	IndexMethod any
+	IndexingOptions any
+	MaxNumResults any
 	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	PublicEndpointParams any
+	Reranking any
+	RerankingModel any
 	Result any
+	RetrievalOptions any
+	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+	RewriteModel any
+	RewriteQuery any
+	ScoreThreshold any
+	Source any
+	SourceParams any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+	SyncInterval any
+	TokenId any
+	Type any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -56,12 +344,63 @@ type JobAttrs struct {
 var Job = ubx.ResourceBinding{
 	WireType: "cloudflare_job",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
+		"AiGatewayId": ubx.FieldSpec{WireName: "ai_gateway_id"},
+		"AiSearchModel": ubx.FieldSpec{WireName: "ai_search_model"},
+		"Cache": ubx.FieldSpec{WireName: "cache"},
+		"CacheThreshold": ubx.FieldSpec{WireName: "cache_threshold"},
+		"CacheTtl": ubx.FieldSpec{WireName: "cache_ttl"},
+		"Chunk": ubx.FieldSpec{WireName: "chunk"},
+		"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
+		"ChunkSize": ubx.FieldSpec{WireName: "chunk_size"},
+		"CustomMetadata": ubx.FieldSpec{
+			WireName: "custom_metadata",
+			Kind: "list",
+			Fields: Job_CustomMetadataFields,
+		},
+		"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
+		"FusionMethod": ubx.FieldSpec{WireName: "fusion_method"},
+		"HybridSearchEnabled": ubx.FieldSpec{WireName: "hybrid_search_enabled"},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"IndexMethod": ubx.FieldSpec{
+			WireName: "index_method",
+			Kind: "object",
+			Fields: Job_IndexMethodFields,
+		},
+		"IndexingOptions": ubx.FieldSpec{
+			WireName: "indexing_options",
+			Kind: "object",
+			Fields: Job_IndexingOptionsFields,
+		},
+		"MaxNumResults": ubx.FieldSpec{WireName: "max_num_results"},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: Job_MetadataFields,
+		},
+		"PublicEndpointParams": ubx.FieldSpec{
+			WireName: "public_endpoint_params",
+			Kind: "object",
+			Fields: Job_PublicEndpointParamsFields,
+		},
+		"Reranking": ubx.FieldSpec{WireName: "reranking"},
+		"RerankingModel": ubx.FieldSpec{WireName: "reranking_model"},
+		"RetrievalOptions": ubx.FieldSpec{
+			WireName: "retrieval_options",
+			Kind: "object",
+			Fields: Job_RetrievalOptionsFields,
+		},
+		"RewriteModel": ubx.FieldSpec{WireName: "rewrite_model"},
+		"RewriteQuery": ubx.FieldSpec{WireName: "rewrite_query"},
+		"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"SourceParams": ubx.FieldSpec{
+			WireName: "source_params",
+			Kind: "object",
+			Fields: Job_SourceParamsFields,
+		},
+		"SyncInterval": ubx.FieldSpec{WireName: "sync_interval"},
+		"TokenId": ubx.FieldSpec{WireName: "token_id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"JobId": ubx.FieldSpec{WireName: "job_id"},
 	},

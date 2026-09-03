@@ -8,3 +8,5 @@ from .maliciou import Maliciou, MaliciouConfig
 from .spam import Spam, SpamConfig
 from .spoof import Spoof, SpoofConfig
 from .threat_category import ThreatCategory, ThreatCategoryConfig
+from .tld import Tld, TldConfig
+from .tls_version import TlsVersion, TlsVersionConfig

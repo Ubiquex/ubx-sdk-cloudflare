@@ -9,7 +9,5 @@ from .browser import Browser, BrowserConfig
 from .browser_family import BrowserFamily, BrowserFamilyConfig
 from .device_type import DeviceType, DeviceTypeConfig
 from .http_protocol import HttpProtocol, HttpProtocolConfig
-from .http_version import HttpVersion, HttpVersionConfig
 from .o import O, OConfig
 from .post_quantum import PostQuantum, PostQuantumConfig
-from .tls_version import TlsVersion, TlsVersionConfig

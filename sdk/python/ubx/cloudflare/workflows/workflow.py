@@ -7,9 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Workflow_Concurrency:
+    # Maximum number of instances of this workflow that can run concurrently. Additional instances are queued and started as running instances complete. Must not exceed the account concurrency limit.
+    limit: Any = None
+
+@dataclasses.dataclass
+class Workflow_DefaultRetention:
+    # Specifies the duration in milliseconds or as a string like '5 minutes'.
+    error_retention: Any = None
+    # Specifies the duration in milliseconds or as a string like '5 minutes'.
+    success_retention: Any = None
+
+@dataclasses.dataclass
 class Workflow_Errors:
     code: Any = None
     message: Any = None
+
+@dataclasses.dataclass
+class Workflow_Limits:
+    steps: Any = None
 
 @dataclasses.dataclass
 class Workflow_Result_Schedules:
@@ -38,47 +54,85 @@ class Workflow_ResultInfo:
     total_pages: Any = None
 
 @dataclasses.dataclass
+class Workflow_Schedules:
+    cron: Any = None
+
+_Workflow_ConcurrencyFields = {
+    "limit": ubx.FieldSpec(wire_name="limit"),
+}
+
+_Workflow_DefaultRetentionFields = {
+    "error_retention": ubx.FieldSpec(wire_name="error_retention"),
+    "success_retention": ubx.FieldSpec(wire_name="success_retention"),
+}
+
+_Workflow_LimitsFields = {
+    "steps": ubx.FieldSpec(wire_name="steps"),
+}
+
+_Workflow_SchedulesFields = {
+    "cron": ubx.FieldSpec(wire_name="cron"),
+}
+
+@dataclasses.dataclass
 class WorkflowConfig:
-    # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
-    default_branch: Any = None
-    description: Any = None
-    name: Any = None
-    read_only: Any = None
+    class_name: Any = None
+    concurrency: Any = None
+    # Default retention applied to instances of this version when they do not set their own retention.
+    default_retention: Any = None
+    limits: Any = None
+    schedules: Any = None
+    script_name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
     workflow_name: Any = None
-    # path parameter, not part of the API's own resource representation
-    namespace: Any = None
 
 @dataclasses.dataclass
 class WorkflowAttrs:
-    # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
-    default_branch: Any = None
-    description: Any = None
+    class_name: Any = None
+    concurrency: Any = None
+    # Default retention applied to instances of this version when they do not set their own retention.
+    default_retention: Any = None
     errors: Any = None
+    limits: Any = None
     messages: Any = None
-    name: Any = None
-    read_only: Any = None
     result: Any = None
     result_info: Any = None
+    schedules: Any = None
+    script_name: Any = None
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
     workflow_name: Any = None
-    # path parameter, not part of the API's own resource representation
-    namespace: Any = None
 
 Workflow = ubx.ResourceBinding(
     wire_type="cloudflare_workflow",
     fields={
-        "default_branch": ubx.FieldSpec(wire_name="default_branch"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "read_only": ubx.FieldSpec(wire_name="read_only"),
+        "class_name": ubx.FieldSpec(wire_name="class_name"),
+        "concurrency": ubx.FieldSpec(
+            wire_name="concurrency",
+            kind="object",
+            fields=_Workflow_ConcurrencyFields,
+        ),
+        "default_retention": ubx.FieldSpec(
+            wire_name="default_retention",
+            kind="object",
+            fields=_Workflow_DefaultRetentionFields,
+        ),
+        "limits": ubx.FieldSpec(
+            wire_name="limits",
+            kind="object",
+            fields=_Workflow_LimitsFields,
+        ),
+        "schedules": ubx.FieldSpec(
+            wire_name="schedules",
+            kind="list",
+            fields=_Workflow_SchedulesFields,
+        ),
+        "script_name": ubx.FieldSpec(wire_name="script_name"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "workflow_name": ubx.FieldSpec(wire_name="workflow_name"),
-        "namespace": ubx.FieldSpec(wire_name="namespace"),
     },
 )

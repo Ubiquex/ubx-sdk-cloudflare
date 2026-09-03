@@ -97,50 +97,102 @@ class Portal_Result:
     servers: Any = None
 
 @dataclasses.dataclass
+class Portal_Servers_UpdatedPrompts:
+    alias: Any = None
+    description: Any = None
+    enabled: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Portal_Servers:
+    default_disabled: Any = None
+    on_behalf: Any = None
+    server_id: Any = None
+    updated_prompts: Any = None
+    updated_tools: Any = None
+
+_Portal_Servers_UpdatedPromptsFields = {
+    "alias": ubx.FieldSpec(wire_name="alias"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_Portal_ServersFields = {
+    "default_disabled": ubx.FieldSpec(wire_name="default_disabled"),
+    "on_behalf": ubx.FieldSpec(wire_name="on_behalf"),
+    "server_id": ubx.FieldSpec(wire_name="server_id"),
+    "updated_prompts": ubx.FieldSpec(
+        wire_name="updated_prompts",
+        kind="list",
+        fields=_Portal_Servers_UpdatedPromptsFields,
+    ),
+    "updated_tools": ubx.FieldSpec(
+        wire_name="updated_tools",
+        kind="list",
+        fields=_Portal_Servers_UpdatedPromptsFields,
+    ),
+}
+
+@dataclasses.dataclass
 class PortalConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    # Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
+    allow_code_mode: Any = None
+    # Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400.
+    code_mode: Any = None
+    # Optional description of the MCP portal.
+    description: Any = None
+    # Hostname where the MCP portal is available.
+    hostname: Any = None
+    # Unique identifier for the MCP portal.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Display name for the MCP portal.
+    name: Any = None
+    # Route outbound MCP traffic through Zero Trust Secure Web Gateway.
+    secure_web_gateway: Any = None
+    # MCP servers attached to the portal and their portal-specific settings.
+    servers: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class PortalAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    # Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
+    allow_code_mode: Any = None
+    # Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400.
+    code_mode: Any = None
+    # Optional description of the MCP portal.
+    description: Any = None
+    # Hostname where the MCP portal is available.
+    hostname: Any = None
+    # Unique identifier for the MCP portal.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-    metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    # Display name for the MCP portal.
+    name: Any = None
     result: Any = None
+    # Route outbound MCP traffic through Zero Trust Secure Web Gateway.
+    secure_web_gateway: Any = None
+    # MCP servers attached to the portal and their portal-specific settings.
+    servers: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 Portal = ubx.ResourceBinding(
     wire_type="cloudflare_portal",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
+        "allow_code_mode": ubx.FieldSpec(wire_name="allow_code_mode"),
+        "code_mode": ubx.FieldSpec(wire_name="code_mode"),
+        "description": ubx.FieldSpec(wire_name="description"),
+        "hostname": ubx.FieldSpec(wire_name="hostname"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "secure_web_gateway": ubx.FieldSpec(wire_name="secure_web_gateway"),
+        "servers": ubx.FieldSpec(
+            wire_name="servers",
+            kind="list",
+            fields=_Portal_ServersFields,
+        ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
     },
 )

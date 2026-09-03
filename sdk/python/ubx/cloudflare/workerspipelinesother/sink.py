@@ -7,20 +7,39 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Sink_Result_Config_FileNaming:
+class Sink_Config_Credentials:
+    access_key_id: Any = None
+    secret_access_key: Any = None
+
+@dataclasses.dataclass
+class Sink_Config_FileNaming:
     prefix: Any = None
     strategy: Any = None
     suffix: Any = None
 
 @dataclasses.dataclass
-class Sink_Result_Config_Partitioning:
+class Sink_Config_Partitioning:
     time_pattern: Any = None
 
 @dataclasses.dataclass
-class Sink_Result_Config_RollingPolicy:
+class Sink_Config_RollingPolicy:
     file_size_bytes: Any = None
     inactivity_seconds: Any = None
     interval_seconds: Any = None
+
+@dataclasses.dataclass
+class Sink_Config:
+    account_id: Any = None
+    bucket: Any = None
+    credentials: Any = None
+    file_naming: Any = None
+    jurisdiction: Any = None
+    namespace: Any = None
+    partitioning: Any = None
+    path: Any = None
+    rolling_policy: Any = None
+    table_name: Any = None
+    token: Any = None
 
 @dataclasses.dataclass
 class Sink_Result_Config:
@@ -63,12 +82,85 @@ class Sink_Result:
     # Specifies the type of sink.
     type: Any = None
 
+_Sink_Config_CredentialsFields = {
+    "access_key_id": ubx.FieldSpec(wire_name="access_key_id"),
+    "secret_access_key": ubx.FieldSpec(wire_name="secret_access_key"),
+}
+
+_Sink_Config_FileNamingFields = {
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "strategy": ubx.FieldSpec(wire_name="strategy"),
+    "suffix": ubx.FieldSpec(wire_name="suffix"),
+}
+
+_Sink_Config_PartitioningFields = {
+    "time_pattern": ubx.FieldSpec(wire_name="time_pattern"),
+}
+
+_Sink_Config_RollingPolicyFields = {
+    "file_size_bytes": ubx.FieldSpec(wire_name="file_size_bytes"),
+    "inactivity_seconds": ubx.FieldSpec(wire_name="inactivity_seconds"),
+    "interval_seconds": ubx.FieldSpec(wire_name="interval_seconds"),
+}
+
+_Sink_ConfigFields = {
+    "account_id": ubx.FieldSpec(wire_name="account_id"),
+    "bucket": ubx.FieldSpec(wire_name="bucket"),
+    "credentials": ubx.FieldSpec(
+        wire_name="credentials",
+        kind="object",
+        fields=_Sink_Config_CredentialsFields,
+    ),
+    "file_naming": ubx.FieldSpec(
+        wire_name="file_naming",
+        kind="object",
+        fields=_Sink_Config_FileNamingFields,
+    ),
+    "jurisdiction": ubx.FieldSpec(wire_name="jurisdiction"),
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+    "partitioning": ubx.FieldSpec(
+        wire_name="partitioning",
+        kind="object",
+        fields=_Sink_Config_PartitioningFields,
+    ),
+    "path": ubx.FieldSpec(wire_name="path"),
+    "rolling_policy": ubx.FieldSpec(
+        wire_name="rolling_policy",
+        kind="object",
+        fields=_Sink_Config_RollingPolicyFields,
+    ),
+    "table_name": ubx.FieldSpec(wire_name="table_name"),
+    "token": ubx.FieldSpec(wire_name="token"),
+}
+
+_Sink_Result_Schema_FieldsFields = {
+    "metadata_key": ubx.FieldSpec(wire_name="metadata_key"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "required": ubx.FieldSpec(wire_name="required"),
+    "sql_name": ubx.FieldSpec(wire_name="sql_name"),
+}
+
+_Sink_Result_SchemaFields = {
+    "fields": ubx.FieldSpec(
+        wire_name="fields",
+        kind="list",
+        fields=_Sink_Result_Schema_FieldsFields,
+    ),
+    "inferred": ubx.FieldSpec(wire_name="inferred"),
+}
+
 @dataclasses.dataclass
 class SinkConfig:
-    # Specifies the name of the Pipeline.
+    # Defines the configuration of the R2 Sink.
+    config: Any = None
+    # Defines the data format of the events.
+    format: Any = None
+    # Defines the name of the Sink.
     name: Any = None
-    # Specifies SQL for the Pipeline processing flow.
-    sql: Any = None
+    # Defines the schema of the events in the data stream.
+    schema: Any = None
+    # Specifies the type of sink.
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -76,13 +168,19 @@ class SinkConfig:
 
 @dataclasses.dataclass
 class SinkAttrs:
-    # Specifies the name of the Pipeline.
+    # Defines the configuration of the R2 Sink.
+    config: Any = None
+    # Defines the data format of the events.
+    format: Any = None
+    # Defines the name of the Sink.
     name: Any = None
     result: Any = None
-    # Specifies SQL for the Pipeline processing flow.
-    sql: Any = None
+    # Defines the schema of the events in the data stream.
+    schema: Any = None
     # Indicates whether the API call was successful.
     success: Any = None
+    # Specifies the type of sink.
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -91,8 +189,19 @@ class SinkAttrs:
 Sink = ubx.ResourceBinding(
     wire_type="cloudflare_sink",
     fields={
+        "config": ubx.FieldSpec(
+            wire_name="config",
+            kind="object",
+            fields=_Sink_ConfigFields,
+        ),
+        "format": ubx.FieldSpec(wire_name="format"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "sql": ubx.FieldSpec(wire_name="sql"),
+        "schema": ubx.FieldSpec(
+            wire_name="schema",
+            kind="object",
+            fields=_Sink_Result_SchemaFields,
+        ),
+        "type": ubx.FieldSpec(wire_name="type"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "sink_id": ubx.FieldSpec(wire_name="sink_id"),
     },

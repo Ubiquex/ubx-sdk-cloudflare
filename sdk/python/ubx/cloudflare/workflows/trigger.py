@@ -39,27 +39,15 @@ class Trigger_ResultInfo:
 
 @dataclasses.dataclass
 class TriggerConfig:
-    # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
-    default_branch: Any = None
-    description: Any = None
-    name: Any = None
-    read_only: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
     script_name: Any = None
-    # path parameter, not part of the API's own resource representation
-    namespace: Any = None
 
 @dataclasses.dataclass
 class TriggerAttrs:
-    # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
-    default_branch: Any = None
-    description: Any = None
     errors: Any = None
     messages: Any = None
-    name: Any = None
-    read_only: Any = None
     result: Any = None
     result_info: Any = None
     success: Any = None
@@ -67,18 +55,11 @@ class TriggerAttrs:
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
     script_name: Any = None
-    # path parameter, not part of the API's own resource representation
-    namespace: Any = None
 
 Trigger = ubx.ResourceBinding(
     wire_type="cloudflare_trigger",
     fields={
-        "default_branch": ubx.FieldSpec(wire_name="default_branch"),
-        "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "read_only": ubx.FieldSpec(wire_name="read_only"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "script_name": ubx.FieldSpec(wire_name="script_name"),
-        "namespace": ubx.FieldSpec(wire_name="namespace"),
     },
 )

@@ -58,8 +58,12 @@ type TimeseriesGroupConfig struct {
 	AggInterval any
 	// Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.
 	Asn any
+	// Filters results by content type category. When set, results can only be further filtered by location, continent, or Autonomous System.
+	ContentType any
 	// Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.
 	Continent any
+	// Filters results by bot crawl purpose.
+	CrawlPurpose any
 	// End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
 	DateEnd any
 	// Filters results by relative date range ending at the current time, with each value producing a separate series. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).
@@ -70,14 +74,24 @@ type TimeseriesGroupConfig struct {
 	Dimension any
 	// Format in which results will be returned.
 	Format any
+	// Filters results by industry.
+	Industry any
 	// Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an "other" category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.
 	LimitPerGroup any
 	// Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.
 	Location any
 	// Array of names used to label the series in the response.
 	Name any
-	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/). `PERCENTAGE_CHANGE` requires exactly one comparison series (e.g. a `control` date range).
 	Normalization any
+	// Filters results by HTTP response status code (e.g. 200, 403, 404). Only [IANA-registered codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) are accepted.
+	ResponseStatus any
+	// Filters results by HTTP response status code category.
+	ResponseStatusCategory any
+	// Filters results by user agent.
+	UserAgent any
+	// Filters results by vertical.
+	Vertical any
 }
 
 type TimeseriesGroupAttrs struct {
@@ -85,8 +99,12 @@ type TimeseriesGroupAttrs struct {
 	AggInterval any
 	// Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.
 	Asn any
+	// Filters results by content type category. When set, results can only be further filtered by location, continent, or Autonomous System.
+	ContentType any
 	// Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.
 	Continent any
+	// Filters results by bot crawl purpose.
+	CrawlPurpose any
 	// End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
 	DateEnd any
 	// Filters results by relative date range ending at the current time, with each value producing a separate series. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).
@@ -97,16 +115,26 @@ type TimeseriesGroupAttrs struct {
 	Dimension any
 	// Format in which results will be returned.
 	Format any
+	// Filters results by industry.
+	Industry any
 	// Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an "other" category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.
 	LimitPerGroup any
 	// Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.
 	Location any
 	// Array of names used to label the series in the response.
 	Name any
-	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/). `PERCENTAGE_CHANGE` requires exactly one comparison series (e.g. a `control` date range).
 	Normalization any
+	// Filters results by HTTP response status code (e.g. 200, 403, 404). Only [IANA-registered codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) are accepted.
+	ResponseStatus any
+	// Filters results by HTTP response status code category.
+	ResponseStatusCategory any
 	Result any
 	Success any
+	// Filters results by user agent.
+	UserAgent any
+	// Filters results by vertical.
+	Vertical any
 }
 
 var TimeseriesGroup = ubx.DataSourceBinding{
@@ -114,15 +142,22 @@ var TimeseriesGroup = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AggInterval": ubx.FieldSpec{WireName: "agg_interval"},
 		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"ContentType": ubx.FieldSpec{WireName: "content_type"},
 		"Continent": ubx.FieldSpec{WireName: "continent"},
+		"CrawlPurpose": ubx.FieldSpec{WireName: "crawl_purpose"},
 		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
 		"Dimension": ubx.FieldSpec{WireName: "dimension"},
 		"Format": ubx.FieldSpec{WireName: "format"},
+		"Industry": ubx.FieldSpec{WireName: "industry"},
 		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
 		"Location": ubx.FieldSpec{WireName: "location"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Normalization": ubx.FieldSpec{WireName: "normalization"},
+		"ResponseStatus": ubx.FieldSpec{WireName: "response_status"},
+		"ResponseStatusCategory": ubx.FieldSpec{WireName: "response_status_category"},
+		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
+		"Vertical": ubx.FieldSpec{WireName: "vertical"},
 	},
 }

@@ -2,10 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CategoryConfig {
-  killChain: number | Computed<number>;
+  killChain?: number | Computed<number>;
   mitreAttack?: string[] | Computed<string[]>;
   mitreCapec?: string[] | Computed<string[]>;
-  name: string | Computed<string>;
+  name?: string | Computed<string>;
   shortname?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;

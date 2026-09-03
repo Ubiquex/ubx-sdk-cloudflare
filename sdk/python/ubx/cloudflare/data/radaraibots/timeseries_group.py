@@ -62,8 +62,12 @@ class TimeseriesGroupConfig:
     agg_interval: Any = None
     # Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.
     asn: Any = None
+    # Filters results by content type category. When set, results can only be further filtered by location, continent, or Autonomous System.
+    content_type: Any = None
     # Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.
     continent: Any = None
+    # Filters results by bot crawl purpose.
+    crawl_purpose: Any = None
     # End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
     date_end: Any = None
     # Filters results by relative date range ending at the current time, with each value producing a separate series. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).
@@ -74,14 +78,24 @@ class TimeseriesGroupConfig:
     dimension: Any = None
     # Format in which results will be returned.
     format: Any = None
+    # Filters results by industry.
+    industry: Any = None
     # Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an "other" category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.
     limit_per_group: Any = None
     # Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.
     location: Any = None
     # Array of names used to label the series in the response.
     name: Any = None
-    # Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+    # Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/). `PERCENTAGE_CHANGE` requires exactly one comparison series (e.g. a `control` date range).
     normalization: Any = None
+    # Filters results by HTTP response status code (e.g. 200, 403, 404). Only [IANA-registered codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) are accepted.
+    response_status: Any = None
+    # Filters results by HTTP response status code category.
+    response_status_category: Any = None
+    # Filters results by user agent.
+    user_agent: Any = None
+    # Filters results by vertical.
+    vertical: Any = None
 
 @dataclasses.dataclass
 class TimeseriesGroupAttrs:
@@ -89,8 +103,12 @@ class TimeseriesGroupAttrs:
     agg_interval: Any = None
     # Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.
     asn: Any = None
+    # Filters results by content type category. When set, results can only be further filtered by location, continent, or Autonomous System.
+    content_type: Any = None
     # Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.
     continent: Any = None
+    # Filters results by bot crawl purpose.
+    crawl_purpose: Any = None
     # End of the date range (inclusive). Alternative to `dateRange`; provide together with `dateStart`. When requesting comparison series, every series must resolve to the same duration as the main series. Each `dateStart`/`dateEnd` is floored to the nearest 15 minutes before evaluation, so windows whose durations match only before alignment may be rejected.
     date_end: Any = None
     # Filters results by relative date range ending at the current time, with each value producing a separate series. Use `<n>d` for days (up to `364d`) or `<n>w` for weeks (up to `52w`). Append `control` to request the equivalent previous period for comparison: the comparison window is shifted back by the current window's length rounded up to a whole number of weeks, so it keeps the same weekday alignment and does not overlap the current window (e.g. `7dcontrol` covers days -14 to -7, `10dcontrol` covers days -24 to -14). For example, pass `7d` and `7dcontrol` to compare this week with the previous week. All series must resolve to the same duration as the main series; relative ranges (including `control`) satisfy this automatically. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).
@@ -101,31 +119,48 @@ class TimeseriesGroupAttrs:
     dimension: Any = None
     # Format in which results will be returned.
     format: Any = None
+    # Filters results by industry.
+    industry: Any = None
     # Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an "other" category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.
     limit_per_group: Any = None
     # Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.
     location: Any = None
     # Array of names used to label the series in the response.
     name: Any = None
-    # Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
+    # Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/). `PERCENTAGE_CHANGE` requires exactly one comparison series (e.g. a `control` date range).
     normalization: Any = None
+    # Filters results by HTTP response status code (e.g. 200, 403, 404). Only [IANA-registered codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) are accepted.
+    response_status: Any = None
+    # Filters results by HTTP response status code category.
+    response_status_category: Any = None
     result: Any = None
     success: Any = None
+    # Filters results by user agent.
+    user_agent: Any = None
+    # Filters results by vertical.
+    vertical: Any = None
 
 TimeseriesGroup = ubx.DataSourceBinding(
     wire_type="cloudflare_timeseries_group",
     fields={
         "agg_interval": ubx.FieldSpec(wire_name="agg_interval"),
         "asn": ubx.FieldSpec(wire_name="asn"),
+        "content_type": ubx.FieldSpec(wire_name="content_type"),
         "continent": ubx.FieldSpec(wire_name="continent"),
+        "crawl_purpose": ubx.FieldSpec(wire_name="crawl_purpose"),
         "date_end": ubx.FieldSpec(wire_name="date_end"),
         "date_range": ubx.FieldSpec(wire_name="date_range"),
         "date_start": ubx.FieldSpec(wire_name="date_start"),
         "dimension": ubx.FieldSpec(wire_name="dimension"),
         "format": ubx.FieldSpec(wire_name="format"),
+        "industry": ubx.FieldSpec(wire_name="industry"),
         "limit_per_group": ubx.FieldSpec(wire_name="limit_per_group"),
         "location": ubx.FieldSpec(wire_name="location"),
         "name": ubx.FieldSpec(wire_name="name"),
         "normalization": ubx.FieldSpec(wire_name="normalization"),
+        "response_status": ubx.FieldSpec(wire_name="response_status"),
+        "response_status_category": ubx.FieldSpec(wire_name="response_status_category"),
+        "user_agent": ubx.FieldSpec(wire_name="user_agent"),
+        "vertical": ubx.FieldSpec(wire_name="vertical"),
     },
 )

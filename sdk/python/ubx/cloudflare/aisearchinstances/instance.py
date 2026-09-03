@@ -7,46 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Instance_Result_CustomMetadata:
+class Instance_CustomMetadata:
     data_type: Any = None
     field_name: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_IndexMethod:
+class Instance_IndexMethod:
     # Enable keyword (BM25) storage backend.
     keyword: Any = None
     # Enable vector (embedding) storage backend.
     vector: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_IndexingOptions:
+class Instance_IndexingOptions:
     # Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.
     keyword_tokenizer: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_Metadata:
+class Instance_Metadata:
     created_from_aisearch_wizard: Any = None
     worker_domain: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_PublicEndpointParams_ChatCompletionsEndpoint:
+class Instance_PublicEndpointParams_ChatCompletionsEndpoint:
     # Disable chat completions endpoint for this public endpoint
     disabled: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_PublicEndpointParams_Mcp:
+class Instance_PublicEndpointParams_Mcp:
     description: Any = None
     # Disable MCP endpoint for this public endpoint
     disabled: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_PublicEndpointParams_RateLimit:
+class Instance_PublicEndpointParams_RateLimit:
     period_ms: Any = None
     requests: Any = None
     technique: Any = None
 
 @dataclasses.dataclass
-class Instance_Result_PublicEndpointParams:
+class Instance_PublicEndpointParams:
     authorized_hosts: Any = None
     chat_completions_endpoint: Any = None
     # Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
@@ -168,51 +168,277 @@ class Instance_Result:
     token_id: Any = None
     type: Any = None
 
+_Instance_CustomMetadataFields = {
+    "data_type": ubx.FieldSpec(wire_name="data_type"),
+    "field_name": ubx.FieldSpec(wire_name="field_name"),
+}
+
+_Instance_IndexMethodFields = {
+    "keyword": ubx.FieldSpec(wire_name="keyword"),
+    "vector": ubx.FieldSpec(wire_name="vector"),
+}
+
+_Instance_IndexingOptionsFields = {
+    "keyword_tokenizer": ubx.FieldSpec(wire_name="keyword_tokenizer"),
+}
+
+_Instance_MetadataFields = {
+    "created_from_aisearch_wizard": ubx.FieldSpec(wire_name="created_from_aisearch_wizard"),
+    "worker_domain": ubx.FieldSpec(wire_name="worker_domain"),
+}
+
+_Instance_PublicEndpointParams_ChatCompletionsEndpointFields = {
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Instance_PublicEndpointParams_McpFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Instance_PublicEndpointParams_RateLimitFields = {
+    "period_ms": ubx.FieldSpec(wire_name="period_ms"),
+    "requests": ubx.FieldSpec(wire_name="requests"),
+    "technique": ubx.FieldSpec(wire_name="technique"),
+}
+
+_Instance_PublicEndpointParamsFields = {
+    "authorized_hosts": ubx.FieldSpec(wire_name="authorized_hosts"),
+    "chat_completions_endpoint": ubx.FieldSpec(
+        wire_name="chat_completions_endpoint",
+        kind="object",
+        fields=_Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+    "custom_domains": ubx.FieldSpec(wire_name="custom_domains"),
+    "default_domain_enabled": ubx.FieldSpec(wire_name="default_domain_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "mcp": ubx.FieldSpec(
+        wire_name="mcp",
+        kind="object",
+        fields=_Instance_PublicEndpointParams_McpFields,
+    ),
+    "rate_limit": ubx.FieldSpec(
+        wire_name="rate_limit",
+        kind="object",
+        fields=_Instance_PublicEndpointParams_RateLimitFields,
+    ),
+    "search_endpoint": ubx.FieldSpec(
+        wire_name="search_endpoint",
+        kind="object",
+        fields=_Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+}
+
+_Instance_Result_RetrievalOptions_BoostByFields = {
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "field": ubx.FieldSpec(wire_name="field"),
+}
+
+_Instance_Result_RetrievalOptionsFields = {
+    "boost_by": ubx.FieldSpec(
+        wire_name="boost_by",
+        kind="list",
+        fields=_Instance_Result_RetrievalOptions_BoostByFields,
+    ),
+    "keyword_match_mode": ubx.FieldSpec(wire_name="keyword_match_mode"),
+}
+
+_Instance_Result_SourceParams_WebCrawler_DiscoverOptionsFields = {
+    "depth": ubx.FieldSpec(wire_name="depth"),
+    "include_external_links": ubx.FieldSpec(wire_name="include_external_links"),
+    "include_subdomains": ubx.FieldSpec(wire_name="include_subdomains"),
+    "limit": ubx.FieldSpec(wire_name="limit"),
+    "max_age": ubx.FieldSpec(wire_name="max_age"),
+    "source": ubx.FieldSpec(wire_name="source"),
+}
+
+_Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields = {
+    "path": ubx.FieldSpec(wire_name="path"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+}
+
+_Instance_Result_SourceParams_WebCrawler_ParseOptionsFields = {
+    "content_selector": ubx.FieldSpec(
+        wire_name="content_selector",
+        kind="list",
+        fields=_Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields,
+    ),
+    "include_headers": ubx.FieldSpec(wire_name="include_headers"),
+    "include_images": ubx.FieldSpec(wire_name="include_images"),
+    "specific_sitemaps": ubx.FieldSpec(wire_name="specific_sitemaps"),
+    "use_browser_rendering": ubx.FieldSpec(wire_name="use_browser_rendering"),
+}
+
+_Instance_Result_SourceParams_WebCrawlerFields = {
+    "discover_options": ubx.FieldSpec(
+        wire_name="discover_options",
+        kind="object",
+        fields=_Instance_Result_SourceParams_WebCrawler_DiscoverOptionsFields,
+    ),
+    "parse_options": ubx.FieldSpec(
+        wire_name="parse_options",
+        kind="object",
+        fields=_Instance_Result_SourceParams_WebCrawler_ParseOptionsFields,
+    ),
+    "parse_type": ubx.FieldSpec(wire_name="parse_type"),
+}
+
+_Instance_Result_SourceParamsFields = {
+    "exclude_items": ubx.FieldSpec(wire_name="exclude_items"),
+    "include_items": ubx.FieldSpec(wire_name="include_items"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "r2_jurisdiction": ubx.FieldSpec(wire_name="r2_jurisdiction"),
+    "web_crawler": ubx.FieldSpec(
+        wire_name="web_crawler",
+        kind="object",
+        fields=_Instance_Result_SourceParams_WebCrawlerFields,
+    ),
+}
+
 @dataclasses.dataclass
 class InstanceConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    ai_gateway_id: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    ai_search_model: Any = None
+    cache: Any = None
+    cache_threshold: Any = None
+    # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+    cache_ttl: Any = None
+    chunk: Any = None
+    chunk_overlap: Any = None
+    chunk_size: Any = None
+    custom_metadata: Any = None
+    embedding_model: Any = None
+    fusion_method: Any = None
+    # Deprecated — use index_method instead.
+    hybrid_search_enabled: Any = None
+    # AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+    # Controls which storage backends are used during indexing. Defaults to vector-only.
+    index_method: Any = None
+    indexing_options: Any = None
+    max_num_results: Any = None
     metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    public_endpoint_params: Any = None
+    reranking: Any = None
+    reranking_model: Any = None
+    retrieval_options: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    rewrite_model: Any = None
+    rewrite_query: Any = None
+    score_threshold: Any = None
+    source: Any = None
+    source_params: Any = None
+    # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+    sync_interval: Any = None
+    token_id: Any = None
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    ai_gateway_id: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    ai_search_model: Any = None
+    cache: Any = None
+    cache_threshold: Any = None
+    # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+    cache_ttl: Any = None
+    chunk: Any = None
+    chunk_overlap: Any = None
+    chunk_size: Any = None
+    custom_metadata: Any = None
+    embedding_model: Any = None
+    fusion_method: Any = None
+    # Deprecated — use index_method instead.
+    hybrid_search_enabled: Any = None
+    # AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+    # Controls which storage backends are used during indexing. Defaults to vector-only.
+    index_method: Any = None
+    indexing_options: Any = None
+    max_num_results: Any = None
     metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    public_endpoint_params: Any = None
+    reranking: Any = None
+    reranking_model: Any = None
     result: Any = None
+    retrieval_options: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    rewrite_model: Any = None
+    rewrite_query: Any = None
+    score_threshold: Any = None
+    source: Any = None
+    source_params: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+    sync_interval: Any = None
+    token_id: Any = None
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 Instance = ubx.ResourceBinding(
     wire_type="cloudflare_instance",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
+        "ai_gateway_id": ubx.FieldSpec(wire_name="ai_gateway_id"),
+        "ai_search_model": ubx.FieldSpec(wire_name="ai_search_model"),
+        "cache": ubx.FieldSpec(wire_name="cache"),
+        "cache_threshold": ubx.FieldSpec(wire_name="cache_threshold"),
+        "cache_ttl": ubx.FieldSpec(wire_name="cache_ttl"),
+        "chunk": ubx.FieldSpec(wire_name="chunk"),
+        "chunk_overlap": ubx.FieldSpec(wire_name="chunk_overlap"),
+        "chunk_size": ubx.FieldSpec(wire_name="chunk_size"),
+        "custom_metadata": ubx.FieldSpec(
+            wire_name="custom_metadata",
+            kind="list",
+            fields=_Instance_CustomMetadataFields,
+        ),
+        "embedding_model": ubx.FieldSpec(wire_name="embedding_model"),
+        "fusion_method": ubx.FieldSpec(wire_name="fusion_method"),
+        "hybrid_search_enabled": ubx.FieldSpec(wire_name="hybrid_search_enabled"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "index_method": ubx.FieldSpec(
+            wire_name="index_method",
+            kind="object",
+            fields=_Instance_IndexMethodFields,
+        ),
+        "indexing_options": ubx.FieldSpec(
+            wire_name="indexing_options",
+            kind="object",
+            fields=_Instance_IndexingOptionsFields,
+        ),
+        "max_num_results": ubx.FieldSpec(wire_name="max_num_results"),
+        "metadata": ubx.FieldSpec(
+            wire_name="metadata",
+            kind="object",
+            fields=_Instance_MetadataFields,
+        ),
+        "public_endpoint_params": ubx.FieldSpec(
+            wire_name="public_endpoint_params",
+            kind="object",
+            fields=_Instance_PublicEndpointParamsFields,
+        ),
+        "reranking": ubx.FieldSpec(wire_name="reranking"),
+        "reranking_model": ubx.FieldSpec(wire_name="reranking_model"),
+        "retrieval_options": ubx.FieldSpec(
+            wire_name="retrieval_options",
+            kind="object",
+            fields=_Instance_Result_RetrievalOptionsFields,
+        ),
+        "rewrite_model": ubx.FieldSpec(wire_name="rewrite_model"),
+        "rewrite_query": ubx.FieldSpec(wire_name="rewrite_query"),
+        "score_threshold": ubx.FieldSpec(wire_name="score_threshold"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "source_params": ubx.FieldSpec(
+            wire_name="source_params",
+            kind="object",
+            fields=_Instance_Result_SourceParamsFields,
+        ),
+        "sync_interval": ubx.FieldSpec(wire_name="sync_interval"),
+        "token_id": ubx.FieldSpec(wire_name="token_id"),
+        "type": ubx.FieldSpec(wire_name="type"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
     },
 )

@@ -7,6 +7,7 @@ SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 from .ase import Ase, AseConfig
 from .change import Change, ChangeConfig
 from .moa import Moa, MoaConfig
+from .path import Path, PathConfig
 from .pfx2a import Pfx2a, Pfx2aConfig
 from .prefix import Prefix, PrefixConfig
 from .realtime import Realtime, RealtimeConfig

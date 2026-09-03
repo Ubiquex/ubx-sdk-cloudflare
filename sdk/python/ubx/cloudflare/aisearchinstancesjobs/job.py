@@ -7,6 +7,58 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Job_CustomMetadata:
+    data_type: Any = None
+    field_name: Any = None
+
+@dataclasses.dataclass
+class Job_IndexMethod:
+    # Enable keyword (BM25) storage backend.
+    keyword: Any = None
+    # Enable vector (embedding) storage backend.
+    vector: Any = None
+
+@dataclasses.dataclass
+class Job_IndexingOptions:
+    # Tokenizer used for keyword search indexing. porter provides word-level tokenization with Porter stemming (good for natural language queries). trigram enables character-level substring matching (good for partial matches, code, identifiers). Changing this triggers a full re-index. Defaults to porter.
+    keyword_tokenizer: Any = None
+
+@dataclasses.dataclass
+class Job_Metadata:
+    created_from_aisearch_wizard: Any = None
+    worker_domain: Any = None
+
+@dataclasses.dataclass
+class Job_PublicEndpointParams_ChatCompletionsEndpoint:
+    # Disable chat completions endpoint for this public endpoint
+    disabled: Any = None
+
+@dataclasses.dataclass
+class Job_PublicEndpointParams_Mcp:
+    description: Any = None
+    # Disable MCP endpoint for this public endpoint
+    disabled: Any = None
+
+@dataclasses.dataclass
+class Job_PublicEndpointParams_RateLimit:
+    period_ms: Any = None
+    requests: Any = None
+    technique: Any = None
+
+@dataclasses.dataclass
+class Job_PublicEndpointParams:
+    authorized_hosts: Any = None
+    chat_completions_endpoint: Any = None
+    # Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
+    custom_domains: Any = None
+    # When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
+    default_domain_enabled: Any = None
+    enabled: Any = None
+    mcp: Any = None
+    rate_limit: Any = None
+    search_endpoint: Any = None
+
+@dataclasses.dataclass
 class Job_Result:
     description: Any = None
     end_reason: Any = None
@@ -17,19 +69,231 @@ class Job_Result:
     started_at: Any = None
 
 @dataclasses.dataclass
+class Job_RetrievalOptions_BoostBy:
+    direction: Any = None
+    field: Any = None
+
+@dataclasses.dataclass
+class Job_RetrievalOptions:
+    # Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to 'asc' for numeric/datetime fields and 'exists' for text/boolean fields. Fields must match 'timestamp' or a defined custom_metadata field.
+    boost_by: Any = None
+    # Controls which documents are candidates for BM25 scoring. 'and' restricts candidates to documents containing all query terms; 'or' includes any document containing at least one term, ranked by BM25 relevance. When omitted on an update, the existing stored value is preserved; when never set, search falls back to 'and'.
+    keyword_match_mode: Any = None
+
+@dataclasses.dataclass
+class Job_SourceParams_WebCrawler_DiscoverOptions:
+    # Maximum link-follow depth from the seed URL.
+    depth: Any = None
+    # Follow links that point outside the source domain. Must stay `false` — discover crawls are restricted to the zone you own.
+    include_external_links: Any = None
+    # Follow links to subdomains of the source host.
+    include_subdomains: Any = None
+    # Maximum number of pages to crawl (1-100000).
+    limit: Any = None
+    # Maximum content age in seconds to accept (0–604800).
+    max_age: Any = None
+    # Where the crawler looks for URLs: 'sitemaps' reads sitemap XML only, 'links' follows page links only, 'all' does both.
+    source: Any = None
+
+@dataclasses.dataclass
+class Job_SourceParams_WebCrawler_ParseOptions_ContentSelector:
+    path: Any = None
+    selector: Any = None
+
+@dataclasses.dataclass
+class Job_SourceParams_WebCrawler_ParseOptions:
+    # List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. Only the matched HTML fragment is stored and indexed. Omit the field to disable content selection — empty arrays are rejected.
+    content_selector: Any = None
+    # Up to 5 custom HTTP headers sent with each crawl request. Names must be RFC-7230 token characters (no spaces, colons, or control characters); values must be HTAB + printable ASCII (no CR/LF).
+    include_headers: Any = None
+    include_images: Any = None
+    # List of specific sitemap URLs to use for crawling. Only valid when parse_type is 'sitemap'.
+    specific_sitemaps: Any = None
+    use_browser_rendering: Any = None
+
+@dataclasses.dataclass
+class Job_SourceParams_WebCrawler:
+    # Options for parse_type 'discover', where Browser Run discovers URLs by link following and sitemaps. Ignored for 'sitemap'.
+    discover_options: Any = None
+    parse_options: Any = None
+    # How URLs are discovered. 'sitemap' reads XML sitemaps; 'discover' follows links recursively and requires the source to be a Verified zone on this account.
+    parse_type: Any = None
+
+@dataclasses.dataclass
+class Job_SourceParams:
+    # List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced). Most accounts are limited to 10 rules; contact support to raise it.
+    exclude_items: Any = None
+    # List of path patterns to include. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /blog/** matches /blog/post and /blog/2024/post). Most accounts are limited to 10 rules; contact support to raise it.
+    include_items: Any = None
+    prefix: Any = None
+    r2_jurisdiction: Any = None
+    web_crawler: Any = None
+
+_Job_CustomMetadataFields = {
+    "data_type": ubx.FieldSpec(wire_name="data_type"),
+    "field_name": ubx.FieldSpec(wire_name="field_name"),
+}
+
+_Job_IndexMethodFields = {
+    "keyword": ubx.FieldSpec(wire_name="keyword"),
+    "vector": ubx.FieldSpec(wire_name="vector"),
+}
+
+_Job_IndexingOptionsFields = {
+    "keyword_tokenizer": ubx.FieldSpec(wire_name="keyword_tokenizer"),
+}
+
+_Job_MetadataFields = {
+    "created_from_aisearch_wizard": ubx.FieldSpec(wire_name="created_from_aisearch_wizard"),
+    "worker_domain": ubx.FieldSpec(wire_name="worker_domain"),
+}
+
+_Job_PublicEndpointParams_ChatCompletionsEndpointFields = {
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Job_PublicEndpointParams_McpFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+}
+
+_Job_PublicEndpointParams_RateLimitFields = {
+    "period_ms": ubx.FieldSpec(wire_name="period_ms"),
+    "requests": ubx.FieldSpec(wire_name="requests"),
+    "technique": ubx.FieldSpec(wire_name="technique"),
+}
+
+_Job_PublicEndpointParamsFields = {
+    "authorized_hosts": ubx.FieldSpec(wire_name="authorized_hosts"),
+    "chat_completions_endpoint": ubx.FieldSpec(
+        wire_name="chat_completions_endpoint",
+        kind="object",
+        fields=_Job_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+    "custom_domains": ubx.FieldSpec(wire_name="custom_domains"),
+    "default_domain_enabled": ubx.FieldSpec(wire_name="default_domain_enabled"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "mcp": ubx.FieldSpec(
+        wire_name="mcp",
+        kind="object",
+        fields=_Job_PublicEndpointParams_McpFields,
+    ),
+    "rate_limit": ubx.FieldSpec(
+        wire_name="rate_limit",
+        kind="object",
+        fields=_Job_PublicEndpointParams_RateLimitFields,
+    ),
+    "search_endpoint": ubx.FieldSpec(
+        wire_name="search_endpoint",
+        kind="object",
+        fields=_Job_PublicEndpointParams_ChatCompletionsEndpointFields,
+    ),
+}
+
+_Job_RetrievalOptions_BoostByFields = {
+    "direction": ubx.FieldSpec(wire_name="direction"),
+    "field": ubx.FieldSpec(wire_name="field"),
+}
+
+_Job_RetrievalOptionsFields = {
+    "boost_by": ubx.FieldSpec(
+        wire_name="boost_by",
+        kind="list",
+        fields=_Job_RetrievalOptions_BoostByFields,
+    ),
+    "keyword_match_mode": ubx.FieldSpec(wire_name="keyword_match_mode"),
+}
+
+_Job_SourceParams_WebCrawler_DiscoverOptionsFields = {
+    "depth": ubx.FieldSpec(wire_name="depth"),
+    "include_external_links": ubx.FieldSpec(wire_name="include_external_links"),
+    "include_subdomains": ubx.FieldSpec(wire_name="include_subdomains"),
+    "limit": ubx.FieldSpec(wire_name="limit"),
+    "max_age": ubx.FieldSpec(wire_name="max_age"),
+    "source": ubx.FieldSpec(wire_name="source"),
+}
+
+_Job_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields = {
+    "path": ubx.FieldSpec(wire_name="path"),
+    "selector": ubx.FieldSpec(wire_name="selector"),
+}
+
+_Job_SourceParams_WebCrawler_ParseOptionsFields = {
+    "content_selector": ubx.FieldSpec(
+        wire_name="content_selector",
+        kind="list",
+        fields=_Job_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields,
+    ),
+    "include_headers": ubx.FieldSpec(wire_name="include_headers"),
+    "include_images": ubx.FieldSpec(wire_name="include_images"),
+    "specific_sitemaps": ubx.FieldSpec(wire_name="specific_sitemaps"),
+    "use_browser_rendering": ubx.FieldSpec(wire_name="use_browser_rendering"),
+}
+
+_Job_SourceParams_WebCrawlerFields = {
+    "discover_options": ubx.FieldSpec(
+        wire_name="discover_options",
+        kind="object",
+        fields=_Job_SourceParams_WebCrawler_DiscoverOptionsFields,
+    ),
+    "parse_options": ubx.FieldSpec(
+        wire_name="parse_options",
+        kind="object",
+        fields=_Job_SourceParams_WebCrawler_ParseOptionsFields,
+    ),
+    "parse_type": ubx.FieldSpec(wire_name="parse_type"),
+}
+
+_Job_SourceParamsFields = {
+    "exclude_items": ubx.FieldSpec(wire_name="exclude_items"),
+    "include_items": ubx.FieldSpec(wire_name="include_items"),
+    "prefix": ubx.FieldSpec(wire_name="prefix"),
+    "r2_jurisdiction": ubx.FieldSpec(wire_name="r2_jurisdiction"),
+    "web_crawler": ubx.FieldSpec(
+        wire_name="web_crawler",
+        kind="object",
+        fields=_Job_SourceParams_WebCrawlerFields,
+    ),
+}
+
+@dataclasses.dataclass
 class JobConfig:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    ai_gateway_id: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    ai_search_model: Any = None
+    cache: Any = None
+    cache_threshold: Any = None
+    # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+    cache_ttl: Any = None
+    chunk: Any = None
+    chunk_overlap: Any = None
+    chunk_size: Any = None
+    custom_metadata: Any = None
+    embedding_model: Any = None
+    fusion_method: Any = None
+    # Deprecated — use index_method instead.
+    hybrid_search_enabled: Any = None
+    # AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+    # Controls which storage backends are used during indexing. Defaults to vector-only.
+    index_method: Any = None
+    indexing_options: Any = None
+    max_num_results: Any = None
     metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    public_endpoint_params: Any = None
+    reranking: Any = None
+    reranking_model: Any = None
+    retrieval_options: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    rewrite_model: Any = None
+    rewrite_query: Any = None
+    score_threshold: Any = None
+    source: Any = None
+    source_params: Any = None
+    # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+    sync_interval: Any = None
+    token_id: Any = None
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -37,20 +301,44 @@ class JobConfig:
 
 @dataclasses.dataclass
 class JobAttrs:
-    # Can set the creator field with an internal user ID.
-    creator: Any = None
-    # An image binary data. Only needed when type is uploading a file.
-    file: Any = None
-    # Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
+    ai_gateway_id: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    ai_search_model: Any = None
+    cache: Any = None
+    cache_threshold: Any = None
+    # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
+    cache_ttl: Any = None
+    chunk: Any = None
+    chunk_overlap: Any = None
+    chunk_size: Any = None
+    custom_metadata: Any = None
+    embedding_model: Any = None
+    fusion_method: Any = None
+    # Deprecated — use index_method instead.
+    hybrid_search_enabled: Any = None
+    # AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
     id: Any = None
-    # User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
+    # Controls which storage backends are used during indexing. Defaults to vector-only.
+    index_method: Any = None
+    indexing_options: Any = None
+    max_num_results: Any = None
     metadata: Any = None
-    # Indicates whether the image requires a signature token for the access.
-    require_signed_urls: Any = None
+    public_endpoint_params: Any = None
+    reranking: Any = None
+    reranking_model: Any = None
     result: Any = None
+    retrieval_options: Any = None
+    # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
+    rewrite_model: Any = None
+    rewrite_query: Any = None
+    score_threshold: Any = None
+    source: Any = None
+    source_params: Any = None
     success: Any = None
-    # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-    url: Any = None
+    # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
+    sync_interval: Any = None
+    token_id: Any = None
+    type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -59,12 +347,63 @@ class JobAttrs:
 Job = ubx.ResourceBinding(
     wire_type="cloudflare_job",
     fields={
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "file": ubx.FieldSpec(wire_name="file"),
+        "ai_gateway_id": ubx.FieldSpec(wire_name="ai_gateway_id"),
+        "ai_search_model": ubx.FieldSpec(wire_name="ai_search_model"),
+        "cache": ubx.FieldSpec(wire_name="cache"),
+        "cache_threshold": ubx.FieldSpec(wire_name="cache_threshold"),
+        "cache_ttl": ubx.FieldSpec(wire_name="cache_ttl"),
+        "chunk": ubx.FieldSpec(wire_name="chunk"),
+        "chunk_overlap": ubx.FieldSpec(wire_name="chunk_overlap"),
+        "chunk_size": ubx.FieldSpec(wire_name="chunk_size"),
+        "custom_metadata": ubx.FieldSpec(
+            wire_name="custom_metadata",
+            kind="list",
+            fields=_Job_CustomMetadataFields,
+        ),
+        "embedding_model": ubx.FieldSpec(wire_name="embedding_model"),
+        "fusion_method": ubx.FieldSpec(wire_name="fusion_method"),
+        "hybrid_search_enabled": ubx.FieldSpec(wire_name="hybrid_search_enabled"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "require_signed_urls": ubx.FieldSpec(wire_name="require_signed_urls"),
-        "url": ubx.FieldSpec(wire_name="url"),
+        "index_method": ubx.FieldSpec(
+            wire_name="index_method",
+            kind="object",
+            fields=_Job_IndexMethodFields,
+        ),
+        "indexing_options": ubx.FieldSpec(
+            wire_name="indexing_options",
+            kind="object",
+            fields=_Job_IndexingOptionsFields,
+        ),
+        "max_num_results": ubx.FieldSpec(wire_name="max_num_results"),
+        "metadata": ubx.FieldSpec(
+            wire_name="metadata",
+            kind="object",
+            fields=_Job_MetadataFields,
+        ),
+        "public_endpoint_params": ubx.FieldSpec(
+            wire_name="public_endpoint_params",
+            kind="object",
+            fields=_Job_PublicEndpointParamsFields,
+        ),
+        "reranking": ubx.FieldSpec(wire_name="reranking"),
+        "reranking_model": ubx.FieldSpec(wire_name="reranking_model"),
+        "retrieval_options": ubx.FieldSpec(
+            wire_name="retrieval_options",
+            kind="object",
+            fields=_Job_RetrievalOptionsFields,
+        ),
+        "rewrite_model": ubx.FieldSpec(wire_name="rewrite_model"),
+        "rewrite_query": ubx.FieldSpec(wire_name="rewrite_query"),
+        "score_threshold": ubx.FieldSpec(wire_name="score_threshold"),
+        "source": ubx.FieldSpec(wire_name="source"),
+        "source_params": ubx.FieldSpec(
+            wire_name="source_params",
+            kind="object",
+            fields=_Job_SourceParamsFields,
+        ),
+        "sync_interval": ubx.FieldSpec(wire_name="sync_interval"),
+        "token_id": ubx.FieldSpec(wire_name="token_id"),
+        "type": ubx.FieldSpec(wire_name="type"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "job_id": ubx.FieldSpec(wire_name="job_id"),
     },

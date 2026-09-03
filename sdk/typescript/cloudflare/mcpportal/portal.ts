@@ -91,38 +91,84 @@ export interface Portal_Result {
   servers: Portal_Result_Servers[] | Computed<Portal_Result_Servers[]>;
 }
 
+export interface Portal_Servers_UpdatedPrompts {
+  alias?: string | Computed<string>;
+  description?: string | Computed<string>;
+  enabled?: boolean | Computed<boolean>;
+  name?: string | Computed<string>;
+}
+
+export interface Portal_Servers {
+  defaultDisabled?: boolean | Computed<boolean>;
+  onBehalf?: boolean | Computed<boolean>;
+  serverId?: string | Computed<string>;
+  updatedPrompts?: Portal_Servers_UpdatedPrompts[] | Computed<Portal_Servers_UpdatedPrompts[]>;
+  updatedTools?: Portal_Servers_UpdatedPrompts[] | Computed<Portal_Servers_UpdatedPrompts[]>;
+}
+
+const Portal_Servers_UpdatedPromptsFields: FieldMap = {
+  alias: "alias",
+  description: "description",
+  enabled: "enabled",
+  name: "name",
+};
+
+const Portal_ServersFields: FieldMap = {
+  defaultDisabled: "default_disabled",
+  onBehalf: "on_behalf",
+  serverId: "server_id",
+  updatedPrompts: {
+    wireName: "updated_prompts",
+    kind: "list",
+    fields: Portal_Servers_UpdatedPromptsFields,
+  },
+  updatedTools: {
+    wireName: "updated_tools",
+    kind: "list",
+    fields: Portal_Servers_UpdatedPromptsFields,
+  },
+};
+
 export interface PortalConfig {
-  /** Can set the creator field with an internal user ID. */
-  creator?: string | Computed<string>;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file?: string | Computed<string>;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id?: string | Computed<string>;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata?: unknown | Computed<unknown>;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls?: boolean | Computed<boolean>;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url?: string | Computed<string>;
+  /** Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400. */
+  allowCodeMode?: boolean | Computed<boolean>;
+  /** Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400. */
+  codeMode?: string | Computed<string>;
+  /** Optional description of the MCP portal. */
+  description?: string | Computed<string>;
+  /** Hostname where the MCP portal is available. */
+  hostname: string | Computed<string>;
+  /** Unique identifier for the MCP portal. */
+  id: string | Computed<string>;
+  /** Display name for the MCP portal. */
+  name: string | Computed<string>;
+  /** Route outbound MCP traffic through Zero Trust Secure Web Gateway. */
+  secureWebGateway?: boolean | Computed<boolean>;
+  /** MCP servers attached to the portal and their portal-specific settings. */
+  servers?: Portal_Servers[] | Computed<Portal_Servers[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
 }
 
 export interface PortalAttrs {
-  /** Can set the creator field with an internal user ID. */
-  creator: string;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file: string;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
+  /** Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400. */
+  allowCodeMode: boolean;
+  /** Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400. */
+  codeMode: string;
+  /** Optional description of the MCP portal. */
+  description: string;
+  /** Hostname where the MCP portal is available. */
+  hostname: string;
+  /** Unique identifier for the MCP portal. */
   id: string;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata: unknown;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls: boolean;
+  /** Display name for the MCP portal. */
+  name: string;
   result: Portal_Result;
+  /** Route outbound MCP traffic through Zero Trust Secure Web Gateway. */
+  secureWebGateway: boolean;
+  /** MCP servers attached to the portal and their portal-specific settings. */
+  servers: Portal_Servers[];
   success: boolean;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
 }
@@ -130,12 +176,18 @@ export interface PortalAttrs {
 export const Portal: ResourceBinding<PortalConfig, PortalAttrs> = {
   wireType: "cloudflare_portal",
   fields: {
-    creator: "creator",
-    file: "file",
+    allowCodeMode: "allow_code_mode",
+    codeMode: "code_mode",
+    description: "description",
+    hostname: "hostname",
     id: "id",
-    metadata: "metadata",
-    requireSignedUrls: "require_signed_urls",
-    url: "url",
+    name: "name",
+    secureWebGateway: "secure_web_gateway",
+    servers: {
+      wireName: "servers",
+      kind: "list",
+      fields: Portal_ServersFields,
+    },
     accountId: "account_id",
   },
 };

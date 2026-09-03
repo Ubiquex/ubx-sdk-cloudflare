@@ -7,20 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Event_Indicators:
-    indicator_type: Any = None
-    value: Any = None
-
-@dataclasses.dataclass
 class Event_Raw:
     data: Any = None
     source: Any = None
     tlp: Any = None
-
-_Event_IndicatorsFields = {
-    "indicator_type": ubx.FieldSpec(wire_name="indicator_type"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
 
 _Event_RawFields = {
     "data": ubx.FieldSpec(wire_name="data"),
@@ -30,33 +20,34 @@ _Event_RawFields = {
 
 @dataclasses.dataclass
 class EventConfig:
-    account_id: Any = None
     attacker: Any = None
     attacker_country: Any = None
     category: Any = None
+    created_at: Any = None
+    # Dataset ID containing the event to update.
     dataset_id: Any = None
     date: Any = None
     event: Any = None
     indicator: Any = None
     indicator_type: Any = None
-    # Array of indicators for this event. Supports multiple indicators per event for complex scenarios.
-    indicators: Any = None
     insight: Any = None
     raw: Any = None
-    tags: Any = None
     target_country: Any = None
     target_industry: Any = None
     tlp: Any = None
+    # path parameter, not part of the API's own resource representation
+    account_id: Any = None
     # path parameter, not part of the API's own resource representation
     event_id: Any = None
 
 @dataclasses.dataclass
 class EventAttrs:
-    account_id: Any = None
     attacker: Any = None
     attacker_country: Any = None
     attacker_country_alpha3: Any = None
     category: Any = None
+    created_at: Any = None
+    # Dataset ID containing the event to update.
     dataset_id: Any = None
     date: Any = None
     event: Any = None
@@ -64,8 +55,6 @@ class EventAttrs:
     indicator: Any = None
     indicator_type: Any = None
     indicator_type_id: Any = None
-    # Array of indicators for this event. Supports multiple indicators per event for complex scenarios.
-    indicators: Any = None
     insight: Any = None
     kill_chain: Any = None
     mitre_attack: Any = None
@@ -86,35 +75,32 @@ class EventAttrs:
     tlp: Any = None
     uuid: Any = None
     # path parameter, not part of the API's own resource representation
+    account_id: Any = None
+    # path parameter, not part of the API's own resource representation
     event_id: Any = None
 
 Event = ubx.ResourceBinding(
     wire_type="cloudflare_event",
     fields={
-        "account_id": ubx.FieldSpec(wire_name="account_id"),
         "attacker": ubx.FieldSpec(wire_name="attacker"),
         "attacker_country": ubx.FieldSpec(wire_name="attacker_country"),
         "category": ubx.FieldSpec(wire_name="category"),
+        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "dataset_id": ubx.FieldSpec(wire_name="dataset_id"),
         "date": ubx.FieldSpec(wire_name="date"),
         "event": ubx.FieldSpec(wire_name="event"),
         "indicator": ubx.FieldSpec(wire_name="indicator"),
         "indicator_type": ubx.FieldSpec(wire_name="indicator_type"),
-        "indicators": ubx.FieldSpec(
-            wire_name="indicators",
-            kind="list",
-            fields=_Event_IndicatorsFields,
-        ),
         "insight": ubx.FieldSpec(wire_name="insight"),
         "raw": ubx.FieldSpec(
             wire_name="raw",
             kind="object",
             fields=_Event_RawFields,
         ),
-        "tags": ubx.FieldSpec(wire_name="tags"),
         "target_country": ubx.FieldSpec(wire_name="target_country"),
         "target_industry": ubx.FieldSpec(wire_name="target_industry"),
         "tlp": ubx.FieldSpec(wire_name="tlp"),
+        "account_id": ubx.FieldSpec(wire_name="account_id"),
         "event_id": ubx.FieldSpec(wire_name="event_id"),
     },
 )

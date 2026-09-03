@@ -3,6 +3,38 @@ package aisearchinstancesitems
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Item_PublicEndpointParams_ChatCompletionsEndpoint struct {
+	// Disable chat completions endpoint for this public endpoint
+	Disabled any
+}
+
+type Item_PublicEndpointParams_Mcp struct {
+	Description any
+	// Disable MCP endpoint for this public endpoint
+	Disabled any
+}
+
+type Item_PublicEndpointParams_RateLimit struct {
+	PeriodMs any
+	Requests any
+	Technique any
+}
+
+type Item_PublicEndpointParams struct {
+	AuthorizedHosts any
+	ChatCompletionsEndpoint any
+	// Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
+	CustomDomains any
+	// When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
+	DefaultDomainEnabled any
+	Enabled any
+	// Instance IDs exposed through the namespace public endpoint. Empty means nothing is searchable. Every ID must be an existing instance in this namespace, and the list cannot exceed the account's multi-instance search limit.
+	InstancesAllowed any
+	Mcp any
+	RateLimit any
+	SearchEndpoint any
+}
+
 type Item_Result struct {
 	Checksum any
 	ChunksCount any
@@ -21,46 +53,73 @@ type Item_Result struct {
 	Status any
 }
 
+var Item_PublicEndpointParams_ChatCompletionsEndpointFields = ubx.FieldMap{
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	}
+
+var Item_PublicEndpointParams_McpFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	}
+
+var Item_PublicEndpointParams_RateLimitFields = ubx.FieldMap{
+		"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
+		"Requests": ubx.FieldSpec{WireName: "requests"},
+		"Technique": ubx.FieldSpec{WireName: "technique"},
+	}
+
+var Item_PublicEndpointParamsFields = ubx.FieldMap{
+		"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
+		"ChatCompletionsEndpoint": ubx.FieldSpec{
+			WireName: "chat_completions_endpoint",
+			Kind: "object",
+			Fields: Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+		},
+		"CustomDomains": ubx.FieldSpec{WireName: "custom_domains"},
+		"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"InstancesAllowed": ubx.FieldSpec{WireName: "instances_allowed"},
+		"Mcp": ubx.FieldSpec{
+			WireName: "mcp",
+			Kind: "object",
+			Fields: Item_PublicEndpointParams_McpFields,
+		},
+		"RateLimit": ubx.FieldSpec{
+			WireName: "rate_limit",
+			Kind: "object",
+			Fields: Item_PublicEndpointParams_RateLimitFields,
+		},
+		"SearchEndpoint": ubx.FieldSpec{
+			WireName: "search_endpoint",
+			Kind: "object",
+			Fields: Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+		},
+	}
+
 type ItemConfig struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
+	// Optional description for the namespace. Max 256 characters.
+	Description any
+	Name any
+	PublicEndpointParams any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
-	Name any
+	Id any
 	// path parameter, not part of the API's own resource representation
 	ItemId any
 }
 
 type ItemAttrs struct {
-	// Can set the creator field with an internal user ID.
-	Creator any
-	// An image binary data. Only needed when type is uploading a file.
-	File any
-	// Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID.
-	Id any
-	// User modifiable key-value store. Can use used for keeping references to another system of record for managing images.
-	Metadata any
-	// Indicates whether the image requires a signature token for the access.
-	RequireSignedUrls any
+	// Optional description for the namespace. Max 256 characters.
+	Description any
+	Name any
+	PublicEndpointParams any
 	Result any
 	Success any
-	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
-	Url any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
-	Name any
+	Id any
 	// path parameter, not part of the API's own resource representation
 	ItemId any
 }
@@ -68,14 +127,15 @@ type ItemAttrs struct {
 var Item = ubx.ResourceBinding{
 	WireType: "cloudflare_item",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"PublicEndpointParams": ubx.FieldSpec{
+			WireName: "public_endpoint_params",
+			Kind: "object",
+			Fields: Item_PublicEndpointParamsFields,
+		},
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"ItemId": ubx.FieldSpec{WireName: "item_id"},
 	},
 }

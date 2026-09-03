@@ -5,6 +5,5 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .as_set import AsSet, AsSetConfig
-from .asn import Asn, AsnConfig
 from .botnet_threat_feed import BotnetThreatFeed, BotnetThreatFeedConfig
 from .rel import Rel, RelConfig

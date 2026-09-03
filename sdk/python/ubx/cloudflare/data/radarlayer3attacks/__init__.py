@@ -7,5 +7,6 @@ SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 from .attack import Attack, AttackConfig
 from .bitrate import Bitrate, BitrateConfig
 from .duration import Duration, DurationConfig
+from .origin import Origin, OriginConfig
 from .vector import Vector, VectorConfig
 from .vertical import Vertical, VerticalConfig

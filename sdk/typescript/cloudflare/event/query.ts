@@ -3,15 +3,15 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueryConfig {
   /** Enable alerts for this query */
-  alertEnabled: boolean | Computed<boolean>;
+  alertEnabled?: boolean | Computed<boolean>;
   /** Enable alert rollup for this query */
-  alertRollupEnabled: boolean | Computed<boolean>;
+  alertRollupEnabled?: boolean | Computed<boolean>;
   /** Unique name for the saved query */
-  name: string | Computed<string>;
+  name?: string | Computed<string>;
   /** JSON string containing the query parameters */
-  queryJson: string | Computed<string>;
+  queryJson?: string | Computed<string>;
   /** Enable rule for this query */
-  ruleEnabled: boolean | Computed<boolean>;
+  ruleEnabled?: boolean | Computed<boolean>;
   /** Scope for the rule */
   ruleScope?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */

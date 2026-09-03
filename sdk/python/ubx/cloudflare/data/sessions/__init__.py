@@ -5,4 +5,6 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .chat import Chat, ChatConfig
+from .peer_report import PeerReport, PeerReportConfig
+from .summary import Summary, SummaryConfig
 from .transcript import Transcript, TranscriptConfig

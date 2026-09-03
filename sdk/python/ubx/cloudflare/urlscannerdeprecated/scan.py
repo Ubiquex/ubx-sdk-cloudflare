@@ -315,8 +315,15 @@ class Scan_Result:
 
 @dataclasses.dataclass
 class ScanConfig:
-    # Namespace name.
-    name: Any = None
+    # Country to geo egress from
+    country: Any = None
+    # Set custom headers.
+    custom_headers: Any = None
+    # Take multiple screenshots targeting different device types.
+    screenshots_resolutions: Any = None
+    url: Any = None
+    # The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
+    visibility: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -324,13 +331,20 @@ class ScanConfig:
 
 @dataclasses.dataclass
 class ScanAttrs:
+    # Country to geo egress from
+    country: Any = None
+    # Set custom headers.
+    custom_headers: Any = None
     errors: Any = None
     messages: Any = None
-    # Namespace name.
-    name: Any = None
     result: Any = None
+    # Take multiple screenshots targeting different device types.
+    screenshots_resolutions: Any = None
     # Whether request was successful or not
     success: Any = None
+    url: Any = None
+    # The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
+    visibility: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -339,7 +353,11 @@ class ScanAttrs:
 Scan = ubx.ResourceBinding(
     wire_type="cloudflare_scan",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
+        "country": ubx.FieldSpec(wire_name="country"),
+        "custom_headers": ubx.FieldSpec(wire_name="custom_headers"),
+        "screenshots_resolutions": ubx.FieldSpec(wire_name="screenshots_resolutions"),
+        "url": ubx.FieldSpec(wire_name="url"),
+        "visibility": ubx.FieldSpec(wire_name="visibility"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "scan_id": ubx.FieldSpec(wire_name="scan_id"),
     },

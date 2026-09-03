@@ -112,37 +112,59 @@ export interface Gateway_Result {
 }
 
 export interface GatewayConfig {
-  /** Can set the creator field with an internal user ID. */
-  creator?: string | Computed<string>;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file?: string | Computed<string>;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
-  id?: string | Computed<string>;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata?: unknown | Computed<unknown>;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls?: boolean | Computed<boolean>;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url?: string | Computed<string>;
+  authentication?: boolean | Computed<boolean>;
+  cacheInvalidateOnUpdate: boolean | Computed<boolean>;
+  cacheTtl: number | Computed<number>;
+  collectLogs: boolean | Computed<boolean>;
+  /** gateway id */
+  id: string | Computed<string>;
+  logManagement?: number | Computed<number>;
+  logManagementStrategy?: string | Computed<string>;
+  logpush?: boolean | Computed<boolean>;
+  logpushPublicKey?: string | Computed<string>;
+  rateLimitingInterval: number | Computed<number>;
+  rateLimitingLimit: number | Computed<number>;
+  rateLimitingTechnique?: string | Computed<string>;
+  /** Backoff strategy for retry delays */
+  retryBackoff?: string | Computed<string>;
+  /** Delay between retry attempts in milliseconds (0-5000) */
+  retryDelay?: number | Computed<number>;
+  /** Maximum number of retry attempts for failed requests (1-5) */
+  retryMaxAttempts?: number | Computed<number>;
+  storeId?: string | Computed<string>;
+  /** Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway. */
+  workersAiBillingMode?: string | Computed<string>;
+  zdr?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
 }
 
 export interface GatewayAttrs {
-  /** Can set the creator field with an internal user ID. */
-  creator: string;
-  /** An image binary data. Only needed when type is uploading a file. */
-  file: string;
-  /** Optional Image Custom ID. Up to 1024 chars. Can include any number of subpaths, and utf8 characters. Cannot start nor end with a / (forward slash). Cannot be a UUID. */
+  authentication: boolean;
+  cacheInvalidateOnUpdate: boolean;
+  cacheTtl: number;
+  collectLogs: boolean;
+  /** gateway id */
   id: string;
-  /** User modifiable key-value store. Can use used for keeping references to another system of record for managing images. */
-  metadata: unknown;
-  /** Indicates whether the image requires a signature token for the access. */
-  requireSignedUrls: boolean;
+  logManagement: number;
+  logManagementStrategy: string;
+  logpush: boolean;
+  logpushPublicKey: string;
+  rateLimitingInterval: number;
+  rateLimitingLimit: number;
+  rateLimitingTechnique: string;
   result: Gateway_Result;
+  /** Backoff strategy for retry delays */
+  retryBackoff: string;
+  /** Delay between retry attempts in milliseconds (0-5000) */
+  retryDelay: number;
+  /** Maximum number of retry attempts for failed requests (1-5) */
+  retryMaxAttempts: number;
+  storeId: string;
   success: boolean;
-  /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
-  url: string;
+  /** Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway. */
+  workersAiBillingMode: string;
+  zdr: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
 }
@@ -150,12 +172,24 @@ export interface GatewayAttrs {
 export const Gateway: ResourceBinding<GatewayConfig, GatewayAttrs> = {
   wireType: "cloudflare_gateway",
   fields: {
-    creator: "creator",
-    file: "file",
+    authentication: "authentication",
+    cacheInvalidateOnUpdate: "cache_invalidate_on_update",
+    cacheTtl: "cache_ttl",
+    collectLogs: "collect_logs",
     id: "id",
-    metadata: "metadata",
-    requireSignedUrls: "require_signed_urls",
-    url: "url",
+    logManagement: "log_management",
+    logManagementStrategy: "log_management_strategy",
+    logpush: "logpush",
+    logpushPublicKey: "logpush_public_key",
+    rateLimitingInterval: "rate_limiting_interval",
+    rateLimitingLimit: "rate_limiting_limit",
+    rateLimitingTechnique: "rate_limiting_technique",
+    retryBackoff: "retry_backoff",
+    retryDelay: "retry_delay",
+    retryMaxAttempts: "retry_max_attempts",
+    storeId: "store_id",
+    workersAiBillingMode: "workers_ai_billing_mode",
+    zdr: "zdr",
     accountId: "account_id",
   },
 };

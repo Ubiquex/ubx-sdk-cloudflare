@@ -11,7 +11,8 @@ export interface Suppression_Result {
 }
 
 export interface SuppressionConfig {
-  datasetId: number | Computed<number>;
+  email: string | Computed<string>;
+  expiresAt?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -19,7 +20,8 @@ export interface SuppressionConfig {
 }
 
 export interface SuppressionAttrs {
-  datasetId: number;
+  email: string;
+  expiresAt: string;
   result: Suppression_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
@@ -30,7 +32,8 @@ export interface SuppressionAttrs {
 export const Suppression: ResourceBinding<SuppressionConfig, SuppressionAttrs> = {
   wireType: "cloudflare_suppression",
   fields: {
-    datasetId: "dataset_id",
+    email: "email",
+    expiresAt: "expires_at",
     accountId: "account_id",
     suppressionId: "suppression_id",
   },
