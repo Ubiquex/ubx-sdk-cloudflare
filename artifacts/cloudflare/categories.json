@@ -1416,9 +1416,6 @@
   "cloudflare_local_upload": {
    "label": "R2 Bucket"
   },
-  "cloudflare_location": {
-   "label": "Radar Locations"
-  },
   "cloudflare_lock": {
    "label": "R2 Bucket"
   },
