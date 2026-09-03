@@ -343,17 +343,50 @@
     "success": "Whether the API call was successful."
   },
   "cloudflare_job": {
+    "ai_gateway_id": "The AI Gateway requests through this AI Search instance are routed through.",
+    "cache": "Whether response caching is enabled for this instance.",
+    "cache_threshold": "The minimum similarity score required for a cached response to be reused.",
+    "chunk": "The chunking configuration used when indexing source content.",
+    "chunk_overlap": "The number of overlapping tokens between adjacent chunks.",
+    "chunk_size": "The maximum size, in tokens, of each indexed chunk.",
+    "custom_metadata": "Arbitrary custom metadata attached to the instance.",
+    "embedding_model": "The model used to generate vector embeddings for indexed content.",
+    "fusion_method": "The method used to combine multiple retrieval signals when ranking results.",
+    "max_num_results": "The maximum number of results returned per query.",
+    "metadata": "Metadata associated with the instance.",
+    "public_endpoint_params": "The configuration for the instance's own public query endpoint.",
+    "reranking": "Whether a reranking pass is applied to retrieved results.",
+    "reranking_model": "The model used to rerank retrieved results.",
     "result": "The requested resource or collection of resources.",
-    "success": "Whether the API call was successful."
+    "rewrite_query": "Whether incoming queries are rewritten before retrieval.",
+    "score_threshold": "The minimum relevance score a result must reach to be returned.",
+    "source": "The data source content is indexed from.",
+    "source_params": "Configuration specific to the instance's own data source.",
+    "success": "Whether the API call was successful.",
+    "token_id": "The AI Search API token used to authenticate requests for this instance.",
+    "type": "The type of AI Search instance."
   },
   "cloudflare_letter": {
-    "created_at": "The timestamp when the resource was created, in RFC 3339 format."
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "fields": "The values used to fill in the letter template's own placeholders.",
+    "id": "The unique identifier of the letter.",
+    "letter_text": "The generated text of the letter.",
+    "letter_type": "The type of takedown notice letter.",
+    "takedown_notice_id": "The takedown notice this letter belongs to.",
+    "template_id": "The template this letter was generated from."
+  },
+  "cloudflare_level": {
+    "description": "A human-readable description of the sensitivity level.",
+    "name": "The name of the sensitivity level."
   },
   "cloudflare_lex_dataset_detail_response": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
+  },
+  "cloudflare_load_balancing_monitor_group_single_response": {
+    "id": "The unique identifier of the monitor group."
   },
   "cloudflare_log": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -372,9 +405,74 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_magic_acl_single_response": {
+    "protocols": "The network protocols this ACL rule applies to."
+  },
+  "cloudflare_magic_lan_single_response": {
+    "bond_id": "The bonded interface this LAN is attached to, if any.",
+    "name": "The name of the LAN interface.",
+    "physport": "The physical port this LAN interface is attached to.",
+    "routed_subnets": "The subnets routed through this LAN interface."
+  },
+  "cloudflare_magic_site_single_response": {
+    "description": "A human-readable description of the site."
+  },
+  "cloudflare_magic_tunnel_single_response": {
+    "health_check": "The health check configuration for the GRE tunnel."
+  },
+  "cloudflare_magic_visibility_mnm_mnm_rules_single_response": {
+    "prefixes": "The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic."
+  },
+  "cloudflare_magic_wan_single_response": {
+    "name": "The name of the WAN interface.",
+    "physport": "The physical port this WAN interface is attached to.",
+    "priority": "The priority of this WAN interface relative to other WAN interfaces on the site."
+  },
+  "cloudflare_mcn_get_onramp_response": {
+    "adopted_hub_id": "The hub this onramp was adopted into, if any.",
+    "attached_hubs": "The Magic WAN hubs this onramp is attached to.",
+    "attached_vpcs": "The cloud VPCs this onramp is attached to.",
+    "cloud_type": "The cloud provider this onramp connects to.",
+    "description": "A human-readable description of the onramp.",
+    "hub_provider_id": "The identifier of the hub provider this onramp is attached to.",
+    "install_routes_in_cloud": "Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables.",
+    "install_routes_in_magic_wan": "Whether the cloud provider's own routes are automatically installed into Magic WAN.",
+    "manage_hub_to_hub_attachments": "Whether Cloudflare automatically manages attachments between hubs for this onramp.",
+    "manage_vpc_to_hub_attachments": "Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp.",
+    "name": "The name of the onramp.",
+    "region": "The cloud region this onramp is deployed in.",
+    "type": "The type of onramp.",
+    "vpc": "The cloud VPC this onramp connects to."
+  },
+  "cloudflare_mcn_read_account_catalog_sync_response": {
+    "description": "A human-readable description of the catalog sync.",
+    "destination_type": "The type of destination the catalog sync writes resource metadata to.",
+    "name": "The name of the catalog sync.",
+    "policy": "The policy controlling which resources are included in the sync.",
+    "update_mode": "How the catalog sync applies updates (e.g. full refresh, incremental)."
+  },
+  "cloudflare_mcn_read_account_provider_response": {
+    "cloud_type": "The cloud provider this registration connects to.",
+    "description": "A human-readable description of the provider registration.",
+    "friendly_name": "A human-readable name for the provider registration."
+  },
+  "cloudflare_nsc_cni": {
+    "id": "The unique identifier of the Cloud Network Interconnect.",
+    "interconnect": "The interconnect this CNI is associated with.",
+    "magic": "The Magic WAN configuration associated with this CNI."
+  },
+  "cloudflare_observatory_page_test_response_single": {
+    "region": "The region the Observatory test was run from."
+  },
   "cloudflare_organization": {
+    "create_time": "The time the organization was created.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "id": "The unique identifier of the organization.",
     "messages": "A list of informational messages returned by the API, if any.",
+    "meta": "Additional metadata associated with the organization.",
+    "name": "The name of the organization.",
+    "parent": "The parent organization, if this organization is nested under one.",
+    "profile": "The organization's own profile settings.",
     "success": "Whether the API call was successful."
   },
   "cloudflare_pipeline": {
@@ -384,15 +482,29 @@
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_preset": {
+    "permissions": "The permissions granted to participants using this preset.",
+    "ui": "The UI configuration applied to participants using this preset."
+  },
+  "cloudflare_queue": {
+    "queue_name": "The name of the queue."
+  },
   "cloudflare_realtimekit_webhook_success_response": {
     "success": "Whether the API call was successful."
   },
   "cloudflare_repo": {
+    "description": "A human-readable description of the repository.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
+    "name": "The name of the repository.",
+    "read_only": "Whether the repository is read-only.",
     "result": "The requested resource or collection of resources.",
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
     "success": "Whether the API call was successful."
+  },
+  "cloudflare_resource_sharing_share_response_single": {
+    "recipients": "The recipients granted access to this share.",
+    "resources": "The resources included in this share."
   },
   "cloudflare_route": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -411,10 +523,22 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_rule": {
+    "description": "A human-readable description of the rule."
+  },
   "cloudflare_scan": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
-    "result": "The requested resource or collection of resources."
+    "result": "The requested resource or collection of resources.",
+    "url": "The URL submitted for scanning."
+  },
+  "cloudflare_secondary_dns_single_response": {
+    "id": "The unique identifier of the TSIG key."
+  },
+  "cloudflare_sensitivity_group": {
+    "description": "A human-readable description of the sensitivity group.",
+    "name": "The name of the sensitivity group.",
+    "template_id": "The built-in template this group was seeded from, if any."
   },
   "cloudflare_server": {
     "result": "The requested resource or collection of resources.",
@@ -427,23 +551,47 @@
     "result": "The requested resource or collection of resources."
   },
   "cloudflare_suppression": {
+    "email": "The email address suppressed from receiving further routed mail.",
+    "expires_at": "When the suppression entry expires, if it is not permanent.",
     "result": "The requested resource or collection of resources."
   },
   "cloudflare_takedown_notice": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "domain": "The domain the takedown notice targets.",
+    "id": "The unique identifier of the takedown notice.",
+    "match_id": "The Brand Protection match that triggered this takedown notice.",
+    "match_type": "The type of match that triggered this takedown notice.",
+    "query_id": "The Brand Protection query that surfaced the match triggering this notice.",
+    "status": "The current status of the takedown notice.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
   },
+  "cloudflare_teams_devices_device_settings_response": {
+    "description": "A human-readable description of the device settings policy."
+  },
   "cloudflare_template": {
+    "body": "The body text of the letter template.",
+    "category": "The category this letter template belongs to.",
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "description": "A human-readable description of the letter template.",
+    "id": "The unique identifier of the letter template.",
+    "name": "The name of the letter template.",
+    "source": "The source this letter template's own text was derived from.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
   },
   "cloudflare_token": {
+    "cf_api_id": "The Cloudflare API key ID this token uses to authenticate.",
+    "cf_api_key": "The Cloudflare API key this token uses to authenticate.",
+    "legacy": "Whether this token uses the legacy authentication scheme.",
+    "name": "The name of the token.",
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
   "cloudflare_tree": {
+    "description": "A human-readable description of the repository.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any.",
+    "name": "The name of the repository.",
+    "read_only": "Whether the repository is read-only.",
     "result": "The requested resource or collection of resources.",
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
     "success": "Whether the API call was successful."
@@ -489,11 +637,21 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_widget": {
+    "domains": "The domains this Turnstile widget is valid on."
+  },
+  "cloudflare_worker": {
+    "git_repository": "The git repository this Worker is connected to for CI-driven deployment."
+  },
   "cloudflare_workflow": {
+    "class_name": "The Worker class implementing this Workflow.",
     "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "limits": "The concurrency and execution limits applied to instances of this Workflow.",
     "messages": "A list of informational messages returned by the API, if any.",
     "result": "The requested resource or collection of resources.",
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "schedules": "The recurring schedules configured to trigger new instances of this Workflow.",
+    "script_name": "The Worker script that owns this Workflow.",
     "success": "Whether the API call was successful."
   }
 }
