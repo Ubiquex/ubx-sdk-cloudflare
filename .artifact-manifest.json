@@ -1,0 +1,14 @@
+{
+  "runbook": "write-artifacts",
+  "target": "cloudflare",
+  "started": "2026-09-03",
+  "updated": "2026-09-03",
+  "hops": [
+    {
+      "id": "categories",
+      "status": "done",
+      "commit": "https://github.com/Ubiquex/ubx-sdk-cloudflare/pull/1",
+      "note": "UBI-245 token method applied against a genuinely empty categories.json (real classification: 0 clean, 0 ambiguous, 444 no-signal, reported before authoring anything). Real signal used: Cloudflare's own 551 human-authored OpenAPI tags, the same signal namespace_from_tags already uses for wire grouping. 426 of 444 tokens normalized directly from real tag text; 18 carried an internal non-human tag and were individually traced to real wire types/paths, collapsing onto 9 real Cloudflare products. Real result: 433 distinct category labels for 1088 wire types, 100% coverage verified both by direct computation and a real ubx-docs-providers sidebar build against a local mirror. Not forced coarser than the real product taxonomy warrants."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "@ubx/sdk-cloudflare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "exports": {
     "./cloudflare/accesscustompages/access_single_response_11": "./cloudflare/accesscustompages/access_single_response_11.ts",
