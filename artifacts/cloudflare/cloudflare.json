@@ -1,0 +1,297 @@
+{
+  "cloudflare_access_single_response_11": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_app": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_cloudforce_one_rule_preview": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_collection": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_commit": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_cost": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_crawl": {
+    "errors": "A list of errors returned by the API. Empty on a successful response."
+  },
+  "cloudflare_custom_domain": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_custom_provider": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_dataset": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_deployment_group": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any."
+  },
+  "cloudflare_evaluation": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_event": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format."
+  },
+  "cloudflare_finetune_asset": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_flag": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_gateway": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_group": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_image": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_instance": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_ip_profile": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any."
+  },
+  "cloudflare_item": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_job": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_letter": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format."
+  },
+  "cloudflare_lex_dataset_detail_response": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_log": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_organization": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_pipeline": {
+    "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_portal": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_realtimekit_webhook_success_response": {
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_repo": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_route": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_scan": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_server": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_sink": {
+    "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_stream": {
+    "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_suppression": {
+    "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_takedown_notice": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_template": {
+    "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_token": {
+    "result": "The requested resource or collection of resources.",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_tree": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_trigger": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "success": "Whether the API call was successful."
+  },
+  "cloudflare_url": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_version": {
+    "authentication": "Whether requests to this AI Gateway require authentication.",
+    "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
+    "cache_ttl": "How long a cached response remains valid, in seconds.",
+    "collect_logs": "Whether to collect request/response logs for this gateway.",
+    "log_management": "How long collected logs are retained and how they're managed.",
+    "log_management_strategy": "The strategy used for log retention (e.g. time-based, storage-based).",
+    "logpush": "Whether to push this gateway's own logs to a configured Logpush destination.",
+    "logpush_public_key": "The public key used to encrypt logs pushed via Logpush.",
+    "rate_limiting_interval": "The time window, in seconds, over which the rate limit is applied.",
+    "rate_limiting_limit": "The maximum number of requests allowed within the configured rate-limiting interval.",
+    "rate_limiting_technique": "The algorithm used to enforce the rate limit (e.g. fixed window, sliding window).",
+    "result": "The requested resource or collection of resources.",
+    "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
+    "success": "Whether the API call was successful.",
+    "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_workflow": {
+    "errors": "A list of errors returned by the API. Empty on a successful response.",
+    "messages": "A list of informational messages returned by the API, if any.",
+    "result": "The requested resource or collection of resources.",
+    "result_info": "Pagination metadata for the result (e.g. total count, current page).",
+    "success": "Whether the API call was successful."
+  }
+}
