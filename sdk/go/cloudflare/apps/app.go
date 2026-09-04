@@ -17,6 +17,7 @@ type App_Result struct {
 }
 
 type AppConfig struct {
+	// The name of the Flagship application. (AI-inferred)
 	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -25,11 +26,16 @@ type AppConfig struct {
 }
 
 type AppAttrs struct {
-	Errors   any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
 	Messages any
-	Name     any
-	Result   any
-	Success  any
+	// The name of the Flagship application. (AI-inferred)
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

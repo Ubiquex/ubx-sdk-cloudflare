@@ -41,7 +41,9 @@ export interface WorkersNamespaceSingleResponseConfig {
 }
 
 export interface WorkersNamespaceSingleResponseAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: WorkersNamespaceSingleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: WorkersNamespaceSingleResponse_Errors[];
   /** The name of the dispatch namespace. */
   name: string;

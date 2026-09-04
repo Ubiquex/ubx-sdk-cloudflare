@@ -12,6 +12,7 @@ export interface AccessSingleResponse21Config {
 }
 
 export interface AccessSingleResponse21Attrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse21_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

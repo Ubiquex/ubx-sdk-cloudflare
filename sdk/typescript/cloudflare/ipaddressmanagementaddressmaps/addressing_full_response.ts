@@ -41,6 +41,7 @@ export interface AddressingFullResponseConfig {
   description?: string | Computed<string>;
   /** Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The individual IP addresses included in the Address Map. (AI-inferred) */
   ips?: string[] | Computed<string[]>;
   /** Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership. */
   memberships?: AddressingFullResponse_Memberships[] | Computed<AddressingFullResponse_Memberships[]>;
@@ -55,9 +56,11 @@ export interface AddressingFullResponseAttrs {
   description: string;
   /** Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled. */
   enabled: boolean;
+  /** The individual IP addresses included in the Address Map. (AI-inferred) */
   ips: string[];
   /** Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership. */
   memberships: AddressingFullResponse_Memberships[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AddressingFullResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

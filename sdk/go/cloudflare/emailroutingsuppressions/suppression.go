@@ -13,7 +13,9 @@ type Suppression_Result struct {
 }
 
 type SuppressionConfig struct {
-	Email     any
+	// The email address suppressed from receiving further routed mail. (AI-inferred)
+	Email any
+	// When the suppression entry expires, if it is not permanent. (AI-inferred)
 	ExpiresAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -22,9 +24,12 @@ type SuppressionConfig struct {
 }
 
 type SuppressionAttrs struct {
-	Email     any
+	// The email address suppressed from receiving further routed mail. (AI-inferred)
+	Email any
+	// When the suppression entry expires, if it is not permanent. (AI-inferred)
 	ExpiresAt any
-	Result    any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

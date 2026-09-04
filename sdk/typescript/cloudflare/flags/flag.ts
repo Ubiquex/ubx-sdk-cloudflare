@@ -174,6 +174,7 @@ const Flag_Result_RulesFields: FieldMap = {
 export interface FlagConfig {
   /** Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`. */
   defaultVariation: string | Computed<string>;
+  /** A human-readable description of the feature flag. (AI-inferred) */
   description?: string | Computed<string>;
   /** When false, the flag bypasses all rules and always serves `default_variation`. */
   enabled: boolean | Computed<boolean>;
@@ -196,16 +197,21 @@ export interface FlagConfig {
 export interface FlagAttrs {
   /** Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`. */
   defaultVariation: string;
+  /** A human-readable description of the feature flag. (AI-inferred) */
   description: string;
   /** When false, the flag bypasses all rules and always serves `default_variation`. */
   enabled: boolean;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Flag_Errors[];
   /** Unique identifier for the flag within an app. Used in all evaluation and SDK calls. */
   key: string;
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Flag_Errors[];
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Flag_Result;
   /** Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`. */
   rules: Flag_Result_Rules[];
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests. */
   type: string;

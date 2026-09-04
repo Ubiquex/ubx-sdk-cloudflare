@@ -317,7 +317,8 @@ type ScanConfig struct {
 	CustomHeaders any
 	// Take multiple screenshots targeting different device types.
 	ScreenshotsResolutions any
-	Url                    any
+	// The URL submitted for scanning. (AI-inferred)
+	Url any
 	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 	Visibility any
 	// path parameter, not part of the API's own resource representation
@@ -331,14 +332,18 @@ type ScanAttrs struct {
 	Country any
 	// Set custom headers.
 	CustomHeaders any
-	Errors        any
-	Messages      any
-	Result        any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
+	Messages any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
 	// Take multiple screenshots targeting different device types.
 	ScreenshotsResolutions any
 	// Whether request was successful or not
 	Success any
-	Url     any
+	// The URL submitted for scanning. (AI-inferred)
+	Url any
 	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 	Visibility any
 	// path parameter, not part of the API's own resource representation

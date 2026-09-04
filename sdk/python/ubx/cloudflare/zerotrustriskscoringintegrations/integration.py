@@ -26,6 +26,7 @@ class Integration_Result:
 
 @dataclasses.dataclass
 class IntegrationConfig:
+    # The type of the Zero Trust Risk Scoring integration. (AI-inferred)
     integration_type: Any = None
     # A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
     reference_id: Any = None
@@ -38,9 +39,11 @@ class IntegrationConfig:
 
 @dataclasses.dataclass
 class IntegrationAttrs:
+    # The type of the Zero Trust Risk Scoring integration. (AI-inferred)
     integration_type: Any = None
     # A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
     reference_id: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The base url of the tenant, e.g. "https://tenant.okta.com".
     tenant_url: Any = None

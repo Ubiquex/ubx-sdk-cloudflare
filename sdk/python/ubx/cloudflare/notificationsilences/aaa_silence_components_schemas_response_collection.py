@@ -35,7 +35,9 @@ class AaaSilenceComponentsSchemasResponseCollectionConfig:
 
 @dataclasses.dataclass
 class AaaSilenceComponentsSchemasResponseCollectionAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     result: Any = None
     # Whether the API call was successful

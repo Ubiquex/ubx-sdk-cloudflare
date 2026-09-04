@@ -96,6 +96,7 @@ export interface TlsCertificatesAndHostnamesCertificateResponseSingleAttrs {
   policy: string;
   /** The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare. */
   privateKey: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: TlsCertificatesAndHostnamesCertificateResponseSingle_Result;
   /** The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake. */
   type: string;

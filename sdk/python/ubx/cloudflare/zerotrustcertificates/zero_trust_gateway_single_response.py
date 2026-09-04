@@ -40,6 +40,7 @@ class ZeroTrustGatewaySingleResponseConfig:
 
 @dataclasses.dataclass
 class ZeroTrustGatewaySingleResponseAttrs:
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation. Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
     validity_period_days: Any = None

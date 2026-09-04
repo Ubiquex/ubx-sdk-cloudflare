@@ -152,7 +152,9 @@ export interface PostureApiFindingResponseConfig {
 export interface PostureApiFindingResponseAttrs {
   /** A list of finding IDs to pass along. */
   checks: string[];
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: PostureApiFindingResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: PostureApiFindingResponse_Errors[];
   /** Aggregated finding information with counts and metadata. This is optimized for list API queries and represents a finding along with its instance statistics. */
   result: PostureApiFindingResponse_Result;

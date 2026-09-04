@@ -79,7 +79,9 @@ export interface RequestAttrs {
   createdAfter: Request_CompletedAfter;
   /** Retrieve requests created before this time. */
   createdBefore: Request_CompletedAfter;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Request_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Request_Errors[];
   /** Page number of results. */
   page: number;
@@ -87,6 +89,7 @@ export interface RequestAttrs {
   perPage: number;
   /** Requested information from request. */
   requestType: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Request_Result;
   /** Field to sort results by. */
   sortBy: string;

@@ -29,6 +29,7 @@ type AccessSingleResponse13Config struct {
 }
 
 type AccessSingleResponse13Attrs struct {
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

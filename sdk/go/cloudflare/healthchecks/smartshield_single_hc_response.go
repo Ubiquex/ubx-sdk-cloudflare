@@ -131,7 +131,8 @@ type SmartshieldSingleHcResponseAttrs struct {
 	// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
 	Interval any
 	// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
 	Retries any

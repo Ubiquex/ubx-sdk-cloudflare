@@ -54,16 +54,27 @@ _Domain_FolderFields = {
 
 @dataclasses.dataclass
 class DomainConfig:
+    # The mail delivery modes permitted for this domain. (AI-inferred)
     allowed_delivery_modes: Any = None
+    # The domain name this configuration applies to. (AI-inferred)
     domain: Any = None
+    # The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred)
     drop_dispositions: Any = None
+    # The mailbox folder matching mail is delivered to. (AI-inferred)
     folder: Any = None
+    # The unique identifier of the integration. (AI-inferred)
     integration_id: Any = None
+    # The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred)
     ip_restrictions: Any = None
+    # The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred)
     lookback_hops: Any = None
+    # The geographic regions this domain's own mail processing is restricted to. (AI-inferred)
     regions: Any = None
+    # Whether inbound mail for this domain must use TLS. (AI-inferred)
     require_tls_inbound: Any = None
+    # Whether outbound mail for this domain must use TLS. (AI-inferred)
     require_tls_outbound: Any = None
+    # The transport mechanism used to deliver mail for this domain. (AI-inferred)
     transport: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -72,17 +83,29 @@ class DomainConfig:
 
 @dataclasses.dataclass
 class DomainAttrs:
+    # The mail delivery modes permitted for this domain. (AI-inferred)
     allowed_delivery_modes: Any = None
+    # The domain name this configuration applies to. (AI-inferred)
     domain: Any = None
+    # The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred)
     drop_dispositions: Any = None
+    # The mailbox folder matching mail is delivered to. (AI-inferred)
     folder: Any = None
+    # The unique identifier of the integration. (AI-inferred)
     integration_id: Any = None
+    # The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred)
     ip_restrictions: Any = None
+    # The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred)
     lookback_hops: Any = None
+    # The geographic regions this domain's own mail processing is restricted to. (AI-inferred)
     regions: Any = None
+    # Whether inbound mail for this domain must use TLS. (AI-inferred)
     require_tls_inbound: Any = None
+    # Whether outbound mail for this domain must use TLS. (AI-inferred)
     require_tls_outbound: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The transport mechanism used to deliver mail for this domain. (AI-inferred)
     transport: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

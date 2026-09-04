@@ -29,10 +29,15 @@ _DataClass_Result_SensitivityLevelsFields = {
 
 @dataclasses.dataclass
 class DataClassConfig:
+    # The data tags associated with this data class. (AI-inferred)
     data_tags: Any = None
+    # A human-readable description of the data class. (AI-inferred)
     description: Any = None
+    # The detection expression identifying content matching this data class. (AI-inferred)
     expression: Any = None
+    # The name of the data class. (AI-inferred)
     name: Any = None
+    # The sensitivity levels associated with this data class. (AI-inferred)
     sensitivity_levels: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -41,11 +46,17 @@ class DataClassConfig:
 
 @dataclasses.dataclass
 class DataClassAttrs:
+    # The data tags associated with this data class. (AI-inferred)
     data_tags: Any = None
+    # A human-readable description of the data class. (AI-inferred)
     description: Any = None
+    # The detection expression identifying content matching this data class. (AI-inferred)
     expression: Any = None
+    # The name of the data class. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The sensitivity levels associated with this data class. (AI-inferred)
     sensitivity_levels: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

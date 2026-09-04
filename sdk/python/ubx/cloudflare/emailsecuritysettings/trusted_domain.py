@@ -27,12 +27,15 @@ class TrustedDomain_Result:
 
 @dataclasses.dataclass
 class TrustedDomainConfig:
+    # A free-text note about this trusted-domain entry. (AI-inferred)
     comments: Any = None
     # Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
     is_recent: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
     is_similarity: Any = None
+    # The domain pattern this entry trusts. (AI-inferred)
     pattern: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -41,17 +44,23 @@ class TrustedDomainConfig:
 
 @dataclasses.dataclass
 class TrustedDomainAttrs:
+    # A free-text note about this trusted-domain entry. (AI-inferred)
     comments: Any = None
+    # When this trusted-domain entry was created. (AI-inferred)
     created_at: Any = None
+    # This trusted-domain entry's own real identifier. (AI-inferred)
     id: Any = None
     # Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
     is_recent: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
     is_similarity: Any = None
     # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
     last_modified: Any = None
+    # When this trusted-domain entry was last modified. (AI-inferred)
     modified_at: Any = None
+    # The domain pattern this entry trusts. (AI-inferred)
     pattern: Any = None
     # A trusted email domain.
     result: Any = None

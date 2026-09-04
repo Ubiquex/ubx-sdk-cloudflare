@@ -23,6 +23,7 @@ export interface ZeroTrustGatewaySingleResponse5Config {
 export interface ZeroTrustGatewaySingleResponse5Attrs {
   /** The proxy endpoint kind. */
   kind: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ZeroTrustGatewaySingleResponse5_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

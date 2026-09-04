@@ -15,6 +15,7 @@ export interface App_Result {
 }
 
 export interface AppConfig {
+  /** The name of the Flagship application. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -23,10 +24,15 @@ export interface AppConfig {
 }
 
 export interface AppAttrs {
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: App_Errors[];
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: App_Errors[];
+  /** The name of the Flagship application. (AI-inferred) */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: App_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

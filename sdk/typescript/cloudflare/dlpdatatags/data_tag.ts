@@ -10,7 +10,9 @@ export interface DataTag_Result {
 }
 
 export interface DataTagConfig {
+  /** A human-readable description of the data tag. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the data tag. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -21,8 +23,11 @@ export interface DataTagConfig {
 }
 
 export interface DataTagAttrs {
+  /** A human-readable description of the data tag. (AI-inferred) */
   description: string;
+  /** The name of the data tag. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DataTag_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

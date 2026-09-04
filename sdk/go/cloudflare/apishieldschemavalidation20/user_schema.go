@@ -46,14 +46,17 @@ type UserSchemaConfig struct {
 }
 
 type UserSchemaAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Schema file bytes
 	File any
 	// Kind of schema
-	Kind     any
+	Kind any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Name of the schema
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Whether the API call was successful.
 	Success any

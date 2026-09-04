@@ -32,7 +32,8 @@ var Ruleset_IdFields = ubx.FieldMap{}
 type RulesetConfig struct {
 	// An informative description of the ruleset.
 	Description any
-	Id          any
+	// This ruleset's own real identifier. (AI-inferred)
+	Id any
 	// The kind of the ruleset.
 	Kind any
 	// The human-readable name of the ruleset.
@@ -40,7 +41,8 @@ type RulesetConfig struct {
 	// The phase of the ruleset.
 	Phase any
 	// The list of rules in the ruleset.
-	Rules   any
+	Rules any
+	// This ruleset's own real, current version number. (AI-inferred)
 	Version any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -51,8 +53,10 @@ type RulesetConfig struct {
 type RulesetAttrs struct {
 	// An informative description of the ruleset.
 	Description any
-	Errors      any
-	Id          any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// This ruleset's own real identifier. (AI-inferred)
+	Id any
 	// The kind of the ruleset.
 	Kind any
 	// The timestamp of when the ruleset was last modified.
@@ -62,11 +66,14 @@ type RulesetAttrs struct {
 	// The human-readable name of the ruleset.
 	Name any
 	// The phase of the ruleset.
-	Phase  any
+	Phase any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// The list of rules in the ruleset.
-	Rules   any
+	Rules any
+	// Whether the API call succeeded. (AI-inferred)
 	Success any
+	// This ruleset's own real, current version number. (AI-inferred)
 	Version any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

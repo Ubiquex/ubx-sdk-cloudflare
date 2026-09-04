@@ -44,10 +44,15 @@ class McnReadAccountCatalogSyncResponse_Result:
 
 @dataclasses.dataclass
 class McnReadAccountCatalogSyncResponseConfig:
+    # A human-readable description of the catalog sync. (AI-inferred)
     description: Any = None
+    # The type of destination the catalog sync writes resource metadata to. (AI-inferred)
     destination_type: Any = None
+    # The name of the catalog sync. (AI-inferred)
     name: Any = None
+    # The policy controlling which resources are included in the sync. (AI-inferred)
     policy: Any = None
+    # How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred)
     update_mode: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -56,11 +61,17 @@ class McnReadAccountCatalogSyncResponseConfig:
 
 @dataclasses.dataclass
 class McnReadAccountCatalogSyncResponseAttrs:
+    # A human-readable description of the catalog sync. (AI-inferred)
     description: Any = None
+    # The type of destination the catalog sync writes resource metadata to. (AI-inferred)
     destination_type: Any = None
+    # The name of the catalog sync. (AI-inferred)
     name: Any = None
+    # The policy controlling which resources are included in the sync. (AI-inferred)
     policy: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred)
     update_mode: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

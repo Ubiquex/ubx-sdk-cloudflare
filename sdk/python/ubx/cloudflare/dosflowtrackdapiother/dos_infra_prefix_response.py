@@ -51,7 +51,9 @@ class DosInfraPrefixResponseAttrs:
     comment: Any = None
     # Whether to enable the allowlist prefix into effect.
     enabled: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The allowlist prefix to add in CIDR format.
     prefix: Any = None

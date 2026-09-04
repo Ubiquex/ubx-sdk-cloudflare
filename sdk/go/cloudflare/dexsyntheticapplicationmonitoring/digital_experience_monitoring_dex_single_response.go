@@ -54,9 +54,11 @@ type DigitalExperienceMonitoringDexSingleResponseConfig struct {
 	// How often the test will run.
 	Interval any
 	// The name of the DEX test. Must be unique.
-	Name           any
+	Name any
+	// The device policies this DEX test applies to. (AI-inferred)
 	TargetPolicies any
-	Targeted       any
+	// Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred)
+	Targeted any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -75,10 +77,13 @@ type DigitalExperienceMonitoringDexSingleResponseAttrs struct {
 	// How often the test will run.
 	Interval any
 	// The name of the DEX test. Must be unique.
-	Name           any
-	Result         any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The device policies this DEX test applies to. (AI-inferred)
 	TargetPolicies any
-	Targeted       any
+	// Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred)
+	Targeted any
 	// The unique identifier for the test.
 	TestId any
 	// Date the test was last updated, in RFC 3339 format.

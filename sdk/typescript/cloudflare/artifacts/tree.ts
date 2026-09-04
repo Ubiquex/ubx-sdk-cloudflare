@@ -31,8 +31,11 @@ export interface Tree_ResultInfo {
 export interface TreeConfig {
   /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
   defaultBranch?: string | Computed<string>;
+  /** A human-readable description of the repository. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the repository. (AI-inferred) */
   name: string | Computed<string>;
+  /** Whether the repository is read-only. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -45,13 +48,21 @@ export interface TreeConfig {
 export interface TreeAttrs {
   /** Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'. */
   defaultBranch: string;
+  /** A human-readable description of the repository. (AI-inferred) */
   description: string;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Tree_Errors[];
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Tree_Errors[];
+  /** The name of the repository. (AI-inferred) */
   name: string;
+  /** Whether the repository is read-only. (AI-inferred) */
   readOnly: boolean;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Tree_Result[];
+  /** Pagination metadata for the result (e.g. total count, current page). (AI-inferred) */
   resultInfo: Tree_ResultInfo;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

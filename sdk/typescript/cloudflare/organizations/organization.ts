@@ -63,24 +63,36 @@ const Organization_ProfileFields: FieldMap = {
 };
 
 export interface OrganizationConfig {
+  /** The name of the organization. (AI-inferred) */
   name: string | Computed<string>;
+  /** The parent organization, if this organization is nested under one. (AI-inferred) */
   parent?: Organization_Parent | Computed<Organization_Parent>;
+  /** The organization's own profile settings. (AI-inferred) */
   profile?: Organization_Profile | Computed<Organization_Profile>;
   /** path parameter, not part of the API's own resource representation */
   organizationId: string | Computed<string>;
 }
 
 export interface OrganizationAttrs {
+  /** The time the organization was created. (AI-inferred) */
   createTime: string;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: unknown[];
+  /** The unique identifier of the organization. (AI-inferred) */
   id: Organization_Id;
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Organization_Messages[];
+  /** Additional metadata associated with the organization. (AI-inferred) */
   meta: Organization_Meta;
+  /** The name of the organization. (AI-inferred) */
   name: string;
+  /** The parent organization, if this organization is nested under one. (AI-inferred) */
   parent: Organization_Parent;
+  /** The organization's own profile settings. (AI-inferred) */
   profile: Organization_Profile;
   /** References an Organization in the Cloudflare data model. */
   result: Organization_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   organizationId: string;

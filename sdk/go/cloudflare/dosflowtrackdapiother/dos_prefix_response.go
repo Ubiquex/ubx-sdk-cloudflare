@@ -45,9 +45,11 @@ type DosPrefixResponseConfig struct {
 type DosPrefixResponseAttrs struct {
 	// A comment describing the prefix.
 	Comment any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// Whether to exclude the prefix from protection.
 	Excluded any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The prefix to add in CIDR format.
 	Prefix any

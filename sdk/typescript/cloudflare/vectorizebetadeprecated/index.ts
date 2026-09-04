@@ -26,9 +26,11 @@ const Index_ConfigFields: FieldMap = {
 };
 
 export interface IndexConfig {
+  /** The vector dimensionality and distance metric configuration for the index. (AI-inferred) */
   config: Index_Config | Computed<Index_Config>;
   /** Specifies the description of the index. */
   description?: string | Computed<string>;
+  /** The name of the Vectorize index. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -37,10 +39,13 @@ export interface IndexConfig {
 }
 
 export interface IndexAttrs {
+  /** The vector dimensionality and distance metric configuration for the index. (AI-inferred) */
   config: Index_Config;
   /** Specifies the description of the index. */
   description: string;
+  /** The name of the Vectorize index. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Index_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

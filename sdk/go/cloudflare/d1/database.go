@@ -50,10 +50,12 @@ type DatabaseConfig struct {
 }
 
 type DatabaseAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 	Jurisdiction any
-	Messages     any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// D1 database name.
 	Name any
 	// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.

@@ -51,10 +51,15 @@ class DeployHookAttrs:
     branch: Any = None
     # Deploy hook name (1-58 characters).
     deploy_hook_name: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
     result_info: Any = None
+    # Whether the API call succeeded. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

@@ -16,7 +16,9 @@ class DataTag_Result:
 
 @dataclasses.dataclass
 class DataTagConfig:
+    # A human-readable description of the data tag. (AI-inferred)
     description: Any = None
+    # The name of the data tag. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -27,8 +29,11 @@ class DataTagConfig:
 
 @dataclasses.dataclass
 class DataTagAttrs:
+    # A human-readable description of the data tag. (AI-inferred)
     description: Any = None
+    # The name of the data tag. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

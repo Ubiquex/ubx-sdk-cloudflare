@@ -43,16 +43,19 @@ export interface CredentialConfig {
 }
 
 export interface CredentialAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Credential_Errors[];
   /** Where the credential is attached in outgoing requests. */
   location: string;
   /** Name of the header or cookie where the credential is attached. */
   locationName: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Credential_Errors[];
   /** Human-readable name. */
   name: string;
   /** A credential attached to API requests during scanning. The credential `value` is write-only and never returned in responses. */
   result: Credential_Result;
+  /** Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred) */
   resultInfo: unknown;
   /** Whether the API call was successful. */
   success: boolean;

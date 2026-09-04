@@ -28,13 +28,21 @@ class ImpersonationRegistry_Result:
 
 @dataclasses.dataclass
 class ImpersonationRegistryConfig:
+    # A free-text note about this impersonation-registry entry. (AI-inferred)
     comments: Any = None
+    # The real directory this protected identity belongs to. (AI-inferred)
     directory_id: Any = None
+    # The real directory node (user or group) this protected identity resolves to. (AI-inferred)
     directory_node_id: Any = None
+    # The real email address this entry protects against impersonation. (AI-inferred)
     email: Any = None
+    # The real, external identity provider's own node ID this entry is linked to. (AI-inferred)
     external_directory_node_id: Any = None
+    # Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred)
     is_email_regex: Any = None
+    # The real, protected display name this entry watches for impersonation attempts against. (AI-inferred)
     name: Any = None
+    # Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred)
     provenance: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -43,18 +51,29 @@ class ImpersonationRegistryConfig:
 
 @dataclasses.dataclass
 class ImpersonationRegistryAttrs:
+    # A free-text note about this impersonation-registry entry. (AI-inferred)
     comments: Any = None
+    # When this impersonation-registry entry was created. (AI-inferred)
     created_at: Any = None
+    # The real directory this protected identity belongs to. (AI-inferred)
     directory_id: Any = None
+    # The real directory node (user or group) this protected identity resolves to. (AI-inferred)
     directory_node_id: Any = None
+    # The real email address this entry protects against impersonation. (AI-inferred)
     email: Any = None
+    # The real, external identity provider's own node ID this entry is linked to. (AI-inferred)
     external_directory_node_id: Any = None
+    # This impersonation-registry entry's own real identifier. (AI-inferred)
     id: Any = None
+    # Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred)
     is_email_regex: Any = None
     # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
     last_modified: Any = None
+    # When this impersonation-registry entry was last modified. (AI-inferred)
     modified_at: Any = None
+    # The real, protected display name this entry watches for impersonation attempts against. (AI-inferred)
     name: Any = None
+    # Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred)
     provenance: Any = None
     # An impersonation registry entry.
     result: Any = None

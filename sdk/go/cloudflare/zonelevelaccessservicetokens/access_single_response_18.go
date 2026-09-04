@@ -50,7 +50,8 @@ type AccessSingleResponse18Attrs struct {
 	Name any
 	// The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
 	PreviousClientSecretExpiresAt any
-	Result                        any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation

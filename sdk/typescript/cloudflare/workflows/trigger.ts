@@ -40,10 +40,15 @@ export interface TriggerConfig {
 }
 
 export interface TriggerAttrs {
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Trigger_Errors[];
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Trigger_Errors[];
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Trigger_Result;
+  /** Pagination metadata for the result (e.g. total count, current page). (AI-inferred) */
   resultInfo: Trigger_ResultInfo;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

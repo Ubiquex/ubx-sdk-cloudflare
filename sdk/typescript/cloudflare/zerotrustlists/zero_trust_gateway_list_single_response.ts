@@ -54,6 +54,7 @@ export interface ZeroTrustGatewayListSingleResponseAttrs {
   items: ZeroTrustGatewayListSingleResponse_Items[];
   /** Specify the list name. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ZeroTrustGatewayListSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

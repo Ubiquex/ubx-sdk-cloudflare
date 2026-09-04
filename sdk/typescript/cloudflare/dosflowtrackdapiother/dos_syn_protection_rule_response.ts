@@ -55,7 +55,9 @@ export interface DosSynProtectionRuleResponseConfig {
 export interface DosSynProtectionRuleResponseAttrs {
   /** The burst sensitivity. Must be one of 'low', 'medium', 'high'. */
   burstSensitivity: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosSynProtectionRuleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosSynProtectionRuleResponse_Errors[];
   /** The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'. */
   mitigationType: string;

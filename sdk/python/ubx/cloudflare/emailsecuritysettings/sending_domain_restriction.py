@@ -25,6 +25,7 @@ class SendingDomainRestriction_Result:
 
 @dataclasses.dataclass
 class SendingDomainRestrictionConfig:
+    # A free-text note about this sending-domain restriction. (AI-inferred)
     comments: Any = None
     # Domain that requires TLS enforcement.
     domain: Any = None
@@ -37,15 +38,19 @@ class SendingDomainRestrictionConfig:
 
 @dataclasses.dataclass
 class SendingDomainRestrictionAttrs:
+    # A free-text note about this sending-domain restriction. (AI-inferred)
     comments: Any = None
+    # When this sending-domain restriction was created. (AI-inferred)
     created_at: Any = None
     # Domain that requires TLS enforcement.
     domain: Any = None
     # Subdomains to exempt from TLS requirements.
     exclude: Any = None
+    # This sending-domain restriction's own real identifier. (AI-inferred)
     id: Any = None
     # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
     last_modified: Any = None
+    # When this sending-domain restriction was last modified. (AI-inferred)
     modified_at: Any = None
     # A sending domain restriction that enforces TLS (Transport Layer Security) requirements for emails from specific domains. If TLS is required, the system drops mail without TLS from the specified domain.
     result: Any = None

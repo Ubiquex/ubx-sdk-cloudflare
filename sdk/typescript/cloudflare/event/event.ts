@@ -14,20 +14,33 @@ const Event_RawFields: FieldMap = {
 };
 
 export interface EventConfig {
+  /** The identified attacker associated with this event. (AI-inferred) */
   attacker?: string | Computed<string>;
+  /** The country associated with the attacker. (AI-inferred) */
   attackerCountry?: string | Computed<string>;
+  /** The category this event is classified under. (AI-inferred) */
   category?: string | Computed<string>;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt?: string | Computed<string>;
   /** Dataset ID containing the event to update. */
   datasetId: string | Computed<string>;
+  /** The date the event occurred. (AI-inferred) */
   date?: string | Computed<string>;
+  /** A description of what happened in this event. (AI-inferred) */
   event?: string | Computed<string>;
+  /** The threat indicator value associated with this event. (AI-inferred) */
   indicator?: string | Computed<string>;
+  /** The type of the associated threat indicator. (AI-inferred) */
   indicatorType?: string | Computed<string>;
+  /** Additional analyst insight about this event. (AI-inferred) */
   insight?: string | Computed<string>;
+  /** The raw, unprocessed data this event was derived from. (AI-inferred) */
   raw?: Event_Raw | Computed<Event_Raw>;
+  /** The country targeted by this event. (AI-inferred) */
   targetCountry?: string | Computed<string>;
+  /** The industry vertical targeted by this event. (AI-inferred) */
   targetIndustry?: string | Computed<string>;
+  /** The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred) */
   tlp?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -36,37 +49,67 @@ export interface EventConfig {
 }
 
 export interface EventAttrs {
+  /** The identified attacker associated with this event. (AI-inferred) */
   attacker: string;
+  /** The country associated with the attacker. (AI-inferred) */
   attackerCountry: string;
+  /** The three-letter ISO country code associated with the attacker. (AI-inferred) */
   attackerCountryAlpha3: string;
+  /** The category this event is classified under. (AI-inferred) */
   category: string;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: string;
   /** Dataset ID containing the event to update. */
   datasetId: string;
+  /** The date the event occurred. (AI-inferred) */
   date: string;
+  /** A description of what happened in this event. (AI-inferred) */
   event: string;
+  /** Whether this event has child events referencing it. (AI-inferred) */
   hasChildren: boolean;
+  /** The threat indicator value associated with this event. (AI-inferred) */
   indicator: string;
+  /** The type of the associated threat indicator. (AI-inferred) */
   indicatorType: string;
+  /** The identifier of the associated indicator type. (AI-inferred) */
   indicatorTypeId: number;
+  /** Additional analyst insight about this event. (AI-inferred) */
   insight: string;
+  /** The cyber kill chain stage this event represents. (AI-inferred) */
   killChain: number;
+  /** The MITRE ATT&CK technique this event maps to. (AI-inferred) */
   mitreAttack: string[];
+  /** The MITRE CAPEC attack pattern this event maps to. (AI-inferred) */
   mitreCapec: string[];
+  /** The number of other events this event references. (AI-inferred) */
   numReferenced: number;
+  /** The number of other events that reference this event. (AI-inferred) */
   numReferences: number;
+  /** The raw, unprocessed data this event was derived from. (AI-inferred) */
   raw: Event_Raw;
+  /** The identifier of the raw source record this event was derived from. (AI-inferred) */
   rawId: string;
+  /** The other events this event references. (AI-inferred) */
   referenced: string[];
+  /** The identifiers of the other events this event references. (AI-inferred) */
   referencedIds: number[];
+  /** The other events that reference this event. (AI-inferred) */
   references: string[];
+  /** The identifiers of the other events that reference this event. (AI-inferred) */
   referencesIds: number[];
+  /** The releasability classification controlling who can view this event. (AI-inferred) */
   releasabilityId: string;
+  /** The tags applied to this event. (AI-inferred) */
   tags: string[];
+  /** The country targeted by this event. (AI-inferred) */
   targetCountry: string;
+  /** The three-letter ISO country code of the country targeted by this event. (AI-inferred) */
   targetCountryAlpha3: string;
+  /** The industry vertical targeted by this event. (AI-inferred) */
   targetIndustry: string;
+  /** The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred) */
   tlp: string;
+  /** The unique identifier of the resource. (AI-inferred) */
   uuid: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

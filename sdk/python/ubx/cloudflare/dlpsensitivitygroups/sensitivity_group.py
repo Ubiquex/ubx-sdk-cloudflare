@@ -36,10 +36,13 @@ _SensitivityGroup_LevelsFields = {
 
 @dataclasses.dataclass
 class SensitivityGroupConfig:
+    # A human-readable description of the sensitivity group. (AI-inferred)
     description: Any = None
     # Levels to create with the group. Mutually exclusive with `template_id`.
     levels: Any = None
+    # The name of the sensitivity group. (AI-inferred)
     name: Any = None
+    # The built-in template this group was seeded from, if any. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -48,11 +51,15 @@ class SensitivityGroupConfig:
 
 @dataclasses.dataclass
 class SensitivityGroupAttrs:
+    # A human-readable description of the sensitivity group. (AI-inferred)
     description: Any = None
     # Levels to create with the group. Mutually exclusive with `template_id`.
     levels: Any = None
+    # The name of the sensitivity group. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The built-in template this group was seeded from, if any. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

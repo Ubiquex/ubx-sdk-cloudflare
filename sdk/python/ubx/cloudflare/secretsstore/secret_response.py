@@ -45,6 +45,7 @@ class SecretResponseAttrs:
     comment: Any = None
     # The name of the secret.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The list of services that can use this secret.
     scopes: Any = None

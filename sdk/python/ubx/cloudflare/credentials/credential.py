@@ -49,16 +49,19 @@ class CredentialConfig:
 
 @dataclasses.dataclass
 class CredentialAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Where the credential is attached in outgoing requests.
     location: Any = None
     # Name of the header or cookie where the credential is attached.
     location_name: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Human-readable name.
     name: Any = None
     # A credential attached to API requests during scanning. The credential `value` is write-only and never returned in responses.
     result: Any = None
+    # Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
     result_info: Any = None
     # Whether the API call was successful.
     success: Any = None

@@ -458,6 +458,7 @@ export interface AccessSingleResponse10Attrs {
   purposeJustificationRequired: boolean;
   /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse10_Exclude[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse10_Result;
   /** The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. */
   sessionDuration: string;

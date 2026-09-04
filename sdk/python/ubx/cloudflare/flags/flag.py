@@ -180,6 +180,7 @@ _Flag_Result_RulesFields = {
 class FlagConfig:
     # Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
     default_variation: Any = None
+    # A human-readable description of the feature flag. (AI-inferred)
     description: Any = None
     # When false, the flag bypasses all rules and always serves `default_variation`.
     enabled: Any = None
@@ -202,16 +203,21 @@ class FlagConfig:
 class FlagAttrs:
     # Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
     default_variation: Any = None
+    # A human-readable description of the feature flag. (AI-inferred)
     description: Any = None
     # When false, the flag bypasses all rules and always serves `default_variation`.
     enabled: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
     # Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
     key: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
     rules: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
     type: Any = None

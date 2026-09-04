@@ -380,6 +380,7 @@ class AccessSingleResponse17Attrs:
     name: Any = None
     # Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
     require: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None

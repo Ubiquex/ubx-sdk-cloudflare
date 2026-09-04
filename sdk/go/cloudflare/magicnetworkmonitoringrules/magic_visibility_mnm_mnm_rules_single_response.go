@@ -40,7 +40,8 @@ type MagicVisibilityMnmMnmRulesSingleResponseConfig struct {
 	PacketThreshold any
 	// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 	PrefixMatch any
-	Prefixes    any
+	// The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred)
+	Prefixes any
 	// MNM rule type.
 	Type any
 	// Level of sensitivity set for zscore rules.
@@ -66,8 +67,10 @@ type MagicVisibilityMnmMnmRulesSingleResponseAttrs struct {
 	PacketThreshold any
 	// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 	PrefixMatch any
-	Prefixes    any
-	Result      any
+	// The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred)
+	Prefixes any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// MNM rule type.
 	Type any
 	// Level of sensitivity set for zscore rules.

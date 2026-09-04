@@ -45,7 +45,9 @@ class TunnelRouteResponseSingleConfig:
 class TunnelRouteResponseSingleAttrs:
     # Optional remark describing the route.
     comment: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The private IPv4 or IPv6 range connected by the route, in CIDR notation.
     network: Any = None

@@ -46,10 +46,15 @@ class TriggerConfig:
 
 @dataclasses.dataclass
 class TriggerAttrs:
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
     result_info: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

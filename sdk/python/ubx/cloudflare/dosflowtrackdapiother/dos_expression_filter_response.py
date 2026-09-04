@@ -43,9 +43,11 @@ class DosExpressionFilterResponseConfig:
 
 @dataclasses.dataclass
 class DosExpressionFilterResponseAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The filter expression.
     expression: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
     mode: Any = None

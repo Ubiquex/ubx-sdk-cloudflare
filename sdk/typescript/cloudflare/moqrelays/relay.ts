@@ -41,12 +41,15 @@ export interface RelayConfig {
 }
 
 export interface RelayAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Relay_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Relay_Errors[];
   /** Human-readable name for the relay. */
   name: string;
   /** Full relay details (no tokens). */
   result: Relay_Result;
+  /** Whether the API call succeeded. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

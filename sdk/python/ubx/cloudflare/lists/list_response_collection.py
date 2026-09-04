@@ -28,12 +28,15 @@ class ListResponseCollectionConfig:
 class ListResponseCollectionAttrs:
     # An informative summary of the list.
     description: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
     kind: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # An informative name for the list. Use this name in filter and rule expressions.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Defines whether the API call was successful.
     success: Any = None

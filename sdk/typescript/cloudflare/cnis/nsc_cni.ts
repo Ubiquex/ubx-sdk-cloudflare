@@ -32,7 +32,9 @@ export interface NscCniConfig {
   /** Customer account tag */
   account: string | Computed<string>;
   bgp?: NscCni_Bgp | Computed<NscCni_Bgp>;
+  /** The interconnect this CNI is associated with. (AI-inferred) */
   interconnect: string | Computed<string>;
+  /** The Magic WAN configuration associated with this CNI. (AI-inferred) */
   magic: NscCni_Magic | Computed<NscCni_Magic>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -48,8 +50,11 @@ export interface NscCniAttrs {
   bgpMode: string;
   /** Customer end of the point-to-point link This should always be inside the same prefix as `p2p_ip`. */
   custIp: string;
+  /** The unique identifier of the Cloud Network Interconnect. (AI-inferred) */
   id: string;
+  /** The interconnect this CNI is associated with. (AI-inferred) */
   interconnect: string;
+  /** The Magic WAN configuration associated with this CNI. (AI-inferred) */
   magic: NscCni_Magic;
   /** Cloudflare end of the point-to-point link */
   p2pIp: string;

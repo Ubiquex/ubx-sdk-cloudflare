@@ -164,12 +164,14 @@ type PortalAttrs struct {
 	// Unique identifier for the MCP portal.
 	Id any
 	// Display name for the MCP portal.
-	Name   any
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
 	Result any
 	// Route outbound MCP traffic through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
 	// MCP servers attached to the portal and their portal-specific settings.
 	Servers any
+	// Whether the API call was successful. (AI-inferred)
 	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

@@ -32,10 +32,13 @@ var DataTagCategory_TagsFields = ubx.FieldMap{
 }
 
 type DataTagCategoryConfig struct {
+	// A human-readable description of the data tag category. (AI-inferred)
 	Description any
-	Name        any
+	// The name of the data tag category. (AI-inferred)
+	Name any
 	// Tags to create with the category. Mutually exclusive with `template_id`.
-	Tags       any
+	Tags any
+	// The built-in template this category was seeded from, if any. (AI-inferred)
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -44,11 +47,15 @@ type DataTagCategoryConfig struct {
 }
 
 type DataTagCategoryAttrs struct {
+	// A human-readable description of the data tag category. (AI-inferred)
 	Description any
-	Name        any
-	Result      any
+	// The name of the data tag category. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Tags to create with the category. Mutually exclusive with `template_id`.
-	Tags       any
+	Tags any
+	// The built-in template this category was seeded from, if any. (AI-inferred)
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

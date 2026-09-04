@@ -191,11 +191,13 @@ type DeploymentAttrs struct {
 	CommitHash any
 	// Git commit message associated with this deployment.
 	CommitMessage any
-	Errors        any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// Functions routing configuration file.
 	FunctionsFilepathRoutingConfigJson any
 	// JSON string containing a manifest of files to deploy. Maps file paths to their content hashes. Required for direct upload deployments. Maximum 20,000 entries.
 	Manifest any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The build output directory path.
 	PagesBuildOutputDir any

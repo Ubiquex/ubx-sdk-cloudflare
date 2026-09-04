@@ -91,10 +91,15 @@ const CloudforceOneRulePreview_StringsFields: FieldMap = {
 export interface CloudforceOneRulePreviewConfig {
   /** Nested condition groups support up to 10 levels of depth. */
   condition: CloudforceOneRulePreview_Condition | Computed<CloudforceOneRulePreview_Condition>;
+  /** A human-readable description of what the rule detects. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether the rule is currently active. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
+  /** Additional metadata associated with the rule. (AI-inferred) */
   meta?: CloudforceOneRulePreview_Meta[] | Computed<CloudforceOneRulePreview_Meta[]>;
+  /** The name of the rule. (AI-inferred) */
   name: string | Computed<string>;
+  /** The literal strings the rule matches against. (AI-inferred) */
   strings?: CloudforceOneRulePreview_Strings[] | Computed<CloudforceOneRulePreview_Strings[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -103,26 +108,39 @@ export interface CloudforceOneRulePreviewConfig {
 export interface CloudforceOneRulePreviewAttrs {
   /** Nested condition groups support up to 10 levels of depth. */
   condition: CloudforceOneRulePreview_Condition;
+  /** The body of the detection rule. (AI-inferred) */
   content: string;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: number;
+  /** The identifier of the user who created the rule. (AI-inferred) */
   createdBy: string;
+  /** A human-readable description of what the rule detects. (AI-inferred) */
   description: string;
+  /** Whether the rule is currently active. (AI-inferred) */
   enabled: boolean;
+  /** The unique identifier of the rule. (AI-inferred) */
   id: string;
   /** Whether this rule is visible to other internal accounts. */
   isPublic: boolean;
+  /** Additional metadata associated with the rule. (AI-inferred) */
   meta: CloudforceOneRulePreview_Meta[];
+  /** The name of the rule. (AI-inferred) */
   name: string;
+  /** The namespaces the rule is scoped to. (AI-inferred) */
   namespaces: string[];
+  /** The path the rule is scoped to within its namespace. (AI-inferred) */
   path: string;
   /** ID of an open approval workflow targeting this rule, or null if none is pending. */
   pendingApprovalId: number;
   /** Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version. */
   pendingChange: CloudforceOneRulePreview_PendingChange;
+  /** The literal strings the rule matches against. (AI-inferred) */
   strings: CloudforceOneRulePreview_Strings[];
   /** Original JSON payload for rules created via the structured rules API. Null for hand-written rules. */
   structuredSource: string;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt: number;
+  /** The identifier of the user who last updated the rule. (AI-inferred) */
   updatedBy: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

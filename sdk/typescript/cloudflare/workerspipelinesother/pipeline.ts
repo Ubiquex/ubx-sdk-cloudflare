@@ -40,6 +40,7 @@ export interface PipelineConfig {
 export interface PipelineAttrs {
   /** Specifies the name of the Pipeline. */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Pipeline_Result;
   /** Specifies SQL for the Pipeline processing flow. */
   sql: string;

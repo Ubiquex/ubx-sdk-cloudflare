@@ -54,7 +54,8 @@ type ShareRecipientResponseSingleConfig struct {
 type ShareRecipientResponseSingleAttrs struct {
 	// Deprecated alias for `recipient_account_id`. Use `recipient_account_id` instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see `x-sunset`).
 	AccountId any
-	Errors    any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// Organization identifier.
 	OrganizationId any
 	// The account that will receive the share.

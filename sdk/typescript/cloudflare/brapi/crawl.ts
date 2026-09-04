@@ -48,6 +48,7 @@ export interface CrawlConfig {
 }
 
 export interface CrawlAttrs {
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Crawl_Errors[];
   result: Crawl_Result;
   /** Response status. */

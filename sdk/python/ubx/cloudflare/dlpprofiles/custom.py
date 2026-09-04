@@ -94,9 +94,11 @@ _Custom_SharedEntriesFields = {
 
 @dataclasses.dataclass
 class CustomConfig:
+    # Whether AI-based context analysis is enabled for this profile. (AI-inferred)
     ai_context_enabled: Any = None
     # Related DLP policies will trigger when the match count exceeds the number set.
     allowed_match_count: Any = None
+    # The minimum confidence score a match must reach to trigger this profile. (AI-inferred)
     confidence_threshold: Any = None
     # Scan the context of predefined entries to only return matches surrounded by keywords.
     context_awareness: Any = None
@@ -106,8 +108,11 @@ class CustomConfig:
     data_tags: Any = None
     # The description of the profile.
     description: Any = None
+    # The detection entries that make up this DLP profile. (AI-inferred)
     entries: Any = None
+    # The name of the DLP profile. (AI-inferred)
     name: Any = None
+    # Whether OCR-based scanning of images is enabled for this profile. (AI-inferred)
     ocr_enabled: Any = None
     # Sensitivity levels to associate with the profile.
     sensitivity_levels: Any = None
@@ -120,9 +125,11 @@ class CustomConfig:
 
 @dataclasses.dataclass
 class CustomAttrs:
+    # Whether AI-based context analysis is enabled for this profile. (AI-inferred)
     ai_context_enabled: Any = None
     # Related DLP policies will trigger when the match count exceeds the number set.
     allowed_match_count: Any = None
+    # The minimum confidence score a match must reach to trigger this profile. (AI-inferred)
     confidence_threshold: Any = None
     # Scan the context of predefined entries to only return matches surrounded by keywords.
     context_awareness: Any = None
@@ -132,9 +139,13 @@ class CustomAttrs:
     data_tags: Any = None
     # The description of the profile.
     description: Any = None
+    # The detection entries that make up this DLP profile. (AI-inferred)
     entries: Any = None
+    # The name of the DLP profile. (AI-inferred)
     name: Any = None
+    # Whether OCR-based scanning of images is enabled for this profile. (AI-inferred)
     ocr_enabled: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Sensitivity levels to associate with the profile.
     sensitivity_levels: Any = None

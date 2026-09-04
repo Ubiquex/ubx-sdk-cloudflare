@@ -97,11 +97,13 @@ export interface PostureApiExportJobResponseAttrs {
   dlpProfileId: string[];
   /** DLP profile metadata for the export. */
   dlpProfileInformation: PostureApiExportJobResponse_DlpProfileInformation[];
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: PostureApiExportJobResponse_Errors[];
   /** Filter by integration IDs. */
   integrationId: string[];
   /** Filter to view content flagged on or before this date. */
   maxAfflictionDate: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: PostureApiExportJobResponse_Errors[];
   /** Filter to view content flagged on or after this date. */
   minAfflictionDate: string;

@@ -63,10 +63,13 @@ class RumSiteResponseSingleConfig:
 class RumSiteResponseSingleAttrs:
     # If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
     auto_install: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The hostname to use for gray-clouded sites.
     host: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether the API call was successful.
     success: Any = None

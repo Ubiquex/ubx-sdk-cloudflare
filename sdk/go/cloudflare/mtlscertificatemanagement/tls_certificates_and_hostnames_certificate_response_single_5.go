@@ -40,7 +40,8 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle5Attrs struct {
 	Name any
 	// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 	PrivateKey any
-	Result     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

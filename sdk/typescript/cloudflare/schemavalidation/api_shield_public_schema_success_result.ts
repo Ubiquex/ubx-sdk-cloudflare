@@ -44,9 +44,11 @@ export interface ApiShieldPublicSchemaSuccessResultConfig {
 }
 
 export interface ApiShieldPublicSchemaSuccessResultAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ApiShieldPublicSchemaSuccessResult_Errors[];
   /** The kind of the schema */
   kind: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: ApiShieldPublicSchemaSuccessResult_Errors[];
   /** A human-readable name for the schema */
   name: string;

@@ -464,6 +464,7 @@ class AccessSingleResponse10Attrs:
     purpose_justification_required: Any = None
     # Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
     require: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
     session_duration: Any = None

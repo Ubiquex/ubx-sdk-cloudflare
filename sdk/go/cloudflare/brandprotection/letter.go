@@ -40,7 +40,9 @@ var Letter_FieldsFields = ubx.FieldMap{
 }
 
 type LetterConfig struct {
-	Fields     any
+	// The values used to fill in the letter template's own placeholders. (AI-inferred)
+	Fields any
+	// The template this letter was generated from. (AI-inferred)
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -51,13 +53,20 @@ type LetterConfig struct {
 }
 
 type LetterAttrs struct {
-	CreatedAt        any
-	Fields           any
-	Id               any
-	LetterText       any
-	LetterType       any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
+	// The values used to fill in the letter template's own placeholders. (AI-inferred)
+	Fields any
+	// The unique identifier of the letter. (AI-inferred)
+	Id any
+	// The generated text of the letter. (AI-inferred)
+	LetterText any
+	// The type of takedown notice letter. (AI-inferred)
+	LetterType any
+	// The takedown notice this letter belongs to. (AI-inferred)
 	TakedownNoticeId any
-	TemplateId       any
+	// The template this letter was generated from. (AI-inferred)
+	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

@@ -31,6 +31,7 @@ class AccessPolicyUpdateResp_Result:
 
 @dataclasses.dataclass
 class AccessPolicyUpdateRespConfig:
+    # The Access policy IDs to include in the test. (AI-inferred)
     policies: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -39,6 +40,7 @@ class AccessPolicyUpdateRespConfig:
 
 @dataclasses.dataclass
 class AccessPolicyUpdateRespAttrs:
+    # The Access policy IDs to include in the test. (AI-inferred)
     policies: Any = None
     result: Any = None
     # path parameter, not part of the API's own resource representation

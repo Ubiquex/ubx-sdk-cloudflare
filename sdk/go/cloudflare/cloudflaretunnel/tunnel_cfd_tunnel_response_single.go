@@ -67,8 +67,10 @@ type TunnelCfdTunnelResponseSingleConfig struct {
 type TunnelCfdTunnelResponseSingleAttrs struct {
 	// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
 	ConfigSrc any
-	Errors    any
-	Messages  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// A user-friendly name for a tunnel.
 	Name any
 	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.

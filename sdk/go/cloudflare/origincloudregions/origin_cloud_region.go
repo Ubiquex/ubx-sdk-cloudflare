@@ -43,9 +43,11 @@ type OriginCloudRegionConfig struct {
 }
 
 type OriginCloudRegionAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
-	Ip       any
+	Ip any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Cloud vendor region identifier. Must be a valid region for the specified vendor as returned by the supported_regions endpoint.
 	Region any

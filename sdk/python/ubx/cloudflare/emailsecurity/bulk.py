@@ -78,10 +78,15 @@ _Bulk_Result_SearchParamsFields = {
 
 @dataclasses.dataclass
 class BulkConfig:
+    # The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred)
     action: Any = None
+    # An optional note describing why this bulk remediation job was run. (AI-inferred)
     comment: Any = None
+    # The mailbox or quarantine location matching messages are moved to. (AI-inferred)
     destination: Any = None
+    # The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred)
     expected_disposition: Any = None
+    # The search criteria used to select which messages this bulk job applies to. (AI-inferred)
     search_params: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -90,11 +95,17 @@ class BulkConfig:
 
 @dataclasses.dataclass
 class BulkAttrs:
+    # The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred)
     action: Any = None
+    # An optional note describing why this bulk remediation job was run. (AI-inferred)
     comment: Any = None
+    # The mailbox or quarantine location matching messages are moved to. (AI-inferred)
     destination: Any = None
+    # The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred)
     expected_disposition: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The search criteria used to select which messages this bulk job applies to. (AI-inferred)
     search_params: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

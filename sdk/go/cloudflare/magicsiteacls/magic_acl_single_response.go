@@ -48,7 +48,8 @@ type MagicAclSingleResponseConfig struct {
 	Lan1           any
 	Lan2           any
 	// The name of the ACL.
-	Name      any
+	Name any
+	// The network protocols this ACL rule applies to. (AI-inferred)
 	Protocols any
 	// The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
 	Unidirectional any
@@ -68,7 +69,8 @@ type MagicAclSingleResponseAttrs struct {
 	Lan1           any
 	Lan2           any
 	// The name of the ACL.
-	Name      any
+	Name any
+	// The network protocols this ACL rule applies to. (AI-inferred)
 	Protocols any
 	// Bidirectional ACL policy for network traffic within a site.
 	Result any

@@ -72,13 +72,17 @@ var Workflow_SchedulesFields = ubx.FieldMap{
 }
 
 type WorkflowConfig struct {
+	// The Worker class implementing this Workflow. (AI-inferred)
 	ClassName   any
 	Concurrency any
 	// Default retention applied to instances of this version when they do not set their own retention.
 	DefaultRetention any
-	Limits           any
-	Schedules        any
-	ScriptName       any
+	// The concurrency and execution limits applied to instances of this Workflow. (AI-inferred)
+	Limits any
+	// The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred)
+	Schedules any
+	// The Worker script that owns this Workflow. (AI-inferred)
+	ScriptName any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -86,18 +90,27 @@ type WorkflowConfig struct {
 }
 
 type WorkflowAttrs struct {
+	// The Worker class implementing this Workflow. (AI-inferred)
 	ClassName   any
 	Concurrency any
 	// Default retention applied to instances of this version when they do not set their own retention.
 	DefaultRetention any
-	Errors           any
-	Limits           any
-	Messages         any
-	Result           any
-	ResultInfo       any
-	Schedules        any
-	ScriptName       any
-	Success          any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// The concurrency and execution limits applied to instances of this Workflow. (AI-inferred)
+	Limits any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
+	Messages any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
+	ResultInfo any
+	// The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred)
+	Schedules any
+	// The Worker script that owns this Workflow. (AI-inferred)
+	ScriptName any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

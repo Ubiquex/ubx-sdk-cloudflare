@@ -37,6 +37,7 @@ export interface WidgetConfig {
   botFightMode?: boolean | Computed<boolean>;
   /** If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set */
   clearanceLevel?: string | Computed<string>;
+  /** The domains this Turnstile widget is valid on. (AI-inferred) */
   domains: string[] | Computed<string[]>;
   /** Return the Ephemeral ID in /siteverify (ENT only). */
   ephemeralId?: boolean | Computed<boolean>;
@@ -59,10 +60,13 @@ export interface WidgetAttrs {
   botFightMode: boolean;
   /** If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set */
   clearanceLevel: string;
+  /** The domains this Turnstile widget is valid on. (AI-inferred) */
   domains: string[];
   /** Return the Ephemeral ID in /siteverify (ENT only). */
   ephemeralId: boolean;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Widget_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Widget_Errors[];
   /** Widget Mode */
   mode: string;

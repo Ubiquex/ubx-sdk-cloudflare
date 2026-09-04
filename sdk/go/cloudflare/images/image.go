@@ -39,8 +39,10 @@ type ImageAttrs struct {
 	Metadata any
 	// Indicates whether the image requires a signature token for the access.
 	RequireSignedUrls any
-	Result            any
-	Success           any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
 	Url any
 }

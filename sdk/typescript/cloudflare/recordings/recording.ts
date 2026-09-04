@@ -190,6 +190,7 @@ export interface RecordingAttrs {
   allowMultipleRecordings: boolean;
   /** Object containing configuration regarding the audio that is being recorded. */
   audioConfig: Recording_AudioConfig;
+  /** The real recording records returned by this lookup. (AI-inferred) */
   data: Recording_Data;
   /** Update the recording file name. */
   fileNamePrefix: string;

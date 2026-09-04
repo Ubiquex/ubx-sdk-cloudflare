@@ -55,7 +55,8 @@ type TlsCertificatesAndHostnamesKeylessResponseSingleAttrs struct {
 	// The keyless SSL name.
 	Name any
 	// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
-	Port   any
+	Port any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Configuration for using Keyless SSL through a Cloudflare Tunnel.
 	Tunnel any

@@ -49,6 +49,7 @@ export interface ImagesSourcingkitMigrationSingleResponseAttrs {
   excludedContentTypes: string[];
   /** Prefix to prepend to image custom IDs. */
   pathPrefix: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ImagesSourcingkitMigrationSingleResponse_Result;
   /** Only import objects under this prefix in the source bucket. */
   rootDirectory: string;

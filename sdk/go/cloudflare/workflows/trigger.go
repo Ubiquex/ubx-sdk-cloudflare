@@ -42,11 +42,16 @@ type TriggerConfig struct {
 }
 
 type TriggerAttrs struct {
-	Errors     any
-	Messages   any
-	Result     any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
+	Messages any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
 	ResultInfo any
-	Success    any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

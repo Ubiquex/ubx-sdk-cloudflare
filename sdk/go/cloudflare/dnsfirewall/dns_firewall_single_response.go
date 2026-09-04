@@ -51,7 +51,8 @@ type DnsFirewallSingleResponseConfig struct {
 	// Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting.
 	Ratelimit any
 	// Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)
-	Retries     any
+	Retries any
+	// The real upstream DNS resolver IP addresses this DNS Firewall cluster queries. (AI-inferred)
 	UpstreamIps any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -78,9 +79,11 @@ type DnsFirewallSingleResponseAttrs struct {
 	NegativeCacheTtl any
 	// Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting.
 	Ratelimit any
-	Result    any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)
-	Retries     any
+	Retries any
+	// The real upstream DNS resolver IP addresses this DNS Firewall cluster queries. (AI-inferred)
 	UpstreamIps any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

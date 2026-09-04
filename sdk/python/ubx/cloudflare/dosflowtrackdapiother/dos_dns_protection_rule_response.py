@@ -67,7 +67,9 @@ class DosDnsProtectionRuleResponseAttrs:
     block_any_queries: Any = None
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
     mode: Any = None

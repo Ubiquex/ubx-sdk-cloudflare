@@ -11,7 +11,9 @@ export interface Suppression_Result {
 }
 
 export interface SuppressionConfig {
+  /** The email address suppressed from receiving further routed mail. (AI-inferred) */
   email: string | Computed<string>;
+  /** When the suppression entry expires, if it is not permanent. (AI-inferred) */
   expiresAt?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -20,8 +22,11 @@ export interface SuppressionConfig {
 }
 
 export interface SuppressionAttrs {
+  /** The email address suppressed from receiving further routed mail. (AI-inferred) */
   email: string;
+  /** When the suppression entry expires, if it is not permanent. (AI-inferred) */
   expiresAt: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Suppression_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

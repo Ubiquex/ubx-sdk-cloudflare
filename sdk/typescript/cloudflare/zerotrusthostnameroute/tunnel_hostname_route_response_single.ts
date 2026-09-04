@@ -43,10 +43,13 @@ export interface TunnelHostnameRouteResponseSingleConfig {
 export interface TunnelHostnameRouteResponseSingleAttrs {
   /** An optional description of the hostname route. */
   comment: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelHostnameRouteResponseSingle_Errors[];
   /** The hostname of the route. */
   hostname: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelHostnameRouteResponseSingle_Errors[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: TunnelHostnameRouteResponseSingle_Result;
   /** Whether the API call was successful */
   success: boolean;

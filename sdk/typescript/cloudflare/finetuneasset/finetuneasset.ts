@@ -7,9 +7,13 @@ export interface Finetuneasset_Result {
 }
 
 export interface FinetuneassetConfig {
+  /** A human-readable description of the fine-tune asset. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The base model this fine-tune asset is associated with. (AI-inferred) */
   model: string | Computed<string>;
+  /** The name of the fine-tune asset. (AI-inferred) */
   name: string | Computed<string>;
+  /** Whether the fine-tune asset is publicly accessible. (AI-inferred) */
   public?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -20,11 +24,17 @@ export interface FinetuneassetConfig {
 }
 
 export interface FinetuneassetAttrs {
+  /** A human-readable description of the fine-tune asset. (AI-inferred) */
   description: string;
+  /** The base model this fine-tune asset is associated with. (AI-inferred) */
   model: string;
+  /** The name of the fine-tune asset. (AI-inferred) */
   name: string;
+  /** Whether the fine-tune asset is publicly accessible. (AI-inferred) */
   public: boolean;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Finetuneasset_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

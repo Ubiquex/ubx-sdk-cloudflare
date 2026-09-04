@@ -208,6 +208,7 @@ export interface LoadBalancingSchemasSingleResponseAttrs {
   originSteering: LoadBalancingSchemasSingleResponse_OriginSteering;
   /** The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy. */
   origins: LoadBalancingSchemasSingleResponse_Origins[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: LoadBalancingSchemasSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

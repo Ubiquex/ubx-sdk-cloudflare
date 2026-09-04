@@ -44,7 +44,8 @@ type RealtimekitWebhookSuccessResponseAttrs struct {
 	// Events that this webhook will get triggered by
 	Events any
 	// Name of the webhook
-	Name    any
+	Name any
+	// Whether the API call was successful. (AI-inferred)
 	Success any
 	// URL this webhook will send events to
 	Url any

@@ -39,13 +39,16 @@ type RegionalHostnameConfig struct {
 }
 
 type RegionalHostnameAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 	Hostname any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Identifying key for the region
 	RegionKey any
-	Result    any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Configure which routing method to use for the regional hostname
 	Routing any
 	// Whether the API call was successful.

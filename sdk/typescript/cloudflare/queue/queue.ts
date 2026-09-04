@@ -52,6 +52,7 @@ export interface Queue_Result {
 }
 
 export interface QueueConfig {
+  /** The name of the queue. (AI-inferred) */
   queueName: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -60,9 +61,13 @@ export interface QueueConfig {
 }
 
 export interface QueueAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Queue_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
+  /** The name of the queue. (AI-inferred) */
   queueName: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Queue_Result;
   /** Indicates if the API call was successful or not. */
   success: boolean;

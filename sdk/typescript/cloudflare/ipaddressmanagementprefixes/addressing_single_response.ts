@@ -66,6 +66,7 @@ export interface AddressingSingleResponseAttrs {
   description: string;
   /** Identifier for the uploaded LOA document. */
   loaDocumentId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AddressingSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

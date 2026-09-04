@@ -43,7 +43,9 @@ type WorkersNamespaceSingleResponseConfig struct {
 }
 
 type WorkersNamespaceSingleResponseAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The name of the dispatch namespace.
 	Name   any

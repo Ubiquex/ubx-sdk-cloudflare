@@ -432,7 +432,8 @@ type AccessSingleResponse22Attrs struct {
 	PurposeJustificationRequired any
 	// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 	Require any
-	Result  any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation

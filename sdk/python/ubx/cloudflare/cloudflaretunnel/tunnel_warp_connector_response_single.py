@@ -64,9 +64,11 @@ class TunnelWarpConnectorResponseSingleConfig:
 
 @dataclasses.dataclass
 class TunnelWarpConnectorResponseSingleAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
     ha: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A user-friendly name for a tunnel.
     name: Any = None

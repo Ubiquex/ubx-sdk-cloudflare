@@ -12,8 +12,10 @@ type Level_Result struct {
 }
 
 type LevelConfig struct {
+	// A human-readable description of the sensitivity level. (AI-inferred)
 	Description any
-	Name        any
+	// The name of the sensitivity level. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -23,9 +25,12 @@ type LevelConfig struct {
 }
 
 type LevelAttrs struct {
+	// A human-readable description of the sensitivity level. (AI-inferred)
 	Description any
-	Name        any
-	Result      any
+	// The name of the sensitivity level. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

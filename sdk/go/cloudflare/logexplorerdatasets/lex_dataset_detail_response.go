@@ -47,14 +47,18 @@ type LexDatasetDetailResponseConfig struct {
 type LexDatasetDetailResponseAttrs struct {
 	// Dataset type name to create (e.g. `http_requests`).
 	Dataset any
-	Errors  any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
 	// Controls which fields the API ingests. Defaults to all available fields when absent.
 	Fields any
 	// Optional Logpush filter predicate to restrict which events are ingested. If provided, replaces the dataset's default filter entirely. See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/) for syntax and examples.
-	Filter   any
+	Filter any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
 	Messages any
-	Result   any
-	Success  any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

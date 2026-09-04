@@ -39,28 +39,41 @@ var Predefined_EntriesFields = ubx.FieldMap{
 }
 
 type PredefinedConfig struct {
-	AiContextEnabled    any
-	AllowedMatchCount   any
+	// Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred)
+	AiContextEnabled any
+	// How many real matches this predefined DLP entry allows before it triggers. (AI-inferred)
+	AllowedMatchCount any
+	// The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred)
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
-	Entries          any
-	OcrEnabled       any
-	ProfileId        any
+	// The real, individual detection entries this predefined DLP profile groups together. (AI-inferred)
+	Entries any
+	// Whether this predefined DLP entry scans image text via OCR. (AI-inferred)
+	OcrEnabled any
+	// The real predefined DLP profile this entry belongs to. (AI-inferred)
+	ProfileId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type PredefinedAttrs struct {
-	AiContextEnabled    any
-	AllowedMatchCount   any
+	// Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred)
+	AiContextEnabled any
+	// How many real matches this predefined DLP entry allows before it triggers. (AI-inferred)
+	AllowedMatchCount any
+	// The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred)
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
-	Entries          any
-	OcrEnabled       any
-	ProfileId        any
-	Result           any
+	// The real, individual detection entries this predefined DLP profile groups together. (AI-inferred)
+	Entries any
+	// Whether this predefined DLP entry scans image text via OCR. (AI-inferred)
+	OcrEnabled any
+	// The real predefined DLP profile this entry belongs to. (AI-inferred)
+	ProfileId any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }

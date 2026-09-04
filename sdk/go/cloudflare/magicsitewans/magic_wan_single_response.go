@@ -36,8 +36,11 @@ var MagicWanSingleResponse_Result_StaticAddressingFields = ubx.FieldMap{
 }
 
 type MagicWanSingleResponseConfig struct {
-	Name     any
+	// The name of the WAN interface. (AI-inferred)
+	Name any
+	// The physical port this WAN interface is attached to. (AI-inferred)
 	Physport any
+	// The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred)
 	Priority any
 	// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
 	StaticAddressing any
@@ -52,10 +55,14 @@ type MagicWanSingleResponseConfig struct {
 }
 
 type MagicWanSingleResponseAttrs struct {
-	Name     any
+	// The name of the WAN interface. (AI-inferred)
+	Name any
+	// The physical port this WAN interface is attached to. (AI-inferred)
 	Physport any
+	// The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred)
 	Priority any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
 	StaticAddressing any
 	// VLAN ID. Use zero for untagged.

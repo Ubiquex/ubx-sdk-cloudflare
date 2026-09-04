@@ -38,7 +38,9 @@ const Letter_FieldsFields: FieldMap = {
 };
 
 export interface LetterConfig {
+  /** The values used to fill in the letter template's own placeholders. (AI-inferred) */
   fields: Letter_Fields | Computed<Letter_Fields>;
+  /** The template this letter was generated from. (AI-inferred) */
   templateId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -49,12 +51,19 @@ export interface LetterConfig {
 }
 
 export interface LetterAttrs {
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: string;
+  /** The values used to fill in the letter template's own placeholders. (AI-inferred) */
   fields: Letter_Fields;
+  /** The unique identifier of the letter. (AI-inferred) */
   id: number;
+  /** The generated text of the letter. (AI-inferred) */
   letterText: string;
+  /** The type of takedown notice letter. (AI-inferred) */
   letterType: string;
+  /** The takedown notice this letter belongs to. (AI-inferred) */
   takedownNoticeId: number;
+  /** The template this letter was generated from. (AI-inferred) */
   templateId: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

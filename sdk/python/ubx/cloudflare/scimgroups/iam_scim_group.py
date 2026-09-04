@@ -39,6 +39,7 @@ class IamScimGroupAttrs:
     members: Any = None
     # Resource metadata for a SCIM Group.
     meta: Any = None
+    # The SCIM schema URIs this Group resource conforms to. (AI-inferred)
     schemas: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

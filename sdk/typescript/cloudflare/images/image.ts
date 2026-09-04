@@ -37,7 +37,9 @@ export interface ImageAttrs {
   metadata: unknown;
   /** Indicates whether the image requires a signature token for the access. */
   requireSignedUrls: boolean;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Image_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** A URL to fetch an image from origin. Only needed when type is uploading from a URL. */
   url: string;

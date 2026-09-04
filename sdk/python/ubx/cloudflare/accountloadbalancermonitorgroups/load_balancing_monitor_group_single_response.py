@@ -62,13 +62,17 @@ class LoadBalancingMonitorGroupSingleResponseAttrs:
     created_on: Any = None
     # A short description of the monitor group
     description: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # The unique identifier of the monitor group. (AI-inferred)
     id: Any = None
     # List of monitors in this group
     members: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The timestamp of when the monitor group was last updated
     modified_on: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether the API call was successful.
     success: Any = None

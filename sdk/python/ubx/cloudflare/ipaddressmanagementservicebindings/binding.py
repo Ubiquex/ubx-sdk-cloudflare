@@ -52,7 +52,9 @@ class BindingConfig:
 class BindingAttrs:
     # IP Prefix in Classless Inter-Domain Routing format.
     cidr: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     result: Any = None
     # Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.

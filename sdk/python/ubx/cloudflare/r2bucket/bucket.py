@@ -39,9 +39,11 @@ class BucketConfig:
 
 @dataclasses.dataclass
 class BucketAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Location of the bucket.
     location_hint: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Name of the bucket.
     name: Any = None

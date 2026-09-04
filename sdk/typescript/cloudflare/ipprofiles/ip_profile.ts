@@ -51,9 +51,11 @@ export interface IpProfileAttrs {
   description: string;
   /** Whether the Device IP profile will be applied to matching devices. */
   enabled: boolean;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: IpProfile_Errors[];
   /** The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes". */
   match: string;
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: IpProfile_Errors[];
   /** A user-friendly name for the Device IP profile. */
   name: string;

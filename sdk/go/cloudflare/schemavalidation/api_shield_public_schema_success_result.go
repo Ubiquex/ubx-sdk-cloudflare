@@ -46,9 +46,11 @@ type ApiShieldPublicSchemaSuccessResultConfig struct {
 }
 
 type ApiShieldPublicSchemaSuccessResultAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// The kind of the schema
-	Kind     any
+	Kind any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// A human-readable name for the schema
 	Name any

@@ -38,6 +38,7 @@ export interface MagicMagicBgpFilterProfileResponseAttrs {
   matchAction: string;
   /** Friendly name for the filter profile */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicMagicBgpFilterProfileResponse_Result;
   /** List of CIDR prefixes. Each entry may carry an optional suffix that specifies which prefix lengths to match relative to the prefix length N: '{X,Y}' matches prefix lengths in the inclusive range [X, Y] where N <= X <= Y <= max (max is 32 for IPv4, 128 for IPv6), '{X}' matches exactly length X (equivalent to {X,X}), '+' is shorthand for {N, max} (the prefix and all more-specific subnets, including at length N itself; valid even when N is the maximum length). Omit the suffix to match the prefix exactly at length N. */
   targets: string[];

@@ -41,18 +41,25 @@ const MconnCustomerConnectorsGetResponse_DeviceFields: FieldMap = {
 };
 
 export interface MconnCustomerConnectorsGetResponseConfig {
+  /** Whether this connector device has been activated. (AI-inferred) */
   activated?: boolean | Computed<boolean>;
   /** Exactly one of id, serial_number, or provision_license must be provided. */
   device: MconnCustomerConnectorsGetResponse_Device | Computed<MconnCustomerConnectorsGetResponse_Device>;
   /** Allowed days of the week for upgrades. Default is all days. */
   interruptWindowDaysOfWeek?: string[] | Computed<string[]>;
+  /** How many hours this connector's own maintenance interrupt window lasts. (AI-inferred) */
   interruptWindowDurationHours?: number | Computed<number>;
   /** List of dates (YYYY-MM-DD) when upgrades are blocked. */
   interruptWindowEmbargoDates?: string[] | Computed<string[]>;
+  /** The hour of day this connector's own maintenance interrupt window starts. (AI-inferred) */
   interruptWindowHourOfDay?: number | Computed<number>;
+  /** A free-text note about this connector device. (AI-inferred) */
   notes?: string | Computed<string>;
+  /** Whether this is the site's own primary connector device. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
+  /** The real Magic WAN Connector site this device belongs to. (AI-inferred) */
   siteId?: string | Computed<string>;
+  /** The real timezone this connector's own interrupt window is scheduled against. (AI-inferred) */
   timezone?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -61,19 +68,27 @@ export interface MconnCustomerConnectorsGetResponseConfig {
 }
 
 export interface MconnCustomerConnectorsGetResponseAttrs {
+  /** Whether this connector device has been activated. (AI-inferred) */
   activated: boolean;
   /** Exactly one of id, serial_number, or provision_license must be provided. */
   device: MconnCustomerConnectorsGetResponse_Device;
   /** Allowed days of the week for upgrades. Default is all days. */
   interruptWindowDaysOfWeek: string[];
+  /** How many hours this connector's own maintenance interrupt window lasts. (AI-inferred) */
   interruptWindowDurationHours: number;
   /** List of dates (YYYY-MM-DD) when upgrades are blocked. */
   interruptWindowEmbargoDates: string[];
+  /** The hour of day this connector's own maintenance interrupt window starts. (AI-inferred) */
   interruptWindowHourOfDay: number;
+  /** A free-text note about this connector device. (AI-inferred) */
   notes: string;
+  /** Whether this is the site's own primary connector device. (AI-inferred) */
   primary: boolean;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MconnCustomerConnectorsGetResponse_Result;
+  /** The real Magic WAN Connector site this device belongs to. (AI-inferred) */
   siteId: string;
+  /** The real timezone this connector's own interrupt window is scheduled against. (AI-inferred) */
   timezone: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

@@ -47,16 +47,27 @@ const Domain_FolderFields: FieldMap = {
 };
 
 export interface DomainConfig {
+  /** The mail delivery modes permitted for this domain. (AI-inferred) */
   allowedDeliveryModes: string[] | Computed<string[]>;
+  /** The domain name this configuration applies to. (AI-inferred) */
   domain: string | Computed<string>;
+  /** The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred) */
   dropDispositions: string[] | Computed<string[]>;
+  /** The mailbox folder matching mail is delivered to. (AI-inferred) */
   folder?: Domain_Folder | Computed<Domain_Folder>;
+  /** The unique identifier of the integration. (AI-inferred) */
   integrationId?: string | Computed<string>;
+  /** The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred) */
   ipRestrictions: string[] | Computed<string[]>;
+  /** The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred) */
   lookbackHops?: number | Computed<number>;
+  /** The geographic regions this domain's own mail processing is restricted to. (AI-inferred) */
   regions: string[] | Computed<string[]>;
+  /** Whether inbound mail for this domain must use TLS. (AI-inferred) */
   requireTlsInbound?: boolean | Computed<boolean>;
+  /** Whether outbound mail for this domain must use TLS. (AI-inferred) */
   requireTlsOutbound?: boolean | Computed<boolean>;
+  /** The transport mechanism used to deliver mail for this domain. (AI-inferred) */
   transport?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -65,17 +76,29 @@ export interface DomainConfig {
 }
 
 export interface DomainAttrs {
+  /** The mail delivery modes permitted for this domain. (AI-inferred) */
   allowedDeliveryModes: string[];
+  /** The domain name this configuration applies to. (AI-inferred) */
   domain: string;
+  /** The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred) */
   dropDispositions: string[];
+  /** The mailbox folder matching mail is delivered to. (AI-inferred) */
   folder: Domain_Folder;
+  /** The unique identifier of the integration. (AI-inferred) */
   integrationId: string;
+  /** The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred) */
   ipRestrictions: string[];
+  /** The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred) */
   lookbackHops: number;
+  /** The geographic regions this domain's own mail processing is restricted to. (AI-inferred) */
   regions: string[];
+  /** Whether inbound mail for this domain must use TLS. (AI-inferred) */
   requireTlsInbound: boolean;
+  /** Whether outbound mail for this domain must use TLS. (AI-inferred) */
   requireTlsOutbound: boolean;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Domain_Result;
+  /** The transport mechanism used to deliver mail for this domain. (AI-inferred) */
   transport: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

@@ -46,6 +46,7 @@ class PipelineConfig:
 class PipelineAttrs:
     # Specifies the name of the Pipeline.
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Specifies SQL for the Pipeline processing flow.
     sql: Any = None

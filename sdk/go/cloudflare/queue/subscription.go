@@ -75,9 +75,11 @@ type SubscriptionAttrs struct {
 	Destination any
 	// Whether the subscription is active
 	Enabled any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// List of event types this subscription handles
-	Events   any
+	Events any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Name of the subscription
 	Name   any

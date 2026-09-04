@@ -30,10 +30,13 @@ const SensitivityGroup_LevelsFields: FieldMap = {
 };
 
 export interface SensitivityGroupConfig {
+  /** A human-readable description of the sensitivity group. (AI-inferred) */
   description?: string | Computed<string>;
   /** Levels to create with the group. Mutually exclusive with `template_id`. */
   levels?: SensitivityGroup_Levels[] | Computed<SensitivityGroup_Levels[]>;
+  /** The name of the sensitivity group. (AI-inferred) */
   name: string | Computed<string>;
+  /** The built-in template this group was seeded from, if any. (AI-inferred) */
   templateId?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -42,11 +45,15 @@ export interface SensitivityGroupConfig {
 }
 
 export interface SensitivityGroupAttrs {
+  /** A human-readable description of the sensitivity group. (AI-inferred) */
   description: string;
   /** Levels to create with the group. Mutually exclusive with `template_id`. */
   levels: SensitivityGroup_Levels[];
+  /** The name of the sensitivity group. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SensitivityGroup_Result;
+  /** The built-in template this group was seeded from, if any. (AI-inferred) */
   templateId: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

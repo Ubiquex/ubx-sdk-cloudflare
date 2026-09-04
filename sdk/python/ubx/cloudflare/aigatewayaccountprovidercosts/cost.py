@@ -24,16 +24,27 @@ class Cost_Result:
 
 @dataclasses.dataclass
 class CostConfig:
+    # The base URL of the custom AI provider's own API. (AI-inferred)
     base_url: Any = None
+    # Whether this provider registration is in beta. (AI-inferred)
     beta: Any = None
+    # An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
     curl_example: Any = None
+    # A human-readable description of the custom provider. (AI-inferred)
     description: Any = None
+    # Whether the custom provider is enabled. (AI-inferred)
     enable: Any = None
+    # The HTTP headers sent with every request to the custom provider. (AI-inferred)
     headers: Any = None
+    # An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
     js_example: Any = None
+    # A link to the custom provider's own documentation. (AI-inferred)
     link: Any = None
+    # The name of the custom provider. (AI-inferred)
     name: Any = None
+    # The display order of the custom provider in the dashboard. (AI-inferred)
     position: Any = None
+    # A URL-safe identifier for the custom provider. (AI-inferred)
     slug: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -42,18 +53,31 @@ class CostConfig:
 
 @dataclasses.dataclass
 class CostAttrs:
+    # The base URL of the custom AI provider's own API. (AI-inferred)
     base_url: Any = None
+    # Whether this provider registration is in beta. (AI-inferred)
     beta: Any = None
+    # An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
     curl_example: Any = None
+    # A human-readable description of the custom provider. (AI-inferred)
     description: Any = None
+    # Whether the custom provider is enabled. (AI-inferred)
     enable: Any = None
+    # The HTTP headers sent with every request to the custom provider. (AI-inferred)
     headers: Any = None
+    # An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
     js_example: Any = None
+    # A link to the custom provider's own documentation. (AI-inferred)
     link: Any = None
+    # The name of the custom provider. (AI-inferred)
     name: Any = None
+    # The display order of the custom provider in the dashboard. (AI-inferred)
     position: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # A URL-safe identifier for the custom provider. (AI-inferred)
     slug: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

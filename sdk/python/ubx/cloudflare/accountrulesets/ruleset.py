@@ -38,6 +38,7 @@ _Ruleset_IdFields = {
 class RulesetConfig:
     # An informative description of the ruleset.
     description: Any = None
+    # This ruleset's own real identifier. (AI-inferred)
     id: Any = None
     # The kind of the ruleset.
     kind: Any = None
@@ -47,6 +48,7 @@ class RulesetConfig:
     phase: Any = None
     # The list of rules in the ruleset.
     rules: Any = None
+    # This ruleset's own real, current version number. (AI-inferred)
     version: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -57,7 +59,9 @@ class RulesetConfig:
 class RulesetAttrs:
     # An informative description of the ruleset.
     description: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # This ruleset's own real identifier. (AI-inferred)
     id: Any = None
     # The kind of the ruleset.
     kind: Any = None
@@ -69,10 +73,13 @@ class RulesetAttrs:
     name: Any = None
     # The phase of the ruleset.
     phase: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The list of rules in the ruleset.
     rules: Any = None
+    # Whether the API call succeeded. (AI-inferred)
     success: Any = None
+    # This ruleset's own real, current version number. (AI-inferred)
     version: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

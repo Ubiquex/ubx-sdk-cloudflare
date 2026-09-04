@@ -163,7 +163,8 @@ type ZeroTrustGatewaySingleResponse3Attrs struct {
 	Name any
 	// Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
 	Networks any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

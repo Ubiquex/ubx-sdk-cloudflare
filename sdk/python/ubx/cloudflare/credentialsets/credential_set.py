@@ -35,11 +35,14 @@ class CredentialSetConfig:
 
 @dataclasses.dataclass
 class CredentialSetAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Human-readable name.
     name: Any = None
     result: Any = None
+    # Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
     result_info: Any = None
     # Whether the API call was successful.
     success: Any = None

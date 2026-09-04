@@ -23,7 +23,8 @@ type RegistrarApiDomainResponseSingleAttrs struct {
 	Locked any
 	// Privacy option controls redacting WHOIS information.
 	Privacy any
-	Result  any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

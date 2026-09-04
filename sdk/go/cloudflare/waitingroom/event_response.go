@@ -97,7 +97,8 @@ type EventResponseAttrs struct {
 	PrequeueStartTime any
 	// If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
 	QueueingMethod any
-	Result         any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// If set, the event will override the waiting room's `session_duration` property while it is active. If null, the event will inherit it.
 	SessionDuration any
 	// If enabled, users in the prequeue will be shuffled randomly at the `event_start_time`. Requires that `prequeue_start_time` is not null. This is useful for situations when many users will join the event prequeue at the same time and you want to shuffle them to ensure fairness. Naturally, it makes the most sense to enable this feature when the `queueing_method` during the event respects ordering such as **fifo**, or else the shuffling may be unnecessary.

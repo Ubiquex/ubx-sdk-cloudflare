@@ -20,7 +20,9 @@ export interface ApplicationConfig {
 }
 
 export interface ApplicationAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Application_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Application_Errors[];
   /** The public Containers API returns an application. */
   result: unknown;

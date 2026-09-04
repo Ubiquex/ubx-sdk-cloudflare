@@ -51,6 +51,7 @@ class ShareResourceResponseSingleConfig:
 
 @dataclasses.dataclass
 class ShareResourceResponseSingleAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Resource Metadata.
     meta: Any = None

@@ -105,6 +105,7 @@ export interface StreamAttrs {
   http: Stream_Http;
   /** Specifies the name of the Stream. */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Stream_Result;
   /** Defines the schema of the events in the data stream. */
   schema: Stream_Result_Schema;

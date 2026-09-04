@@ -61,7 +61,9 @@ export interface DosDnsProtectionRuleResponseAttrs {
   blockAnyQueries: boolean;
   /** The burst sensitivity. Must be one of 'low', 'medium', 'high'. */
   burstSensitivity: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosDnsProtectionRuleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosDnsProtectionRuleResponse_Errors[];
   /** The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'. */
   mode: string;

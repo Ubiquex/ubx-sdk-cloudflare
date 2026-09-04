@@ -46,6 +46,7 @@ class ShareExcludedRecipientResponseSingleConfig:
 class ShareExcludedRecipientResponseSingleAttrs:
     # The account to exclude from the organization-targeted share.
     account_id: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     result: Any = None
     # Whether the API call was successful.

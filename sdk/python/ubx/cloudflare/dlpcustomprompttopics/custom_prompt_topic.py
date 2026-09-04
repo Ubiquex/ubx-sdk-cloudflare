@@ -19,10 +19,15 @@ class CustomPromptTopic_Result:
 
 @dataclasses.dataclass
 class CustomPromptTopicConfig:
+    # A human-readable description of the prompt topic. (AI-inferred)
     description: Any = None
+    # Whether the prompt topic is active. (AI-inferred)
     enabled: Any = None
+    # The name of the prompt topic. (AI-inferred)
     name: Any = None
+    # The DLP profile this prompt topic belongs to. (AI-inferred)
     profile_id: Any = None
+    # The subject matter this topic scans AI prompts for. (AI-inferred)
     topic: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -31,11 +36,17 @@ class CustomPromptTopicConfig:
 
 @dataclasses.dataclass
 class CustomPromptTopicAttrs:
+    # A human-readable description of the prompt topic. (AI-inferred)
     description: Any = None
+    # Whether the prompt topic is active. (AI-inferred)
     enabled: Any = None
+    # The name of the prompt topic. (AI-inferred)
     name: Any = None
+    # The DLP profile this prompt topic belongs to. (AI-inferred)
     profile_id: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The subject matter this topic scans AI prompts for. (AI-inferred)
     topic: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

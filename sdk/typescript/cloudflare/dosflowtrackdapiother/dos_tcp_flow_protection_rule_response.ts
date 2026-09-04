@@ -51,7 +51,9 @@ export interface DosTcpFlowProtectionRuleResponseConfig {
 export interface DosTcpFlowProtectionRuleResponseAttrs {
   /** The burst sensitivity. Must be one of 'low', 'medium', 'high'. */
   burstSensitivity: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosTcpFlowProtectionRuleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosTcpFlowProtectionRuleResponse_Errors[];
   /** The mode for the TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'. */
   mode: string;

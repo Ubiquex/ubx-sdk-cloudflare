@@ -34,8 +34,11 @@ const MagicWanSingleResponse_Result_StaticAddressingFields: FieldMap = {
 };
 
 export interface MagicWanSingleResponseConfig {
+  /** The name of the WAN interface. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The physical port this WAN interface is attached to. (AI-inferred) */
   physport: number | Computed<number>;
+  /** The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred) */
   priority?: number | Computed<number>;
   /** (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode. */
   staticAddressing?: MagicWanSingleResponse_Result_StaticAddressing | Computed<MagicWanSingleResponse_Result_StaticAddressing>;
@@ -50,9 +53,13 @@ export interface MagicWanSingleResponseConfig {
 }
 
 export interface MagicWanSingleResponseAttrs {
+  /** The name of the WAN interface. (AI-inferred) */
   name: string;
+  /** The physical port this WAN interface is attached to. (AI-inferred) */
   physport: number;
+  /** The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred) */
   priority: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicWanSingleResponse_Result;
   /** (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode. */
   staticAddressing: MagicWanSingleResponse_Result_StaticAddressing;

@@ -47,12 +47,15 @@ class RelayConfig:
 
 @dataclasses.dataclass
 class RelayAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Human-readable name for the relay.
     name: Any = None
     # Full relay details (no tokens).
     result: Any = None
+    # Whether the API call succeeded. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

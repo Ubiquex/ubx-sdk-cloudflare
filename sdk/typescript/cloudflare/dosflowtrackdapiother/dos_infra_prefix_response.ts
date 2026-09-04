@@ -45,7 +45,9 @@ export interface DosInfraPrefixResponseAttrs {
   comment: string;
   /** Whether to enable the allowlist prefix into effect. */
   enabled: boolean;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosInfraPrefixResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosInfraPrefixResponse_Errors[];
   /** The allowlist prefix to add in CIDR format. */
   prefix: string;

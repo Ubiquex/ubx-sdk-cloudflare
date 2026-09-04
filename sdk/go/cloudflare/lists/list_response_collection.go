@@ -24,12 +24,15 @@ type ListResponseCollectionConfig struct {
 type ListResponseCollectionAttrs struct {
 	// An informative summary of the list.
 	Description any
-	Errors      any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
-	Kind     any
+	Kind any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// An informative name for the list. Use this name in filter and rule expressions.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Defines whether the API call was successful.
 	Success any

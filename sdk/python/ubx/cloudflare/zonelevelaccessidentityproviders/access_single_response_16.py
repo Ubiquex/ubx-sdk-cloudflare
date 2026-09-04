@@ -19,6 +19,7 @@ class AccessSingleResponse16Config:
 
 @dataclasses.dataclass
 class AccessSingleResponse16Attrs:
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None

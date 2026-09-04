@@ -39,10 +39,13 @@ type MagicTransitEndpointHealthCheckResponseSingleAttrs struct {
 	CheckType any
 	// the IP address of the host to perform checks against
 	Endpoint any
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Optional name associated with this check
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Whether the API call was successful.
 	Success any

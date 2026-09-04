@@ -24,7 +24,8 @@ type ZeroTrustGatewaySingleResponse5Config struct {
 
 type ZeroTrustGatewaySingleResponse5Attrs struct {
 	// The proxy endpoint kind.
-	Kind   any
+	Kind any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

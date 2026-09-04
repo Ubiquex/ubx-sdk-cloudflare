@@ -10,7 +10,9 @@ export interface Group_Members {
 }
 
 export interface GroupConfig {
+  /** A human-readable description of the group. (AI-inferred) */
   description: string | Computed<string>;
+  /** The name of the group. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -19,11 +21,17 @@ export interface GroupConfig {
 }
 
 export interface GroupAttrs {
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: string;
+  /** A human-readable description of the group. (AI-inferred) */
   description: string;
+  /** The members belonging to this group. (AI-inferred) */
   members: Group_Members[];
+  /** The name of the group. (AI-inferred) */
   name: string;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt: string;
+  /** The unique identifier of the resource. (AI-inferred) */
   uuid: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

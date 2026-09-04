@@ -121,6 +121,7 @@ _Worker_ProductionSettingsFields = {
 
 @dataclasses.dataclass
 class WorkerConfig:
+    # The git repository this Worker is connected to for CI-driven deployment. (AI-inferred)
     git_repository: Any = None
     # Build and deploy settings when creating a Worker build configuration
     production_settings: Any = None
@@ -131,16 +132,21 @@ class WorkerConfig:
 
 @dataclasses.dataclass
 class WorkerAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # The git repository this Worker is connected to for CI-driven deployment. (AI-inferred)
     git_repository: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Build and deploy settings when creating a Worker build configuration
     production_settings: Any = None
     # Worker build configuration including git repository linkage and production settings
     result: Any = None
+    # Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
     result_info: Any = None
     # System-generated worker script tag.
     script_tag: Any = None
+    # Whether the API call succeeded. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

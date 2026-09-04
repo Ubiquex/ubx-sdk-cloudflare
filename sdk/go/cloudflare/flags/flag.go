@@ -176,7 +176,8 @@ var Flag_Result_RulesFields = ubx.FieldMap{
 type FlagConfig struct {
 	// Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
 	DefaultVariation any
-	Description      any
+	// A human-readable description of the feature flag. (AI-inferred)
+	Description any
 	// When false, the flag bypasses all rules and always serves `default_variation`.
 	Enabled any
 	// Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
@@ -198,16 +199,21 @@ type FlagConfig struct {
 type FlagAttrs struct {
 	// Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
 	DefaultVariation any
-	Description      any
+	// A human-readable description of the feature flag. (AI-inferred)
+	Description any
 	// When false, the flag bypasses all rules and always serves `default_variation`.
 	Enabled any
-	Errors  any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
 	// Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
-	Key      any
+	Key any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
 	Messages any
-	Result   any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
 	// Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
-	Rules   any
+	Rules any
+	// Whether the API call was successful. (AI-inferred)
 	Success any
 	// Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
 	Type any

@@ -16,7 +16,9 @@ class Level_Result:
 
 @dataclasses.dataclass
 class LevelConfig:
+    # A human-readable description of the sensitivity level. (AI-inferred)
     description: Any = None
+    # The name of the sensitivity level. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -27,8 +29,11 @@ class LevelConfig:
 
 @dataclasses.dataclass
 class LevelAttrs:
+    # A human-readable description of the sensitivity level. (AI-inferred)
     description: Any = None
+    # The name of the sensitivity level. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

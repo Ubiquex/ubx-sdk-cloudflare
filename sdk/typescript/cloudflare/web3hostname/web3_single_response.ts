@@ -40,6 +40,7 @@ export interface Web3SingleResponseAttrs {
   dnslink: string;
   /** Specify the hostname that points to the target gateway via CNAME. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Web3SingleResponse_Result;
   /** Specify the target gateway of the hostname. */
   target: string;

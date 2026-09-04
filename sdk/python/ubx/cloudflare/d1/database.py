@@ -54,9 +54,11 @@ class DatabaseConfig:
 
 @dataclasses.dataclass
 class DatabaseAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
     jurisdiction: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # D1 database name.
     name: Any = None

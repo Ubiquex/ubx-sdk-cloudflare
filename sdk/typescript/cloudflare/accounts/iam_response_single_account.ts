@@ -41,6 +41,7 @@ const IamResponseSingleAccount_UnitFields: FieldMap = {
 export interface IamResponseSingleAccountConfig {
   /** Account name */
   name: string | Computed<string>;
+  /** The type of the account. (AI-inferred) */
   type?: unknown | Computed<unknown>;
   /** information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/ */
   unit?: IamResponseSingleAccount_Unit | Computed<IamResponseSingleAccount_Unit>;
@@ -51,7 +52,9 @@ export interface IamResponseSingleAccountConfig {
 export interface IamResponseSingleAccountAttrs {
   /** Account name */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: IamResponseSingleAccount_Result;
+  /** The type of the account. (AI-inferred) */
   type: unknown;
   /** information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/ */
   unit: IamResponseSingleAccount_Unit;

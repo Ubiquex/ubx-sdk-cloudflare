@@ -45,6 +45,7 @@ export interface ShareResourceResponseSingleConfig {
 }
 
 export interface ShareResourceResponseSingleAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ShareResourceResponseSingle_Errors[];
   /** Resource Metadata. */
   meta: unknown;

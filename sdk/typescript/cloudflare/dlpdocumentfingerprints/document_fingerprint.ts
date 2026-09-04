@@ -15,8 +15,11 @@ export interface DocumentFingerprint_Result {
 }
 
 export interface DocumentFingerprintConfig {
+  /** A human-readable description of the document fingerprint. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The minimum similarity percentage required to trigger a match. (AI-inferred) */
   matchPercent: number | Computed<number>;
+  /** The name of the document fingerprint. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -25,9 +28,13 @@ export interface DocumentFingerprintConfig {
 }
 
 export interface DocumentFingerprintAttrs {
+  /** A human-readable description of the document fingerprint. (AI-inferred) */
   description: string;
+  /** The minimum similarity percentage required to trigger a match. (AI-inferred) */
   matchPercent: number;
+  /** The name of the document fingerprint. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DocumentFingerprint_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

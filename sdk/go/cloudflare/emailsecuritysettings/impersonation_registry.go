@@ -23,14 +23,22 @@ type ImpersonationRegistry_Result struct {
 }
 
 type ImpersonationRegistryConfig struct {
-	Comments                any
-	DirectoryId             any
-	DirectoryNodeId         any
-	Email                   any
+	// A free-text note about this impersonation-registry entry. (AI-inferred)
+	Comments any
+	// The real directory this protected identity belongs to. (AI-inferred)
+	DirectoryId any
+	// The real directory node (user or group) this protected identity resolves to. (AI-inferred)
+	DirectoryNodeId any
+	// The real email address this entry protects against impersonation. (AI-inferred)
+	Email any
+	// The real, external identity provider's own node ID this entry is linked to. (AI-inferred)
 	ExternalDirectoryNodeId any
-	IsEmailRegex            any
-	Name                    any
-	Provenance              any
+	// Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred)
+	IsEmailRegex any
+	// The real, protected display name this entry watches for impersonation attempts against. (AI-inferred)
+	Name any
+	// Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred)
+	Provenance any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,19 +46,30 @@ type ImpersonationRegistryConfig struct {
 }
 
 type ImpersonationRegistryAttrs struct {
-	Comments                any
-	CreatedAt               any
-	DirectoryId             any
-	DirectoryNodeId         any
-	Email                   any
+	// A free-text note about this impersonation-registry entry. (AI-inferred)
+	Comments any
+	// When this impersonation-registry entry was created. (AI-inferred)
+	CreatedAt any
+	// The real directory this protected identity belongs to. (AI-inferred)
+	DirectoryId any
+	// The real directory node (user or group) this protected identity resolves to. (AI-inferred)
+	DirectoryNodeId any
+	// The real email address this entry protects against impersonation. (AI-inferred)
+	Email any
+	// The real, external identity provider's own node ID this entry is linked to. (AI-inferred)
 	ExternalDirectoryNodeId any
-	Id                      any
-	IsEmailRegex            any
+	// This impersonation-registry entry's own real identifier. (AI-inferred)
+	Id any
+	// Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred)
+	IsEmailRegex any
 	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
 	LastModified any
-	ModifiedAt   any
-	Name         any
-	Provenance   any
+	// When this impersonation-registry entry was last modified. (AI-inferred)
+	ModifiedAt any
+	// The real, protected display name this entry watches for impersonation attempts against. (AI-inferred)
+	Name any
+	// Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred)
+	Provenance any
 	// An impersonation registry entry.
 	Result any
 	// path parameter, not part of the API's own resource representation

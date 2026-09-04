@@ -39,7 +39,8 @@ type WidgetConfig struct {
 	BotFightMode any
 	// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel any
-	Domains        any
+	// The domains this Turnstile widget is valid on. (AI-inferred)
+	Domains any
 	// Return the Ephemeral ID in /siteverify (ENT only).
 	EphemeralId any
 	// Widget Mode
@@ -61,11 +62,14 @@ type WidgetAttrs struct {
 	BotFightMode any
 	// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel any
-	Domains        any
+	// The domains this Turnstile widget is valid on. (AI-inferred)
+	Domains any
 	// Return the Ephemeral ID in /siteverify (ENT only).
 	EphemeralId any
-	Errors      any
-	Messages    any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Widget Mode
 	Mode any
 	// Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used.

@@ -39,11 +39,13 @@ export interface TunnelVnetResponseSingleConfig {
 export interface TunnelVnetResponseSingleAttrs {
   /** Optional remark describing the virtual network. */
   comment: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelVnetResponseSingle_Errors[];
   /** If `true`, this virtual network is the default for the account. */
   isDefault: boolean;
   /** If `true`, this virtual network is the default for the account. */
   isDefaultNetwork: boolean;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelVnetResponseSingle_Errors[];
   /** A user-friendly name for the virtual network. */
   name: string;

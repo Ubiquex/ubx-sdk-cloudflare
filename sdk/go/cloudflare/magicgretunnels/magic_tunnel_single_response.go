@@ -95,6 +95,7 @@ type MagicTunnelSingleResponseConfig struct {
 	CustomerGreEndpoint any
 	// An optional description of the GRE tunnel.
 	Description any
+	// The health check configuration for the GRE tunnel. (AI-inferred)
 	HealthCheck any
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 	InterfaceAddress any
@@ -122,6 +123,7 @@ type MagicTunnelSingleResponseAttrs struct {
 	CustomerGreEndpoint any
 	// An optional description of the GRE tunnel.
 	Description any
+	// The health check configuration for the GRE tunnel. (AI-inferred)
 	HealthCheck any
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 	InterfaceAddress any
@@ -130,7 +132,8 @@ type MagicTunnelSingleResponseAttrs struct {
 	// Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.
 	Mtu any
 	// The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Time To Live (TTL) in number of hops of the GRE tunnel.
 	Ttl any

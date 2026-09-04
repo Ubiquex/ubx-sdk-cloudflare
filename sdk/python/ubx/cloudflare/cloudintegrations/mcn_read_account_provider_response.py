@@ -56,8 +56,11 @@ class McnReadAccountProviderResponse_Result:
 
 @dataclasses.dataclass
 class McnReadAccountProviderResponseConfig:
+    # The cloud provider this registration connects to. (AI-inferred)
     cloud_type: Any = None
+    # A human-readable description of the provider registration. (AI-inferred)
     description: Any = None
+    # A human-readable name for the provider registration. (AI-inferred)
     friendly_name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -66,9 +69,13 @@ class McnReadAccountProviderResponseConfig:
 
 @dataclasses.dataclass
 class McnReadAccountProviderResponseAttrs:
+    # The cloud provider this registration connects to. (AI-inferred)
     cloud_type: Any = None
+    # A human-readable description of the provider registration. (AI-inferred)
     description: Any = None
+    # A human-readable name for the provider registration. (AI-inferred)
     friendly_name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

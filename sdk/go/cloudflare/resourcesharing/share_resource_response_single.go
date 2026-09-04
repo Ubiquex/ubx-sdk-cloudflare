@@ -47,6 +47,7 @@ type ShareResourceResponseSingleConfig struct {
 }
 
 type ShareResourceResponseSingleAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Resource Metadata.
 	Meta any

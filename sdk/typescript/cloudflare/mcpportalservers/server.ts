@@ -132,9 +132,11 @@ export interface ServerAttrs {
   isSharedOauthCallbackEnabled: boolean;
   /** Display name for the MCP server. */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Server_Result;
   /** Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway. */
   secureWebGateway: boolean;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** Server-wide prompt capability overrides. */
   updatedPrompts: Server_Result_UpdatedPrompts[];

@@ -172,23 +172,37 @@ export interface McnGetOnrampResponse_Result {
 }
 
 export interface McnGetOnrampResponseConfig {
+  /** The hub this onramp was adopted into, if any. (AI-inferred) */
   adoptedHubId?: string | Computed<string>;
+  /** The Magic WAN hubs this onramp is attached to. (AI-inferred) */
   attachedHubs?: string[] | Computed<string[]>;
+  /** The cloud VPCs this onramp is attached to. (AI-inferred) */
   attachedVpcs?: string[] | Computed<string[]>;
   /** Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect. */
   cloudAsn?: number | Computed<number>;
+  /** The cloud provider this onramp connects to. (AI-inferred) */
   cloudType: string | Computed<string>;
+  /** A human-readable description of the onramp. (AI-inferred) */
   description?: string | Computed<string>;
   /** Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false. */
   dynamicRouting: boolean | Computed<boolean>;
+  /** The identifier of the hub provider this onramp is attached to. (AI-inferred) */
   hubProviderId?: string | Computed<string>;
+  /** Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred) */
   installRoutesInCloud: boolean | Computed<boolean>;
+  /** Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred) */
   installRoutesInMagicWan: boolean | Computed<boolean>;
+  /** Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred) */
   manageHubToHubAttachments?: boolean | Computed<boolean>;
+  /** Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred) */
   manageVpcToHubAttachments?: boolean | Computed<boolean>;
+  /** The name of the onramp. (AI-inferred) */
   name: string | Computed<string>;
+  /** The cloud region this onramp is deployed in. (AI-inferred) */
   region?: string | Computed<string>;
+  /** The type of onramp. (AI-inferred) */
   type: string | Computed<string>;
+  /** The cloud VPC this onramp connects to. (AI-inferred) */
   vpc?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -197,24 +211,39 @@ export interface McnGetOnrampResponseConfig {
 }
 
 export interface McnGetOnrampResponseAttrs {
+  /** The hub this onramp was adopted into, if any. (AI-inferred) */
   adoptedHubId: string;
+  /** The Magic WAN hubs this onramp is attached to. (AI-inferred) */
   attachedHubs: string[];
+  /** The cloud VPCs this onramp is attached to. (AI-inferred) */
   attachedVpcs: string[];
   /** Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect. */
   cloudAsn: number;
+  /** The cloud provider this onramp connects to. (AI-inferred) */
   cloudType: string;
+  /** A human-readable description of the onramp. (AI-inferred) */
   description: string;
   /** Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false. */
   dynamicRouting: boolean;
+  /** The identifier of the hub provider this onramp is attached to. (AI-inferred) */
   hubProviderId: string;
+  /** Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred) */
   installRoutesInCloud: boolean;
+  /** Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred) */
   installRoutesInMagicWan: boolean;
+  /** Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred) */
   manageHubToHubAttachments: boolean;
+  /** Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred) */
   manageVpcToHubAttachments: boolean;
+  /** The name of the onramp. (AI-inferred) */
   name: string;
+  /** The cloud region this onramp is deployed in. (AI-inferred) */
   region: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: McnGetOnrampResponse_Result;
+  /** The type of onramp. (AI-inferred) */
   type: string;
+  /** The cloud VPC this onramp connects to. (AI-inferred) */
   vpc: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

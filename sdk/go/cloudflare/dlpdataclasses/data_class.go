@@ -25,10 +25,15 @@ var DataClass_Result_SensitivityLevelsFields = ubx.FieldMap{
 }
 
 type DataClassConfig struct {
-	DataTags          any
-	Description       any
-	Expression        any
-	Name              any
+	// The data tags associated with this data class. (AI-inferred)
+	DataTags any
+	// A human-readable description of the data class. (AI-inferred)
+	Description any
+	// The detection expression identifying content matching this data class. (AI-inferred)
+	Expression any
+	// The name of the data class. (AI-inferred)
+	Name any
+	// The sensitivity levels associated with this data class. (AI-inferred)
 	SensitivityLevels any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -37,11 +42,17 @@ type DataClassConfig struct {
 }
 
 type DataClassAttrs struct {
-	DataTags          any
-	Description       any
-	Expression        any
-	Name              any
-	Result            any
+	// The data tags associated with this data class. (AI-inferred)
+	DataTags any
+	// A human-readable description of the data class. (AI-inferred)
+	Description any
+	// The detection expression identifying content matching this data class. (AI-inferred)
+	Expression any
+	// The name of the data class. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The sensitivity levels associated with this data class. (AI-inferred)
 	SensitivityLevels any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

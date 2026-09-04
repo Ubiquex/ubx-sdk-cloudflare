@@ -42,6 +42,7 @@ class GetZonePolicyResponseAttrs:
     enabled: Any = None
     # The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
     expression: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The policy which will be applied
     value: Any = None

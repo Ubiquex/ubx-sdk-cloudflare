@@ -97,7 +97,9 @@ const Item_PublicEndpointParamsFields: FieldMap = {
 export interface ItemConfig {
   /** Optional description for the namespace. Max 256 characters. */
   description?: string | Computed<string>;
+  /** The name of the namespace item. (AI-inferred) */
   name: string | Computed<string>;
+  /** The configuration for the namespace's own public query endpoint. (AI-inferred) */
   publicEndpointParams?: Item_PublicEndpointParams | Computed<Item_PublicEndpointParams>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -110,9 +112,13 @@ export interface ItemConfig {
 export interface ItemAttrs {
   /** Optional description for the namespace. Max 256 characters. */
   description: string;
+  /** The name of the namespace item. (AI-inferred) */
   name: string;
+  /** The configuration for the namespace's own public query endpoint. (AI-inferred) */
   publicEndpointParams: Item_PublicEndpointParams;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Item_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

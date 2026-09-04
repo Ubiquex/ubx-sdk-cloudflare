@@ -14,9 +14,13 @@ export interface Token_Result {
 }
 
 export interface TokenConfig {
+  /** The Cloudflare API key ID this token uses to authenticate. (AI-inferred) */
   cfApiId: string | Computed<string>;
+  /** The Cloudflare API key this token uses to authenticate. (AI-inferred) */
   cfApiKey: string | Computed<string>;
+  /** Whether this token uses the legacy authentication scheme. (AI-inferred) */
   legacy?: boolean | Computed<boolean>;
+  /** The name of the token. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -25,11 +29,17 @@ export interface TokenConfig {
 }
 
 export interface TokenAttrs {
+  /** The Cloudflare API key ID this token uses to authenticate. (AI-inferred) */
   cfApiId: string;
+  /** The Cloudflare API key this token uses to authenticate. (AI-inferred) */
   cfApiKey: string;
+  /** Whether this token uses the legacy authentication scheme. (AI-inferred) */
   legacy: boolean;
+  /** The name of the token. (AI-inferred) */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Token_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

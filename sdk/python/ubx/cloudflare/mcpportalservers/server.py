@@ -138,9 +138,11 @@ class ServerAttrs:
     is_shared_oauth_callback_enabled: Any = None
     # Display name for the MCP server.
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
     secure_web_gateway: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # Server-wide prompt capability overrides.
     updated_prompts: Any = None

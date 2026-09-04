@@ -152,7 +152,8 @@ type TeamsDevicesDeviceSettingsResponseConfig struct {
 	AutoConnect any
 	// Turn on the captive portal after the specified amount of time.
 	CaptivePortal any
-	Description   any
+	// A human-readable description of the device settings policy. (AI-inferred)
+	Description any
 	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
 	DisableAutoFallback any
 	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
@@ -207,7 +208,8 @@ type TeamsDevicesDeviceSettingsResponseAttrs struct {
 	AutoConnect any
 	// Turn on the captive portal after the specified amount of time.
 	CaptivePortal any
-	Description   any
+	// A human-readable description of the device settings policy. (AI-inferred)
+	Description any
 	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
 	DisableAutoFallback any
 	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
@@ -234,7 +236,8 @@ type TeamsDevicesDeviceSettingsResponseAttrs struct {
 	Precedence any
 	// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
 	RegisterInterfaceIpWithDns any
-	Result                     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 	SccmVpnBoundarySupport any
 	ServiceModeV2          any

@@ -21,6 +21,7 @@ class App_Result:
 
 @dataclasses.dataclass
 class AppConfig:
+    # The name of the Flagship application. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -29,10 +30,15 @@ class AppConfig:
 
 @dataclasses.dataclass
 class AppAttrs:
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The name of the Flagship application. (AI-inferred)
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

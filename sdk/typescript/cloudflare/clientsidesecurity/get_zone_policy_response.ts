@@ -36,6 +36,7 @@ export interface GetZonePolicyResponseAttrs {
   enabled: boolean;
   /** The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax */
   expression: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: GetZonePolicyResponse_Result;
   /** The policy which will be applied */
   value: string;

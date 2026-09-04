@@ -33,6 +33,7 @@ export interface FirewallRuleSingleResponseConfig {
   configuration: FirewallRuleSingleResponse_Configuration | Computed<FirewallRuleSingleResponse_Configuration>;
   /** The action to apply to a matched request. */
   mode: string | Computed<string>;
+  /** A free-text note describing the reason for this IP Access Rule. (AI-inferred) */
   notes?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   ruleId: string | Computed<string>;
@@ -43,6 +44,7 @@ export interface FirewallRuleSingleResponseAttrs {
   configuration: FirewallRuleSingleResponse_Configuration;
   /** The action to apply to a matched request. */
   mode: string;
+  /** A free-text note describing the reason for this IP Access Rule. (AI-inferred) */
   notes: string;
   result: FirewallRuleSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */

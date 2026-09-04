@@ -65,11 +65,13 @@ export interface PostureApiWebhookResponseAttrs {
   authenticationType: string;
   /** Target URL for the webhook configuration. Where resulting data will be sent. */
   destinationUrl: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: PostureApiWebhookResponse_Errors[];
   /** List of custom headers to include in webhook requests. */
   headers: PostureApiWebhookResponse_Headers[];
   /** Account-specified display label for the webhook configuration. */
   label: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: PostureApiWebhookResponse_Errors[];
   /** Webhook configuration for sending finding notifications. */
   result: PostureApiWebhookResponse_Result;

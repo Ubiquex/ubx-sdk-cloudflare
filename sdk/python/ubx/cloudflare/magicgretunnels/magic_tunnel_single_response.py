@@ -99,6 +99,7 @@ class MagicTunnelSingleResponseConfig:
     customer_gre_endpoint: Any = None
     # An optional description of the GRE tunnel.
     description: Any = None
+    # The health check configuration for the GRE tunnel. (AI-inferred)
     health_check: Any = None
     # A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
     interface_address: Any = None
@@ -126,6 +127,7 @@ class MagicTunnelSingleResponseAttrs:
     customer_gre_endpoint: Any = None
     # An optional description of the GRE tunnel.
     description: Any = None
+    # The health check configuration for the GRE tunnel. (AI-inferred)
     health_check: Any = None
     # A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
     interface_address: Any = None
@@ -135,6 +137,7 @@ class MagicTunnelSingleResponseAttrs:
     mtu: Any = None
     # The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Time To Live (TTL) in number of hops of the GRE tunnel.
     ttl: Any = None

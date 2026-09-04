@@ -20,9 +20,13 @@ class Token_Result:
 
 @dataclasses.dataclass
 class TokenConfig:
+    # The Cloudflare API key ID this token uses to authenticate. (AI-inferred)
     cf_api_id: Any = None
+    # The Cloudflare API key this token uses to authenticate. (AI-inferred)
     cf_api_key: Any = None
+    # Whether this token uses the legacy authentication scheme. (AI-inferred)
     legacy: Any = None
+    # The name of the token. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -31,11 +35,17 @@ class TokenConfig:
 
 @dataclasses.dataclass
 class TokenAttrs:
+    # The Cloudflare API key ID this token uses to authenticate. (AI-inferred)
     cf_api_id: Any = None
+    # The Cloudflare API key this token uses to authenticate. (AI-inferred)
     cf_api_key: Any = None
+    # Whether this token uses the legacy authentication scheme. (AI-inferred)
     legacy: Any = None
+    # The name of the token. (AI-inferred)
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

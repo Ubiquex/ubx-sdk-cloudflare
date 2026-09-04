@@ -48,9 +48,11 @@ export interface DatabaseConfig {
 }
 
 export interface DatabaseAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Database_Errors[];
   /** Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored. */
   jurisdiction: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Database_Errors[];
   /** D1 database name. */
   name: string;

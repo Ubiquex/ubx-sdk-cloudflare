@@ -40,7 +40,8 @@ type ZeroTrustGatewaySingleResponse7Attrs struct {
 	// Detailed description of the PAC file.
 	Description any
 	// Name of the PAC file.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// URL-friendly version of the PAC file name. If not provided, it will be auto-generated
 	Slug any

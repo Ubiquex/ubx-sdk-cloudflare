@@ -51,7 +51,8 @@ type ImagesSourcingkitMigrationSingleResponseAttrs struct {
 	ExcludedContentTypes any
 	// Prefix to prepend to image custom IDs.
 	PathPrefix any
-	Result     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Only import objects under this prefix in the source bucket.
 	RootDirectory any
 	// The identifier of the source to migrate from.

@@ -49,6 +49,7 @@ class RealtimekitWebhookSuccessResponseAttrs:
     events: Any = None
     # Name of the webhook
     name: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # URL this webhook will send events to
     url: Any = None

@@ -31,6 +31,7 @@ export interface AccessSingleResponse9Config {
 }
 
 export interface AccessSingleResponse9Attrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse9_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

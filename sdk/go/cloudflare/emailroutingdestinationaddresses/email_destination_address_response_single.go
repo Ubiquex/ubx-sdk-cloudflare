@@ -23,7 +23,8 @@ type EmailDestinationAddressResponseSingleConfig struct {
 
 type EmailDestinationAddressResponseSingleAttrs struct {
 	// The contact email address of the user.
-	Email  any
+	Email any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

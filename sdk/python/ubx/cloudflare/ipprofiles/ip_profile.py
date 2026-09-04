@@ -57,9 +57,11 @@ class IpProfileAttrs:
     description: Any = None
     # Whether the Device IP profile will be applied to matching devices.
     enabled: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
     # The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
     match: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
     # A user-friendly name for the Device IP profile.
     name: Any = None

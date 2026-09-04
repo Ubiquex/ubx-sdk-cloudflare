@@ -40,7 +40,8 @@ type SecretResponseAttrs struct {
 	// Freeform text describing the secret.
 	Comment any
 	// The name of the secret.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// The list of services that can use this secret.
 	Scopes any

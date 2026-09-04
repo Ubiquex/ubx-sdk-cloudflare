@@ -43,9 +43,11 @@ export interface DosPrefixResponseConfig {
 export interface DosPrefixResponseAttrs {
   /** A comment describing the prefix. */
   comment: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosPrefixResponse_Errors[];
   /** Whether to exclude the prefix from protection. */
   excluded: boolean;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosPrefixResponse_Errors[];
   /** The prefix to add in CIDR format. */
   prefix: string;

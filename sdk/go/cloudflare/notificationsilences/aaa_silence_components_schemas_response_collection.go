@@ -31,7 +31,9 @@ type AaaSilenceComponentsSchemasResponseCollectionConfig struct {
 }
 
 type AaaSilenceComponentsSchemasResponseCollectionAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	Result   any
 	// Whether the API call was successful

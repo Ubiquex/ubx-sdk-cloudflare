@@ -430,6 +430,7 @@ export interface AccessSingleResponse22Attrs {
   purposeJustificationRequired: boolean;
   /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse22_Exclude[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse22_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

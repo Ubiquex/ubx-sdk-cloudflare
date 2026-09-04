@@ -50,8 +50,11 @@ export interface McnReadAccountProviderResponse_Result {
 }
 
 export interface McnReadAccountProviderResponseConfig {
+  /** The cloud provider this registration connects to. (AI-inferred) */
   cloudType: string | Computed<string>;
+  /** A human-readable description of the provider registration. (AI-inferred) */
   description?: string | Computed<string>;
+  /** A human-readable name for the provider registration. (AI-inferred) */
   friendlyName: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -60,9 +63,13 @@ export interface McnReadAccountProviderResponseConfig {
 }
 
 export interface McnReadAccountProviderResponseAttrs {
+  /** The cloud provider this registration connects to. (AI-inferred) */
   cloudType: string;
+  /** A human-readable description of the provider registration. (AI-inferred) */
   description: string;
+  /** A human-readable name for the provider registration. (AI-inferred) */
   friendlyName: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: McnReadAccountProviderResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

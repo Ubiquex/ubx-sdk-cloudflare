@@ -70,12 +70,16 @@ const Workflow_SchedulesFields: FieldMap = {
 };
 
 export interface WorkflowConfig {
+  /** The Worker class implementing this Workflow. (AI-inferred) */
   className: string | Computed<string>;
   concurrency?: Workflow_Concurrency | Computed<Workflow_Concurrency>;
   /** Default retention applied to instances of this version when they do not set their own retention. */
   defaultRetention?: Workflow_DefaultRetention | Computed<Workflow_DefaultRetention>;
+  /** The concurrency and execution limits applied to instances of this Workflow. (AI-inferred) */
   limits?: Workflow_Limits | Computed<Workflow_Limits>;
+  /** The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred) */
   schedules?: Workflow_Schedules[] | Computed<Workflow_Schedules[]>;
+  /** The Worker script that owns this Workflow. (AI-inferred) */
   scriptName: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -84,17 +88,26 @@ export interface WorkflowConfig {
 }
 
 export interface WorkflowAttrs {
+  /** The Worker class implementing this Workflow. (AI-inferred) */
   className: string;
   concurrency: Workflow_Concurrency;
   /** Default retention applied to instances of this version when they do not set their own retention. */
   defaultRetention: Workflow_DefaultRetention;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Workflow_Errors[];
+  /** The concurrency and execution limits applied to instances of this Workflow. (AI-inferred) */
   limits: Workflow_Limits;
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Workflow_Errors[];
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Workflow_Result;
+  /** Pagination metadata for the result (e.g. total count, current page). (AI-inferred) */
   resultInfo: Workflow_ResultInfo;
+  /** The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred) */
   schedules: Workflow_Schedules[];
+  /** The Worker script that owns this Workflow. (AI-inferred) */
   scriptName: string;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

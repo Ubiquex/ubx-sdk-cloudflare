@@ -130,6 +130,7 @@ _MagicLanSingleResponse_Result_StaticAddressingFields = {
 
 @dataclasses.dataclass
 class MagicLanSingleResponseConfig:
+    # The bonded interface this LAN is attached to, if any. (AI-inferred)
     bond_id: Any = None
     # mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
     ha_link: Any = None
@@ -137,9 +138,12 @@ class MagicLanSingleResponseConfig:
     is_breakout: Any = None
     # mark true to use this LAN for source-based prioritized traffic
     is_prioritized: Any = None
+    # The name of the LAN interface. (AI-inferred)
     name: Any = None
     nat: Any = None
+    # The physical port this LAN interface is attached to. (AI-inferred)
     physport: Any = None
+    # The subnets routed through this LAN interface. (AI-inferred)
     routed_subnets: Any = None
     # If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
     static_addressing: Any = None
@@ -154,6 +158,7 @@ class MagicLanSingleResponseConfig:
 
 @dataclasses.dataclass
 class MagicLanSingleResponseAttrs:
+    # The bonded interface this LAN is attached to, if any. (AI-inferred)
     bond_id: Any = None
     # mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
     ha_link: Any = None
@@ -161,10 +166,14 @@ class MagicLanSingleResponseAttrs:
     is_breakout: Any = None
     # mark true to use this LAN for source-based prioritized traffic
     is_prioritized: Any = None
+    # The name of the LAN interface. (AI-inferred)
     name: Any = None
     nat: Any = None
+    # The physical port this LAN interface is attached to. (AI-inferred)
     physport: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The subnets routed through this LAN interface. (AI-inferred)
     routed_subnets: Any = None
     # If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
     static_addressing: Any = None

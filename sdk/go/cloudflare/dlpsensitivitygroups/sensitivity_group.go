@@ -32,10 +32,13 @@ var SensitivityGroup_LevelsFields = ubx.FieldMap{
 }
 
 type SensitivityGroupConfig struct {
+	// A human-readable description of the sensitivity group. (AI-inferred)
 	Description any
 	// Levels to create with the group. Mutually exclusive with `template_id`.
-	Levels     any
-	Name       any
+	Levels any
+	// The name of the sensitivity group. (AI-inferred)
+	Name any
+	// The built-in template this group was seeded from, if any. (AI-inferred)
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -44,11 +47,15 @@ type SensitivityGroupConfig struct {
 }
 
 type SensitivityGroupAttrs struct {
+	// A human-readable description of the sensitivity group. (AI-inferred)
 	Description any
 	// Levels to create with the group. Mutually exclusive with `template_id`.
-	Levels     any
-	Name       any
-	Result     any
+	Levels any
+	// The name of the sensitivity group. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The built-in template this group was seeded from, if any. (AI-inferred)
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

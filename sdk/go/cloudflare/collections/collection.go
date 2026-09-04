@@ -32,7 +32,9 @@ type CollectionConfig struct {
 }
 
 type CollectionAttrs struct {
-	Result  any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
 	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

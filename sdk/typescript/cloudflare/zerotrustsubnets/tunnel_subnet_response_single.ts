@@ -52,9 +52,11 @@ export interface TunnelSubnetResponseSingleConfig {
 export interface TunnelSubnetResponseSingleAttrs {
   /** An optional description of the subnet. */
   comment: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelSubnetResponseSingle_Errors[];
   /** If `true`, this is the default subnet for the account. There can only be one default subnet per account. */
   isDefaultNetwork: boolean;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelSubnetResponseSingle_Errors[];
   /** A user-friendly name for the subnet. */
   name: string;

@@ -41,7 +41,8 @@ type Web3SingleResponseAttrs struct {
 	// Specify the DNSLink value used if the target is ipfs.
 	Dnslink any
 	// Specify the hostname that points to the target gateway via CNAME.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Specify the target gateway of the hostname.
 	Target any

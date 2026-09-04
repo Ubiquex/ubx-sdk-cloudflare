@@ -15,11 +15,16 @@ type CustomPromptTopic_Result struct {
 }
 
 type CustomPromptTopicConfig struct {
+	// A human-readable description of the prompt topic. (AI-inferred)
 	Description any
-	Enabled     any
-	Name        any
-	ProfileId   any
-	Topic       any
+	// Whether the prompt topic is active. (AI-inferred)
+	Enabled any
+	// The name of the prompt topic. (AI-inferred)
+	Name any
+	// The DLP profile this prompt topic belongs to. (AI-inferred)
+	ProfileId any
+	// The subject matter this topic scans AI prompts for. (AI-inferred)
+	Topic any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -27,12 +32,18 @@ type CustomPromptTopicConfig struct {
 }
 
 type CustomPromptTopicAttrs struct {
+	// A human-readable description of the prompt topic. (AI-inferred)
 	Description any
-	Enabled     any
-	Name        any
-	ProfileId   any
-	Result      any
-	Topic       any
+	// Whether the prompt topic is active. (AI-inferred)
+	Enabled any
+	// The name of the prompt topic. (AI-inferred)
+	Name any
+	// The DLP profile this prompt topic belongs to. (AI-inferred)
+	ProfileId any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The subject matter this topic scans AI prompts for. (AI-inferred)
+	Topic any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

@@ -34,7 +34,9 @@ export interface ConsumerConfig {
 }
 
 export interface ConsumerAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Consumer_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
   /** Response body representing a consumer */
   result: Consumer_Result;

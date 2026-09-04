@@ -25,6 +25,7 @@ export interface AccessPolicyUpdateResp_Result {
 }
 
 export interface AccessPolicyUpdateRespConfig {
+  /** The Access policy IDs to include in the test. (AI-inferred) */
   policies?: unknown[] | Computed<unknown[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -33,6 +34,7 @@ export interface AccessPolicyUpdateRespConfig {
 }
 
 export interface AccessPolicyUpdateRespAttrs {
+  /** The Access policy IDs to include in the test. (AI-inferred) */
   policies: unknown[];
   result: AccessPolicyUpdateResp_Result;
   /** path parameter, not part of the API's own resource representation */

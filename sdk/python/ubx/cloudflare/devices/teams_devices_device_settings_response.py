@@ -158,6 +158,7 @@ class TeamsDevicesDeviceSettingsResponseConfig:
     auto_connect: Any = None
     # Turn on the captive portal after the specified amount of time.
     captive_portal: Any = None
+    # A human-readable description of the device settings policy. (AI-inferred)
     description: Any = None
     # If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
     disable_auto_fallback: Any = None
@@ -213,6 +214,7 @@ class TeamsDevicesDeviceSettingsResponseAttrs:
     auto_connect: Any = None
     # Turn on the captive portal after the specified amount of time.
     captive_portal: Any = None
+    # A human-readable description of the device settings policy. (AI-inferred)
     description: Any = None
     # If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
     disable_auto_fallback: Any = None
@@ -240,6 +242,7 @@ class TeamsDevicesDeviceSettingsResponseAttrs:
     precedence: Any = None
     # Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
     register_interface_ip_with_dns: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
     sccm_vpn_boundary_support: Any = None

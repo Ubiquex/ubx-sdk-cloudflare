@@ -17,9 +17,12 @@ type DocumentFingerprint_Result struct {
 }
 
 type DocumentFingerprintConfig struct {
-	Description  any
+	// A human-readable description of the document fingerprint. (AI-inferred)
+	Description any
+	// The minimum similarity percentage required to trigger a match. (AI-inferred)
 	MatchPercent any
-	Name         any
+	// The name of the document fingerprint. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -27,10 +30,14 @@ type DocumentFingerprintConfig struct {
 }
 
 type DocumentFingerprintAttrs struct {
-	Description  any
+	// A human-readable description of the document fingerprint. (AI-inferred)
+	Description any
+	// The minimum similarity percentage required to trigger a match. (AI-inferred)
 	MatchPercent any
-	Name         any
-	Result       any
+	// The name of the document fingerprint. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

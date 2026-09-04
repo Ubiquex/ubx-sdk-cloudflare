@@ -74,6 +74,7 @@ class EmailRuleResponseSingleAttrs:
     owner_worker_tag: Any = None
     # Priority of the routing rule.
     priority: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
     source: Any = None

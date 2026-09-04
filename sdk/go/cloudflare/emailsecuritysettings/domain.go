@@ -48,17 +48,28 @@ type Domain_Result struct {
 var Domain_FolderFields = ubx.FieldMap{}
 
 type DomainConfig struct {
+	// The mail delivery modes permitted for this domain. (AI-inferred)
 	AllowedDeliveryModes any
-	Domain               any
-	DropDispositions     any
-	Folder               any
-	IntegrationId        any
-	IpRestrictions       any
-	LookbackHops         any
-	Regions              any
-	RequireTlsInbound    any
-	RequireTlsOutbound   any
-	Transport            any
+	// The domain name this configuration applies to. (AI-inferred)
+	Domain any
+	// The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred)
+	DropDispositions any
+	// The mailbox folder matching mail is delivered to. (AI-inferred)
+	Folder any
+	// The unique identifier of the integration. (AI-inferred)
+	IntegrationId any
+	// The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred)
+	IpRestrictions any
+	// The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred)
+	LookbackHops any
+	// The geographic regions this domain's own mail processing is restricted to. (AI-inferred)
+	Regions any
+	// Whether inbound mail for this domain must use TLS. (AI-inferred)
+	RequireTlsInbound any
+	// Whether outbound mail for this domain must use TLS. (AI-inferred)
+	RequireTlsOutbound any
+	// The transport mechanism used to deliver mail for this domain. (AI-inferred)
+	Transport any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -66,18 +77,30 @@ type DomainConfig struct {
 }
 
 type DomainAttrs struct {
+	// The mail delivery modes permitted for this domain. (AI-inferred)
 	AllowedDeliveryModes any
-	Domain               any
-	DropDispositions     any
-	Folder               any
-	IntegrationId        any
-	IpRestrictions       any
-	LookbackHops         any
-	Regions              any
-	RequireTlsInbound    any
-	RequireTlsOutbound   any
-	Result               any
-	Transport            any
+	// The domain name this configuration applies to. (AI-inferred)
+	Domain any
+	// The message dispositions that cause mail to be dropped rather than delivered. (AI-inferred)
+	DropDispositions any
+	// The mailbox folder matching mail is delivered to. (AI-inferred)
+	Folder any
+	// The unique identifier of the integration. (AI-inferred)
+	IntegrationId any
+	// The IP addresses or ranges allowed to deliver mail for this domain. (AI-inferred)
+	IpRestrictions any
+	// The number of mail relay hops inspected when evaluating this domain's own mail flow. (AI-inferred)
+	LookbackHops any
+	// The geographic regions this domain's own mail processing is restricted to. (AI-inferred)
+	Regions any
+	// Whether inbound mail for this domain must use TLS. (AI-inferred)
+	RequireTlsInbound any
+	// Whether outbound mail for this domain must use TLS. (AI-inferred)
+	RequireTlsOutbound any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The transport mechanism used to deliver mail for this domain. (AI-inferred)
+	Transport any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

@@ -157,6 +157,7 @@ export interface SingleResponseAttrs {
   queueingMethod: string;
   /** HTTP status code returned to a user while in the queue. */
   queueingStatusCode: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SingleResponse_Result;
   /** Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the route. If a user is not seen by Cloudflare again in that time period, they will be treated as a new user that visits the route. */
   sessionDuration: number;

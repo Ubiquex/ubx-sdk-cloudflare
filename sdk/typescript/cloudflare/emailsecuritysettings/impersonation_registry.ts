@@ -21,13 +21,21 @@ export interface ImpersonationRegistry_Result {
 }
 
 export interface ImpersonationRegistryConfig {
+  /** A free-text note about this impersonation-registry entry. (AI-inferred) */
   comments?: string | Computed<string>;
+  /** The real directory this protected identity belongs to. (AI-inferred) */
   directoryId?: number | Computed<number>;
+  /** The real directory node (user or group) this protected identity resolves to. (AI-inferred) */
   directoryNodeId?: number | Computed<number>;
+  /** The real email address this entry protects against impersonation. (AI-inferred) */
   email: string | Computed<string>;
+  /** The real, external identity provider's own node ID this entry is linked to. (AI-inferred) */
   externalDirectoryNodeId?: string | Computed<string>;
+  /** Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred) */
   isEmailRegex: boolean | Computed<boolean>;
+  /** The real, protected display name this entry watches for impersonation attempts against. (AI-inferred) */
   name: string | Computed<string>;
+  /** Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred) */
   provenance?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -36,18 +44,29 @@ export interface ImpersonationRegistryConfig {
 }
 
 export interface ImpersonationRegistryAttrs {
+  /** A free-text note about this impersonation-registry entry. (AI-inferred) */
   comments: string;
+  /** When this impersonation-registry entry was created. (AI-inferred) */
   createdAt: ImpersonationRegistry_CreatedAt;
+  /** The real directory this protected identity belongs to. (AI-inferred) */
   directoryId: number;
+  /** The real directory node (user or group) this protected identity resolves to. (AI-inferred) */
   directoryNodeId: number;
+  /** The real email address this entry protects against impersonation. (AI-inferred) */
   email: string;
+  /** The real, external identity provider's own node ID this entry is linked to. (AI-inferred) */
   externalDirectoryNodeId: string;
+  /** This impersonation-registry entry's own real identifier. (AI-inferred) */
   id: ImpersonationRegistry_CreatedAt;
+  /** Whether `email` is interpreted as a regular expression rather than a literal address. (AI-inferred) */
   isEmailRegex: boolean;
   /** Deprecated, use `modified_at` instead. End of life: November 1, 2026. */
   lastModified: ImpersonationRegistry_CreatedAt;
+  /** When this impersonation-registry entry was last modified. (AI-inferred) */
   modifiedAt: ImpersonationRegistry_CreatedAt;
+  /** The real, protected display name this entry watches for impersonation attempts against. (AI-inferred) */
   name: string;
+  /** Where this entry's own identity data came from (directory sync, or entered directly). (AI-inferred) */
   provenance: string;
   /** An impersonation registry entry. */
   result: ImpersonationRegistry_Result;

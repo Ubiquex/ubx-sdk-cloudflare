@@ -70,24 +70,36 @@ _Organization_ProfileFields = {
 
 @dataclasses.dataclass
 class OrganizationConfig:
+    # The name of the organization. (AI-inferred)
     name: Any = None
+    # The parent organization, if this organization is nested under one. (AI-inferred)
     parent: Any = None
+    # The organization's own profile settings. (AI-inferred)
     profile: Any = None
     # path parameter, not part of the API's own resource representation
     organization_id: Any = None
 
 @dataclasses.dataclass
 class OrganizationAttrs:
+    # The time the organization was created. (AI-inferred)
     create_time: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # The unique identifier of the organization. (AI-inferred)
     id: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # Additional metadata associated with the organization. (AI-inferred)
     meta: Any = None
+    # The name of the organization. (AI-inferred)
     name: Any = None
+    # The parent organization, if this organization is nested under one. (AI-inferred)
     parent: Any = None
+    # The organization's own profile settings. (AI-inferred)
     profile: Any = None
     # References an Organization in the Cloudflare data model.
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     organization_id: Any = None

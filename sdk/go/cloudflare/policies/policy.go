@@ -127,12 +127,14 @@ type PolicyAttrs struct {
 	DisplayName any
 	// Boolean specifying if the policy is enabled or disabled.
 	Enabled any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// The finding type this policy is associated with. All remediation actions must match this finding type.
 	FindingTypeId any
 	// The integrations this policy applies to. Required when applies_to_all_integrations is false.
 	IntegrationIds any
-	Messages       any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Response body for a policy configuration.
 	Result any
 	// Whether the API call was successful.

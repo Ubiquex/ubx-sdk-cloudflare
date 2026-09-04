@@ -21,6 +21,7 @@ export interface RegistrarApiDomainResponseSingleAttrs {
   locked: boolean;
   /** Privacy option controls redacting WHOIS information. */
   privacy: boolean;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: unknown;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

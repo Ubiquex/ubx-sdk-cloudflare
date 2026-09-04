@@ -93,6 +93,7 @@ export interface MagicTunnelSingleResponseConfig {
   customerGreEndpoint: string | Computed<string>;
   /** An optional description of the GRE tunnel. */
   description?: string | Computed<string>;
+  /** The health check configuration for the GRE tunnel. (AI-inferred) */
   healthCheck?: MagicTunnelSingleResponse_HealthCheck | Computed<MagicTunnelSingleResponse_HealthCheck>;
   /** A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255. */
   interfaceAddress: string | Computed<string>;
@@ -120,6 +121,7 @@ export interface MagicTunnelSingleResponseAttrs {
   customerGreEndpoint: string;
   /** An optional description of the GRE tunnel. */
   description: string;
+  /** The health check configuration for the GRE tunnel. (AI-inferred) */
   healthCheck: MagicTunnelSingleResponse_HealthCheck;
   /** A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255. */
   interfaceAddress: string;
@@ -129,6 +131,7 @@ export interface MagicTunnelSingleResponseAttrs {
   mtu: number;
   /** The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicTunnelSingleResponse_Result;
   /** Time To Live (TTL) in number of hops of the GRE tunnel. */
   ttl: number;

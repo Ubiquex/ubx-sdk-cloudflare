@@ -27,9 +27,11 @@ export interface SecondaryDnsSingleResponseConfig {
 export interface SecondaryDnsSingleResponseAttrs {
   /** TSIG algorithm. */
   algo: string;
+  /** The unique identifier of the TSIG key. (AI-inferred) */
   id: string;
   /** TSIG key name. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SecondaryDnsSingleResponse_Result;
   /** TSIG secret. */
   secret: string;

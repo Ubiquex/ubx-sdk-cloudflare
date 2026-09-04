@@ -52,8 +52,11 @@ type McnReadAccountProviderResponse_Result struct {
 }
 
 type McnReadAccountProviderResponseConfig struct {
-	CloudType    any
-	Description  any
+	// The cloud provider this registration connects to. (AI-inferred)
+	CloudType any
+	// A human-readable description of the provider registration. (AI-inferred)
+	Description any
+	// A human-readable name for the provider registration. (AI-inferred)
 	FriendlyName any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -62,10 +65,14 @@ type McnReadAccountProviderResponseConfig struct {
 }
 
 type McnReadAccountProviderResponseAttrs struct {
-	CloudType    any
-	Description  any
+	// The cloud provider this registration connects to. (AI-inferred)
+	CloudType any
+	// A human-readable description of the provider registration. (AI-inferred)
+	Description any
+	// A human-readable name for the provider registration. (AI-inferred)
 	FriendlyName any
-	Result       any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

@@ -16,8 +16,11 @@ export interface ItemResponseSingleConfig {
 }
 
 export interface ItemResponseSingleAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ItemResponseSingle_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: ItemResponseSingle_Errors[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: unknown;
   /** Defines whether the API call was successful. */
   success: boolean;

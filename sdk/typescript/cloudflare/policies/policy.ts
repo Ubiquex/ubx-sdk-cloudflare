@@ -125,11 +125,13 @@ export interface PolicyAttrs {
   displayName: string;
   /** Boolean specifying if the policy is enabled or disabled. */
   enabled: boolean;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Policy_Errors[];
   /** The finding type this policy is associated with. All remediation actions must match this finding type. */
   findingTypeId: string;
   /** The integrations this policy applies to. Required when applies_to_all_integrations is false. */
   integrationIds: string[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Policy_Errors[];
   /** Response body for a policy configuration. */
   result: Policy_Result;

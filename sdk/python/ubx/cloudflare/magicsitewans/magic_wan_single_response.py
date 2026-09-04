@@ -40,8 +40,11 @@ _MagicWanSingleResponse_Result_StaticAddressingFields = {
 
 @dataclasses.dataclass
 class MagicWanSingleResponseConfig:
+    # The name of the WAN interface. (AI-inferred)
     name: Any = None
+    # The physical port this WAN interface is attached to. (AI-inferred)
     physport: Any = None
+    # The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred)
     priority: Any = None
     # (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
     static_addressing: Any = None
@@ -56,9 +59,13 @@ class MagicWanSingleResponseConfig:
 
 @dataclasses.dataclass
 class MagicWanSingleResponseAttrs:
+    # The name of the WAN interface. (AI-inferred)
     name: Any = None
+    # The physical port this WAN interface is attached to. (AI-inferred)
     physport: Any = None
+    # The priority of this WAN interface relative to other WAN interfaces on the site. (AI-inferred)
     priority: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
     static_addressing: Any = None

@@ -45,11 +45,14 @@ type TunnelHostnameRouteResponseSingleConfig struct {
 type TunnelHostnameRouteResponseSingleAttrs struct {
 	// An optional description of the hostname route.
 	Comment any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// The hostname of the route.
 	Hostname any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful
 	Success any
 	// UUID of the tunnel.

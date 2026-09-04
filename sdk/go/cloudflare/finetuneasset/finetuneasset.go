@@ -9,10 +9,14 @@ type Finetuneasset_Result struct {
 }
 
 type FinetuneassetConfig struct {
+	// A human-readable description of the fine-tune asset. (AI-inferred)
 	Description any
-	Model       any
-	Name        any
-	Public      any
+	// The base model this fine-tune asset is associated with. (AI-inferred)
+	Model any
+	// The name of the fine-tune asset. (AI-inferred)
+	Name any
+	// Whether the fine-tune asset is publicly accessible. (AI-inferred)
+	Public any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -22,12 +26,18 @@ type FinetuneassetConfig struct {
 }
 
 type FinetuneassetAttrs struct {
+	// A human-readable description of the fine-tune asset. (AI-inferred)
 	Description any
-	Model       any
-	Name        any
-	Public      any
-	Result      any
-	Success     any
+	// The base model this fine-tune asset is associated with. (AI-inferred)
+	Model any
+	// The name of the fine-tune asset. (AI-inferred)
+	Name any
+	// Whether the fine-tune asset is publicly accessible. (AI-inferred)
+	Public any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

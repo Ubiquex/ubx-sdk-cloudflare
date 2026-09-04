@@ -24,6 +24,7 @@ export interface AccessIdpFederationGrantResponseConfig {
 export interface AccessIdpFederationGrantResponseAttrs {
   /** UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated. */
   idpId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessIdpFederationGrantResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

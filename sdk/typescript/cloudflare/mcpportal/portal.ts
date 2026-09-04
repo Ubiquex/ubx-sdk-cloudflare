@@ -163,11 +163,13 @@ export interface PortalAttrs {
   id: string;
   /** Display name for the MCP portal. */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Portal_Result;
   /** Route outbound MCP traffic through Zero Trust Secure Web Gateway. */
   secureWebGateway: boolean;
   /** MCP servers attached to the portal and their portal-specific settings. */
   servers: Portal_Servers[];
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

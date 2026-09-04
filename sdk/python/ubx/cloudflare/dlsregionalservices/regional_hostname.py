@@ -44,12 +44,15 @@ class RegionalHostnameConfig:
 
 @dataclasses.dataclass
 class RegionalHostnameAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
     hostname: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Identifying key for the region
     region_key: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Configure which routing method to use for the regional hostname
     routing: Any = None

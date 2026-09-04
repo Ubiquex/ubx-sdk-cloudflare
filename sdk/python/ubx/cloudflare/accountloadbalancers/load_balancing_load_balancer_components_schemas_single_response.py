@@ -300,6 +300,7 @@ class LoadBalancingLoadBalancerComponentsSchemasSingleResponseAttrs:
     random_steering: Any = None
     # A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools.
     region_pools: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # BETA Field Not General Access: A list of rules for this load balancer to execute.
     rules: Any = None

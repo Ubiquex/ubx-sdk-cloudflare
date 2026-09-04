@@ -133,11 +133,13 @@ type ServerAttrs struct {
 	// When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
 	IsSharedOauthCallbackEnabled any
 	// Display name for the MCP server.
-	Name   any
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
 	Result any
 	// Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
-	Success          any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// Server-wide prompt capability overrides.
 	UpdatedPrompts any
 	// Server-wide tool capability overrides.

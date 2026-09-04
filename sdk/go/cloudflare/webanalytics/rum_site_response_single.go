@@ -59,11 +59,14 @@ type RumSiteResponseSingleConfig struct {
 type RumSiteResponseSingleAttrs struct {
 	// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 	AutoInstall any
-	Errors      any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// The hostname to use for gray-clouded sites.
-	Host     any
+	Host any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// The zone identifier.

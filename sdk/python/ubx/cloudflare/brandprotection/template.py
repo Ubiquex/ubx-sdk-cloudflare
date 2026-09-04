@@ -8,9 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TemplateConfig:
+    # The body text of the letter template. (AI-inferred)
     body: Any = None
+    # The category this letter template belongs to. (AI-inferred)
     category: Any = None
+    # A human-readable description of the letter template. (AI-inferred)
     description: Any = None
+    # The name of the letter template. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -19,13 +23,21 @@ class TemplateConfig:
 
 @dataclasses.dataclass
 class TemplateAttrs:
+    # The body text of the letter template. (AI-inferred)
     body: Any = None
+    # The category this letter template belongs to. (AI-inferred)
     category: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
+    # A human-readable description of the letter template. (AI-inferred)
     description: Any = None
+    # The unique identifier of the letter template. (AI-inferred)
     id: Any = None
+    # The name of the letter template. (AI-inferred)
     name: Any = None
+    # The source this letter template's own text was derived from. (AI-inferred)
     source: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

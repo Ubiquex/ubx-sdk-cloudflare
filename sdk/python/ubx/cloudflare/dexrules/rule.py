@@ -35,6 +35,7 @@ class Rule_Result:
 
 @dataclasses.dataclass
 class RuleConfig:
+    # A human-readable description of the rule. (AI-inferred)
     description: Any = None
     # The wirefilter expression to match.
     match: Any = None
@@ -47,11 +48,13 @@ class RuleConfig:
 
 @dataclasses.dataclass
 class RuleAttrs:
+    # A human-readable description of the rule. (AI-inferred)
     description: Any = None
     # The wirefilter expression to match.
     match: Any = None
     # The name of the Rule.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

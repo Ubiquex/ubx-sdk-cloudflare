@@ -38,6 +38,7 @@ _MagicSiteSingleResponse_LocationFields = {
 class MagicSiteSingleResponseConfig:
     # Magic Connector identifier tag.
     connector_id: Any = None
+    # A human-readable description of the site. (AI-inferred)
     description: Any = None
     # Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
     ha_mode: Any = None
@@ -56,6 +57,7 @@ class MagicSiteSingleResponseConfig:
 class MagicSiteSingleResponseAttrs:
     # Magic Connector identifier tag.
     connector_id: Any = None
+    # A human-readable description of the site. (AI-inferred)
     description: Any = None
     # Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
     ha_mode: Any = None
@@ -63,6 +65,7 @@ class MagicSiteSingleResponseAttrs:
     location: Any = None
     # The name of the site.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Magic Connector identifier tag. Used when high availability mode is on.
     secondary_connector_id: Any = None

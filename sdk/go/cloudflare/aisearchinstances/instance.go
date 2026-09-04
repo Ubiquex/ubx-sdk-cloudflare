@@ -293,85 +293,127 @@ var Instance_Result_SourceParamsFields = ubx.FieldMap{
 }
 
 type InstanceConfig struct {
+	// The AI Gateway requests through this AI Search instance are routed through. (AI-inferred)
 	AiGatewayId any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	AiSearchModel  any
-	Cache          any
+	AiSearchModel any
+	// Whether response caching is enabled for this instance. (AI-inferred)
+	Cache any
+	// The minimum similarity score required for a cached response to be reused. (AI-inferred)
 	CacheThreshold any
 	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
-	CacheTtl       any
-	Chunk          any
-	ChunkOverlap   any
-	ChunkSize      any
+	CacheTtl any
+	// The chunking configuration used when indexing source content. (AI-inferred)
+	Chunk any
+	// The number of overlapping tokens between adjacent chunks. (AI-inferred)
+	ChunkOverlap any
+	// The maximum size, in tokens, of each indexed chunk. (AI-inferred)
+	ChunkSize any
+	// Arbitrary custom metadata attached to the instance. (AI-inferred)
 	CustomMetadata any
+	// The model used to generate vector embeddings for indexed content. (AI-inferred)
 	EmbeddingModel any
-	FusionMethod   any
+	// The method used to combine multiple retrieval signals when ranking results. (AI-inferred)
+	FusionMethod any
 	// Deprecated — use index_method instead.
 	HybridSearchEnabled any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
 	// Controls which storage backends are used during indexing. Defaults to vector-only.
-	IndexMethod          any
-	IndexingOptions      any
-	MaxNumResults        any
-	Metadata             any
+	IndexMethod     any
+	IndexingOptions any
+	// The maximum number of results returned per query. (AI-inferred)
+	MaxNumResults any
+	// Metadata associated with the instance. (AI-inferred)
+	Metadata any
+	// The configuration for the instance's own public query endpoint. (AI-inferred)
 	PublicEndpointParams any
-	Reranking            any
-	RerankingModel       any
-	RetrievalOptions     any
+	// Whether a reranking pass is applied to retrieved results. (AI-inferred)
+	Reranking any
+	// The model used to rerank retrieved results. (AI-inferred)
+	RerankingModel   any
+	RetrievalOptions any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	RewriteModel   any
-	RewriteQuery   any
+	RewriteModel any
+	// Whether incoming queries are rewritten before retrieval. (AI-inferred)
+	RewriteQuery any
+	// The minimum relevance score a result must reach to be returned. (AI-inferred)
 	ScoreThreshold any
-	Source         any
-	SourceParams   any
+	// The data source content is indexed from. (AI-inferred)
+	Source any
+	// Configuration specific to the instance's own data source. (AI-inferred)
+	SourceParams any
 	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
 	SyncInterval any
-	TokenId      any
-	Type         any
+	// The AI Search API token used to authenticate requests for this instance. (AI-inferred)
+	TokenId any
+	// The type of AI Search instance. (AI-inferred)
+	Type any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type InstanceAttrs struct {
+	// The AI Gateway requests through this AI Search instance are routed through. (AI-inferred)
 	AiGatewayId any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	AiSearchModel  any
-	Cache          any
+	AiSearchModel any
+	// Whether response caching is enabled for this instance. (AI-inferred)
+	Cache any
+	// The minimum similarity score required for a cached response to be reused. (AI-inferred)
 	CacheThreshold any
 	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
-	CacheTtl       any
-	Chunk          any
-	ChunkOverlap   any
-	ChunkSize      any
+	CacheTtl any
+	// The chunking configuration used when indexing source content. (AI-inferred)
+	Chunk any
+	// The number of overlapping tokens between adjacent chunks. (AI-inferred)
+	ChunkOverlap any
+	// The maximum size, in tokens, of each indexed chunk. (AI-inferred)
+	ChunkSize any
+	// Arbitrary custom metadata attached to the instance. (AI-inferred)
 	CustomMetadata any
+	// The model used to generate vector embeddings for indexed content. (AI-inferred)
 	EmbeddingModel any
-	FusionMethod   any
+	// The method used to combine multiple retrieval signals when ranking results. (AI-inferred)
+	FusionMethod any
 	// Deprecated — use index_method instead.
 	HybridSearchEnabled any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
 	// Controls which storage backends are used during indexing. Defaults to vector-only.
-	IndexMethod          any
-	IndexingOptions      any
-	MaxNumResults        any
-	Metadata             any
+	IndexMethod     any
+	IndexingOptions any
+	// The maximum number of results returned per query. (AI-inferred)
+	MaxNumResults any
+	// Metadata associated with the instance. (AI-inferred)
+	Metadata any
+	// The configuration for the instance's own public query endpoint. (AI-inferred)
 	PublicEndpointParams any
-	Reranking            any
-	RerankingModel       any
-	Result               any
-	RetrievalOptions     any
+	// Whether a reranking pass is applied to retrieved results. (AI-inferred)
+	Reranking any
+	// The model used to rerank retrieved results. (AI-inferred)
+	RerankingModel any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result           any
+	RetrievalOptions any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	RewriteModel   any
-	RewriteQuery   any
+	RewriteModel any
+	// Whether incoming queries are rewritten before retrieval. (AI-inferred)
+	RewriteQuery any
+	// The minimum relevance score a result must reach to be returned. (AI-inferred)
 	ScoreThreshold any
-	Source         any
-	SourceParams   any
-	Success        any
+	// The data source content is indexed from. (AI-inferred)
+	Source any
+	// Configuration specific to the instance's own data source. (AI-inferred)
+	SourceParams any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
 	SyncInterval any
-	TokenId      any
-	Type         any
+	// The AI Search API token used to authenticate requests for this instance. (AI-inferred)
+	TokenId any
+	// The type of AI Search instance. (AI-inferred)
+	Type any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }

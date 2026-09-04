@@ -55,6 +55,7 @@ class AccessSingleResponse2Attrs:
     name: Any = None
     # The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
     previous_client_secret_expires_at: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

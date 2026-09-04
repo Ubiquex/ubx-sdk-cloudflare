@@ -45,16 +45,19 @@ type CredentialConfig struct {
 }
 
 type CredentialAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Where the credential is attached in outgoing requests.
 	Location any
 	// Name of the header or cookie where the credential is attached.
 	LocationName any
-	Messages     any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Human-readable name.
 	Name any
 	// A credential attached to API requests during scanning. The credential `value` is write-only and never returned in responses.
-	Result     any
+	Result any
+	// Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
 	ResultInfo any
 	// Whether the API call was successful.
 	Success any

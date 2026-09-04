@@ -169,11 +169,13 @@ class PortalAttrs:
     id: Any = None
     # Display name for the MCP portal.
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Route outbound MCP traffic through Zero Trust Secure Web Gateway.
     secure_web_gateway: Any = None
     # MCP servers attached to the portal and their portal-specific settings.
     servers: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

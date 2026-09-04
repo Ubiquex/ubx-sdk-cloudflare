@@ -127,6 +127,7 @@ class FirewallRatelimitResponseSingleAttrs:
     match: Any = None
     # The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
     period: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.
     threshold: Any = None

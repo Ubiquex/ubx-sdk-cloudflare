@@ -33,9 +33,11 @@ export interface BucketConfig {
 }
 
 export interface BucketAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Bucket_Errors[];
   /** Location of the bucket. */
   locationHint: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
   /** Name of the bucket. */
   name: string;

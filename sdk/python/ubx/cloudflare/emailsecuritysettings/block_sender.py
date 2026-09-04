@@ -26,7 +26,9 @@ class BlockSender_Result:
 
 @dataclasses.dataclass
 class BlockSenderConfig:
+    # A free-text note about this block-sender entry. (AI-inferred)
     comments: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.
     pattern: Any = None
@@ -39,12 +41,17 @@ class BlockSenderConfig:
 
 @dataclasses.dataclass
 class BlockSenderAttrs:
+    # A free-text note about this block-sender entry. (AI-inferred)
     comments: Any = None
+    # When this block-sender entry was created. (AI-inferred)
     created_at: Any = None
+    # This block-sender entry's own real identifier. (AI-inferred)
     id: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
     last_modified: Any = None
+    # When this block-sender entry was last modified. (AI-inferred)
     modified_at: Any = None
     # The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.
     pattern: Any = None

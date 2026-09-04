@@ -40,8 +40,9 @@ type ShareExcludedRecipientResponseSingleConfig struct {
 type ShareExcludedRecipientResponseSingleAttrs struct {
 	// The account to exclude from the organization-targeted share.
 	AccountId any
-	Errors    any
-	Result    any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute)

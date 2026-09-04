@@ -153,8 +153,10 @@ type PostureApiFindingResponseConfig struct {
 
 type PostureApiFindingResponseAttrs struct {
 	// A list of finding IDs to pass along.
-	Checks   any
-	Errors   any
+	Checks any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Aggregated finding information with counts and metadata. This is optimized for list API queries and represents a finding along with its instance statistics.
 	Result any

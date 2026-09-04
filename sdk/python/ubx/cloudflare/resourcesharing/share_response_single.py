@@ -98,7 +98,9 @@ _ShareResponseSingle_ResourcesFields = {
 class ShareResponseSingleConfig:
     # The name of the share.
     name: Any = None
+    # The recipients granted access to this share. (AI-inferred)
     recipients: Any = None
+    # The resources included in this share. (AI-inferred)
     resources: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -107,11 +109,15 @@ class ShareResponseSingleConfig:
 
 @dataclasses.dataclass
 class ShareResponseSingleAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The name of the share.
     name: Any = None
+    # The recipients granted access to this share. (AI-inferred)
     recipients: Any = None
+    # The resources included in this share. (AI-inferred)
     resources: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether the API call was successful.
     success: Any = None

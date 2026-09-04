@@ -43,6 +43,7 @@ var IamResponseSingleAccount_UnitFields = ubx.FieldMap{
 type IamResponseSingleAccountConfig struct {
 	// Account name
 	Name any
+	// The type of the account. (AI-inferred)
 	Type any
 	// information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
 	Unit any
@@ -52,9 +53,11 @@ type IamResponseSingleAccountConfig struct {
 
 type IamResponseSingleAccountAttrs struct {
 	// Account name
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
-	Type   any
+	// The type of the account. (AI-inferred)
+	Type any
 	// information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
 	Unit any
 	// path parameter, not part of the API's own resource representation

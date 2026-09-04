@@ -16,10 +16,15 @@ export interface ContentPolicy_Result {
 }
 
 export interface ContentPolicyConfig {
+  /** Whether this content policy is currently active. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
+  /** This content policy's own real, human-readable name. (AI-inferred) */
   name: string | Computed<string>;
+  /** A free-text note about this content policy. (AI-inferred) */
   notes?: string | Computed<string>;
+  /** The content pattern this policy matches against. (AI-inferred) */
   pattern: string | Computed<string>;
+  /** The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred) */
   targets: string[] | Computed<string[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -28,15 +33,23 @@ export interface ContentPolicyConfig {
 }
 
 export interface ContentPolicyAttrs {
+  /** When this content policy was created. (AI-inferred) */
   createdAt: ContentPolicy_CreatedAt;
+  /** Whether this content policy is currently active. (AI-inferred) */
   enabled: boolean;
+  /** This content policy's own real identifier. (AI-inferred) */
   id: ContentPolicy_CreatedAt;
+  /** When this content policy was last modified. (AI-inferred) */
   modifiedAt: ContentPolicy_CreatedAt;
+  /** This content policy's own real, human-readable name. (AI-inferred) */
   name: string;
+  /** A free-text note about this content policy. (AI-inferred) */
   notes: string;
+  /** The content pattern this policy matches against. (AI-inferred) */
   pattern: string;
   /** A content policy pattern that matches against the subject or body of an email. */
   result: ContentPolicy_Result;
+  /** The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred) */
   targets: string[];
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

@@ -43,19 +43,26 @@ var MconnCustomerConnectorsGetResponse_DeviceFields = ubx.FieldMap{
 }
 
 type MconnCustomerConnectorsGetResponseConfig struct {
+	// Whether this connector device has been activated. (AI-inferred)
 	Activated any
 	// Exactly one of id, serial_number, or provision_license must be provided.
 	Device any
 	// Allowed days of the week for upgrades. Default is all days.
-	InterruptWindowDaysOfWeek    any
+	InterruptWindowDaysOfWeek any
+	// How many hours this connector's own maintenance interrupt window lasts. (AI-inferred)
 	InterruptWindowDurationHours any
 	// List of dates (YYYY-MM-DD) when upgrades are blocked.
 	InterruptWindowEmbargoDates any
-	InterruptWindowHourOfDay    any
-	Notes                       any
-	Primary                     any
-	SiteId                      any
-	Timezone                    any
+	// The hour of day this connector's own maintenance interrupt window starts. (AI-inferred)
+	InterruptWindowHourOfDay any
+	// A free-text note about this connector device. (AI-inferred)
+	Notes any
+	// Whether this is the site's own primary connector device. (AI-inferred)
+	Primary any
+	// The real Magic WAN Connector site this device belongs to. (AI-inferred)
+	SiteId any
+	// The real timezone this connector's own interrupt window is scheduled against. (AI-inferred)
+	Timezone any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -63,20 +70,28 @@ type MconnCustomerConnectorsGetResponseConfig struct {
 }
 
 type MconnCustomerConnectorsGetResponseAttrs struct {
+	// Whether this connector device has been activated. (AI-inferred)
 	Activated any
 	// Exactly one of id, serial_number, or provision_license must be provided.
 	Device any
 	// Allowed days of the week for upgrades. Default is all days.
-	InterruptWindowDaysOfWeek    any
+	InterruptWindowDaysOfWeek any
+	// How many hours this connector's own maintenance interrupt window lasts. (AI-inferred)
 	InterruptWindowDurationHours any
 	// List of dates (YYYY-MM-DD) when upgrades are blocked.
 	InterruptWindowEmbargoDates any
-	InterruptWindowHourOfDay    any
-	Notes                       any
-	Primary                     any
-	Result                      any
-	SiteId                      any
-	Timezone                    any
+	// The hour of day this connector's own maintenance interrupt window starts. (AI-inferred)
+	InterruptWindowHourOfDay any
+	// A free-text note about this connector device. (AI-inferred)
+	Notes any
+	// Whether this is the site's own primary connector device. (AI-inferred)
+	Primary any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The real Magic WAN Connector site this device belongs to. (AI-inferred)
+	SiteId any
+	// The real timezone this connector's own interrupt window is scheduled against. (AI-inferred)
+	Timezone any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

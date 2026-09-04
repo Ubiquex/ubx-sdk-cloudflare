@@ -44,14 +44,17 @@ export interface UserSchemaConfig {
 }
 
 export interface UserSchemaAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: UserSchema_Errors[];
   /** Schema file bytes */
   file: string;
   /** Kind of schema */
   kind: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: UserSchema_Errors[];
   /** Name of the schema */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: UserSchema_Result;
   /** Whether the API call was successful. */
   success: boolean;

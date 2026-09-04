@@ -38,6 +38,7 @@ export interface MagicVisibilityMnmMnmRulesSingleResponseConfig {
   packetThreshold?: number | Computed<number>;
   /** Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule. */
   prefixMatch?: string | Computed<string>;
+  /** The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred) */
   prefixes: string[] | Computed<string[]>;
   /** MNM rule type. */
   type: string | Computed<string>;
@@ -64,7 +65,9 @@ export interface MagicVisibilityMnmMnmRulesSingleResponseAttrs {
   packetThreshold: number;
   /** Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule. */
   prefixMatch: string;
+  /** The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred) */
   prefixes: string[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicVisibilityMnmMnmRulesSingleResponse_Result;
   /** MNM rule type. */
   type: string;

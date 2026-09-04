@@ -45,7 +45,9 @@ export interface IntelSinkholesSinkholeSingleResponseConfig {
 }
 
 export interface IntelSinkholesSinkholeSingleResponseAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: IntelSinkholesSinkholeSingleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: IntelSinkholesSinkholeSingleResponse_Errors[];
   /** The name of the sinkhole. */
   name: string;

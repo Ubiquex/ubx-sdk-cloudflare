@@ -38,7 +38,9 @@ class NscCniConfig:
     # Customer account tag
     account: Any = None
     bgp: Any = None
+    # The interconnect this CNI is associated with. (AI-inferred)
     interconnect: Any = None
+    # The Magic WAN configuration associated with this CNI. (AI-inferred)
     magic: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -54,8 +56,11 @@ class NscCniAttrs:
     bgp_mode: Any = None
     # Customer end of the point-to-point link This should always be inside the same prefix as `p2p_ip`.
     cust_ip: Any = None
+    # The unique identifier of the Cloud Network Interconnect. (AI-inferred)
     id: Any = None
+    # The interconnect this CNI is associated with. (AI-inferred)
     interconnect: Any = None
+    # The Magic WAN configuration associated with this CNI. (AI-inferred)
     magic: Any = None
     # Cloudflare end of the point-to-point link
     p2p_ip: Any = None

@@ -98,6 +98,7 @@ export interface IamSingleMembershipResponseWithPoliciesConfig {
 }
 
 export interface IamSingleMembershipResponseWithPoliciesAttrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: IamSingleMembershipResponseWithPolicies_Result;
   /** Whether to accept or reject this account invitation. */
   status: unknown;

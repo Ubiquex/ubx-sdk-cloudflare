@@ -37,9 +37,11 @@ export interface DosExpressionFilterResponseConfig {
 }
 
 export interface DosExpressionFilterResponseAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DosExpressionFilterResponse_Errors[];
   /** The filter expression. */
   expression: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: DosExpressionFilterResponse_Errors[];
   /** The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'. */
   mode: string;

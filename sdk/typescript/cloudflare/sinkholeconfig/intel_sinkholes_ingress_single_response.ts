@@ -41,7 +41,9 @@ export interface IntelSinkholesIngressSingleResponseConfig {
 export interface IntelSinkholesIngressSingleResponseAttrs {
   /** The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns. */
   cidr: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: IntelSinkholesIngressSingleResponse_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: IntelSinkholesIngressSingleResponse_Errors[];
   result: IntelSinkholesIngressSingleResponse_Result;
   /** Whether the API call was successful. */

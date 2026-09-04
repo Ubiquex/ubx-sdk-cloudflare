@@ -50,6 +50,7 @@ class IamSsoConnectorResponseAttrs:
     begin_verification: Any = None
     # Email domain of the new SSO connector
     email_domain: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Controls the display of FedRAMP language to the user during SSO login
     use_fedramp_language: Any = None

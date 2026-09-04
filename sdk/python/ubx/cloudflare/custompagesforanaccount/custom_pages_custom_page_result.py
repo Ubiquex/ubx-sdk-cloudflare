@@ -32,6 +32,7 @@ class CustomPagesCustomPageResultConfig:
 
 @dataclasses.dataclass
 class CustomPagesCustomPageResultAttrs:
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The custom page state.
     state: Any = None

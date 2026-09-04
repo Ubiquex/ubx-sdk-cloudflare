@@ -42,8 +42,10 @@ type IntelSinkholesIngressSingleResponseConfig struct {
 
 type IntelSinkholesIngressSingleResponseAttrs struct {
 	// The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns.
-	Cidr     any
-	Errors   any
+	Cidr any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	Result   any
 	// Whether the API call was successful.

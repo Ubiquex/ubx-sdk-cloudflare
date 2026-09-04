@@ -29,9 +29,11 @@ type SecondaryDnsSingleResponseConfig struct {
 type SecondaryDnsSingleResponseAttrs struct {
 	// TSIG algorithm.
 	Algo any
-	Id   any
+	// The unique identifier of the TSIG key. (AI-inferred)
+	Id any
 	// TSIG key name.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// TSIG secret.
 	Secret any

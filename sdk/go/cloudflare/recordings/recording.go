@@ -192,7 +192,8 @@ type RecordingAttrs struct {
 	AllowMultipleRecordings any
 	// Object containing configuration regarding the audio that is being recorded.
 	AudioConfig any
-	Data        any
+	// The real recording records returned by this lookup. (AI-inferred)
+	Data any
 	// Update the recording file name.
 	FileNamePrefix any
 	// Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.

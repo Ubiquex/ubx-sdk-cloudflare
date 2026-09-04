@@ -35,6 +35,7 @@ export interface AccessSingleResponse20Attrs {
   certificate: string;
   /** The name of the certificate. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse20_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

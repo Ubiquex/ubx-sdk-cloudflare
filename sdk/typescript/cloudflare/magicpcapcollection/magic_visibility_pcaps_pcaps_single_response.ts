@@ -34,6 +34,7 @@ export interface MagicVisibilityPcapsPcapsSingleResponseConfig {
 }
 
 export interface MagicVisibilityPcapsPcapsSingleResponseAttrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicVisibilityPcapsPcapsSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

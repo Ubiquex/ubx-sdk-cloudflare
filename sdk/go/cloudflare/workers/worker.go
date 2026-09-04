@@ -115,6 +115,7 @@ var Worker_ProductionSettingsFields = ubx.FieldMap{
 }
 
 type WorkerConfig struct {
+	// The git repository this Worker is connected to for CI-driven deployment. (AI-inferred)
 	GitRepository any
 	// Build and deploy settings when creating a Worker build configuration
 	ProductionSettings any
@@ -125,17 +126,22 @@ type WorkerConfig struct {
 }
 
 type WorkerAttrs struct {
-	Errors        any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// The git repository this Worker is connected to for CI-driven deployment. (AI-inferred)
 	GitRepository any
-	Messages      any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Build and deploy settings when creating a Worker build configuration
 	ProductionSettings any
 	// Worker build configuration including git repository linkage and production settings
-	Result     any
+	Result any
+	// Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
 	ResultInfo any
 	// System-generated worker script tag.
 	ScriptTag any
-	Success   any
+	// Whether the API call succeeded. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }

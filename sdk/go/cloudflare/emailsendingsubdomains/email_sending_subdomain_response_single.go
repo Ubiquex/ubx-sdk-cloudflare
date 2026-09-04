@@ -26,7 +26,8 @@ type EmailSendingSubdomainResponseSingleConfig struct {
 
 type EmailSendingSubdomainResponseSingleAttrs struct {
 	// The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any

@@ -76,12 +76,16 @@ _Workflow_SchedulesFields = {
 
 @dataclasses.dataclass
 class WorkflowConfig:
+    # The Worker class implementing this Workflow. (AI-inferred)
     class_name: Any = None
     concurrency: Any = None
     # Default retention applied to instances of this version when they do not set their own retention.
     default_retention: Any = None
+    # The concurrency and execution limits applied to instances of this Workflow. (AI-inferred)
     limits: Any = None
+    # The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred)
     schedules: Any = None
+    # The Worker script that owns this Workflow. (AI-inferred)
     script_name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -90,17 +94,26 @@ class WorkflowConfig:
 
 @dataclasses.dataclass
 class WorkflowAttrs:
+    # The Worker class implementing this Workflow. (AI-inferred)
     class_name: Any = None
     concurrency: Any = None
     # Default retention applied to instances of this version when they do not set their own retention.
     default_retention: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # The concurrency and execution limits applied to instances of this Workflow. (AI-inferred)
     limits: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
     result_info: Any = None
+    # The recurring schedules configured to trigger new instances of this Workflow. (AI-inferred)
     schedules: Any = None
+    # The Worker script that owns this Workflow. (AI-inferred)
     script_name: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
