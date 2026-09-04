@@ -20,20 +20,33 @@ _Event_RawFields = {
 
 @dataclasses.dataclass
 class EventConfig:
+    # The identified attacker associated with this event. (AI-inferred)
     attacker: Any = None
+    # The country associated with the attacker. (AI-inferred)
     attacker_country: Any = None
+    # The category this event is classified under. (AI-inferred)
     category: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
     # Dataset ID containing the event to update.
     dataset_id: Any = None
+    # The date the event occurred. (AI-inferred)
     date: Any = None
+    # A description of what happened in this event. (AI-inferred)
     event: Any = None
+    # The threat indicator value associated with this event. (AI-inferred)
     indicator: Any = None
+    # The type of the associated threat indicator. (AI-inferred)
     indicator_type: Any = None
+    # Additional analyst insight about this event. (AI-inferred)
     insight: Any = None
+    # The raw, unprocessed data this event was derived from. (AI-inferred)
     raw: Any = None
+    # The country targeted by this event. (AI-inferred)
     target_country: Any = None
+    # The industry vertical targeted by this event. (AI-inferred)
     target_industry: Any = None
+    # The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred)
     tlp: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -42,37 +55,67 @@ class EventConfig:
 
 @dataclasses.dataclass
 class EventAttrs:
+    # The identified attacker associated with this event. (AI-inferred)
     attacker: Any = None
+    # The country associated with the attacker. (AI-inferred)
     attacker_country: Any = None
+    # The three-letter ISO country code associated with the attacker. (AI-inferred)
     attacker_country_alpha3: Any = None
+    # The category this event is classified under. (AI-inferred)
     category: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
     # Dataset ID containing the event to update.
     dataset_id: Any = None
+    # The date the event occurred. (AI-inferred)
     date: Any = None
+    # A description of what happened in this event. (AI-inferred)
     event: Any = None
+    # Whether this event has child events referencing it. (AI-inferred)
     has_children: Any = None
+    # The threat indicator value associated with this event. (AI-inferred)
     indicator: Any = None
+    # The type of the associated threat indicator. (AI-inferred)
     indicator_type: Any = None
+    # The identifier of the associated indicator type. (AI-inferred)
     indicator_type_id: Any = None
+    # Additional analyst insight about this event. (AI-inferred)
     insight: Any = None
+    # The cyber kill chain stage this event represents. (AI-inferred)
     kill_chain: Any = None
+    # The MITRE ATT&CK technique this event maps to. (AI-inferred)
     mitre_attack: Any = None
+    # The MITRE CAPEC attack pattern this event maps to. (AI-inferred)
     mitre_capec: Any = None
+    # The number of other events this event references. (AI-inferred)
     num_referenced: Any = None
+    # The number of other events that reference this event. (AI-inferred)
     num_references: Any = None
+    # The raw, unprocessed data this event was derived from. (AI-inferred)
     raw: Any = None
+    # The identifier of the raw source record this event was derived from. (AI-inferred)
     raw_id: Any = None
+    # The other events this event references. (AI-inferred)
     referenced: Any = None
+    # The identifiers of the other events this event references. (AI-inferred)
     referenced_ids: Any = None
+    # The other events that reference this event. (AI-inferred)
     references: Any = None
+    # The identifiers of the other events that reference this event. (AI-inferred)
     references_ids: Any = None
+    # The releasability classification controlling who can view this event. (AI-inferred)
     releasability_id: Any = None
+    # The tags applied to this event. (AI-inferred)
     tags: Any = None
+    # The country targeted by this event. (AI-inferred)
     target_country: Any = None
+    # The three-letter ISO country code of the country targeted by this event. (AI-inferred)
     target_country_alpha3: Any = None
+    # The industry vertical targeted by this event. (AI-inferred)
     target_industry: Any = None
+    # The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred)
     tlp: Any = None
+    # The unique identifier of the resource. (AI-inferred)
     uuid: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

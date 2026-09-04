@@ -22,6 +22,7 @@ export interface EmailDestinationAddressResponseSingleConfig {
 export interface EmailDestinationAddressResponseSingleAttrs {
   /** The contact email address of the user. */
   email: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: EmailDestinationAddressResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

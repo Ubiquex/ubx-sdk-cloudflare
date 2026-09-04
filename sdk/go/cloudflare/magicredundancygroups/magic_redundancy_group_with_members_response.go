@@ -46,7 +46,8 @@ type MagicRedundancyGroupWithMembersResponseAttrs struct {
 	// Tunnels to add to the group
 	Members any
 	// Human-readable name for the redundancy group
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

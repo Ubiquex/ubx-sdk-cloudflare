@@ -32,10 +32,12 @@ var NscCni_MagicFields = ubx.FieldMap{
 
 type NscCniConfig struct {
 	// Customer account tag
-	Account      any
-	Bgp          any
+	Account any
+	Bgp     any
+	// The interconnect this CNI is associated with. (AI-inferred)
 	Interconnect any
-	Magic        any
+	// The Magic WAN configuration associated with this CNI. (AI-inferred)
+	Magic any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -49,10 +51,13 @@ type NscCniAttrs struct {
 	// The BGP mode for a CNI. Controls the customer-facing data path: * `DynamicRouteExchange` — Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * `AdvertiseOnly` — static advertisement via taserver, no routes exchanged with Conduit
 	BgpMode any
 	// Customer end of the point-to-point link This should always be inside the same prefix as `p2p_ip`.
-	CustIp       any
-	Id           any
+	CustIp any
+	// The unique identifier of the Cloud Network Interconnect. (AI-inferred)
+	Id any
+	// The interconnect this CNI is associated with. (AI-inferred)
 	Interconnect any
-	Magic        any
+	// The Magic WAN configuration associated with this CNI. (AI-inferred)
+	Magic any
 	// Cloudflare end of the point-to-point link
 	P2pIp any
 	// path parameter, not part of the API's own resource representation

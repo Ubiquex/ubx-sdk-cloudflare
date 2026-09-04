@@ -44,6 +44,7 @@ class MagicVisibilityMnmMnmRulesSingleResponseConfig:
     packet_threshold: Any = None
     # Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
     prefix_match: Any = None
+    # The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred)
     prefixes: Any = None
     # MNM rule type.
     type: Any = None
@@ -70,7 +71,9 @@ class MagicVisibilityMnmMnmRulesSingleResponseAttrs:
     packet_threshold: Any = None
     # Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
     prefix_match: Any = None
+    # The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic. (AI-inferred)
     prefixes: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # MNM rule type.
     type: Any = None

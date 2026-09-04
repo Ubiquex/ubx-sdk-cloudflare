@@ -65,6 +65,7 @@ const PageTestResponseSingle_RegionFields: FieldMap = {
 };
 
 export interface PageTestResponseSingleConfig {
+  /** The region the Observatory test was run from. (AI-inferred) */
   region?: PageTestResponseSingle_Region | Computed<PageTestResponseSingle_Region>;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string | Computed<string>;
@@ -75,7 +76,9 @@ export interface PageTestResponseSingleConfig {
 }
 
 export interface PageTestResponseSingleAttrs {
+  /** The region the Observatory test was run from. (AI-inferred) */
   region: PageTestResponseSingle_Region;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: PageTestResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

@@ -20,17 +20,28 @@ type Cost_Result struct {
 }
 
 type CostConfig struct {
-	BaseUrl     any
-	Beta        any
+	// The base URL of the custom AI provider's own API. (AI-inferred)
+	BaseUrl any
+	// Whether this provider registration is in beta. (AI-inferred)
+	Beta any
+	// An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
 	CurlExample any
+	// A human-readable description of the custom provider. (AI-inferred)
 	Description any
-	Enable      any
-	Headers     any
-	JsExample   any
-	Link        any
-	Name        any
-	Position    any
-	Slug        any
+	// Whether the custom provider is enabled. (AI-inferred)
+	Enable any
+	// The HTTP headers sent with every request to the custom provider. (AI-inferred)
+	Headers any
+	// An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
+	JsExample any
+	// A link to the custom provider's own documentation. (AI-inferred)
+	Link any
+	// The name of the custom provider. (AI-inferred)
+	Name any
+	// The display order of the custom provider in the dashboard. (AI-inferred)
+	Position any
+	// A URL-safe identifier for the custom provider. (AI-inferred)
+	Slug any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,19 +49,32 @@ type CostConfig struct {
 }
 
 type CostAttrs struct {
-	BaseUrl     any
-	Beta        any
+	// The base URL of the custom AI provider's own API. (AI-inferred)
+	BaseUrl any
+	// Whether this provider registration is in beta. (AI-inferred)
+	Beta any
+	// An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
 	CurlExample any
+	// A human-readable description of the custom provider. (AI-inferred)
 	Description any
-	Enable      any
-	Headers     any
-	JsExample   any
-	Link        any
-	Name        any
-	Position    any
-	Result      any
-	Slug        any
-	Success     any
+	// Whether the custom provider is enabled. (AI-inferred)
+	Enable any
+	// The HTTP headers sent with every request to the custom provider. (AI-inferred)
+	Headers any
+	// An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred)
+	JsExample any
+	// A link to the custom provider's own documentation. (AI-inferred)
+	Link any
+	// The name of the custom provider. (AI-inferred)
+	Name any
+	// The display order of the custom provider in the dashboard. (AI-inferred)
+	Position any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// A URL-safe identifier for the custom provider. (AI-inferred)
+	Slug any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

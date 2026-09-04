@@ -39,6 +39,7 @@ export interface ZeroTrustGatewaySingleResponse7Attrs {
   description: string;
   /** Name of the PAC file. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ZeroTrustGatewaySingleResponse7_Result;
   /** URL-friendly version of the PAC file name. If not provided, it will be auto-generated */
   slug: string;

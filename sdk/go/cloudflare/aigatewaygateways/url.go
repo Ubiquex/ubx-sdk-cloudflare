@@ -4,18 +4,29 @@ package aigatewaygateways
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UrlConfig struct {
-	Authentication          any
+	// Whether requests to this AI Gateway require authentication. (AI-inferred)
+	Authentication any
+	// Whether to invalidate cached responses when the underlying data changes. (AI-inferred)
 	CacheInvalidateOnUpdate any
-	CacheTtl                any
-	CollectLogs             any
+	// How long a cached response remains valid, in seconds. (AI-inferred)
+	CacheTtl any
+	// Whether to collect request/response logs for this gateway. (AI-inferred)
+	CollectLogs any
 	// gateway id
-	Id                    any
-	LogManagement         any
+	Id any
+	// How long collected logs are retained and how they're managed. (AI-inferred)
+	LogManagement any
+	// The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred)
 	LogManagementStrategy any
-	Logpush               any
-	LogpushPublicKey      any
-	RateLimitingInterval  any
-	RateLimitingLimit     any
+	// Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred)
+	Logpush any
+	// The public key used to encrypt logs pushed via Logpush. (AI-inferred)
+	LogpushPublicKey any
+	// The time window, in seconds, over which the rate limit is applied. (AI-inferred)
+	RateLimitingInterval any
+	// The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred)
+	RateLimitingLimit any
+	// The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred)
 	RateLimitingTechnique any
 	// Backoff strategy for retry delays
 	RetryBackoff any
@@ -23,10 +34,12 @@ type UrlConfig struct {
 	RetryDelay any
 	// Maximum number of retry attempts for failed requests (1-5)
 	RetryMaxAttempts any
-	StoreId          any
+	// The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred)
+	StoreId any
 	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
 	WorkersAiBillingMode any
-	Zdr                  any
+	// Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred)
+	Zdr any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,31 +49,46 @@ type UrlConfig struct {
 }
 
 type UrlAttrs struct {
-	Authentication          any
+	// Whether requests to this AI Gateway require authentication. (AI-inferred)
+	Authentication any
+	// Whether to invalidate cached responses when the underlying data changes. (AI-inferred)
 	CacheInvalidateOnUpdate any
-	CacheTtl                any
-	CollectLogs             any
+	// How long a cached response remains valid, in seconds. (AI-inferred)
+	CacheTtl any
+	// Whether to collect request/response logs for this gateway. (AI-inferred)
+	CollectLogs any
 	// gateway id
-	Id                    any
-	LogManagement         any
+	Id any
+	// How long collected logs are retained and how they're managed. (AI-inferred)
+	LogManagement any
+	// The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred)
 	LogManagementStrategy any
-	Logpush               any
-	LogpushPublicKey      any
-	RateLimitingInterval  any
-	RateLimitingLimit     any
+	// Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred)
+	Logpush any
+	// The public key used to encrypt logs pushed via Logpush. (AI-inferred)
+	LogpushPublicKey any
+	// The time window, in seconds, over which the rate limit is applied. (AI-inferred)
+	RateLimitingInterval any
+	// The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred)
+	RateLimitingLimit any
+	// The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred)
 	RateLimitingTechnique any
-	Result                any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
 	// Backoff strategy for retry delays
 	RetryBackoff any
 	// Delay between retry attempts in milliseconds (0-5000)
 	RetryDelay any
 	// Maximum number of retry attempts for failed requests (1-5)
 	RetryMaxAttempts any
-	StoreId          any
-	Success          any
+	// The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred)
+	StoreId any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
 	WorkersAiBillingMode any
-	Zdr                  any
+	// Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred)
+	Zdr any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

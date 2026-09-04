@@ -44,12 +44,15 @@ type ApiShieldSingleOperationResponseConfig struct {
 type ApiShieldSingleOperationResponseAttrs struct {
 	// The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
 	Endpoint any
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// RFC3986-compliant host.
-	Host     any
+	Host any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The HTTP method used to access the endpoint.
 	Method any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Whether the API call was successful.
 	Success any

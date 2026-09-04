@@ -37,6 +37,7 @@ class CustomPagesCustomAssetResultAttrs:
     description: Any = None
     # The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The URL where the asset content is fetched from.
     url: Any = None

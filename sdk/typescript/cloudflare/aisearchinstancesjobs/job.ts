@@ -252,18 +252,27 @@ const Job_SourceParamsFields: FieldMap = {
 };
 
 export interface JobConfig {
+  /** The AI Gateway requests through this AI Search instance are routed through. (AI-inferred) */
   aiGatewayId?: string | Computed<string>;
   /** A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model. */
   aiSearchModel?: string | Computed<string>;
+  /** Whether response caching is enabled for this instance. (AI-inferred) */
   cache?: boolean | Computed<boolean>;
+  /** The minimum similarity score required for a cached response to be reused. (AI-inferred) */
   cacheThreshold?: string | Computed<string>;
   /** Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d). */
   cacheTtl?: number | Computed<number>;
+  /** The chunking configuration used when indexing source content. (AI-inferred) */
   chunk?: boolean | Computed<boolean>;
+  /** The number of overlapping tokens between adjacent chunks. (AI-inferred) */
   chunkOverlap?: number | Computed<number>;
+  /** The maximum size, in tokens, of each indexed chunk. (AI-inferred) */
   chunkSize?: number | Computed<number>;
+  /** Arbitrary custom metadata attached to the instance. (AI-inferred) */
   customMetadata?: Job_CustomMetadata[] | Computed<Job_CustomMetadata[]>;
+  /** The model used to generate vector embeddings for indexed content. (AI-inferred) */
   embeddingModel?: string | Computed<string>;
+  /** The method used to combine multiple retrieval signals when ranking results. (AI-inferred) */
   fusionMethod?: string | Computed<string>;
   /** Deprecated — use index_method instead. */
   hybridSearchEnabled?: boolean | Computed<boolean>;
@@ -272,21 +281,32 @@ export interface JobConfig {
   /** Controls which storage backends are used during indexing. Defaults to vector-only. */
   indexMethod?: Job_IndexMethod | Computed<Job_IndexMethod>;
   indexingOptions?: Job_IndexingOptions | Computed<Job_IndexingOptions>;
+  /** The maximum number of results returned per query. (AI-inferred) */
   maxNumResults?: number | Computed<number>;
+  /** Metadata associated with the instance. (AI-inferred) */
   metadata?: Job_Metadata | Computed<Job_Metadata>;
+  /** The configuration for the instance's own public query endpoint. (AI-inferred) */
   publicEndpointParams?: Job_PublicEndpointParams | Computed<Job_PublicEndpointParams>;
+  /** Whether a reranking pass is applied to retrieved results. (AI-inferred) */
   reranking?: boolean | Computed<boolean>;
+  /** The model used to rerank retrieved results. (AI-inferred) */
   rerankingModel?: string | Computed<string>;
   retrievalOptions?: Job_RetrievalOptions | Computed<Job_RetrievalOptions>;
   /** A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model. */
   rewriteModel?: string | Computed<string>;
+  /** Whether incoming queries are rewritten before retrieval. (AI-inferred) */
   rewriteQuery?: boolean | Computed<boolean>;
+  /** The minimum relevance score a result must reach to be returned. (AI-inferred) */
   scoreThreshold?: number | Computed<number>;
+  /** The data source content is indexed from. (AI-inferred) */
   source?: string | Computed<string>;
+  /** Configuration specific to the instance's own data source. (AI-inferred) */
   sourceParams?: Job_SourceParams | Computed<Job_SourceParams>;
   /** Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). */
   syncInterval?: number | Computed<number>;
+  /** The AI Search API token used to authenticate requests for this instance. (AI-inferred) */
   tokenId?: string | Computed<string>;
+  /** The type of AI Search instance. (AI-inferred) */
   type?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -295,18 +315,27 @@ export interface JobConfig {
 }
 
 export interface JobAttrs {
+  /** The AI Gateway requests through this AI Search instance are routed through. (AI-inferred) */
   aiGatewayId: string;
   /** A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model. */
   aiSearchModel: string;
+  /** Whether response caching is enabled for this instance. (AI-inferred) */
   cache: boolean;
+  /** The minimum similarity score required for a cached response to be reused. (AI-inferred) */
   cacheThreshold: string;
   /** Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d). */
   cacheTtl: number;
+  /** The chunking configuration used when indexing source content. (AI-inferred) */
   chunk: boolean;
+  /** The number of overlapping tokens between adjacent chunks. (AI-inferred) */
   chunkOverlap: number;
+  /** The maximum size, in tokens, of each indexed chunk. (AI-inferred) */
   chunkSize: number;
+  /** Arbitrary custom metadata attached to the instance. (AI-inferred) */
   customMetadata: Job_CustomMetadata[];
+  /** The model used to generate vector embeddings for indexed content. (AI-inferred) */
   embeddingModel: string;
+  /** The method used to combine multiple retrieval signals when ranking results. (AI-inferred) */
   fusionMethod: string;
   /** Deprecated — use index_method instead. */
   hybridSearchEnabled: boolean;
@@ -315,23 +344,36 @@ export interface JobAttrs {
   /** Controls which storage backends are used during indexing. Defaults to vector-only. */
   indexMethod: Job_IndexMethod;
   indexingOptions: Job_IndexingOptions;
+  /** The maximum number of results returned per query. (AI-inferred) */
   maxNumResults: number;
+  /** Metadata associated with the instance. (AI-inferred) */
   metadata: Job_Metadata;
+  /** The configuration for the instance's own public query endpoint. (AI-inferred) */
   publicEndpointParams: Job_PublicEndpointParams;
+  /** Whether a reranking pass is applied to retrieved results. (AI-inferred) */
   reranking: boolean;
+  /** The model used to rerank retrieved results. (AI-inferred) */
   rerankingModel: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Job_Result;
   retrievalOptions: Job_RetrievalOptions;
   /** A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model. */
   rewriteModel: string;
+  /** Whether incoming queries are rewritten before retrieval. (AI-inferred) */
   rewriteQuery: boolean;
+  /** The minimum relevance score a result must reach to be returned. (AI-inferred) */
   scoreThreshold: number;
+  /** The data source content is indexed from. (AI-inferred) */
   source: string;
+  /** Configuration specific to the instance's own data source. (AI-inferred) */
   sourceParams: Job_SourceParams;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h). */
   syncInterval: number;
+  /** The AI Search API token used to authenticate requests for this instance. (AI-inferred) */
   tokenId: string;
+  /** The type of AI Search instance. (AI-inferred) */
   type: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

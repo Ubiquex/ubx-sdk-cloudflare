@@ -34,6 +34,7 @@ var ImagesImageVariantSimpleResponse_OptionsFields = ubx.FieldMap{
 }
 
 type ImagesImageVariantSimpleResponseConfig struct {
+	// The unique identifier of the image variant. (AI-inferred)
 	Id any
 	// Indicates whether the variant can access an image without a signature, regardless of image access control.
 	NeverRequireSignedUrls any
@@ -46,12 +47,14 @@ type ImagesImageVariantSimpleResponseConfig struct {
 }
 
 type ImagesImageVariantSimpleResponseAttrs struct {
+	// The unique identifier of the image variant. (AI-inferred)
 	Id any
 	// Indicates whether the variant can access an image without a signature, regardless of image access control.
 	NeverRequireSignedUrls any
 	// Allows you to define image resizing sizes for different use cases.
 	Options any
-	Result  any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

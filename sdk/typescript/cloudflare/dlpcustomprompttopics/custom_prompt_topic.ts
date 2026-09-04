@@ -13,10 +13,15 @@ export interface CustomPromptTopic_Result {
 }
 
 export interface CustomPromptTopicConfig {
+  /** A human-readable description of the prompt topic. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether the prompt topic is active. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
+  /** The name of the prompt topic. (AI-inferred) */
   name: string | Computed<string>;
+  /** The DLP profile this prompt topic belongs to. (AI-inferred) */
   profileId?: string | Computed<string>;
+  /** The subject matter this topic scans AI prompts for. (AI-inferred) */
   topic: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -25,11 +30,17 @@ export interface CustomPromptTopicConfig {
 }
 
 export interface CustomPromptTopicAttrs {
+  /** A human-readable description of the prompt topic. (AI-inferred) */
   description: string;
+  /** Whether the prompt topic is active. (AI-inferred) */
   enabled: boolean;
+  /** The name of the prompt topic. (AI-inferred) */
   name: string;
+  /** The DLP profile this prompt topic belongs to. (AI-inferred) */
   profileId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: CustomPromptTopic_Result;
+  /** The subject matter this topic scans AI prompts for. (AI-inferred) */
   topic: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

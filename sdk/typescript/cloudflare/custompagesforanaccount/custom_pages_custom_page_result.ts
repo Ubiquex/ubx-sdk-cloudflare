@@ -26,6 +26,7 @@ export interface CustomPagesCustomPageResultConfig {
 }
 
 export interface CustomPagesCustomPageResultAttrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: CustomPagesCustomPageResult_Result;
   /** The custom page state. */
   state: string;

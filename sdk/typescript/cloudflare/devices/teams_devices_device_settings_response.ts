@@ -151,6 +151,7 @@ export interface TeamsDevicesDeviceSettingsResponseConfig {
   autoConnect?: number | Computed<number>;
   /** Turn on the captive portal after the specified amount of time. */
   captivePortal?: number | Computed<number>;
+  /** A human-readable description of the device settings policy. (AI-inferred) */
   description?: TeamsDevicesDeviceSettingsResponse_Description | Computed<TeamsDevicesDeviceSettingsResponse_Description>;
   /** If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`. */
   disableAutoFallback?: boolean | Computed<boolean>;
@@ -206,6 +207,7 @@ export interface TeamsDevicesDeviceSettingsResponseAttrs {
   autoConnect: number;
   /** Turn on the captive portal after the specified amount of time. */
   captivePortal: number;
+  /** A human-readable description of the device settings policy. (AI-inferred) */
   description: TeamsDevicesDeviceSettingsResponse_Description;
   /** If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`. */
   disableAutoFallback: boolean;
@@ -233,6 +235,7 @@ export interface TeamsDevicesDeviceSettingsResponseAttrs {
   precedence: number;
   /** Determines if the operating system will register WARP's local interface IP with your on-premises DNS server. */
   registerInterfaceIpWithDns: boolean;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: TeamsDevicesDeviceSettingsResponse_Result;
   /** Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only). */
   sccmVpnBoundarySupport: boolean;

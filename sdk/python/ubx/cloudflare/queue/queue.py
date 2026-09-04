@@ -58,6 +58,7 @@ class Queue_Result:
 
 @dataclasses.dataclass
 class QueueConfig:
+    # The name of the queue. (AI-inferred)
     queue_name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -66,9 +67,13 @@ class QueueConfig:
 
 @dataclasses.dataclass
 class QueueAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
+    # The name of the queue. (AI-inferred)
     queue_name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Indicates if the API call was successful or not.
     success: Any = None

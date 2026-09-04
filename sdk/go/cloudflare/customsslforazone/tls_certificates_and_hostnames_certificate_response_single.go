@@ -98,7 +98,8 @@ type TlsCertificatesAndHostnamesCertificateResponseSingleAttrs struct {
 	Policy any
 	// The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare.
 	PrivateKey any
-	Result     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
 	Type any
 	// path parameter, not part of the API's own resource representation

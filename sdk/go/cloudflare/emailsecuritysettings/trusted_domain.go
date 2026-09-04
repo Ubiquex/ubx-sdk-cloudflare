@@ -22,13 +22,16 @@ type TrustedDomain_Result struct {
 }
 
 type TrustedDomainConfig struct {
+	// A free-text note about this trusted-domain entry. (AI-inferred)
 	Comments any
 	// Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 	IsRecent any
-	IsRegex  any
+	// Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
+	IsRegex any
 	// Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 	IsSimilarity any
-	Pattern      any
+	// The domain pattern this entry trusts. (AI-inferred)
+	Pattern any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,18 +39,24 @@ type TrustedDomainConfig struct {
 }
 
 type TrustedDomainAttrs struct {
-	Comments  any
+	// A free-text note about this trusted-domain entry. (AI-inferred)
+	Comments any
+	// When this trusted-domain entry was created. (AI-inferred)
 	CreatedAt any
-	Id        any
+	// This trusted-domain entry's own real identifier. (AI-inferred)
+	Id any
 	// Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition.
 	IsRecent any
-	IsRegex  any
+	// Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
+	IsRegex any
 	// Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition.
 	IsSimilarity any
 	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
 	LastModified any
-	ModifiedAt   any
-	Pattern      any
+	// When this trusted-domain entry was last modified. (AI-inferred)
+	ModifiedAt any
+	// The domain pattern this entry trusts. (AI-inferred)
+	Pattern any
 	// A trusted email domain.
 	Result any
 	// path parameter, not part of the API's own resource representation

@@ -178,23 +178,37 @@ class McnGetOnrampResponse_Result:
 
 @dataclasses.dataclass
 class McnGetOnrampResponseConfig:
+    # The hub this onramp was adopted into, if any. (AI-inferred)
     adopted_hub_id: Any = None
+    # The Magic WAN hubs this onramp is attached to. (AI-inferred)
     attached_hubs: Any = None
+    # The cloud VPCs this onramp is attached to. (AI-inferred)
     attached_vpcs: Any = None
     # Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
     cloud_asn: Any = None
+    # The cloud provider this onramp connects to. (AI-inferred)
     cloud_type: Any = None
+    # A human-readable description of the onramp. (AI-inferred)
     description: Any = None
     # Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
     dynamic_routing: Any = None
+    # The identifier of the hub provider this onramp is attached to. (AI-inferred)
     hub_provider_id: Any = None
+    # Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred)
     install_routes_in_cloud: Any = None
+    # Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred)
     install_routes_in_magic_wan: Any = None
+    # Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred)
     manage_hub_to_hub_attachments: Any = None
+    # Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred)
     manage_vpc_to_hub_attachments: Any = None
+    # The name of the onramp. (AI-inferred)
     name: Any = None
+    # The cloud region this onramp is deployed in. (AI-inferred)
     region: Any = None
+    # The type of onramp. (AI-inferred)
     type: Any = None
+    # The cloud VPC this onramp connects to. (AI-inferred)
     vpc: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -203,24 +217,39 @@ class McnGetOnrampResponseConfig:
 
 @dataclasses.dataclass
 class McnGetOnrampResponseAttrs:
+    # The hub this onramp was adopted into, if any. (AI-inferred)
     adopted_hub_id: Any = None
+    # The Magic WAN hubs this onramp is attached to. (AI-inferred)
     attached_hubs: Any = None
+    # The cloud VPCs this onramp is attached to. (AI-inferred)
     attached_vpcs: Any = None
     # Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
     cloud_asn: Any = None
+    # The cloud provider this onramp connects to. (AI-inferred)
     cloud_type: Any = None
+    # A human-readable description of the onramp. (AI-inferred)
     description: Any = None
     # Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
     dynamic_routing: Any = None
+    # The identifier of the hub provider this onramp is attached to. (AI-inferred)
     hub_provider_id: Any = None
+    # Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred)
     install_routes_in_cloud: Any = None
+    # Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred)
     install_routes_in_magic_wan: Any = None
+    # Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred)
     manage_hub_to_hub_attachments: Any = None
+    # Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred)
     manage_vpc_to_hub_attachments: Any = None
+    # The name of the onramp. (AI-inferred)
     name: Any = None
+    # The cloud region this onramp is deployed in. (AI-inferred)
     region: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The type of onramp. (AI-inferred)
     type: Any = None
+    # The cloud VPC this onramp connects to. (AI-inferred)
     vpc: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

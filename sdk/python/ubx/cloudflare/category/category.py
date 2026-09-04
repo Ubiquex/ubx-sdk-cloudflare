@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CategoryConfig:
+    # The cyber kill chain stage this category represents. (AI-inferred)
     kill_chain: Any = None
+    # The MITRE ATT&CK technique this category maps to. (AI-inferred)
     mitre_attack: Any = None
+    # The MITRE CAPEC attack pattern this category maps to. (AI-inferred)
     mitre_capec: Any = None
+    # The name of the threat event category. (AI-inferred)
     name: Any = None
+    # A short, URL-safe identifier for the category. (AI-inferred)
     shortname: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -20,11 +25,17 @@ class CategoryConfig:
 
 @dataclasses.dataclass
 class CategoryAttrs:
+    # The cyber kill chain stage this category represents. (AI-inferred)
     kill_chain: Any = None
+    # The MITRE ATT&CK technique this category maps to. (AI-inferred)
     mitre_attack: Any = None
+    # The MITRE CAPEC attack pattern this category maps to. (AI-inferred)
     mitre_capec: Any = None
+    # The name of the threat event category. (AI-inferred)
     name: Any = None
+    # A short, URL-safe identifier for the category. (AI-inferred)
     shortname: Any = None
+    # The unique identifier of the resource. (AI-inferred)
     uuid: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

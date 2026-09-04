@@ -32,11 +32,16 @@ var Entry_PatternFields = ubx.FieldMap{
 }
 
 type EntryConfig struct {
+	// A human-readable description of the DLP entry. (AI-inferred)
 	Description any
-	Enabled     any
-	Name        any
-	Pattern     any
-	ProfileId   any
+	// Whether the DLP entry is active. (AI-inferred)
+	Enabled any
+	// The name of the DLP entry. (AI-inferred)
+	Name any
+	// The detection pattern this entry matches against. (AI-inferred)
+	Pattern any
+	// The DLP profile this entry belongs to. (AI-inferred)
+	ProfileId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -44,12 +49,18 @@ type EntryConfig struct {
 }
 
 type EntryAttrs struct {
+	// A human-readable description of the DLP entry. (AI-inferred)
 	Description any
-	Enabled     any
-	Name        any
-	Pattern     any
-	ProfileId   any
-	Result      any
+	// Whether the DLP entry is active. (AI-inferred)
+	Enabled any
+	// The name of the DLP entry. (AI-inferred)
+	Name any
+	// The detection pattern this entry matches against. (AI-inferred)
+	Pattern any
+	// The DLP profile this entry belongs to. (AI-inferred)
+	ProfileId any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

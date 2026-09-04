@@ -37,27 +37,40 @@ const Predefined_EntriesFields: FieldMap = {
 };
 
 export interface PredefinedConfig {
+  /** Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred) */
   aiContextEnabled?: boolean | Computed<boolean>;
+  /** How many real matches this predefined DLP entry allows before it triggers. (AI-inferred) */
   allowedMatchCount?: number | Computed<number>;
+  /** The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred) */
   confidenceThreshold?: string | Computed<string>;
   /** Scan the context of predefined entries to only return matches surrounded by keywords. */
   contextAwareness?: Predefined_ContextAwareness | Computed<Predefined_ContextAwareness>;
+  /** The real, individual detection entries this predefined DLP profile groups together. (AI-inferred) */
   entries?: Predefined_Entries[] | Computed<Predefined_Entries[]>;
+  /** Whether this predefined DLP entry scans image text via OCR. (AI-inferred) */
   ocrEnabled?: boolean | Computed<boolean>;
+  /** The real predefined DLP profile this entry belongs to. (AI-inferred) */
   profileId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
 }
 
 export interface PredefinedAttrs {
+  /** Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred) */
   aiContextEnabled: boolean;
+  /** How many real matches this predefined DLP entry allows before it triggers. (AI-inferred) */
   allowedMatchCount: number;
+  /** The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred) */
   confidenceThreshold: string;
   /** Scan the context of predefined entries to only return matches surrounded by keywords. */
   contextAwareness: Predefined_ContextAwareness;
+  /** The real, individual detection entries this predefined DLP profile groups together. (AI-inferred) */
   entries: Predefined_Entries[];
+  /** Whether this predefined DLP entry scans image text via OCR. (AI-inferred) */
   ocrEnabled: boolean;
+  /** The real predefined DLP profile this entry belongs to. (AI-inferred) */
   profileId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: unknown;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

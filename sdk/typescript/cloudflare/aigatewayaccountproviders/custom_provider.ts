@@ -20,16 +20,27 @@ export interface CustomProvider_Result {
 }
 
 export interface CustomProviderConfig {
+  /** The base URL of the custom AI provider's own API. (AI-inferred) */
   baseUrl: string | Computed<string>;
+  /** Whether this provider registration is in beta. (AI-inferred) */
   beta?: boolean | Computed<boolean>;
+  /** An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred) */
   curlExample?: string | Computed<string>;
+  /** A human-readable description of the custom provider. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether the custom provider is enabled. (AI-inferred) */
   enable?: boolean | Computed<boolean>;
+  /** The HTTP headers sent with every request to the custom provider. (AI-inferred) */
   headers?: string | Computed<string>;
+  /** An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred) */
   jsExample?: string | Computed<string>;
+  /** A link to the custom provider's own documentation. (AI-inferred) */
   link?: string | Computed<string>;
+  /** The name of the custom provider. (AI-inferred) */
   name: string | Computed<string>;
+  /** The display order of the custom provider in the dashboard. (AI-inferred) */
   position?: number | Computed<number>;
+  /** A URL-safe identifier for the custom provider. (AI-inferred) */
   slug: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -38,18 +49,31 @@ export interface CustomProviderConfig {
 }
 
 export interface CustomProviderAttrs {
+  /** The base URL of the custom AI provider's own API. (AI-inferred) */
   baseUrl: string;
+  /** Whether this provider registration is in beta. (AI-inferred) */
   beta: boolean;
+  /** An example curl command for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred) */
   curlExample: string;
+  /** A human-readable description of the custom provider. (AI-inferred) */
   description: string;
+  /** Whether the custom provider is enabled. (AI-inferred) */
   enable: boolean;
+  /** The HTTP headers sent with every request to the custom provider. (AI-inferred) */
   headers: string;
+  /** An example JavaScript snippet for calling this provider through AI Gateway, shown in the dashboard. (AI-inferred) */
   jsExample: string;
+  /** A link to the custom provider's own documentation. (AI-inferred) */
   link: string;
+  /** The name of the custom provider. (AI-inferred) */
   name: string;
+  /** The display order of the custom provider in the dashboard. (AI-inferred) */
   position: number;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: CustomProvider_Result;
+  /** A URL-safe identifier for the custom provider. (AI-inferred) */
   slug: string;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

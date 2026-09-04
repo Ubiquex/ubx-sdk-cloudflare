@@ -196,6 +196,7 @@ class RecordingAttrs:
     allow_multiple_recordings: Any = None
     # Object containing configuration regarding the audio that is being recorded.
     audio_config: Any = None
+    # The real recording records returned by this lookup. (AI-inferred)
     data: Any = None
     # Update the recording file name.
     file_name_prefix: Any = None

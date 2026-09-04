@@ -41,6 +41,7 @@ class AccessSingleResponse20Attrs:
     certificate: Any = None
     # The name of the certificate.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None

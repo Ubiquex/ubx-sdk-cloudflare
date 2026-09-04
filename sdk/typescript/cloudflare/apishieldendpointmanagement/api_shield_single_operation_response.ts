@@ -42,12 +42,15 @@ export interface ApiShieldSingleOperationResponseConfig {
 export interface ApiShieldSingleOperationResponseAttrs {
   /** The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/. */
   endpoint: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ApiShieldSingleOperationResponse_Errors[];
   /** RFC3986-compliant host. */
   host: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: ApiShieldSingleOperationResponse_Errors[];
   /** The HTTP method used to access the endpoint. */
   method: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ApiShieldSingleOperationResponse_Result;
   /** Whether the API call was successful. */
   success: boolean;

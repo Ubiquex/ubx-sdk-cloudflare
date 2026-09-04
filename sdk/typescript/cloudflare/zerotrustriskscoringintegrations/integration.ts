@@ -20,6 +20,7 @@ export interface Integration_Result {
 }
 
 export interface IntegrationConfig {
+  /** The type of the Zero Trust Risk Scoring integration. (AI-inferred) */
   integrationType: string | Computed<string>;
   /** A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider */
   referenceId?: string | Computed<string>;
@@ -32,9 +33,11 @@ export interface IntegrationConfig {
 }
 
 export interface IntegrationAttrs {
+  /** The type of the Zero Trust Risk Scoring integration. (AI-inferred) */
   integrationType: string;
   /** A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider */
   referenceId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Integration_Result;
   /** The base url of the tenant, e.g. "https://tenant.okta.com". */
   tenantUrl: string;

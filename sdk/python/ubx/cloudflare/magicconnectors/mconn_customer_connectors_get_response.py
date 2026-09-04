@@ -47,18 +47,25 @@ _MconnCustomerConnectorsGetResponse_DeviceFields = {
 
 @dataclasses.dataclass
 class MconnCustomerConnectorsGetResponseConfig:
+    # Whether this connector device has been activated. (AI-inferred)
     activated: Any = None
     # Exactly one of id, serial_number, or provision_license must be provided.
     device: Any = None
     # Allowed days of the week for upgrades. Default is all days.
     interrupt_window_days_of_week: Any = None
+    # How many hours this connector's own maintenance interrupt window lasts. (AI-inferred)
     interrupt_window_duration_hours: Any = None
     # List of dates (YYYY-MM-DD) when upgrades are blocked.
     interrupt_window_embargo_dates: Any = None
+    # The hour of day this connector's own maintenance interrupt window starts. (AI-inferred)
     interrupt_window_hour_of_day: Any = None
+    # A free-text note about this connector device. (AI-inferred)
     notes: Any = None
+    # Whether this is the site's own primary connector device. (AI-inferred)
     primary: Any = None
+    # The real Magic WAN Connector site this device belongs to. (AI-inferred)
     site_id: Any = None
+    # The real timezone this connector's own interrupt window is scheduled against. (AI-inferred)
     timezone: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -67,19 +74,27 @@ class MconnCustomerConnectorsGetResponseConfig:
 
 @dataclasses.dataclass
 class MconnCustomerConnectorsGetResponseAttrs:
+    # Whether this connector device has been activated. (AI-inferred)
     activated: Any = None
     # Exactly one of id, serial_number, or provision_license must be provided.
     device: Any = None
     # Allowed days of the week for upgrades. Default is all days.
     interrupt_window_days_of_week: Any = None
+    # How many hours this connector's own maintenance interrupt window lasts. (AI-inferred)
     interrupt_window_duration_hours: Any = None
     # List of dates (YYYY-MM-DD) when upgrades are blocked.
     interrupt_window_embargo_dates: Any = None
+    # The hour of day this connector's own maintenance interrupt window starts. (AI-inferred)
     interrupt_window_hour_of_day: Any = None
+    # A free-text note about this connector device. (AI-inferred)
     notes: Any = None
+    # Whether this is the site's own primary connector device. (AI-inferred)
     primary: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The real Magic WAN Connector site this device belongs to. (AI-inferred)
     site_id: Any = None
+    # The real timezone this connector's own interrupt window is scheduled against. (AI-inferred)
     timezone: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

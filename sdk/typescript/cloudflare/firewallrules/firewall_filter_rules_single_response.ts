@@ -84,6 +84,7 @@ export interface FirewallFilterRulesSingleResponseAttrs {
   filter: FirewallFilterRulesSingleResponse_Filter;
   /** The unique identifier of the resource. */
   id: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: FirewallFilterRulesSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

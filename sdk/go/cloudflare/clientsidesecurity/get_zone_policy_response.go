@@ -38,7 +38,8 @@ type GetZonePolicyResponseAttrs struct {
 	Enabled any
 	// The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
 	Expression any
-	Result     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The policy which will be applied
 	Value any
 	// path parameter, not part of the API's own resource representation

@@ -33,9 +33,11 @@ class SecondaryDnsSingleResponseConfig:
 class SecondaryDnsSingleResponseAttrs:
     # TSIG algorithm.
     algo: Any = None
+    # The unique identifier of the TSIG key. (AI-inferred)
     id: Any = None
     # TSIG key name.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # TSIG secret.
     secret: Any = None

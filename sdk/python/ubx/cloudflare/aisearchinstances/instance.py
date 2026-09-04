@@ -297,18 +297,27 @@ _Instance_Result_SourceParamsFields = {
 
 @dataclasses.dataclass
 class InstanceConfig:
+    # The AI Gateway requests through this AI Search instance are routed through. (AI-inferred)
     ai_gateway_id: Any = None
     # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
     ai_search_model: Any = None
+    # Whether response caching is enabled for this instance. (AI-inferred)
     cache: Any = None
+    # The minimum similarity score required for a cached response to be reused. (AI-inferred)
     cache_threshold: Any = None
     # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
     cache_ttl: Any = None
+    # The chunking configuration used when indexing source content. (AI-inferred)
     chunk: Any = None
+    # The number of overlapping tokens between adjacent chunks. (AI-inferred)
     chunk_overlap: Any = None
+    # The maximum size, in tokens, of each indexed chunk. (AI-inferred)
     chunk_size: Any = None
+    # Arbitrary custom metadata attached to the instance. (AI-inferred)
     custom_metadata: Any = None
+    # The model used to generate vector embeddings for indexed content. (AI-inferred)
     embedding_model: Any = None
+    # The method used to combine multiple retrieval signals when ranking results. (AI-inferred)
     fusion_method: Any = None
     # Deprecated — use index_method instead.
     hybrid_search_enabled: Any = None
@@ -317,39 +326,59 @@ class InstanceConfig:
     # Controls which storage backends are used during indexing. Defaults to vector-only.
     index_method: Any = None
     indexing_options: Any = None
+    # The maximum number of results returned per query. (AI-inferred)
     max_num_results: Any = None
+    # Metadata associated with the instance. (AI-inferred)
     metadata: Any = None
+    # The configuration for the instance's own public query endpoint. (AI-inferred)
     public_endpoint_params: Any = None
+    # Whether a reranking pass is applied to retrieved results. (AI-inferred)
     reranking: Any = None
+    # The model used to rerank retrieved results. (AI-inferred)
     reranking_model: Any = None
     retrieval_options: Any = None
     # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
     rewrite_model: Any = None
+    # Whether incoming queries are rewritten before retrieval. (AI-inferred)
     rewrite_query: Any = None
+    # The minimum relevance score a result must reach to be returned. (AI-inferred)
     score_threshold: Any = None
+    # The data source content is indexed from. (AI-inferred)
     source: Any = None
+    # Configuration specific to the instance's own data source. (AI-inferred)
     source_params: Any = None
     # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
     sync_interval: Any = None
+    # The AI Search API token used to authenticate requests for this instance. (AI-inferred)
     token_id: Any = None
+    # The type of AI Search instance. (AI-inferred)
     type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
+    # The AI Gateway requests through this AI Search instance are routed through. (AI-inferred)
     ai_gateway_id: Any = None
     # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
     ai_search_model: Any = None
+    # Whether response caching is enabled for this instance. (AI-inferred)
     cache: Any = None
+    # The minimum similarity score required for a cached response to be reused. (AI-inferred)
     cache_threshold: Any = None
     # Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
     cache_ttl: Any = None
+    # The chunking configuration used when indexing source content. (AI-inferred)
     chunk: Any = None
+    # The number of overlapping tokens between adjacent chunks. (AI-inferred)
     chunk_overlap: Any = None
+    # The maximum size, in tokens, of each indexed chunk. (AI-inferred)
     chunk_size: Any = None
+    # Arbitrary custom metadata attached to the instance. (AI-inferred)
     custom_metadata: Any = None
+    # The model used to generate vector embeddings for indexed content. (AI-inferred)
     embedding_model: Any = None
+    # The method used to combine multiple retrieval signals when ranking results. (AI-inferred)
     fusion_method: Any = None
     # Deprecated — use index_method instead.
     hybrid_search_enabled: Any = None
@@ -358,23 +387,36 @@ class InstanceAttrs:
     # Controls which storage backends are used during indexing. Defaults to vector-only.
     index_method: Any = None
     indexing_options: Any = None
+    # The maximum number of results returned per query. (AI-inferred)
     max_num_results: Any = None
+    # Metadata associated with the instance. (AI-inferred)
     metadata: Any = None
+    # The configuration for the instance's own public query endpoint. (AI-inferred)
     public_endpoint_params: Any = None
+    # Whether a reranking pass is applied to retrieved results. (AI-inferred)
     reranking: Any = None
+    # The model used to rerank retrieved results. (AI-inferred)
     reranking_model: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     retrieval_options: Any = None
     # A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
     rewrite_model: Any = None
+    # Whether incoming queries are rewritten before retrieval. (AI-inferred)
     rewrite_query: Any = None
+    # The minimum relevance score a result must reach to be returned. (AI-inferred)
     score_threshold: Any = None
+    # The data source content is indexed from. (AI-inferred)
     source: Any = None
+    # Configuration specific to the instance's own data source. (AI-inferred)
     source_params: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
     sync_interval: Any = None
+    # The AI Search API token used to authenticate requests for this instance. (AI-inferred)
     token_id: Any = None
+    # The type of AI Search instance. (AI-inferred)
     type: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

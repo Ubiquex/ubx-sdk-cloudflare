@@ -39,6 +39,7 @@ export interface SecretResponseAttrs {
   comment: string;
   /** The name of the secret. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SecretResponse_Result;
   /** The list of services that can use this secret. */
   scopes: string[];

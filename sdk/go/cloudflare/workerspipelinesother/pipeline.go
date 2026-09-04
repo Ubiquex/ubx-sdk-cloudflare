@@ -41,7 +41,8 @@ type PipelineConfig struct {
 
 type PipelineAttrs struct {
 	// Specifies the name of the Pipeline.
-	Name   any
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
 	Result any
 	// Specifies SQL for the Pipeline processing flow.
 	Sql any

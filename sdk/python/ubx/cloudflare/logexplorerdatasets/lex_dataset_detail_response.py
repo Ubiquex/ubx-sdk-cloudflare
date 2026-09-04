@@ -51,13 +51,17 @@ class LexDatasetDetailResponseConfig:
 class LexDatasetDetailResponseAttrs:
     # Dataset type name to create (e.g. `http_requests`).
     dataset: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
     # Controls which fields the API ingests. Defaults to all available fields when absent.
     fields: Any = None
     # Optional Logpush filter predicate to restrict which events are ingested. If provided, replaces the dataset's default filter entirely. See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/) for syntax and examples.
     filter: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

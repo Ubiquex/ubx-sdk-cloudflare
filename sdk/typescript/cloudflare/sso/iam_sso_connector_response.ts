@@ -43,6 +43,7 @@ export interface IamSsoConnectorResponseAttrs {
   beginVerification: boolean;
   /** Email domain of the new SSO connector */
   emailDomain: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: IamSsoConnectorResponse_Result;
   /** Controls the display of FedRAMP language to the user during SSO login */
   useFedrampLanguage: boolean;

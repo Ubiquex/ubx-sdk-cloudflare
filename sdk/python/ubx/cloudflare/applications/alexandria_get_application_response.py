@@ -81,6 +81,7 @@ class AlexandriaGetApplicationResponseConfig:
 class AlexandriaGetApplicationResponseAttrs:
     # Returns the category ID.
     category_id: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Hostnames matched by the application.
     hostnames: Any = None
@@ -88,6 +89,7 @@ class AlexandriaGetApplicationResponseAttrs:
     human_id: Any = None
     # IP subnets matched by the application.
     ip_subnets: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Returns the application name.
     name: Any = None

@@ -103,11 +103,13 @@ class PostureApiExportJobResponseAttrs:
     dlp_profile_id: Any = None
     # DLP profile metadata for the export.
     dlp_profile_information: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Filter by integration IDs.
     integration_id: Any = None
     # Filter to view content flagged on or before this date.
     max_affliction_date: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Filter to view content flagged on or after this date.
     min_affliction_date: Any = None

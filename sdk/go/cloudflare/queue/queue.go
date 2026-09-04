@@ -54,6 +54,7 @@ type Queue_Result struct {
 }
 
 type QueueConfig struct {
+	// The name of the queue. (AI-inferred)
 	QueueName any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -62,10 +63,14 @@ type QueueConfig struct {
 }
 
 type QueueAttrs struct {
-	Errors    any
-	Messages  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
+	// The name of the queue. (AI-inferred)
 	QueueName any
-	Result    any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Indicates if the API call was successful or not.
 	Success any
 	// path parameter, not part of the API's own resource representation

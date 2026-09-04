@@ -124,6 +124,7 @@ const MagicLanSingleResponse_Result_StaticAddressingFields: FieldMap = {
 };
 
 export interface MagicLanSingleResponseConfig {
+  /** The bonded interface this LAN is attached to, if any. (AI-inferred) */
   bondId?: number | Computed<number>;
   /** mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link. */
   haLink?: boolean | Computed<boolean>;
@@ -131,9 +132,12 @@ export interface MagicLanSingleResponseConfig {
   isBreakout?: boolean | Computed<boolean>;
   /** mark true to use this LAN for source-based prioritized traffic */
   isPrioritized?: boolean | Computed<boolean>;
+  /** The name of the LAN interface. (AI-inferred) */
   name?: string | Computed<string>;
   nat?: MagicLanSingleResponse_Nat | Computed<MagicLanSingleResponse_Nat>;
+  /** The physical port this LAN interface is attached to. (AI-inferred) */
   physport?: number | Computed<number>;
+  /** The subnets routed through this LAN interface. (AI-inferred) */
   routedSubnets?: MagicLanSingleResponse_Result_RoutedSubnets[] | Computed<MagicLanSingleResponse_Result_RoutedSubnets[]>;
   /** If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address. */
   staticAddressing?: MagicLanSingleResponse_Result_StaticAddressing | Computed<MagicLanSingleResponse_Result_StaticAddressing>;
@@ -148,6 +152,7 @@ export interface MagicLanSingleResponseConfig {
 }
 
 export interface MagicLanSingleResponseAttrs {
+  /** The bonded interface this LAN is attached to, if any. (AI-inferred) */
   bondId: number;
   /** mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link. */
   haLink: boolean;
@@ -155,10 +160,14 @@ export interface MagicLanSingleResponseAttrs {
   isBreakout: boolean;
   /** mark true to use this LAN for source-based prioritized traffic */
   isPrioritized: boolean;
+  /** The name of the LAN interface. (AI-inferred) */
   name: string;
   nat: MagicLanSingleResponse_Nat;
+  /** The physical port this LAN interface is attached to. (AI-inferred) */
   physport: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicLanSingleResponse_Result;
+  /** The subnets routed through this LAN interface. (AI-inferred) */
   routedSubnets: MagicLanSingleResponse_Result_RoutedSubnets[];
   /** If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address. */
   staticAddressing: MagicLanSingleResponse_Result_StaticAddressing;

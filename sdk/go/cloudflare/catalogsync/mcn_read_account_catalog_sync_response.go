@@ -40,11 +40,16 @@ type McnReadAccountCatalogSyncResponse_Result struct {
 }
 
 type McnReadAccountCatalogSyncResponseConfig struct {
-	Description     any
+	// A human-readable description of the catalog sync. (AI-inferred)
+	Description any
+	// The type of destination the catalog sync writes resource metadata to. (AI-inferred)
 	DestinationType any
-	Name            any
-	Policy          any
-	UpdateMode      any
+	// The name of the catalog sync. (AI-inferred)
+	Name any
+	// The policy controlling which resources are included in the sync. (AI-inferred)
+	Policy any
+	// How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred)
+	UpdateMode any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -52,12 +57,18 @@ type McnReadAccountCatalogSyncResponseConfig struct {
 }
 
 type McnReadAccountCatalogSyncResponseAttrs struct {
-	Description     any
+	// A human-readable description of the catalog sync. (AI-inferred)
+	Description any
+	// The type of destination the catalog sync writes resource metadata to. (AI-inferred)
 	DestinationType any
-	Name            any
-	Policy          any
-	Result          any
-	UpdateMode      any
+	// The name of the catalog sync. (AI-inferred)
+	Name any
+	// The policy controlling which resources are included in the sync. (AI-inferred)
+	Policy any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred)
+	UpdateMode any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

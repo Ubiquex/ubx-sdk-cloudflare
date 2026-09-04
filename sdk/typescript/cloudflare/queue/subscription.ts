@@ -73,9 +73,11 @@ export interface SubscriptionAttrs {
   destination: Subscription_Destination;
   /** Whether the subscription is active */
   enabled: boolean;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Subscription_Errors[];
   /** List of event types this subscription handles */
   events: string[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
   /** Name of the subscription */
   name: string;

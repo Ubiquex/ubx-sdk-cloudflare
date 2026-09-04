@@ -38,10 +38,15 @@ _Entry_PatternFields = {
 
 @dataclasses.dataclass
 class EntryConfig:
+    # A human-readable description of the DLP entry. (AI-inferred)
     description: Any = None
+    # Whether the DLP entry is active. (AI-inferred)
     enabled: Any = None
+    # The name of the DLP entry. (AI-inferred)
     name: Any = None
+    # The detection pattern this entry matches against. (AI-inferred)
     pattern: Any = None
+    # The DLP profile this entry belongs to. (AI-inferred)
     profile_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -50,11 +55,17 @@ class EntryConfig:
 
 @dataclasses.dataclass
 class EntryAttrs:
+    # A human-readable description of the DLP entry. (AI-inferred)
     description: Any = None
+    # Whether the DLP entry is active. (AI-inferred)
     enabled: Any = None
+    # The name of the DLP entry. (AI-inferred)
     name: Any = None
+    # The detection pattern this entry matches against. (AI-inferred)
     pattern: Any = None
+    # The DLP profile this entry belongs to. (AI-inferred)
     profile_id: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

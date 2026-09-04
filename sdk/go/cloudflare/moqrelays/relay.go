@@ -43,12 +43,15 @@ type RelayConfig struct {
 }
 
 type RelayAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Human-readable name for the relay.
 	Name any
 	// Full relay details (no tokens).
-	Result  any
+	Result any
+	// Whether the API call succeeded. (AI-inferred)
 	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

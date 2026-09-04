@@ -25,7 +25,8 @@ type AccessIdpFederationGrantResponseConfig struct {
 
 type AccessIdpFederationGrantResponseAttrs struct {
 	// UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
-	IdpId  any
+	IdpId any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

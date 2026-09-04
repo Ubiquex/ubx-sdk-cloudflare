@@ -29,6 +29,7 @@ export interface AccessSingleResponse11Config {
   appCount?: number | Computed<number>;
   /** Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim. */
   contractVersion?: number | Computed<number>;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt?: AccessSingleResponse11_CreatedAt | Computed<AccessSingleResponse11_CreatedAt>;
   /** Custom page HTML. */
   customHtml: string | Computed<string>;
@@ -38,6 +39,7 @@ export interface AccessSingleResponse11Config {
   type: string | Computed<string>;
   /** UUID. */
   uid?: string | Computed<string>;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt?: AccessSingleResponse11_CreatedAt | Computed<AccessSingleResponse11_CreatedAt>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -50,16 +52,19 @@ export interface AccessSingleResponse11Attrs {
   appCount: number;
   /** Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim. */
   contractVersion: number;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: AccessSingleResponse11_CreatedAt;
   /** Custom page HTML. */
   customHtml: string;
   /** Custom page name. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse11_Result;
   /** Custom page type. */
   type: string;
   /** UUID. */
   uid: string;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt: AccessSingleResponse11_CreatedAt;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

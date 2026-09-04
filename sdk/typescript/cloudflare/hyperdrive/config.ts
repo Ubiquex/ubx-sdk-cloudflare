@@ -35,11 +35,13 @@ const Config_MtlsFields: FieldMap = {
 };
 
 export interface ConfigConfig {
+  /** The Hyperdrive configuration's own query-caching settings. (AI-inferred) */
   caching?: Config_Caching | Computed<Config_Caching>;
   /** mTLS configuration for the origin connection. Cannot be used with VPC Service origins; TLS must be managed on the VPC Service. */
   mtls?: Config_Mtls | Computed<Config_Mtls>;
   /** The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API. */
   name: string | Computed<string>;
+  /** The real database Hyperdrive connects to. (AI-inferred) */
   origin: unknown | Computed<unknown>;
   /** The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database. Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts. If not specified, defaults to 20 for free tier and 60 for paid tier. Certain Cloudflare-managed origins may be permitted a higher limit. Contact Cloudflare if you need a higher limit. */
   originConnectionLimit?: number | Computed<number>;
@@ -50,6 +52,7 @@ export interface ConfigConfig {
 }
 
 export interface ConfigAttrs {
+  /** The Hyperdrive configuration's own query-caching settings. (AI-inferred) */
   caching: Config_Caching;
   /** Defines the creation time of the Hyperdrive configuration. */
   createdOn: string;
@@ -61,11 +64,13 @@ export interface ConfigAttrs {
   mtls: Config_Mtls;
   /** The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API. */
   name: string;
+  /** The real database Hyperdrive connects to. (AI-inferred) */
   origin: unknown;
   /** The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database. Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts. If not specified, defaults to 20 for free tier and 60 for paid tier. Certain Cloudflare-managed origins may be permitted a higher limit. Contact Cloudflare if you need a higher limit. */
   originConnectionLimit: number;
   /** Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted. */
   restartedOn: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Config_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

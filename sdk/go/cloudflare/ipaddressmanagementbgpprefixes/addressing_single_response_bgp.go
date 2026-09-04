@@ -51,7 +51,8 @@ type AddressingSingleResponseBgpConfig struct {
 
 type AddressingSingleResponseBgpAttrs struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
-	Cidr   any
+	Cidr any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

@@ -22,7 +22,9 @@ type ApplicationConfig struct {
 }
 
 type ApplicationAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The public Containers API returns an application.
 	Result any

@@ -167,6 +167,7 @@ class ZeroTrustGatewaySingleResponse3Attrs:
     name: Any = None
     # Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
     networks: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

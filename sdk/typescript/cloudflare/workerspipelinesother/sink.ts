@@ -168,6 +168,7 @@ export interface SinkAttrs {
   format: unknown;
   /** Defines the name of the Sink. */
   name: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Sink_Result;
   /** Defines the schema of the events in the data stream. */
   schema: Sink_Result_Schema;

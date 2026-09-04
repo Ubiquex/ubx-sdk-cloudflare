@@ -54,7 +54,9 @@ export interface DigitalExperienceMonitoringDexSingleResponseConfig {
   interval: string | Computed<string>;
   /** The name of the DEX test. Must be unique. */
   name: string | Computed<string>;
+  /** The device policies this DEX test applies to. (AI-inferred) */
   targetPolicies?: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies | Computed<DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies>;
+  /** Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred) */
   targeted?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -75,8 +77,11 @@ export interface DigitalExperienceMonitoringDexSingleResponseAttrs {
   interval: string;
   /** The name of the DEX test. Must be unique. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DigitalExperienceMonitoringDexSingleResponse_Result;
+  /** The device policies this DEX test applies to. (AI-inferred) */
   targetPolicies: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies;
+  /** Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred) */
   targeted: boolean;
   /** The unique identifier for the test. */
   testId: string;

@@ -45,10 +45,15 @@ export interface DeployHookAttrs {
   branch: string;
   /** Deploy hook name (1-58 characters). */
   deployHookName: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: DeployHook_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DeployHook_Result;
+  /** Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred) */
   resultInfo: DeployHook_ResultInfo;
+  /** Whether the API call succeeded. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

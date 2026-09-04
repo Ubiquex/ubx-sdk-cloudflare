@@ -45,13 +45,17 @@ export interface LexDatasetDetailResponseConfig {
 export interface LexDatasetDetailResponseAttrs {
   /** Dataset type name to create (e.g. `http_requests`). */
   dataset: string;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: LexDatasetDetailResponse_Errors[];
   /** Controls which fields the API ingests. Defaults to all available fields when absent. */
   fields: LexDatasetDetailResponse_Fields[];
   /** Optional Logpush filter predicate to restrict which events are ingested. If provided, replaces the dataset's default filter entirely. See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/) for syntax and examples. */
   filter: string;
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: string[];
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: LexDatasetDetailResponse_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

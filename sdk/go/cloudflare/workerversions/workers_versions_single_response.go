@@ -313,13 +313,16 @@ type WorkersVersionsSingleResponseConfig struct {
 }
 
 type WorkersVersionsSingleResponseAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.<br/>Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
-	Files    any
+	Files any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// JSON-encoded metadata about the uploaded parts and Worker configuration.
 	Metadata any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation

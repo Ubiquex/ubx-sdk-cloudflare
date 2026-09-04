@@ -383,6 +383,7 @@ export interface AccessSingleResponse4Attrs {
   name: string;
   /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse4_Exclude[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse4_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

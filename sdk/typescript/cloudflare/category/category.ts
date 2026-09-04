@@ -2,10 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CategoryConfig {
+  /** The cyber kill chain stage this category represents. (AI-inferred) */
   killChain?: number | Computed<number>;
+  /** The MITRE ATT&CK technique this category maps to. (AI-inferred) */
   mitreAttack?: string[] | Computed<string[]>;
+  /** The MITRE CAPEC attack pattern this category maps to. (AI-inferred) */
   mitreCapec?: string[] | Computed<string[]>;
+  /** The name of the threat event category. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A short, URL-safe identifier for the category. (AI-inferred) */
   shortname?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -14,11 +19,17 @@ export interface CategoryConfig {
 }
 
 export interface CategoryAttrs {
+  /** The cyber kill chain stage this category represents. (AI-inferred) */
   killChain: number;
+  /** The MITRE ATT&CK technique this category maps to. (AI-inferred) */
   mitreAttack: string[];
+  /** The MITRE CAPEC attack pattern this category maps to. (AI-inferred) */
   mitreCapec: string[];
+  /** The name of the threat event category. (AI-inferred) */
   name: string;
+  /** A short, URL-safe identifier for the category. (AI-inferred) */
   shortname: string;
+  /** The unique identifier of the resource. (AI-inferred) */
   uuid: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

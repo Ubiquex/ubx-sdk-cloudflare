@@ -33,9 +33,11 @@ _Index_ConfigFields = {
 
 @dataclasses.dataclass
 class IndexConfig:
+    # The vector dimensionality and distance metric configuration for the index. (AI-inferred)
     config: Any = None
     # Specifies the description of the index.
     description: Any = None
+    # The name of the Vectorize index. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -44,10 +46,13 @@ class IndexConfig:
 
 @dataclasses.dataclass
 class IndexAttrs:
+    # The vector dimensionality and distance metric configuration for the index. (AI-inferred)
     config: Any = None
     # Specifies the description of the index.
     description: Any = None
+    # The name of the Vectorize index. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

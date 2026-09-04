@@ -47,9 +47,11 @@ class OriginCloudRegionConfig:
 
 @dataclasses.dataclass
 class OriginCloudRegionAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
     ip: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Cloud vendor region identifier. Must be a valid region for the specified vendor as returned by the supported_regions endpoint.
     region: Any = None

@@ -144,8 +144,10 @@ type RegistrarApiSandboxRegistrationResponseSingleAttrs struct {
 	Contacts any
 	// Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
 	DomainName any
-	Errors     any
-	Messages   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Sets the WHOIS privacy mode for the registration. Defaults to `redaction`. - `off`: Disables WHOIS privacy. - `redaction`: Requests WHOIS redaction where the extension supports it. Some extensions exclude privacy and redaction.
 	PrivacyMode any
 	// A domain registration resource representing the current state of a registered domain.

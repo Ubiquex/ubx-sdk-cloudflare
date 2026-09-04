@@ -226,7 +226,8 @@ type AaaSingleResponseAttrs struct {
 	// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
 	Mechanisms any
 	// Name of the policy.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

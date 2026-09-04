@@ -28,6 +28,7 @@ type CustomPagesCustomPageResultConfig struct {
 }
 
 type CustomPagesCustomPageResultAttrs struct {
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// The custom page state.
 	State any

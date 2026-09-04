@@ -189,11 +189,13 @@ export interface DeploymentAttrs {
   commitHash: string;
   /** Git commit message associated with this deployment. */
   commitMessage: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Deployment_Errors[];
   /** Functions routing configuration file. */
   functionsFilepathRoutingConfigJson: string;
   /** JSON string containing a manifest of files to deploy. Maps file paths to their content hashes. Required for direct upload deployments. Maximum 20,000 entries. */
   manifest: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Deployment_Errors[];
   /** The build output directory path. */
   pagesBuildOutputDir: string;

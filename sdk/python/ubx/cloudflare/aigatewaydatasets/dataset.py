@@ -25,18 +25,29 @@ class Dataset_Result:
 
 @dataclasses.dataclass
 class DatasetConfig:
+    # Whether requests to this AI Gateway require authentication. (AI-inferred)
     authentication: Any = None
+    # Whether to invalidate cached responses when the underlying data changes. (AI-inferred)
     cache_invalidate_on_update: Any = None
+    # How long a cached response remains valid, in seconds. (AI-inferred)
     cache_ttl: Any = None
+    # Whether to collect request/response logs for this gateway. (AI-inferred)
     collect_logs: Any = None
     # gateway id
     id: Any = None
+    # How long collected logs are retained and how they're managed. (AI-inferred)
     log_management: Any = None
+    # The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred)
     log_management_strategy: Any = None
+    # Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred)
     logpush: Any = None
+    # The public key used to encrypt logs pushed via Logpush. (AI-inferred)
     logpush_public_key: Any = None
+    # The time window, in seconds, over which the rate limit is applied. (AI-inferred)
     rate_limiting_interval: Any = None
+    # The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred)
     rate_limiting_limit: Any = None
+    # The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred)
     rate_limiting_technique: Any = None
     # Backoff strategy for retry delays
     retry_backoff: Any = None
@@ -44,9 +55,11 @@ class DatasetConfig:
     retry_delay: Any = None
     # Maximum number of retry attempts for failed requests (1-5)
     retry_max_attempts: Any = None
+    # The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred)
     store_id: Any = None
     # Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
     workers_ai_billing_mode: Any = None
+    # Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred)
     zdr: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -55,19 +68,31 @@ class DatasetConfig:
 
 @dataclasses.dataclass
 class DatasetAttrs:
+    # Whether requests to this AI Gateway require authentication. (AI-inferred)
     authentication: Any = None
+    # Whether to invalidate cached responses when the underlying data changes. (AI-inferred)
     cache_invalidate_on_update: Any = None
+    # How long a cached response remains valid, in seconds. (AI-inferred)
     cache_ttl: Any = None
+    # Whether to collect request/response logs for this gateway. (AI-inferred)
     collect_logs: Any = None
     # gateway id
     id: Any = None
+    # How long collected logs are retained and how they're managed. (AI-inferred)
     log_management: Any = None
+    # The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred)
     log_management_strategy: Any = None
+    # Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred)
     logpush: Any = None
+    # The public key used to encrypt logs pushed via Logpush. (AI-inferred)
     logpush_public_key: Any = None
+    # The time window, in seconds, over which the rate limit is applied. (AI-inferred)
     rate_limiting_interval: Any = None
+    # The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred)
     rate_limiting_limit: Any = None
+    # The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred)
     rate_limiting_technique: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Backoff strategy for retry delays
     retry_backoff: Any = None
@@ -75,10 +100,13 @@ class DatasetAttrs:
     retry_delay: Any = None
     # Maximum number of retry attempts for failed requests (1-5)
     retry_max_attempts: Any = None
+    # The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred)
     store_id: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
     workers_ai_billing_mode: Any = None
+    # Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred)
     zdr: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

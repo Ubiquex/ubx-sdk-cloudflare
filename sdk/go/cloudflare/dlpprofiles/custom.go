@@ -88,9 +88,11 @@ var Custom_SharedEntriesFields = ubx.FieldMap{
 }
 
 type CustomConfig struct {
+	// Whether AI-based context analysis is enabled for this profile. (AI-inferred)
 	AiContextEnabled any
 	// Related DLP policies will trigger when the match count exceeds the number set.
-	AllowedMatchCount   any
+	AllowedMatchCount any
+	// The minimum confidence score a match must reach to trigger this profile. (AI-inferred)
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
@@ -100,9 +102,12 @@ type CustomConfig struct {
 	DataTags any
 	// The description of the profile.
 	Description any
-	Entries     any
-	Name        any
-	OcrEnabled  any
+	// The detection entries that make up this DLP profile. (AI-inferred)
+	Entries any
+	// The name of the DLP profile. (AI-inferred)
+	Name any
+	// Whether OCR-based scanning of images is enabled for this profile. (AI-inferred)
+	OcrEnabled any
 	// Sensitivity levels to associate with the profile.
 	SensitivityLevels any
 	// Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).
@@ -114,9 +119,11 @@ type CustomConfig struct {
 }
 
 type CustomAttrs struct {
+	// Whether AI-based context analysis is enabled for this profile. (AI-inferred)
 	AiContextEnabled any
 	// Related DLP policies will trigger when the match count exceeds the number set.
-	AllowedMatchCount   any
+	AllowedMatchCount any
+	// The minimum confidence score a match must reach to trigger this profile. (AI-inferred)
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
@@ -126,10 +133,14 @@ type CustomAttrs struct {
 	DataTags any
 	// The description of the profile.
 	Description any
-	Entries     any
-	Name        any
-	OcrEnabled  any
-	Result      any
+	// The detection entries that make up this DLP profile. (AI-inferred)
+	Entries any
+	// The name of the DLP profile. (AI-inferred)
+	Name any
+	// Whether OCR-based scanning of images is enabled for this profile. (AI-inferred)
+	OcrEnabled any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Sensitivity levels to associate with the profile.
 	SensitivityLevels any
 	// Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).

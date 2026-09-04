@@ -53,8 +53,10 @@ type DosTcpFlowProtectionRuleResponseConfig struct {
 type DosTcpFlowProtectionRuleResponseAttrs struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
-	Errors           any
-	Messages         any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// The mode for the TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
 	Mode any
 	// The name of the TCP Flow Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.

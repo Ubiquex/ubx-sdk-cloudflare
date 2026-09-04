@@ -195,11 +195,13 @@ class DeploymentAttrs:
     commit_hash: Any = None
     # Git commit message associated with this deployment.
     commit_message: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Functions routing configuration file.
     functions_filepath_routing_config_json: Any = None
     # JSON string containing a manifest of files to deploy. Maps file paths to their content hashes. Required for direct upload deployments. Maximum 20,000 entries.
     manifest: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The build output directory path.
     pages_build_output_dir: Any = None

@@ -33,6 +33,7 @@ class DnsSettingsDnsViewResponseSingleAttrs:
     modified_time: Any = None
     # The name of the view.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The list of zones linked to this view.
     zones: Any = None

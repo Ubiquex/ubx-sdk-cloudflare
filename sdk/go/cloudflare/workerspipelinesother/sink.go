@@ -169,7 +169,8 @@ type SinkAttrs struct {
 	// Defines the data format of the events.
 	Format any
 	// Defines the name of the Sink.
-	Name   any
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
 	Result any
 	// Defines the schema of the events in the data stream.
 	Schema any

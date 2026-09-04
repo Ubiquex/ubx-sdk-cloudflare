@@ -99,12 +99,14 @@ type PostureApiExportJobResponseAttrs struct {
 	DlpProfileId any
 	// DLP profile metadata for the export.
 	DlpProfileInformation any
-	Errors                any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// Filter by integration IDs.
 	IntegrationId any
 	// Filter to view content flagged on or before this date.
 	MaxAfflictionDate any
-	Messages          any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Filter to view content flagged on or after this date.
 	MinAfflictionDate any
 	// Ordering specifications for the export.

@@ -28,6 +28,7 @@ export interface Rule_Result {
 }
 
 export interface RuleConfig {
+  /** A human-readable description of the rule. (AI-inferred) */
   description?: string | Computed<string>;
   /** The wirefilter expression to match. */
   match: string | Computed<string>;
@@ -40,11 +41,13 @@ export interface RuleConfig {
 }
 
 export interface RuleAttrs {
+  /** A human-readable description of the rule. (AI-inferred) */
   description: string;
   /** The wirefilter expression to match. */
   match: string;
   /** The name of the Rule. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Rule_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

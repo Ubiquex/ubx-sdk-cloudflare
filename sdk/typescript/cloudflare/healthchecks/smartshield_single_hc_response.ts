@@ -130,6 +130,7 @@ export interface SmartshieldSingleHcResponseAttrs {
   interval: number;
   /** A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SmartshieldSingleHcResponse_Result;
   /** The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. */
   retries: number;

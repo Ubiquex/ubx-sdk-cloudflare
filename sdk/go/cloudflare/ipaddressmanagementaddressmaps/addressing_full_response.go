@@ -43,7 +43,8 @@ type AddressingFullResponseConfig struct {
 	Description any
 	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 	Enabled any
-	Ips     any
+	// The individual IP addresses included in the Address Map. (AI-inferred)
+	Ips any
 	// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 	Memberships any
 	// path parameter, not part of the API's own resource representation
@@ -57,10 +58,12 @@ type AddressingFullResponseAttrs struct {
 	Description any
 	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 	Enabled any
-	Ips     any
+	// The individual IP addresses included in the Address Map. (AI-inferred)
+	Ips any
 	// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 	Memberships any
-	Result      any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

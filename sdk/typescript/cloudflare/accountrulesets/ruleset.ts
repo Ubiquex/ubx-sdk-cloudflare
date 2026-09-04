@@ -31,6 +31,7 @@ const Ruleset_IdFields: FieldMap = {
 export interface RulesetConfig {
   /** An informative description of the ruleset. */
   description?: string | Computed<string>;
+  /** This ruleset's own real identifier. (AI-inferred) */
   id: Ruleset_Id | Computed<Ruleset_Id>;
   /** The kind of the ruleset. */
   kind: string | Computed<string>;
@@ -40,6 +41,7 @@ export interface RulesetConfig {
   phase: string | Computed<string>;
   /** The list of rules in the ruleset. */
   rules?: unknown[] | Computed<unknown[]>;
+  /** This ruleset's own real, current version number. (AI-inferred) */
   version: Ruleset_Id | Computed<Ruleset_Id>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -50,7 +52,9 @@ export interface RulesetConfig {
 export interface RulesetAttrs {
   /** An informative description of the ruleset. */
   description: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: unknown;
+  /** This ruleset's own real identifier. (AI-inferred) */
   id: Ruleset_Id;
   /** The kind of the ruleset. */
   kind: string;
@@ -62,10 +66,13 @@ export interface RulesetAttrs {
   name: string;
   /** The phase of the ruleset. */
   phase: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Ruleset_Result;
   /** The list of rules in the ruleset. */
   rules: unknown[];
+  /** Whether the API call succeeded. (AI-inferred) */
   success: unknown;
+  /** This ruleset's own real, current version number. (AI-inferred) */
   version: Ruleset_Id;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

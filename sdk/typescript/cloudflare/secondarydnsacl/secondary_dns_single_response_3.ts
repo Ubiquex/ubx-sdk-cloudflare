@@ -25,6 +25,7 @@ export interface SecondaryDnsSingleResponse3Attrs {
   ipRange: string;
   /** The name of the acl. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: SecondaryDnsSingleResponse3_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

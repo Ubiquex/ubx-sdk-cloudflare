@@ -27,6 +27,7 @@ type AccessPolicyUpdateResp_Result struct {
 }
 
 type AccessPolicyUpdateRespConfig struct {
+	// The Access policy IDs to include in the test. (AI-inferred)
 	Policies any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -35,6 +36,7 @@ type AccessPolicyUpdateRespConfig struct {
 }
 
 type AccessPolicyUpdateRespAttrs struct {
+	// The Access policy IDs to include in the test. (AI-inferred)
 	Policies any
 	Result   any
 	// path parameter, not part of the API's own resource representation

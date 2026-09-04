@@ -38,10 +38,15 @@ export interface McnReadAccountCatalogSyncResponse_Result {
 }
 
 export interface McnReadAccountCatalogSyncResponseConfig {
+  /** A human-readable description of the catalog sync. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The type of destination the catalog sync writes resource metadata to. (AI-inferred) */
   destinationType: string | Computed<string>;
+  /** The name of the catalog sync. (AI-inferred) */
   name: string | Computed<string>;
+  /** The policy controlling which resources are included in the sync. (AI-inferred) */
   policy?: string | Computed<string>;
+  /** How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred) */
   updateMode: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -50,11 +55,17 @@ export interface McnReadAccountCatalogSyncResponseConfig {
 }
 
 export interface McnReadAccountCatalogSyncResponseAttrs {
+  /** A human-readable description of the catalog sync. (AI-inferred) */
   description: string;
+  /** The type of destination the catalog sync writes resource metadata to. (AI-inferred) */
   destinationType: string;
+  /** The name of the catalog sync. (AI-inferred) */
   name: string;
+  /** The policy controlling which resources are included in the sync. (AI-inferred) */
   policy: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: McnReadAccountCatalogSyncResponse_Result;
+  /** How the catalog sync applies updates (e.g. full refresh, incremental). (AI-inferred) */
   updateMode: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

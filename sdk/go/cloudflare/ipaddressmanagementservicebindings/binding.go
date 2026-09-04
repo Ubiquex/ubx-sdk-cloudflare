@@ -47,8 +47,10 @@ type BindingConfig struct {
 
 type BindingAttrs struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
-	Cidr     any
-	Errors   any
+	Cidr any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	Result   any
 	// Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.

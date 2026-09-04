@@ -158,7 +158,9 @@ class PostureApiFindingResponseConfig:
 class PostureApiFindingResponseAttrs:
     # A list of finding IDs to pass along.
     checks: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Aggregated finding information with counts and metadata. This is optimized for list API queries and represents a finding along with its instance statistics.
     result: Any = None

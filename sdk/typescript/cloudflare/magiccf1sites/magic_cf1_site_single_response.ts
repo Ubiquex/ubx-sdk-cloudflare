@@ -32,6 +32,7 @@ export interface MagicCf1SiteSingleResponseConfig {
 }
 
 export interface MagicCf1SiteSingleResponseAttrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicCf1SiteSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

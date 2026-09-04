@@ -43,6 +43,7 @@ class WidgetConfig:
     bot_fight_mode: Any = None
     # If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
     clearance_level: Any = None
+    # The domains this Turnstile widget is valid on. (AI-inferred)
     domains: Any = None
     # Return the Ephemeral ID in /siteverify (ENT only).
     ephemeral_id: Any = None
@@ -65,10 +66,13 @@ class WidgetAttrs:
     bot_fight_mode: Any = None
     # If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
     clearance_level: Any = None
+    # The domains this Turnstile widget is valid on. (AI-inferred)
     domains: Any = None
     # Return the Ephemeral ID in /siteverify (ENT only).
     ephemeral_id: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Widget Mode
     mode: Any = None

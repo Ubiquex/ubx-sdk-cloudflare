@@ -41,12 +41,14 @@ type TunnelVnetResponseSingleConfig struct {
 type TunnelVnetResponseSingleAttrs struct {
 	// Optional remark describing the virtual network.
 	Comment any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// If `true`, this virtual network is the default for the account.
 	IsDefault any
 	// If `true`, this virtual network is the default for the account.
 	IsDefaultNetwork any
-	Messages         any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// A user-friendly name for the virtual network.
 	Name   any
 	Result any

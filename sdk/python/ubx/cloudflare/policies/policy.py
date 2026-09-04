@@ -131,11 +131,13 @@ class PolicyAttrs:
     display_name: Any = None
     # Boolean specifying if the policy is enabled or disabled.
     enabled: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The finding type this policy is associated with. All remediation actions must match this finding type.
     finding_type_id: Any = None
     # The integrations this policy applies to. Required when applies_to_all_integrations is false.
     integration_ids: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Response body for a policy configuration.
     result: Any = None

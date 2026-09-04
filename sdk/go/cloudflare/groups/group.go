@@ -12,8 +12,10 @@ type Group_Members struct {
 }
 
 type GroupConfig struct {
+	// A human-readable description of the group. (AI-inferred)
 	Description any
-	Name        any
+	// The name of the group. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -21,12 +23,18 @@ type GroupConfig struct {
 }
 
 type GroupAttrs struct {
-	CreatedAt   any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
+	// A human-readable description of the group. (AI-inferred)
 	Description any
-	Members     any
-	Name        any
-	UpdatedAt   any
-	Uuid        any
+	// The members belonging to this group. (AI-inferred)
+	Members any
+	// The name of the group. (AI-inferred)
+	Name any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
+	UpdatedAt any
+	// The unique identifier of the resource. (AI-inferred)
+	Uuid any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

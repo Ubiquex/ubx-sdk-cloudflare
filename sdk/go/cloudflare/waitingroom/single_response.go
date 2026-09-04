@@ -159,7 +159,8 @@ type SingleResponseAttrs struct {
 	QueueingMethod any
 	// HTTP status code returned to a user while in the queue.
 	QueueingStatusCode any
-	Result             any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the route. If a user is not seen by Cloudflare again in that time period, they will be treated as a new user that visits the route.
 	SessionDuration any
 	// Suspends or allows traffic going to the waiting room. If set to `true`, the traffic will not go to the waiting room.

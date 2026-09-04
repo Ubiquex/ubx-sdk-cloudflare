@@ -2,10 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TakedownNoticeConfig {
+  /** The domain the takedown notice targets. (AI-inferred) */
   domain: string | Computed<string>;
+  /** The Brand Protection match that triggered this takedown notice. (AI-inferred) */
   matchId?: number | Computed<number>;
+  /** The type of match that triggered this takedown notice. (AI-inferred) */
   matchType?: string | Computed<string>;
+  /** The Brand Protection query that surfaced the match triggering this notice. (AI-inferred) */
   queryId?: number | Computed<number>;
+  /** The current status of the takedown notice. (AI-inferred) */
   status?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -14,13 +19,21 @@ export interface TakedownNoticeConfig {
 }
 
 export interface TakedownNoticeAttrs {
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: string;
+  /** The domain the takedown notice targets. (AI-inferred) */
   domain: string;
+  /** The unique identifier of the takedown notice. (AI-inferred) */
   id: number;
+  /** The Brand Protection match that triggered this takedown notice. (AI-inferred) */
   matchId: number;
+  /** The type of match that triggered this takedown notice. (AI-inferred) */
   matchType: string;
+  /** The Brand Protection query that surfaced the match triggering this notice. (AI-inferred) */
   queryId: number;
+  /** The current status of the takedown notice. (AI-inferred) */
   status: string;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

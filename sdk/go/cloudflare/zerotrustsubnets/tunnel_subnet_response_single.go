@@ -54,10 +54,12 @@ type TunnelSubnetResponseSingleConfig struct {
 type TunnelSubnetResponseSingleAttrs struct {
 	// An optional description of the subnet.
 	Comment any
-	Errors  any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
 	IsDefaultNetwork any
-	Messages         any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// A user-friendly name for the subnet.
 	Name any
 	// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.

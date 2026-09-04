@@ -27,6 +27,7 @@ export interface DnsSettingsDnsViewResponseSingleAttrs {
   modifiedTime: string;
   /** The name of the view. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DnsSettingsDnsViewResponseSingle_Result;
   /** The list of zones linked to this view. */
   zones: string[];

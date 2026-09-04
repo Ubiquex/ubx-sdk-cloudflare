@@ -29,7 +29,9 @@ export interface AaaSilenceComponentsSchemasResponseCollectionConfig {
 }
 
 export interface AaaSilenceComponentsSchemasResponseCollectionAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: AaaSilenceComponentsSchemasResponseCollection_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: AaaSilenceComponentsSchemasResponseCollection_Errors[];
   result: AaaSilenceComponentsSchemasResponseCollection_Result;
   /** Whether the API call was successful */

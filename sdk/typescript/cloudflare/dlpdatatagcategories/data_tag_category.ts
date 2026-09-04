@@ -30,10 +30,13 @@ const DataTagCategory_TagsFields: FieldMap = {
 };
 
 export interface DataTagCategoryConfig {
+  /** A human-readable description of the data tag category. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the data tag category. (AI-inferred) */
   name: string | Computed<string>;
   /** Tags to create with the category. Mutually exclusive with `template_id`. */
   tags?: DataTagCategory_Tags[] | Computed<DataTagCategory_Tags[]>;
+  /** The built-in template this category was seeded from, if any. (AI-inferred) */
   templateId?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -42,11 +45,15 @@ export interface DataTagCategoryConfig {
 }
 
 export interface DataTagCategoryAttrs {
+  /** A human-readable description of the data tag category. (AI-inferred) */
   description: string;
+  /** The name of the data tag category. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DataTagCategory_Result;
   /** Tags to create with the category. Mutually exclusive with `template_id`. */
   tags: DataTagCategory_Tags[];
+  /** The built-in template this category was seeded from, if any. (AI-inferred) */
   templateId: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

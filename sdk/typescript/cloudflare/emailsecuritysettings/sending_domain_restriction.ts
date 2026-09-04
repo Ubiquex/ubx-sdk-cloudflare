@@ -18,6 +18,7 @@ export interface SendingDomainRestriction_Result {
 }
 
 export interface SendingDomainRestrictionConfig {
+  /** A free-text note about this sending-domain restriction. (AI-inferred) */
   comments?: string | Computed<string>;
   /** Domain that requires TLS enforcement. */
   domain: string | Computed<string>;
@@ -30,15 +31,19 @@ export interface SendingDomainRestrictionConfig {
 }
 
 export interface SendingDomainRestrictionAttrs {
+  /** A free-text note about this sending-domain restriction. (AI-inferred) */
   comments: string;
+  /** When this sending-domain restriction was created. (AI-inferred) */
   createdAt: SendingDomainRestriction_CreatedAt;
   /** Domain that requires TLS enforcement. */
   domain: string;
   /** Subdomains to exempt from TLS requirements. */
   exclude: string[];
+  /** This sending-domain restriction's own real identifier. (AI-inferred) */
   id: SendingDomainRestriction_CreatedAt;
   /** Deprecated, use `modified_at` instead. End of life: November 1, 2026. */
   lastModified: SendingDomainRestriction_CreatedAt;
+  /** When this sending-domain restriction was last modified. (AI-inferred) */
   modifiedAt: SendingDomainRestriction_CreatedAt;
   /** A sending domain restriction that enforces TLS (Transport Layer Security) requirements for emails from specific domains. If TLS is required, the system drops mail without TLS from the specified domain. */
   result: SendingDomainRestriction_Result;

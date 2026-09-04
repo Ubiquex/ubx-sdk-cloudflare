@@ -47,6 +47,7 @@ class AddressingFullResponseConfig:
     description: Any = None
     # Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
     enabled: Any = None
+    # The individual IP addresses included in the Address Map. (AI-inferred)
     ips: Any = None
     # Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
     memberships: Any = None
@@ -61,9 +62,11 @@ class AddressingFullResponseAttrs:
     description: Any = None
     # Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
     enabled: Any = None
+    # The individual IP addresses included in the Address Map. (AI-inferred)
     ips: Any = None
     # Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
     memberships: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

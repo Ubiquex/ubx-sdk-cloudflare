@@ -50,6 +50,7 @@ export interface DnsFirewallSingleResponseConfig {
   ratelimit?: number | Computed<number>;
   /** Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt) */
   retries?: number | Computed<number>;
+  /** The real upstream DNS resolver IP addresses this DNS Firewall cluster queries. (AI-inferred) */
   upstreamIps: string[] | Computed<string[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -76,9 +77,11 @@ export interface DnsFirewallSingleResponseAttrs {
   negativeCacheTtl: number;
   /** Maximum number of DNS queries per second that will be forwarded to your upstream nameservers. The limit is enforced per server, where each server receives a fraction of the configured value. The actual aggregate rate for a data center may vary depending on how many servers are present. Responses served from cache do not count toward this limit. Set to null to disable rate limiting. */
   ratelimit: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DnsFirewallSingleResponse_Result;
   /** Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt) */
   retries: number;
+  /** The real upstream DNS resolver IP addresses this DNS Firewall cluster queries. (AI-inferred) */
   upstreamIps: string[];
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

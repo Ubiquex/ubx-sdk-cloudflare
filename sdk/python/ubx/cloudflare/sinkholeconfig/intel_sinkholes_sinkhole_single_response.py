@@ -51,7 +51,9 @@ class IntelSinkholesSinkholeSingleResponseConfig:
 
 @dataclasses.dataclass
 class IntelSinkholesSinkholeSingleResponseAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The name of the sinkhole.
     name: Any = None

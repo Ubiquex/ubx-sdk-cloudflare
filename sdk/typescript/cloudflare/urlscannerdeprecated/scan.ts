@@ -315,6 +315,7 @@ export interface ScanConfig {
   customHeaders?: Record<string, string> | Computed<Record<string, string>>;
   /** Take multiple screenshots targeting different device types. */
   screenshotsResolutions?: string[] | Computed<string[]>;
+  /** The URL submitted for scanning. (AI-inferred) */
   url: string | Computed<string>;
   /** The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material. */
   visibility?: string | Computed<string>;
@@ -329,13 +330,17 @@ export interface ScanAttrs {
   country: string;
   /** Set custom headers. */
   customHeaders: Record<string, string>;
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: Scan_Errors[];
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: Scan_Errors[];
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Scan_Result;
   /** Take multiple screenshots targeting different device types. */
   screenshotsResolutions: string[];
   /** Whether request was successful or not */
   success: boolean;
+  /** The URL submitted for scanning. (AI-inferred) */
   url: string;
   /** The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material. */
   visibility: string;

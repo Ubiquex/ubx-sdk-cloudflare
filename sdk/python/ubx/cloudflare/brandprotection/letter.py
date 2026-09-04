@@ -44,7 +44,9 @@ _Letter_FieldsFields = {
 
 @dataclasses.dataclass
 class LetterConfig:
+    # The values used to fill in the letter template's own placeholders. (AI-inferred)
     fields: Any = None
+    # The template this letter was generated from. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -55,12 +57,19 @@ class LetterConfig:
 
 @dataclasses.dataclass
 class LetterAttrs:
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
+    # The values used to fill in the letter template's own placeholders. (AI-inferred)
     fields: Any = None
+    # The unique identifier of the letter. (AI-inferred)
     id: Any = None
+    # The generated text of the letter. (AI-inferred)
     letter_text: Any = None
+    # The type of takedown notice letter. (AI-inferred)
     letter_type: Any = None
+    # The takedown notice this letter belongs to. (AI-inferred)
     takedown_notice_id: Any = None
+    # The template this letter was generated from. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

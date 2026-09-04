@@ -31,6 +31,7 @@ class EmailSendingSubdomainResponseSingleConfig:
 class EmailSendingSubdomainResponseSingleAttrs:
     # The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None

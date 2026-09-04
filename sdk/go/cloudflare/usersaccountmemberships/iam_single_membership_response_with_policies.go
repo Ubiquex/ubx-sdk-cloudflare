@@ -100,6 +100,7 @@ type IamSingleMembershipResponseWithPoliciesConfig struct {
 }
 
 type IamSingleMembershipResponseWithPoliciesAttrs struct {
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Whether to accept or reject this account invitation.
 	Status any

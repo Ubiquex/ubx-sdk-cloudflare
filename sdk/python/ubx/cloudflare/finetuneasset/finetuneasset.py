@@ -13,9 +13,13 @@ class Finetuneasset_Result:
 
 @dataclasses.dataclass
 class FinetuneassetConfig:
+    # A human-readable description of the fine-tune asset. (AI-inferred)
     description: Any = None
+    # The base model this fine-tune asset is associated with. (AI-inferred)
     model: Any = None
+    # The name of the fine-tune asset. (AI-inferred)
     name: Any = None
+    # Whether the fine-tune asset is publicly accessible. (AI-inferred)
     public: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -26,11 +30,17 @@ class FinetuneassetConfig:
 
 @dataclasses.dataclass
 class FinetuneassetAttrs:
+    # A human-readable description of the fine-tune asset. (AI-inferred)
     description: Any = None
+    # The base model this fine-tune asset is associated with. (AI-inferred)
     model: Any = None
+    # The name of the fine-tune asset. (AI-inferred)
     name: Any = None
+    # Whether the fine-tune asset is publicly accessible. (AI-inferred)
     public: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

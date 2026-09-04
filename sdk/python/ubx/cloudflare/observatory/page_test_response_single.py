@@ -72,6 +72,7 @@ _PageTestResponseSingle_RegionFields = {
 
 @dataclasses.dataclass
 class PageTestResponseSingleConfig:
+    # The region the Observatory test was run from. (AI-inferred)
     region: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
@@ -82,7 +83,9 @@ class PageTestResponseSingleConfig:
 
 @dataclasses.dataclass
 class PageTestResponseSingleAttrs:
+    # The region the Observatory test was run from. (AI-inferred)
     region: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None

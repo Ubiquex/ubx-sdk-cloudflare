@@ -47,6 +47,7 @@ _IamResponseSingleAccount_UnitFields = {
 class IamResponseSingleAccountConfig:
     # Account name
     name: Any = None
+    # The type of the account. (AI-inferred)
     type: Any = None
     # information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
     unit: Any = None
@@ -57,7 +58,9 @@ class IamResponseSingleAccountConfig:
 class IamResponseSingleAccountAttrs:
     # Account name
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The type of the account. (AI-inferred)
     type: Any = None
     # information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
     unit: Any = None

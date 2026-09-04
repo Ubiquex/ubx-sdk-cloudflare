@@ -47,6 +47,7 @@ export interface MagicAclSingleResponseConfig {
   lan2: MagicAclSingleResponse_Lan1 | Computed<MagicAclSingleResponse_Lan1>;
   /** The name of the ACL. */
   name: string | Computed<string>;
+  /** The network protocols this ACL rule applies to. (AI-inferred) */
   protocols?: string[] | Computed<string[]>;
   /** The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false. */
   unidirectional?: boolean | Computed<boolean>;
@@ -67,6 +68,7 @@ export interface MagicAclSingleResponseAttrs {
   lan2: MagicAclSingleResponse_Lan1;
   /** The name of the ACL. */
   name: string;
+  /** The network protocols this ACL rule applies to. (AI-inferred) */
   protocols: string[];
   /** Bidirectional ACL policy for network traffic within a site. */
   result: MagicAclSingleResponse_Result;

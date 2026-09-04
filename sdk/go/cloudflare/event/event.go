@@ -16,21 +16,34 @@ var Event_RawFields = ubx.FieldMap{
 }
 
 type EventConfig struct {
-	Attacker        any
+	// The identified attacker associated with this event. (AI-inferred)
+	Attacker any
+	// The country associated with the attacker. (AI-inferred)
 	AttackerCountry any
-	Category        any
-	CreatedAt       any
+	// The category this event is classified under. (AI-inferred)
+	Category any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
 	// Dataset ID containing the event to update.
-	DatasetId      any
-	Date           any
-	Event          any
-	Indicator      any
-	IndicatorType  any
-	Insight        any
-	Raw            any
-	TargetCountry  any
+	DatasetId any
+	// The date the event occurred. (AI-inferred)
+	Date any
+	// A description of what happened in this event. (AI-inferred)
+	Event any
+	// The threat indicator value associated with this event. (AI-inferred)
+	Indicator any
+	// The type of the associated threat indicator. (AI-inferred)
+	IndicatorType any
+	// Additional analyst insight about this event. (AI-inferred)
+	Insight any
+	// The raw, unprocessed data this event was derived from. (AI-inferred)
+	Raw any
+	// The country targeted by this event. (AI-inferred)
+	TargetCountry any
+	// The industry vertical targeted by this event. (AI-inferred)
 	TargetIndustry any
-	Tlp            any
+	// The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred)
+	Tlp any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,38 +51,68 @@ type EventConfig struct {
 }
 
 type EventAttrs struct {
-	Attacker              any
-	AttackerCountry       any
+	// The identified attacker associated with this event. (AI-inferred)
+	Attacker any
+	// The country associated with the attacker. (AI-inferred)
+	AttackerCountry any
+	// The three-letter ISO country code associated with the attacker. (AI-inferred)
 	AttackerCountryAlpha3 any
-	Category              any
-	CreatedAt             any
+	// The category this event is classified under. (AI-inferred)
+	Category any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
 	// Dataset ID containing the event to update.
-	DatasetId           any
-	Date                any
-	Event               any
-	HasChildren         any
-	Indicator           any
-	IndicatorType       any
-	IndicatorTypeId     any
-	Insight             any
-	KillChain           any
-	MitreAttack         any
-	MitreCapec          any
-	NumReferenced       any
-	NumReferences       any
-	Raw                 any
-	RawId               any
-	Referenced          any
-	ReferencedIds       any
-	References          any
-	ReferencesIds       any
-	ReleasabilityId     any
-	Tags                any
-	TargetCountry       any
+	DatasetId any
+	// The date the event occurred. (AI-inferred)
+	Date any
+	// A description of what happened in this event. (AI-inferred)
+	Event any
+	// Whether this event has child events referencing it. (AI-inferred)
+	HasChildren any
+	// The threat indicator value associated with this event. (AI-inferred)
+	Indicator any
+	// The type of the associated threat indicator. (AI-inferred)
+	IndicatorType any
+	// The identifier of the associated indicator type. (AI-inferred)
+	IndicatorTypeId any
+	// Additional analyst insight about this event. (AI-inferred)
+	Insight any
+	// The cyber kill chain stage this event represents. (AI-inferred)
+	KillChain any
+	// The MITRE ATT&CK technique this event maps to. (AI-inferred)
+	MitreAttack any
+	// The MITRE CAPEC attack pattern this event maps to. (AI-inferred)
+	MitreCapec any
+	// The number of other events this event references. (AI-inferred)
+	NumReferenced any
+	// The number of other events that reference this event. (AI-inferred)
+	NumReferences any
+	// The raw, unprocessed data this event was derived from. (AI-inferred)
+	Raw any
+	// The identifier of the raw source record this event was derived from. (AI-inferred)
+	RawId any
+	// The other events this event references. (AI-inferred)
+	Referenced any
+	// The identifiers of the other events this event references. (AI-inferred)
+	ReferencedIds any
+	// The other events that reference this event. (AI-inferred)
+	References any
+	// The identifiers of the other events that reference this event. (AI-inferred)
+	ReferencesIds any
+	// The releasability classification controlling who can view this event. (AI-inferred)
+	ReleasabilityId any
+	// The tags applied to this event. (AI-inferred)
+	Tags any
+	// The country targeted by this event. (AI-inferred)
+	TargetCountry any
+	// The three-letter ISO country code of the country targeted by this event. (AI-inferred)
 	TargetCountryAlpha3 any
-	TargetIndustry      any
-	Tlp                 any
-	Uuid                any
+	// The industry vertical targeted by this event. (AI-inferred)
+	TargetIndustry any
+	// The Traffic Light Protocol classification controlling how this event may be shared. (AI-inferred)
+	Tlp any
+	// The unique identifier of the resource. (AI-inferred)
+	Uuid any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

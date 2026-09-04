@@ -106,7 +106,9 @@ class PostureApiFindingInstanceResponseConfig:
 class PostureApiFindingInstanceResponseAttrs:
     # A list of finding instance IDs to pass along.
     check_instances: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A specific instance of a security finding. In the API interface, we refer to the 'finding' table in our DB as finding instances, optimized for the p99 use case.
     result: Any = None

@@ -16,10 +16,14 @@ type Token_Result struct {
 }
 
 type TokenConfig struct {
-	CfApiId  any
+	// The Cloudflare API key ID this token uses to authenticate. (AI-inferred)
+	CfApiId any
+	// The Cloudflare API key this token uses to authenticate. (AI-inferred)
 	CfApiKey any
-	Legacy   any
-	Name     any
+	// Whether this token uses the legacy authentication scheme. (AI-inferred)
+	Legacy any
+	// The name of the token. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -27,12 +31,18 @@ type TokenConfig struct {
 }
 
 type TokenAttrs struct {
-	CfApiId  any
+	// The Cloudflare API key ID this token uses to authenticate. (AI-inferred)
+	CfApiId any
+	// The Cloudflare API key this token uses to authenticate. (AI-inferred)
 	CfApiKey any
-	Legacy   any
-	Name     any
-	Result   any
-	Success  any
+	// Whether this token uses the legacy authentication scheme. (AI-inferred)
+	Legacy any
+	// The name of the token. (AI-inferred)
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

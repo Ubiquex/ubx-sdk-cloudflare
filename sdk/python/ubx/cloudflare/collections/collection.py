@@ -36,7 +36,9 @@ class CollectionConfig:
 
 @dataclasses.dataclass
 class CollectionAttrs:
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

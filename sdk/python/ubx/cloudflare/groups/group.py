@@ -16,7 +16,9 @@ class Group_Members:
 
 @dataclasses.dataclass
 class GroupConfig:
+    # A human-readable description of the group. (AI-inferred)
     description: Any = None
+    # The name of the group. (AI-inferred)
     name: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -25,11 +27,17 @@ class GroupConfig:
 
 @dataclasses.dataclass
 class GroupAttrs:
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
+    # A human-readable description of the group. (AI-inferred)
     description: Any = None
+    # The members belonging to this group. (AI-inferred)
     members: Any = None
+    # The name of the group. (AI-inferred)
     name: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
+    # The unique identifier of the resource. (AI-inferred)
     uuid: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

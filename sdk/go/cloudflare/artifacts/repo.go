@@ -42,9 +42,12 @@ type Repo_ResultInfo struct {
 type RepoConfig struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description   any
-	Name          any
-	ReadOnly      any
+	// A human-readable description of the repository. (AI-inferred)
+	Description any
+	// The name of the repository. (AI-inferred)
+	Name any
+	// Whether the repository is read-only. (AI-inferred)
+	ReadOnly any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -54,14 +57,22 @@ type RepoConfig struct {
 type RepoAttrs struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description   any
-	Errors        any
-	Messages      any
-	Name          any
-	ReadOnly      any
-	Result        any
-	ResultInfo    any
-	Success       any
+	// A human-readable description of the repository. (AI-inferred)
+	Description any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
+	Messages any
+	// The name of the repository. (AI-inferred)
+	Name any
+	// Whether the repository is read-only. (AI-inferred)
+	ReadOnly any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
+	ResultInfo any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

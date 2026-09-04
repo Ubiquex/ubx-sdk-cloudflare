@@ -65,7 +65,9 @@ export interface TunnelCfdTunnelResponseSingleConfig {
 export interface TunnelCfdTunnelResponseSingleAttrs {
   /** Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard. */
   configSrc: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelCfdTunnelResponseSingle_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelCfdTunnelResponseSingle_Errors[];
   /** A user-friendly name for a tunnel. */
   name: string;

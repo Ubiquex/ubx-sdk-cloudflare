@@ -47,7 +47,9 @@ type DeploymentGroupConfig struct {
 }
 
 type DeploymentGroupAttrs struct {
-	Errors   any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
 	Messages any
 	// A user-friendly name for the deployment group.
 	Name any

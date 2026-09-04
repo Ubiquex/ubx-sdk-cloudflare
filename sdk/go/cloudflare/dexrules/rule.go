@@ -30,6 +30,7 @@ type Rule_Result struct {
 }
 
 type RuleConfig struct {
+	// A human-readable description of the rule. (AI-inferred)
 	Description any
 	// The wirefilter expression to match.
 	Match any
@@ -42,11 +43,13 @@ type RuleConfig struct {
 }
 
 type RuleAttrs struct {
+	// A human-readable description of the rule. (AI-inferred)
 	Description any
 	// The wirefilter expression to match.
 	Match any
 	// The name of the Rule.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

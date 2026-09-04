@@ -55,13 +55,17 @@ export interface LoadBalancingMonitorGroupSingleResponseAttrs {
   createdOn: string;
   /** A short description of the monitor group */
   description: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: LoadBalancingMonitorGroupSingleResponse_Errors[];
+  /** The unique identifier of the monitor group. (AI-inferred) */
   id: LoadBalancingMonitorGroupSingleResponse_Id;
   /** List of monitors in this group */
   members: LoadBalancingMonitorGroupSingleResponse_Members[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: LoadBalancingMonitorGroupSingleResponse_Errors[];
   /** The timestamp of when the monitor group was last updated */
   modifiedOn: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: LoadBalancingMonitorGroupSingleResponse_Result;
   /** Whether the API call was successful. */
   success: boolean;

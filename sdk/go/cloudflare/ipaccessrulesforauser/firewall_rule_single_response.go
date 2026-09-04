@@ -34,7 +34,8 @@ type FirewallRuleSingleResponseConfig struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode  any
+	Mode any
+	// A free-text note describing the reason for this IP Access Rule. (AI-inferred)
 	Notes any
 	// path parameter, not part of the API's own resource representation
 	RuleId any
@@ -44,7 +45,8 @@ type FirewallRuleSingleResponseAttrs struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode   any
+	Mode any
+	// A free-text note describing the reason for this IP Access Rule. (AI-inferred)
 	Notes  any
 	Result any
 	// path parameter, not part of the API's own resource representation

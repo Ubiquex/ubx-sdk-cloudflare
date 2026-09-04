@@ -117,7 +117,8 @@ type BillSubsApiAccountSubscriptionResponseSingleAttrs struct {
 	Price any
 	// The rate plan applied to the subscription.
 	RatePlan any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The state that the subscription is in.
 	State any
 	// A simple zone object. May have null properties if not a zone subscription.

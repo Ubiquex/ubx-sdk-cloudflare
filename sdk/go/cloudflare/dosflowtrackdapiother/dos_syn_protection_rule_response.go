@@ -57,8 +57,10 @@ type DosSynProtectionRuleResponseConfig struct {
 type DosSynProtectionRuleResponseAttrs struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
-	Errors           any
-	Messages         any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
 	MitigationType any
 	// The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.

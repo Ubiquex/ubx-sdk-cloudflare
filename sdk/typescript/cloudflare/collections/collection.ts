@@ -30,7 +30,9 @@ export interface CollectionConfig {
 }
 
 export interface CollectionAttrs {
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: Collection_Result;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

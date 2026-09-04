@@ -49,11 +49,14 @@ export interface TargetEnvironmentConfig {
 export interface TargetEnvironmentAttrs {
   /** Optional description. */
   description: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TargetEnvironment_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TargetEnvironment_Errors[];
   /** Human-readable name. */
   name: string;
   result: TargetEnvironment_Result;
+  /** Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred) */
   resultInfo: unknown;
   /** Whether the API call was successful. */
   success: boolean;

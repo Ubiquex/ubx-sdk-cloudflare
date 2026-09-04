@@ -70,7 +70,8 @@ type EmailRuleResponseSingleAttrs struct {
 	OwnerWorkerTag any
 	// Priority of the routing rule.
 	Priority any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
 	Source any
 	// path parameter, not part of the API's own resource representation

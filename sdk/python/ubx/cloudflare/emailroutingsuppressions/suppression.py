@@ -17,7 +17,9 @@ class Suppression_Result:
 
 @dataclasses.dataclass
 class SuppressionConfig:
+    # The email address suppressed from receiving further routed mail. (AI-inferred)
     email: Any = None
+    # When the suppression entry expires, if it is not permanent. (AI-inferred)
     expires_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -26,8 +28,11 @@ class SuppressionConfig:
 
 @dataclasses.dataclass
 class SuppressionAttrs:
+    # The email address suppressed from receiving further routed mail. (AI-inferred)
     email: Any = None
+    # When the suppression entry expires, if it is not permanent. (AI-inferred)
     expires_at: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

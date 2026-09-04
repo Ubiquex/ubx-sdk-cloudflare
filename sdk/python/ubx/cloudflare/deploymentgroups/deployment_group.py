@@ -51,7 +51,9 @@ class DeploymentGroupConfig:
 
 @dataclasses.dataclass
 class DeploymentGroupAttrs:
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
     # A user-friendly name for the deployment group.
     name: Any = None

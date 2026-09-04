@@ -95,6 +95,7 @@ class LoadBalancingMonitorResponseSingleAttrs:
     port: Any = None
     # Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors.
     probe_zone: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
     retries: Any = None

@@ -18,10 +18,15 @@ type ContentPolicy_Result struct {
 }
 
 type ContentPolicyConfig struct {
+	// Whether this content policy is currently active. (AI-inferred)
 	Enabled any
-	Name    any
-	Notes   any
+	// This content policy's own real, human-readable name. (AI-inferred)
+	Name any
+	// A free-text note about this content policy. (AI-inferred)
+	Notes any
+	// The content pattern this policy matches against. (AI-inferred)
 	Pattern any
+	// The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred)
 	Targets any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -30,15 +35,23 @@ type ContentPolicyConfig struct {
 }
 
 type ContentPolicyAttrs struct {
-	CreatedAt  any
-	Enabled    any
-	Id         any
+	// When this content policy was created. (AI-inferred)
+	CreatedAt any
+	// Whether this content policy is currently active. (AI-inferred)
+	Enabled any
+	// This content policy's own real identifier. (AI-inferred)
+	Id any
+	// When this content policy was last modified. (AI-inferred)
 	ModifiedAt any
-	Name       any
-	Notes      any
-	Pattern    any
+	// This content policy's own real, human-readable name. (AI-inferred)
+	Name any
+	// A free-text note about this content policy. (AI-inferred)
+	Notes any
+	// The content pattern this policy matches against. (AI-inferred)
+	Pattern any
 	// A content policy pattern that matches against the subject or body of an email.
-	Result  any
+	Result any
+	// The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred)
 	Targets any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

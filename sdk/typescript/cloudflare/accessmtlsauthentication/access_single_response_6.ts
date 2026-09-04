@@ -38,6 +38,7 @@ export interface AccessSingleResponse6Attrs {
   certificate: string;
   /** The name of the certificate. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse6_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

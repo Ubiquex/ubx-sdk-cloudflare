@@ -10,7 +10,9 @@ export interface Level_Result {
 }
 
 export interface LevelConfig {
+  /** A human-readable description of the sensitivity level. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the sensitivity level. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -21,8 +23,11 @@ export interface LevelConfig {
 }
 
 export interface LevelAttrs {
+  /** A human-readable description of the sensitivity level. (AI-inferred) */
   description: string;
+  /** The name of the sensitivity level. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Level_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

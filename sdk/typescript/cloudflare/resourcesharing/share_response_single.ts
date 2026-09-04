@@ -91,7 +91,9 @@ const ShareResponseSingle_ResourcesFields: FieldMap = {
 export interface ShareResponseSingleConfig {
   /** The name of the share. */
   name: string | Computed<string>;
+  /** The recipients granted access to this share. (AI-inferred) */
   recipients: ShareResponseSingle_Recipients[] | Computed<ShareResponseSingle_Recipients[]>;
+  /** The resources included in this share. (AI-inferred) */
   resources: ShareResponseSingle_Resources[] | Computed<ShareResponseSingle_Resources[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -100,11 +102,15 @@ export interface ShareResponseSingleConfig {
 }
 
 export interface ShareResponseSingleAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ShareResponseSingle_Errors[];
   /** The name of the share. */
   name: string;
+  /** The recipients granted access to this share. (AI-inferred) */
   recipients: ShareResponseSingle_Recipients[];
+  /** The resources included in this share. (AI-inferred) */
   resources: ShareResponseSingle_Resources[];
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ShareResponseSingle_Result;
   /** Whether the API call was successful. */
   success: boolean;

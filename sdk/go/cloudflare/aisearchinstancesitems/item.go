@@ -98,8 +98,10 @@ var Item_PublicEndpointParamsFields = ubx.FieldMap{
 
 type ItemConfig struct {
 	// Optional description for the namespace. Max 256 characters.
-	Description          any
-	Name                 any
+	Description any
+	// The name of the namespace item. (AI-inferred)
+	Name any
+	// The configuration for the namespace's own public query endpoint. (AI-inferred)
 	PublicEndpointParams any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -111,11 +113,15 @@ type ItemConfig struct {
 
 type ItemAttrs struct {
 	// Optional description for the namespace. Max 256 characters.
-	Description          any
-	Name                 any
+	Description any
+	// The name of the namespace item. (AI-inferred)
+	Name any
+	// The configuration for the namespace's own public query endpoint. (AI-inferred)
 	PublicEndpointParams any
-	Result               any
-	Success              any
+	// The requested resource or collection of resources. (AI-inferred)
+	Result any
+	// Whether the API call was successful. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

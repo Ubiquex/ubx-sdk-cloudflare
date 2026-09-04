@@ -45,7 +45,9 @@ export interface DeploymentGroupConfig {
 }
 
 export interface DeploymentGroupAttrs {
+  /** A list of errors returned by the API. Empty on a successful response. (AI-inferred) */
   errors: DeploymentGroup_Errors[];
+  /** A list of informational messages returned by the API, if any. (AI-inferred) */
   messages: DeploymentGroup_Errors[];
   /** A user-friendly name for the deployment group. */
   name: string;

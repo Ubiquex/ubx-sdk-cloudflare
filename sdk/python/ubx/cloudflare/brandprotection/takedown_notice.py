@@ -8,10 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TakedownNoticeConfig:
+    # The domain the takedown notice targets. (AI-inferred)
     domain: Any = None
+    # The Brand Protection match that triggered this takedown notice. (AI-inferred)
     match_id: Any = None
+    # The type of match that triggered this takedown notice. (AI-inferred)
     match_type: Any = None
+    # The Brand Protection query that surfaced the match triggering this notice. (AI-inferred)
     query_id: Any = None
+    # The current status of the takedown notice. (AI-inferred)
     status: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -20,13 +25,21 @@ class TakedownNoticeConfig:
 
 @dataclasses.dataclass
 class TakedownNoticeAttrs:
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
+    # The domain the takedown notice targets. (AI-inferred)
     domain: Any = None
+    # The unique identifier of the takedown notice. (AI-inferred)
     id: Any = None
+    # The Brand Protection match that triggered this takedown notice. (AI-inferred)
     match_id: Any = None
+    # The type of match that triggered this takedown notice. (AI-inferred)
     match_type: Any = None
+    # The Brand Protection query that surfaced the match triggering this notice. (AI-inferred)
     query_id: Any = None
+    # The current status of the takedown notice. (AI-inferred)
     status: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

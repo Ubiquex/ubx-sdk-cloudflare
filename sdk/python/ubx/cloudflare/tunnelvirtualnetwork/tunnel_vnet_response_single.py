@@ -45,11 +45,13 @@ class TunnelVnetResponseSingleConfig:
 class TunnelVnetResponseSingleAttrs:
     # Optional remark describing the virtual network.
     comment: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # If `true`, this virtual network is the default for the account.
     is_default: Any = None
     # If `true`, this virtual network is the default for the account.
     is_default_network: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A user-friendly name for the virtual network.
     name: Any = None

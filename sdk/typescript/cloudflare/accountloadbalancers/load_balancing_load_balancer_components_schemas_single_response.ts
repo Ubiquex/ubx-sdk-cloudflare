@@ -294,6 +294,7 @@ export interface LoadBalancingLoadBalancerComponentsSchemasSingleResponseAttrs {
   randomSteering: LoadBalancingLoadBalancerComponentsSchemasSingleResponse_RandomSteering;
   /** A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools. */
   regionPools: Record<string, string[]>;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: LoadBalancingLoadBalancerComponentsSchemasSingleResponse_Result;
   /** BETA Field Not General Access: A list of rules for this load balancer to execute. */
   rules: LoadBalancingLoadBalancerComponentsSchemasSingleResponse_Result_Rules[];

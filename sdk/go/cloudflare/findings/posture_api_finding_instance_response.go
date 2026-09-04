@@ -102,8 +102,10 @@ type PostureApiFindingInstanceResponseConfig struct {
 type PostureApiFindingInstanceResponseAttrs struct {
 	// A list of finding instance IDs to pass along.
 	CheckInstances any
-	Errors         any
-	Messages       any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// A specific instance of a security finding. In the API interface, we refer to the 'finding' table in our DB as finding instances, optimized for the p99 use case.
 	Result any
 	// Whether the API call was successful.

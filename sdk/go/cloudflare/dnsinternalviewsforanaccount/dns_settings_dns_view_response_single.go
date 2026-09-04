@@ -28,7 +28,8 @@ type DnsSettingsDnsViewResponseSingleAttrs struct {
 	// When the view was last modified.
 	ModifiedTime any
 	// The name of the view.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// The list of zones linked to this view.
 	Zones any

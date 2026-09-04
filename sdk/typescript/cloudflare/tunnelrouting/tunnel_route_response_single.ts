@@ -39,7 +39,9 @@ export interface TunnelRouteResponseSingleConfig {
 export interface TunnelRouteResponseSingleAttrs {
   /** Optional remark describing the route. */
   comment: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelRouteResponseSingle_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelRouteResponseSingle_Errors[];
   /** The private IPv4 or IPv6 range connected by the route, in CIDR notation. */
   network: string;

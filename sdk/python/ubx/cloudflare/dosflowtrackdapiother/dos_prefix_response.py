@@ -49,9 +49,11 @@ class DosPrefixResponseConfig:
 class DosPrefixResponseAttrs:
     # A comment describing the prefix.
     comment: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # Whether to exclude the prefix from protection.
     excluded: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The prefix to add in CIDR format.
     prefix: Any = None

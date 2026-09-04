@@ -32,6 +32,7 @@ const MagicSiteSingleResponse_LocationFields: FieldMap = {
 export interface MagicSiteSingleResponseConfig {
   /** Magic Connector identifier tag. */
   connectorId?: string | Computed<string>;
+  /** A human-readable description of the site. (AI-inferred) */
   description?: string | Computed<string>;
   /** Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode. */
   haMode?: boolean | Computed<boolean>;
@@ -50,6 +51,7 @@ export interface MagicSiteSingleResponseConfig {
 export interface MagicSiteSingleResponseAttrs {
   /** Magic Connector identifier tag. */
   connectorId: string;
+  /** A human-readable description of the site. (AI-inferred) */
   description: string;
   /** Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode. */
   haMode: boolean;
@@ -57,6 +59,7 @@ export interface MagicSiteSingleResponseAttrs {
   location: MagicSiteSingleResponse_Location;
   /** The name of the site. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicSiteSingleResponse_Result;
   /** Magic Connector identifier tag. Used when high availability mode is on. */
   secondaryConnectorId: string;

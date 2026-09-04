@@ -75,6 +75,7 @@ export interface AlexandriaGetApplicationResponseConfig {
 export interface AlexandriaGetApplicationResponseAttrs {
   /** Returns the category ID. */
   categoryId: number;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: AlexandriaGetApplicationResponse_Errors[];
   /** Hostnames matched by the application. */
   hostnames: string[];
@@ -82,6 +83,7 @@ export interface AlexandriaGetApplicationResponseAttrs {
   humanId: string;
   /** IP subnets matched by the application. */
   ipSubnets: string[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: AlexandriaGetApplicationResponse_Errors[];
   /** Returns the application name. */
   name: string;

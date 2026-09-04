@@ -45,7 +45,8 @@ type IamSsoConnectorResponseAttrs struct {
 	BeginVerification any
 	// Email domain of the new SSO connector
 	EmailDomain any
-	Result      any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Controls the display of FedRAMP language to the user during SSO login
 	UseFedrampLanguage any
 	// path parameter, not part of the API's own resource representation

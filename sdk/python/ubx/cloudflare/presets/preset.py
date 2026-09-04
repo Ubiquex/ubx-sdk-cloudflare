@@ -409,7 +409,9 @@ class PresetConfig:
     config: Any = None
     # Name of the preset
     name: Any = None
+    # The permissions granted to participants using this preset. (AI-inferred)
     permissions: Any = None
+    # The UI configuration applied to participants using this preset. (AI-inferred)
     ui: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -421,12 +423,15 @@ class PresetConfig:
 @dataclasses.dataclass
 class PresetAttrs:
     config: Any = None
+    # The real preset records returned by this lookup. (AI-inferred)
     data: Any = None
     # Name of the preset
     name: Any = None
+    # The permissions granted to participants using this preset. (AI-inferred)
     permissions: Any = None
     # Success status of the operation
     success: Any = None
+    # The UI configuration applied to participants using this preset. (AI-inferred)
     ui: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

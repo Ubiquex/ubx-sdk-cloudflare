@@ -43,27 +43,40 @@ _Predefined_EntriesFields = {
 
 @dataclasses.dataclass
 class PredefinedConfig:
+    # Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred)
     ai_context_enabled: Any = None
+    # How many real matches this predefined DLP entry allows before it triggers. (AI-inferred)
     allowed_match_count: Any = None
+    # The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred)
     confidence_threshold: Any = None
     # Scan the context of predefined entries to only return matches surrounded by keywords.
     context_awareness: Any = None
+    # The real, individual detection entries this predefined DLP profile groups together. (AI-inferred)
     entries: Any = None
+    # Whether this predefined DLP entry scans image text via OCR. (AI-inferred)
     ocr_enabled: Any = None
+    # The real predefined DLP profile this entry belongs to. (AI-inferred)
     profile_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 
 @dataclasses.dataclass
 class PredefinedAttrs:
+    # Whether AI-based context analysis is enabled for this predefined DLP entry. (AI-inferred)
     ai_context_enabled: Any = None
+    # How many real matches this predefined DLP entry allows before it triggers. (AI-inferred)
     allowed_match_count: Any = None
+    # The real minimum confidence level a match must reach before this predefined DLP entry triggers. (AI-inferred)
     confidence_threshold: Any = None
     # Scan the context of predefined entries to only return matches surrounded by keywords.
     context_awareness: Any = None
+    # The real, individual detection entries this predefined DLP profile groups together. (AI-inferred)
     entries: Any = None
+    # Whether this predefined DLP entry scans image text via OCR. (AI-inferred)
     ocr_enabled: Any = None
+    # The real predefined DLP profile this entry belongs to. (AI-inferred)
     profile_id: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

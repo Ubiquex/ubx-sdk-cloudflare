@@ -30,7 +30,8 @@ type AccessSingleResponse11Config struct {
 	AppCount any
 	// Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
 	ContractVersion any
-	CreatedAt       any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
 	// Custom page HTML.
 	CustomHtml any
 	// Custom page name.
@@ -38,7 +39,8 @@ type AccessSingleResponse11Config struct {
 	// Custom page type.
 	Type any
 	// UUID.
-	Uid       any
+	Uid any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -51,16 +53,19 @@ type AccessSingleResponse11Attrs struct {
 	AppCount any
 	// Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
 	ContractVersion any
-	CreatedAt       any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
 	// Custom page HTML.
 	CustomHtml any
 	// Custom page name.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Custom page type.
 	Type any
 	// UUID.
-	Uid       any
+	Uid any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

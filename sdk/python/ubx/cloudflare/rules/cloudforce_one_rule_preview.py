@@ -97,10 +97,15 @@ _CloudforceOneRulePreview_StringsFields = {
 class CloudforceOneRulePreviewConfig:
     # Nested condition groups support up to 10 levels of depth.
     condition: Any = None
+    # A human-readable description of what the rule detects. (AI-inferred)
     description: Any = None
+    # Whether the rule is currently active. (AI-inferred)
     enabled: Any = None
+    # Additional metadata associated with the rule. (AI-inferred)
     meta: Any = None
+    # The name of the rule. (AI-inferred)
     name: Any = None
+    # The literal strings the rule matches against. (AI-inferred)
     strings: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -109,26 +114,39 @@ class CloudforceOneRulePreviewConfig:
 class CloudforceOneRulePreviewAttrs:
     # Nested condition groups support up to 10 levels of depth.
     condition: Any = None
+    # The body of the detection rule. (AI-inferred)
     content: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
+    # The identifier of the user who created the rule. (AI-inferred)
     created_by: Any = None
+    # A human-readable description of what the rule detects. (AI-inferred)
     description: Any = None
+    # Whether the rule is currently active. (AI-inferred)
     enabled: Any = None
+    # The unique identifier of the rule. (AI-inferred)
     id: Any = None
     # Whether this rule is visible to other internal accounts.
     is_public: Any = None
+    # Additional metadata associated with the rule. (AI-inferred)
     meta: Any = None
+    # The name of the rule. (AI-inferred)
     name: Any = None
+    # The namespaces the rule is scoped to. (AI-inferred)
     namespaces: Any = None
+    # The path the rule is scoped to within its namespace. (AI-inferred)
     path: Any = None
     # ID of an open approval workflow targeting this rule, or null if none is pending.
     pending_approval_id: Any = None
     # Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.
     pending_change: Any = None
+    # The literal strings the rule matches against. (AI-inferred)
     strings: Any = None
     # Original JSON payload for rules created via the structured rules API. Null for hand-written rules.
     structured_source: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
+    # The identifier of the user who last updated the rule. (AI-inferred)
     updated_by: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

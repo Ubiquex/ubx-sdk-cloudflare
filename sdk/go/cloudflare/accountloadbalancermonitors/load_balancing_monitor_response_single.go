@@ -91,7 +91,8 @@ type LoadBalancingMonitorResponseSingleAttrs struct {
 	Port any
 	// Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors.
 	ProbeZone any
-	Result    any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
 	Retries any
 	// The timeout (in seconds) before marking the health check as failed.

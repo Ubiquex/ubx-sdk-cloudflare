@@ -402,9 +402,11 @@ var Preset_Data_UiFields = ubx.FieldMap{
 type PresetConfig struct {
 	Config any
 	// Name of the preset
-	Name        any
+	Name any
+	// The permissions granted to participants using this preset. (AI-inferred)
 	Permissions any
-	Ui          any
+	// The UI configuration applied to participants using this preset. (AI-inferred)
+	Ui any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -415,13 +417,16 @@ type PresetConfig struct {
 
 type PresetAttrs struct {
 	Config any
-	Data   any
+	// The real preset records returned by this lookup. (AI-inferred)
+	Data any
 	// Name of the preset
-	Name        any
+	Name any
+	// The permissions granted to participants using this preset. (AI-inferred)
 	Permissions any
 	// Success status of the operation
 	Success any
-	Ui      any
+	// The UI configuration applied to participants using this preset. (AI-inferred)
+	Ui any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

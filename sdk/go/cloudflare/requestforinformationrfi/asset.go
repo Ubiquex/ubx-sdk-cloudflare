@@ -39,13 +39,16 @@ type AssetConfig struct {
 }
 
 type AssetAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
-	Result  any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation

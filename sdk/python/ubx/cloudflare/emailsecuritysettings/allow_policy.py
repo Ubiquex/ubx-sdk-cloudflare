@@ -40,6 +40,7 @@ class AllowPolicy_Result:
 
 @dataclasses.dataclass
 class AllowPolicyConfig:
+    # A free-text note about this allow policy. (AI-inferred)
     comments: Any = None
     # Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply.
     is_acceptable_sender: Any = None
@@ -47,6 +48,7 @@ class AllowPolicyConfig:
     is_exempt_recipient: Any = None
     # Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026.
     is_recipient: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026.
     is_sender: Any = None
@@ -67,8 +69,11 @@ class AllowPolicyConfig:
 
 @dataclasses.dataclass
 class AllowPolicyAttrs:
+    # A free-text note about this allow policy. (AI-inferred)
     comments: Any = None
+    # When this allow policy was created. (AI-inferred)
     created_at: Any = None
+    # This allow policy's own real identifier. (AI-inferred)
     id: Any = None
     # Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply.
     is_acceptable_sender: Any = None
@@ -76,6 +81,7 @@ class AllowPolicyAttrs:
     is_exempt_recipient: Any = None
     # Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026.
     is_recipient: Any = None
+    # Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
     is_regex: Any = None
     # Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026.
     is_sender: Any = None
@@ -85,6 +91,7 @@ class AllowPolicyAttrs:
     is_trusted_sender: Any = None
     # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
     last_modified: Any = None
+    # When this allow policy was last modified. (AI-inferred)
     modified_at: Any = None
     # The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.
     pattern: Any = None

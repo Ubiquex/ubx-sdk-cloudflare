@@ -54,6 +54,7 @@ export interface TlsCertificatesAndHostnamesKeylessResponseSingleAttrs {
   name: string;
   /** The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server. */
   port: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: TlsCertificatesAndHostnamesKeylessResponseSingle_Result;
   /** Configuration for using Keyless SSL through a Cloudflare Tunnel. */
   tunnel: TlsCertificatesAndHostnamesKeylessResponseSingle_Result_Tunnel;

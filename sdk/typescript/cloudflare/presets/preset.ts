@@ -402,7 +402,9 @@ export interface PresetConfig {
   config: Preset_Config | Computed<Preset_Config>;
   /** Name of the preset */
   name: string | Computed<string>;
+  /** The permissions granted to participants using this preset. (AI-inferred) */
   permissions: Preset_Data_Permissions | Computed<Preset_Data_Permissions>;
+  /** The UI configuration applied to participants using this preset. (AI-inferred) */
   ui: Preset_Data_Ui | Computed<Preset_Data_Ui>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -414,12 +416,15 @@ export interface PresetConfig {
 
 export interface PresetAttrs {
   config: Preset_Config;
+  /** The real preset records returned by this lookup. (AI-inferred) */
   data: Preset_Data;
   /** Name of the preset */
   name: string;
+  /** The permissions granted to participants using this preset. (AI-inferred) */
   permissions: Preset_Data_Permissions;
   /** Success status of the operation */
   success: boolean;
+  /** The UI configuration applied to participants using this preset. (AI-inferred) */
   ui: Preset_Data_Ui;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

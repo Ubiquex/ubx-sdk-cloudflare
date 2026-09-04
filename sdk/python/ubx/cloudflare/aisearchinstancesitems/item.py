@@ -103,7 +103,9 @@ _Item_PublicEndpointParamsFields = {
 class ItemConfig:
     # Optional description for the namespace. Max 256 characters.
     description: Any = None
+    # The name of the namespace item. (AI-inferred)
     name: Any = None
+    # The configuration for the namespace's own public query endpoint. (AI-inferred)
     public_endpoint_params: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -116,9 +118,13 @@ class ItemConfig:
 class ItemAttrs:
     # Optional description for the namespace. Max 256 characters.
     description: Any = None
+    # The name of the namespace item. (AI-inferred)
     name: Any = None
+    # The configuration for the namespace's own public query endpoint. (AI-inferred)
     public_endpoint_params: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

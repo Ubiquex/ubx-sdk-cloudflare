@@ -27,10 +27,12 @@ type Index_Result struct {
 var Index_ConfigFields = ubx.FieldMap{}
 
 type IndexConfig struct {
+	// The vector dimensionality and distance metric configuration for the index. (AI-inferred)
 	Config any
 	// Specifies the description of the index.
 	Description any
-	Name        any
+	// The name of the Vectorize index. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,11 +40,14 @@ type IndexConfig struct {
 }
 
 type IndexAttrs struct {
+	// The vector dimensionality and distance metric configuration for the index. (AI-inferred)
 	Config any
 	// Specifies the description of the index.
 	Description any
-	Name        any
-	Result      any
+	// The name of the Vectorize index. (AI-inferred)
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

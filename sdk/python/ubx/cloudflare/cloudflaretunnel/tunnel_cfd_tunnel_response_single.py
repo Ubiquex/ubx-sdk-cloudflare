@@ -72,7 +72,9 @@ class TunnelCfdTunnelResponseSingleConfig:
 class TunnelCfdTunnelResponseSingleAttrs:
     # Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
     config_src: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A user-friendly name for a tunnel.
     name: Any = None

@@ -68,6 +68,7 @@ export interface EmailRuleResponseSingleAttrs {
   ownerWorkerTag: string;
   /** Priority of the routing rule. */
   priority: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: EmailRuleResponseSingle_Result;
   /** Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write. */
   source: string;

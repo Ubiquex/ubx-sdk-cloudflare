@@ -41,7 +41,8 @@ type AccessSingleUserResponseAttrs struct {
 	// The email of the user.
 	Email any
 	// The name of the user.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

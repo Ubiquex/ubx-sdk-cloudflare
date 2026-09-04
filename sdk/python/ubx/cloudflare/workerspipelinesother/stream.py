@@ -111,6 +111,7 @@ class StreamAttrs:
     http: Any = None
     # Specifies the name of the Stream.
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Defines the schema of the events in the data stream.
     schema: Any = None

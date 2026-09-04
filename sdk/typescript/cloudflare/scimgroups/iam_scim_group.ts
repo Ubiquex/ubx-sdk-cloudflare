@@ -33,6 +33,7 @@ export interface IamScimGroupAttrs {
   members: IamScimGroup_Members[];
   /** Resource metadata for a SCIM Group. */
   meta: IamScimGroup_Meta;
+  /** The SCIM schema URIs this Group resource conforms to. (AI-inferred) */
   schemas: string[];
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

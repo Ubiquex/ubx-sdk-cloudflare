@@ -460,7 +460,8 @@ type AccessSingleResponse10Attrs struct {
 	PurposeJustificationRequired any
 	// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
 	Require any
-	Result  any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 	SessionDuration any
 	// path parameter, not part of the API's own resource representation

@@ -4,11 +4,16 @@ package category
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CategoryConfig struct {
-	KillChain   any
+	// The cyber kill chain stage this category represents. (AI-inferred)
+	KillChain any
+	// The MITRE ATT&CK technique this category maps to. (AI-inferred)
 	MitreAttack any
-	MitreCapec  any
-	Name        any
-	Shortname   any
+	// The MITRE CAPEC attack pattern this category maps to. (AI-inferred)
+	MitreCapec any
+	// The name of the threat event category. (AI-inferred)
+	Name any
+	// A short, URL-safe identifier for the category. (AI-inferred)
+	Shortname any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -16,12 +21,18 @@ type CategoryConfig struct {
 }
 
 type CategoryAttrs struct {
-	KillChain   any
+	// The cyber kill chain stage this category represents. (AI-inferred)
+	KillChain any
+	// The MITRE ATT&CK technique this category maps to. (AI-inferred)
 	MitreAttack any
-	MitreCapec  any
-	Name        any
-	Shortname   any
-	Uuid        any
+	// The MITRE CAPEC attack pattern this category maps to. (AI-inferred)
+	MitreCapec any
+	// The name of the threat event category. (AI-inferred)
+	Name any
+	// A short, URL-safe identifier for the category. (AI-inferred)
+	Shortname any
+	// The unique identifier of the resource. (AI-inferred)
+	Uuid any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

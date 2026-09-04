@@ -53,6 +53,7 @@ class MagicAclSingleResponseConfig:
     lan_2: Any = None
     # The name of the ACL.
     name: Any = None
+    # The network protocols this ACL rule applies to. (AI-inferred)
     protocols: Any = None
     # The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
     unidirectional: Any = None
@@ -73,6 +74,7 @@ class MagicAclSingleResponseAttrs:
     lan_2: Any = None
     # The name of the ACL.
     name: Any = None
+    # The network protocols this ACL rule applies to. (AI-inferred)
     protocols: Any = None
     # Bidirectional ACL policy for network traffic within a site.
     result: Any = None

@@ -95,6 +95,7 @@ export interface EventResponseAttrs {
   prequeueStartTime: string;
   /** If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it. */
   queueingMethod: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: EventResponse_Result;
   /** If set, the event will override the waiting room's `session_duration` property while it is active. If null, the event will inherit it. */
   sessionDuration: number;

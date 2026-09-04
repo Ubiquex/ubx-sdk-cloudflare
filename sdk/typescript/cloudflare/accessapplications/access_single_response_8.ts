@@ -12,6 +12,7 @@ export interface AccessSingleResponse8Config {
 }
 
 export interface AccessSingleResponse8Attrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse8_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

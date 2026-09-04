@@ -144,12 +144,14 @@ type TlsCertificatesAndHostnamesCustomHostnameResponseSingleAttrs struct {
 	CustomOriginServer any
 	// A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
 	CustomOriginSni any
-	Errors          any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// The custom hostname that will point to your hostname via CNAME.
 	Hostname any
 	// Informational messages returned by the custom hostname API.
 	Messages any
-	Result   any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// SSL properties used when creating the custom hostname.
 	Ssl any
 	// Whether the API call was successful.

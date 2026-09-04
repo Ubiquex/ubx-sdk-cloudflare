@@ -413,12 +413,15 @@ class ProjectAttrs:
     build_config: Any = None
     # Configs for deployments in a project.
     deployment_configs: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Name of the project.
     name: Any = None
     # Production branch of the project. Used to identify production deployments.
     production_branch: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Configs for the project source control.
     source: Any = None

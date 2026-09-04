@@ -12,6 +12,7 @@ export interface AccessSingleResponse3Config {
 }
 
 export interface AccessSingleResponse3Attrs {
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: AccessSingleResponse3_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

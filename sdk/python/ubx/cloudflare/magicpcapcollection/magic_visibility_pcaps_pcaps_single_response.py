@@ -40,6 +40,7 @@ class MagicVisibilityPcapsPcapsSingleResponseConfig:
 
 @dataclasses.dataclass
 class MagicVisibilityPcapsPcapsSingleResponseAttrs:
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

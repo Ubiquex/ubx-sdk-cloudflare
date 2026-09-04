@@ -46,7 +46,9 @@ export interface BindingConfig {
 export interface BindingAttrs {
   /** IP Prefix in Classless Inter-Domain Routing format. */
   cidr: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Binding_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Binding_Errors[];
   result: Binding_Result;
   /** Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint. */

@@ -114,6 +114,7 @@ const Worker_ProductionSettingsFields: FieldMap = {
 };
 
 export interface WorkerConfig {
+  /** The git repository this Worker is connected to for CI-driven deployment. (AI-inferred) */
   gitRepository: Worker_GitRepository | Computed<Worker_GitRepository>;
   /** Build and deploy settings when creating a Worker build configuration */
   productionSettings: Worker_ProductionSettings | Computed<Worker_ProductionSettings>;
@@ -124,16 +125,21 @@ export interface WorkerConfig {
 }
 
 export interface WorkerAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Worker_Errors[];
+  /** The git repository this Worker is connected to for CI-driven deployment. (AI-inferred) */
   gitRepository: Worker_GitRepository;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: string[];
   /** Build and deploy settings when creating a Worker build configuration */
   productionSettings: Worker_ProductionSettings;
   /** Worker build configuration including git repository linkage and production settings */
   result: Worker_Result;
+  /** Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred) */
   resultInfo: Worker_ResultInfo;
   /** System-generated worker script tag. */
   scriptTag: string;
+  /** Whether the API call succeeded. (AI-inferred) */
   success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

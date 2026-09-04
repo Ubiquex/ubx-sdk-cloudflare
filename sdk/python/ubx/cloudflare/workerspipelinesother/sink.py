@@ -174,6 +174,7 @@ class SinkAttrs:
     format: Any = None
     # Defines the name of the Sink.
     name: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
     # Defines the schema of the events in the data stream.
     schema: Any = None

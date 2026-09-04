@@ -50,6 +50,7 @@ type CrawlConfig struct {
 }
 
 type CrawlAttrs struct {
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
 	Errors any
 	Result any
 	// Response status.

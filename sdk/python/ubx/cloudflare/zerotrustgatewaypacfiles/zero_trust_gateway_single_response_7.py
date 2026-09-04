@@ -45,6 +45,7 @@ class ZeroTrustGatewaySingleResponse7Attrs:
     description: Any = None
     # Name of the PAC file.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # URL-friendly version of the PAC file name. If not provided, it will be auto-generated
     slug: Any = None

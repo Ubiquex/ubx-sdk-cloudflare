@@ -38,6 +38,7 @@ export interface TlsCertificatesAndHostnamesCertificateResponseSingle5Attrs {
   name: string;
   /** The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page. */
   privateKey: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: TlsCertificatesAndHostnamesCertificateResponseSingle5_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

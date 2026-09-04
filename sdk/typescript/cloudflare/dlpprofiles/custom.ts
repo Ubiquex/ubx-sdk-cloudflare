@@ -87,9 +87,11 @@ const Custom_SharedEntriesFields: FieldMap = {
 };
 
 export interface CustomConfig {
+  /** Whether AI-based context analysis is enabled for this profile. (AI-inferred) */
   aiContextEnabled?: boolean | Computed<boolean>;
   /** Related DLP policies will trigger when the match count exceeds the number set. */
   allowedMatchCount?: number | Computed<number>;
+  /** The minimum confidence score a match must reach to trigger this profile. (AI-inferred) */
   confidenceThreshold?: string | Computed<string>;
   /** Scan the context of predefined entries to only return matches surrounded by keywords. */
   contextAwareness?: Custom_ContextAwareness | Computed<Custom_ContextAwareness>;
@@ -99,8 +101,11 @@ export interface CustomConfig {
   dataTags?: string[] | Computed<string[]>;
   /** The description of the profile. */
   description?: string | Computed<string>;
+  /** The detection entries that make up this DLP profile. (AI-inferred) */
   entries?: Custom_Entries[] | Computed<Custom_Entries[]>;
+  /** The name of the DLP profile. (AI-inferred) */
   name: string | Computed<string>;
+  /** Whether OCR-based scanning of images is enabled for this profile. (AI-inferred) */
   ocrEnabled?: boolean | Computed<boolean>;
   /** Sensitivity levels to associate with the profile. */
   sensitivityLevels?: Custom_SensitivityLevels[] | Computed<Custom_SensitivityLevels[]>;
@@ -113,9 +118,11 @@ export interface CustomConfig {
 }
 
 export interface CustomAttrs {
+  /** Whether AI-based context analysis is enabled for this profile. (AI-inferred) */
   aiContextEnabled: boolean;
   /** Related DLP policies will trigger when the match count exceeds the number set. */
   allowedMatchCount: number;
+  /** The minimum confidence score a match must reach to trigger this profile. (AI-inferred) */
   confidenceThreshold: string;
   /** Scan the context of predefined entries to only return matches surrounded by keywords. */
   contextAwareness: Custom_ContextAwareness;
@@ -125,9 +132,13 @@ export interface CustomAttrs {
   dataTags: string[];
   /** The description of the profile. */
   description: string;
+  /** The detection entries that make up this DLP profile. (AI-inferred) */
   entries: Custom_Entries[];
+  /** The name of the DLP profile. (AI-inferred) */
   name: string;
+  /** Whether OCR-based scanning of images is enabled for this profile. (AI-inferred) */
   ocrEnabled: boolean;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: unknown;
   /** Sensitivity levels to associate with the profile. */
   sensitivityLevels: Custom_SensitivityLevels[];

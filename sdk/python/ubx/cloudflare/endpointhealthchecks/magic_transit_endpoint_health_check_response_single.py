@@ -43,10 +43,13 @@ class MagicTransitEndpointHealthCheckResponseSingleAttrs:
     check_type: Any = None
     # the IP address of the host to perform checks against
     endpoint: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Optional name associated with this check
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether the API call was successful.
     success: Any = None

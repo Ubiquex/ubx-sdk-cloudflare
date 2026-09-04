@@ -174,24 +174,38 @@ type McnGetOnrampResponse_Result struct {
 }
 
 type McnGetOnrampResponseConfig struct {
+	// The hub this onramp was adopted into, if any. (AI-inferred)
 	AdoptedHubId any
+	// The Magic WAN hubs this onramp is attached to. (AI-inferred)
 	AttachedHubs any
+	// The cloud VPCs this onramp is attached to. (AI-inferred)
 	AttachedVpcs any
 	// Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
-	CloudAsn    any
-	CloudType   any
+	CloudAsn any
+	// The cloud provider this onramp connects to. (AI-inferred)
+	CloudType any
+	// A human-readable description of the onramp. (AI-inferred)
 	Description any
 	// Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
-	DynamicRouting            any
-	HubProviderId             any
-	InstallRoutesInCloud      any
-	InstallRoutesInMagicWan   any
+	DynamicRouting any
+	// The identifier of the hub provider this onramp is attached to. (AI-inferred)
+	HubProviderId any
+	// Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred)
+	InstallRoutesInCloud any
+	// Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred)
+	InstallRoutesInMagicWan any
+	// Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred)
 	ManageHubToHubAttachments any
+	// Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred)
 	ManageVpcToHubAttachments any
-	Name                      any
-	Region                    any
-	Type                      any
-	Vpc                       any
+	// The name of the onramp. (AI-inferred)
+	Name any
+	// The cloud region this onramp is deployed in. (AI-inferred)
+	Region any
+	// The type of onramp. (AI-inferred)
+	Type any
+	// The cloud VPC this onramp connects to. (AI-inferred)
+	Vpc any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -199,25 +213,40 @@ type McnGetOnrampResponseConfig struct {
 }
 
 type McnGetOnrampResponseAttrs struct {
+	// The hub this onramp was adopted into, if any. (AI-inferred)
 	AdoptedHubId any
+	// The Magic WAN hubs this onramp is attached to. (AI-inferred)
 	AttachedHubs any
+	// The cloud VPCs this onramp is attached to. (AI-inferred)
 	AttachedVpcs any
 	// Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
-	CloudAsn    any
-	CloudType   any
+	CloudAsn any
+	// The cloud provider this onramp connects to. (AI-inferred)
+	CloudType any
+	// A human-readable description of the onramp. (AI-inferred)
 	Description any
 	// Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
-	DynamicRouting            any
-	HubProviderId             any
-	InstallRoutesInCloud      any
-	InstallRoutesInMagicWan   any
+	DynamicRouting any
+	// The identifier of the hub provider this onramp is attached to. (AI-inferred)
+	HubProviderId any
+	// Whether Magic WAN routes are automatically installed into the cloud provider's own routing tables. (AI-inferred)
+	InstallRoutesInCloud any
+	// Whether the cloud provider's own routes are automatically installed into Magic WAN. (AI-inferred)
+	InstallRoutesInMagicWan any
+	// Whether Cloudflare automatically manages attachments between hubs for this onramp. (AI-inferred)
 	ManageHubToHubAttachments any
+	// Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp. (AI-inferred)
 	ManageVpcToHubAttachments any
-	Name                      any
-	Region                    any
-	Result                    any
-	Type                      any
-	Vpc                       any
+	// The name of the onramp. (AI-inferred)
+	Name any
+	// The cloud region this onramp is deployed in. (AI-inferred)
+	Region any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The type of onramp. (AI-inferred)
+	Type any
+	// The cloud VPC this onramp connects to. (AI-inferred)
+	Vpc any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

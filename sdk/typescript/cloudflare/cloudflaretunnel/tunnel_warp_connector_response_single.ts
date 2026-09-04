@@ -57,9 +57,11 @@ export interface TunnelWarpConnectorResponseSingleConfig {
 }
 
 export interface TunnelWarpConnectorResponseSingleAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: TunnelWarpConnectorResponseSingle_Errors[];
   /** Indicates that the tunnel will be created to be highly available. If omitted, defaults to false. */
   ha: boolean;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: TunnelWarpConnectorResponseSingle_Errors[];
   /** A user-friendly name for a tunnel. */
   name: string;

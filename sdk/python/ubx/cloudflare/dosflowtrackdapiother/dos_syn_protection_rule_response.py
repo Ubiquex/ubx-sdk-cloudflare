@@ -61,7 +61,9 @@ class DosSynProtectionRuleResponseConfig:
 class DosSynProtectionRuleResponseAttrs:
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
     mitigation_type: Any = None

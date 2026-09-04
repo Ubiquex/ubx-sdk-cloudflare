@@ -34,6 +34,7 @@ var MagicSiteSingleResponse_LocationFields = ubx.FieldMap{
 type MagicSiteSingleResponseConfig struct {
 	// Magic Connector identifier tag.
 	ConnectorId any
+	// A human-readable description of the site. (AI-inferred)
 	Description any
 	// Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
 	HaMode any
@@ -52,13 +53,15 @@ type MagicSiteSingleResponseConfig struct {
 type MagicSiteSingleResponseAttrs struct {
 	// Magic Connector identifier tag.
 	ConnectorId any
+	// A human-readable description of the site. (AI-inferred)
 	Description any
 	// Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
 	HaMode any
 	// Location of site in latitude and longitude.
 	Location any
 	// The name of the site.
-	Name   any
+	Name any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// Magic Connector identifier tag. Used when high availability mode is on.
 	SecondaryConnectorId any

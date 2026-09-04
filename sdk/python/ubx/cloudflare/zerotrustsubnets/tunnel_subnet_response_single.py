@@ -58,9 +58,11 @@ class TunnelSubnetResponseSingleConfig:
 class TunnelSubnetResponseSingleAttrs:
     # An optional description of the subnet.
     comment: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # If `true`, this is the default subnet for the account. There can only be one default subnet per account.
     is_default_network: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A user-friendly name for the subnet.
     name: Any = None

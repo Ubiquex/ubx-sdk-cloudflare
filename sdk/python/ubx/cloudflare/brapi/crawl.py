@@ -54,6 +54,7 @@ class CrawlConfig:
 
 @dataclasses.dataclass
 class CrawlAttrs:
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
     result: Any = None
     # Response status.

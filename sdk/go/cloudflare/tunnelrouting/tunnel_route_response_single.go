@@ -40,8 +40,10 @@ type TunnelRouteResponseSingleConfig struct {
 
 type TunnelRouteResponseSingleAttrs struct {
 	// Optional remark describing the route.
-	Comment  any
-	Errors   any
+	Comment any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
 	Network any

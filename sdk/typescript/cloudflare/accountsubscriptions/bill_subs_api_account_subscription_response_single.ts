@@ -115,6 +115,7 @@ export interface BillSubsApiAccountSubscriptionResponseSingleAttrs {
   price: number;
   /** The rate plan applied to the subscription. */
   ratePlan: BillSubsApiAccountSubscriptionResponseSingle_RatePlan;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: BillSubsApiAccountSubscriptionResponseSingle_Result;
   /** The state that the subscription is in. */
   state: string;

@@ -61,7 +61,9 @@ class DigitalExperienceMonitoringDexSingleResponseConfig:
     interval: Any = None
     # The name of the DEX test. Must be unique.
     name: Any = None
+    # The device policies this DEX test applies to. (AI-inferred)
     target_policies: Any = None
+    # Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred)
     targeted: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -82,8 +84,11 @@ class DigitalExperienceMonitoringDexSingleResponseAttrs:
     interval: Any = None
     # The name of the DEX test. Must be unique.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
+    # The device policies this DEX test applies to. (AI-inferred)
     target_policies: Any = None
+    # Whether this test targets a specific subset of devices rather than the whole fleet. (AI-inferred)
     targeted: Any = None
     # The unique identifier for the test.
     test_id: Any = None

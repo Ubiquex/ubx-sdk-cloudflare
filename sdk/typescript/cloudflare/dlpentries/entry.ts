@@ -31,10 +31,15 @@ const Entry_PatternFields: FieldMap = {
 };
 
 export interface EntryConfig {
+  /** A human-readable description of the DLP entry. (AI-inferred) */
   description?: string | Computed<string>;
+  /** Whether the DLP entry is active. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
+  /** The name of the DLP entry. (AI-inferred) */
   name: string | Computed<string>;
+  /** The detection pattern this entry matches against. (AI-inferred) */
   pattern: Entry_Pattern | Computed<Entry_Pattern>;
+  /** The DLP profile this entry belongs to. (AI-inferred) */
   profileId?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -43,11 +48,17 @@ export interface EntryConfig {
 }
 
 export interface EntryAttrs {
+  /** A human-readable description of the DLP entry. (AI-inferred) */
   description: string;
+  /** Whether the DLP entry is active. (AI-inferred) */
   enabled: boolean;
+  /** The name of the DLP entry. (AI-inferred) */
   name: string;
+  /** The detection pattern this entry matches against. (AI-inferred) */
   pattern: Entry_Pattern;
+  /** The DLP profile this entry belongs to. (AI-inferred) */
   profileId: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Entry_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

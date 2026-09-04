@@ -45,6 +45,7 @@ export interface MagicRedundancyGroupWithMembersResponseAttrs {
   members: MagicRedundancyGroupWithMembersResponse_Members[];
   /** Human-readable name for the redundancy group */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: MagicRedundancyGroupWithMembersResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

@@ -72,10 +72,15 @@ const Bulk_Result_SearchParamsFields: FieldMap = {
 };
 
 export interface BulkConfig {
+  /** The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred) */
   action: string | Computed<string>;
+  /** An optional note describing why this bulk remediation job was run. (AI-inferred) */
   comment?: string | Computed<string>;
+  /** The mailbox or quarantine location matching messages are moved to. (AI-inferred) */
   destination?: string | Computed<string>;
+  /** The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred) */
   expectedDisposition?: string | Computed<string>;
+  /** The search criteria used to select which messages this bulk job applies to. (AI-inferred) */
   searchParams: Bulk_Result_SearchParams | Computed<Bulk_Result_SearchParams>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -84,11 +89,17 @@ export interface BulkConfig {
 }
 
 export interface BulkAttrs {
+  /** The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred) */
   action: string;
+  /** An optional note describing why this bulk remediation job was run. (AI-inferred) */
   comment: string;
+  /** The mailbox or quarantine location matching messages are moved to. (AI-inferred) */
   destination: string;
+  /** The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred) */
   expectedDisposition: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Bulk_Result;
+  /** The search criteria used to select which messages this bulk job applies to. (AI-inferred) */
   searchParams: Bulk_Result_SearchParams;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

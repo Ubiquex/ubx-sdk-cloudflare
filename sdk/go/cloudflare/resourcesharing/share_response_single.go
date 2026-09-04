@@ -91,9 +91,11 @@ var ShareResponseSingle_ResourcesFields = ubx.FieldMap{
 
 type ShareResponseSingleConfig struct {
 	// The name of the share.
-	Name       any
+	Name any
+	// The recipients granted access to this share. (AI-inferred)
 	Recipients any
-	Resources  any
+	// The resources included in this share. (AI-inferred)
+	Resources any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -101,12 +103,16 @@ type ShareResponseSingleConfig struct {
 }
 
 type ShareResponseSingleAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// The name of the share.
-	Name       any
+	Name any
+	// The recipients granted access to this share. (AI-inferred)
 	Recipients any
-	Resources  any
-	Result     any
+	// The resources included in this share. (AI-inferred)
+	Resources any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation

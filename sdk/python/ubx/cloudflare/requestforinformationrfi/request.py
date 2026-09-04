@@ -86,7 +86,9 @@ class RequestAttrs:
     created_after: Any = None
     # Retrieve requests created before this time.
     created_before: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Page number of results.
     page: Any = None
@@ -94,6 +96,7 @@ class RequestAttrs:
     per_page: Any = None
     # Requested information from request.
     request_type: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Field to sort results by.
     sort_by: Any = None

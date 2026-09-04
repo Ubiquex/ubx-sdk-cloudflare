@@ -32,6 +32,7 @@ const ImagesImageVariantSimpleResponse_OptionsFields: FieldMap = {
 };
 
 export interface ImagesImageVariantSimpleResponseConfig {
+  /** The unique identifier of the image variant. (AI-inferred) */
   id: string | Computed<string>;
   /** Indicates whether the variant can access an image without a signature, regardless of image access control. */
   neverRequireSignedUrls?: boolean | Computed<boolean>;
@@ -44,11 +45,13 @@ export interface ImagesImageVariantSimpleResponseConfig {
 }
 
 export interface ImagesImageVariantSimpleResponseAttrs {
+  /** The unique identifier of the image variant. (AI-inferred) */
   id: string;
   /** Indicates whether the variant can access an image without a signature, regardless of image access control. */
   neverRequireSignedUrls: boolean;
   /** Allows you to define image resizing sizes for different use cases. */
   options: ImagesImageVariantSimpleResponse_Options;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: ImagesImageVariantSimpleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

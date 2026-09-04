@@ -22,12 +22,15 @@ export interface ListResponseCollectionConfig {
 export interface ListResponseCollectionAttrs {
   /** An informative summary of the list. */
   description: string;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ListResponseCollection_Errors[];
   /** The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects). */
   kind: unknown;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: ListResponseCollection_Errors[];
   /** An informative name for the list. Use this name in filter and rule expressions. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: unknown;
   /** Defines whether the API call was successful. */
   success: boolean;

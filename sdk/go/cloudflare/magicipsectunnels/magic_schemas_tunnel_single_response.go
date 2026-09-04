@@ -113,6 +113,7 @@ type MagicSchemasTunnelSingleResponseConfig struct {
 	CustomerEndpoint any
 	// An optional description forthe IPsec tunnel.
 	Description any
+	// The real health check configuration this IPsec tunnel uses to monitor its own liveness. (AI-inferred)
 	HealthCheck any
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 	InterfaceAddress any
@@ -141,6 +142,7 @@ type MagicSchemasTunnelSingleResponseAttrs struct {
 	CustomerEndpoint any
 	// An optional description forthe IPsec tunnel.
 	Description any
+	// The real health check configuration this IPsec tunnel uses to monitor its own liveness. (AI-inferred)
 	HealthCheck any
 	// A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
 	InterfaceAddress any
@@ -152,7 +154,8 @@ type MagicSchemasTunnelSingleResponseAttrs struct {
 	Psk any
 	// If `true`, then IPsec replay protection will be supported in the Cloudflare-to-customer direction.
 	ReplayProtection any
-	Result           any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

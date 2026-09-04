@@ -39,6 +39,7 @@ export interface ShareExcludedRecipientResponseSingleConfig {
 export interface ShareExcludedRecipientResponseSingleAttrs {
   /** The account to exclude from the organization-targeted share. */
   accountId: ShareExcludedRecipientResponseSingle_AccountId;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: ShareExcludedRecipientResponseSingle_Errors[];
   result: ShareExcludedRecipientResponseSingle_Result;
   /** Whether the API call was successful. */

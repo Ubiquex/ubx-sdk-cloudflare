@@ -71,11 +71,13 @@ class PostureApiWebhookResponseAttrs:
     authentication_type: Any = None
     # Target URL for the webhook configuration. Where resulting data will be sent.
     destination_url: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # List of custom headers to include in webhook requests.
     headers: Any = None
     # Account-specified display label for the webhook configuration.
     label: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Webhook configuration for sending finding notifications.
     result: Any = None

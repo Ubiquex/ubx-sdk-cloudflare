@@ -67,11 +67,13 @@ type PostureApiWebhookResponseAttrs struct {
 	AuthenticationType any
 	// Target URL for the webhook configuration. Where resulting data will be sent.
 	DestinationUrl any
-	Errors         any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// List of custom headers to include in webhook requests.
 	Headers any
 	// Account-specified display label for the webhook configuration.
-	Label    any
+	Label any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Webhook configuration for sending finding notifications.
 	Result any

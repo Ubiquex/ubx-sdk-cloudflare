@@ -21,8 +21,10 @@ type BlockSender_Result struct {
 }
 
 type BlockSenderConfig struct {
+	// A free-text note about this block-sender entry. (AI-inferred)
 	Comments any
-	IsRegex  any
+	// Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
+	IsRegex any
 	// The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.
 	Pattern any
 	// Type of pattern matching. - EMAIL: matches a full email address (e.g. `user@example.com`) - DOMAIN: matches a domain name (e.g. `example.com`) - IP: matches a plain IPv4 or IPv6 address (e.g. `1.2.3.4` or `2606:4700:4700::1111`) or CIDR block (e.g. `1.2.3.0/24` or `2606:4700:4700::/48`). The API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents. - UNKNOWN: deprecated; you cannot use this when creating or updating policies, but it may appear on existing entries.
@@ -34,13 +36,18 @@ type BlockSenderConfig struct {
 }
 
 type BlockSenderAttrs struct {
-	Comments  any
+	// A free-text note about this block-sender entry. (AI-inferred)
+	Comments any
+	// When this block-sender entry was created. (AI-inferred)
 	CreatedAt any
-	Id        any
-	IsRegex   any
+	// This block-sender entry's own real identifier. (AI-inferred)
+	Id any
+	// Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred)
+	IsRegex any
 	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
 	LastModified any
-	ModifiedAt   any
+	// When this block-sender entry was last modified. (AI-inferred)
+	ModifiedAt any
 	// The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents.
 	Pattern any
 	// Type of pattern matching. - EMAIL: matches a full email address (e.g. `user@example.com`) - DOMAIN: matches a domain name (e.g. `example.com`) - IP: matches a plain IPv4 or IPv6 address (e.g. `1.2.3.4` or `2606:4700:4700::1111`) or CIDR block (e.g. `1.2.3.0/24` or `2606:4700:4700::/48`). The API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents. - UNKNOWN: deprecated; you cannot use this when creating or updating policies, but it may appear on existing entries.

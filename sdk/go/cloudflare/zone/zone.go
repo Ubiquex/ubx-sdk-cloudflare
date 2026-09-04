@@ -132,8 +132,10 @@ type ZoneConfig struct {
 }
 
 type ZoneAttrs struct {
-	Account  any
-	Errors   any
+	Account any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
 	Name   any

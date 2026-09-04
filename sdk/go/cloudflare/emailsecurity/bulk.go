@@ -74,11 +74,16 @@ var Bulk_Result_SearchParamsFields = ubx.FieldMap{
 }
 
 type BulkConfig struct {
-	Action              any
-	Comment             any
-	Destination         any
+	// The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred)
+	Action any
+	// An optional note describing why this bulk remediation job was run. (AI-inferred)
+	Comment any
+	// The mailbox or quarantine location matching messages are moved to. (AI-inferred)
+	Destination any
+	// The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred)
 	ExpectedDisposition any
-	SearchParams        any
+	// The search criteria used to select which messages this bulk job applies to. (AI-inferred)
+	SearchParams any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -86,12 +91,18 @@ type BulkConfig struct {
 }
 
 type BulkAttrs struct {
-	Action              any
-	Comment             any
-	Destination         any
+	// The remediation action to apply to every matching message (e.g. move, delete). (AI-inferred)
+	Action any
+	// An optional note describing why this bulk remediation job was run. (AI-inferred)
+	Comment any
+	// The mailbox or quarantine location matching messages are moved to. (AI-inferred)
+	Destination any
+	// The disposition (e.g. malicious, spam) the bulk job expects matching messages to have. (AI-inferred)
 	ExpectedDisposition any
-	Result              any
-	SearchParams        any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The search criteria used to select which messages this bulk job applies to. (AI-inferred)
+	SearchParams any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

@@ -121,6 +121,7 @@ class BillSubsApiAccountSubscriptionResponseSingleAttrs:
     price: Any = None
     # The rate plan applied to the subscription.
     rate_plan: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # The state that the subscription is in.
     state: Any = None

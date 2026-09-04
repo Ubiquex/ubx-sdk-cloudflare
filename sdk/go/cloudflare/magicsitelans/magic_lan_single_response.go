@@ -126,6 +126,7 @@ var MagicLanSingleResponse_Result_StaticAddressingFields = ubx.FieldMap{
 }
 
 type MagicLanSingleResponseConfig struct {
+	// The bonded interface this LAN is attached to, if any. (AI-inferred)
 	BondId any
 	// mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
 	HaLink any
@@ -133,9 +134,12 @@ type MagicLanSingleResponseConfig struct {
 	IsBreakout any
 	// mark true to use this LAN for source-based prioritized traffic
 	IsPrioritized any
-	Name          any
-	Nat           any
-	Physport      any
+	// The name of the LAN interface. (AI-inferred)
+	Name any
+	Nat  any
+	// The physical port this LAN interface is attached to. (AI-inferred)
+	Physport any
+	// The subnets routed through this LAN interface. (AI-inferred)
 	RoutedSubnets any
 	// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
 	StaticAddressing any
@@ -150,6 +154,7 @@ type MagicLanSingleResponseConfig struct {
 }
 
 type MagicLanSingleResponseAttrs struct {
+	// The bonded interface this LAN is attached to, if any. (AI-inferred)
 	BondId any
 	// mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
 	HaLink any
@@ -157,10 +162,14 @@ type MagicLanSingleResponseAttrs struct {
 	IsBreakout any
 	// mark true to use this LAN for source-based prioritized traffic
 	IsPrioritized any
-	Name          any
-	Nat           any
-	Physport      any
-	Result        any
+	// The name of the LAN interface. (AI-inferred)
+	Name any
+	Nat  any
+	// The physical port this LAN interface is attached to. (AI-inferred)
+	Physport any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// The subnets routed through this LAN interface. (AI-inferred)
 	RoutedSubnets any
 	// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
 	StaticAddressing any

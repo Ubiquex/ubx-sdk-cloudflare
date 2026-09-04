@@ -31,11 +31,14 @@ type CredentialSetConfig struct {
 }
 
 type CredentialSetAttrs struct {
-	Errors   any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// Human-readable name.
-	Name       any
-	Result     any
+	Name   any
+	Result any
+	// Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
 	ResultInfo any
 	// Whether the API call was successful.
 	Success any

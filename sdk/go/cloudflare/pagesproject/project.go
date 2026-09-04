@@ -409,13 +409,16 @@ type ProjectAttrs struct {
 	BuildConfig any
 	// Configs for deployments in a project.
 	DeploymentConfigs any
-	Errors            any
-	Messages          any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Name of the project.
 	Name any
 	// Production branch of the project. Used to identify production deployments.
 	ProductionBranch any
-	Result           any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Configs for the project source control.
 	Source any
 	// Whether the API call was successful.

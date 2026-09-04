@@ -47,11 +47,16 @@ type DeployHookAttrs struct {
 	Branch any
 	// Deploy hook name (1-58 characters).
 	DeployHookName any
-	Errors         any
-	Messages       any
-	Result         any
-	ResultInfo     any
-	Success        any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
+	// Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred)
+	ResultInfo any
+	// Whether the API call succeeded. (AI-inferred)
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

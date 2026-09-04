@@ -44,12 +44,15 @@ class AssetConfig:
 
 @dataclasses.dataclass
 class AssetAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Page number of results.
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether the API call was successful.
     success: Any = None

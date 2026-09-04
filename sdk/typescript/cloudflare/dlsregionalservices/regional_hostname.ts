@@ -37,12 +37,15 @@ export interface RegionalHostnameConfig {
 }
 
 export interface RegionalHostnameAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: RegionalHostname_Errors[];
   /** DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com` */
   hostname: string;
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: RegionalHostname_Errors[];
   /** Identifying key for the region */
   regionKey: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: RegionalHostname_Result;
   /** Configure which routing method to use for the regional hostname */
   routing: string;

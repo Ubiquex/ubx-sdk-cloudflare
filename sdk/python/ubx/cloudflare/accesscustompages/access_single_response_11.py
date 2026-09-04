@@ -36,6 +36,7 @@ class AccessSingleResponse11Config:
     app_count: Any = None
     # Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
     contract_version: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
     # Custom page HTML.
     custom_html: Any = None
@@ -45,6 +46,7 @@ class AccessSingleResponse11Config:
     type: Any = None
     # UUID.
     uid: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -57,16 +59,19 @@ class AccessSingleResponse11Attrs:
     app_count: Any = None
     # Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
     contract_version: Any = None
+    # The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
     created_at: Any = None
     # Custom page HTML.
     custom_html: Any = None
     # Custom page name.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Custom page type.
     type: Any = None
     # UUID.
     uid: Any = None
+    # The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
     updated_at: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

@@ -20,6 +20,7 @@ type SendingDomainRestriction_Result struct {
 }
 
 type SendingDomainRestrictionConfig struct {
+	// A free-text note about this sending-domain restriction. (AI-inferred)
 	Comments any
 	// Domain that requires TLS enforcement.
 	Domain any
@@ -32,16 +33,20 @@ type SendingDomainRestrictionConfig struct {
 }
 
 type SendingDomainRestrictionAttrs struct {
-	Comments  any
+	// A free-text note about this sending-domain restriction. (AI-inferred)
+	Comments any
+	// When this sending-domain restriction was created. (AI-inferred)
 	CreatedAt any
 	// Domain that requires TLS enforcement.
 	Domain any
 	// Subdomains to exempt from TLS requirements.
 	Exclude any
-	Id      any
+	// This sending-domain restriction's own real identifier. (AI-inferred)
+	Id any
 	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
 	LastModified any
-	ModifiedAt   any
+	// When this sending-domain restriction was last modified. (AI-inferred)
+	ModifiedAt any
 	// A sending domain restriction that enforces TLS (Transport Layer Security) requirements for emails from specific domains. If TLS is required, the system drops mail without TLS from the specified domain.
 	Result any
 	// path parameter, not part of the API's own resource representation

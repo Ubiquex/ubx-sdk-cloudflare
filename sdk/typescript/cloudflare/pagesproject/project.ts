@@ -407,12 +407,15 @@ export interface ProjectAttrs {
   buildConfig: Project_BuildConfig;
   /** Configs for deployments in a project. */
   deploymentConfigs: Project_DeploymentConfigs;
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Project_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Project_Errors[];
   /** Name of the project. */
   name: string;
   /** Production branch of the project. Used to identify production deployments. */
   productionBranch: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Project_Result;
   /** Configs for the project source control. */
   source: Project_Result_CanonicalDeployment_Source;

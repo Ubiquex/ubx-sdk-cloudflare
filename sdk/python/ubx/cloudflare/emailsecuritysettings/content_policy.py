@@ -23,10 +23,15 @@ class ContentPolicy_Result:
 
 @dataclasses.dataclass
 class ContentPolicyConfig:
+    # Whether this content policy is currently active. (AI-inferred)
     enabled: Any = None
+    # This content policy's own real, human-readable name. (AI-inferred)
     name: Any = None
+    # A free-text note about this content policy. (AI-inferred)
     notes: Any = None
+    # The content pattern this policy matches against. (AI-inferred)
     pattern: Any = None
+    # The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred)
     targets: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -35,15 +40,23 @@ class ContentPolicyConfig:
 
 @dataclasses.dataclass
 class ContentPolicyAttrs:
+    # When this content policy was created. (AI-inferred)
     created_at: Any = None
+    # Whether this content policy is currently active. (AI-inferred)
     enabled: Any = None
+    # This content policy's own real identifier. (AI-inferred)
     id: Any = None
+    # When this content policy was last modified. (AI-inferred)
     modified_at: Any = None
+    # This content policy's own real, human-readable name. (AI-inferred)
     name: Any = None
+    # A free-text note about this content policy. (AI-inferred)
     notes: Any = None
+    # The content pattern this policy matches against. (AI-inferred)
     pattern: Any = None
     # A content policy pattern that matches against the subject or body of an email.
     result: Any = None
+    # The real set of message parts (subject, body, attachments) this policy enforces against. (AI-inferred)
     targets: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

@@ -55,6 +55,7 @@ class ImagesSourcingkitMigrationSingleResponseAttrs:
     excluded_content_types: Any = None
     # Prefix to prepend to image custom IDs.
     path_prefix: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Only import objects under this prefix in the source bucket.
     root_directory: Any = None

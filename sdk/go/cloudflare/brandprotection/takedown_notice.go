@@ -4,11 +4,16 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TakedownNoticeConfig struct {
-	Domain    any
-	MatchId   any
+	// The domain the takedown notice targets. (AI-inferred)
+	Domain any
+	// The Brand Protection match that triggered this takedown notice. (AI-inferred)
+	MatchId any
+	// The type of match that triggered this takedown notice. (AI-inferred)
 	MatchType any
-	QueryId   any
-	Status    any
+	// The Brand Protection query that surfaced the match triggering this notice. (AI-inferred)
+	QueryId any
+	// The current status of the takedown notice. (AI-inferred)
+	Status any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -16,13 +21,21 @@ type TakedownNoticeConfig struct {
 }
 
 type TakedownNoticeAttrs struct {
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
 	CreatedAt any
-	Domain    any
-	Id        any
-	MatchId   any
+	// The domain the takedown notice targets. (AI-inferred)
+	Domain any
+	// The unique identifier of the takedown notice. (AI-inferred)
+	Id any
+	// The Brand Protection match that triggered this takedown notice. (AI-inferred)
+	MatchId any
+	// The type of match that triggered this takedown notice. (AI-inferred)
 	MatchType any
-	QueryId   any
-	Status    any
+	// The Brand Protection query that surfaced the match triggering this notice. (AI-inferred)
+	QueryId any
+	// The current status of the takedown notice. (AI-inferred)
+	Status any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

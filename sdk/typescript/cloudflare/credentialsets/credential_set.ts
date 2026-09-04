@@ -29,11 +29,14 @@ export interface CredentialSetConfig {
 }
 
 export interface CredentialSetAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: CredentialSet_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: CredentialSet_Errors[];
   /** Human-readable name. */
   name: string;
   result: CredentialSet_Result;
+  /** Pagination metadata for this list response (page size, cursor or page number, total count). (AI-inferred) */
   resultInfo: unknown;
   /** Whether the API call was successful. */
   success: boolean;

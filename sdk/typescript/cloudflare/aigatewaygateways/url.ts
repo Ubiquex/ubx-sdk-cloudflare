@@ -2,18 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UrlConfig {
+  /** Whether requests to this AI Gateway require authentication. (AI-inferred) */
   authentication?: boolean | Computed<boolean>;
+  /** Whether to invalidate cached responses when the underlying data changes. (AI-inferred) */
   cacheInvalidateOnUpdate: boolean | Computed<boolean>;
+  /** How long a cached response remains valid, in seconds. (AI-inferred) */
   cacheTtl: number | Computed<number>;
+  /** Whether to collect request/response logs for this gateway. (AI-inferred) */
   collectLogs: boolean | Computed<boolean>;
   /** gateway id */
   id: string | Computed<string>;
+  /** How long collected logs are retained and how they're managed. (AI-inferred) */
   logManagement?: number | Computed<number>;
+  /** The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred) */
   logManagementStrategy?: string | Computed<string>;
+  /** Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred) */
   logpush?: boolean | Computed<boolean>;
+  /** The public key used to encrypt logs pushed via Logpush. (AI-inferred) */
   logpushPublicKey?: string | Computed<string>;
+  /** The time window, in seconds, over which the rate limit is applied. (AI-inferred) */
   rateLimitingInterval: number | Computed<number>;
+  /** The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred) */
   rateLimitingLimit: number | Computed<number>;
+  /** The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred) */
   rateLimitingTechnique?: string | Computed<string>;
   /** Backoff strategy for retry delays */
   retryBackoff?: string | Computed<string>;
@@ -21,9 +32,11 @@ export interface UrlConfig {
   retryDelay?: number | Computed<number>;
   /** Maximum number of retry attempts for failed requests (1-5) */
   retryMaxAttempts?: number | Computed<number>;
+  /** The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred) */
   storeId?: string | Computed<string>;
   /** Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway. */
   workersAiBillingMode?: string | Computed<string>;
+  /** Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred) */
   zdr?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -34,19 +47,31 @@ export interface UrlConfig {
 }
 
 export interface UrlAttrs {
+  /** Whether requests to this AI Gateway require authentication. (AI-inferred) */
   authentication: boolean;
+  /** Whether to invalidate cached responses when the underlying data changes. (AI-inferred) */
   cacheInvalidateOnUpdate: boolean;
+  /** How long a cached response remains valid, in seconds. (AI-inferred) */
   cacheTtl: number;
+  /** Whether to collect request/response logs for this gateway. (AI-inferred) */
   collectLogs: boolean;
   /** gateway id */
   id: string;
+  /** How long collected logs are retained and how they're managed. (AI-inferred) */
   logManagement: number;
+  /** The strategy used for log retention (e.g. time-based, storage-based). (AI-inferred) */
   logManagementStrategy: string;
+  /** Whether to push this gateway's own logs to a configured Logpush destination. (AI-inferred) */
   logpush: boolean;
+  /** The public key used to encrypt logs pushed via Logpush. (AI-inferred) */
   logpushPublicKey: string;
+  /** The time window, in seconds, over which the rate limit is applied. (AI-inferred) */
   rateLimitingInterval: number;
+  /** The maximum number of requests allowed within the configured rate-limiting interval. (AI-inferred) */
   rateLimitingLimit: number;
+  /** The algorithm used to enforce the rate limit (e.g. fixed window, sliding window). (AI-inferred) */
   rateLimitingTechnique: string;
+  /** The requested resource or collection of resources. (AI-inferred) */
   result: string;
   /** Backoff strategy for retry delays */
   retryBackoff: string;
@@ -54,10 +79,13 @@ export interface UrlAttrs {
   retryDelay: number;
   /** Maximum number of retry attempts for failed requests (1-5) */
   retryMaxAttempts: number;
+  /** The identifier of the Secrets Store this gateway's own credentials are stored in. (AI-inferred) */
   storeId: string;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway. */
   workersAiBillingMode: string;
+  /** Whether Zero Data Retention is enabled, so request/response content is never persisted. (AI-inferred) */
   zdr: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

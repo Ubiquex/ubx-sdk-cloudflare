@@ -35,10 +35,12 @@ type BucketConfig struct {
 }
 
 type BucketAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Location of the bucket.
 	LocationHint any
-	Messages     any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Name of the bucket.
 	Name any
 	// A single R2 bucket.

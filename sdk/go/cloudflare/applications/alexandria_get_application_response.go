@@ -77,14 +77,16 @@ type AlexandriaGetApplicationResponseConfig struct {
 type AlexandriaGetApplicationResponseAttrs struct {
 	// Returns the category ID.
 	CategoryId any
-	Errors     any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
 	// Hostnames matched by the application.
 	Hostnames any
 	// Returns the human readable ID.
 	HumanId any
 	// IP subnets matched by the application.
 	IpSubnets any
-	Messages  any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Returns the application name.
 	Name any
 	// Port and protocol pairs matched by the application.

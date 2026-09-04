@@ -51,9 +51,11 @@ class ApiShieldPublicSchemaSuccessResultConfig:
 
 @dataclasses.dataclass
 class ApiShieldPublicSchemaSuccessResultAttrs:
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # The kind of the schema
     kind: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # A human-readable name for the schema
     name: Any = None

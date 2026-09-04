@@ -46,6 +46,7 @@ class Web3SingleResponseAttrs:
     dnslink: Any = None
     # Specify the hostname that points to the target gateway via CNAME.
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Specify the target gateway of the hostname.
     target: Any = None

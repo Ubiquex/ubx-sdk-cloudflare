@@ -104,6 +104,7 @@ class IamSingleMembershipResponseWithPoliciesConfig:
 
 @dataclasses.dataclass
 class IamSingleMembershipResponseWithPoliciesAttrs:
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Whether to accept or reject this account invitation.
     status: Any = None

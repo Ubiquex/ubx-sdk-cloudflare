@@ -22,6 +22,7 @@ type Integration_Result struct {
 }
 
 type IntegrationConfig struct {
+	// The type of the Zero Trust Risk Scoring integration. (AI-inferred)
 	IntegrationType any
 	// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
 	ReferenceId any
@@ -34,10 +35,12 @@ type IntegrationConfig struct {
 }
 
 type IntegrationAttrs struct {
+	// The type of the Zero Trust Risk Scoring integration. (AI-inferred)
 	IntegrationType any
 	// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
 	ReferenceId any
-	Result      any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// The base url of the tenant, e.g. "https://tenant.okta.com".
 	TenantUrl any
 	// path parameter, not part of the API's own resource representation

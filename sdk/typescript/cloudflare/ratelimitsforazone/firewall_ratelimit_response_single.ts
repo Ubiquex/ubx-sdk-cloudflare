@@ -121,6 +121,7 @@ export interface FirewallRatelimitResponseSingleAttrs {
   match: FirewallRatelimitResponseSingle_Match;
   /** The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action. */
   period: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: FirewallRatelimitResponseSingle_Result;
   /** The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period. */
   threshold: number;

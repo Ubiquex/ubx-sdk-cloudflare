@@ -65,24 +65,36 @@ var Organization_ProfileFields = ubx.FieldMap{
 }
 
 type OrganizationConfig struct {
-	Name    any
-	Parent  any
+	// The name of the organization. (AI-inferred)
+	Name any
+	// The parent organization, if this organization is nested under one. (AI-inferred)
+	Parent any
+	// The organization's own profile settings. (AI-inferred)
 	Profile any
 	// path parameter, not part of the API's own resource representation
 	OrganizationId any
 }
 
 type OrganizationAttrs struct {
+	// The time the organization was created. (AI-inferred)
 	CreateTime any
-	Errors     any
-	Id         any
-	Messages   any
-	Meta       any
-	Name       any
-	Parent     any
-	Profile    any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
+	// The unique identifier of the organization. (AI-inferred)
+	Id any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
+	Messages any
+	// Additional metadata associated with the organization. (AI-inferred)
+	Meta any
+	// The name of the organization. (AI-inferred)
+	Name any
+	// The parent organization, if this organization is nested under one. (AI-inferred)
+	Parent any
+	// The organization's own profile settings. (AI-inferred)
+	Profile any
 	// References an Organization in the Cloudflare data model.
-	Result  any
+	Result any
+	// Whether the API call was successful. (AI-inferred)
 	Success any
 	// path parameter, not part of the API's own resource representation
 	OrganizationId any

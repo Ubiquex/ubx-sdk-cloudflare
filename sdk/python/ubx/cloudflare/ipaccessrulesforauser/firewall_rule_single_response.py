@@ -39,6 +39,7 @@ class FirewallRuleSingleResponseConfig:
     configuration: Any = None
     # The action to apply to a matched request.
     mode: Any = None
+    # A free-text note describing the reason for this IP Access Rule. (AI-inferred)
     notes: Any = None
     # path parameter, not part of the API's own resource representation
     rule_id: Any = None
@@ -49,6 +50,7 @@ class FirewallRuleSingleResponseAttrs:
     configuration: Any = None
     # The action to apply to a matched request.
     mode: Any = None
+    # A free-text note describing the reason for this IP Access Rule. (AI-inferred)
     notes: Any = None
     result: Any = None
     # path parameter, not part of the API's own resource representation

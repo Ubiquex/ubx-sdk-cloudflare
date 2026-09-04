@@ -23,10 +23,15 @@ const DataClass_Result_SensitivityLevelsFields: FieldMap = {
 };
 
 export interface DataClassConfig {
+  /** The data tags associated with this data class. (AI-inferred) */
   dataTags: string[] | Computed<string[]>;
+  /** A human-readable description of the data class. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The detection expression identifying content matching this data class. (AI-inferred) */
   expression: string | Computed<string>;
+  /** The name of the data class. (AI-inferred) */
   name: string | Computed<string>;
+  /** The sensitivity levels associated with this data class. (AI-inferred) */
   sensitivityLevels: DataClass_Result_SensitivityLevels[] | Computed<DataClass_Result_SensitivityLevels[]>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -35,11 +40,17 @@ export interface DataClassConfig {
 }
 
 export interface DataClassAttrs {
+  /** The data tags associated with this data class. (AI-inferred) */
   dataTags: string[];
+  /** A human-readable description of the data class. (AI-inferred) */
   description: string;
+  /** The detection expression identifying content matching this data class. (AI-inferred) */
   expression: string;
+  /** The name of the data class. (AI-inferred) */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: DataClass_Result;
+  /** The sensitivity levels associated with this data class. (AI-inferred) */
   sensitivityLevels: DataClass_Result_SensitivityLevels[];
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

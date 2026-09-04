@@ -101,6 +101,7 @@ class EventResponseAttrs:
     prequeue_start_time: Any = None
     # If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
     queueing_method: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # If set, the event will override the waiting room's `session_duration` property while it is active. If null, the event will inherit it.
     session_duration: Any = None

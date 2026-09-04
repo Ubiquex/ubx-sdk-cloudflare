@@ -57,14 +57,18 @@ type LoadBalancingMonitorGroupSingleResponseAttrs struct {
 	CreatedOn any
 	// A short description of the monitor group
 	Description any
-	Errors      any
-	Id          any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// The unique identifier of the monitor group. (AI-inferred)
+	Id any
 	// List of monitors in this group
-	Members  any
+	Members any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The timestamp of when the monitor group was last updated
 	ModifiedOn any
-	Result     any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Whether the API call was successful.
 	Success any
 	// path parameter, not part of the API's own resource representation

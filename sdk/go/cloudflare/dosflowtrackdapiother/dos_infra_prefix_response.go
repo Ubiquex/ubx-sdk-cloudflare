@@ -46,8 +46,10 @@ type DosInfraPrefixResponseAttrs struct {
 	// An comment describing the allowlist prefix.
 	Comment any
 	// Whether to enable the allowlist prefix into effect.
-	Enabled  any
-	Errors   any
+	Enabled any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// The allowlist prefix to add in CIDR format.
 	Prefix any

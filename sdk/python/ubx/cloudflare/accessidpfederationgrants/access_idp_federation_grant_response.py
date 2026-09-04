@@ -31,6 +31,7 @@ class AccessIdpFederationGrantResponseConfig:
 class AccessIdpFederationGrantResponseAttrs:
     # UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
     idp_id: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

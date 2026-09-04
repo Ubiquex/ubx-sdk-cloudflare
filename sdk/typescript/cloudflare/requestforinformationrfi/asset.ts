@@ -37,12 +37,15 @@ export interface AssetConfig {
 }
 
 export interface AssetAttrs {
+  /** Errors returned by the API call, empty when the call succeeds. (AI-inferred) */
   errors: Asset_Errors[];
+  /** Informational messages returned alongside the API call's own result. (AI-inferred) */
   messages: Asset_Errors[];
   /** Page number of results. */
   page: number;
   /** Number of results per page. */
   perPage: number;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: Asset_Result[];
   /** Whether the API call was successful. */
   success: boolean;

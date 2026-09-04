@@ -39,10 +39,12 @@ type DosExpressionFilterResponseConfig struct {
 }
 
 type DosExpressionFilterResponseAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// The filter expression.
 	Expression any
-	Messages   any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
 	Mode   any
 	Result any

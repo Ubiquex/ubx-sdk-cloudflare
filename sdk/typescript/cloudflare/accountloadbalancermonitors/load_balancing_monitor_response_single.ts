@@ -89,6 +89,7 @@ export interface LoadBalancingMonitorResponseSingleAttrs {
   port: number;
   /** Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors. */
   probeZone: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: LoadBalancingMonitorResponseSingle_Result;
   /** The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. */
   retries: number;

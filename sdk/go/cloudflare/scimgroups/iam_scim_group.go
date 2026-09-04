@@ -34,7 +34,8 @@ type IamScimGroupAttrs struct {
 	// A list of members of the Group. Only populated for custom (Phase 2) groups on individual GET requests. Each member object contains a `value` (user tag) and optional `display` (email).
 	Members any
 	// Resource metadata for a SCIM Group.
-	Meta    any
+	Meta any
+	// The SCIM schema URIs this Group resource conforms to. (AI-inferred)
 	Schemas any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

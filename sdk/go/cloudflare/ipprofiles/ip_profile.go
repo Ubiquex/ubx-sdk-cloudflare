@@ -53,9 +53,11 @@ type IpProfileAttrs struct {
 	Description any
 	// Whether the Device IP profile will be applied to matching devices.
 	Enabled any
-	Errors  any
+	// A list of errors returned by the API. Empty on a successful response. (AI-inferred)
+	Errors any
 	// The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
-	Match    any
+	Match any
+	// A list of informational messages returned by the API, if any. (AI-inferred)
 	Messages any
 	// A user-friendly name for the Device IP profile.
 	Name any

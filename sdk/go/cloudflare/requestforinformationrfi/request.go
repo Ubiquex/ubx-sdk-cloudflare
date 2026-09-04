@@ -80,15 +80,18 @@ type RequestAttrs struct {
 	CreatedAfter any
 	// Retrieve requests created before this time.
 	CreatedBefore any
-	Errors        any
-	Messages      any
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
+	Errors any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
+	Messages any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
 	// Requested information from request.
 	RequestType any
-	Result      any
+	// The requested resource, present when the API call succeeds. (AI-inferred)
+	Result any
 	// Field to sort results by.
 	SortBy any
 	// Sort order (asc or desc).

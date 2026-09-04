@@ -4,10 +4,14 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateConfig struct {
-	Body        any
-	Category    any
+	// The body text of the letter template. (AI-inferred)
+	Body any
+	// The category this letter template belongs to. (AI-inferred)
+	Category any
+	// A human-readable description of the letter template. (AI-inferred)
 	Description any
-	Name        any
+	// The name of the letter template. (AI-inferred)
+	Name any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -15,14 +19,22 @@ type TemplateConfig struct {
 }
 
 type TemplateAttrs struct {
-	Body        any
-	Category    any
-	CreatedAt   any
+	// The body text of the letter template. (AI-inferred)
+	Body any
+	// The category this letter template belongs to. (AI-inferred)
+	Category any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
+	// A human-readable description of the letter template. (AI-inferred)
 	Description any
-	Id          any
-	Name        any
-	Source      any
-	UpdatedAt   any
+	// The unique identifier of the letter template. (AI-inferred)
+	Id any
+	// The name of the letter template. (AI-inferred)
+	Name any
+	// The source this letter template's own text was derived from. (AI-inferred)
+	Source any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
+	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation

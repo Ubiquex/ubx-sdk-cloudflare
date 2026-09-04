@@ -36,10 +36,13 @@ _DataTagCategory_TagsFields = {
 
 @dataclasses.dataclass
 class DataTagCategoryConfig:
+    # A human-readable description of the data tag category. (AI-inferred)
     description: Any = None
+    # The name of the data tag category. (AI-inferred)
     name: Any = None
     # Tags to create with the category. Mutually exclusive with `template_id`.
     tags: Any = None
+    # The built-in template this category was seeded from, if any. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -48,11 +51,15 @@ class DataTagCategoryConfig:
 
 @dataclasses.dataclass
 class DataTagCategoryAttrs:
+    # A human-readable description of the data tag category. (AI-inferred)
     description: Any = None
+    # The name of the data tag category. (AI-inferred)
     name: Any = None
+    # The requested resource, present when the API call succeeds. (AI-inferred)
     result: Any = None
     # Tags to create with the category. Mutually exclusive with `template_id`.
     tags: Any = None
+    # The built-in template this category was seeded from, if any. (AI-inferred)
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

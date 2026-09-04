@@ -43,6 +43,7 @@ export interface RealtimekitWebhookSuccessResponseAttrs {
   events: string[];
   /** Name of the webhook */
   name: string;
+  /** Whether the API call was successful. (AI-inferred) */
   success: boolean;
   /** URL this webhook will send events to */
   url: string;

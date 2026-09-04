@@ -59,9 +59,11 @@ type TunnelWarpConnectorResponseSingleConfig struct {
 }
 
 type TunnelWarpConnectorResponseSingleAttrs struct {
+	// Errors returned by the API call, empty when the call succeeds. (AI-inferred)
 	Errors any
 	// Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
-	Ha       any
+	Ha any
+	// Informational messages returned alongside the API call's own result. (AI-inferred)
 	Messages any
 	// A user-friendly name for a tunnel.
 	Name any

@@ -20,12 +20,15 @@ export interface TrustedDomain_Result {
 }
 
 export interface TrustedDomainConfig {
+  /** A free-text note about this trusted-domain entry. (AI-inferred) */
   comments?: string | Computed<string>;
   /** Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition. */
   isRecent: boolean | Computed<boolean>;
+  /** Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred) */
   isRegex: boolean | Computed<boolean>;
   /** Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition. */
   isSimilarity: boolean | Computed<boolean>;
+  /** The domain pattern this entry trusts. (AI-inferred) */
   pattern: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -34,17 +37,23 @@ export interface TrustedDomainConfig {
 }
 
 export interface TrustedDomainAttrs {
+  /** A free-text note about this trusted-domain entry. (AI-inferred) */
   comments: string;
+  /** When this trusted-domain entry was created. (AI-inferred) */
   createdAt: TrustedDomain_CreatedAt;
+  /** This trusted-domain entry's own real identifier. (AI-inferred) */
   id: TrustedDomain_CreatedAt;
   /** Select to prevent recently registered domains from triggering a Suspicious or Malicious disposition. */
   isRecent: boolean;
+  /** Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred) */
   isRegex: boolean;
   /** Select for partner or other approved domains that have similar spelling to your connected domains. Prevents listed domains from triggering a Spoof disposition. */
   isSimilarity: boolean;
   /** Deprecated, use `modified_at` instead. End of life: November 1, 2026. */
   lastModified: TrustedDomain_CreatedAt;
+  /** When this trusted-domain entry was last modified. (AI-inferred) */
   modifiedAt: TrustedDomain_CreatedAt;
+  /** The domain pattern this entry trusts. (AI-inferred) */
   pattern: string;
   /** A trusted email domain. */
   result: TrustedDomain_Result;

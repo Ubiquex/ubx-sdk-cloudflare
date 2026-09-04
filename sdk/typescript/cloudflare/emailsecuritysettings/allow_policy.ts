@@ -33,6 +33,7 @@ export interface AllowPolicy_Result {
 }
 
 export interface AllowPolicyConfig {
+  /** A free-text note about this allow policy. (AI-inferred) */
   comments?: string | Computed<string>;
   /** Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply. */
   isAcceptableSender: boolean | Computed<boolean>;
@@ -40,6 +41,7 @@ export interface AllowPolicyConfig {
   isExemptRecipient: boolean | Computed<boolean>;
   /** Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026. */
   isRecipient?: boolean | Computed<boolean>;
+  /** Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred) */
   isRegex: boolean | Computed<boolean>;
   /** Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026. */
   isSender?: boolean | Computed<boolean>;
@@ -60,8 +62,11 @@ export interface AllowPolicyConfig {
 }
 
 export interface AllowPolicyAttrs {
+  /** A free-text note about this allow policy. (AI-inferred) */
   comments: string;
+  /** When this allow policy was created. (AI-inferred) */
   createdAt: AllowPolicy_CreatedAt;
+  /** This allow policy's own real identifier. (AI-inferred) */
   id: AllowPolicy_CreatedAt;
   /** Exempts messages from this sender from Spam, Spoof and Bulk dispositions only; Malicious and Suspicious dispositions still apply. */
   isAcceptableSender: boolean;
@@ -69,6 +74,7 @@ export interface AllowPolicyAttrs {
   isExemptRecipient: boolean;
   /** Deprecated as of July 1, 2025. Use `is_exempt_recipient` instead. End of life: July 1, 2026. */
   isRecipient: boolean;
+  /** Whether `pattern` is interpreted as a regular expression rather than a literal match. (AI-inferred) */
   isRegex: boolean;
   /** Deprecated as of July 1, 2025. Use `is_trusted_sender` instead. End of life: July 1, 2026. */
   isSender: boolean;
@@ -78,6 +84,7 @@ export interface AllowPolicyAttrs {
   isTrustedSender: boolean;
   /** Deprecated, use `modified_at` instead. End of life: November 1, 2026. */
   lastModified: AllowPolicy_CreatedAt;
+  /** When this allow policy was last modified. (AI-inferred) */
   modifiedAt: AllowPolicy_CreatedAt;
   /** The pattern value to match. The format depends on `pattern_type`: a valid email address for EMAIL (e.g. `user@example.com`), a valid domain name for DOMAIN (e.g. `example.com`), or a plain IPv4 or IPv6 address or CIDR block for IP (e.g. `1.2.3.4`, `1.2.3.0/24`, `2606:4700:4700::1111`, or `2606:4700:4700::/48`); the API rejects private or unique-local, loopback, link-local, unspecified, and IPv4 broadcast addresses, including their IPv4-mapped IPv6 equivalents. */
   pattern: string;

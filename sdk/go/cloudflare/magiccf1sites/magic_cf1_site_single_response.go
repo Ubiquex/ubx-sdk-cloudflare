@@ -34,6 +34,7 @@ type MagicCf1SiteSingleResponseConfig struct {
 }
 
 type MagicCf1SiteSingleResponseAttrs struct {
+	// The requested resource, present when the API call succeeds. (AI-inferred)
 	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any

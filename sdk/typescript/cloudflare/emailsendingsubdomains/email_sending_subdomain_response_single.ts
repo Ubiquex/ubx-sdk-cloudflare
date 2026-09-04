@@ -25,6 +25,7 @@ export interface EmailSendingSubdomainResponseSingleConfig {
 export interface EmailSendingSubdomainResponseSingleAttrs {
   /** The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement. */
   name: string;
+  /** The requested resource, present when the API call succeeds. (AI-inferred) */
   result: EmailSendingSubdomainResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;

@@ -43,7 +43,9 @@ class ImageAttrs:
     metadata: Any = None
     # Indicates whether the image requires a signature token for the access.
     require_signed_urls: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
     url: Any = None

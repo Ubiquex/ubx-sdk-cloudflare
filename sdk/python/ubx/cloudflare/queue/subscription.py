@@ -79,9 +79,11 @@ class SubscriptionAttrs:
     destination: Any = None
     # Whether the subscription is active
     enabled: Any = None
+    # Errors returned by the API call, empty when the call succeeds. (AI-inferred)
     errors: Any = None
     # List of event types this subscription handles
     events: Any = None
+    # Informational messages returned alongside the API call's own result. (AI-inferred)
     messages: Any = None
     # Name of the subscription
     name: Any = None

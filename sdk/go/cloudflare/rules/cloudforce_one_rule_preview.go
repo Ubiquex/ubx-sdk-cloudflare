@@ -92,40 +92,58 @@ var CloudforceOneRulePreview_StringsFields = ubx.FieldMap{
 
 type CloudforceOneRulePreviewConfig struct {
 	// Nested condition groups support up to 10 levels of depth.
-	Condition   any
+	Condition any
+	// A human-readable description of what the rule detects. (AI-inferred)
 	Description any
-	Enabled     any
-	Meta        any
-	Name        any
-	Strings     any
+	// Whether the rule is currently active. (AI-inferred)
+	Enabled any
+	// Additional metadata associated with the rule. (AI-inferred)
+	Meta any
+	// The name of the rule. (AI-inferred)
+	Name any
+	// The literal strings the rule matches against. (AI-inferred)
+	Strings any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type CloudforceOneRulePreviewAttrs struct {
 	// Nested condition groups support up to 10 levels of depth.
-	Condition   any
-	Content     any
-	CreatedAt   any
-	CreatedBy   any
+	Condition any
+	// The body of the detection rule. (AI-inferred)
+	Content any
+	// The timestamp when the resource was created, in RFC 3339 format. (AI-inferred)
+	CreatedAt any
+	// The identifier of the user who created the rule. (AI-inferred)
+	CreatedBy any
+	// A human-readable description of what the rule detects. (AI-inferred)
 	Description any
-	Enabled     any
-	Id          any
+	// Whether the rule is currently active. (AI-inferred)
+	Enabled any
+	// The unique identifier of the rule. (AI-inferred)
+	Id any
 	// Whether this rule is visible to other internal accounts.
-	IsPublic   any
-	Meta       any
-	Name       any
+	IsPublic any
+	// Additional metadata associated with the rule. (AI-inferred)
+	Meta any
+	// The name of the rule. (AI-inferred)
+	Name any
+	// The namespaces the rule is scoped to. (AI-inferred)
 	Namespaces any
-	Path       any
+	// The path the rule is scoped to within its namespace. (AI-inferred)
+	Path any
 	// ID of an open approval workflow targeting this rule, or null if none is pending.
 	PendingApprovalId any
 	// Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.
 	PendingChange any
-	Strings       any
+	// The literal strings the rule matches against. (AI-inferred)
+	Strings any
 	// Original JSON payload for rules created via the structured rules API. Null for hand-written rules.
 	StructuredSource any
-	UpdatedAt        any
-	UpdatedBy        any
+	// The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred)
+	UpdatedAt any
+	// The identifier of the user who last updated the rule. (AI-inferred)
+	UpdatedBy any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }

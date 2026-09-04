@@ -106,7 +106,8 @@ type StreamAttrs struct {
 	Format any
 	Http   any
 	// Specifies the name of the Stream.
-	Name   any
+	Name any
+	// The requested resource or collection of resources. (AI-inferred)
 	Result any
 	// Defines the schema of the events in the data stream.
 	Schema any

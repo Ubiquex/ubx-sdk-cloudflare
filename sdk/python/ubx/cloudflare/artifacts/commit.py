@@ -46,8 +46,11 @@ class Commit_ResultInfo:
 class CommitConfig:
     # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
     default_branch: Any = None
+    # A human-readable description of the repository. (AI-inferred)
     description: Any = None
+    # The name of the repository. (AI-inferred)
     name: Any = None
+    # Whether the repository is read-only. (AI-inferred)
     read_only: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -60,13 +63,21 @@ class CommitConfig:
 class CommitAttrs:
     # Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
     default_branch: Any = None
+    # A human-readable description of the repository. (AI-inferred)
     description: Any = None
+    # A list of errors returned by the API. Empty on a successful response. (AI-inferred)
     errors: Any = None
+    # A list of informational messages returned by the API, if any. (AI-inferred)
     messages: Any = None
+    # The name of the repository. (AI-inferred)
     name: Any = None
+    # Whether the repository is read-only. (AI-inferred)
     read_only: Any = None
+    # The requested resource or collection of resources. (AI-inferred)
     result: Any = None
+    # Pagination metadata for the result (e.g. total count, current page). (AI-inferred)
     result_info: Any = None
+    # Whether the API call was successful. (AI-inferred)
     success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

@@ -2,9 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TemplateConfig {
+  /** The body text of the letter template. (AI-inferred) */
   body: string | Computed<string>;
+  /** The category this letter template belongs to. (AI-inferred) */
   category: string | Computed<string>;
+  /** A human-readable description of the letter template. (AI-inferred) */
   description?: string | Computed<string>;
+  /** The name of the letter template. (AI-inferred) */
   name: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -13,13 +17,21 @@ export interface TemplateConfig {
 }
 
 export interface TemplateAttrs {
+  /** The body text of the letter template. (AI-inferred) */
   body: string;
+  /** The category this letter template belongs to. (AI-inferred) */
   category: string;
+  /** The timestamp when the resource was created, in RFC 3339 format. (AI-inferred) */
   createdAt: string;
+  /** A human-readable description of the letter template. (AI-inferred) */
   description: string;
+  /** The unique identifier of the letter template. (AI-inferred) */
   id: string;
+  /** The name of the letter template. (AI-inferred) */
   name: string;
+  /** The source this letter template's own text was derived from. (AI-inferred) */
   source: string;
+  /** The timestamp when the resource was last updated, in RFC 3339 format. (AI-inferred) */
   updatedAt: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
