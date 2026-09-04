@@ -3,6 +3,30 @@ package githubintegration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ConfigAutofill_Errors struct {
+	Code    any
+	Message any
+}
+
+type ConfigAutofill_Result_PackageManager struct {
+}
+
+type ConfigAutofill_Result struct {
+	ConfigFile        any
+	DefaultWorkerName any
+	EnvWorkerNames    any
+	PackageManager    any
+	Scripts           any
+}
+
+type ConfigAutofill_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type ConfigAutofillConfig struct {
 	// Account identifier.
 	AccountId any
@@ -10,7 +34,7 @@ type ConfigAutofillConfig struct {
 	Branch any
 	// Provider account identifier.
 	ProviderAccountId any
-	ProviderType any
+	ProviderType      any
 	// Repository identifier.
 	RepoId any
 	// Root directory path.
@@ -21,24 +45,29 @@ type ConfigAutofillAttrs struct {
 	// Account identifier.
 	AccountId any
 	// Git branch name.
-	Branch any
+	Branch   any
+	Errors   any
+	Messages any
 	// Provider account identifier.
 	ProviderAccountId any
-	ProviderType any
+	ProviderType      any
 	// Repository identifier.
-	RepoId any
+	RepoId     any
+	Result     any
+	ResultInfo any
 	// Root directory path.
 	RootDirectory any
+	Success       any
 }
 
 var ConfigAutofill = ubx.DataSourceBinding{
 	WireType: "cloudflare_config_autofill",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"Branch":            ubx.FieldSpec{WireName: "branch"},
 		"ProviderAccountId": ubx.FieldSpec{WireName: "provider_account_id"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
-		"RepoId": ubx.FieldSpec{WireName: "repo_id"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+		"ProviderType":      ubx.FieldSpec{WireName: "provider_type"},
+		"RepoId":            ubx.FieldSpec{WireName: "repo_id"},
+		"RootDirectory":     ubx.FieldSpec{WireName: "root_directory"},
 	},
 }

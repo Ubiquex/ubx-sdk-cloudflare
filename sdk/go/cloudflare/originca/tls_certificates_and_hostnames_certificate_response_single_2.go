@@ -3,6 +3,23 @@ package originca
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseSingle2_Result struct {
+	// The Origin CA certificate. Will be newline-encoded.
+	Certificate any
+	// The Certificate Signing Request (CSR). Must be newline-encoded.
+	Csr any
+	// When the certificate will expire.
+	ExpiresOn any
+	// Array of hostnames or wildcard names bound to the certificate. Hostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., `example.com` or `sub.example.com`). Wildcards are supported only as a `*.` prefix for a single level (e.g., `*.example.com`). Double wildcards (`*.*.example.com`) and interior wildcards (`foo.*.example.com`) are not allowed. The wildcard suffix must be a multi-label domain (`*.example.com` is valid, but `*.com` is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.
+	Hostnames any
+	// Identifier.
+	Id any
+	// Signature type desired on certificate ("origin-rsa" (rsa), "origin-ecc" (ecdsa), or "keyless-certificate" (for Keyless SSL servers).
+	RequestType any
+	// The number of days for which the certificate should be valid.
+	RequestedValidity any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseSingle2Config struct {
 	// The Certificate Signing Request (CSR). Must be newline-encoded.
 	Csr any
@@ -25,6 +42,7 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle2Attrs struct {
 	RequestType any
 	// The number of days for which the certificate should be valid.
 	RequestedValidity any
+	Result            any
 	// path parameter, not part of the API's own resource representation
 	CertificateId any
 }
@@ -32,10 +50,10 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle2Attrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseSingle2 = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_single_2",
 	Fields: ubx.FieldMap{
-		"Csr": ubx.FieldSpec{WireName: "csr"},
-		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"RequestType": ubx.FieldSpec{WireName: "request_type"},
+		"Csr":               ubx.FieldSpec{WireName: "csr"},
+		"Hostnames":         ubx.FieldSpec{WireName: "hostnames"},
+		"RequestType":       ubx.FieldSpec{WireName: "request_type"},
 		"RequestedValidity": ubx.FieldSpec{WireName: "requested_validity"},
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"CertificateId":     ubx.FieldSpec{WireName: "certificate_id"},
 	},
 }

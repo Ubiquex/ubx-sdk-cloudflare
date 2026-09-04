@@ -3,6 +3,29 @@ package zerotrustcertificates
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewaySingleResponse_Result struct {
+	// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
+	BindingStatus any
+	// Provide the CA certificate (read-only).
+	Certificate any
+	CreatedAt   any
+	ExpiresOn   any
+	// Provide the SHA256 fingerprint of the certificate (read-only).
+	Fingerprint any
+	// Identify the certificate with a UUID.
+	Id any
+	// Indicate whether Gateway TLS interception uses this certificate (read-only). You cannot set this value directly. To configure interception, use the Gateway configuration setting named `certificate` (read-only).
+	InUse any
+	// Indicate the organization that issued the certificate (read-only).
+	IssuerOrg any
+	// Provide the entire issuer field of the certificate (read-only).
+	IssuerRaw any
+	// Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
+	Type       any
+	UpdatedAt  any
+	UploadedOn any
+}
+
 type ZeroTrustGatewaySingleResponseConfig struct {
 	// Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation. Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
 	ValidityPeriodDays any
@@ -13,6 +36,7 @@ type ZeroTrustGatewaySingleResponseConfig struct {
 }
 
 type ZeroTrustGatewaySingleResponseAttrs struct {
+	Result any
 	// Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation. Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
 	ValidityPeriodDays any
 	// path parameter, not part of the API's own resource representation
@@ -25,7 +49,7 @@ var ZeroTrustGatewaySingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_single_response",
 	Fields: ubx.FieldMap{
 		"ValidityPeriodDays": ubx.FieldSpec{WireName: "validity_period_days"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"CertificateId":      ubx.FieldSpec{WireName: "certificate_id"},
 	},
 }

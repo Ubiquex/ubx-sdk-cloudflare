@@ -7,6 +7,102 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_CpuPctByApp:
+    cpu_pct: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_DeviceIpv4_Location:
+    city: Any = None
+    country_iso: Any = None
+    state_iso: Any = None
+    zip: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_DeviceIpv4:
+    address: Any = None
+    asn: Any = None
+    aso: Any = None
+    location: Any = None
+    name: Any = None
+    netmask: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_RamUsedPctByApp:
+    name: Any = None
+    ram_used_pct: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_Rtt_MinRttUs:
+    downstream: Any = None
+    upstream: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_Rtt:
+    min_rtt_us: Any = None
+    rtt_us: Any = None
+    rtt_var_us: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_TunnelStats:
+    bytes_lost: Any = None
+    bytes_received: Any = None
+    bytes_retransmitted: Any = None
+    bytes_sent: Any = None
+    packets_lost: Any = None
+    packets_received: Any = None
+    packets_retransmitted: Any = None
+    packets_sent: Any = None
+    stats_window_ms: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusDevicesResponse_Result:
+    always_on: Any = None
+    battery_charging: Any = None
+    battery_cycles: Any = None
+    battery_pct: Any = None
+    colo: Any = None
+    connection_type: Any = None
+    cpu_pct: Any = None
+    cpu_pct_by_app: Any = None
+    device_id: Any = None
+    device_ipv4: Any = None
+    device_ipv6: Any = None
+    device_name: Any = None
+    device_registration: Any = None
+    disk_read_bps: Any = None
+    disk_usage_pct: Any = None
+    disk_write_bps: Any = None
+    doh_subdomain: Any = None
+    estimated_loss_pct: Any = None
+    firewall_enabled: Any = None
+    gateway_ipv4: Any = None
+    gateway_ipv6: Any = None
+    handshake_latency_ms: Any = None
+    isp_ipv4: Any = None
+    isp_ipv6: Any = None
+    metal: Any = None
+    mode: Any = None
+    network_rcvd_bps: Any = None
+    network_sent_bps: Any = None
+    network_ssid: Any = None
+    person_email: Any = None
+    platform: Any = None
+    ram_available_kb: Any = None
+    ram_used_pct: Any = None
+    ram_used_pct_by_app: Any = None
+    registration_id: Any = None
+    rtt: Any = None
+    status: Any = None
+    switch_locked: Any = None
+    timestamp: Any = None
+    tunnel_stats: Any = None
+    tunnel_type: Any = None
+    version: Any = None
+    wifi_strength_dbm: Any = None
+
+@dataclasses.dataclass
 class DigitalExperienceMonitoringFleetStatusDevicesResponseConfig:
     # Cloudflare colo airport code.
     colo: Any = None
@@ -48,6 +144,7 @@ class DigitalExperienceMonitoringFleetStatusDevicesResponseAttrs:
     per_page: Any = None
     # Operating system.
     platform: Any = None
+    result: Any = None
     # Dimension to sort results by.
     sort_by: Any = None
     # Specifies fleet status details source.

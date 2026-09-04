@@ -3,54 +3,153 @@ package recordings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Recording_Data_Meeting_RecordingConfig_AudioConfig struct {
+	Channel    any
+	Codec      any
+	ExportFile any
+}
+
+type Recording_Data_Meeting_RecordingConfig_LiveStreamingConfig struct {
+	RtmpUrl any
+}
+
+type Recording_Data_Meeting_RecordingConfig_RealtimekitBucketConfig struct {
+	Enabled any
+}
+
+type Recording_Data_Meeting_RecordingConfig_StorageConfig struct {
+	AccessKey  any
+	AuthMethod any
+	Bucket     any
+	Host       any
+	Password   any
+	Path       any
+	Port       any
+	PrivateKey any
+	Region     any
+	Secret     any
+	Type       any
+	Username   any
+}
+
+type Recording_Data_Meeting_RecordingConfig_VideoConfig_Watermark_Size struct {
+	Height any
+	Width  any
+}
+
+type Recording_Data_Meeting_RecordingConfig_VideoConfig_Watermark struct {
+	Position any
+	Size     any
+	Url      any
+}
+
+type Recording_Data_Meeting_RecordingConfig_VideoConfig struct {
+	Codec      any
+	ExportFile any
+	Height     any
+	Watermark  any
+	Width      any
+}
+
+type Recording_Data_Meeting_RecordingConfig struct {
+	AudioConfig             any
+	FileNamePrefix          any
+	LiveStreamingConfig     any
+	MaxSeconds              any
+	RealtimekitBucketConfig any
+	StorageConfig           any
+	VideoConfig             any
+}
+
+type Recording_Data_Meeting struct {
+	CreatedAt                  any
+	Id                         any
+	LiveStreamOnStart          any
+	PersistChat                any
+	RecordOnStart              any
+	RecordingConfig            any
+	SessionKeepAliveTimeInSecs any
+	Status                     any
+	SummarizeOnEnd             any
+	Title                      any
+	TranscribeOnEnd            any
+	UpdatedAt                  any
+}
+
+type Recording_Data struct {
+	AudioDownloadUrl  any
+	DownloadUrl       any
+	DownloadUrlExpiry any
+	FileSize          any
+	Id                any
+	InvokedTime       any
+	Meeting           any
+	OutputFileName    any
+	RecordingDuration any
+	SessionId         any
+	StartedTime       any
+	Status            any
+	StoppedTime       any
+	StorageConfig     any
+}
+
+type Recording_Paging struct {
+	EndOffset   any
+	StartOffset any
+	TotalCount  any
+}
+
 type RecordingConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	EndTime any
-	Expired any
+	AppId     any
+	EndTime   any
+	Expired   any
 	MeetingId any
-	PageNo any
-	PerPage any
-	Search any
-	SortBy any
+	PageNo    any
+	PerPage   any
+	Search    any
+	SortBy    any
 	SortOrder any
 	StartTime any
-	Status any
+	Status    any
 }
 
 type RecordingAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	EndTime any
-	Expired any
+	AppId     any
+	Data      any
+	EndTime   any
+	Expired   any
 	MeetingId any
-	PageNo any
-	PerPage any
-	Search any
-	SortBy any
+	PageNo    any
+	Paging    any
+	PerPage   any
+	Search    any
+	SortBy    any
 	SortOrder any
 	StartTime any
-	Status any
+	Status    any
+	Success   any
 }
 
 var Recording = ubx.DataSourceBinding{
 	WireType: "cloudflare_recording",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Expired": ubx.FieldSpec{WireName: "expired"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+		"Expired":   ubx.FieldSpec{WireName: "expired"},
 		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"PageNo":    ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

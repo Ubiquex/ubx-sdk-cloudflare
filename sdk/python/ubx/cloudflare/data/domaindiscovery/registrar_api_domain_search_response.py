@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiDomainSearchResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiDomainSearchResponse_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiDomainSearchResponse_Result_Domains_Pricing:
+    currency: Any = None
+    registration_cost: Any = None
+    renewal_cost: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiDomainSearchResponse_Result_Domains:
+    name: Any = None
+    pricing: Any = None
+    reason: Any = None
+    registrable: Any = None
+    tier: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiDomainSearchResponse_Result:
+    # Lists domain suggestions in relevance order. An empty array indicates that the search criteria matched zero domains.
+    domains: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiDomainSearchResponseConfig:
     extensions: Any = None
     limit: Any = None
@@ -16,9 +45,15 @@ class RegistrarApiDomainSearchResponseConfig:
 class RegistrarApiDomainSearchResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     extensions: Any = None
     limit: Any = None
+    messages: Any = None
     q: Any = None
+    # Contains the search results.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RegistrarApiDomainSearchResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_domain_search_response",

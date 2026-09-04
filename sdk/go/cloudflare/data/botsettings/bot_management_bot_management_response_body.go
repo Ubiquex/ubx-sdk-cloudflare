@@ -9,6 +9,7 @@ type BotManagementBotManagementResponseBodyConfig struct {
 }
 
 type BotManagementBotManagementResponseBodyAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

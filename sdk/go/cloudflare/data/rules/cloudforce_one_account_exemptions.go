@@ -8,9 +8,9 @@ type CloudforceOneAccountExemptionsConfig struct {
 }
 
 type CloudforceOneAccountExemptionsAttrs struct {
-	AccountId any
-	Namespace any
-	TagMatch any
+	AccountId  any
+	Namespace  any
+	TagMatch   any
 	WorkerName any
 }
 

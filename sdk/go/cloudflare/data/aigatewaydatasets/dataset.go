@@ -4,44 +4,44 @@ package aigatewaydatasets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dataset_Result_Filters struct {
-	Key any
+	Key      any
 	Operator any
-	Value any
+	Value    any
 }
 
 type Dataset_Result struct {
-	CreatedAt any
-	Enable any
-	Filters any
-	GatewayId any
-	Id any
+	CreatedAt  any
+	Enable     any
+	Filters    any
+	GatewayId  any
+	Id         any
 	ModifiedAt any
-	Name any
+	Name       any
 }
 
 type DatasetConfig struct {
 	AccountId any
-	Enable any
+	Enable    any
 	// gateway id
 	GatewayId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 	// Search by id, name, filters
 	Search any
 }
 
 type DatasetAttrs struct {
 	AccountId any
-	Enable any
+	Enable    any
 	// gateway id
 	GatewayId any
-	Name any
-	Page any
-	PerPage any
-	Result any
+	Name      any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by id, name, filters
-	Search any
+	Search  any
 	Success any
 }
 
@@ -49,11 +49,11 @@ var Dataset = ubx.DataSourceBinding{
 	WireType: "cloudflare_dataset",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Enable":    ubx.FieldSpec{WireName: "enable"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

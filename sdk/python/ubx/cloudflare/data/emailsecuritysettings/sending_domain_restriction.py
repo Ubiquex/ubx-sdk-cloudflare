@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SendingDomainRestriction_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class SendingDomainRestriction_Result:
+    comments: Any = None
+    created_at: Any = None
+    domain: Any = None
+    exclude: Any = None
+    id: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+
+@dataclasses.dataclass
 class SendingDomainRestrictionConfig:
     direction: Any = None
     order: Any = None
@@ -20,6 +34,7 @@ class SendingDomainRestrictionAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
 
 SendingDomainRestriction = ubx.DataSourceBinding(

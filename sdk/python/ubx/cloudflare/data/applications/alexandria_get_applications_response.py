@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AlexandriaGetApplicationsResponse_Result:
+    application_confidence_score: Any = None
+    application_score_composition: Any = None
+    application_source: Any = None
+    application_type: Any = None
+    application_type_description: Any = None
+    category_id: Any = None
+    created_at: Any = None
+    gen_ai_score: Any = None
+    hostnames: Any = None
+    human_id: Any = None
+    id: Any = None
+    ip_subnets: Any = None
+    name: Any = None
+    port_protocols: Any = None
+    review_status: Any = None
+    support_domains: Any = None
+    supported: Any = None
+    updated_at: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class AlexandriaGetApplicationsResponseConfig:
     account_id: Any = None
     fields: Any = None
@@ -24,6 +46,8 @@ class AlexandriaGetApplicationsResponseAttrs:
     limit: Any = None
     offset: Any = None
     order_by: Any = None
+    # Returns the list of applications.
+    result: Any = None
     search: Any = None
 
 AlexandriaGetApplicationsResponse = ubx.DataSourceBinding(

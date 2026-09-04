@@ -10,6 +10,17 @@ import ubx_sdk as ubx
 class IamCollectionPermissionGroupsResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamCollectionPermissionGroupsResponse_Result_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IamCollectionPermissionGroupsResponse_Result:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
 _IamCollectionPermissionGroupsResponse_AccountIdFields = {
 }
 
@@ -42,6 +53,8 @@ class IamCollectionPermissionGroupsResponseAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    # A set of permission groups that are specified to the policy.
+    result: Any = None
 
 IamCollectionPermissionGroupsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_collection_permission_groups_response",

@@ -3,25 +3,46 @@ package apishieldendpointmanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ApiShieldSchemaResponseWithThresholds_Errors_Source struct {
+	Pointer any
+}
+
+type ApiShieldSchemaResponseWithThresholds_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type ApiShieldSchemaResponseWithThresholds_Result struct {
+	Schemas   any
+	Timestamp any
+}
+
 type ApiShieldSchemaResponseWithThresholdsConfig struct {
 	Feature any
 	// Receive schema only for the given host(s).
-	Host any
+	Host              any
 	IncludeSchemaKind any
 }
 
 type ApiShieldSchemaResponseWithThresholdsAttrs struct {
+	Errors  any
 	Feature any
 	// Receive schema only for the given host(s).
-	Host any
+	Host              any
 	IncludeSchemaKind any
+	Messages          any
+	Result            any
+	// Whether the API call was successful.
+	Success any
 }
 
 var ApiShieldSchemaResponseWithThresholds = ubx.DataSourceBinding{
 	WireType: "cloudflare_api_shield_schema_response_with_thresholds",
 	Fields: ubx.FieldMap{
-		"Feature": ubx.FieldSpec{WireName: "feature"},
-		"Host": ubx.FieldSpec{WireName: "host"},
+		"Feature":           ubx.FieldSpec{WireName: "feature"},
+		"Host":              ubx.FieldSpec{WireName: "host"},
 		"IncludeSchemaKind": ubx.FieldSpec{WireName: "include_schema_kind"},
 	},
 }

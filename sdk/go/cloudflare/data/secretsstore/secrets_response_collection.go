@@ -3,26 +3,38 @@ package secretsstore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecretsResponseCollection_Result struct {
+	Comment  any
+	Created  any
+	Id       any
+	Modified any
+	Name     any
+	Scopes   any
+	Status   any
+	StoreId  any
+}
+
 type SecretsResponseCollectionConfig struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
-	Scopes any
-	Search any
-	StoreId any
+	Order     any
+	Page      any
+	PerPage   any
+	Scopes    any
+	Search    any
+	StoreId   any
 }
 
 type SecretsResponseCollectionAttrs struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
-	Scopes any
-	Search any
-	StoreId any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
+	Scopes    any
+	Search    any
+	StoreId   any
 }
 
 var SecretsResponseCollection = ubx.DataSourceBinding{
@@ -30,11 +42,11 @@ var SecretsResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"StoreId": ubx.FieldSpec{WireName: "store_id"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Scopes":    ubx.FieldSpec{WireName: "scopes"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"StoreId":   ubx.FieldSpec{WireName: "store_id"},
 	},
 }

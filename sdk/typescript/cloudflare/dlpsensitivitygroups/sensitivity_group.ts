@@ -6,6 +6,24 @@ export interface SensitivityGroup_Levels {
   name?: string | Computed<string>;
 }
 
+export interface SensitivityGroup_Result_Levels {
+  createdAt?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+  updatedAt?: string | Computed<string>;
+}
+
+export interface SensitivityGroup_Result {
+  createdAt: string | Computed<string>;
+  description?: string | Computed<string>;
+  id: string | Computed<string>;
+  levels: SensitivityGroup_Result_Levels[] | Computed<SensitivityGroup_Result_Levels[]>;
+  name: string | Computed<string>;
+  templateId?: string | Computed<string>;
+  updatedAt: string | Computed<string>;
+}
+
 const SensitivityGroup_LevelsFields: FieldMap = {
   description: "description",
   name: "name",
@@ -28,6 +46,7 @@ export interface SensitivityGroupAttrs {
   /** Levels to create with the group. Mutually exclusive with `template_id`. */
   levels: SensitivityGroup_Levels[];
   name: string;
+  result: SensitivityGroup_Result;
   templateId: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

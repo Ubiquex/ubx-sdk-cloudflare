@@ -3,6 +3,40 @@ package zonelevelaccessapplications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessPolicyCheckResponse2_Result_AppState struct {
+	// UUID.
+	AppUid   any
+	Aud      any
+	Hostname any
+	Name     any
+	Policies any
+	Status   any
+}
+
+type AccessPolicyCheckResponse2_Result_UserIdentity_Geo struct {
+	Country any
+}
+
+type AccessPolicyCheckResponse2_Result_UserIdentity struct {
+	AccountId      any
+	DeviceSessions any
+	Email          any
+	Geo            any
+	Iat            any
+	Id             any
+	IsGateway      any
+	IsWarp         any
+	Name           any
+	// UUID.
+	UserUuid any
+	Version  any
+}
+
+type AccessPolicyCheckResponse2_Result struct {
+	AppState     any
+	UserIdentity any
+}
+
 type AccessPolicyCheckResponse2Config struct {
 	AppId any
 	// Identifier.
@@ -10,7 +44,8 @@ type AccessPolicyCheckResponse2Config struct {
 }
 
 type AccessPolicyCheckResponse2Attrs struct {
-	AppId any
+	AppId  any
+	Result any
 	// Identifier.
 	ZoneId any
 }
@@ -18,7 +53,7 @@ type AccessPolicyCheckResponse2Attrs struct {
 var AccessPolicyCheckResponse2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_policy_check_response_2",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":  ubx.FieldSpec{WireName: "app_id"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

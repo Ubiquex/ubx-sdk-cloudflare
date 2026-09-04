@@ -3,28 +3,75 @@ package exports
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiPaginatedExportJobList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedExportJobList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedExportJobList_Result struct {
+	DownloadUrl any
+	Errors      any
+	FileName    any
+	FilePath    any
+	Id          any
+	Status      any
+	Type        any
+	UserId      any
+}
+
+type PostureApiPaginatedExportJobList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
+	Cursor any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
 type PostureApiPaginatedExportJobListConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Status of an export job.
 	Status any
 }
 
 type PostureApiPaginatedExportJobListAttrs struct {
 	AccountId any
-	Page any
-	PerPage any
+	Errors    any
+	Messages  any
+	Page      any
+	PerPage   any
+	// Array of export job objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
 	// Status of an export job.
 	Status any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PostureApiPaginatedExportJobList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_export_job_list",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

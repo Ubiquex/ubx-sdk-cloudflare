@@ -21,19 +21,19 @@ type FlagshipEvaluationResultAttrs struct {
 	AppId any
 	// The flag key to evaluate.
 	FlagKey any
-	Reason any
+	Reason  any
 	// Context targeting key (per OpenFeature spec); used for percentage rollout bucketing.
 	TargetingKey any
-	Value any
-	Variant any
+	Value        any
+	Variant      any
 }
 
 var FlagshipEvaluationResult = ubx.DataSourceBinding{
 	WireType: "cloudflare_flagship_evaluation_result",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"FlagKey": ubx.FieldSpec{WireName: "flag_key"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"AppId":        ubx.FieldSpec{WireName: "app_id"},
+		"FlagKey":      ubx.FieldSpec{WireName: "flag_key"},
 		"TargetingKey": ubx.FieldSpec{WireName: "targeting_key"},
 	},
 }

@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaSchemasSingleResponse_Result:
+    # Timestamp of when the webhook destination was created.
+    created_at: Any = None
+    # The unique identifier of a webhook
+    id: Any = None
+    # Timestamp of the last time an attempt to dispatch a notification to this webhook failed.
+    last_failure: Any = None
+    # Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.
+    last_success: Any = None
+    # The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
+    name: Any = None
+    # Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
+    secret: Any = None
+    # Type of webhook endpoint.
+    type: Any = None
+    # The POST endpoint to call when dispatching a notification.
+    url: Any = None
+
+@dataclasses.dataclass
 class AaaSchemasSingleResponseConfig:
     # The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
     name: Any = None
@@ -23,6 +42,7 @@ class AaaSchemasSingleResponseConfig:
 class AaaSchemasSingleResponseAttrs:
     # The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
     name: Any = None
+    result: Any = None
     # Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
     secret: Any = None
     # The POST endpoint to call when dispatching a notification.

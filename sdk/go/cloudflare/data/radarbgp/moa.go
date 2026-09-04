@@ -4,20 +4,20 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Moa_Result_Meta struct {
-	DataTime any
-	QueryTime any
+	DataTime   any
+	QueryTime  any
 	TotalPeers any
 }
 
 type Moa_Result_Moas_Origins struct {
-	Origin any
-	PeerCount any
+	Origin         any
+	PeerCount      any
 	RpkiValidation any
 }
 
 type Moa_Result_Moas struct {
 	Origins any
-	Prefix any
+	Prefix  any
 }
 
 type Moa_Result struct {
@@ -41,18 +41,18 @@ type MoaAttrs struct {
 	// Lookup only RPKI invalid MOASes.
 	InvalidOnly any
 	// Lookup MOASes originated by the given ASN.
-	Origin any
-	Prefix any
-	Result any
+	Origin  any
+	Prefix  any
+	Result  any
 	Success any
 }
 
 var Moa = ubx.DataSourceBinding{
 	WireType: "cloudflare_moa",
 	Fields: ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
 		"InvalidOnly": ubx.FieldSpec{WireName: "invalid_only"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Origin":      ubx.FieldSpec{WireName: "origin"},
+		"Prefix":      ubx.FieldSpec{WireName: "prefix"},
 	},
 }

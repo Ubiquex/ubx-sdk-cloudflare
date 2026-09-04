@@ -10,6 +10,19 @@ import ubx_sdk as ubx
 class TunnelTeamnetResponseCollection_NetworkSubset:
     pass
 
+@dataclasses.dataclass
+class TunnelTeamnetResponseCollection_Result:
+    comment: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    id: Any = None
+    network: Any = None
+    tun_type: Any = None
+    tunnel_id: Any = None
+    tunnel_name: Any = None
+    virtual_network_id: Any = None
+    virtual_network_name: Any = None
+
 _TunnelTeamnetResponseCollection_NetworkSubsetFields = {
 }
 
@@ -52,6 +65,7 @@ class TunnelTeamnetResponseCollectionAttrs:
     page: Any = None
     # Number of results to display.
     per_page: Any = None
+    result: Any = None
     # UUID of the route.
     route_id: Any = None
     # The types of tunnels to filter by, separated by commas.

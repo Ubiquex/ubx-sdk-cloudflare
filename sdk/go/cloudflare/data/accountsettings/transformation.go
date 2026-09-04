@@ -3,6 +3,19 @@ package accountsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Transformation_Errors struct {
+	Code    any
+	Message any
+}
+
+type Transformation_Result struct {
+	CfZoneTag  any
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type TransformationConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +24,11 @@ type TransformationConfig struct {
 type TransformationAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Transformation = ubx.DataSourceBinding{

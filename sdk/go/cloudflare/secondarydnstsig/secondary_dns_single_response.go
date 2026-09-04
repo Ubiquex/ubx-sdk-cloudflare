@@ -3,6 +3,16 @@ package secondarydnstsig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsSingleResponse_Result struct {
+	// TSIG algorithm.
+	Algo any
+	Id   any
+	// TSIG key name.
+	Name any
+	// TSIG secret.
+	Secret any
+}
+
 type SecondaryDnsSingleResponseConfig struct {
 	// TSIG algorithm.
 	Algo any
@@ -19,9 +29,10 @@ type SecondaryDnsSingleResponseConfig struct {
 type SecondaryDnsSingleResponseAttrs struct {
 	// TSIG algorithm.
 	Algo any
-	Id any
+	Id   any
 	// TSIG key name.
-	Name any
+	Name   any
+	Result any
 	// TSIG secret.
 	Secret any
 	// path parameter, not part of the API's own resource representation
@@ -33,10 +44,10 @@ type SecondaryDnsSingleResponseAttrs struct {
 var SecondaryDnsSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_secondary_dns_single_response",
 	Fields: ubx.FieldMap{
-		"Algo": ubx.FieldSpec{WireName: "algo"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
+		"Algo":      ubx.FieldSpec{WireName: "algo"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Secret":    ubx.FieldSpec{WireName: "secret"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TsigId": ubx.FieldSpec{WireName: "tsig_id"},
+		"TsigId":    ubx.FieldSpec{WireName: "tsig_id"},
 	},
 }

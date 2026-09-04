@@ -17,6 +17,17 @@ class EmailRuleResponseSingle_Matchers:
     type: Any = None
     value: Any = None
 
+@dataclasses.dataclass
+class EmailRuleResponseSingle_Result:
+    actions: Any = None
+    enabled: Any = None
+    id: Any = None
+    matchers: Any = None
+    name: Any = None
+    priority: Any = None
+    source: Any = None
+    tag: Any = None
+
 _EmailRuleResponseSingle_ActionsFields = {
     "type": ubx.FieldSpec(wire_name="type"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -63,6 +74,7 @@ class EmailRuleResponseSingleAttrs:
     owner_worker_tag: Any = None
     # Priority of the routing rule.
     priority: Any = None
+    result: Any = None
     # Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
     source: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,51 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelWarpConnectorResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelWarpConnectorResponseSingle_Result_Connections_OriginIp:
+    pass
+
+@dataclasses.dataclass
+class TunnelWarpConnectorResponseSingle_Result_Connections:
+    client_id: Any = None
+    client_version: Any = None
+    colo_name: Any = None
+    id: Any = None
+    is_pending_reconnect: Any = None
+    opened_at: Any = None
+    origin_ip: Any = None
+    uuid: Any = None
+
+@dataclasses.dataclass
+class TunnelWarpConnectorResponseSingle_Result:
+    # Cloudflare account ID
+    account_tag: Any = None
+    # The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+    connections: Any = None
+    # Timestamp of when the tunnel established at least one connection to Cloudflare's edge. If `null`, the tunnel is inactive.
+    conns_active_at: Any = None
+    # Timestamp of when the tunnel became inactive (no connections to Cloudflare's edge). If `null`, the tunnel is active.
+    conns_inactive_at: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # UUID of the tunnel.
+    id: Any = None
+    # Metadata associated with the tunnel.
+    metadata: Any = None
+    # A user-friendly name for a tunnel.
+    name: Any = None
+    # The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+    status: Any = None
+    # The type of tunnel.
+    tun_type: Any = None
+
+@dataclasses.dataclass
 class TunnelWarpConnectorResponseSingleConfig:
     # Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
     ha: Any = None
@@ -19,10 +64,16 @@ class TunnelWarpConnectorResponseSingleConfig:
 
 @dataclasses.dataclass
 class TunnelWarpConnectorResponseSingleAttrs:
+    errors: Any = None
     # Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
     ha: Any = None
+    messages: Any = None
     # A user-friendly name for a tunnel.
     name: Any = None
+    # A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -10,6 +10,32 @@ import ubx_sdk as ubx
 class ShareRecipientResponseSingle_AccountId:
     pass
 
+@dataclasses.dataclass
+class ShareRecipientResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ShareRecipientResponseSingle_Result_Resources:
+    error: Any = None
+    resource_id: Any = None
+    resource_version: Any = None
+    terminal: Any = None
+
+@dataclasses.dataclass
+class ShareRecipientResponseSingle_Result:
+    # Account identifier.
+    account_id: Any = None
+    # The current state of the recipient relative to the share. The `desired_association_status` (not exposed in the response) tracks the target state set by the API; the background reconciliation workflow drives `current_association_status` toward it. - `associating` — The recipient was recently added; the workflow is pushing shared resources into the recipient account. - `associated` — Shared resources have been successfully applied to the recipient account. - `disassociating` — The recipient was removed (via DELETE or PUT replacement); the workflow is removing shared resources from the recipient account. - `disassociated` — Shared resources have been removed from the recipient account. The recipient record remains in the database.
+    association_status: Any = None
+    # When the share was created.
+    created: Any = None
+    # Share Recipient identifier tag.
+    id: Any = None
+    # When the share was modified.
+    modified: Any = None
+    resources: Any = None
+
 _ShareRecipientResponseSingle_AccountIdFields = {
 }
 
@@ -34,10 +60,15 @@ class ShareRecipientResponseSingleConfig:
 class ShareRecipientResponseSingleAttrs:
     # Deprecated alias for `recipient_account_id`. Use `recipient_account_id` instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see `x-sunset`).
     account_id: Any = None
+    errors: Any = None
     # Organization identifier.
     organization_id: Any = None
     # The account that will receive the share.
     recipient_account_id: Any = None
+    # A recipient of a share. The `association_status` field tracks the lifecycle of the shared resources in the recipient account. All recipients are returned by the list endpoint regardless of status; filter client-side if only active recipients are needed.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute)
     account_id_path: Any = None
     # path parameter, not part of the API's own resource representation

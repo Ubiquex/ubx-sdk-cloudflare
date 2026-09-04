@@ -8,8 +8,8 @@ type IamScimUser_AccountId struct {
 
 type IamScimUser_Resources_Emails struct {
 	Primary any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 type IamScimUser_Resources_Meta struct {
@@ -18,25 +18,24 @@ type IamScimUser_Resources_Meta struct {
 
 type IamScimUser_Resources_Name struct {
 	FamilyName any
-	Formatted any
-	GivenName any
+	Formatted  any
+	GivenName  any
 }
 
 type IamScimUser_Resources struct {
-	Active any
+	Active      any
 	DisplayName any
-	Emails any
-	ExternalId any
-	Groups any
-	Id any
-	Meta any
-	Name any
-	Schemas any
-	UserName any
+	Emails      any
+	ExternalId  any
+	Groups      any
+	Id          any
+	Meta        any
+	Name        any
+	Schemas     any
+	UserName    any
 }
 
-var IamScimUser_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimUser_AccountIdFields = ubx.FieldMap{}
 
 type IamScimUserConfig struct {
 	// Account identifier tag.
@@ -58,8 +57,8 @@ type IamScimUserAttrs struct {
 	Filter any
 	// The number of resources returned in this page.
 	ItemsPerPage any
-	Resources any
-	Schemas any
+	Resources    any
+	Schemas      any
 	// The 1-based index of the first result in the current set of list results. Values less than 1 are treated as 1.
 	StartIndex any
 	// The total number of results matching the query.
@@ -71,11 +70,11 @@ var IamScimUser = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimUser_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimUser_AccountIdFields,
 		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Count":      ubx.FieldSpec{WireName: "count"},
+		"Filter":     ubx.FieldSpec{WireName: "filter"},
 		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
 	},
 }

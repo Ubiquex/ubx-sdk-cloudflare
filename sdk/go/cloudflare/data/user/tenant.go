@@ -4,7 +4,7 @@ package user
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tenant_Messages struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -12,56 +12,55 @@ type Tenant_Result_Id struct {
 }
 
 type Tenant_Result_Meta_TenantFlags struct {
-	AccountCreation any
+	AccountCreation                      any
 	AccountCreationAppliesTenantDefaults any
-	AccountDeletion any
-	AccountMigration any
-	AccountMobility any
-	EnterpriseCapability any
-	MemberManagement any
-	SubOrgCreation any
+	AccountDeletion                      any
+	AccountMigration                     any
+	AccountMobility                      any
+	EnterpriseCapability                 any
+	MemberManagement                     any
+	SubOrgCreation                       any
 }
 
 type Tenant_Result_Meta struct {
 	HierarchyTags any
-	ManagedBy any
-	TenantFlags any
+	ManagedBy     any
+	TenantFlags   any
 }
 
 type Tenant_Result_Parent struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type Tenant_Result_Profile struct {
-	BusinessAddress any
-	BusinessEmail any
-	BusinessName any
-	BusinessPhone any
+	BusinessAddress  any
+	BusinessEmail    any
+	BusinessName     any
+	BusinessPhone    any
 	ExternalMetadata any
 }
 
 type Tenant_Result struct {
 	CreateTime any
-	Id any
-	Meta any
-	Name any
-	Parent any
-	Profile any
+	Id         any
+	Meta       any
+	Name       any
+	Parent     any
+	Profile    any
 }
 
 type TenantConfig struct {
 }
 
 type TenantAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var Tenant = ubx.DataSourceBinding{
 	WireType: "cloudflare_tenant",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

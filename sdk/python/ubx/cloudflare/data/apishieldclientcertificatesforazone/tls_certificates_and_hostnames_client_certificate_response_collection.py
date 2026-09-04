@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesClientCertificateResponseCollection_Result_CertificateAuthority:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesClientCertificateResponseCollection_Result:
+    certificate: Any = None
+    certificate_authority: Any = None
+    common_name: Any = None
+    country: Any = None
+    csr: Any = None
+    expires_on: Any = None
+    fingerprint_sha256: Any = None
+    id: Any = None
+    issued_on: Any = None
+    location: Any = None
+    organization: Any = None
+    organizational_unit: Any = None
+    serial_number: Any = None
+    signature: Any = None
+    ski: Any = None
+    state: Any = None
+    status: Any = None
+    validity_days: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesClientCertificateResponseCollectionConfig:
     # Limit to the number of records returned.
     limit: Any = None
@@ -31,6 +57,7 @@ class TlsCertificatesAndHostnamesClientCertificateResponseCollectionAttrs:
     page: Any = None
     # Number of records per page.
     per_page: Any = None
+    result: Any = None
     # Client Certitifcate Status to filter results by.
     status: Any = None
     # Identifier.

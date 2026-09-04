@@ -8,75 +8,75 @@ type FlagshipFlag_Errors struct {
 }
 
 type FlagshipFlag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Conditions_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Conditions_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Conditions_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Conditions struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlag_Result_Rules_Rollout struct {
-	Attribute any
+	Attribute  any
 	Percentage any
 }
 
 type FlagshipFlag_Result_Rules struct {
-	Conditions any
-	Priority any
-	Rollout any
+	Conditions     any
+	Priority       any
+	Rollout        any
 	ServeVariation any
 }
 
 type FlagshipFlag_Result struct {
 	DefaultVariation any
-	Description any
-	Enabled any
-	Key any
-	Rules any
-	Type any
-	UpdatedAt any
-	UpdatedBy any
-	Variations any
+	Description      any
+	Enabled          any
+	Key              any
+	Rules            any
+	Type             any
+	UpdatedAt        any
+	UpdatedBy        any
+	Variations       any
 }
 
 type FlagshipFlag_ResultInfo struct {
@@ -106,19 +106,19 @@ type FlagshipFlagAttrs struct {
 	Cursor any
 	Errors any
 	// Max items to return (1–200).
-	Limit any
-	Messages any
-	Result any
+	Limit      any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var FlagshipFlag = ubx.DataSourceBinding{
 	WireType: "cloudflare_flagship_flag",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 	},
 }

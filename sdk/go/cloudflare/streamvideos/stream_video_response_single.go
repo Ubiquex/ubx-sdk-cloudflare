@@ -3,14 +3,124 @@ package streamvideos
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamVideoResponseSingle_Result_Input struct {
+	// The video height in pixels. A value of `-1` means the height is unknown. The value becomes available after the upload and before the video is ready.
+	Height any
+	// The video width in pixels. A value of `-1` means the width is unknown. The value becomes available after the upload and before the video is ready.
+	Width any
+}
+
+type StreamVideoResponseSingle_Result_Playback struct {
+	// DASH Media Presentation Description for the video.
+	Dash any
+	// The HLS manifest for the video.
+	Hls any
+}
+
+type StreamVideoResponseSingle_Result_PublicDetails struct {
+	ChannelLink any
+	Logo        any
+	MediaId     any
+	ShareLink   any
+	Title       any
+}
+
+type StreamVideoResponseSingle_Result_Status struct {
+	// Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
+	ErrorReasonCode any
+	// Specifies why the video failed to encode using a human readable error message in English. This field is empty if the video is not in an `error` state.
+	ErrorReasonText any
+	// Indicates the progress as a percentage between 0 and 100.
+	PctComplete any
+	// Specifies the processing status for all quality levels for a video.
+	State any
+}
+
+type StreamVideoResponseSingle_Result_Watermark struct {
+	// The date and a time a watermark profile was created.
+	Created any
+	// The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
+	DownloadedFrom any
+	// The height of the image in pixels.
+	Height any
+	// A short description of the watermark profile.
+	Name any
+	// The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.
+	Opacity any
+	// The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.
+	Padding any
+	// The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
+	Position any
+	// The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
+	Scale any
+	// The size of the image in bytes.
+	Size any
+	// The unique identifier for a watermark profile.
+	Uid any
+	// The width of the image in pixels.
+	Width any
+}
+
+type StreamVideoResponseSingle_Result struct {
+	// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
+	AllowedOrigins any
+	// The unique identifier of the source video this video was clipped from.
+	ClippedFrom any
+	// The date and time the media item was created.
+	Created any
+	// A user-defined identifier for the media creator.
+	Creator any
+	// The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.
+	Duration any
+	Input    any
+	// The live input ID used to upload a video with Stream Live.
+	LiveInput any
+	// The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
+	MaxDurationSeconds any
+	// The maximum size in bytes for the video upload.
+	MaxSizeBytes any
+	// A user modifiable key-value store used to reference other systems of record for managing videos.
+	Meta any
+	// The date and time the media item was last modified.
+	Modified any
+	Playback any
+	// The video's preview page URI. This field is omitted until encoding is complete.
+	Preview any
+	// Public details for the video including title, share link, channel link, and logo.
+	PublicDetails any
+	// Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+	ReadyToStream any
+	// Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+	ReadyToStreamAt any
+	// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
+	RequireSignedUrls any
+	// Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
+	ScheduledDeletion any
+	// The size of the media item in bytes.
+	Size any
+	// Specifies a detailed status for a video. If the `state` is `inprogress` or `error`, the `step` field returns `encoding` or `manifest`. If the `state` is `inprogress`, `pctComplete` returns a number between 0 and 100 to indicate the approximate percent of completion. If the `state` is `error`, `errorReasonCode` and `errorReasonText` provide additional details.
+	Status any
+	// The media item's thumbnail URI. This field is omitted until encoding is complete.
+	Thumbnail any
+	// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video. If this value is not set, the default thumbnail image is taken from 0s of the video.
+	ThumbnailTimestampPct any
+	// A Cloudflare-generated unique identifier for a media item.
+	Uid any
+	// The date and time when the video upload URL is no longer valid for direct user uploads.
+	UploadExpiry any
+	// The date and time the media item was uploaded.
+	Uploaded  any
+	Watermark any
+}
+
 type StreamVideoResponseSingle_Watermark struct {
 	// The unique identifier for the watermark profile.
 	Uid any
 }
 
 var StreamVideoResponseSingle_WatermarkFields = ubx.FieldMap{
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 type StreamVideoResponseSingleConfig struct {
 	// Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
@@ -30,7 +140,7 @@ type StreamVideoResponseSingleConfig struct {
 	// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video. If this value is not set, the default thumbnail image is taken from 0s of the video.
 	ThumbnailTimestampPct any
 	// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file. This field is deprecated in favor of `input`.
-	Url any
+	Url       any
 	Watermark any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -51,12 +161,13 @@ type StreamVideoResponseSingleAttrs struct {
 	Name any
 	// Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
 	RequireSignedUrls any
+	Result            any
 	// Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
 	ScheduledDeletion any
 	// The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video. If this value is not set, the default thumbnail image is taken from 0s of the video.
 	ThumbnailTimestampPct any
 	// A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file. This field is deprecated in favor of `input`.
-	Url any
+	Url       any
 	Watermark any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -67,21 +178,21 @@ type StreamVideoResponseSingleAttrs struct {
 var StreamVideoResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_stream_video_response_single",
 	Fields: ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"Input": ubx.FieldSpec{WireName: "input"},
-		"Meta": ubx.FieldSpec{WireName: "meta"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"ScheduledDeletion": ubx.FieldSpec{WireName: "scheduled_deletion"},
+		"AllowedOrigins":        ubx.FieldSpec{WireName: "allowed_origins"},
+		"Creator":               ubx.FieldSpec{WireName: "creator"},
+		"Input":                 ubx.FieldSpec{WireName: "input"},
+		"Meta":                  ubx.FieldSpec{WireName: "meta"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"RequireSignedUrls":     ubx.FieldSpec{WireName: "require_signed_urls"},
+		"ScheduledDeletion":     ubx.FieldSpec{WireName: "scheduled_deletion"},
 		"ThumbnailTimestampPct": ubx.FieldSpec{WireName: "thumbnail_timestamp_pct"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":                   ubx.FieldSpec{WireName: "url"},
 		"Watermark": ubx.FieldSpec{
 			WireName: "watermark",
-			Kind: "object",
-			Fields: StreamVideoResponseSingle_WatermarkFields,
+			Kind:     "object",
+			Fields:   StreamVideoResponseSingle_WatermarkFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

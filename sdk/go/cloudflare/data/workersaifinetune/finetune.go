@@ -4,12 +4,12 @@ package workersaifinetune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Finetune_Result struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Id any
-	Model any
-	ModifiedAt any
-	Name any
+	Id          any
+	Model       any
+	ModifiedAt  any
+	Name        any
 }
 
 type FinetuneConfig struct {
@@ -18,8 +18,8 @@ type FinetuneConfig struct {
 
 type FinetuneAttrs struct {
 	AccountId any
-	Result any
-	Success any
+	Result    any
+	Success   any
 }
 
 var Finetune = ubx.DataSourceBinding{

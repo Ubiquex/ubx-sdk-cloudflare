@@ -3,6 +3,20 @@ package accessscimupdatelogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Response_Result struct {
+	CfResourceId      any
+	ErrorDescription  any
+	IdpId             any
+	IdpResourceId     any
+	LoggedAt          any
+	RequestBody       any
+	RequestMethod     any
+	ResourceGroupName any
+	ResourceType      any
+	ResourceUserEmail any
+	Status            any
+}
+
 type ResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -61,6 +75,7 @@ type ResponseAttrs struct {
 	ResourceType any
 	// The email address of the SCIM User resource. Pass once for a single lookup (`?resource_user_email=A`) or repeat the parameter (`?resource_user_email=A&resource_user_email=B`) to filter by multiple emails in one request.
 	ResourceUserEmail any
+	Result            any
 	// the timestamp of the earliest update log.
 	Since any
 	// The status of the SCIM request.
@@ -72,20 +87,20 @@ type ResponseAttrs struct {
 var Response = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_scim_update_logs_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CfResourceId": ubx.FieldSpec{WireName: "cf_resource_id"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"IdpId": ubx.FieldSpec{WireName: "idp_id"},
-		"IdpResourceId": ubx.FieldSpec{WireName: "idp_resource_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"RequestMethod": ubx.FieldSpec{WireName: "request_method"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"CfResourceId":      ubx.FieldSpec{WireName: "cf_resource_id"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"IdpId":             ubx.FieldSpec{WireName: "idp_id"},
+		"IdpResourceId":     ubx.FieldSpec{WireName: "idp_resource_id"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
+		"RequestMethod":     ubx.FieldSpec{WireName: "request_method"},
 		"ResourceGroupName": ubx.FieldSpec{WireName: "resource_group_name"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
 		"ResourceUserEmail": ubx.FieldSpec{WireName: "resource_user_email"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Until": ubx.FieldSpec{WireName: "until"},
+		"Since":             ubx.FieldSpec{WireName: "since"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
+		"Until":             ubx.FieldSpec{WireName: "until"},
 	},
 }

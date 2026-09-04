@@ -3,6 +3,24 @@ package streamsubtitlescaptions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamLanguageResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamLanguageResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamLanguageResponseCollection_Result struct {
+	Generated any
+	Label     any
+	Language  any
+	Status    any
+}
+
 type StreamLanguageResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +31,19 @@ type StreamLanguageResponseCollectionConfig struct {
 type StreamLanguageResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
 	// A Cloudflare-generated unique identifier for a media item.
 	Identifier any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamLanguageResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_language_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

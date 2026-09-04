@@ -3,6 +3,11 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UniqueDevice_Result struct {
+	// total number of unique devices
+	UniqueDevicesTotal any
+}
+
 type UniqueDeviceConfig struct {
 	DeviceId any
 	TestName any
@@ -11,8 +16,9 @@ type UniqueDeviceConfig struct {
 type UniqueDeviceAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	DeviceId any
-	TestName any
+	DeviceId  any
+	Result    any
+	TestName  any
 }
 
 var UniqueDevice = ubx.DataSourceBinding{

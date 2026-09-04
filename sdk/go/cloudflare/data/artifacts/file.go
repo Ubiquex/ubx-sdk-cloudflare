@@ -4,25 +4,25 @@ package artifacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FileConfig struct {
-	Name any
+	Name      any
 	Namespace any
-	Path any
-	Ref any
+	Path      any
+	Ref       any
 }
 
 type FileAttrs struct {
-	Name any
+	Name      any
 	Namespace any
-	Path any
-	Ref any
+	Path      any
+	Ref       any
 }
 
 var File = ubx.DataSourceBinding{
 	WireType: "cloudflare_file",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Path":      ubx.FieldSpec{WireName: "path"},
+		"Ref":       ubx.FieldSpec{WireName: "ref"},
 	},
 }

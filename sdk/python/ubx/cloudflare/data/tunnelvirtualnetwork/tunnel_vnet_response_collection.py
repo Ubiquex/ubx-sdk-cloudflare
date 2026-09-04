@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelVnetResponseCollection_Result:
+    comment: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    id: Any = None
+    is_default_network: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class TunnelVnetResponseCollectionConfig:
     # UUID of the virtual network.
     id: Any = None
@@ -33,6 +42,7 @@ class TunnelVnetResponseCollectionAttrs:
     is_deleted: Any = None
     # A user-friendly name for the virtual network.
     name: Any = None
+    result: Any = None
 
 TunnelVnetResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_tunnel_vnet_response_collection",

@@ -4,14 +4,14 @@ package livestreams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LivestreamSession_Data_Paging struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	TotalCount any
+	TotalCount  any
 }
 
 type LivestreamSession_Data struct {
 	// Timestamp the object was created at. The time is returned in ISO format.
-	CreatedAt any
+	CreatedAt  any
 	ErrMessage any
 	// The livestream session ID.
 	Id any
@@ -21,7 +21,7 @@ type LivestreamSession_Data struct {
 	InvokedTime any
 	// The ID of the livestream.
 	LivestreamId any
-	Paging any
+	Paging       any
 	// Specifies if the livestream was disabled.
 	StoppedTime any
 	// Timestamp the object was updated at. The time is returned in ISO format.
@@ -34,9 +34,9 @@ type LivestreamSessionConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	PageNo any
-	PerPage any
+	AppId     any
+	PageNo    any
+	PerPage   any
 	SessionId any
 }
 
@@ -44,21 +44,21 @@ type LivestreamSessionAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
-	PageNo any
-	PerPage any
+	AppId     any
+	Data      any
+	PageNo    any
+	PerPage   any
 	SessionId any
-	Success any
+	Success   any
 }
 
 var LivestreamSession = ubx.DataSourceBinding{
 	WireType: "cloudflare_livestream_session",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"PageNo":    ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
 	},
 }

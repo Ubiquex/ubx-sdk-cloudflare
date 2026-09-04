@@ -4,6 +4,48 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface UserGroup_AccountId {
 }
 
+export interface UserGroup_Result_Policies_PermissionGroups_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface UserGroup_Result_Policies_PermissionGroups {
+  id?: string | Computed<string>;
+  meta?: UserGroup_Result_Policies_PermissionGroups_Meta | Computed<UserGroup_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups_Scope_Objects {
+  key?: unknown | Computed<unknown>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups_Scope {
+  key?: unknown | Computed<unknown>;
+  objects?: UserGroup_Result_Policies_ResourceGroups_Scope_Objects[] | Computed<UserGroup_Result_Policies_ResourceGroups_Scope_Objects[]>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups {
+  id?: string | Computed<string>;
+  meta?: UserGroup_Result_Policies_PermissionGroups_Meta | Computed<UserGroup_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+  scope?: UserGroup_Result_Policies_ResourceGroups_Scope | Computed<UserGroup_Result_Policies_ResourceGroups_Scope>;
+}
+
+export interface UserGroup_Result_Policies {
+  access?: string | Computed<string>;
+  id?: string | Computed<string>;
+  permissionGroups?: UserGroup_Result_Policies_PermissionGroups[] | Computed<UserGroup_Result_Policies_PermissionGroups[]>;
+  resourceGroups?: UserGroup_Result_Policies_ResourceGroups[] | Computed<UserGroup_Result_Policies_ResourceGroups[]>;
+}
+
+export interface UserGroup_Result {
+  createdOn?: string | Computed<string>;
+  id?: UserGroup_AccountId | Computed<UserGroup_AccountId>;
+  modifiedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+  policies?: UserGroup_Result_Policies[] | Computed<UserGroup_Result_Policies[]>;
+}
+
 const UserGroup_AccountIdFields: FieldMap = {
 };
 
@@ -39,6 +81,8 @@ export interface UserGroupAttrs {
   page: number;
   /** Maximum number of results per page. */
   perPage: number;
+  /** A list of user groups for the account. */
+  result: UserGroup_Result[];
 }
 
 export const UserGroup: DataSourceBinding<UserGroupConfig, UserGroupAttrs> = {

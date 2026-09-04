@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Credential_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Credential_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Credential_Result:
+    # Parent credential set identifier.
+    credential_set_id: Any = None
+    # Credential identifier.
+    id: Any = None
+    # Where the credential is attached in outgoing requests.
+    location: Any = None
+    # Name of the header or cookie where the credential is attached.
+    location_name: Any = None
+    # Human-readable name.
+    name: Any = None
+
+@dataclasses.dataclass
 class CredentialConfig:
     # Where the credential is attached in outgoing requests.
     location: Any = None
@@ -25,12 +49,19 @@ class CredentialConfig:
 
 @dataclasses.dataclass
 class CredentialAttrs:
+    errors: Any = None
     # Where the credential is attached in outgoing requests.
     location: Any = None
     # Name of the header or cookie where the credential is attached.
     location_name: Any = None
+    messages: Any = None
     # Human-readable name.
     name: Any = None
+    # A credential attached to API requests during scanning. The credential `value` is write-only and never returned in responses.
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # The credential value (e.g. API key, session token). Write-only. Never returned in responses.
     value: Any = None
     # path parameter, not part of the API's own resource representation

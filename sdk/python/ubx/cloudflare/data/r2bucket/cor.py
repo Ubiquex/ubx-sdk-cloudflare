@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Cor_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Cor_Result_Rules_Allowed:
+    headers: Any = None
+    methods: Any = None
+    origins: Any = None
+
+@dataclasses.dataclass
+class Cor_Result_Rules:
+    allowed: Any = None
+    expose_headers: Any = None
+    id: Any = None
+    max_age_seconds: Any = None
+
+@dataclasses.dataclass
+class Cor_Result:
+    rules: Any = None
+
+@dataclasses.dataclass
 class CorConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +41,11 @@ class CorAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Cor = ubx.DataSourceBinding(
     wire_type="cloudflare_cor",

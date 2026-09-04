@@ -4,61 +4,61 @@ package workflows
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Workflow_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Workflow_Result_Schedules struct {
-	Cron any
+	Cron         any
 	NextInstance any
 }
 
 type Workflow_Result struct {
-	ClassName any
-	CreatedOn any
-	Id any
-	Instances any
-	ModifiedOn any
-	Name any
-	Schedules any
-	ScriptName any
+	ClassName   any
+	CreatedOn   any
+	Id          any
+	Instances   any
+	ModifiedOn  any
+	Name        any
+	Schedules   any
+	ScriptName  any
 	TriggeredOn any
 }
 
 type Workflow_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type WorkflowConfig struct {
 	AccountId any
-	Page any
-	PerPage any
-	Search any
+	Page      any
+	PerPage   any
+	Search    any
 }
 
 type WorkflowAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
 	ResultInfo any
-	Search any
-	Success any
+	Search     any
+	Success    any
 }
 
 var Workflow = ubx.DataSourceBinding{
 	WireType: "cloudflare_workflow",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

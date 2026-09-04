@@ -3,20 +3,59 @@ package findingtypes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiFindingTypeResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiFindingTypeResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiFindingTypeResponse_Result_Category struct {
+	// The type of the observation.
+	Observation any
+	// The product category.
+	Product any
+	// The type of the finding category.
+	Type any
+}
+
+type PostureApiFindingTypeResponse_Result struct {
+	// Category information for a finding.
+	Category any
+	// The unique identifier of the finding.
+	Id any
+	// The name of the finding.
+	Name any
+	// The severity level of a finding.
+	Severity any
+	// The SaaS/Cloud vendor of the platform with which the finding is associated.
+	Vendor any
+}
+
 type PostureApiFindingTypeResponseConfig struct {
-	AccountId any
+	AccountId     any
 	FindingTypeId any
 }
 
 type PostureApiFindingTypeResponseAttrs struct {
-	AccountId any
+	AccountId     any
+	Errors        any
 	FindingTypeId any
+	Messages      any
+	// Basic finding type information.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PostureApiFindingTypeResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_finding_type_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"FindingTypeId": ubx.FieldSpec{WireName: "finding_type_id"},
 	},
 }

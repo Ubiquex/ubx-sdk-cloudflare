@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Snippet_Messages:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Snippet_Result:
+    created_on: Any = None
+    modified_on: Any = None
+    snippet_name: Any = None
+
+@dataclasses.dataclass
+class Snippet_ResultInfo:
+    # Specify the number of results in the current page.
+    count: Any = None
+    # Specifies the current page number.
+    page: Any = None
+    # Specifies how many results to return per page.
+    per_page: Any = None
+    # Specify the total number of results.
+    total_count: Any = None
+    # Specify the total number of pages.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class SnippetConfig:
     # Specifies the current page number.
     page: Any = None
@@ -17,10 +41,18 @@ class SnippetConfig:
 
 @dataclasses.dataclass
 class SnippetAttrs:
+    errors: Any = None
+    # Contain warning messages.
+    messages: Any = None
     # Specifies the current page number.
     page: Any = None
     # Specifies how many results to return per page.
     per_page: Any = None
+    # Contain snippets.
+    result: Any = None
+    # Additional information to navigate the results.
+    result_info: Any = None
+    success: Any = None
     # Use this field to specify the unique ID of the zone.
     zone_id: Any = None
 

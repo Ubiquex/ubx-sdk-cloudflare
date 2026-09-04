@@ -4,35 +4,35 @@ package aigatewayaccountproviders
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomProvider_Result struct {
-	BaseUrl any
-	Beta any
-	CreatedAt any
+	BaseUrl     any
+	Beta        any
+	CreatedAt   any
 	CurlExample any
 	Description any
-	Enable any
-	Headers any
-	Id any
-	JsExample any
-	Link any
-	Logo any
-	ModifiedAt any
-	Name any
-	Position any
-	Slug any
+	Enable      any
+	Headers     any
+	Id          any
+	JsExample   any
+	Link        any
+	Logo        any
+	ModifiedAt  any
+	Name        any
+	Position    any
+	Slug        any
 }
 
 type CustomProviderConfig struct {
-	BaseUrl any
-	Beta any
+	BaseUrl     any
+	Beta        any
 	CurlExample any
 	Description any
-	Enable any
-	Headers any
-	JsExample any
-	Link any
-	Name any
-	Position any
-	Slug any
+	Enable      any
+	Headers     any
+	JsExample   any
+	Link        any
+	Name        any
+	Position    any
+	Slug        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -40,19 +40,19 @@ type CustomProviderConfig struct {
 }
 
 type CustomProviderAttrs struct {
-	BaseUrl any
-	Beta any
+	BaseUrl     any
+	Beta        any
 	CurlExample any
 	Description any
-	Enable any
-	Headers any
-	JsExample any
-	Link any
-	Name any
-	Position any
-	Result any
-	Slug any
-	Success any
+	Enable      any
+	Headers     any
+	JsExample   any
+	Link        any
+	Name        any
+	Position    any
+	Result      any
+	Slug        any
+	Success     any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -62,18 +62,18 @@ type CustomProviderAttrs struct {
 var CustomProvider = ubx.ResourceBinding{
 	WireType: "cloudflare_custom_provider",
 	Fields: ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"Beta": ubx.FieldSpec{WireName: "beta"},
+		"BaseUrl":     ubx.FieldSpec{WireName: "base_url"},
+		"Beta":        ubx.FieldSpec{WireName: "beta"},
 		"CurlExample": ubx.FieldSpec{WireName: "curl_example"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"JsExample": ubx.FieldSpec{WireName: "js_example"},
-		"Link": ubx.FieldSpec{WireName: "link"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Slug": ubx.FieldSpec{WireName: "slug"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Enable":      ubx.FieldSpec{WireName: "enable"},
+		"Headers":     ubx.FieldSpec{WireName: "headers"},
+		"JsExample":   ubx.FieldSpec{WireName: "js_example"},
+		"Link":        ubx.FieldSpec{WireName: "link"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Position":    ubx.FieldSpec{WireName: "position"},
+		"Slug":        ubx.FieldSpec{WireName: "slug"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

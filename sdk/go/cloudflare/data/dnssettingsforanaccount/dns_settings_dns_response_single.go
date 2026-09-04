@@ -3,6 +3,20 @@ package dnssettingsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsSettingsDnsResponseSingle_Result_ZoneDefaults_Nameservers struct {
+	Type any
+}
+
+type DnsSettingsDnsResponseSingle_Result_ZoneDefaults struct {
+	Nameservers any
+}
+
+type DnsSettingsDnsResponseSingle_Result struct {
+	// When enabled, forces all proxied DNS records in the account to behave as DNS-only at the edge, regardless of each record's individual proxy setting. Note that this account-level override does not modify the records themselves; it only affects how they are served at the edge. See more on [Enforce DNS-only](https://developers.cloudflare.com/dns/proxy-status/enforce-dns-only).
+	EnforceDnsOnly any
+	ZoneDefaults   any
+}
+
 type DnsSettingsDnsResponseSingleConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +25,7 @@ type DnsSettingsDnsResponseSingleConfig struct {
 type DnsSettingsDnsResponseSingleAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var DnsSettingsDnsResponseSingle = ubx.DataSourceBinding{

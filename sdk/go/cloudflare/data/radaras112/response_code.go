@@ -4,14 +4,14 @@ package radaras112
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseCode_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type ResponseCode_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type ResponseCode_Result_Meta_ConfidenceInfo struct {
 }
 
 type ResponseCode_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type ResponseCode_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ResponseCode_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -43,7 +43,7 @@ type ResponseCode_Result_Meta struct {
 
 type ResponseCode_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -91,22 +91,22 @@ type ResponseCodeAttrs struct {
 	Protocol any
 	// Filters results by DNS query type.
 	QueryType any
-	Result any
-	Success any
+	Result    any
+	Success   any
 }
 
 var ResponseCode = ubx.DataSourceBinding{
 	WireType: "cloudflare_response_code",
 	Fields: ubx.FieldMap{
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Continent":     ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":       ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":     ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":     ubx.FieldSpec{WireName: "date_start"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
 		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"QueryType": ubx.FieldSpec{WireName: "query_type"},
+		"Location":      ubx.FieldSpec{WireName: "location"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Protocol":      ubx.FieldSpec{WireName: "protocol"},
+		"QueryType":     ubx.FieldSpec{WireName: "query_type"},
 	},
 }

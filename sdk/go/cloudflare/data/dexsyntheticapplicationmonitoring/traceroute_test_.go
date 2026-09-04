@@ -3,36 +3,90 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TracerouteTest_Result_TargetPolicies struct {
+	Default any
+	Id      any
+	Name    any
+}
+
+type TracerouteTest_Result_TracerouteStats_AvailabilityPct_Slots struct {
+	Timestamp any
+	Value     any
+}
+
+type TracerouteTest_Result_TracerouteStats_AvailabilityPct struct {
+	// average observed in the time period.
+	Avg any
+	// highest observed in the time period.
+	Max any
+	// lowest observed in the time period.
+	Min   any
+	Slots any
+}
+
+type TracerouteTest_Result_TracerouteStats struct {
+	AvailabilityPct any
+	HopsCount       any
+	PacketLossPct   any
+	RoundTripTimeMs any
+	// Count of unique devices that have run this test in the given time period.
+	UniqueDevicesTotal any
+}
+
+type TracerouteTest_Result_TracerouteStatsByColo struct {
+	AvailabilityPct    any
+	Colo               any
+	HopsCount          any
+	PacketLossPct      any
+	RoundTripTimeMs    any
+	UniqueDevicesTotal any
+}
+
+type TracerouteTest_Result struct {
+	// The host of the Traceroute synthetic application test.
+	Host any
+	// The interval at which the Traceroute synthetic application test is set to run.
+	Interval any
+	Kind     any
+	// The name of the Traceroute synthetic application test.
+	Name                  any
+	TargetPolicies        any
+	Targeted              any
+	TracerouteStats       any
+	TracerouteStatsByColo any
+}
+
 type TracerouteTestConfig struct {
-	Colo any
+	Colo     any
 	DeviceId any
-	From any
+	From     any
 	Interval any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 type TracerouteTestAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	Colo any
-	DeviceId any
-	From any
-	Interval any
+	Colo      any
+	DeviceId  any
+	From      any
+	Interval  any
+	Result    any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 var TracerouteTest = ubx.DataSourceBinding{
 	WireType: "cloudflare_traceroute_test",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":     ubx.FieldSpec{WireName: "from"},
 		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"TestId": ubx.FieldSpec{WireName: "test_id"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"TestId":   ubx.FieldSpec{WireName: "test_id"},
+		"To":       ubx.FieldSpec{WireName: "to"},
 	},
 }

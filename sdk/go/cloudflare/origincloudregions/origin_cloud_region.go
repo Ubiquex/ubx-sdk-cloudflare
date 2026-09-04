@@ -3,6 +3,32 @@ package origincloudregions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type OriginCloudRegion_Errors struct {
+	Code    any
+	Message any
+}
+
+type OriginCloudRegion_Result_Value struct {
+	// Time this mapping was last modified.
+	ModifiedOn any
+	// The origin IP address (IPv4 or IPv6, canonicalized).
+	OriginIp any
+	// Cloud vendor region identifier.
+	Region any
+	// Cloud vendor hosting the origin.
+	Vendor any
+}
+
+type OriginCloudRegion_Result struct {
+	// Whether the setting can be modified by the current user.
+	Editable any
+	Id       any
+	// Time the mapping was last modified.
+	ModifiedOn any
+	// A single origin IP-to-cloud-region mapping.
+	Value any
+}
+
 type OriginCloudRegionConfig struct {
 	// Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
 	Ip any
@@ -17,10 +43,16 @@ type OriginCloudRegionConfig struct {
 }
 
 type OriginCloudRegionAttrs struct {
+	Errors any
 	// Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
-	Ip any
+	Ip       any
+	Messages any
 	// Cloud vendor region identifier. Must be a valid region for the specified vendor as returned by the supported_regions endpoint.
 	Region any
+	// Response result for a single origin cloud region mapping.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Cloud vendor hosting the origin. Must be one of the supported vendors.
 	Vendor any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +64,10 @@ type OriginCloudRegionAttrs struct {
 var OriginCloudRegion = ubx.ResourceBinding{
 	WireType: "cloudflare_origin_cloud_region",
 	Fields: ubx.FieldMap{
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Ip":       ubx.FieldSpec{WireName: "ip"},
+		"Region":   ubx.FieldSpec{WireName: "region"},
+		"Vendor":   ubx.FieldSpec{WireName: "vendor"},
+		"ZoneId":   ubx.FieldSpec{WireName: "zone_id"},
 		"OriginIp": ubx.FieldSpec{WireName: "origin_ip"},
 	},
 }

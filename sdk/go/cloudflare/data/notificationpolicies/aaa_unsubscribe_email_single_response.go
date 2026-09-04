@@ -3,27 +3,40 @@ package notificationpolicies
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaUnsubscribeEmailSingleResponse_Result struct {
+	// The account id
+	AccountId any
+	Email     any
+	// The unique identifier of a notification policy
+	Id any
+	// Name of the policy.
+	Name  any
+	Token any
+}
+
 type AaaUnsubscribeEmailSingleResponseConfig struct {
 	Email any
 	// The unique identifier of a notification policy
 	PolicyId any
-	Token any
+	Token    any
 }
 
 type AaaUnsubscribeEmailSingleResponseAttrs struct {
 	// The account id
 	AccountId any
-	Email any
+	Email     any
 	// The unique identifier of a notification policy
 	PolicyId any
-	Token any
+	// Response body for the GET show-unsubscribe-details endpoint. All fields are populated.
+	Result any
+	Token  any
 }
 
 var AaaUnsubscribeEmailSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_unsubscribe_email_single_response",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
+		"Email":    ubx.FieldSpec{WireName: "email"},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"Token":    ubx.FieldSpec{WireName: "token"},
 	},
 }

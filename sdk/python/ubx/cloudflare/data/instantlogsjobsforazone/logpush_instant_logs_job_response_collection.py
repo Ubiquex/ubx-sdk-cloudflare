@@ -7,12 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushInstantLogsJobResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class LogpushInstantLogsJobResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class LogpushInstantLogsJobResponseCollection_Result:
+    destination_conf: Any = None
+    fields: Any = None
+    filter: Any = None
+    sample: Any = None
+    session_id: Any = None
+
+@dataclasses.dataclass
 class LogpushInstantLogsJobResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class LogpushInstantLogsJobResponseCollectionAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

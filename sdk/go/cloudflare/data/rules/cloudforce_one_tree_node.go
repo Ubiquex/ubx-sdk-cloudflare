@@ -8,9 +8,9 @@ type CloudforceOneTreeNode_Tree_Children struct {
 
 type CloudforceOneTreeNode_Tree struct {
 	Children any
-	Count any
-	Name any
-	Path any
+	Count    any
+	Name     any
+	Path     any
 }
 
 type CloudforceOneTreeNodeConfig struct {
@@ -19,7 +19,7 @@ type CloudforceOneTreeNodeConfig struct {
 
 type CloudforceOneTreeNodeAttrs struct {
 	AccountId any
-	Tree any
+	Tree      any
 }
 
 var CloudforceOneTreeNode = ubx.DataSourceBinding{

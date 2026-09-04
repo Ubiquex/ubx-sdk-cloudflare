@@ -10,7 +10,8 @@ type IntelAsnComponentsSchemasResponseConfig struct {
 type IntelAsnComponentsSchemasResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Asn any
+	Asn       any
+	Result    any
 }
 
 var IntelAsnComponentsSchemasResponse = ubx.DataSourceBinding{

@@ -7,12 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection9_Result:
+    created_at: Any = None
+    id: Any = None
+    ips: Any = None
+    kind: Any = None
+    name: Any = None
+    subdomain: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection9Config:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection9Attrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayResponseCollection9 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_response_collection_9",

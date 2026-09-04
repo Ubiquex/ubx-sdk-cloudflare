@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImagesListResponseV2_Result_Images:
+    creator: Any = None
+    filename: Any = None
+    id: Any = None
+    meta: Any = None
+    require_signed_urls: Any = None
+    uploaded: Any = None
+    variants: Any = None
+
+@dataclasses.dataclass
+class ImagesImagesListResponseV2_Result:
+    images: Any = None
+
+@dataclasses.dataclass
 class ImagesImagesListResponseV2Config:
     # Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
     creator: Any = None
@@ -25,6 +39,7 @@ class ImagesImagesListResponseV2Attrs:
     creator: Any = None
     # Number of items per page
     per_page: Any = None
+    result: Any = None
     # Sorting order by upload time
     sort_order: Any = None
 

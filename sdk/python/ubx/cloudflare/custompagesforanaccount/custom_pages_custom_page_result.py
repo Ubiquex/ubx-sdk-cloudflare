@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomPagesCustomPageResult_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    modified_on: Any = None
+    preview_target: Any = None
+    required_tokens: Any = None
+    # The custom page state.
+    state: Any = None
+    # The URL associated with the custom page.
+    url: Any = None
+
+@dataclasses.dataclass
 class CustomPagesCustomPageResultConfig:
     # The custom page state.
     state: Any = None
@@ -19,6 +32,7 @@ class CustomPagesCustomPageResultConfig:
 
 @dataclasses.dataclass
 class CustomPagesCustomPageResultAttrs:
+    result: Any = None
     # The custom page state.
     state: Any = None
     # The URL associated with the custom page.

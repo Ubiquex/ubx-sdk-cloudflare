@@ -3,6 +3,26 @@ package accessapplicationscopedpolicies
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection8_Result_ConnectionRules_Ssh struct {
+	AllowEmailAlias any
+	Usernames       any
+}
+
+type AccessResponseCollection8_Result_ConnectionRules struct {
+	Ssh any
+}
+
+type AccessResponseCollection8_Result_MfaConfig struct {
+	AllowedAuthenticators any
+	MfaDisabled           any
+	SessionDuration       any
+}
+
+type AccessResponseCollection8_Result struct {
+	ConnectionRules any
+	MfaConfig       any
+}
+
 type AccessResponseCollection8Config struct {
 	// Identifier.
 	AccountId any
@@ -23,14 +43,15 @@ type AccessResponseCollection8Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 }
 
 var AccessResponseCollection8 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_8",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

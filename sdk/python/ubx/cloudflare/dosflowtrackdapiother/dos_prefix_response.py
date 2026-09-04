@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosPrefixResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosPrefixResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosPrefixResponse_Result:
+    # A comment describing the prefix.
+    comment: Any = None
+    # The creation timestamp of the prefix.
+    created_on: Any = None
+    # Whether to exclude the prefix from protection.
+    excluded: Any = None
+    # The unique ID of the prefix.
+    id: Any = None
+    # The last modification timestamp of the prefix.
+    modified_on: Any = None
+    # The prefix in CIDR format.
+    prefix: Any = None
+
+@dataclasses.dataclass
 class DosPrefixResponseConfig:
     # A comment describing the prefix.
     comment: Any = None
@@ -23,10 +49,15 @@ class DosPrefixResponseConfig:
 class DosPrefixResponseAttrs:
     # A comment describing the prefix.
     comment: Any = None
+    errors: Any = None
     # Whether to exclude the prefix from protection.
     excluded: Any = None
+    messages: Any = None
     # The prefix to add in CIDR format.
     prefix: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

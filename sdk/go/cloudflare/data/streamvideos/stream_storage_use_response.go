@@ -3,6 +3,17 @@ package streamvideos
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamStorageUseResponse_Result struct {
+	// A user-defined identifier for the media creator.
+	Creator any
+	// The total minutes of video content stored in the account. May contain decimal values.
+	TotalStorageMinutes any
+	// The storage capacity alloted for the account.
+	TotalStorageMinutesLimit any
+	// The total count of videos associated with the account.
+	VideoCount any
+}
+
 type StreamStorageUseResponseConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -15,12 +26,13 @@ type StreamStorageUseResponseAttrs struct {
 	AccountId any
 	// A user-defined identifier for the media creator.
 	Creator any
+	Result  any
 }
 
 var StreamStorageUseResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_storage_use_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
+		"Creator":   ubx.FieldSpec{WireName: "creator"},
 	},
 }

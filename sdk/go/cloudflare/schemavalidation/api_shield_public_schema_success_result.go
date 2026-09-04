@@ -3,6 +3,33 @@ package schemavalidation
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ApiShieldPublicSchemaSuccessResult_Errors_Source struct {
+	Pointer any
+}
+
+type ApiShieldPublicSchemaSuccessResult_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type ApiShieldPublicSchemaSuccessResult_Result_CreatedAt struct {
+}
+
+type ApiShieldPublicSchemaSuccessResult_Result struct {
+	CreatedAt any
+	// The kind of the schema
+	Kind any
+	// A human-readable name for the schema
+	Name     any
+	SchemaId any
+	// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
+	Source any
+	// An indicator if this schema is enabled
+	ValidationEnabled any
+}
+
 type ApiShieldPublicSchemaSuccessResultConfig struct {
 	// The kind of the schema
 	Kind any
@@ -19,12 +46,18 @@ type ApiShieldPublicSchemaSuccessResultConfig struct {
 }
 
 type ApiShieldPublicSchemaSuccessResultAttrs struct {
+	Errors any
 	// The kind of the schema
-	Kind any
+	Kind     any
+	Messages any
 	// A human-readable name for the schema
 	Name any
+	// A schema used in schema validation
+	Result any
 	// The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
 	Source any
+	// Whether the API call was successful.
+	Success any
 	// An indicator if this schema is enabled
 	ValidationEnabled any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +69,11 @@ type ApiShieldPublicSchemaSuccessResultAttrs struct {
 var ApiShieldPublicSchemaSuccessResult = ubx.ResourceBinding{
 	WireType: "cloudflare_api_shield_public_schema_success_result",
 	Fields: ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Kind":              ubx.FieldSpec{WireName: "kind"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Source":            ubx.FieldSpec{WireName: "source"},
 		"ValidationEnabled": ubx.FieldSpec{WireName: "validation_enabled"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
+		"ZoneId":            ubx.FieldSpec{WireName: "zone_id"},
+		"SchemaId":          ubx.FieldSpec{WireName: "schema_id"},
 	},
 }

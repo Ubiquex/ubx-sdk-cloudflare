@@ -4,14 +4,25 @@ package devicemanagednetworks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamsDevicesComponentsSchemasSingleResponse_Config struct {
-	Sha256 any
+	Sha256      any
 	TlsSockaddr any
 }
 
+type TeamsDevicesComponentsSchemasSingleResponse_Result struct {
+	// The configuration object containing information for the WARP client to detect the managed network.
+	Config any
+	// The name of the device managed network. This name must be unique.
+	Name any
+	// API UUID.
+	NetworkId any
+	// The type of device managed network.
+	Type any
+}
+
 var TeamsDevicesComponentsSchemasSingleResponse_ConfigFields = ubx.FieldMap{
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-		"TlsSockaddr": ubx.FieldSpec{WireName: "tls_sockaddr"},
-	}
+	"Sha256":      ubx.FieldSpec{WireName: "sha256"},
+	"TlsSockaddr": ubx.FieldSpec{WireName: "tls_sockaddr"},
+}
 
 type TeamsDevicesComponentsSchemasSingleResponseConfig struct {
 	// The configuration object containing information for the WARP client to detect the managed network.
@@ -30,7 +41,8 @@ type TeamsDevicesComponentsSchemasSingleResponseAttrs struct {
 	// The configuration object containing information for the WARP client to detect the managed network.
 	Config any
 	// The name of the device managed network. This name must be unique.
-	Name any
+	Name   any
+	Result any
 	// The type of device managed network.
 	Type any
 	// path parameter, not part of the API's own resource representation
@@ -44,11 +56,11 @@ var TeamsDevicesComponentsSchemasSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: TeamsDevicesComponentsSchemasSingleResponse_ConfigFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesComponentsSchemasSingleResponse_ConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
 	},

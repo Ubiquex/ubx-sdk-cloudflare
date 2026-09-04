@@ -13,6 +13,19 @@ class FirewallFirewalluablockResponseSingle_Configuration:
     # the user agent to exactly match
     value: Any = None
 
+@dataclasses.dataclass
+class FirewallFirewalluablockResponseSingle_Result:
+    # The configuration object for the current rule.
+    configuration: Any = None
+    # An informative summary of the rule.
+    description: Any = None
+    # The unique identifier of the User Agent Blocking rule.
+    id: Any = None
+    # The action to apply to a matched request.
+    mode: Any = None
+    # When true, indicates that the rule is currently paused.
+    paused: Any = None
+
 _FirewallFirewalluablockResponseSingle_ConfigurationFields = {
     "target": ubx.FieldSpec(wire_name="target"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -41,6 +54,7 @@ class FirewallFirewalluablockResponseSingleAttrs:
     mode: Any = None
     # When true, indicates that the rule is currently paused.
     paused: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

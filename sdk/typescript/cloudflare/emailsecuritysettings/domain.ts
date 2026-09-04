@@ -4,6 +4,45 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface Domain_Folder {
 }
 
+export interface Domain_Result_Authorization {
+  authorized: boolean | Computed<boolean>;
+  statusMessage?: string | Computed<string>;
+  timestamp?: string | Computed<string>;
+}
+
+export interface Domain_Result_EmailsProcessed {
+  timestamp?: string | Computed<string>;
+  totalEmailsProcessed: number | Computed<number>;
+  totalEmailsProcessedPrevious: number | Computed<number>;
+}
+
+export interface Domain_Result {
+  allowedDeliveryModes?: string[] | Computed<string[]>;
+  authorization?: Domain_Result_Authorization | Computed<Domain_Result_Authorization>;
+  createdAt?: Domain_Folder | Computed<Domain_Folder>;
+  dmarcStatus?: string | Computed<string>;
+  domain?: string | Computed<string>;
+  dropDispositions?: string[] | Computed<string[]>;
+  emailsProcessed?: Domain_Result_EmailsProcessed | Computed<Domain_Result_EmailsProcessed>;
+  folder?: Domain_Folder | Computed<Domain_Folder>;
+  /** Domain identifier. */
+  id?: string | Computed<string>;
+  inboxProvider?: string | Computed<string>;
+  integrationId?: string | Computed<string>;
+  ipRestrictions?: string[] | Computed<string[]>;
+  /** Deprecated, use `modified_at` instead. End of life: November 1, 2026. */
+  lastModified?: Domain_Folder | Computed<Domain_Folder>;
+  lookbackHops?: number | Computed<number>;
+  modifiedAt?: Domain_Folder | Computed<Domain_Folder>;
+  o365TenantId?: string | Computed<string>;
+  regions?: string[] | Computed<string[]>;
+  requireTlsInbound?: boolean | Computed<boolean>;
+  requireTlsOutbound?: boolean | Computed<boolean>;
+  spfStatus?: string | Computed<string>;
+  status?: string | Computed<string>;
+  transport?: string | Computed<string>;
+}
+
 const Domain_FolderFields: FieldMap = {
 };
 
@@ -36,6 +75,7 @@ export interface DomainAttrs {
   regions: string[];
   requireTlsInbound: boolean;
   requireTlsOutbound: boolean;
+  result: Domain_Result;
   transport: string;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;

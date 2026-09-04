@@ -3,6 +3,14 @@ package waitingroom
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StatusResponse_Result struct {
+	EstimatedQueuedUsers      any
+	EstimatedTotalActiveUsers any
+	EventId                   any
+	MaxEstimatedTimeMinutes   any
+	Status                    any
+}
+
 type StatusResponseConfig struct {
 	WaitingRoomId any
 	// Identifier.
@@ -10,6 +18,7 @@ type StatusResponseConfig struct {
 }
 
 type StatusResponseAttrs struct {
+	Result        any
 	WaitingRoomId any
 	// Identifier.
 	ZoneId any
@@ -19,6 +28,6 @@ var StatusResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_waitingroom_status_response",
 	Fields: ubx.FieldMap{
 		"WaitingRoomId": ubx.FieldSpec{WireName: "waiting_room_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":        ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

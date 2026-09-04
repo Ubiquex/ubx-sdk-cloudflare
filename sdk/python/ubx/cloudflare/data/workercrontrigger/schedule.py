@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Schedule_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Schedule_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Schedule_Result_Schedules:
+    created_on: Any = None
+    cron: Any = None
+    modified_on: Any = None
+
+@dataclasses.dataclass
+class Schedule_Result:
+    schedules: Any = None
+
+@dataclasses.dataclass
 class ScheduleConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +38,13 @@ class ScheduleConfig:
 class ScheduleAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Schedule = ubx.DataSourceBinding(
     wire_type="cloudflare_schedule",

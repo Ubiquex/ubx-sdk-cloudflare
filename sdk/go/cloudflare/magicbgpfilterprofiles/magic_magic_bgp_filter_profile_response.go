@@ -3,6 +3,21 @@ package magicbgpfilterprofiles
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicMagicBgpFilterProfileResponse_Result struct {
+	CreatedOn any
+	// Description of the filter profile
+	Description any
+	// Identifier
+	Id any
+	// Action to take when a route matches one of the targets in this profile
+	MatchAction any
+	ModifiedOn  any
+	// Friendly name for the filter profile
+	Name any
+	// List of CIDR prefixes. Each entry may carry an optional suffix that specifies which prefix lengths to match relative to the prefix length N: '{X,Y}' matches prefix lengths in the inclusive range [X, Y] where N <= X <= Y <= max (max is 32 for IPv4, 128 for IPv6), '{X}' matches exactly length X (equivalent to {X,X}), '+' is shorthand for {N, max} (the prefix and all more-specific subnets, including at length N itself; valid even when N is the maximum length). Omit the suffix to match the prefix exactly at length N.
+	Targets any
+}
+
 type MagicMagicBgpFilterProfileResponseConfig struct {
 	// Description of the filter profile
 	Description any
@@ -24,7 +39,8 @@ type MagicMagicBgpFilterProfileResponseAttrs struct {
 	// Action to take when a route matches one of the targets in this profile
 	MatchAction any
 	// Friendly name for the filter profile
-	Name any
+	Name   any
+	Result any
 	// List of CIDR prefixes. Each entry may carry an optional suffix that specifies which prefix lengths to match relative to the prefix length N: '{X,Y}' matches prefix lengths in the inclusive range [X, Y] where N <= X <= Y <= max (max is 32 for IPv4, 128 for IPv6), '{X}' matches exactly length X (equivalent to {X,X}), '+' is shorthand for {N, max} (the prefix and all more-specific subnets, including at length N itself; valid even when N is the maximum length). Omit the suffix to match the prefix exactly at length N.
 	Targets any
 	// path parameter, not part of the API's own resource representation
@@ -38,9 +54,9 @@ var MagicMagicBgpFilterProfileResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"MatchAction": ubx.FieldSpec{WireName: "match_action"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Targets": ubx.FieldSpec{WireName: "targets"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Targets":     ubx.FieldSpec{WireName: "targets"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"ProfileId":   ubx.FieldSpec{WireName: "profile_id"},
 	},
 }

@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingHealthDetails_Result_PopHealth_Origins_Ip:
+    failure_reason: Any = None
+    healthy: Any = None
+    response_code: Any = None
+    rtt: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingHealthDetails_Result_PopHealth_Origins:
+    ip: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingHealthDetails_Result_PopHealth:
+    # Whether health check in region is healthy.
+    healthy: Any = None
+    origins: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingHealthDetails_Result:
+    # Pool ID.
+    pool_id: Any = None
+    # List of regions and associated health status.
+    pop_health: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingHealthDetailsConfig:
     pool_id: Any = None
 
@@ -15,6 +39,8 @@ class LoadBalancingHealthDetailsAttrs:
     # Identifier.
     account_id: Any = None
     pool_id: Any = None
+    # A list of regions from which to run health checks. Null means every Cloudflare data center.
+    result: Any = None
 
 LoadBalancingHealthDetails = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_health_details",

@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResponseSingle_Result:
+    # The date and time the webhook was last modified.
+    modified: Any = None
+    # The URL where webhooks will be sent.
+    notification_url: Any = None
+    # The secret used to verify webhook signatures.
+    secret: Any = None
+
+@dataclasses.dataclass
 class ResponseSingleConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -15,6 +24,7 @@ class ResponseSingleConfig:
 class ResponseSingleAttrs:
     # The account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 ResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_webhook_response_single",

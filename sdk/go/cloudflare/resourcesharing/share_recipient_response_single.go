@@ -6,8 +6,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ShareRecipientResponseSingle_AccountId struct {
 }
 
-var ShareRecipientResponseSingle_AccountIdFields = ubx.FieldMap{
-	}
+type ShareRecipientResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type ShareRecipientResponseSingle_Result_Resources struct {
+	Error           any
+	ResourceId      any
+	ResourceVersion any
+	Terminal        any
+}
+
+type ShareRecipientResponseSingle_Result struct {
+	// Account identifier.
+	AccountId any
+	// The current state of the recipient relative to the share. The `desired_association_status` (not exposed in the response) tracks the target state set by the API; the background reconciliation workflow drives `current_association_status` toward it. - `associating` — The recipient was recently added; the workflow is pushing shared resources into the recipient account. - `associated` — Shared resources have been successfully applied to the recipient account. - `disassociating` — The recipient was removed (via DELETE or PUT replacement); the workflow is removing shared resources from the recipient account. - `disassociated` — Shared resources have been removed from the recipient account. The recipient record remains in the database.
+	AssociationStatus any
+	// When the share was created.
+	Created any
+	// Share Recipient identifier tag.
+	Id any
+	// When the share was modified.
+	Modified  any
+	Resources any
+}
+
+var ShareRecipientResponseSingle_AccountIdFields = ubx.FieldMap{}
 
 type ShareRecipientResponseSingleConfig struct {
 	// Deprecated alias for `recipient_account_id`. Use `recipient_account_id` instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see `x-sunset`).
@@ -29,10 +54,15 @@ type ShareRecipientResponseSingleConfig struct {
 type ShareRecipientResponseSingleAttrs struct {
 	// Deprecated alias for `recipient_account_id`. Use `recipient_account_id` instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see `x-sunset`).
 	AccountId any
+	Errors    any
 	// Organization identifier.
 	OrganizationId any
 	// The account that will receive the share.
 	RecipientAccountId any
+	// A recipient of a share. The `association_status` field tracks the lifecycle of the shared resources in the recipient account. All recipients are returned by the list endpoint regardless of status; filter client-side if only active recipients are needed.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute)
 	AccountIdPath any
 	// path parameter, not part of the API's own resource representation
@@ -48,18 +78,18 @@ var ShareRecipientResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: ShareRecipientResponseSingle_AccountIdFields,
+			Kind:     "object",
+			Fields:   ShareRecipientResponseSingle_AccountIdFields,
 		},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 		"RecipientAccountId": ubx.FieldSpec{
 			WireName: "recipient_account_id",
-			Kind: "object",
-			Fields: ShareRecipientResponseSingle_AccountIdFields,
+			Kind:     "object",
+			Fields:   ShareRecipientResponseSingle_AccountIdFields,
 		},
-		"AccountIdPath": ubx.FieldSpec{WireName: "account_id_path"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
-		"RecipientId": ubx.FieldSpec{WireName: "recipient_id"},
+		"AccountIdPath":  ubx.FieldSpec{WireName: "account_id_path"},
+		"ShareId":        ubx.FieldSpec{WireName: "share_id"},
+		"RecipientId":    ubx.FieldSpec{WireName: "recipient_id"},
 		"AccountIdPath2": ubx.FieldSpec{WireName: "account_id_path2"},
 	},
 }

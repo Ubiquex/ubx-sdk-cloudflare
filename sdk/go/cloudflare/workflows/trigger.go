@@ -4,32 +4,32 @@ package workflows
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trigger_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Trigger_Result_Triggers_Targets struct {
-	ScriptName any
-	Type any
+	ScriptName   any
+	Type         any
 	WorkflowName any
 }
 
 type Trigger_Result_Triggers struct {
-	Filter any
+	Filter  any
 	Targets any
-	Type any
+	Type    any
 }
 
 type Trigger_Result struct {
 	ScriptName any
-	Triggers any
+	Triggers   any
 }
 
 type Trigger_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -42,11 +42,11 @@ type TriggerConfig struct {
 }
 
 type TriggerAttrs struct {
-	Errors any
-	Messages any
-	Result any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -56,7 +56,7 @@ type TriggerAttrs struct {
 var Trigger = ubx.ResourceBinding{
 	WireType: "cloudflare_trigger",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

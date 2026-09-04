@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicVisibilityPcapsPcapsCollectionResponse_Result_FilterV1:
+    destination_address: Any = None
+    destination_port: Any = None
+    protocol: Any = None
+    source_address: Any = None
+    source_port: Any = None
+
+@dataclasses.dataclass
+class MagicVisibilityPcapsPcapsCollectionResponse_Result:
+    byte_limit: Any = None
+    colo_name: Any = None
+    destination_conf: Any = None
+    error_message: Any = None
+    filter_v1: Any = None
+    id: Any = None
+    offset_time: Any = None
+    packets_captured: Any = None
+    status: Any = None
+    stop_requested: Any = None
+    submitted: Any = None
+    system: Any = None
+    time_limit: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class MagicVisibilityPcapsPcapsCollectionResponseConfig:
     pass
 
@@ -14,6 +39,7 @@ class MagicVisibilityPcapsPcapsCollectionResponseConfig:
 class MagicVisibilityPcapsPcapsCollectionResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 MagicVisibilityPcapsPcapsCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_visibility_pcaps_pcaps_collection_response",

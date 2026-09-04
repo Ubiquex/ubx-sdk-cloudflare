@@ -3,12 +3,17 @@ package dcvdelegation
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesDcvDelegationResponse_Result struct {
+	Uuid any
+}
+
 type TlsCertificatesAndHostnamesDcvDelegationResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesDcvDelegationResponseAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

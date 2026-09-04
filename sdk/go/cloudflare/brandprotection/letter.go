@@ -4,43 +4,43 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Letter_Fields struct {
-	DiscoveryDate any
-	Domain any
-	GenerationDate any
-	Jurisdiction any
-	RegistrantEmail any
-	Registrar any
-	RegistrarEmail any
+	DiscoveryDate    any
+	Domain           any
+	GenerationDate   any
+	Jurisdiction     any
+	RegistrantEmail  any
+	Registrar        any
+	RegistrarEmail   any
 	ResolutionByDate any
-	SenderCompany any
-	SenderEmail any
-	SenderName any
-	SenderTitle any
-	TrademarkName any
-	TrademarkNumber any
-	TrademarkOwner any
+	SenderCompany    any
+	SenderEmail      any
+	SenderName       any
+	SenderTitle      any
+	TrademarkName    any
+	TrademarkNumber  any
+	TrademarkOwner   any
 }
 
 var Letter_FieldsFields = ubx.FieldMap{
-		"DiscoveryDate": ubx.FieldSpec{WireName: "discovery_date"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"GenerationDate": ubx.FieldSpec{WireName: "generation_date"},
-		"Jurisdiction": ubx.FieldSpec{WireName: "jurisdiction"},
-		"RegistrantEmail": ubx.FieldSpec{WireName: "registrant_email"},
-		"Registrar": ubx.FieldSpec{WireName: "registrar"},
-		"RegistrarEmail": ubx.FieldSpec{WireName: "registrar_email"},
-		"ResolutionByDate": ubx.FieldSpec{WireName: "resolution_by_date"},
-		"SenderCompany": ubx.FieldSpec{WireName: "sender_company"},
-		"SenderEmail": ubx.FieldSpec{WireName: "sender_email"},
-		"SenderName": ubx.FieldSpec{WireName: "sender_name"},
-		"SenderTitle": ubx.FieldSpec{WireName: "sender_title"},
-		"TrademarkName": ubx.FieldSpec{WireName: "trademark_name"},
-		"TrademarkNumber": ubx.FieldSpec{WireName: "trademark_number"},
-		"TrademarkOwner": ubx.FieldSpec{WireName: "trademark_owner"},
-	}
+	"DiscoveryDate":    ubx.FieldSpec{WireName: "discovery_date"},
+	"Domain":           ubx.FieldSpec{WireName: "domain"},
+	"GenerationDate":   ubx.FieldSpec{WireName: "generation_date"},
+	"Jurisdiction":     ubx.FieldSpec{WireName: "jurisdiction"},
+	"RegistrantEmail":  ubx.FieldSpec{WireName: "registrant_email"},
+	"Registrar":        ubx.FieldSpec{WireName: "registrar"},
+	"RegistrarEmail":   ubx.FieldSpec{WireName: "registrar_email"},
+	"ResolutionByDate": ubx.FieldSpec{WireName: "resolution_by_date"},
+	"SenderCompany":    ubx.FieldSpec{WireName: "sender_company"},
+	"SenderEmail":      ubx.FieldSpec{WireName: "sender_email"},
+	"SenderName":       ubx.FieldSpec{WireName: "sender_name"},
+	"SenderTitle":      ubx.FieldSpec{WireName: "sender_title"},
+	"TrademarkName":    ubx.FieldSpec{WireName: "trademark_name"},
+	"TrademarkNumber":  ubx.FieldSpec{WireName: "trademark_number"},
+	"TrademarkOwner":   ubx.FieldSpec{WireName: "trademark_owner"},
+}
 
 type LetterConfig struct {
-	Fields any
+	Fields     any
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -51,13 +51,13 @@ type LetterConfig struct {
 }
 
 type LetterAttrs struct {
-	CreatedAt any
-	Fields any
-	Id any
-	LetterText any
-	LetterType any
+	CreatedAt        any
+	Fields           any
+	Id               any
+	LetterText       any
+	LetterType       any
 	TakedownNoticeId any
-	TemplateId any
+	TemplateId       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -71,12 +71,12 @@ var Letter = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "object",
-			Fields: Letter_FieldsFields,
+			Kind:     "object",
+			Fields:   Letter_FieldsFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"NoticeId": ubx.FieldSpec{WireName: "notice_id"},
-		"LetterId": ubx.FieldSpec{WireName: "letter_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"NoticeId":   ubx.FieldSpec{WireName: "notice_id"},
+		"LetterId":   ubx.FieldSpec{WireName: "letter_id"},
 	},
 }

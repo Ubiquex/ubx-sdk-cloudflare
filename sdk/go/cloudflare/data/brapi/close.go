@@ -28,6 +28,6 @@ var Close = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"TargetId":  ubx.FieldSpec{WireName: "target_id"},
 	},
 }

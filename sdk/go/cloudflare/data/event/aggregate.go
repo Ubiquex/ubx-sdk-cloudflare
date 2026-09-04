@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Aggregate_Aggregations struct {
 	Count any
-	Date any
+	Date  any
 }
 
 type Aggregate_DateRange struct {
-	EndDate any
+	EndDate   any
 	StartDate any
 }
 
@@ -56,12 +56,12 @@ type AggregateAttrs struct {
 var Aggregate = ubx.DataSourceBinding{
 	WireType: "cloudflare_aggregate",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"AggregateBy": ubx.FieldSpec{WireName: "aggregate_by"},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
+		"DatasetId":   ubx.FieldSpec{WireName: "dataset_id"},
+		"EndDate":     ubx.FieldSpec{WireName: "end_date"},
 		"GroupByDate": ubx.FieldSpec{WireName: "group_by_date"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"StartDate":   ubx.FieldSpec{WireName: "start_date"},
 	},
 }

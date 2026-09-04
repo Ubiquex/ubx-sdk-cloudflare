@@ -4,11 +4,11 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TakedownNoticeConfig struct {
-	Domain any
-	MatchId any
+	Domain    any
+	MatchId   any
 	MatchType any
-	QueryId any
-	Status any
+	QueryId   any
+	Status    any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -17,12 +17,12 @@ type TakedownNoticeConfig struct {
 
 type TakedownNoticeAttrs struct {
 	CreatedAt any
-	Domain any
-	Id any
-	MatchId any
+	Domain    any
+	Id        any
+	MatchId   any
 	MatchType any
-	QueryId any
-	Status any
+	QueryId   any
+	Status    any
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -33,12 +33,12 @@ type TakedownNoticeAttrs struct {
 var TakedownNotice = ubx.ResourceBinding{
 	WireType: "cloudflare_takedown_notice",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"MatchId": ubx.FieldSpec{WireName: "match_id"},
+		"Domain":    ubx.FieldSpec{WireName: "domain"},
+		"MatchId":   ubx.FieldSpec{WireName: "match_id"},
 		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"QueryId":   ubx.FieldSpec{WireName: "query_id"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"NoticeId": ubx.FieldSpec{WireName: "notice_id"},
+		"NoticeId":  ubx.FieldSpec{WireName: "notice_id"},
 	},
 }

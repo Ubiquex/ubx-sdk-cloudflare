@@ -3,15 +3,20 @@ package emailsendingsubdomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailSendingSubdomainReputationComplaintsResponse_Result struct {
+	Complaints any
+}
+
 type EmailSendingSubdomainReputationComplaintsResponseConfig struct {
-	EndAt any
+	EndAt   any
 	StartAt any
 	// Identifier.
 	ZoneId any
 }
 
 type EmailSendingSubdomainReputationComplaintsResponseAttrs struct {
-	EndAt any
+	EndAt   any
+	Result  any
 	StartAt any
 	// Sending subdomain identifier.
 	SubdomainId any
@@ -22,8 +27,8 @@ type EmailSendingSubdomainReputationComplaintsResponseAttrs struct {
 var EmailSendingSubdomainReputationComplaintsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_email_sending_subdomain_reputation_complaints_response",
 	Fields: ubx.FieldMap{
-		"EndAt": ubx.FieldSpec{WireName: "end_at"},
+		"EndAt":   ubx.FieldSpec{WireName: "end_at"},
 		"StartAt": ubx.FieldSpec{WireName: "start_at"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

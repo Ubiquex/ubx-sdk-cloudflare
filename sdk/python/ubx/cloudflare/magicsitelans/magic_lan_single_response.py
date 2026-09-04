@@ -12,24 +12,24 @@ class MagicLanSingleResponse_Nat:
     static_prefix: Any = None
 
 @dataclasses.dataclass
-class MagicLanSingleResponse_RoutedSubnets:
+class MagicLanSingleResponse_Result_RoutedSubnets:
     nat: Any = None
     next_hop: Any = None
     prefix: Any = None
 
 @dataclasses.dataclass
-class MagicLanSingleResponse_StaticAddressing_DhcpRelay:
+class MagicLanSingleResponse_Result_StaticAddressing_DhcpRelay:
     # List of DHCP server IPs.
     server_addresses: Any = None
 
 @dataclasses.dataclass
-class MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptions:
+class MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptions:
     code: Any = None
     type: Any = None
     value: Any = None
 
 @dataclasses.dataclass
-class MagicLanSingleResponse_StaticAddressing_DhcpServer:
+class MagicLanSingleResponse_Result_StaticAddressing_DhcpServer:
     # Optional list of custom DHCP options to include in DHCP responses. Only valid when DHCP server is enabled.
     dhcp_options: Any = None
     # A valid IPv4 address.
@@ -43,7 +43,7 @@ class MagicLanSingleResponse_StaticAddressing_DhcpServer:
     reservations: Any = None
 
 @dataclasses.dataclass
-class MagicLanSingleResponse_StaticAddressing:
+class MagicLanSingleResponse_Result_StaticAddressing:
     # A valid CIDR notation representing an IP range.
     address: Any = None
     dhcp_relay: Any = None
@@ -53,11 +53,33 @@ class MagicLanSingleResponse_StaticAddressing:
     # A valid CIDR notation representing an IP range.
     virtual_address: Any = None
 
+@dataclasses.dataclass
+class MagicLanSingleResponse_Result:
+    bond_id: Any = None
+    # mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
+    ha_link: Any = None
+    # Identifier
+    id: Any = None
+    # mark true to use this LAN for source-based breakout traffic
+    is_breakout: Any = None
+    # mark true to use this LAN for source-based prioritized traffic
+    is_prioritized: Any = None
+    name: Any = None
+    nat: Any = None
+    physport: Any = None
+    routed_subnets: Any = None
+    # Identifier
+    site_id: Any = None
+    # If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
+    static_addressing: Any = None
+    # VLAN ID. Use zero for untagged.
+    vlan_tag: Any = None
+
 _MagicLanSingleResponse_NatFields = {
     "static_prefix": ubx.FieldSpec(wire_name="static_prefix"),
 }
 
-_MagicLanSingleResponse_RoutedSubnetsFields = {
+_MagicLanSingleResponse_Result_RoutedSubnetsFields = {
     "nat": ubx.FieldSpec(
         wire_name="nat",
         kind="object",
@@ -67,21 +89,21 @@ _MagicLanSingleResponse_RoutedSubnetsFields = {
     "prefix": ubx.FieldSpec(wire_name="prefix"),
 }
 
-_MagicLanSingleResponse_StaticAddressing_DhcpRelayFields = {
+_MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields = {
     "server_addresses": ubx.FieldSpec(wire_name="server_addresses"),
 }
 
-_MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields = {
+_MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields = {
     "code": ubx.FieldSpec(wire_name="code"),
     "type": ubx.FieldSpec(wire_name="type"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_MagicLanSingleResponse_StaticAddressing_DhcpServerFields = {
+_MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields = {
     "dhcp_options": ubx.FieldSpec(
         wire_name="dhcp_options",
         kind="list",
-        fields=_MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields,
+        fields=_MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields,
     ),
     "dhcp_pool_end": ubx.FieldSpec(wire_name="dhcp_pool_end"),
     "dhcp_pool_start": ubx.FieldSpec(wire_name="dhcp_pool_start"),
@@ -90,17 +112,17 @@ _MagicLanSingleResponse_StaticAddressing_DhcpServerFields = {
     "reservations": ubx.FieldSpec(wire_name="reservations"),
 }
 
-_MagicLanSingleResponse_StaticAddressingFields = {
+_MagicLanSingleResponse_Result_StaticAddressingFields = {
     "address": ubx.FieldSpec(wire_name="address"),
     "dhcp_relay": ubx.FieldSpec(
         wire_name="dhcp_relay",
         kind="object",
-        fields=_MagicLanSingleResponse_StaticAddressing_DhcpRelayFields,
+        fields=_MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields,
     ),
     "dhcp_server": ubx.FieldSpec(
         wire_name="dhcp_server",
         kind="object",
-        fields=_MagicLanSingleResponse_StaticAddressing_DhcpServerFields,
+        fields=_MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields,
     ),
     "secondary_address": ubx.FieldSpec(wire_name="secondary_address"),
     "virtual_address": ubx.FieldSpec(wire_name="virtual_address"),
@@ -142,6 +164,7 @@ class MagicLanSingleResponseAttrs:
     name: Any = None
     nat: Any = None
     physport: Any = None
+    result: Any = None
     routed_subnets: Any = None
     # If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
     static_addressing: Any = None
@@ -171,12 +194,12 @@ MagicLanSingleResponse = ubx.ResourceBinding(
         "routed_subnets": ubx.FieldSpec(
             wire_name="routed_subnets",
             kind="list",
-            fields=_MagicLanSingleResponse_RoutedSubnetsFields,
+            fields=_MagicLanSingleResponse_Result_RoutedSubnetsFields,
         ),
         "static_addressing": ubx.FieldSpec(
             wire_name="static_addressing",
             kind="object",
-            fields=_MagicLanSingleResponse_StaticAddressingFields,
+            fields=_MagicLanSingleResponse_Result_StaticAddressingFields,
         ),
         "vlan_tag": ubx.FieldSpec(wire_name="vlan_tag"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),

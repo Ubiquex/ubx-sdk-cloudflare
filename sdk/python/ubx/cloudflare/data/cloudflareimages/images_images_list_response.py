@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImagesListResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ImagesImagesListResponse_Result_Images:
+    creator: Any = None
+    filename: Any = None
+    id: Any = None
+    meta: Any = None
+    require_signed_urls: Any = None
+    uploaded: Any = None
+    variants: Any = None
+
+@dataclasses.dataclass
+class ImagesImagesListResponse_Result:
+    images: Any = None
+
+@dataclasses.dataclass
 class ImagesImagesListResponseConfig:
     # Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
     creator: Any = None
@@ -21,10 +40,15 @@ class ImagesImagesListResponseAttrs:
     account_id: Any = None
     # Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
     creator: Any = None
+    errors: Any = None
+    messages: Any = None
     # Page number of paginated results.
     page: Any = None
     # Number of items per page.
     per_page: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 ImagesImagesListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_images_images_list_response",

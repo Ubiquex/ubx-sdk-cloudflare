@@ -21,6 +21,62 @@ class Policy_Actions:
     # Webhook actions to execute.
     webhook_configs: Any = None
 
+@dataclasses.dataclass
+class Policy_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Policy_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions_RemediationTypes:
+    display_name: Any = None
+    remediation_type: Any = None
+    remediation_type_id: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions_WebhookConfigs:
+    display_name: Any = None
+    webhook_config_id: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions:
+    # List of remediation types that will be executed.
+    remediation_types: Any = None
+    # List of webhook configurations that will be triggered.
+    webhook_configs: Any = None
+
+@dataclasses.dataclass
+class Policy_Result:
+    # The actions configured for this policy.
+    actions: Any = None
+    # When true, the policy applies to all integrations for the account. When false, it applies only to the specified integration_ids.
+    applies_to_all_integrations: Any = None
+    # Timestamp when the policy was created.
+    created_at: Any = None
+    # User-set description of what this policy does. Limited to 1000 characters.
+    description: Any = None
+    # Timestamp when the policy was disabled. Omitted from the response when the policy is enabled.
+    disabled_at: Any = None
+    # Display name for the policy configuration. Limited to 255 characters.
+    display_name: Any = None
+    # Whether the policy is enabled. Derived from disabled_at (enabled when disabled_at is unset).
+    enabled: Any = None
+    # The finding type this policy is associated with. Immutable after creation; changing it replaces the policy.
+    finding_type_id: Any = None
+    # Unique identifier for the policy configuration.
+    id: Any = None
+    # The integrations this policy applies to.
+    integration_ids: Any = None
+    # Timestamp of the most recent successful policy invocation. Omitted from the response when the policy has never been successfully triggered. Only populated on GET responses; absent on responses from create/update endpoints.
+    last_triggered_at: Any = None
+    # Timestamp when the policy was last updated.
+    updated_at: Any = None
+
 _Policy_Actions_RemediationTypesFields = {
     "remediation_type_id": ubx.FieldSpec(wire_name="remediation_type_id"),
 }
@@ -75,10 +131,16 @@ class PolicyAttrs:
     display_name: Any = None
     # Boolean specifying if the policy is enabled or disabled.
     enabled: Any = None
+    errors: Any = None
     # The finding type this policy is associated with. All remediation actions must match this finding type.
     finding_type_id: Any = None
     # The integrations this policy applies to. Required when applies_to_all_integrations is false.
     integration_ids: Any = None
+    messages: Any = None
+    # Response body for a policy configuration.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

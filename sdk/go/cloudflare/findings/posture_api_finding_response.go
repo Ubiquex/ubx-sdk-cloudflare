@@ -3,6 +3,145 @@ package findings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiFindingResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiFindingResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiFindingResponse_Result_Finding_Category struct {
+	Observation any
+	Product     any
+	Type        any
+}
+
+type PostureApiFindingResponse_Result_Finding_Remediation struct {
+	Frameworks any
+	Guide      any
+	Id         any
+	Impact     any
+	Locale     any
+	Threat     any
+}
+
+type PostureApiFindingResponse_Result_Finding struct {
+	Category    any
+	Description any
+	Id          any
+	Name        any
+	Remediation any
+	Severity    any
+	Vendor      any
+}
+
+type PostureApiFindingResponse_Result_Integration_Policy struct {
+	// OAuth client ID for the policy.
+	ClientId any
+	// Compliance level for the policy.
+	ComplianceLevel any
+	// Whether DLP is enabled for this policy.
+	DlpEnabled any
+	// Policy identifier.
+	Id any
+	// Link to policy documentation.
+	Link any
+	// Policy name.
+	Name any
+	// List of permissions included in the policy.
+	Permissions any
+}
+
+type PostureApiFindingResponse_Result_Integration_Vendor struct {
+	// Detailed information about what kinds of issues are detected for this vendor.
+	Description any
+	// The display name of the vendor.
+	DisplayName any
+	// The id of the vendor.
+	Id any
+	// Logo URL for the vendor.
+	Logo any
+	// The name of the vendor.
+	Name any
+	// The policies related to the vendor.
+	Policies any
+	// Static logo URL for the vendor.
+	StaticLogo any
+	// The vendor's compatible Zero Trust products.
+	ZtEnrollments any
+}
+
+type PostureApiFindingResponse_Result_Integration_ZtEnrollments struct {
+	Description any
+	DisplayName any
+	Enabled     any
+	Id          any
+}
+
+type PostureApiFindingResponse_Result_Integration struct {
+	// When entity was created.
+	Created any
+	// Health status of integration credentials.
+	CredentialHealthStatus any
+	// The date and time when the integration credentials will expire.
+	CredentialsExpiry any
+	// Integration ID.
+	Id any
+	// Whether the given integration is paused by the user.
+	IsPaused any
+	// When were the integration credentials last updated.
+	LastHydrated any
+	// Name of the integration.
+	Name any
+	// The vendor-specific permissions associated with the integration.
+	Permissions any
+	// Policy configuration for an integration.
+	Policy any
+	// Current status of the integration.
+	Status any
+	// Last entity was updated.
+	Updated any
+	// Whether the integrations permissions can be updated.
+	Upgradable any
+	// UI State as to whether a potential permissions upgrade has been dismissed.
+	UpgradeDismissed any
+	// Information about a vendor/service provider.
+	Vendor any
+	// Zero Trust products associated with this integration.
+	ZtEnrollments any
+}
+
+type PostureApiFindingResponse_Result_SeverityOverride struct {
+	// User ID who created the override.
+	CreatedBy any
+	// The severity level of a finding.
+	Severity any
+}
+
+type PostureApiFindingResponse_Result struct {
+	// Number of active problematic instances identified in the security finding.
+	ActiveCount any
+	// Number of archived instances identified in the security finding.
+	ArchivedCount any
+	Finding       any
+	// Base64 encoded identifier of the security finding.
+	Id any
+	// Determines if finding is currently ignored.
+	Ignored any
+	// Number of total (Active or archived) problematic instances identified in the security finding.
+	InstanceCount any
+	// Summary information about an integration.
+	Integration any
+	// Timestamp of the latest affliction date of an active finding.
+	LatestAfflictionDate any
+	// Override information for finding severity.
+	SeverityOverride any
+}
+
 type PostureApiFindingResponseConfig struct {
 	// A list of finding IDs to pass along.
 	Checks any
@@ -14,7 +153,13 @@ type PostureApiFindingResponseConfig struct {
 
 type PostureApiFindingResponseAttrs struct {
 	// A list of finding IDs to pass along.
-	Checks any
+	Checks   any
+	Errors   any
+	Messages any
+	// Aggregated finding information with counts and metadata. This is optimized for list API queries and represents a finding along with its instance statistics.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,7 +169,7 @@ type PostureApiFindingResponseAttrs struct {
 var PostureApiFindingResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_posture_api_finding_response",
 	Fields: ubx.FieldMap{
-		"Checks": ubx.FieldSpec{WireName: "checks"},
+		"Checks":    ubx.FieldSpec{WireName: "checks"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
 	},

@@ -10,6 +10,34 @@ import ubx_sdk as ubx
 class IamCollectionOauthClientResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamCollectionOauthClientResponse_Result_ClientUriVerification:
+    status: Any = None
+    text: Any = None
+
+@dataclasses.dataclass
+class IamCollectionOauthClientResponse_Result:
+    allowed_cors_origins: Any = None
+    client_id: Any = None
+    client_name: Any = None
+    client_uri: Any = None
+    client_uri_verification: Any = None
+    created_at: Any = None
+    grant_types: Any = None
+    has_rotated_secret: Any = None
+    logo_uri: Any = None
+    optional_scopes: Any = None
+    policy_uri: Any = None
+    post_logout_redirect_uris: Any = None
+    promoted_at: Any = None
+    redirect_uris: Any = None
+    response_types: Any = None
+    scopes: Any = None
+    token_endpoint_auth_method: Any = None
+    tos_uri: Any = None
+    updated_at: Any = None
+    visibility: Any = None
+
 _IamCollectionOauthClientResponse_AccountIdFields = {
 }
 
@@ -22,6 +50,7 @@ class IamCollectionOauthClientResponseConfig:
 class IamCollectionOauthClientResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 IamCollectionOauthClientResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_collection_oauth_client_response",

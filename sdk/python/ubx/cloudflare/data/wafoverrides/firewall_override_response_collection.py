@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallOverrideResponseCollection_Result_RewriteAction:
+    block: Any = None
+    challenge: Any = None
+    default: Any = None
+    disable: Any = None
+    simulate: Any = None
+
+@dataclasses.dataclass
+class FirewallOverrideResponseCollection_Result_Rules:
+    pass
+
+@dataclasses.dataclass
+class FirewallOverrideResponseCollection_Result:
+    description: Any = None
+    groups: Any = None
+    id: Any = None
+    paused: Any = None
+    priority: Any = None
+    rewrite_action: Any = None
+    rules: Any = None
+    urls: Any = None
+
+@dataclasses.dataclass
 class FirewallOverrideResponseCollectionConfig:
     # The page number of paginated results.
     page: Any = None
@@ -19,6 +42,7 @@ class FirewallOverrideResponseCollectionAttrs:
     page: Any = None
     # The number of WAF overrides per page.
     per_page: Any = None
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

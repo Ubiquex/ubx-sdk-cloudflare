@@ -255,6 +255,8 @@ export interface MeetingConfig {
 export interface MeetingAttrs {
   /** The AI Config allows you to customize the behavior of meeting transcriptions and summaries */
   aiConfig: Meeting_AiConfig;
+  /** Data returned by the operation */
+  data: unknown;
   /** Specifies if the meeting should start getting livestreamed on start. */
   liveStreamOnStart: boolean;
   /** If a meeting is set to persist_chat, meeting chat would remain for a week within the meeting space. */
@@ -265,6 +267,8 @@ export interface MeetingAttrs {
   recordingConfig: Meeting_RecordingConfig;
   /** Time in seconds, for which a session remains active, after the last participant has left the meeting. */
   sessionKeepAliveTimeInSecs: number;
+  /** Success status of the operation */
+  success: boolean;
   /** Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API. */
   summarizeOnEnd: boolean;
   /** Title of the meeting */

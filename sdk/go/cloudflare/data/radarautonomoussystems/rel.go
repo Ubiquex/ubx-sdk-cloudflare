@@ -4,19 +4,19 @@ package radarautonomoussystems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rel_Result_Meta struct {
-	DataTime any
-	QueryTime any
+	DataTime   any
+	QueryTime  any
 	TotalPeers any
 }
 
 type Rel_Result_Rels struct {
-	Asn1 any
+	Asn1        any
 	Asn1Country any
-	Asn1Name any
-	Asn2 any
+	Asn1Name    any
+	Asn2        any
 	Asn2Country any
-	Asn2Name any
-	Rel any
+	Asn2Name    any
+	Rel         any
 }
 
 type Rel_Result struct {
@@ -39,16 +39,16 @@ type RelAttrs struct {
 	// Retrieves the AS relationship of ASN2 with respect to the given ASN.
 	Asn2 any
 	// Format in which results will be returned.
-	Format any
-	Result any
+	Format  any
+	Result  any
 	Success any
 }
 
 var Rel = ubx.DataSourceBinding{
 	WireType: "cloudflare_rel",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Asn2": ubx.FieldSpec{WireName: "asn2"},
+		"Asn":    ubx.FieldSpec{WireName: "asn"},
+		"Asn2":   ubx.FieldSpec{WireName: "asn2"},
 		"Format": ubx.FieldSpec{WireName: "format"},
 	},
 }

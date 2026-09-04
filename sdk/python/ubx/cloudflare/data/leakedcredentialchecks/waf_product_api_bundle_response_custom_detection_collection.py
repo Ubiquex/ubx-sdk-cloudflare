@@ -7,11 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseCustomDetectionCollection_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class WafProductApiBundleResponseCustomDetectionCollection_Result:
+    id: Any = None
+    password: Any = None
+    username: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseCustomDetectionCollectionConfig:
     pass
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseCustomDetectionCollectionAttrs:
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

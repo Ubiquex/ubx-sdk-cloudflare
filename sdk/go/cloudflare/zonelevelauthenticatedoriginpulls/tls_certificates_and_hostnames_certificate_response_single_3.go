@@ -3,6 +3,17 @@ package zonelevelauthenticatedoriginpulls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseSingle3_Result struct {
+	// The zone's leaf certificate.
+	Certificate any
+	// Indicates whether zone-level authenticated origin pulls is enabled.
+	Enabled any
+	// Identifier.
+	Id any
+	// The zone's private key.
+	PrivateKey any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseSingle3Config struct {
 	// The zone's leaf certificate.
 	Certificate any
@@ -19,6 +30,7 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle3Attrs struct {
 	Certificate any
 	// The zone's private key.
 	PrivateKey any
+	Result     any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +40,9 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle3Attrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseSingle3 = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_single_3",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Certificate":   ubx.FieldSpec{WireName: "certificate"},
+		"PrivateKey":    ubx.FieldSpec{WireName: "private_key"},
+		"ZoneId":        ubx.FieldSpec{WireName: "zone_id"},
 		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
 	},
 }

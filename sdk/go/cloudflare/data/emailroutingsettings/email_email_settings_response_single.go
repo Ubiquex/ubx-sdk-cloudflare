@@ -3,12 +3,25 @@ package emailroutingsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailEmailSettingsResponseSingle_Result struct {
+	Created           any
+	Enabled           any
+	Id                any
+	Modified          any
+	Name              any
+	SkipWizard        any
+	Status            any
+	SupportSubaddress any
+	Tag               any
+}
+
 type EmailEmailSettingsResponseSingleConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type EmailEmailSettingsResponseSingleAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle4_Result:
+    # The hostname certificate.
+    certificate: Any = None
+    # The date when the certificate expires.
+    expires_on: Any = None
+    # Identifier.
+    id: Any = None
+    # The certificate authority that issued the certificate.
+    issuer: Any = None
+    # The serial number on the uploaded certificate.
+    serial_number: Any = None
+    # The type of hash used for the certificate.
+    signature: Any = None
+    # Status of the certificate or the association.
+    status: Any = None
+    # The time when the certificate was uploaded.
+    uploaded_on: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseSingle4Config:
     # The hostname certificate.
     certificate: Any = None
@@ -23,6 +42,7 @@ class TlsCertificatesAndHostnamesCertificateResponseSingle4Attrs:
     certificate: Any = None
     # The hostname certificate's private key.
     private_key: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

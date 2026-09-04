@@ -3,12 +3,32 @@ package zonesnippets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SnippetRule_Messages struct {
+	Code    any
+	Message any
+}
+
+type SnippetRule_Result struct {
+	Description any
+	Enabled     any
+	Expression  any
+	Id          any
+	LastUpdated any
+	SnippetName any
+}
+
 type SnippetRuleConfig struct {
 	// Use this field to specify the unique ID of the zone.
 	ZoneId any
 }
 
 type SnippetRuleAttrs struct {
+	Errors any
+	// Contain warning messages.
+	Messages any
+	// Lists snippet rules.
+	Result  any
+	Success any
 	// Use this field to specify the unique ID of the zone.
 	ZoneId any
 }

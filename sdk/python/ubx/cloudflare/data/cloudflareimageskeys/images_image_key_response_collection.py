@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImageKeyResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ImagesImageKeyResponseCollection_Result_Keys:
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ImagesImageKeyResponseCollection_Result:
+    keys: Any = None
+
+@dataclasses.dataclass
 class ImagesImageKeyResponseCollectionConfig:
     pass
 
@@ -14,6 +28,11 @@ class ImagesImageKeyResponseCollectionConfig:
 class ImagesImageKeyResponseCollectionAttrs:
     # Account identifier tag.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 ImagesImageKeyResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_images_image_key_response_collection",

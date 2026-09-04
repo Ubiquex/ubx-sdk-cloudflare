@@ -3,12 +3,24 @@ package dlpcustomprompttopics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPromptTopic_Result struct {
+	CreatedAt   any
+	Description any
+	Enabled     any
+	Id          any
+	Name        any
+	ProfileId   any
+	Topic       any
+	UpdatedAt   any
+}
+
 type CustomPromptTopicConfig struct {
 	AccountId any
 }
 
 type CustomPromptTopicAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var CustomPromptTopic = ubx.DataSourceBinding{

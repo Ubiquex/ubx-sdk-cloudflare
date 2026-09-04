@@ -20,11 +20,48 @@ export interface SmartshieldSingleHcResponse_HttpConfig {
   port?: number | Computed<number>;
 }
 
-export interface SmartshieldSingleHcResponse_TcpConfig {
+export interface SmartshieldSingleHcResponse_Result_TcpConfig {
   /** The TCP connection method to use for the health check. */
   method?: string | Computed<string>;
   /** Port number to connect to for the health check. Defaults to 80. */
   port?: number | Computed<number>;
+}
+
+export interface SmartshieldSingleHcResponse_Result {
+  /** The hostname or IP address of the origin server to run health checks on. */
+  address?: string | Computed<string>;
+  /** A list of regions from which to run health checks. Null means Cloudflare will pick a default region. */
+  checkRegions?: string[] | Computed<string[]>;
+  /** The number of consecutive fails required from a health check before changing the health to unhealthy. */
+  consecutiveFails?: number | Computed<number>;
+  /** The number of consecutive successes required from a health check before changing the health to healthy. */
+  consecutiveSuccesses?: number | Computed<number>;
+  createdOn?: string | Computed<string>;
+  /** A human-readable description of the health check. */
+  description?: string | Computed<string>;
+  /** The current failure reason if status is unhealthy. */
+  failureReason?: string | Computed<string>;
+  /** Parameters specific to an HTTP or HTTPS health check. */
+  httpConfig?: SmartshieldSingleHcResponse_HttpConfig | Computed<SmartshieldSingleHcResponse_HttpConfig>;
+  /** Identifier. */
+  id?: string | Computed<string>;
+  /** The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations. */
+  interval?: number | Computed<number>;
+  modifiedOn?: string | Computed<string>;
+  /** A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed. */
+  name?: string | Computed<string>;
+  /** The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. */
+  retries?: number | Computed<number>;
+  /** The current status of the origin server according to the health check. */
+  status?: string | Computed<string>;
+  /** If suspended, no health checks are sent to the origin. */
+  suspended?: boolean | Computed<boolean>;
+  /** Parameters specific to TCP health check. */
+  tcpConfig?: SmartshieldSingleHcResponse_Result_TcpConfig | Computed<SmartshieldSingleHcResponse_Result_TcpConfig>;
+  /** The timeout (in seconds) before marking the health check as failed. */
+  timeout?: number | Computed<number>;
+  /** The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'. */
+  type?: string | Computed<string>;
 }
 
 const SmartshieldSingleHcResponse_HttpConfigFields: FieldMap = {
@@ -38,7 +75,7 @@ const SmartshieldSingleHcResponse_HttpConfigFields: FieldMap = {
   port: "port",
 };
 
-const SmartshieldSingleHcResponse_TcpConfigFields: FieldMap = {
+const SmartshieldSingleHcResponse_Result_TcpConfigFields: FieldMap = {
   method: "method",
   port: "port",
 };
@@ -65,7 +102,7 @@ export interface SmartshieldSingleHcResponseConfig {
   /** If suspended, no health checks are sent to the origin. */
   suspended?: boolean | Computed<boolean>;
   /** Parameters specific to TCP health check. */
-  tcpConfig?: SmartshieldSingleHcResponse_TcpConfig | Computed<SmartshieldSingleHcResponse_TcpConfig>;
+  tcpConfig?: SmartshieldSingleHcResponse_Result_TcpConfig | Computed<SmartshieldSingleHcResponse_Result_TcpConfig>;
   /** The timeout (in seconds) before marking the health check as failed. */
   timeout?: number | Computed<number>;
   /** The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'. */
@@ -93,12 +130,13 @@ export interface SmartshieldSingleHcResponseAttrs {
   interval: number;
   /** A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed. */
   name: string;
+  result: SmartshieldSingleHcResponse_Result;
   /** The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately. */
   retries: number;
   /** If suspended, no health checks are sent to the origin. */
   suspended: boolean;
   /** Parameters specific to TCP health check. */
-  tcpConfig: SmartshieldSingleHcResponse_TcpConfig;
+  tcpConfig: SmartshieldSingleHcResponse_Result_TcpConfig;
   /** The timeout (in seconds) before marking the health check as failed. */
   timeout: number;
   /** The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'. */
@@ -129,7 +167,7 @@ export const SmartshieldSingleHcResponse: ResourceBinding<SmartshieldSingleHcRes
     tcpConfig: {
       wireName: "tcp_config",
       kind: "object",
-      fields: SmartshieldSingleHcResponse_TcpConfigFields,
+      fields: SmartshieldSingleHcResponse_Result_TcpConfigFields,
     },
     timeout: "timeout",
     type: "type",

@@ -3,6 +3,41 @@ package wafoverrides
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallOverrideResponseSingle_Result_RewriteAction struct {
+	// The WAF rule action to apply.
+	Block any
+	// The WAF rule action to apply.
+	Challenge any
+	// The WAF rule action to apply.
+	Default any
+	// The WAF rule action to apply.
+	Disable any
+	// The WAF rule action to apply.
+	Simulate any
+}
+
+type FirewallOverrideResponseSingle_Result_Rules struct {
+}
+
+type FirewallOverrideResponseSingle_Result struct {
+	// An informative summary of the current URI-based WAF override.
+	Description any
+	// An object that allows you to enable or disable WAF rule groups for the current WAF override. Each key of this object must be the ID of a WAF rule group, and each value must be a valid WAF action (usually `default` or `disable`). When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
+	Groups any
+	// The unique identifier of the WAF override.
+	Id any
+	// When true, indicates that the rule is currently paused.
+	Paused any
+	// The relative priority of the current URI-based WAF override when multiple overrides match a single URL. A lower number indicates higher priority. Higher priority overrides may overwrite values set by lower priority overrides.
+	Priority any
+	// Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
+	RewriteAction any
+	// An object that allows you to override the action of specific WAF rules. Each key of this object must be the ID of a WAF rule, and each value must be a valid WAF action. Unless you are disabling a rule, ensure that you also enable the rule group that this WAF rule belongs to. When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
+	Rules any
+	// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
+	Urls any
+}
+
 type FirewallOverrideResponseSingleConfig struct {
 	// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 	Urls any
@@ -13,6 +48,7 @@ type FirewallOverrideResponseSingleConfig struct {
 }
 
 type FirewallOverrideResponseSingleAttrs struct {
+	Result any
 	// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 	Urls any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +60,8 @@ type FirewallOverrideResponseSingleAttrs struct {
 var FirewallOverrideResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_firewall_override_response_single",
 	Fields: ubx.FieldMap{
-		"Urls": ubx.FieldSpec{WireName: "urls"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Urls":        ubx.FieldSpec{WireName: "urls"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"OverridesId": ubx.FieldSpec{WireName: "overrides_id"},
 	},
 }

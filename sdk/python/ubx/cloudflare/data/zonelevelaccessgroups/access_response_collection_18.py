@@ -7,12 +7,144 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_AuthContext:
+    ac_id: Any = None
+    id: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_AuthMethod:
+    auth_method: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_AzureAd:
+    id: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_CloudflareAccountMember:
+    account_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_CommonName:
+    common_name: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_DevicePosture:
+    integration_uid: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Email:
+    email: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_EmailDomain:
+    domain: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_EmailList:
+    id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_ExternalEvaluation:
+    evaluate_url: Any = None
+    keys_url: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Geo:
+    country_code: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_GithubOrganization:
+    identity_provider_id: Any = None
+    name: Any = None
+    team: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Gsuite:
+    email: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Ip:
+    ip: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_LinkedAppToken:
+    app_uid: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Oidc:
+    claim_name: Any = None
+    claim_value: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Okta:
+    identity_provider_id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_Saml:
+    attribute_name: Any = None
+    attribute_value: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_ServiceToken:
+    token_id: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude_UserRiskScore:
+    user_risk_score: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result_Exclude:
+    any_valid_service_token: Any = None
+    auth_context: Any = None
+    auth_method: Any = None
+    azure_ad: Any = None
+    certificate: Any = None
+    cloudflare_account_member: Any = None
+    common_name: Any = None
+    device_posture: Any = None
+    email: Any = None
+    email_domain: Any = None
+    email_list: Any = None
+    everyone: Any = None
+    external_evaluation: Any = None
+    geo: Any = None
+    github_organization: Any = None
+    group: Any = None
+    gsuite: Any = None
+    ip: Any = None
+    ip_list: Any = None
+    linked_app_token: Any = None
+    login_method: Any = None
+    oidc: Any = None
+    okta: Any = None
+    saml: Any = None
+    service_token: Any = None
+    user_risk_score: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection18_Result:
+    created_at: Any = None
+    exclude: Any = None
+    id: Any = None
+    include: Any = None
+    name: Any = None
+    require: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection18Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollection18Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

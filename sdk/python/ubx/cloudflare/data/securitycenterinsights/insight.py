@@ -7,8 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Insight_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Insight_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class Insight_Page:
     pass
+
+@dataclasses.dataclass
+class Insight_Result_Issues_Payload:
+    detection_method: Any = None
+    zone_tag: Any = None
+
+@dataclasses.dataclass
+class Insight_Result_Issues:
+    dismissed: Any = None
+    has_extended_context: Any = None
+    id: Any = None
+    issue_class: Any = None
+    issue_type: Any = None
+    payload: Any = None
+    resolve_link: Any = None
+    resolve_text: Any = None
+    severity: Any = None
+    since: Any = None
+    status: Any = None
+    subject: Any = None
+    timestamp: Any = None
+    user_classification: Any = None
+
+@dataclasses.dataclass
+class Insight_Result:
+    count: Any = None
+    issues: Any = None
+    page: Any = None
+    per_page: Any = None
 
 _Insight_PageFields = {
 }
@@ -31,13 +71,18 @@ class InsightAttrs:
     # Identifier.
     account_id: Any = None
     dismissed: Any = None
+    errors: Any = None
     issue_class: Any = None
     issue_type: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
     product: Any = None
+    result: Any = None
     severity: Any = None
     subject: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Insight = ubx.DataSourceBinding(
     wire_type="cloudflare_insight",

@@ -7,6 +7,55 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Action_Response:
+    body: Any = None
+    content_type: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Action:
+    mode: Any = None
+    response: Any = None
+    timeout: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Bypass:
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Match_Headers:
+    name: Any = None
+    op: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Match_Request:
+    methods: Any = None
+    schemes: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Match_Response:
+    origin_traffic: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result_Match:
+    headers: Any = None
+    request: Any = None
+    response: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseCollection_Result:
+    action: Any = None
+    bypass: Any = None
+    description: Any = None
+    disabled: Any = None
+    id: Any = None
+    match: Any = None
+    period: Any = None
+    threshold: Any = None
+
+@dataclasses.dataclass
 class FirewallRatelimitResponseCollectionConfig:
     # Defines the page number of paginated results.
     page: Any = None
@@ -19,6 +68,7 @@ class FirewallRatelimitResponseCollectionAttrs:
     page: Any = None
     # Defines the maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
     per_page: Any = None
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

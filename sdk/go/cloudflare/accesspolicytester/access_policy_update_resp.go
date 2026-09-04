@@ -3,6 +3,29 @@ package accesspolicytester
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessPolicyUpdateResp_Result struct {
+	// The UUID of the policy test.
+	Id any
+	// The percentage of (processed) users approved based on policy evaluation results.
+	PercentApproved any
+	// The percentage of (processed) users blocked based on policy evaluation results.
+	PercentBlocked any
+	// The percentage of (processed) users errored based on policy evaluation results.
+	PercentErrored any
+	// The percentage of users processed so far (of the entire user base).
+	PercentUsersProcessed any
+	// The status of the policy test.
+	Status any
+	// The total number of users in the user base.
+	TotalUsers any
+	// The number of (processed) users approved based on policy evaluation results.
+	UsersApproved any
+	// The number of (processed) users blocked based on policy evaluation results.
+	UsersBlocked any
+	// The number of (processed) users errored based on policy evaluation results.
+	UsersErrored any
+}
+
 type AccessPolicyUpdateRespConfig struct {
 	Policies any
 	// path parameter, not part of the API's own resource representation
@@ -13,6 +36,7 @@ type AccessPolicyUpdateRespConfig struct {
 
 type AccessPolicyUpdateRespAttrs struct {
 	Policies any
+	Result   any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -22,8 +46,8 @@ type AccessPolicyUpdateRespAttrs struct {
 var AccessPolicyUpdateResp = ubx.ResourceBinding{
 	WireType: "cloudflare_access_policy_update_resp",
 	Fields: ubx.FieldMap{
-		"Policies": ubx.FieldSpec{WireName: "policies"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Policies":     ubx.FieldSpec{WireName: "policies"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"PolicyTestId": ubx.FieldSpec{WireName: "policy_test_id"},
 	},
 }

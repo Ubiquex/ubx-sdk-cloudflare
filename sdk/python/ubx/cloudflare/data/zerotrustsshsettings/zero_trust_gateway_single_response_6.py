@@ -7,12 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse6_Result:
+    created_at: Any = None
+    # Provide the Base64-encoded HPKE public key that encrypts SSH session logs. See https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/#enable-ssh-command-logging.
+    public_key: Any = None
+    # Identify the seed ID.
+    seed_id: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewaySingleResponse6Config:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewaySingleResponse6Attrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewaySingleResponse6 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_single_response_6",

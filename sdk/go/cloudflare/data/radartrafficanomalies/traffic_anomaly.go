@@ -9,25 +9,25 @@ type TrafficAnomaly_Result_TrafficAnomalies_AsnDetails_Locations struct {
 }
 
 type TrafficAnomaly_Result_TrafficAnomalies_AsnDetails struct {
-	Asn any
+	Asn       any
 	Locations any
-	Name any
+	Name      any
 }
 
 type TrafficAnomaly_Result_TrafficAnomalies_OriginDetails struct {
-	Name any
+	Name   any
 	Origin any
 }
 
 type TrafficAnomaly_Result_TrafficAnomalies struct {
-	AsnDetails any
-	EndDate any
-	LocationDetails any
-	OriginDetails any
-	StartDate any
-	Status any
-	Type any
-	Uuid any
+	AsnDetails           any
+	EndDate              any
+	LocationDetails      any
+	OriginDetails        any
+	StartDate            any
+	Status               any
+	Type                 any
+	Uuid                 any
 	VisibleInDataSources any
 }
 
@@ -77,9 +77,9 @@ type TrafficAnomalyAttrs struct {
 	// Skips the specified number of objects before fetching the results.
 	Offset any
 	// Filters results by origin.
-	Origin any
-	Result any
-	Status any
+	Origin  any
+	Result  any
+	Status  any
 	Success any
 	// Filters results by entity type (LOCATION, AS, or ORIGIN).
 	Type any
@@ -88,16 +88,16 @@ type TrafficAnomalyAttrs struct {
 var TrafficAnomaly = ubx.DataSourceBinding{
 	WireType: "cloudflare_traffic_anomaly",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
+		"Asn":       ubx.FieldSpec{WireName: "asn"},
+		"DateEnd":   ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Location":  ubx.FieldSpec{WireName: "location"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
+		"Origin":    ubx.FieldSpec{WireName: "origin"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -6,8 +6,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TunnelTeamnetResponseCollection_NetworkSubset struct {
 }
 
-var TunnelTeamnetResponseCollection_NetworkSubsetFields = ubx.FieldMap{
-	}
+type TunnelTeamnetResponseCollection_Result struct {
+	Comment            any
+	CreatedAt          any
+	DeletedAt          any
+	Id                 any
+	Network            any
+	TunType            any
+	TunnelId           any
+	TunnelName         any
+	VirtualNetworkId   any
+	VirtualNetworkName any
+}
+
+var TunnelTeamnetResponseCollection_NetworkSubsetFields = ubx.FieldMap{}
 
 type TunnelTeamnetResponseCollectionConfig struct {
 	// Optional remark describing the route.
@@ -47,6 +59,7 @@ type TunnelTeamnetResponseCollectionAttrs struct {
 	Page any
 	// Number of results to display.
 	PerPage any
+	Result  any
 	// UUID of the route.
 	RouteId any
 	// The types of tunnels to filter by, separated by commas.
@@ -60,22 +73,22 @@ type TunnelTeamnetResponseCollectionAttrs struct {
 var TunnelTeamnetResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_teamnet_response_collection",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
+		"Comment":   ubx.FieldSpec{WireName: "comment"},
 		"ExistedAt": ubx.FieldSpec{WireName: "existed_at"},
 		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
 		"NetworkSubset": ubx.FieldSpec{
 			WireName: "network_subset",
-			Kind: "object",
-			Fields: TunnelTeamnetResponseCollection_NetworkSubsetFields,
+			Kind:     "object",
+			Fields:   TunnelTeamnetResponseCollection_NetworkSubsetFields,
 		},
 		"NetworkSuperset": ubx.FieldSpec{
 			WireName: "network_superset",
-			Kind: "object",
-			Fields: TunnelTeamnetResponseCollection_NetworkSubsetFields,
+			Kind:     "object",
+			Fields:   TunnelTeamnetResponseCollection_NetworkSubsetFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"TunTypes": ubx.FieldSpec{WireName: "tun_types"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"TunTypes":         ubx.FieldSpec{WireName: "tun_types"},
 		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
 	},
 }

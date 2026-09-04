@@ -7,12 +7,39 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailCatchAllRuleResponseSingle_Result_Actions:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EmailCatchAllRuleResponseSingle_Result_Matchers:
+    type: Any = None
+
+@dataclasses.dataclass
+class EmailCatchAllRuleResponseSingle_Result:
+    # List actions for the catch-all routing rule.
+    actions: Any = None
+    # Routing rule status.
+    enabled: Any = None
+    # Routing rule identifier.
+    id: Any = None
+    # List of matchers for the catch-all routing rule.
+    matchers: Any = None
+    # Routing rule name.
+    name: Any = None
+    # Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
+    source: Any = None
+    # Routing rule tag. (Deprecated, replaced by routing rule identifier)
+    tag: Any = None
+
+@dataclasses.dataclass
 class EmailCatchAllRuleResponseSingleConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class EmailCatchAllRuleResponseSingleAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class TagValuesResponseCollection_AccountId:
     pass
 
+@dataclasses.dataclass
+class TagValuesResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TagValuesResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TagValuesResponseCollection_ResultInfo:
+    # Indicates the number of results returned in the current page.
+    count: Any = None
+    # Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+    cursor: Any = None
+
 _TagValuesResponseCollection_AccountIdFields = {
 }
 
@@ -25,6 +43,12 @@ class TagValuesResponseCollectionConfig:
 class TagValuesResponseCollectionAttrs:
     account_id: Any = None
     cursor: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     tag_key: Any = None
     # Identifies the type of resource.
     type: Any = None

@@ -6,17 +6,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TagKeysResponseCollection_AccountId struct {
 }
 
-var TagKeysResponseCollection_AccountIdFields = ubx.FieldMap{
-	}
+type TagKeysResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type TagKeysResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type TagKeysResponseCollection_ResultInfo struct {
+	// Indicates the number of results returned in the current page.
+	Count any
+	// Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+	Cursor any
+}
+
+var TagKeysResponseCollection_AccountIdFields = ubx.FieldMap{}
 
 type TagKeysResponseCollectionConfig struct {
 	AccountId any
-	Cursor any
+	Cursor    any
 }
 
 type TagKeysResponseCollectionAttrs struct {
 	AccountId any
-	Cursor any
+	Cursor    any
+	Errors    any
+	Messages  any
+	// Contains an array of distinct tag keys.
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var TagKeysResponseCollection = ubx.DataSourceBinding{
@@ -24,8 +48,8 @@ var TagKeysResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: TagKeysResponseCollection_AccountIdFields,
+			Kind:     "object",
+			Fields:   TagKeysResponseCollection_AccountIdFields,
 		},
 		"Cursor": ubx.FieldSpec{WireName: "cursor"},
 	},

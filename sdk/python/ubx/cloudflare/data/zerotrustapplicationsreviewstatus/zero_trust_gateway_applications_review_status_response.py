@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayApplicationsReviewStatusResponse_Result:
+    # Contains the ids of the approved applications.
+    approved_apps: Any = None
+    created_at: Any = None
+    # Contains the ids of the applications in review.
+    in_review_apps: Any = None
+    # Contains the ids of the unapproved applications.
+    unapproved_apps: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayApplicationsReviewStatusResponseConfig:
     # Provide the identifier string.
     account_id: Any = None
@@ -15,6 +26,7 @@ class ZeroTrustGatewayApplicationsReviewStatusResponseConfig:
 class ZeroTrustGatewayApplicationsReviewStatusResponseAttrs:
     # Provide the identifier string.
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayApplicationsReviewStatusResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_applications_review_status_response",

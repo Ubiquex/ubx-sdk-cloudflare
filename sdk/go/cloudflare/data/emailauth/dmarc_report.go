@@ -3,12 +3,86 @@ package emailauth
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DmarcReport_Result_ApprovedSources struct {
+	Created    any
+	CreatedAt  any
+	Domain     any
+	Ips        any
+	Modified   any
+	ModifiedAt any
+	Name       any
+	Slug       any
+	Tag        any
+}
+
+type DmarcReport_Result_Records_BimiRecords struct {
+	Content  any
+	Id       any
+	Name     any
+	Resolved any
+	Ttl      any
+	Type     any
+}
+
+type DmarcReport_Result_Records_ResolvedDmarcRecords struct {
+	Content any
+	Name    any
+}
+
+type DmarcReport_Result_Records struct {
+	// BIMI TXT records
+	BimiRecords any
+	// CNAME records for DKIM selectors. Each selector is resolved independently; when a selector's CNAME resolves to a DKIM TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+	CnameDkimRecords any
+	// CNAME records at _dmarc. When such a CNAME resolves to a DMARC TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+	CnameDmarcRecords any
+	// CNAME records at the zone apex. When such a CNAME resolves to an SPF TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+	CnameSpfRecords any
+	// DKIM TXT records
+	DkimRecords any
+	// DMARC TXT records
+	DmarcRecords any
+	// DMARC records that a recursive lookup of _dmarc.{zone} returned. The API populates this only when the zone lacks a DMARC TXT record of its own, which usually means a CNAME delegates DMARC to another zone.
+	ResolvedDmarcRecords any
+	// SPF TXT records
+	SpfRecords any
+}
+
+type DmarcReport_Result struct {
+	// List of approved sending sources (omitted when empty)
+	ApprovedSources any
+	// Deprecated, use created_at
+	Created any
+	// Creation timestamp
+	CreatedAt any
+	// Whether DMARC reports are enabled
+	Enabled any
+	// Deprecated, use modified_at
+	Modified any
+	// Last modification timestamp
+	ModifiedAt any
+	// Live DNS records for the zone, grouped by type
+	Records any
+	// Prefix for DMARC RUA addresses (32-char hex string)
+	RuaPrefix any
+	// Whether to skip the setup wizard
+	SkipWizard any
+	// DMARC configuration status. The API omits this field when DMARC is correctly configured. If the zone lacks a DMARC TXT record of its own, the API resolves _dmarc.{zone} recursively and evaluates whatever that lookup returns. A CNAME at _dmarc.{zone} that points to a valid DMARC record is therefore healthy; the cname-on-dmarc-record value means the CNAME resolves to no DMARC record at all.
+	Status any
+	// Use `zone_id` instead
+	Tag any
+	// Zone identifier
+	ZoneId any
+}
+
 type DmarcReportConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type DmarcReportAttrs struct {
+	// Response for GET/PATCH /dmarc-reports
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -3,6 +3,28 @@ package requestforinformationrfi
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Asset_Errors_Source struct {
+	Pointer any
+}
+
+type Asset_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Asset_Result_Created struct {
+}
+
+type Asset_Result struct {
+	Created     any
+	Description any
+	FileType    any
+	Id          any
+	Name        any
+}
+
 type AssetConfig struct {
 	// Page number of results.
 	Page any
@@ -17,10 +39,15 @@ type AssetConfig struct {
 }
 
 type AssetAttrs struct {
+	Errors   any
+	Messages any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +59,10 @@ type AssetAttrs struct {
 var Asset = ubx.ResourceBinding{
 	WireType: "cloudflare_asset",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"RequestId": ubx.FieldSpec{WireName: "request_id"},
-		"AssetId": ubx.FieldSpec{WireName: "asset_id"},
+		"AssetId":   ubx.FieldSpec{WireName: "asset_id"},
 	},
 }

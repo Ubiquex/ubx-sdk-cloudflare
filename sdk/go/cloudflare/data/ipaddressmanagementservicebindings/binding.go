@@ -3,6 +3,29 @@ package ipaddressmanagementservicebindings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Binding_Errors_Source struct {
+	Pointer any
+}
+
+type Binding_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Binding_Result_Provisioning struct {
+	State any
+}
+
+type Binding_Result struct {
+	Cidr         any
+	Id           any
+	Provisioning any
+	ServiceId    any
+	ServiceName  any
+}
+
 type BindingConfig struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -13,14 +36,19 @@ type BindingConfig struct {
 type BindingAttrs struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
+	Errors    any
+	Messages  any
 	// Identifier of an IP Prefix.
 	PrefixId any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Binding = ubx.DataSourceBinding{
 	WireType: "cloudflare_binding",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

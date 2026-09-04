@@ -7,11 +7,12 @@ type SecondaryDnsEnableTransferResponseConfig struct {
 }
 
 type SecondaryDnsEnableTransferResponseAttrs struct {
+	// The zone transfer status of a primary zone.
+	Result any
 	ZoneId any
 }
 
 var SecondaryDnsEnableTransferResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_secondary_dns_enable_transfer_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

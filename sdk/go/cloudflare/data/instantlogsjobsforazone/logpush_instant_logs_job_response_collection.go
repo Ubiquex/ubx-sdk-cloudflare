@@ -3,12 +3,36 @@ package instantlogsjobsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushInstantLogsJobResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type LogpushInstantLogsJobResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type LogpushInstantLogsJobResponseCollection_Result struct {
+	DestinationConf any
+	Fields          any
+	Filter          any
+	Sample          any
+	SessionId       any
+}
+
 type LogpushInstantLogsJobResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type LogpushInstantLogsJobResponseCollectionAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

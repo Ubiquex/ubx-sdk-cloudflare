@@ -3,51 +3,97 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
 type ShareResponseSingle_Recipients_AccountId struct {
 }
 
 type ShareResponseSingle_Recipients struct {
-	AccountId any
-	OrganizationId any
+	AccountId          any
+	OrganizationId     any
 	RecipientAccountId any
 }
 
 type ShareResponseSingle_Resources struct {
-	Meta any
+	Meta              any
 	ResourceAccountId any
-	ResourceId any
-	ResourceType any
+	ResourceId        any
+	ResourceType      any
 }
 
-var ShareResponseSingle_Recipients_AccountIdFields = ubx.FieldMap{
-	}
+type ShareResponseSingle_Result_Resources struct {
+	Created           any
+	Id                any
+	Meta              any
+	Modified          any
+	ResourceAccountId any
+	ResourceId        any
+	ResourceType      any
+	ResourceVersion   any
+	Status            any
+}
+
+type ShareResponseSingle_Result struct {
+	// Account identifier.
+	AccountId any
+	// The display name of an account.
+	AccountName any
+	// The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+	AssociatedRecipientCount any
+	// The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+	AssociatingRecipientCount any
+	// When the share was created.
+	Created any
+	// The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+	DisassociatedRecipientCount any
+	// The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+	DisassociatingRecipientCount any
+	// Share identifier tag.
+	Id   any
+	Kind any
+	// When the share was modified.
+	Modified any
+	// The name of the share.
+	Name any
+	// Organization identifier.
+	OrganizationId any
+	// A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
+	Resources  any
+	Status     any
+	TargetType any
+}
+
+var ShareResponseSingle_Recipients_AccountIdFields = ubx.FieldMap{}
 
 var ShareResponseSingle_RecipientsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{
-			WireName: "account_id",
-			Kind: "object",
-			Fields: ShareResponseSingle_Recipients_AccountIdFields,
-		},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"RecipientAccountId": ubx.FieldSpec{
-			WireName: "recipient_account_id",
-			Kind: "object",
-			Fields: ShareResponseSingle_Recipients_AccountIdFields,
-		},
-	}
+	"AccountId": ubx.FieldSpec{
+		WireName: "account_id",
+		Kind:     "object",
+		Fields:   ShareResponseSingle_Recipients_AccountIdFields,
+	},
+	"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
+	"RecipientAccountId": ubx.FieldSpec{
+		WireName: "recipient_account_id",
+		Kind:     "object",
+		Fields:   ShareResponseSingle_Recipients_AccountIdFields,
+	},
+}
 
 var ShareResponseSingle_ResourcesFields = ubx.FieldMap{
-		"Meta": ubx.FieldSpec{WireName: "meta"},
-		"ResourceAccountId": ubx.FieldSpec{WireName: "resource_account_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"Meta":              ubx.FieldSpec{WireName: "meta"},
+	"ResourceAccountId": ubx.FieldSpec{WireName: "resource_account_id"},
+	"ResourceId":        ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
+}
 
 type ShareResponseSingleConfig struct {
 	// The name of the share.
-	Name any
+	Name       any
 	Recipients any
-	Resources any
+	Resources  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -55,10 +101,14 @@ type ShareResponseSingleConfig struct {
 }
 
 type ShareResponseSingleAttrs struct {
+	Errors any
 	// The name of the share.
-	Name any
+	Name       any
 	Recipients any
-	Resources any
+	Resources  any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -71,15 +121,15 @@ var ShareResponseSingle = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Recipients": ubx.FieldSpec{
 			WireName: "recipients",
-			Kind: "list",
-			Fields: ShareResponseSingle_RecipientsFields,
+			Kind:     "list",
+			Fields:   ShareResponseSingle_RecipientsFields,
 		},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "list",
-			Fields: ShareResponseSingle_ResourcesFields,
+			Kind:     "list",
+			Fields:   ShareResponseSingle_ResourcesFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
+		"ShareId":   ubx.FieldSpec{WireName: "share_id"},
 	},
 }

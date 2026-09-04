@@ -10,16 +10,16 @@ type ZeroTrustGatewaySingleResponse4_Expiration struct {
 	// Defines the default duration a policy active in minutes. Must set in order to use the `reset_expiration` endpoint on this rule.
 	Duration any
 	// Indicates whether the policy is expired.
-	Expired any
+	Expired   any
 	ExpiresAt any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSsh struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSsh struct {
 	// Enable SSH command logging.
 	CommandLogging any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControls struct {
 	// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
 	Copy any
 	// Set to false to enable copy-pasting. Only applies when `version == "v1"`.
@@ -48,33 +48,33 @@ type ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls struct {
 	WmId any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPage struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPage struct {
 	// Specify whether to pass the context information as query parameters.
 	IncludeContext any
 	// Specify the URI to which the user is redirected.
 	TargetUri any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSession struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSession struct {
 	// Sets the required session freshness threshold. The API returns a normalized version of this value.
 	Duration any
 	// Enable session enforcement.
 	Enforce any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4 struct {
-	Ip any
-	Port any
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4 struct {
+	Ip                         any
+	Port                       any
 	RouteThroughPrivateNetwork any
-	VnetId any
+	VnetId                     any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers struct {
 	Ipv4 any
 	Ipv6 any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_Egress struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Egress struct {
 	// Specify the IPv4 address to use for egress.
 	Ipv4 any
 	// Specify the fallback IPv4 address to use for egress when the primary IPv4 fails. Set '0.0.0.0' to indicate local egress via WARP IPs.
@@ -83,19 +83,19 @@ type ZeroTrustGatewaySingleResponse4_RuleSettings_Egress struct {
 	Ipv6 any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy struct {
 	// Enable sending the copy to storage.
 	Enabled any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_L4override struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4override struct {
 	// Defines the IPv4 or IPv6 address.
 	Ip any
 	// Defines a port number to use for TCP/UDP overrides.
 	Port any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettings struct {
 	// Enable notification.
 	Enabled any
 	// Indicates whether to pass the context information as query parameters.
@@ -106,12 +106,12 @@ type ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings struct {
 	SupportUrl any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_Quarantine struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Quarantine struct {
 	// Specify the types of files to sandbox.
 	FileTypes any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Redirect struct {
 	// Specify whether to pass the context information as query parameters.
 	IncludeContext any
 	// Specify whether to append the path and query parameters from the original request to target_uri.
@@ -120,19 +120,19 @@ type ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect struct {
 	TargetUri any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternally struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternally struct {
 	// Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
 	Fallback any
 	// Specify the internal DNS view identifier to pass to the internal DNS service.
 	ViewId any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCert struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCert struct {
 	// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
 	Action any
 }
 
-type ZeroTrustGatewaySingleResponse4_RuleSettings struct {
+type ZeroTrustGatewaySingleResponse4_Result_RuleSettings struct {
 	// Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`.
 	AddHeaders any
 	// Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule. Settable for all types of rules.
@@ -191,7 +191,7 @@ type ZeroTrustGatewaySingleResponse4_RuleSettings struct {
 	UntrustedCert any
 }
 
-type ZeroTrustGatewaySingleResponse4_Schedule struct {
+type ZeroTrustGatewaySingleResponse4_Result_Schedule struct {
 	// Specify the time intervals when the rule is active on Fridays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Fridays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
 	Fri any
 	// Specify the time intervals when the rule is active on Mondays, in the increasing order from 00:00-24:00(capped at maximum of 6 time splits). If this parameter omitted, the rule is deactivated on Mondays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
@@ -210,207 +210,249 @@ type ZeroTrustGatewaySingleResponse4_Schedule struct {
 	Wed any
 }
 
-var ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields = ubx.FieldMap{
-	}
+type ZeroTrustGatewaySingleResponse4_Result struct {
+	// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
+	Action    any
+	CreatedAt any
+	// Indicate the date of deletion, if any.
+	DeletedAt any
+	// Specify the rule description.
+	Description any
+	// Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+	DevicePosture any
+	// Specify whether the rule is enabled.
+	Enabled any
+	// Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This does not apply to HTTP or network policies. Settable only for `dns` rules.
+	Expiration any
+	// Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
+	Filters any
+	// Identify the API resource with a UUID.
+	Id any
+	// Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+	Identity any
+	// Specify the rule name.
+	Name any
+	// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
+	Precedence any
+	// Indicate that this rule is shared via the Orgs API and read only.
+	ReadOnly any
+	// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
+	RuleSettings any
+	// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
+	Schedule any
+	// Indicate that this rule is sharable via the Orgs API.
+	Sharable any
+	// Provide the account tag of the account that created the rule.
+	SourceAccount any
+	// Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+	Traffic   any
+	UpdatedAt any
+	// Indicate the version number of the rule(read-only).
+	Version any
+	// Indicate a warning for a misconfigured rule, if any.
+	WarningStatus any
+}
+
+var ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields = ubx.FieldMap{}
 
 var ZeroTrustGatewaySingleResponse4_ExpirationFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Expired": ubx.FieldSpec{WireName: "expired"},
-		"ExpiresAt": ubx.FieldSpec{
-			WireName: "expires_at",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields,
-		},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Expired":  ubx.FieldSpec{WireName: "expired"},
+	"ExpiresAt": ubx.FieldSpec{
+		WireName: "expires_at",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields,
+	},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields = ubx.FieldMap{
-		"CommandLogging": ubx.FieldSpec{WireName: "command_logging"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields = ubx.FieldMap{
+	"CommandLogging": ubx.FieldSpec{WireName: "command_logging"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields = ubx.FieldMap{
-		"Copy": ubx.FieldSpec{WireName: "copy"},
-		"Dcp": ubx.FieldSpec{WireName: "dcp"},
-		"Dd": ubx.FieldSpec{WireName: "dd"},
-		"Dk": ubx.FieldSpec{WireName: "dk"},
-		"Download": ubx.FieldSpec{WireName: "download"},
-		"Dp": ubx.FieldSpec{WireName: "dp"},
-		"Du": ubx.FieldSpec{WireName: "du"},
-		"Keyboard": ubx.FieldSpec{WireName: "keyboard"},
-		"Paste": ubx.FieldSpec{WireName: "paste"},
-		"Printing": ubx.FieldSpec{WireName: "printing"},
-		"Upload": ubx.FieldSpec{WireName: "upload"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"WmId": ubx.FieldSpec{WireName: "wm_id"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields = ubx.FieldMap{
+	"Copy":     ubx.FieldSpec{WireName: "copy"},
+	"Dcp":      ubx.FieldSpec{WireName: "dcp"},
+	"Dd":       ubx.FieldSpec{WireName: "dd"},
+	"Dk":       ubx.FieldSpec{WireName: "dk"},
+	"Download": ubx.FieldSpec{WireName: "download"},
+	"Dp":       ubx.FieldSpec{WireName: "dp"},
+	"Du":       ubx.FieldSpec{WireName: "du"},
+	"Keyboard": ubx.FieldSpec{WireName: "keyboard"},
+	"Paste":    ubx.FieldSpec{WireName: "paste"},
+	"Printing": ubx.FieldSpec{WireName: "printing"},
+	"Upload":   ubx.FieldSpec{WireName: "upload"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+	"WmId":     ubx.FieldSpec{WireName: "wm_id"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields = ubx.FieldMap{
-		"IncludeContext": ubx.FieldSpec{WireName: "include_context"},
-		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields = ubx.FieldMap{
+	"IncludeContext": ubx.FieldSpec{WireName: "include_context"},
+	"TargetUri":      ubx.FieldSpec{WireName: "target_uri"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields = ubx.FieldMap{
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Enforce":  ubx.FieldSpec{WireName: "enforce"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields = ubx.FieldMap{
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RouteThroughPrivateNetwork": ubx.FieldSpec{WireName: "route_through_private_network"},
-		"VnetId": ubx.FieldSpec{WireName: "vnet_id"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields = ubx.FieldMap{
+	"Ip":                         ubx.FieldSpec{WireName: "ip"},
+	"Port":                       ubx.FieldSpec{WireName: "port"},
+	"RouteThroughPrivateNetwork": ubx.FieldSpec{WireName: "route_through_private_network"},
+	"VnetId":                     ubx.FieldSpec{WireName: "vnet_id"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields = ubx.FieldMap{
-		"Ipv4": ubx.FieldSpec{
-			WireName: "ipv4",
-			Kind: "list",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
-		},
-		"Ipv6": ubx.FieldSpec{
-			WireName: "ipv6",
-			Kind: "list",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
-		},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields = ubx.FieldMap{
+	"Ipv4": ubx.FieldSpec{
+		WireName: "ipv4",
+		Kind:     "list",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
+	},
+	"Ipv6": ubx.FieldSpec{
+		WireName: "ipv6",
+		Kind:     "list",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
+	},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields = ubx.FieldMap{
-		"Ipv4": ubx.FieldSpec{WireName: "ipv4"},
-		"Ipv4Fallback": ubx.FieldSpec{WireName: "ipv4_fallback"},
-		"Ipv6": ubx.FieldSpec{WireName: "ipv6"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields = ubx.FieldMap{
+	"Ipv4":         ubx.FieldSpec{WireName: "ipv4"},
+	"Ipv4Fallback": ubx.FieldSpec{WireName: "ipv4_fallback"},
+	"Ipv6":         ubx.FieldSpec{WireName: "ipv6"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields = ubx.FieldMap{
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields = ubx.FieldMap{
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields = ubx.FieldMap{
+	"Ip":   ubx.FieldSpec{WireName: "ip"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"IncludeContext": ubx.FieldSpec{WireName: "include_context"},
-		"Msg": ubx.FieldSpec{WireName: "msg"},
-		"SupportUrl": ubx.FieldSpec{WireName: "support_url"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields = ubx.FieldMap{
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"IncludeContext": ubx.FieldSpec{WireName: "include_context"},
+	"Msg":            ubx.FieldSpec{WireName: "msg"},
+	"SupportUrl":     ubx.FieldSpec{WireName: "support_url"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields = ubx.FieldMap{
-		"FileTypes": ubx.FieldSpec{WireName: "file_types"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields = ubx.FieldMap{
+	"FileTypes": ubx.FieldSpec{WireName: "file_types"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields = ubx.FieldMap{
-		"IncludeContext": ubx.FieldSpec{WireName: "include_context"},
-		"PreservePathAndQuery": ubx.FieldSpec{WireName: "preserve_path_and_query"},
-		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields = ubx.FieldMap{
+	"IncludeContext":       ubx.FieldSpec{WireName: "include_context"},
+	"PreservePathAndQuery": ubx.FieldSpec{WireName: "preserve_path_and_query"},
+	"TargetUri":            ubx.FieldSpec{WireName: "target_uri"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields = ubx.FieldMap{
-		"Fallback": ubx.FieldSpec{WireName: "fallback"},
-		"ViewId": ubx.FieldSpec{WireName: "view_id"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields = ubx.FieldMap{
+	"Fallback": ubx.FieldSpec{WireName: "fallback"},
+	"ViewId":   ubx.FieldSpec{WireName: "view_id"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields = ubx.FieldMap{
+	"Action": ubx.FieldSpec{WireName: "action"},
+}
 
-var ZeroTrustGatewaySingleResponse4_RuleSettingsFields = ubx.FieldMap{
-		"AddHeaders": ubx.FieldSpec{WireName: "add_headers"},
-		"AllowChildBypass": ubx.FieldSpec{WireName: "allow_child_bypass"},
-		"AuditSsh": ubx.FieldSpec{
-			WireName: "audit_ssh",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields,
-		},
-		"BisoAdminControls": ubx.FieldSpec{
-			WireName: "biso_admin_controls",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields,
-		},
-		"BlockPage": ubx.FieldSpec{
-			WireName: "block_page",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields,
-		},
-		"BlockPageEnabled": ubx.FieldSpec{WireName: "block_page_enabled"},
-		"BlockReason": ubx.FieldSpec{WireName: "block_reason"},
-		"BypassParentRule": ubx.FieldSpec{WireName: "bypass_parent_rule"},
-		"CheckSession": ubx.FieldSpec{
-			WireName: "check_session",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields,
-		},
-		"DeleteHeaders": ubx.FieldSpec{WireName: "delete_headers"},
-		"DnsResolvers": ubx.FieldSpec{
-			WireName: "dns_resolvers",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields,
-		},
-		"Egress": ubx.FieldSpec{
-			WireName: "egress",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields,
-		},
-		"ForensicCopy": ubx.FieldSpec{
-			WireName: "forensic_copy",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
-		},
-		"IgnoreCnameCategoryMatches": ubx.FieldSpec{WireName: "ignore_cname_category_matches"},
-		"InsecureDisableDnssecValidation": ubx.FieldSpec{WireName: "insecure_disable_dnssec_validation"},
-		"IpCategories": ubx.FieldSpec{WireName: "ip_categories"},
-		"IpIndicatorFeeds": ubx.FieldSpec{WireName: "ip_indicator_feeds"},
-		"L4override": ubx.FieldSpec{
-			WireName: "l4override",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields,
-		},
-		"NotificationSettings": ubx.FieldSpec{
-			WireName: "notification_settings",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields,
-		},
-		"OverrideHost": ubx.FieldSpec{WireName: "override_host"},
-		"OverrideIps": ubx.FieldSpec{WireName: "override_ips"},
-		"PayloadLog": ubx.FieldSpec{
-			WireName: "payload_log",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
-		},
-		"Quarantine": ubx.FieldSpec{
-			WireName: "quarantine",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields,
-		},
-		"Redirect": ubx.FieldSpec{
-			WireName: "redirect",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields,
-		},
-		"ResolveDnsInternally": ubx.FieldSpec{
-			WireName: "resolve_dns_internally",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields,
-		},
-		"ResolveDnsThroughCloudflare": ubx.FieldSpec{WireName: "resolve_dns_through_cloudflare"},
-		"SetHeaders": ubx.FieldSpec{WireName: "set_headers"},
-		"UntrustedCert": ubx.FieldSpec{
-			WireName: "untrusted_cert",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields,
-		},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields = ubx.FieldMap{
+	"AddHeaders":       ubx.FieldSpec{WireName: "add_headers"},
+	"AllowChildBypass": ubx.FieldSpec{WireName: "allow_child_bypass"},
+	"AuditSsh": ubx.FieldSpec{
+		WireName: "audit_ssh",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields,
+	},
+	"BisoAdminControls": ubx.FieldSpec{
+		WireName: "biso_admin_controls",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields,
+	},
+	"BlockPage": ubx.FieldSpec{
+		WireName: "block_page",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields,
+	},
+	"BlockPageEnabled": ubx.FieldSpec{WireName: "block_page_enabled"},
+	"BlockReason":      ubx.FieldSpec{WireName: "block_reason"},
+	"BypassParentRule": ubx.FieldSpec{WireName: "bypass_parent_rule"},
+	"CheckSession": ubx.FieldSpec{
+		WireName: "check_session",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields,
+	},
+	"DeleteHeaders": ubx.FieldSpec{WireName: "delete_headers"},
+	"DnsResolvers": ubx.FieldSpec{
+		WireName: "dns_resolvers",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields,
+	},
+	"Egress": ubx.FieldSpec{
+		WireName: "egress",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields,
+	},
+	"ForensicCopy": ubx.FieldSpec{
+		WireName: "forensic_copy",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
+	},
+	"IgnoreCnameCategoryMatches":      ubx.FieldSpec{WireName: "ignore_cname_category_matches"},
+	"InsecureDisableDnssecValidation": ubx.FieldSpec{WireName: "insecure_disable_dnssec_validation"},
+	"IpCategories":                    ubx.FieldSpec{WireName: "ip_categories"},
+	"IpIndicatorFeeds":                ubx.FieldSpec{WireName: "ip_indicator_feeds"},
+	"L4override": ubx.FieldSpec{
+		WireName: "l4override",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields,
+	},
+	"NotificationSettings": ubx.FieldSpec{
+		WireName: "notification_settings",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields,
+	},
+	"OverrideHost": ubx.FieldSpec{WireName: "override_host"},
+	"OverrideIps":  ubx.FieldSpec{WireName: "override_ips"},
+	"PayloadLog": ubx.FieldSpec{
+		WireName: "payload_log",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
+	},
+	"Quarantine": ubx.FieldSpec{
+		WireName: "quarantine",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields,
+	},
+	"Redirect": ubx.FieldSpec{
+		WireName: "redirect",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields,
+	},
+	"ResolveDnsInternally": ubx.FieldSpec{
+		WireName: "resolve_dns_internally",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields,
+	},
+	"ResolveDnsThroughCloudflare": ubx.FieldSpec{WireName: "resolve_dns_through_cloudflare"},
+	"SetHeaders":                  ubx.FieldSpec{WireName: "set_headers"},
+	"UntrustedCert": ubx.FieldSpec{
+		WireName: "untrusted_cert",
+		Kind:     "object",
+		Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields,
+	},
+}
 
-var ZeroTrustGatewaySingleResponse4_ScheduleFields = ubx.FieldMap{
-		"Fri": ubx.FieldSpec{WireName: "fri"},
-		"Mon": ubx.FieldSpec{WireName: "mon"},
-		"Sat": ubx.FieldSpec{WireName: "sat"},
-		"Sun": ubx.FieldSpec{WireName: "sun"},
-		"Thu": ubx.FieldSpec{WireName: "thu"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"Tue": ubx.FieldSpec{WireName: "tue"},
-		"Wed": ubx.FieldSpec{WireName: "wed"},
-	}
+var ZeroTrustGatewaySingleResponse4_Result_ScheduleFields = ubx.FieldMap{
+	"Fri":      ubx.FieldSpec{WireName: "fri"},
+	"Mon":      ubx.FieldSpec{WireName: "mon"},
+	"Sat":      ubx.FieldSpec{WireName: "sat"},
+	"Sun":      ubx.FieldSpec{WireName: "sun"},
+	"Thu":      ubx.FieldSpec{WireName: "thu"},
+	"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+	"Tue":      ubx.FieldSpec{WireName: "tue"},
+	"Wed":      ubx.FieldSpec{WireName: "wed"},
+}
 
 type ZeroTrustGatewaySingleResponse4Config struct {
 	// Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
@@ -462,6 +504,7 @@ type ZeroTrustGatewaySingleResponse4Attrs struct {
 	Name any
 	// Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
 	Precedence any
+	Result     any
 	// Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
 	RuleSettings any
 	// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
@@ -477,31 +520,31 @@ type ZeroTrustGatewaySingleResponse4Attrs struct {
 var ZeroTrustGatewaySingleResponse4 = ubx.ResourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_single_response_4",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Action":        ubx.FieldSpec{WireName: "action"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"DevicePosture": ubx.FieldSpec{WireName: "device_posture"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
 		"Expiration": ubx.FieldSpec{
 			WireName: "expiration",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_ExpirationFields,
+			Kind:     "object",
+			Fields:   ZeroTrustGatewaySingleResponse4_ExpirationFields,
 		},
-		"Filters": ubx.FieldSpec{WireName: "filters"},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Filters":    ubx.FieldSpec{WireName: "filters"},
+		"Identity":   ubx.FieldSpec{WireName: "identity"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Precedence": ubx.FieldSpec{WireName: "precedence"},
 		"RuleSettings": ubx.FieldSpec{
 			WireName: "rule_settings",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_RuleSettingsFields,
+			Kind:     "object",
+			Fields:   ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields,
 		},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: ZeroTrustGatewaySingleResponse4_ScheduleFields,
+			Kind:     "object",
+			Fields:   ZeroTrustGatewaySingleResponse4_Result_ScheduleFields,
 		},
-		"Traffic": ubx.FieldSpec{WireName: "traffic"},
+		"Traffic":   ubx.FieldSpec{WireName: "traffic"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RuleId":    ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

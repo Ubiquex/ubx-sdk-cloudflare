@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessScimGroupsResponse_Result_Meta:
+    created: Any = None
+    last_modified: Any = None
+
+@dataclasses.dataclass
+class AccessScimGroupsResponse_Result:
+    display_name: Any = None
+    external_id: Any = None
+    id: Any = None
+    meta: Any = None
+    schemas: Any = None
+
+@dataclasses.dataclass
 class AccessScimGroupsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -39,6 +52,7 @@ class AccessScimGroupsResponseAttrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
 
 AccessScimGroupsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_access_scim_groups_response",

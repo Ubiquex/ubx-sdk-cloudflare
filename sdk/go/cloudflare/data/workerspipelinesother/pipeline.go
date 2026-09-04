@@ -4,12 +4,12 @@ package workerspipelinesother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_Result struct {
-	CreatedAt any
-	Id any
+	CreatedAt  any
+	Id         any
 	ModifiedAt any
-	Name any
-	Sql any
-	Status any
+	Name       any
+	Sql        any
+	Status     any
 }
 
 type Pipeline_ResultInfo struct {
@@ -26,18 +26,18 @@ type Pipeline_ResultInfo struct {
 type PipelineConfig struct {
 	// Specifies the public ID of the account.
 	AccountId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 }
 
 type PipelineAttrs struct {
 	// Specifies the public ID of the account.
-	AccountId any
-	Name any
-	Page any
-	PerPage any
-	Result any
+	AccountId  any
+	Name       any
+	Page       any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Indicates whether the API call was successful.
 	Success any
@@ -47,8 +47,8 @@ var Pipeline = ubx.DataSourceBinding{
 	WireType: "cloudflare_pipeline",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

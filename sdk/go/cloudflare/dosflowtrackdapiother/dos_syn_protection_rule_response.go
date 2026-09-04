@@ -3,6 +3,38 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosSynProtectionRuleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosSynProtectionRuleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosSynProtectionRuleResponse_Result struct {
+	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+	BurstSensitivity any
+	// The creation timestamp of the SYN Protection rule.
+	CreatedOn any
+	// The unique ID of the SYN Protection rule.
+	Id any
+	// The type of mitigation for SYN Protection. Must be one of 'challenge' or 'retransmit'.
+	MitigationType any
+	// The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+	Mode any
+	// The last modification timestamp of the SYN Protection rule.
+	ModifiedOn any
+	// The name of the SYN Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+	Name any
+	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+	RateSensitivity any
+	// The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+	Scope any
+}
+
 type DosSynProtectionRuleResponseConfig struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
@@ -25,6 +57,8 @@ type DosSynProtectionRuleResponseConfig struct {
 type DosSynProtectionRuleResponseAttrs struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
+	Errors           any
+	Messages         any
 	// The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
 	MitigationType any
 	// The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
@@ -33,8 +67,11 @@ type DosSynProtectionRuleResponseAttrs struct {
 	Name any
 	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
 	RateSensitivity any
+	Result          any
 	// The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
 	Scope any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,12 +82,12 @@ var DosSynProtectionRuleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_syn_protection_rule_response",
 	Fields: ubx.FieldMap{
 		"BurstSensitivity": ubx.FieldSpec{WireName: "burst_sensitivity"},
-		"MitigationType": ubx.FieldSpec{WireName: "mitigation_type"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RateSensitivity": ubx.FieldSpec{WireName: "rate_sensitivity"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"MitigationType":   ubx.FieldSpec{WireName: "mitigation_type"},
+		"Mode":             ubx.FieldSpec{WireName: "mode"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"RateSensitivity":  ubx.FieldSpec{WireName: "rate_sensitivity"},
+		"Scope":            ubx.FieldSpec{WireName: "scope"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"RuleId":           ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

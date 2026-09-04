@@ -4,6 +4,13 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamPermissionsGroupResponseCollection_AccountId {
 }
 
+export interface IamPermissionsGroupResponseCollection_Result {
+  category?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+  scopes?: string[] | Computed<string[]>;
+}
+
 const IamPermissionsGroupResponseCollection_AccountIdFields: FieldMap = {
 };
 
@@ -18,6 +25,7 @@ export interface IamPermissionsGroupResponseCollectionAttrs {
   /** Account identifier tag. */
   accountId: IamPermissionsGroupResponseCollection_AccountId;
   name: string;
+  result: IamPermissionsGroupResponseCollection_Result[];
   scope: string;
 }
 

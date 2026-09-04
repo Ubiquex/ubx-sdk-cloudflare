@@ -3,12 +3,43 @@ package dnssec
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnssecZskResponseCollection_Result_Dnskey_Hdr struct {
+	Class    any
+	Name     any
+	Rdlength any
+	Rrtype   any
+	Ttl      any
+}
+
+type DnssecZskResponseCollection_Result_Dnskey struct {
+	Algorithm any
+	Flags     any
+	Hdr       any
+	Protocol  any
+	PublicKey any
+}
+
+type DnssecZskResponseCollection_Result_SigningKey struct {
+	Kek     any
+	Privkey any
+	Pubkey  any
+}
+
+type DnssecZskResponseCollection_Result struct {
+	Dnskey     any
+	Location   any
+	Name       any
+	SigningKey any
+	Tag        any
+}
+
 type DnssecZskResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type DnssecZskResponseCollectionAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

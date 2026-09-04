@@ -7,12 +7,86 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DmarcReport_Result_ApprovedSources:
+    created: Any = None
+    created_at: Any = None
+    domain: Any = None
+    ips: Any = None
+    modified: Any = None
+    modified_at: Any = None
+    name: Any = None
+    slug: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
+class DmarcReport_Result_Records_BimiRecords:
+    content: Any = None
+    id: Any = None
+    name: Any = None
+    resolved: Any = None
+    ttl: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class DmarcReport_Result_Records_ResolvedDmarcRecords:
+    content: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class DmarcReport_Result_Records:
+    # BIMI TXT records
+    bimi_records: Any = None
+    # CNAME records for DKIM selectors. Each selector is resolved independently; when a selector's CNAME resolves to a DKIM TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+    cname_dkim_records: Any = None
+    # CNAME records at _dmarc. When such a CNAME resolves to a DMARC TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+    cname_dmarc_records: Any = None
+    # CNAME records at the zone apex. When such a CNAME resolves to an SPF TXT record, the API returns that record's content in the `resolved` field of the corresponding entry.
+    cname_spf_records: Any = None
+    # DKIM TXT records
+    dkim_records: Any = None
+    # DMARC TXT records
+    dmarc_records: Any = None
+    # DMARC records that a recursive lookup of _dmarc.{zone} returned. The API populates this only when the zone lacks a DMARC TXT record of its own, which usually means a CNAME delegates DMARC to another zone.
+    resolved_dmarc_records: Any = None
+    # SPF TXT records
+    spf_records: Any = None
+
+@dataclasses.dataclass
+class DmarcReport_Result:
+    # List of approved sending sources (omitted when empty)
+    approved_sources: Any = None
+    # Deprecated, use created_at
+    created: Any = None
+    # Creation timestamp
+    created_at: Any = None
+    # Whether DMARC reports are enabled
+    enabled: Any = None
+    # Deprecated, use modified_at
+    modified: Any = None
+    # Last modification timestamp
+    modified_at: Any = None
+    # Live DNS records for the zone, grouped by type
+    records: Any = None
+    # Prefix for DMARC RUA addresses (32-char hex string)
+    rua_prefix: Any = None
+    # Whether to skip the setup wizard
+    skip_wizard: Any = None
+    # DMARC configuration status. The API omits this field when DMARC is correctly configured. If the zone lacks a DMARC TXT record of its own, the API resolves _dmarc.{zone} recursively and evaluates whatever that lookup returns. A CNAME at _dmarc.{zone} that points to a valid DMARC record is therefore healthy; the cname-on-dmarc-record value means the CNAME resolves to no DMARC record at all.
+    status: Any = None
+    # Use `zone_id` instead
+    tag: Any = None
+    # Zone identifier
+    zone_id: Any = None
+
+@dataclasses.dataclass
 class DmarcReportConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class DmarcReportAttrs:
+    # Response for GET/PATCH /dmarc-reports
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

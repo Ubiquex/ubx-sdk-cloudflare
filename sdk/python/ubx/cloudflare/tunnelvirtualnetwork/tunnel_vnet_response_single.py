@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelVnetResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelVnetResponseSingle_Result:
+    # Optional remark describing the virtual network.
+    comment: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # UUID of the virtual network.
+    id: Any = None
+    # If `true`, this virtual network is the default for the account.
+    is_default_network: Any = None
+    # A user-friendly name for the virtual network.
+    name: Any = None
+
+@dataclasses.dataclass
 class TunnelVnetResponseSingleConfig:
     # Optional remark describing the virtual network.
     comment: Any = None
@@ -25,12 +45,17 @@ class TunnelVnetResponseSingleConfig:
 class TunnelVnetResponseSingleAttrs:
     # Optional remark describing the virtual network.
     comment: Any = None
+    errors: Any = None
     # If `true`, this virtual network is the default for the account.
     is_default: Any = None
     # If `true`, this virtual network is the default for the account.
     is_default_network: Any = None
+    messages: Any = None
     # A user-friendly name for the virtual network.
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

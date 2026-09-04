@@ -3,6 +3,32 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareResourceResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type ShareResourceResponseSingle_Result struct {
+	// When the share was created.
+	Created any
+	// Share Resource identifier.
+	Id any
+	// Resource Metadata.
+	Meta any
+	// When the share was modified.
+	Modified any
+	// Account identifier.
+	ResourceAccountId any
+	// Share Resource identifier.
+	ResourceId any
+	// Resource Type.
+	ResourceType any
+	// Resource Version.
+	ResourceVersion any
+	// Resource Status.
+	Status any
+}
+
 type ShareResourceResponseSingleConfig struct {
 	// Resource Metadata.
 	Meta any
@@ -21,6 +47,7 @@ type ShareResourceResponseSingleConfig struct {
 }
 
 type ShareResourceResponseSingleAttrs struct {
+	Errors any
 	// Resource Metadata.
 	Meta any
 	// Account identifier.
@@ -29,6 +56,9 @@ type ShareResourceResponseSingleAttrs struct {
 	ResourceId any
 	// Resource Type.
 	ResourceType any
+	Result       any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +70,12 @@ type ShareResourceResponseSingleAttrs struct {
 var ShareResourceResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_resource_sharing_share_resource_response_single",
 	Fields: ubx.FieldMap{
-		"Meta": ubx.FieldSpec{WireName: "meta"},
+		"Meta":              ubx.FieldSpec{WireName: "meta"},
 		"ResourceAccountId": ubx.FieldSpec{WireName: "resource_account_id"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
-		"ShareResourceId": ubx.FieldSpec{WireName: "share_resource_id"},
+		"ResourceId":        ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":      ubx.FieldSpec{WireName: "resource_type"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"ShareId":           ubx.FieldSpec{WireName: "share_id"},
+		"ShareResourceId":   ubx.FieldSpec{WireName: "share_resource_id"},
 	},
 }

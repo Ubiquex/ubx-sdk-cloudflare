@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse2_Result:
+    created_at: Any = None
+    # Provide metadata describing the resource the operation acts on. The fields present depend on the `operation_type`.
+    data: Any = None
+    # Identify the API resource with a UUID.
+    id: Any = None
+    # The type of operation.
+    operation_type: Any = None
+    # A human-readable error message if the operation failed. Only present when the operation status is `failed`.
+    processing_error: Any = None
+    # The result of the operation. Only present when the operation has completed successfully.
+    result: Any = None
+    # The status of the operation.
+    status: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewaySingleResponse2Config:
     # Provide the identifier string.
     account_id: Any = None
@@ -19,6 +36,7 @@ class ZeroTrustGatewaySingleResponse2Attrs:
     account_id: Any = None
     # Identify the API resource with a UUID.
     operation_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewaySingleResponse2 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_single_response_2",

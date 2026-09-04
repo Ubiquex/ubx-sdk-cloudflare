@@ -7,36 +7,36 @@ type PayPerCrawlListCrawlersResponse_Errors_ErrorChain struct {
 }
 
 type PayPerCrawlListCrawlersResponse_Errors_Source struct {
-	Parameter any
+	Parameter           any
 	ParameterValueIndex any
-	Pointer any
+	Pointer             any
 }
 
 type PayPerCrawlListCrawlersResponse_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	ErrorChain any
-	Message any
-	Meta any
-	Source any
+	ErrorChain       any
+	Message          any
+	Meta             any
+	Source           any
 }
 
 type PayPerCrawlListCrawlersResponse_Result_Crawlers struct {
 	BotManagement any
-	Category any
-	CategoryId any
-	HeuristicId any
-	InfoUrl any
-	Managed any
-	Name any
-	Onboarded any
-	Operator any
-	Slug any
-	TestingId any
-	UserAgent any
-	VerifiedId any
-	Visible any
-	WbaId any
+	Category      any
+	CategoryId    any
+	HeuristicId   any
+	InfoUrl       any
+	Managed       any
+	Name          any
+	Onboarded     any
+	Operator      any
+	Slug          any
+	TestingId     any
+	UserAgent     any
+	VerifiedId    any
+	Visible       any
+	WbaId         any
 }
 
 type PayPerCrawlListCrawlersResponse_Result struct {
@@ -44,9 +44,9 @@ type PayPerCrawlListCrawlersResponse_Result struct {
 }
 
 type PayPerCrawlListCrawlersResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	// TotalPages is a pointer so that if TotalPages == 0 we return that there are indeed 0 pages. omitempty would have removed the field otherwise. This is important as a customer may be relying on always reading this property and it should not be absent just because it is 0, only absent if a value is never provided.
 	TotalPages any
@@ -57,12 +57,12 @@ type PayPerCrawlListCrawlersResponseConfig struct {
 }
 
 type PayPerCrawlListCrawlersResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var PayPerCrawlListCrawlersResponse = ubx.DataSourceBinding{

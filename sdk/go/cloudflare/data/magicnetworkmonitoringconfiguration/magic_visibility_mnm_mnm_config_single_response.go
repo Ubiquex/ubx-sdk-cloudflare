@@ -3,12 +3,28 @@ package magicnetworkmonitoringconfiguration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicVisibilityMnmMnmConfigSingleResponse_Result_WarpDevices struct {
+	Id       any
+	Name     any
+	RouterIp any
+}
+
+type MagicVisibilityMnmMnmConfigSingleResponse_Result struct {
+	// Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.
+	DefaultSampling any
+	// The account name.
+	Name        any
+	RouterIps   any
+	WarpDevices any
+}
+
 type MagicVisibilityMnmMnmConfigSingleResponseConfig struct {
 	AccountId any
 }
 
 type MagicVisibilityMnmMnmConfigSingleResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var MagicVisibilityMnmMnmConfigSingleResponse = ubx.DataSourceBinding{

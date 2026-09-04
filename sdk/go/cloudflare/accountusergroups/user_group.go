@@ -11,35 +11,81 @@ type UserGroup_Policies_PermissionGroups struct {
 }
 
 type UserGroup_Policies struct {
-	Access any
+	Access           any
 	PermissionGroups any
-	ResourceGroups any
+	ResourceGroups   any
 }
 
-var UserGroup_Policies_PermissionGroups_IdFields = ubx.FieldMap{
-	}
+type UserGroup_Result_Policies_PermissionGroups_Meta struct {
+	Key   any
+	Value any
+}
+
+type UserGroup_Result_Policies_PermissionGroups struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+type UserGroup_Result_Policies_ResourceGroups_Scope_Objects struct {
+	Key any
+}
+
+type UserGroup_Result_Policies_ResourceGroups_Scope struct {
+	Key     any
+	Objects any
+}
+
+type UserGroup_Result_Policies_ResourceGroups struct {
+	Id    any
+	Meta  any
+	Name  any
+	Scope any
+}
+
+type UserGroup_Result_Policies struct {
+	Access           any
+	Id               any
+	PermissionGroups any
+	ResourceGroups   any
+}
+
+type UserGroup_Result struct {
+	// Timestamp for the creation of the user group
+	CreatedOn any
+	// User Group identifier tag.
+	Id any
+	// Last time the user group was modified.
+	ModifiedOn any
+	// Name of the user group.
+	Name any
+	// Policies attached to the User group
+	Policies any
+}
+
+var UserGroup_Policies_PermissionGroups_IdFields = ubx.FieldMap{}
 
 var UserGroup_Policies_PermissionGroupsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{
-			WireName: "id",
-			Kind: "object",
-			Fields: UserGroup_Policies_PermissionGroups_IdFields,
-		},
-	}
+	"Id": ubx.FieldSpec{
+		WireName: "id",
+		Kind:     "object",
+		Fields:   UserGroup_Policies_PermissionGroups_IdFields,
+	},
+}
 
 var UserGroup_PoliciesFields = ubx.FieldMap{
-		"Access": ubx.FieldSpec{WireName: "access"},
-		"PermissionGroups": ubx.FieldSpec{
-			WireName: "permission_groups",
-			Kind: "list",
-			Fields: UserGroup_Policies_PermissionGroupsFields,
-		},
-		"ResourceGroups": ubx.FieldSpec{
-			WireName: "resource_groups",
-			Kind: "list",
-			Fields: UserGroup_Policies_PermissionGroupsFields,
-		},
-	}
+	"Access": ubx.FieldSpec{WireName: "access"},
+	"PermissionGroups": ubx.FieldSpec{
+		WireName: "permission_groups",
+		Kind:     "list",
+		Fields:   UserGroup_Policies_PermissionGroupsFields,
+	},
+	"ResourceGroups": ubx.FieldSpec{
+		WireName: "resource_groups",
+		Kind:     "list",
+		Fields:   UserGroup_Policies_PermissionGroupsFields,
+	},
+}
 
 type UserGroupConfig struct {
 	// Name of the User group.
@@ -57,6 +103,8 @@ type UserGroupAttrs struct {
 	Name any
 	// Policies attached to the User group
 	Policies any
+	// A group of policies resources.
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -69,10 +117,10 @@ var UserGroup = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: UserGroup_PoliciesFields,
+			Kind:     "list",
+			Fields:   UserGroup_PoliciesFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"UserGroupId": ubx.FieldSpec{WireName: "user_group_id"},
 	},
 }

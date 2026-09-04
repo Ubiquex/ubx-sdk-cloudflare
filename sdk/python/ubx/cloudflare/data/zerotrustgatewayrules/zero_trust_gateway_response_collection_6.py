@@ -7,12 +7,172 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_Expiration_ExpiresAt:
+    pass
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_Expiration:
+    duration: Any = None
+    expired: Any = None
+    expires_at: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_AuditSsh:
+    command_logging: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_BisoAdminControls:
+    copy: Any = None
+    dcp: Any = None
+    dd: Any = None
+    dk: Any = None
+    download: Any = None
+    dp: Any = None
+    du: Any = None
+    keyboard: Any = None
+    paste: Any = None
+    printing: Any = None
+    upload: Any = None
+    version: Any = None
+    wm_id: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_BlockPage:
+    include_context: Any = None
+    target_uri: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_CheckSession:
+    duration: Any = None
+    enforce: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_DnsResolvers_Ipv4:
+    ip: Any = None
+    port: Any = None
+    route_through_private_network: Any = None
+    vnet_id: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_DnsResolvers:
+    ipv4: Any = None
+    ipv6: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Egress:
+    ipv4: Any = None
+    ipv4_fallback: Any = None
+    ipv6: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_ForensicCopy:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_L4override:
+    ip: Any = None
+    port: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_NotificationSettings:
+    enabled: Any = None
+    include_context: Any = None
+    msg: Any = None
+    support_url: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Quarantine:
+    file_types: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Redirect:
+    include_context: Any = None
+    preserve_path_and_query: Any = None
+    target_uri: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_ResolveDnsInternally:
+    fallback: Any = None
+    view_id: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings_UntrustedCert:
+    action: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_RuleSettings:
+    add_headers: Any = None
+    allow_child_bypass: Any = None
+    audit_ssh: Any = None
+    biso_admin_controls: Any = None
+    block_page: Any = None
+    block_page_enabled: Any = None
+    block_reason: Any = None
+    bypass_parent_rule: Any = None
+    check_session: Any = None
+    delete_headers: Any = None
+    dns_resolvers: Any = None
+    egress: Any = None
+    forensic_copy: Any = None
+    ignore_cname_category_matches: Any = None
+    insecure_disable_dnssec_validation: Any = None
+    ip_categories: Any = None
+    ip_indicator_feeds: Any = None
+    l4override: Any = None
+    notification_settings: Any = None
+    override_host: Any = None
+    override_ips: Any = None
+    payload_log: Any = None
+    quarantine: Any = None
+    redirect: Any = None
+    resolve_dns_internally: Any = None
+    resolve_dns_through_cloudflare: Any = None
+    set_headers: Any = None
+    untrusted_cert: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result_Schedule:
+    fri: Any = None
+    mon: Any = None
+    sat: Any = None
+    sun: Any = None
+    thu: Any = None
+    time_zone: Any = None
+    tue: Any = None
+    wed: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection6_Result:
+    action: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    description: Any = None
+    device_posture: Any = None
+    enabled: Any = None
+    expiration: Any = None
+    filters: Any = None
+    id: Any = None
+    identity: Any = None
+    name: Any = None
+    precedence: Any = None
+    read_only: Any = None
+    rule_settings: Any = None
+    schedule: Any = None
+    sharable: Any = None
+    source_account: Any = None
+    traffic: Any = None
+    updated_at: Any = None
+    version: Any = None
+    warning_status: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection6Config:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection6Attrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayResponseCollection6 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_response_collection_6",

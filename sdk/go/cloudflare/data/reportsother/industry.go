@@ -4,7 +4,7 @@ package reportsother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Industry_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -23,10 +23,10 @@ type IndustryConfig struct {
 type IndustryAttrs struct {
 	// Cloudflare public account ID (32-character hexadecimal string)
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var Industry = ubx.DataSourceBinding{

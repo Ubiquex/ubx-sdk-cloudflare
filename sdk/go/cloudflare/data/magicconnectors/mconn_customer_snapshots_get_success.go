@@ -3,22 +3,479 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerSnapshotsGetSuccess_Errors struct {
+	Code    any
+	Message any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Bonds struct {
+	Name   any
+	Status any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_DhcpLeases struct {
+	ClientId      any
+	ExpiryTime    any
+	Hostname      any
+	InterfaceName any
+	IpAddress     any
+	MacAddress    any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Disks struct {
+	Discards                 any
+	DiscardsMerged           any
+	Flushes                  any
+	InProgress               any
+	Major                    any
+	Merged                   any
+	Minor                    any
+	Name                     any
+	Reads                    any
+	SectorsDiscarded         any
+	SectorsRead              any
+	SectorsWritten           any
+	TimeDiscardingMs         any
+	TimeFlushingMs           any
+	TimeInProgressMs         any
+	TimeReadingMs            any
+	TimeWritingMs            any
+	WeightedTimeInProgressMs any
+	Writes                   any
+	WritesMerged             any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Interfaces_IpAddresses struct {
+	InterfaceName any
+	IpAddress     any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Interfaces struct {
+	IpAddresses any
+	Name        any
+	Operstate   any
+	Speed       any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Mounts struct {
+	AvailableBytes  any
+	AvailableInodes any
+	FileSystem      any
+	IsReadOnly      any
+	IsRemovable     any
+	Kind            any
+	MountPoint      any
+	Name            any
+	TotalBytes      any
+	TotalInodes     any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Netdevs struct {
+	Name           any
+	RecvBytes      any
+	RecvCompressed any
+	RecvDrop       any
+	RecvErrs       any
+	RecvFifo       any
+	RecvFrame      any
+	RecvMulticast  any
+	RecvPackets    any
+	SentBytes      any
+	SentCarrier    any
+	SentColls      any
+	SentCompressed any
+	SentDrop       any
+	SentErrs       any
+	SentFifo       any
+	SentPackets    any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Thermals struct {
+	CriticalCelcius any
+	CurrentCelcius  any
+	Label           any
+	MaxCelcius      any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result_Tunnels struct {
+	HealthState          any
+	HealthValue          any
+	InterfaceName        any
+	JitterMs             any
+	LatencyMs            any
+	NatdResult           any
+	NatdState            any
+	NatdTarget           any
+	ProbedMtu            any
+	RecentHealthyPings   any
+	RecentUnhealthyPings any
+	TunnelId             any
+}
+
+type MconnCustomerSnapshotsGetSuccess_Result struct {
+	Bonds any
+	// Count of failures to reclaim space
+	CountReclaimFailures any
+	// Count of reclaimed paths
+	CountReclaimedPaths any
+	// Count of failed snapshot recordings
+	CountRecordFailed any
+	// Count of failed snapshot transmissions
+	CountTransmitFailures any
+	// Count of processors/cores
+	CpuCount any
+	// Percentage of time over a 10 second window that tasks were stalled
+	CpuPressure10s any
+	// Percentage of time over a 5 minute window that tasks were stalled
+	CpuPressure300s any
+	// Percentage of time over a 1 minute window that tasks were stalled
+	CpuPressure60s any
+	// Total stall time (microseconds)
+	CpuPressureTotalUs any
+	// Time spent running a virtual CPU or guest OS (milliseconds)
+	CpuTimeGuestMs any
+	// Time spent running a niced guest (milliseconds)
+	CpuTimeGuestNiceMs any
+	// Time spent in idle state (milliseconds)
+	CpuTimeIdleMs any
+	// Time spent wait for I/O to complete (milliseconds)
+	CpuTimeIowaitMs any
+	// Time spent servicing interrupts (milliseconds)
+	CpuTimeIrqMs any
+	// Time spent in low-priority user mode (milliseconds)
+	CpuTimeNiceMs any
+	// Time spent servicing softirqs (milliseconds)
+	CpuTimeSoftirqMs any
+	// Time stolen (milliseconds)
+	CpuTimeStealMs any
+	// Time spent in system mode (milliseconds)
+	CpuTimeSystemMs any
+	// Time spent in user mode (milliseconds)
+	CpuTimeUserMs any
+	// Number of network operations applied during state transition
+	Delta      any
+	DhcpLeases any
+	Disks      any
+	// Simulated number of network operations applied during state transition
+	Epsilon any
+	// Name of high availability state
+	HaState any
+	// Numeric value associated with high availability state (0 = disabled, 1 = active, 2 = standby, 3 = stopped, 4 = fault)
+	HaValue    any
+	Interfaces any
+	// Percentage of time over a 10 second window that all tasks were stalled
+	IoPressureFull10s any
+	// Percentage of time over a 5 minute window that all tasks were stalled
+	IoPressureFull300s any
+	// Percentage of time over a 1 minute window that all tasks were stalled
+	IoPressureFull60s any
+	// Total stall time (microseconds)
+	IoPressureFullTotalUs any
+	// Percentage of time over a 10 second window that some tasks were stalled
+	IoPressureSome10s any
+	// Percentage of time over a 3 minute window that some tasks were stalled
+	IoPressureSome300s any
+	// Percentage of time over a 1 minute window that some tasks were stalled
+	IoPressureSome60s any
+	// Total stall time (microseconds)
+	IoPressureSomeTotalUs any
+	// Boot time (seconds since Unix epoch)
+	KernelBtime any
+	// Number of context switches that the system underwent
+	KernelCtxt any
+	// Number of forks since boot
+	KernelProcesses any
+	// Number of processes blocked waiting for I/O
+	KernelProcessesBlocked any
+	// Number of processes in runnable state
+	KernelProcessesRunning any
+	// The fifteen-minute load average
+	LoadAverage15m any
+	// The one-minute load average
+	LoadAverage1m any
+	// The five-minute load average
+	LoadAverage5m any
+	// Number of currently runnable kernel scheduling entities
+	LoadAverageCur any
+	// Number of kernel scheduling entities that currently exist on the system
+	LoadAverageMax any
+	// Memory that has been used more recently
+	MemoryActiveBytes any
+	// Non-file backed huge pages mapped into user-space page tables
+	MemoryAnonHugepagesBytes any
+	// Non-file backed pages mapped into user-space page tables
+	MemoryAnonPagesBytes any
+	// Estimate of how much memory is available for starting new applications
+	MemoryAvailableBytes any
+	// Memory used for block device bounce buffers
+	MemoryBounceBytes any
+	// Relatively temporary storage for raw disk blocks
+	MemoryBuffersBytes any
+	// In-memory cache for files read from the disk
+	MemoryCachedBytes any
+	// Free CMA (Contiguous Memory Allocator) pages
+	MemoryCmaFreeBytes any
+	// Total CMA (Contiguous Memory Allocator) pages
+	MemoryCmaTotalBytes any
+	// Total amount of memory currently available to be allocated on the system
+	MemoryCommitLimitBytes any
+	// Amount of memory presently allocated on the system
+	MemoryCommittedAsBytes any
+	// Memory which is waiting to get written back to the disk
+	MemoryDirtyBytes any
+	// The sum of LowFree and HighFree
+	MemoryFreeBytes any
+	// Amount of free highmem
+	MemoryHighFreeBytes any
+	// Total amount of highmem
+	MemoryHighTotalBytes any
+	// The number of huge pages in the pool that are not yet allocated
+	MemoryHugepagesFree any
+	// Number of huge pages for which a commitment has been made, but no allocation has yet been made
+	MemoryHugepagesRsvd any
+	// Number of huge pages in the pool above the threshold
+	MemoryHugepagesSurp any
+	// The size of the pool of huge pages
+	MemoryHugepagesTotal any
+	// The size of huge pages
+	MemoryHugepagesizeBytes any
+	// Memory which has been less recently used
+	MemoryInactiveBytes any
+	// Kernel allocations that the kernel will attempt to reclaim under memory pressure
+	MemoryKReclaimableBytes any
+	// Amount of memory allocated to kernel stacks
+	MemoryKernelStackBytes any
+	// Amount of free lowmem
+	MemoryLowFreeBytes any
+	// Total amount of lowmem
+	MemoryLowTotalBytes any
+	// Files which have been mapped into memory
+	MemoryMappedBytes any
+	// Amount of memory dedicated to the lowest level of page tables
+	MemoryPageTablesBytes any
+	// Memory allocated to the per-cpu alloctor used to back per-cpu allocations
+	MemoryPerCpuBytes any
+	// Percentage of time over a 10 second window that all tasks were stalled
+	MemoryPressureFull10s any
+	// Percentage of time over a 5 minute window that all tasks were stalled
+	MemoryPressureFull300s any
+	// Percentage of time over a 1 minute window that all tasks were stalled
+	MemoryPressureFull60s any
+	// Total stall time (microseconds)
+	MemoryPressureFullTotalUs any
+	// Percentage of time over a 10 second window that some tasks were stalled
+	MemoryPressureSome10s any
+	// Percentage of time over a 5 minute window that some tasks were stalled
+	MemoryPressureSome300s any
+	// Percentage of time over a 1 minute window that some tasks were stalled
+	MemoryPressureSome60s any
+	// Total stall time (microseconds)
+	MemoryPressureSomeTotalUs any
+	// Part of slab that can be reclaimed on memory pressure
+	MemorySReclaimableBytes any
+	// Part of slab that cannot be reclaimed on memory pressure
+	MemorySUnreclaimBytes any
+	// Amount of memory dedicated to the lowest level of page tables
+	MemorySecondaryPageTablesBytes any
+	// Amount of memory consumed by tmpfs
+	MemoryShmemBytes any
+	// Memory used by shmem and tmpfs, allocated with huge pages
+	MemoryShmemHugepagesBytes any
+	// Shared memory mapped into user space with huge pages
+	MemoryShmemPmdMappedBytes any
+	// In-kernel data structures cache
+	MemorySlabBytes any
+	// Memory swapped out and back in while still in swap file
+	MemorySwapCachedBytes any
+	// Amount of swap space that is currently unused
+	MemorySwapFreeBytes any
+	// Total amount of swap space available
+	MemorySwapTotalBytes any
+	// Total usable RAM
+	MemoryTotalBytes any
+	// Largest contiguous block of vmalloc area which is free
+	MemoryVmallocChunkBytes any
+	// Total size of vmalloc memory area
+	MemoryVmallocTotalBytes any
+	// Amount of vmalloc area which is used
+	MemoryVmallocUsedBytes any
+	// Memory which is actively being written back to the disk
+	MemoryWritebackBytes any
+	// Memory used by FUSE for temporary writeback buffers
+	MemoryWritebackTmpBytes any
+	// Memory consumed by the zswap backend, compressed
+	MemoryZSwapBytes any
+	// Amount of anonymous memory stored in zswap, uncompressed
+	MemoryZSwappedBytes any
+	Mounts              any
+	Netdevs             any
+	// Platform identifier
+	Platform any
+	// Site identifier
+	SiteId any
+	// Number of ICMP Address Mask Reply messages received
+	SnmpIcmpInAddrMaskReps any
+	// Number of ICMP Address Mask Request messages received
+	SnmpIcmpInAddrMasks any
+	// Number of ICMP messages received with bad checksums
+	SnmpIcmpInCsumErrors any
+	// Number of ICMP Destination Unreachable messages received
+	SnmpIcmpInDestUnreachs any
+	// Number of ICMP Echo Reply messages received
+	SnmpIcmpInEchoReps any
+	// Number of ICMP Echo (request) messages received
+	SnmpIcmpInEchos any
+	// Number of ICMP messages received with ICMP-specific errors
+	SnmpIcmpInErrors any
+	// Number of ICMP messages received
+	SnmpIcmpInMsgs any
+	// Number of ICMP Parameter Problem messages received
+	SnmpIcmpInParmProbs any
+	// Number of ICMP Redirect messages received
+	SnmpIcmpInRedirects any
+	// Number of ICMP Source Quench messages received
+	SnmpIcmpInSrcQuenchs any
+	// Number of ICMP Time Exceeded messages received
+	SnmpIcmpInTimeExcds any
+	// Number of ICMP Address Mask Request messages received
+	SnmpIcmpInTimestampReps any
+	// Number of ICMP Timestamp (request) messages received
+	SnmpIcmpInTimestamps any
+	// Number of ICMP Address Mask Reply messages sent
+	SnmpIcmpOutAddrMaskReps any
+	// Number of ICMP Address Mask Request messages sent
+	SnmpIcmpOutAddrMasks any
+	// Number of ICMP Destination Unreachable messages sent
+	SnmpIcmpOutDestUnreachs any
+	// Number of ICMP Echo Reply messages sent
+	SnmpIcmpOutEchoReps any
+	// Number of ICMP Echo (request) messages sent
+	SnmpIcmpOutEchos any
+	// Number of ICMP messages which this entity did not send due to ICMP-specific errors
+	SnmpIcmpOutErrors any
+	// Number of ICMP messages attempted to send
+	SnmpIcmpOutMsgs any
+	// Number of ICMP Parameter Problem messages sent
+	SnmpIcmpOutParmProbs any
+	// Number of ICMP Redirect messages sent
+	SnmpIcmpOutRedirects any
+	// Number of ICMP Source Quench messages sent
+	SnmpIcmpOutSrcQuenchs any
+	// Number of ICMP Time Exceeded messages sent
+	SnmpIcmpOutTimeExcds any
+	// Number of ICMP Timestamp Reply messages sent
+	SnmpIcmpOutTimestampReps any
+	// Number of ICMP Timestamp (request) messages sent
+	SnmpIcmpOutTimestamps any
+	// Default value of the Time-To-Live field of the IP header
+	SnmpIpDefaultTtl any
+	// Number of datagrams forwarded to their final destination
+	SnmpIpForwDatagrams any
+	// Set when acting as an IP gateway
+	SnmpIpForwardingEnabled any
+	// Number of datagrams generated by fragmentation
+	SnmpIpFragCreates any
+	// Number of datagrams discarded because fragmentation failed
+	SnmpIpFragFails any
+	// Number of datagrams successfully fragmented
+	SnmpIpFragOks any
+	// Number of input datagrams discarded due to errors in the IP address
+	SnmpIpInAddrErrors any
+	// Number of input datagrams successfully delivered to IP user-protocols
+	SnmpIpInDelivers any
+	// Number of input datagrams otherwise discarded
+	SnmpIpInDiscards any
+	// Number of input datagrams discarded due to errors in the IP header
+	SnmpIpInHdrErrors any
+	// Number of input datagrams received from interfaces
+	SnmpIpInReceives any
+	// Number of input datagrams discarded due unknown or unsupported protocol
+	SnmpIpInUnknownProtos any
+	// Number of output datagrams otherwise discarded
+	SnmpIpOutDiscards any
+	// Number of output datagrams discarded because no route matched
+	SnmpIpOutNoRoutes any
+	// Number of datagrams supplied for transmission
+	SnmpIpOutRequests any
+	// Number of failures detected by the reassembly algorithm
+	SnmpIpReasmFails any
+	// Number of datagrams successfully reassembled
+	SnmpIpReasmOks any
+	// Number of fragments received which needed to be reassembled
+	SnmpIpReasmReqds any
+	// Number of seconds fragments are held while awaiting reassembly
+	SnmpIpReasmTimeout any
+	// Number of times TCP transitions to SYN-SENT from CLOSED
+	SnmpTcpActiveOpens any
+	// Number of times TCP transitions to CLOSED from SYN-SENT or SYN-RCVD, plus transitions to LISTEN from SYN-RCVD
+	SnmpTcpAttemptFails any
+	// Number of TCP connections in ESTABLISHED or CLOSE-WAIT
+	SnmpTcpCurrEstab any
+	// Number of times TCP transitions to CLOSED from ESTABLISHED or CLOSE-WAIT
+	SnmpTcpEstabResets any
+	// Number of TCP segments received with checksum errors
+	SnmpTcpInCsumErrors any
+	// Number of TCP segments received in error
+	SnmpTcpInErrs any
+	// Number of TCP segments received
+	SnmpTcpInSegs any
+	// Limit on the total number of TCP connections
+	SnmpTcpMaxConn any
+	// Number of TCP segments sent with RST flag
+	SnmpTcpOutRsts any
+	// Number of TCP segments sent
+	SnmpTcpOutSegs any
+	// Number of times TCP transitions to SYN-RCVD from LISTEN
+	SnmpTcpPassiveOpens any
+	// Number of TCP segments retransmitted
+	SnmpTcpRetransSegs any
+	// Maximum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+	SnmpTcpRtoMax any
+	// Minimum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+	SnmpTcpRtoMin any
+	// Number of UDP datagrams delivered to UDP applications
+	SnmpUdpInDatagrams any
+	// Number of UDP datagrams failed to be delivered for reasons other than lack of application at the destination port
+	SnmpUdpInErrors any
+	// Number of UDP datagrams received for which there was not application at the destination port
+	SnmpUdpNoPorts any
+	// Number of UDP datagrams sent
+	SnmpUdpOutDatagrams any
+	// Boottime of the system (seconds since the Unix epoch)
+	SystemBootTimeS any
+	// Time the Snapshot was recorded (seconds since the Unix epoch)
+	T        any
+	Thermals any
+	Tunnels  any
+	// Sum of how much time each core has spent idle
+	UptimeIdleMs any
+	// Uptime of the system, including time spent in suspend
+	UptimeTotalMs any
+	// Version
+	V any
+}
+
 type MconnCustomerSnapshotsGetSuccessConfig struct {
 	ConnectorId any
-	SnapshotT any
+	SnapshotT   any
 }
 
 type MconnCustomerSnapshotsGetSuccessAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
+	Errors      any
+	Messages    any
+	// Snapshot
+	Result    any
 	SnapshotT any
+	Success   any
 }
 
 var MconnCustomerSnapshotsGetSuccess = ubx.DataSourceBinding{
 	WireType: "cloudflare_mconn_customer_snapshots_get_success",
 	Fields: ubx.FieldMap{
 		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-		"SnapshotT": ubx.FieldSpec{WireName: "snapshot_t"},
+		"SnapshotT":   ubx.FieldSpec{WireName: "snapshot_t"},
 	},
 }

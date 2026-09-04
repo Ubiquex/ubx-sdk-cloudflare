@@ -7,6 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumSiteResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class RumSiteResponseSingle_Result_Rules:
+    created: Any = None
+    host: Any = None
+    id: Any = None
+    inclusive: Any = None
+    is_paused: Any = None
+    paths: Any = None
+    priority: Any = None
+
+@dataclasses.dataclass
+class RumSiteResponseSingle_Result_Ruleset:
+    # Whether the ruleset is enabled.
+    enabled: Any = None
+    # The Web Analytics ruleset identifier.
+    id: Any = None
+    zone_name: Any = None
+    # The zone identifier.
+    zone_tag: Any = None
+
+@dataclasses.dataclass
+class RumSiteResponseSingle_Result:
+    # If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
+    auto_install: Any = None
+    created: Any = None
+    # A list of rules.
+    rules: Any = None
+    ruleset: Any = None
+    # The Web Analytics site identifier.
+    site_tag: Any = None
+    # The Web Analytics site token.
+    site_token: Any = None
+    # Encoded JavaScript snippet.
+    snippet: Any = None
+
+@dataclasses.dataclass
 class RumSiteResponseSingleConfig:
     # If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
     auto_install: Any = None
@@ -23,8 +63,13 @@ class RumSiteResponseSingleConfig:
 class RumSiteResponseSingleAttrs:
     # If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
     auto_install: Any = None
+    errors: Any = None
     # The hostname to use for gray-clouded sites.
     host: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # The zone identifier.
     zone_tag: Any = None
     # path parameter, not part of the API's own resource representation

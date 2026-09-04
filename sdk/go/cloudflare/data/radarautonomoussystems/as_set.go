@@ -4,15 +4,15 @@ package radarautonomoussystems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AsSet_Result_AsSets struct {
-	AsMembersCount any
-	AsSetMembersCount any
+	AsMembersCount      any
+	AsSetMembersCount   any
 	AsSetUpstreamsCount any
-	AsnConeSize any
-	HierarchicalAsn any
-	InferredAsn any
-	IrrSources any
-	Name any
-	PeeringdbAsn any
+	AsnConeSize         any
+	HierarchicalAsn     any
+	InferredAsn         any
+	IrrSources          any
+	Name                any
+	PeeringdbAsn        any
 }
 
 type AsSet_Result struct {
@@ -32,15 +32,15 @@ type AsSetAttrs struct {
 	// Retrieves all AS-SETs that the given AS is a member of.
 	Asn any
 	// Format in which results will be returned.
-	Format any
-	Result any
+	Format  any
+	Result  any
 	Success any
 }
 
 var AsSet = ubx.DataSourceBinding{
 	WireType: "cloudflare_as_set",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"Asn":    ubx.FieldSpec{WireName: "asn"},
 		"Format": ubx.FieldSpec{WireName: "format"},
 	},
 }

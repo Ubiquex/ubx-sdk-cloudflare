@@ -3,12 +3,29 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumRumSiteResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type RumRumSiteResponseSingle_Result struct {
+	Editable any
+	Id       any
+	// Current state of RUM. Returns On, Off, or Manual.
+	Value any
+}
+
 type RumRumSiteResponseSingleConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type RumRumSiteResponseSingleAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -20,7 +20,7 @@ type EmbedAttrs struct {
 var Embed = ubx.DataSourceBinding{
 	WireType: "cloudflare_embed",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

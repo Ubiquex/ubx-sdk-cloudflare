@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle5_Result:
+    ca: Any = None
+    certificates: Any = None
+    expires_on: Any = None
+    id: Any = None
+    issuer: Any = None
+    name: Any = None
+    serial_number: Any = None
+    signature: Any = None
+    type: Any = None
+    uploaded_on: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseSingle5Config:
     # Indicates whether the certificate is a CA or leaf certificate.
     ca: Any = None
@@ -31,6 +44,7 @@ class TlsCertificatesAndHostnamesCertificateResponseSingle5Attrs:
     name: Any = None
     # The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
     private_key: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

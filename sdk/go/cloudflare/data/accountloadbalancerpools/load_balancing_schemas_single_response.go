@@ -3,12 +3,99 @@ package accountloadbalancerpools
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingSchemasSingleResponse_Result_LoadShedding struct {
+	// The percent of traffic to shed from the pool, according to the default policy. Applies to new sessions and traffic without session affinity.
+	DefaultPercent any
+	// The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.
+	DefaultPolicy any
+	// The percent of existing sessions to shed from the pool, according to the session policy.
+	SessionPercent any
+	// Only the hash policy is supported for existing sessions (to avoid exponential decay).
+	SessionPolicy any
+}
+
+type LoadBalancingSchemasSingleResponse_Result_NotificationFilter_Origin struct {
+	// If set true, disable notifications for this type of resource (pool or origin).
+	Disable any
+	// If present, send notifications only for this health status (e.g. false for only DOWN events). Use null to reset (all events).
+	Healthy any
+}
+
+type LoadBalancingSchemasSingleResponse_Result_NotificationFilter struct {
+	// Filter options for a particular resource type (pool or origin). Use null to reset.
+	Origin any
+	// Filter options for a particular resource type (pool or origin). Use null to reset.
+	Pool any
+}
+
+type LoadBalancingSchemasSingleResponse_Result_OriginSteering struct {
+	// The type of origin steering policy to use. - `"random"`: Select an origin randomly. - `"hash"`: Select an origin by computing a hash over the CF-Connecting-IP address. - `"least_outstanding_requests"`: Select an origin by taking into consideration origin weights, as well as each origin's number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others. - `"least_connections"`: Select an origin by taking into consideration origin weights, as well as each origin's number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.
+	Policy any
+}
+
+type LoadBalancingSchemasSingleResponse_Result_Origins_Header struct {
+	Host any
+}
+
+type LoadBalancingSchemasSingleResponse_Result_Origins struct {
+	Address          any
+	DisabledAt       any
+	Enabled          any
+	FlattenCname     any
+	Header           any
+	Name             any
+	Port             any
+	VirtualNetworkId any
+	Weight           any
+}
+
+type LoadBalancingSchemasSingleResponse_Result struct {
+	// A list of regions from which to run health checks. Null means every Cloudflare data center.
+	CheckRegions any
+	CreatedOn    any
+	// A human-readable description of the pool.
+	Description any
+	// This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.
+	DisabledAt any
+	// Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
+	Enabled any
+	// A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array ["regional", "global"]; any other combination is rejected. Null (the default) behaves like ["local", "global"]. ["regional", "global"] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.
+	HealthSources any
+	Id            any
+	// The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.
+	Latitude any
+	// Configures load shedding policies and percentages for the pool.
+	LoadShedding any
+	// The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.
+	Longitude any
+	// The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.
+	MinimumOrigins any
+	ModifiedOn     any
+	// The ID of the Monitor to use for checking the health of origins within this pool.
+	Monitor any
+	// The ID of the Monitor Group to use for checking the health of origins within this pool.
+	MonitorGroup any
+	// A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+	Name any
+	// List of networks where Load Balancer or Pool is enabled.
+	Networks any
+	// This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
+	NotificationEmail any
+	// Filter pool and origin health notifications by resource type or health status. Use null to reset.
+	NotificationFilter any
+	// Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
+	OriginSteering any
+	// The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+	Origins any
+}
+
 type LoadBalancingSchemasSingleResponseConfig struct {
 	PoolId any
 }
 
 type LoadBalancingSchemasSingleResponseAttrs struct {
 	PoolId any
+	Result any
 }
 
 var LoadBalancingSchemasSingleResponse = ubx.DataSourceBinding{

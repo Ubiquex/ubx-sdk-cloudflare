@@ -3,6 +3,19 @@ package accessjitrequestlogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection12_Result struct {
+	AppAud               any
+	AppHostname          any
+	ApprovalsReceived    any
+	ApproverEmails       any
+	CreatedAt            any
+	ExpiresAt            any
+	KnockRequestId       any
+	PurposeJustification any
+	RequesterEmail       any
+	Status               any
+}
+
 type AccessResponseCollection12Config struct {
 	// Identifier.
 	AccountId any
@@ -10,11 +23,11 @@ type AccessResponseCollection12Config struct {
 	Page any
 	// Number of results per page.
 	PerPage any
-	Search any
-	Since any
+	Search  any
+	Since   any
 	// JIT request status. `SPENT` is deprecated and interpreted as `APPROVED`.
 	Status any
-	Until any
+	Until  any
 }
 
 type AccessResponseCollection12Attrs struct {
@@ -24,22 +37,23 @@ type AccessResponseCollection12Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
-	Search any
-	Since any
+	Result  any
+	Search  any
+	Since   any
 	// JIT request status. `SPENT` is deprecated and interpreted as `APPROVED`.
 	Status any
-	Until any
+	Until  any
 }
 
 var AccessResponseCollection12 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_12",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Until": ubx.FieldSpec{WireName: "until"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"Since":     ubx.FieldSpec{WireName: "since"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
+		"Until":     ubx.FieldSpec{WireName: "until"},
 	},
 }

@@ -4,14 +4,14 @@ package radaremailsecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ThreatCategory_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type ThreatCategory_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type ThreatCategory_Result_Meta_ConfidenceInfo struct {
 }
 
 type ThreatCategory_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type ThreatCategory_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ThreatCategory_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -54,7 +54,7 @@ type ThreatCategory_Result_Summary0 struct {
 
 type ThreatCategory_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -97,10 +97,10 @@ type ThreatCategoryAttrs struct {
 	// Format in which results will be returned.
 	Format any
 	// Array of names used to label the series in the response.
-	Name any
+	Name   any
 	Result any
 	// Filters results by SPF (Sender Policy Framework) validation status.
-	Spf any
+	Spf     any
 	Success any
 	// Filters results by TLS version.
 	TlsVersion any
@@ -109,15 +109,15 @@ type ThreatCategoryAttrs struct {
 var ThreatCategory = ubx.DataSourceBinding{
 	WireType: "cloudflare_threat_category",
 	Fields: ubx.FieldMap{
-		"Arc": ubx.FieldSpec{WireName: "arc"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Dkim": ubx.FieldSpec{WireName: "dkim"},
-		"Dmarc": ubx.FieldSpec{WireName: "dmarc"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Spf": ubx.FieldSpec{WireName: "spf"},
+		"Arc":        ubx.FieldSpec{WireName: "arc"},
+		"DateEnd":    ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":  ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":  ubx.FieldSpec{WireName: "date_start"},
+		"Dkim":       ubx.FieldSpec{WireName: "dkim"},
+		"Dmarc":      ubx.FieldSpec{WireName: "dmarc"},
+		"Format":     ubx.FieldSpec{WireName: "format"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Spf":        ubx.FieldSpec{WireName: "spf"},
 		"TlsVersion": ubx.FieldSpec{WireName: "tls_version"},
 	},
 }

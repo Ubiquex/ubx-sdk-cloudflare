@@ -4,6 +4,23 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TunnelSubnetResponseCollection_Network {
 }
 
+export interface TunnelSubnetResponseCollection_Result_Capacity {
+  total?: number | Computed<number>;
+  used?: number | Computed<number>;
+}
+
+export interface TunnelSubnetResponseCollection_Result {
+  capacity?: TunnelSubnetResponseCollection_Result_Capacity | Computed<TunnelSubnetResponseCollection_Result_Capacity>;
+  comment?: string | Computed<string>;
+  createdAt?: string | Computed<string>;
+  deletedAt?: string | Computed<string>;
+  id?: string | Computed<string>;
+  isDefaultNetwork?: boolean | Computed<boolean>;
+  name?: string | Computed<string>;
+  network?: string | Computed<string>;
+  subnetType?: string | Computed<string>;
+}
+
 const TunnelSubnetResponseCollection_NetworkFields: FieldMap = {
 };
 
@@ -53,6 +70,7 @@ export interface TunnelSubnetResponseCollectionAttrs {
   page: number;
   /** Number of results to display. */
   perPage: number;
+  result: TunnelSubnetResponseCollection_Result[];
   /** Sort order of the results. `asc` means oldest to newest, `desc` means newest to oldest. If not set, they will not be in any particular order. */
   sortOrder: string;
   /** If set, the types of subnets to include, separated by comma. */

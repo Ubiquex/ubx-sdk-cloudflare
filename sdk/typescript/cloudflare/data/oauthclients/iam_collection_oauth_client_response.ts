@@ -4,6 +4,34 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamCollectionOauthClientResponse_AccountId {
 }
 
+export interface IamCollectionOauthClientResponse_Result_ClientUriVerification {
+  status?: string | Computed<string>;
+  text?: string | Computed<string>;
+}
+
+export interface IamCollectionOauthClientResponse_Result {
+  allowedCorsOrigins?: string[] | Computed<string[]>;
+  clientId?: IamCollectionOauthClientResponse_AccountId | Computed<IamCollectionOauthClientResponse_AccountId>;
+  clientName?: string | Computed<string>;
+  clientUri?: string | Computed<string>;
+  clientUriVerification?: IamCollectionOauthClientResponse_Result_ClientUriVerification | Computed<IamCollectionOauthClientResponse_Result_ClientUriVerification>;
+  createdAt?: string | Computed<string>;
+  grantTypes?: string[] | Computed<string[]>;
+  hasRotatedSecret?: boolean | Computed<boolean>;
+  logoUri?: string | Computed<string>;
+  optionalScopes?: string[] | Computed<string[]>;
+  policyUri?: string | Computed<string>;
+  postLogoutRedirectUris?: string[] | Computed<string[]>;
+  promotedAt?: string | Computed<string>;
+  redirectUris?: string[] | Computed<string[]>;
+  responseTypes?: string[] | Computed<string[]>;
+  scopes?: string[] | Computed<string[]>;
+  tokenEndpointAuthMethod?: string | Computed<string>;
+  tosUri?: string | Computed<string>;
+  updatedAt?: string | Computed<string>;
+  visibility?: string | Computed<string>;
+}
+
 const IamCollectionOauthClientResponse_AccountIdFields: FieldMap = {
 };
 
@@ -15,6 +43,7 @@ export interface IamCollectionOauthClientResponseConfig {
 export interface IamCollectionOauthClientResponseAttrs {
   /** Account identifier tag. */
   accountId: IamCollectionOauthClientResponse_AccountId;
+  result: IamCollectionOauthClientResponse_Result[];
 }
 
 export const IamCollectionOauthClientResponse: DataSourceBinding<IamCollectionOauthClientResponseConfig, IamCollectionOauthClientResponseAttrs> = {

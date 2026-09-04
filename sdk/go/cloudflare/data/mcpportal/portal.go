@@ -5,102 +5,102 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Portal_Result_Servers_AuthConfigSummary_Config struct {
 	AuthorizationEndpoint any
-	Issuer any
-	Resource any
-	RevocationEndpoint any
-	TokenEndpoint any
+	Issuer                any
+	Resource              any
+	RevocationEndpoint    any
+	TokenEndpoint         any
 }
 
 type Portal_Result_Servers_AuthConfigSummary_RegistrationInfo struct {
-	ClientId any
-	RedirectUris any
-	Scope any
+	ClientId                any
+	RedirectUris            any
+	Scope                   any
 	TokenEndpointAuthMethod any
 }
 
 type Portal_Result_Servers_AuthConfigSummary struct {
-	AuthMode any
+	AuthMode            any
 	ClientSecretVersion any
-	Config any
-	HasClientSecret any
-	RegistrationInfo any
+	Config              any
+	HasClientSecret     any
+	RegistrationInfo    any
 }
 
 type Portal_Result_Servers_ErrorDetails struct {
-	Cause any
+	Cause      any
 	IsUpstream any
-	McpCode any
-	Retryable any
+	McpCode    any
+	Retryable  any
 	StatusCode any
 }
 
 type Portal_Result_Servers_UpdatedPrompts struct {
-	Enabled any
-	Name any
-	PortalAlias any
+	Enabled           any
+	Name              any
+	PortalAlias       any
 	PortalDescription any
-	ServerAlias any
+	ServerAlias       any
 	ServerDescription any
 }
 
 type Portal_Result_Servers struct {
-	AuthConfigSummary any
-	AuthType any
-	AuthenticationStatus any
-	CreatedAt any
-	CreatedBy any
-	DefaultDisabled any
-	Description any
-	Error any
-	ErrorDetails any
-	Hostname any
-	Id any
+	AuthConfigSummary            any
+	AuthType                     any
+	AuthenticationStatus         any
+	CreatedAt                    any
+	CreatedBy                    any
+	DefaultDisabled              any
+	Description                  any
+	Error                        any
+	ErrorDetails                 any
+	Hostname                     any
+	Id                           any
 	IsSharedOauthCallbackEnabled any
-	LastSuccessfulSync any
-	LastSynced any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	OnBehalf any
-	Prompts any
-	SecureWebGateway any
-	ServerId any
-	Status any
-	Tools any
-	UpdatedPrompts any
-	UpdatedTools any
+	LastSuccessfulSync           any
+	LastSynced                   any
+	ModifiedAt                   any
+	ModifiedBy                   any
+	Name                         any
+	OnBehalf                     any
+	Prompts                      any
+	SecureWebGateway             any
+	ServerId                     any
+	Status                       any
+	Tools                        any
+	UpdatedPrompts               any
+	UpdatedTools                 any
 }
 
 type Portal_Result struct {
-	AllowCodeMode any
-	CodeMode any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Hostname any
-	Id any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
+	AllowCodeMode    any
+	CodeMode         any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
+	Hostname         any
+	Id               any
+	ModifiedAt       any
+	ModifiedBy       any
+	Name             any
 	SecureWebGateway any
-	Servers any
+	Servers          any
 }
 
 type PortalConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Search by id, name, hostname
 	Search any
 }
 
 type PortalAttrs struct {
 	AccountId any
-	Page any
-	PerPage any
-	Result any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by id, name, hostname
-	Search any
+	Search  any
 	Success any
 }
 
@@ -108,8 +108,8 @@ var Portal = ubx.DataSourceBinding{
 	WireType: "cloudflare_portal",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

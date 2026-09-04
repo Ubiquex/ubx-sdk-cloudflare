@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamCollectionOrganizationResponse_Result:
+    id: Any = None
+    name: Any = None
+    permissions: Any = None
+    roles: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class IamCollectionOrganizationResponseConfig:
     # Direction to order organizations.
     direction: Any = None
@@ -37,6 +45,7 @@ class IamCollectionOrganizationResponseAttrs:
     page: Any = None
     # Number of organizations per page.
     per_page: Any = None
+    result: Any = None
     # Whether the user is a member of the organization or has an inivitation pending.
     status: Any = None
 

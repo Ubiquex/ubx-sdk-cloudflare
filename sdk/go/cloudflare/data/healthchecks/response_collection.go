@@ -3,14 +3,52 @@ package healthchecks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResponseCollection_Result_HttpConfig struct {
+	AllowInsecure   any
+	ExpectedBody    any
+	ExpectedCodes   any
+	FollowRedirects any
+	Header          any
+	Method          any
+	Path            any
+	Port            any
+}
+
+type ResponseCollection_Result_TcpConfig struct {
+	Method any
+	Port   any
+}
+
+type ResponseCollection_Result struct {
+	Address              any
+	CheckRegions         any
+	ConsecutiveFails     any
+	ConsecutiveSuccesses any
+	CreatedOn            any
+	Description          any
+	FailureReason        any
+	HttpConfig           any
+	Id                   any
+	Interval             any
+	ModifiedOn           any
+	Name                 any
+	Retries              any
+	Status               any
+	Suspended            any
+	TcpConfig            any
+	Timeout              any
+	Type                 any
+}
+
 type ResponseCollectionConfig struct {
-	Page any
+	Page    any
 	PerPage any
 }
 
 type ResponseCollectionAttrs struct {
-	Page any
+	Page    any
 	PerPage any
+	Result  any
 	// Identifier
 	ZoneId any
 }
@@ -18,7 +56,7 @@ type ResponseCollectionAttrs struct {
 var ResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_healthchecks_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

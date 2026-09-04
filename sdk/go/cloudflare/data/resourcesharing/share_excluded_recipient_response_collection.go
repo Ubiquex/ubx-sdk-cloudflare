@@ -3,11 +3,18 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareExcludedRecipientResponseCollection_Result struct {
+	AccountId any
+	Created   any
+	Id        any
+	Modified  any
+}
+
 type ShareExcludedRecipientResponseCollectionConfig struct {
 	// Account identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Share identifier tag.
 	ShareId any
 }
@@ -15,8 +22,9 @@ type ShareExcludedRecipientResponseCollectionConfig struct {
 type ShareExcludedRecipientResponseCollectionAttrs struct {
 	// Account identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
+	Result    any
 	// Share identifier tag.
 	ShareId any
 }
@@ -25,8 +33,8 @@ var ShareExcludedRecipientResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_resource_sharing_share_excluded_recipient_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"ShareId":   ubx.FieldSpec{WireName: "share_id"},
 	},
 }

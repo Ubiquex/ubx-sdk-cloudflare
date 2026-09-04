@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumSiteTagListResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class RumSiteTagListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +22,12 @@ class RumSiteTagListResponseAttrs:
     # Identifier.
     account_id: Any = None
     all: Any = None
+    errors: Any = None
+    messages: Any = None
+    # List of Web Analytics site tag identifiers.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RumSiteTagListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_rum_site_tag_list_response",

@@ -3,6 +3,20 @@ package zerotrusthostnameroute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelHostnameRouteResponseCollection_Result_TunType struct {
+}
+
+type TunnelHostnameRouteResponseCollection_Result struct {
+	Comment    any
+	CreatedAt  any
+	DeletedAt  any
+	Hostname   any
+	Id         any
+	TunType    any
+	TunnelId   any
+	TunnelName any
+}
+
 type TunnelHostnameRouteResponseCollectionConfig struct {
 	// If set, only list hostname routes with the given comment.
 	Comment any
@@ -39,6 +53,7 @@ type TunnelHostnameRouteResponseCollectionAttrs struct {
 	Page any
 	// Number of results to display.
 	PerPage any
+	Result  any
 	// UUID of the tunnel.
 	TunnelId any
 }
@@ -46,13 +61,13 @@ type TunnelHostnameRouteResponseCollectionAttrs struct {
 var TunnelHostnameRouteResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_hostname_route_response_collection",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
+		"Comment":   ubx.FieldSpec{WireName: "comment"},
 		"ExistedAt": ubx.FieldSpec{WireName: "existed_at"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Hostname":  ubx.FieldSpec{WireName: "hostname"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"TunnelId":  ubx.FieldSpec{WireName: "tunnel_id"},
 	},
 }

@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesHostnameAssocResponseCollection_Result:
+    cert_id: Any = None
+    created_at: Any = None
+    enabled: Any = None
+    hostname: Any = None
+    status: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesHostnameAssocResponseCollection_ResultInfo:
+    # Total results returned based on your search parameters.
+    count: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+    # Total pages available of results.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesHostnameAssocResponseCollectionConfig:
     # Page number of paginated results.
     page: Any = None
@@ -23,6 +45,8 @@ class TlsCertificatesAndHostnamesHostnameAssocResponseCollectionAttrs:
     page: Any = None
     # Number of associations per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # Filter associations by status. Use comma-separated values to filter by multiple statuses, or "all" to include every status. Defaults to "active" if not provided.
     status: Any = None
     # Identifier.

@@ -8,6 +8,22 @@ export interface MagicSiteSingleResponse_Location {
   lon?: string | Computed<string>;
 }
 
+export interface MagicSiteSingleResponse_Result {
+  /** Magic Connector identifier tag. */
+  connectorId?: string | Computed<string>;
+  description?: string | Computed<string>;
+  /** Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode. */
+  haMode?: boolean | Computed<boolean>;
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** Location of site in latitude and longitude. */
+  location?: MagicSiteSingleResponse_Location | Computed<MagicSiteSingleResponse_Location>;
+  /** The name of the site. */
+  name?: string | Computed<string>;
+  /** Magic Connector identifier tag. Used when high availability mode is on. */
+  secondaryConnectorId?: string | Computed<string>;
+}
+
 const MagicSiteSingleResponse_LocationFields: FieldMap = {
   lat: "lat",
   lon: "lon",
@@ -41,6 +57,7 @@ export interface MagicSiteSingleResponseAttrs {
   location: MagicSiteSingleResponse_Location;
   /** The name of the site. */
   name: string;
+  result: MagicSiteSingleResponse_Result;
   /** Magic Connector identifier tag. Used when high availability mode is on. */
   secondaryConnectorId: string;
   /** path parameter, not part of the API's own resource representation */

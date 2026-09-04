@@ -7,13 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Robot_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Robot_Result_UserAgents_ContentSignals:
+    ai_input: Any = None
+    ai_train: Any = None
+    search: Any = None
+
+@dataclasses.dataclass
+class Robot_Result_UserAgents:
+    allow: Any = None
+    content_signals: Any = None
+    crawl_delay: Any = None
+    disallow: Any = None
+
+@dataclasses.dataclass
+class Robot_Result:
+    # List of sitemap URLs found in robots.txt.
+    sitemaps: Any = None
+    # HTTP status code from fetching the robots.txt file.
+    status: Any = None
+    # Map of user-agent string to its parsed rules.
+    user_agents: Any = None
+
+@dataclasses.dataclass
 class RobotConfig:
     subdomain: Any = None
     zone_id: Any = None
 
 @dataclasses.dataclass
 class RobotAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Parsed robots.txt rules for a single domain.
+    result: Any = None
     subdomain: Any = None
+    success: Any = None
     zone_id: Any = None
 
 Robot = ubx.DataSourceBinding(

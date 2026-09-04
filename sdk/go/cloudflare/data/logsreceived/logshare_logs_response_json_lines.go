@@ -26,8 +26,8 @@ type LogshareLogsResponseJsonLinesAttrs struct {
 var LogshareLogsResponseJsonLines = ubx.DataSourceBinding{
 	WireType: "cloudflare_logshare_logs_response_json_lines",
 	Fields: ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
+		"Fields":     ubx.FieldSpec{WireName: "fields"},
 		"Timestamps": ubx.FieldSpec{WireName: "timestamps"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":     ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

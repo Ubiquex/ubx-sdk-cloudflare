@@ -6,6 +6,115 @@ export interface Zone_Account {
   id?: string | Computed<string>;
 }
 
+export interface Zone_Errors {
+  code?: number | Computed<number>;
+  message?: string | Computed<string>;
+}
+
+export interface Zone_Result_Account {
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** The name of the account. */
+  name?: string | Computed<string>;
+}
+
+export interface Zone_Result_Meta {
+  /** The zone is only configured for CDN. */
+  cdnOnly?: boolean | Computed<boolean>;
+  /** Number of Custom Certificates the zone can have. */
+  customCertificateQuota?: number | Computed<number>;
+  /** The zone is only configured for DNS. */
+  dnsOnly?: boolean | Computed<boolean>;
+  /** The zone is setup with Foundation DNS. */
+  foundationDns?: boolean | Computed<boolean>;
+  /** Number of Page Rules a zone can have. */
+  pageRuleQuota?: number | Computed<number>;
+  /** The zone has been flagged for phishing. */
+  phishingDetected?: boolean | Computed<boolean>;
+  step?: number | Computed<number>;
+}
+
+export interface Zone_Result_Owner {
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** Name of the owner. */
+  name?: string | Computed<string>;
+  /** The type of owner. */
+  type?: string | Computed<string>;
+}
+
+export interface Zone_Result_Plan {
+  /** States if the subscription can be activated. */
+  canSubscribe?: boolean | Computed<boolean>;
+  /** The denomination of the customer. */
+  currency?: string | Computed<string>;
+  /** If this Zone is managed by another company. */
+  externallyManaged?: boolean | Computed<boolean>;
+  /** How often the customer is billed. */
+  frequency?: string | Computed<string>;
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** States if the subscription active. */
+  isSubscribed?: boolean | Computed<boolean>;
+  /** If the legacy discount applies to this Zone. */
+  legacyDiscount?: boolean | Computed<boolean>;
+  /** The legacy name of the plan. */
+  legacyId?: string | Computed<string>;
+  /** Name of the owner. */
+  name?: string | Computed<string>;
+  /** How much the customer is paying. */
+  price?: number | Computed<number>;
+}
+
+export interface Zone_Result {
+  /** The account the zone belongs to. */
+  account: Zone_Result_Account | Computed<Zone_Result_Account>;
+  /** The last time proof of ownership was detected and the zone was made active. */
+  activatedOn?: string | Computed<string>;
+  /** Allows the customer to use a custom apex. *Tenants Only Configuration*. */
+  cnameSuffix?: string | Computed<string>;
+  /** When the zone was created. */
+  createdOn?: string | Computed<string>;
+  /** The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is 0. */
+  developmentMode?: number | Computed<number>;
+  /** Identifier */
+  id: string | Computed<string>;
+  /** Metadata about the zone. */
+  meta: Zone_Result_Meta | Computed<Zone_Result_Meta>;
+  /** When the zone was last modified. */
+  modifiedOn?: string | Computed<string>;
+  /** The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters. */
+  name: string | Computed<string>;
+  /** The name servers Cloudflare assigns to a zone. */
+  nameServers?: string[] | Computed<string[]>;
+  /** DNS host at the time of switching to Cloudflare. */
+  originalDnshost?: string | Computed<string>;
+  /** Original name servers before moving to Cloudflare. */
+  originalNameServers?: string[] | Computed<string[]>;
+  /** Registrar for the domain at the time of switching to Cloudflare. */
+  originalRegistrar?: string | Computed<string>;
+  /** The owner of the zone. */
+  owner: Zone_Result_Owner | Computed<Zone_Result_Owner>;
+  /** Indicates whether the zone is only using Cloudflare DNS services. A true value means the zone will not receive security or performance benefits. */
+  paused?: boolean | Computed<boolean>;
+  /** Legacy permissions based on legacy user membership information. */
+  permissions?: string[] | Computed<string[]>;
+  /** A Zones subscription information. */
+  plan: Zone_Result_Plan | Computed<Zone_Result_Plan>;
+  /** The zone status on Cloudflare. */
+  status?: string | Computed<string>;
+  /** The root organizational unit that this zone belongs to (such as a tenant or organization). */
+  tenant?: Zone_Result_Account | Computed<Zone_Result_Account>;
+  /** The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization). */
+  tenantUnit?: Zone_Account | Computed<Zone_Account>;
+  /** A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup. */
+  type?: string | Computed<string>;
+  /** An array of domains used for custom name servers. This is only available for Business and Enterprise plans. */
+  vanityNameServers?: string[] | Computed<string[]>;
+  /** Verification key for partial zone setup. */
+  verificationKey?: string | Computed<string>;
+}
+
 const Zone_AccountFields: FieldMap = {
   id: "id",
 };
@@ -22,8 +131,13 @@ export interface ZoneConfig {
 
 export interface ZoneAttrs {
   account: Zone_Account;
+  errors: Zone_Errors[];
+  messages: Zone_Errors[];
   /** The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters. */
   name: string;
+  result: Zone_Result;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup. */
   type: string;
   /** path parameter, not part of the API's own resource representation */

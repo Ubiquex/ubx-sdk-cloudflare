@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Lock_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Lock_Result_Rules_Condition:
+    date: Any = None
+    max_age_seconds: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Lock_Result_Rules:
+    condition: Any = None
+    enabled: Any = None
+    id: Any = None
+    prefix: Any = None
+
+@dataclasses.dataclass
+class Lock_Result:
+    rules: Any = None
+
+@dataclasses.dataclass
 class LockConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +41,11 @@ class LockAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Lock = ubx.DataSourceBinding(
     wire_type="cloudflare_lock",

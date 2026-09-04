@@ -3,12 +3,17 @@ package onramps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnGetMagicWanAddressSpaceResponse_Result struct {
+	Prefixes any
+}
+
 type McnGetMagicWanAddressSpaceResponseConfig struct {
 	AccountId any
 }
 
 type McnGetMagicWanAddressSpaceResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var McnGetMagicWanAddressSpaceResponse = ubx.DataSourceBinding{

@@ -3,12 +3,23 @@ package zerotrustgatewayproxyendpoints
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection9_Result struct {
+	CreatedAt any
+	Id        any
+	Ips       any
+	Kind      any
+	Name      any
+	Subdomain any
+	UpdatedAt any
+}
+
 type ZeroTrustGatewayResponseCollection9Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollection9Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection9 = ubx.DataSourceBinding{

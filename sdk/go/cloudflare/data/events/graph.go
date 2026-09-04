@@ -4,20 +4,20 @@ package events
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Graph_Result_Edges struct {
-	Id any
+	Id               any
 	RelationshipType any
-	Source any
-	SourceId any
-	SourceType any
-	Target any
-	TargetId any
-	TargetType any
+	Source           any
+	SourceId         any
+	SourceType       any
+	Target           any
+	TargetId         any
+	TargetType       any
 }
 
 type Graph_Result struct {
 	Edges any
 	// Focal node object (legacy single-seed). Null when unavailable.
-	Node any
+	Node  any
 	Nodes any
 }
 
@@ -74,7 +74,7 @@ type GraphAttrs struct {
 	DatasetIds any
 	// Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default).
 	Direction any
-	Errors any
+	Errors    any
 	// Comma-separated list of response sections to expand (hydrate). Allowed: `nodes`. Omitting `expand` returns identifier-only nodes.
 	Expand any
 	// Hydration strategy for neighbor nodes when expand=nodes is set. r2_join (default): use R2 JOIN query + DO fallback. do_only: use plain R2 query + hydrate all neighbors via Durable Objects.
@@ -86,25 +86,25 @@ type GraphAttrs struct {
 	Messages any
 	// Comma-separated relationship types to filter by. Allowed: tagged_with, appears_in, related_to, caused_by, attributed_to.
 	RelationshipTypes any
-	Result any
-	ResultInfo any
+	Result            any
+	ResultInfo        any
 	// Comma-separated compact seed ids (type:uuid). Example: seeds=event:550e8400-...,indicator:661fa920-... Provide 1–50 entries; omitting seeds returns 400.
-	Seeds any
+	Seeds   any
 	Success any
 }
 
 var Graph = ubx.DataSourceBinding{
 	WireType: "cloudflare_graph",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"DatasetIds": ubx.FieldSpec{WireName: "dataset_ids"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Expand": ubx.FieldSpec{WireName: "expand"},
-		"Hydration": ubx.FieldSpec{WireName: "hydration"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":            ubx.FieldSpec{WireName: "cursor"},
+		"DatasetIds":        ubx.FieldSpec{WireName: "dataset_ids"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"Expand":            ubx.FieldSpec{WireName: "expand"},
+		"Hydration":         ubx.FieldSpec{WireName: "hydration"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"MaxNodes":          ubx.FieldSpec{WireName: "max_nodes"},
 		"RelationshipTypes": ubx.FieldSpec{WireName: "relationship_types"},
-		"Seeds": ubx.FieldSpec{WireName: "seeds"},
+		"Seeds":             ubx.FieldSpec{WireName: "seeds"},
 	},
 }

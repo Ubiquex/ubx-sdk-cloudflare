@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicMagicBgpFilterProfileResponse_Result:
+    created_on: Any = None
+    # Description of the filter profile
+    description: Any = None
+    # Identifier
+    id: Any = None
+    # Action to take when a route matches one of the targets in this profile
+    match_action: Any = None
+    modified_on: Any = None
+    # Friendly name for the filter profile
+    name: Any = None
+    # List of CIDR prefixes. Each entry may carry an optional suffix that specifies which prefix lengths to match relative to the prefix length N: '{X,Y}' matches prefix lengths in the inclusive range [X, Y] where N <= X <= Y <= max (max is 32 for IPv4, 128 for IPv6), '{X}' matches exactly length X (equivalent to {X,X}), '+' is shorthand for {N, max} (the prefix and all more-specific subnets, including at length N itself; valid even when N is the maximum length). Omit the suffix to match the prefix exactly at length N.
+    targets: Any = None
+
+@dataclasses.dataclass
 class MagicMagicBgpFilterProfileResponseConfig:
     # Description of the filter profile
     description: Any = None
@@ -29,6 +44,7 @@ class MagicMagicBgpFilterProfileResponseAttrs:
     match_action: Any = None
     # Friendly name for the filter profile
     name: Any = None
+    result: Any = None
     # List of CIDR prefixes. Each entry may carry an optional suffix that specifies which prefix lengths to match relative to the prefix length N: '{X,Y}' matches prefix lengths in the inclusive range [X, Y] where N <= X <= Y <= max (max is 32 for IPv4, 128 for IPv6), '{X}' matches exactly length X (equivalent to {X,X}), '+' is shorthand for {N, max} (the prefix and all more-specific subnets, including at length N itself; valid even when N is the maximum length). Omit the suffix to match the prefix exactly at length N.
     targets: Any = None
     # path parameter, not part of the API's own resource representation

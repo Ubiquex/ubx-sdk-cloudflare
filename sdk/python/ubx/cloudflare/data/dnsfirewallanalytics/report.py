@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Report_Result_Data:
+    metrics: Any = None
+
+@dataclasses.dataclass
+class Report_Result_Query:
+    dimensions: Any = None
+    filters: Any = None
+    limit: Any = None
+    metrics: Any = None
+    since: Any = None
+    sort: Any = None
+    until: Any = None
+
+@dataclasses.dataclass
+class Report_Result:
+    data: Any = None
+    data_lag: Any = None
+    max: Any = None
+    min: Any = None
+    query: Any = None
+    rows: Any = None
+    totals: Any = None
+
+@dataclasses.dataclass
 class ReportConfig:
     # Identifier.
     account_id: Any = None
@@ -41,6 +65,7 @@ class ReportAttrs:
     limit: Any = None
     # A comma-separated list of metrics to query.
     metrics: Any = None
+    result: Any = None
     # Start date and time of requesting data period in ISO 8601 format.
     since: Any = None
     # A comma-separated list of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).

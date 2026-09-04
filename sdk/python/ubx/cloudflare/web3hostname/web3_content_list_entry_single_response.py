@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Web3ContentListEntrySingleResponse_Result:
+    # Specify the CID or content path of content to block.
+    content: Any = None
+    created_on: Any = None
+    # Specify an optional description of the content list entry.
+    description: Any = None
+    # Specify the identifier of the hostname.
+    id: Any = None
+    modified_on: Any = None
+    # Specify the type of content list entry to block.
+    type: Any = None
+
+@dataclasses.dataclass
 class Web3ContentListEntrySingleResponseConfig:
     # Specify the CID or content path of content to block.
     content: Any = None
@@ -27,6 +40,8 @@ class Web3ContentListEntrySingleResponseAttrs:
     content: Any = None
     # Specify an optional description of the content list entry.
     description: Any = None
+    # Specify a content list entry to block.
+    result: Any = None
     # Specify the type of content list entry to block.
     type: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosPrefixListResponse_Result:
+    comment: Any = None
+    created_on: Any = None
+    excluded: Any = None
+    id: Any = None
+    modified_on: Any = None
+    prefix: Any = None
+
+@dataclasses.dataclass
 class DosPrefixListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +32,7 @@ class DosPrefixListResponseAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 DosPrefixListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_prefix_list_response",

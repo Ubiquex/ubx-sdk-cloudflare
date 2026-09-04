@@ -3,16 +3,24 @@ package contentscanning
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseCustomScanCollection_Result_Id struct {
+}
+
+type WafProductApiBundleResponseCustomScanCollection_Result struct {
+	Id      any
+	Payload any
+}
+
 type WafProductApiBundleResponseCustomScanCollectionConfig struct {
 }
 
 type WafProductApiBundleResponseCustomScanCollectionAttrs struct {
+	Result any
 	// Defines an identifier.
 	ZoneId any
 }
 
 var WafProductApiBundleResponseCustomScanCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_product_api_bundle_response_custom_scan_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

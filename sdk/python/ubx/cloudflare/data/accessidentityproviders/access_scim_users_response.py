@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessScimUsersResponse_Result_Emails:
+    primary: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class AccessScimUsersResponse_Result_Meta:
+    created: Any = None
+    last_modified: Any = None
+
+@dataclasses.dataclass
+class AccessScimUsersResponse_Result:
+    active: Any = None
+    display_name: Any = None
+    emails: Any = None
+    external_id: Any = None
+    id: Any = None
+    meta: Any = None
+    schemas: Any = None
+
+@dataclasses.dataclass
 class AccessScimUsersResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -45,6 +66,7 @@ class AccessScimUsersResponseAttrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
     # The username of the SCIM User resource.
     username: Any = None
 

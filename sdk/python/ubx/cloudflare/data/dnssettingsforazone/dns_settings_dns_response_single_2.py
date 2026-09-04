@@ -7,12 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsSettingsDnsResponseSingle2_Result_Nameservers:
+    ns_set: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class DnsSettingsDnsResponseSingle2_Result:
+    nameservers: Any = None
+
+@dataclasses.dataclass
 class DnsSettingsDnsResponseSingle2Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class DnsSettingsDnsResponseSingle2Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

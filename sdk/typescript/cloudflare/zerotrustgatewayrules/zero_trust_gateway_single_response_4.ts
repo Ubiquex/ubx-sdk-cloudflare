@@ -12,12 +12,12 @@ export interface ZeroTrustGatewaySingleResponse4_Expiration {
   expiresAt: ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAt | Computed<ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAt>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSsh {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSsh {
   /** Enable SSH command logging. */
   commandLogging?: boolean | Computed<boolean>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControls {
   /** Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2". */
   copy?: string | Computed<string>;
   /** Set to false to enable copy-pasting. Only applies when `version == "v1"`. */
@@ -46,33 +46,33 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls 
   wmId?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPage {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPage {
   /** Specify whether to pass the context information as query parameters. */
   includeContext?: boolean | Computed<boolean>;
   /** Specify the URI to which the user is redirected. */
   targetUri: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSession {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSession {
   /** Sets the required session freshness threshold. The API returns a normalized version of this value. */
   duration?: string | Computed<string>;
   /** Enable session enforcement. */
   enforce?: boolean | Computed<boolean>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4 {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4 {
   ip?: string | Computed<string>;
   port?: number | Computed<number>;
   routeThroughPrivateNetwork?: boolean | Computed<boolean>;
   vnetId?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers {
-  ipv4?: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4[] | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4[]>;
-  ipv6?: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4[] | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4[]>;
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers {
+  ipv4?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4[] | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4[]>;
+  ipv6?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4[] | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4[]>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_Egress {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Egress {
   /** Specify the IPv4 address to use for egress. */
   ipv4?: string | Computed<string>;
   /** Specify the fallback IPv4 address to use for egress when the primary IPv4 fails. Set '0.0.0.0' to indicate local egress via WARP IPs. */
@@ -81,19 +81,19 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings_Egress {
   ipv6?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy {
   /** Enable sending the copy to storage. */
   enabled?: boolean | Computed<boolean>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_L4override {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4override {
   /** Defines the IPv4 or IPv6 address. */
   ip?: string | Computed<string>;
   /** Defines a port number to use for TCP/UDP overrides. */
   port?: number | Computed<number>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettings {
   /** Enable notification. */
   enabled?: boolean | Computed<boolean>;
   /** Indicates whether to pass the context information as query parameters. */
@@ -104,12 +104,12 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettin
   supportUrl?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_Quarantine {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Quarantine {
   /** Specify the types of files to sandbox. */
   fileTypes?: string[] | Computed<string[]>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Redirect {
   /** Specify whether to pass the context information as query parameters. */
   includeContext?: boolean | Computed<boolean>;
   /** Specify whether to append the path and query parameters from the original request to target_uri. */
@@ -118,29 +118,29 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect {
   targetUri: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternally {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternally {
   /** Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries. */
   fallback?: string | Computed<string>;
   /** Specify the internal DNS view identifier to pass to the internal DNS service. */
   viewId?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCert {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCert {
   /** Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526. */
   action?: string | Computed<string>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_RuleSettings {
+export interface ZeroTrustGatewaySingleResponse4_Result_RuleSettings {
   /** Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`. */
   addHeaders?: Record<string, string[]> | Computed<Record<string, string[]>>;
   /** Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule. Settable for all types of rules. */
   allowChildBypass?: boolean | Computed<boolean>;
   /** Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action. */
-  auditSsh?: ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSsh | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSsh>;
+  auditSsh?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSsh | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSsh>;
   /** Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`. */
-  bisoAdminControls?: ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls>;
+  bisoAdminControls?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControls | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControls>;
   /** Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`. */
-  blockPage?: ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPage | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPage>;
+  blockPage?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPage | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPage>;
   /** Enable the custom block page. Settable only for `dns` rules with action `block`. */
   blockPageEnabled?: boolean | Computed<boolean>;
   /** Explain why the rule blocks the request. The custom block page shows this text (if enabled). Settable only for `dns`, `l4`, and `http` rules when the action set to `block`. */
@@ -148,15 +148,15 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings {
   /** Set to enable MSP accounts to bypass their parent's rules. Only MSP child accounts can set this. Settable for all types of rules. */
   bypassParentRule?: boolean | Computed<boolean>;
   /** Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`. */
-  checkSession?: ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSession | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSession>;
+  checkSession?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSession | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSession>;
   /** Remove headers from allowed requests by name. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes. Settable only for `http` rules with the action set to `allow`. */
   deleteHeaders?: string[] | Computed<string[]>;
   /** Configure custom resolvers to route queries that match the resolver policy. Unused with 'resolve_dns_through_cloudflare' or 'resolve_dns_internally' settings. DNS queries get routed to the address closest to their origin. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules. */
-  dnsResolvers?: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers>;
+  dnsResolvers?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers>;
   /** Configure how Gateway Proxy traffic egresses. You can enable this setting for rules with Egress actions and filters, or omit it to indicate local egress via WARP IPs. Settable only for `egress` rules. */
-  egress?: ZeroTrustGatewaySingleResponse4_RuleSettings_Egress | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_Egress>;
+  egress?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Egress | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Egress>;
   /** Configure whether a copy of the HTTP request will be sent to storage when the rule matches. */
-  forensicCopy?: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy>;
+  forensicCopy?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy>;
   /** Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules. */
   ignoreCnameCategoryMatches?: boolean | Computed<boolean>;
   /** Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE]. Settable only for `dns` rules. */
@@ -166,30 +166,30 @@ export interface ZeroTrustGatewaySingleResponse4_RuleSettings {
   /** Indicates whether to include IPs in DNS resolver indicator feed blocks. Default, indicator feeds block only domain names. Settable only for `dns` and `dns_resolver` rules. */
   ipIndicatorFeeds?: boolean | Computed<boolean>;
   /** Send matching traffic to the supplied destination IP address and port. Settable only for `l4` rules with the action set to `l4_override`. */
-  l4override?: ZeroTrustGatewaySingleResponse4_RuleSettings_L4override | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_L4override>;
+  l4override?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4override | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4override>;
   /** Configure a notification to display on the user's device when this rule matched. Settable for all types of rules with the action set to `block`. */
-  notificationSettings?: ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings>;
+  notificationSettings?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettings | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettings>;
   /** Defines a hostname for override, for the matching DNS queries. Settable only for `dns` rules with the action set to `override`. */
   overrideHost?: string | Computed<string>;
   /** Defines a an IP or set of IPs for overriding matched DNS queries. Settable only for `dns` rules with the action set to `override`. */
   overrideIps?: string[] | Computed<string[]>;
   /** Configure DLP payload logging. Settable only for `http` rules. */
-  payloadLog?: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy>;
+  payloadLog?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy>;
   /** Configure settings that apply to quarantine rules. Settable only for `http` rules. */
-  quarantine?: ZeroTrustGatewaySingleResponse4_RuleSettings_Quarantine | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_Quarantine>;
+  quarantine?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Quarantine | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Quarantine>;
   /** Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`. */
-  redirect?: ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect>;
+  redirect?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Redirect | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Redirect>;
   /** Configure to forward the query to the internal DNS service, passing the specified 'view_id' as input. Not used when 'dns_resolvers' is specified or 'resolve_dns_through_cloudflare' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules. */
-  resolveDnsInternally?: ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternally | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternally>;
+  resolveDnsInternally?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternally | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternally>;
   /** Enable to send queries that match the policy to Cloudflare's default 1.1.1.1 DNS resolver. Cannot set when 'dns_resolvers' specified or 'resolve_dns_internally' is set. Only valid when a rule's action set to 'resolve'. Settable only for `dns_resolver` rules. */
   resolveDnsThroughCloudflare?: boolean | Computed<boolean>;
   /** Replace existing headers on allowed requests with the specified key-value pairs. If a header does not exist, it is added. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`. */
   setHeaders?: Record<string, string[]> | Computed<Record<string, string[]>>;
   /** Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`. */
-  untrustedCert?: ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCert | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCert>;
+  untrustedCert?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCert | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCert>;
 }
 
-export interface ZeroTrustGatewaySingleResponse4_Schedule {
+export interface ZeroTrustGatewaySingleResponse4_Result_Schedule {
   /** Specify the time intervals when the rule is active on Fridays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Fridays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used. */
   fri?: string | Computed<string>;
   /** Specify the time intervals when the rule is active on Mondays, in the increasing order from 00:00-24:00(capped at maximum of 6 time splits). If this parameter omitted, the rule is deactivated on Mondays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used. */
@@ -208,6 +208,49 @@ export interface ZeroTrustGatewaySingleResponse4_Schedule {
   wed?: string | Computed<string>;
 }
 
+export interface ZeroTrustGatewaySingleResponse4_Result {
+  /** Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`. */
+  action: string | Computed<string>;
+  createdAt?: string | Computed<string>;
+  /** Indicate the date of deletion, if any. */
+  deletedAt?: string | Computed<string>;
+  /** Specify the rule description. */
+  description?: string | Computed<string>;
+  /** Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response. */
+  devicePosture?: string | Computed<string>;
+  /** Specify whether the rule is enabled. */
+  enabled: boolean | Computed<boolean>;
+  /** Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This does not apply to HTTP or network policies. Settable only for `dns` rules. */
+  expiration?: ZeroTrustGatewaySingleResponse4_Expiration | Computed<ZeroTrustGatewaySingleResponse4_Expiration>;
+  /** Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value. */
+  filters: string[] | Computed<string[]>;
+  /** Identify the API resource with a UUID. */
+  id?: string | Computed<string>;
+  /** Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response. */
+  identity?: string | Computed<string>;
+  /** Specify the rule name. */
+  name: string | Computed<string>;
+  /** Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform. */
+  precedence: number | Computed<number>;
+  /** Indicate that this rule is shared via the Orgs API and read only. */
+  readOnly?: boolean | Computed<boolean>;
+  /** Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift. */
+  ruleSettings?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings>;
+  /** Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules. */
+  schedule?: ZeroTrustGatewaySingleResponse4_Result_Schedule | Computed<ZeroTrustGatewaySingleResponse4_Result_Schedule>;
+  /** Indicate that this rule is sharable via the Orgs API. */
+  sharable?: boolean | Computed<boolean>;
+  /** Provide the account tag of the account that created the rule. */
+  sourceAccount?: string | Computed<string>;
+  /** Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response. */
+  traffic: string | Computed<string>;
+  updatedAt?: string | Computed<string>;
+  /** Indicate the version number of the rule(read-only). */
+  version?: number | Computed<number>;
+  /** Indicate a warning for a misconfigured rule, if any. */
+  warningStatus?: string | Computed<string>;
+}
+
 const ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields: FieldMap = {
 };
 
@@ -221,11 +264,11 @@ const ZeroTrustGatewaySingleResponse4_ExpirationFields: FieldMap = {
   },
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields: FieldMap = {
   commandLogging: "command_logging",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields: FieldMap = {
   copy: "copy",
   dcp: "dcp",
   dd: "dd",
@@ -241,94 +284,94 @@ const ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields: Fiel
   wmId: "wm_id",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields: FieldMap = {
   includeContext: "include_context",
   targetUri: "target_uri",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields: FieldMap = {
   duration: "duration",
   enforce: "enforce",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields: FieldMap = {
   ip: "ip",
   port: "port",
   routeThroughPrivateNetwork: "route_through_private_network",
   vnetId: "vnet_id",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields: FieldMap = {
   ipv4: {
     wireName: "ipv4",
     kind: "list",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
   },
   ipv6: {
     wireName: "ipv6",
     kind: "list",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
   },
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields: FieldMap = {
   ipv4: "ipv4",
   ipv4Fallback: "ipv4_fallback",
   ipv6: "ipv6",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields: FieldMap = {
   enabled: "enabled",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields: FieldMap = {
   ip: "ip",
   port: "port",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields: FieldMap = {
   enabled: "enabled",
   includeContext: "include_context",
   msg: "msg",
   supportUrl: "support_url",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields: FieldMap = {
   fileTypes: "file_types",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields: FieldMap = {
   includeContext: "include_context",
   preservePathAndQuery: "preserve_path_and_query",
   targetUri: "target_uri",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields: FieldMap = {
   fallback: "fallback",
   viewId: "view_id",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields: FieldMap = {
   action: "action",
 };
 
-const ZeroTrustGatewaySingleResponse4_RuleSettingsFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields: FieldMap = {
   addHeaders: "add_headers",
   allowChildBypass: "allow_child_bypass",
   auditSsh: {
     wireName: "audit_ssh",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields,
   },
   bisoAdminControls: {
     wireName: "biso_admin_controls",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields,
   },
   blockPage: {
     wireName: "block_page",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields,
   },
   blockPageEnabled: "block_page_enabled",
   blockReason: "block_reason",
@@ -336,23 +379,23 @@ const ZeroTrustGatewaySingleResponse4_RuleSettingsFields: FieldMap = {
   checkSession: {
     wireName: "check_session",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields,
   },
   deleteHeaders: "delete_headers",
   dnsResolvers: {
     wireName: "dns_resolvers",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields,
   },
   egress: {
     wireName: "egress",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields,
   },
   forensicCopy: {
     wireName: "forensic_copy",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
   },
   ignoreCnameCategoryMatches: "ignore_cname_category_matches",
   insecureDisableDnssecValidation: "insecure_disable_dnssec_validation",
@@ -361,45 +404,45 @@ const ZeroTrustGatewaySingleResponse4_RuleSettingsFields: FieldMap = {
   l4override: {
     wireName: "l4override",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields,
   },
   notificationSettings: {
     wireName: "notification_settings",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields,
   },
   overrideHost: "override_host",
   overrideIps: "override_ips",
   payloadLog: {
     wireName: "payload_log",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
   },
   quarantine: {
     wireName: "quarantine",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields,
   },
   redirect: {
     wireName: "redirect",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields,
   },
   resolveDnsInternally: {
     wireName: "resolve_dns_internally",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields,
   },
   resolveDnsThroughCloudflare: "resolve_dns_through_cloudflare",
   setHeaders: "set_headers",
   untrustedCert: {
     wireName: "untrusted_cert",
     kind: "object",
-    fields: ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields,
+    fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields,
   },
 };
 
-const ZeroTrustGatewaySingleResponse4_ScheduleFields: FieldMap = {
+const ZeroTrustGatewaySingleResponse4_Result_ScheduleFields: FieldMap = {
   fri: "fri",
   mon: "mon",
   sat: "sat",
@@ -430,9 +473,9 @@ export interface ZeroTrustGatewaySingleResponse4Config {
   /** Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform. */
   precedence?: number | Computed<number>;
   /** Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift. */
-  ruleSettings?: ZeroTrustGatewaySingleResponse4_RuleSettings | Computed<ZeroTrustGatewaySingleResponse4_RuleSettings>;
+  ruleSettings?: ZeroTrustGatewaySingleResponse4_Result_RuleSettings | Computed<ZeroTrustGatewaySingleResponse4_Result_RuleSettings>;
   /** Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules. */
-  schedule?: ZeroTrustGatewaySingleResponse4_Schedule | Computed<ZeroTrustGatewaySingleResponse4_Schedule>;
+  schedule?: ZeroTrustGatewaySingleResponse4_Result_Schedule | Computed<ZeroTrustGatewaySingleResponse4_Result_Schedule>;
   /** Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response. */
   traffic?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -460,10 +503,11 @@ export interface ZeroTrustGatewaySingleResponse4Attrs {
   name: string;
   /** Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform. */
   precedence: number;
+  result: ZeroTrustGatewaySingleResponse4_Result;
   /** Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift. */
-  ruleSettings: ZeroTrustGatewaySingleResponse4_RuleSettings;
+  ruleSettings: ZeroTrustGatewaySingleResponse4_Result_RuleSettings;
   /** Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules. */
-  schedule: ZeroTrustGatewaySingleResponse4_Schedule;
+  schedule: ZeroTrustGatewaySingleResponse4_Result_Schedule;
   /** Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response. */
   traffic: string;
   /** path parameter, not part of the API's own resource representation */
@@ -491,12 +535,12 @@ export const ZeroTrustGatewaySingleResponse4: ResourceBinding<ZeroTrustGatewaySi
     ruleSettings: {
       wireName: "rule_settings",
       kind: "object",
-      fields: ZeroTrustGatewaySingleResponse4_RuleSettingsFields,
+      fields: ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields,
     },
     schedule: {
       wireName: "schedule",
       kind: "object",
-      fields: ZeroTrustGatewaySingleResponse4_ScheduleFields,
+      fields: ZeroTrustGatewaySingleResponse4_Result_ScheduleFields,
     },
     traffic: "traffic",
     accountId: "account_id",

@@ -3,12 +3,19 @@ package aisecurityforapps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseSettings_Result struct {
+	// Whether AI Security for Apps is enabled on the zone.
+	Enabled any
+}
+
 type WafProductApiBundleResponseSettingsConfig struct {
 	// Defines the zone.
 	ZoneId any
 }
 
 type WafProductApiBundleResponseSettingsAttrs struct {
+	// AI Security for Apps enablement status for a zone.
+	Result any
 	// Defines the zone.
 	ZoneId any
 }

@@ -7,6 +7,69 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_Certificates_GeoRestrictions:
+    label: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_Certificates:
+    bundle_method: Any = None
+    expires_on: Any = None
+    geo_restrictions: Any = None
+    hosts: Any = None
+    id: Any = None
+    issuer: Any = None
+    modified_on: Any = None
+    priority: Any = None
+    signature: Any = None
+    status: Any = None
+    uploaded_on: Any = None
+    zone_id: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_DcvDelegationRecords:
+    cname: Any = None
+    cname_target: Any = None
+    emails: Any = None
+    http_body: Any = None
+    http_url: Any = None
+    status: Any = None
+    txt_name: Any = None
+    txt_value: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_ValidationErrors:
+    message: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result:
+    # Certificate Authority selected for the order. For information on any certificate authority specific details or restrictions [see this page for more details](https://developers.cloudflare.com/ssl/reference/certificate-authorities).
+    certificate_authority: Any = None
+    # Array of certificates in this pack.
+    certificates: Any = None
+    # Whether or not to add Cloudflare Branding for the order. This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
+    cloudflare_branding: Any = None
+    # DCV Delegation records for domain validation.
+    dcv_delegation_records: Any = None
+    # Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.
+    hosts: Any = None
+    # Identifier.
+    id: Any = None
+    # Identifier of the primary certificate in a pack.
+    primary_certificate: Any = None
+    # Status of certificate pack.
+    status: Any = None
+    # Type of certificate pack.
+    type: Any = None
+    # Domain validation errors that have been received by the certificate authority (CA).
+    validation_errors: Any = None
+    # Validation Method selected for the order.
+    validation_method: Any = None
+    # Certificates' validation records.
+    validation_records: Any = None
+    # Validity Days selected for the order.
+    validity_days: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificatePackResponseSingleConfig:
     # Identifier.
     certificate_pack_id: Any = None
@@ -17,6 +80,8 @@ class TlsCertificatesAndHostnamesCertificatePackResponseSingleConfig:
 class TlsCertificatesAndHostnamesCertificatePackResponseSingleAttrs:
     # Identifier.
     certificate_pack_id: Any = None
+    # A certificate pack with all its properties.
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

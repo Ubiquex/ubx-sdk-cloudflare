@@ -13,6 +13,18 @@ export interface Config_Mtls {
   sslmode?: string | Computed<string>;
 }
 
+export interface Config_Result {
+  caching?: Config_Caching | Computed<Config_Caching>;
+  createdOn?: string | Computed<string>;
+  id?: string | Computed<string>;
+  modifiedOn?: string | Computed<string>;
+  mtls?: Config_Mtls | Computed<Config_Mtls>;
+  name?: string | Computed<string>;
+  origin?: unknown | Computed<unknown>;
+  originConnectionLimit?: number | Computed<number>;
+  restartedOn?: string | Computed<string>;
+}
+
 const Config_CachingFields: FieldMap = {
 };
 
@@ -54,6 +66,7 @@ export interface ConfigAttrs {
   originConnectionLimit: number;
   /** Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted. */
   restartedOn: string;
+  result: Config_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

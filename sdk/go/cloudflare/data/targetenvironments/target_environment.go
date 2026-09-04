@@ -4,12 +4,12 @@ package targetenvironments
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TargetEnvironment_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type TargetEnvironment_Result struct {
-	DisplayName any
+	DisplayName       any
 	TargetEnvironment any
 }
 
@@ -19,9 +19,9 @@ type TargetEnvironmentConfig struct {
 
 type TargetEnvironmentAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Result any
+	Errors    any
+	Messages  any
+	Result    any
 	// Indicates whether the API call was successful.
 	Success any
 }

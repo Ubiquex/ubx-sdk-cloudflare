@@ -3,16 +3,25 @@ package smartshieldsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SmartShield_Errors struct {
+	Code    any
+	Message any
+}
+
 type SmartShieldConfig struct {
 }
 
 type SmartShieldAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }
 
 var SmartShield = ubx.DataSourceBinding{
 	WireType: "cloudflare_smart_shield",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

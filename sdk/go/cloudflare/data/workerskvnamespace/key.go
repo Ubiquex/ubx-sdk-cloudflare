@@ -3,6 +3,27 @@ package workerskvnamespace
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Key_Errors struct {
+	Code    any
+	Message any
+}
+
+type Key_Result_Metadata struct {
+}
+
+type Key_Result struct {
+	Expiration any
+	Metadata   any
+	Name       any
+}
+
+type Key_ResultInfo struct {
+	// Total results returned based on your list parameters.
+	Count any
+	// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
+	Cursor any
+}
+
 type KeyConfig struct {
 	// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the `cursors` object in the `result_info` structure.
 	Cursor any
@@ -17,19 +38,25 @@ type KeyAttrs struct {
 	AccountId any
 	// Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the `cursors` object in the `result_info` structure.
 	Cursor any
+	Errors any
 	// Limits the number of keys returned in the response. The cursor attribute may be used to iterate over the next batch of keys if there are more than the limit.
-	Limit any
+	Limit    any
+	Messages any
 	// Namespace identifier tag.
 	NamespaceId any
 	// Filters returned keys by a name prefix. Exact matches and any key names that begin with the prefix will be returned.
-	Prefix any
+	Prefix     any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Key = ubx.DataSourceBinding{
 	WireType: "cloudflare_key",
 	Fields: ubx.FieldMap{
 		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Prefix": ubx.FieldSpec{WireName: "prefix"},
 	},
 }

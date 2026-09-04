@@ -4,14 +4,14 @@ package radarlayer7attacks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagedRule_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type ManagedRule_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type ManagedRule_Result_Meta_ConfidenceInfo struct {
 }
 
 type ManagedRule_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type ManagedRule_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ManagedRule_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -43,7 +43,7 @@ type ManagedRule_Result_Meta struct {
 
 type ManagedRule_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -102,26 +102,26 @@ type ManagedRuleAttrs struct {
 	// Filters the results by layer 7 mitigation product.
 	MitigationProduct any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 }
 
 var ManagedRule = ubx.DataSourceBinding{
 	WireType: "cloudflare_managed_rule",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"HttpVersion": ubx.FieldSpec{WireName: "http_version"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"Asn":               ubx.FieldSpec{WireName: "asn"},
+		"Continent":         ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":           ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":         ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":         ubx.FieldSpec{WireName: "date_start"},
+		"Format":            ubx.FieldSpec{WireName: "format"},
+		"HttpMethod":        ubx.FieldSpec{WireName: "http_method"},
+		"HttpVersion":       ubx.FieldSpec{WireName: "http_version"},
+		"IpVersion":         ubx.FieldSpec{WireName: "ip_version"},
+		"LimitPerGroup":     ubx.FieldSpec{WireName: "limit_per_group"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
 		"MitigationProduct": ubx.FieldSpec{WireName: "mitigation_product"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 	},
 }

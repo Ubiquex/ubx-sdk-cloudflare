@@ -7,6 +7,114 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Investigate_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Investigate_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result_ActionLog_Properties:
+    folder: Any = None
+    requested_by: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result_ActionLog:
+    completed_at: Any = None
+    completed_timestamp: Any = None
+    operation: Any = None
+    properties: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result_Findings:
+    attachment: Any = None
+    detail: Any = None
+    detection: Any = None
+    field: Any = None
+    name: Any = None
+    portion: Any = None
+    reason: Any = None
+    score: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class Investigate_Result_Properties:
+    allowlisted_pattern: Any = None
+    allowlisted_pattern_type: Any = None
+    blocklisted_message: Any = None
+    blocklisted_pattern: Any = None
+    whitelisted_pattern_type: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result_Validation:
+    comment: Any = None
+    dkim: Any = None
+    dmarc: Any = None
+    spf: Any = None
+
+@dataclasses.dataclass
+class Investigate_Result:
+    action_log: Any = None
+    alert_id: Any = None
+    client_recipients: Any = None
+    delivery_mode: Any = None
+    delivery_status: Any = None
+    detection_reasons: Any = None
+    edf_hash: Any = None
+    envelope_from: Any = None
+    envelope_to: Any = None
+    final_disposition: Any = None
+    findings: Any = None
+    from_: Any = None
+    from_name: Any = None
+    htmltext_structure_hash: Any = None
+    id: Any = None
+    is_phish_submission: Any = None
+    is_quarantined: Any = None
+    message_id: Any = None
+    post_delivery_operations: Any = None
+    postfix_id: Any = None
+    postfix_id_outbound: Any = None
+    properties: Any = None
+    replyto: Any = None
+    scanned_at: Any = None
+    sent_at: Any = None
+    sent_date: Any = None
+    smtp_helo_server_ip: Any = None
+    smtp_previous_hop_ip: Any = None
+    subject: Any = None
+    threat_categories: Any = None
+    to: Any = None
+    to_name: Any = None
+    ts: Any = None
+    validation: Any = None
+    x_originating_ip: Any = None
+
+@dataclasses.dataclass
+class Investigate_ResultInfo:
+    # Number of items in current page.
+    count: Any = None
+    # Cursor for next page.
+    next: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    page: Any = None
+    # Number of items per page.
+    per_page: Any = None
+    # Cursor for previous page.
+    previous: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class InvestigateConfig:
     alert_id: Any = None
     cursor: Any = None
@@ -37,18 +145,24 @@ class InvestigateAttrs:
     detections_only: Any = None
     domain: Any = None
     end: Any = None
+    errors: Any = None
     final_disposition: Any = None
     message_action: Any = None
     message_id: Any = None
+    messages: Any = None
     metric: Any = None
     page: Any = None
     per_page: Any = None
     query: Any = None
     recipient: Any = None
+    result: Any = None
+    result_info: Any = None
     sender: Any = None
     smtp_helo_ip: Any = None
     start: Any = None
     subject: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Investigate = ubx.DataSourceBinding(
     wire_type="cloudflare_investigate",

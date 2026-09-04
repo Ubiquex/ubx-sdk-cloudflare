@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IndicatorFeedResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedResponse_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    is_attributable: Any = None
+    is_downloadable: Any = None
+    is_public: Any = None
+    modified_on: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class IndicatorFeedResponseConfig:
     pass
 
@@ -14,6 +36,11 @@ class IndicatorFeedResponseConfig:
 class IndicatorFeedResponseAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 IndicatorFeedResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_custom_indicator_feeds_indicator_feed_response",

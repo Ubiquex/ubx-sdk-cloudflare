@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Match_Matches_MatchDetails struct {
 	Dismissed any
-	MatchId any
-	QueryId any
-	QueryTag any
+	MatchId   any
+	QueryId   any
+	QueryTag  any
 }
 
 type Match_Matches_PublicScans struct {
@@ -15,25 +15,25 @@ type Match_Matches_PublicScans struct {
 }
 
 type Match_Matches struct {
-	Dismissed any
-	Domain any
-	FirstSeen any
-	MatchDetails any
-	PublicScans any
-	Registrar any
-	ScanStatus any
+	Dismissed        any
+	Domain           any
+	FirstSeen        any
+	MatchDetails     any
+	PublicScans      any
+	Registrar        any
+	ScanStatus       any
 	ScanSubmissionId any
-	Source any
+	Source           any
 }
 
 type MatchConfig struct {
 	AccountId any
 	// Filter matches by domain name (substring match)
-	DomainSearch any
+	DomainSearch     any
 	IncludeDismissed any
-	IncludeDomainId any
-	Limit any
-	Offset any
+	IncludeDomainId  any
+	Limit            any
+	Offset           any
 	// Sort order. Options: 'asc' (ascending) or 'desc' (descending)
 	Order any
 	// Column to sort by. Options: 'domain', 'first_seen', or 'registrar'
@@ -45,32 +45,32 @@ type MatchConfig struct {
 type MatchAttrs struct {
 	AccountId any
 	// Filter matches by domain name (substring match)
-	DomainSearch any
+	DomainSearch     any
 	IncludeDismissed any
-	IncludeDomainId any
-	Limit any
-	Matches any
-	Offset any
+	IncludeDomainId  any
+	Limit            any
+	Matches          any
+	Offset           any
 	// Sort order. Options: 'asc' (ascending) or 'desc' (descending)
 	Order any
 	// Column to sort by. Options: 'domain', 'first_seen', or 'registrar'
 	OrderBy any
 	// Query ID or comma-separated list of Query IDs. When multiple IDs are provided, matches are deduplicated across queries and each match includes a match_details array with per-match query metadata and dismissed state.
 	QueryId any
-	Total any
+	Total   any
 }
 
 var Match = ubx.DataSourceBinding{
 	WireType: "cloudflare_match",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DomainSearch": ubx.FieldSpec{WireName: "domain_search"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"DomainSearch":     ubx.FieldSpec{WireName: "domain_search"},
 		"IncludeDismissed": ubx.FieldSpec{WireName: "include_dismissed"},
-		"IncludeDomainId": ubx.FieldSpec{WireName: "include_domain_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"IncludeDomainId":  ubx.FieldSpec{WireName: "include_domain_id"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"Offset":           ubx.FieldSpec{WireName: "offset"},
+		"Order":            ubx.FieldSpec{WireName: "order"},
+		"OrderBy":          ubx.FieldSpec{WireName: "order_by"},
+		"QueryId":          ubx.FieldSpec{WireName: "query_id"},
 	},
 }

@@ -18,26 +18,82 @@ type Policy_Actions struct {
 	WebhookConfigs any
 }
 
+type Policy_Errors_Source struct {
+	Pointer any
+}
+
+type Policy_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Policy_Result_Actions_RemediationTypes struct {
+	DisplayName       any
+	RemediationType   any
+	RemediationTypeId any
+}
+
+type Policy_Result_Actions_WebhookConfigs struct {
+	DisplayName     any
+	WebhookConfigId any
+}
+
+type Policy_Result_Actions struct {
+	// List of remediation types that will be executed.
+	RemediationTypes any
+	// List of webhook configurations that will be triggered.
+	WebhookConfigs any
+}
+
+type Policy_Result struct {
+	// The actions configured for this policy.
+	Actions any
+	// When true, the policy applies to all integrations for the account. When false, it applies only to the specified integration_ids.
+	AppliesToAllIntegrations any
+	// Timestamp when the policy was created.
+	CreatedAt any
+	// User-set description of what this policy does. Limited to 1000 characters.
+	Description any
+	// Timestamp when the policy was disabled. Omitted from the response when the policy is enabled.
+	DisabledAt any
+	// Display name for the policy configuration. Limited to 255 characters.
+	DisplayName any
+	// Whether the policy is enabled. Derived from disabled_at (enabled when disabled_at is unset).
+	Enabled any
+	// The finding type this policy is associated with. Immutable after creation; changing it replaces the policy.
+	FindingTypeId any
+	// Unique identifier for the policy configuration.
+	Id any
+	// The integrations this policy applies to.
+	IntegrationIds any
+	// Timestamp of the most recent successful policy invocation. Omitted from the response when the policy has never been successfully triggered. Only populated on GET responses; absent on responses from create/update endpoints.
+	LastTriggeredAt any
+	// Timestamp when the policy was last updated.
+	UpdatedAt any
+}
+
 var Policy_Actions_RemediationTypesFields = ubx.FieldMap{
-		"RemediationTypeId": ubx.FieldSpec{WireName: "remediation_type_id"},
-	}
+	"RemediationTypeId": ubx.FieldSpec{WireName: "remediation_type_id"},
+}
 
 var Policy_Actions_WebhookConfigsFields = ubx.FieldMap{
-		"WebhookConfigId": ubx.FieldSpec{WireName: "webhook_config_id"},
-	}
+	"WebhookConfigId": ubx.FieldSpec{WireName: "webhook_config_id"},
+}
 
 var Policy_ActionsFields = ubx.FieldMap{
-		"RemediationTypes": ubx.FieldSpec{
-			WireName: "remediation_types",
-			Kind: "list",
-			Fields: Policy_Actions_RemediationTypesFields,
-		},
-		"WebhookConfigs": ubx.FieldSpec{
-			WireName: "webhook_configs",
-			Kind: "list",
-			Fields: Policy_Actions_WebhookConfigsFields,
-		},
-	}
+	"RemediationTypes": ubx.FieldSpec{
+		WireName: "remediation_types",
+		Kind:     "list",
+		Fields:   Policy_Actions_RemediationTypesFields,
+	},
+	"WebhookConfigs": ubx.FieldSpec{
+		WireName: "webhook_configs",
+		Kind:     "list",
+		Fields:   Policy_Actions_WebhookConfigsFields,
+	},
+}
 
 type PolicyConfig struct {
 	// Actions to execute when this policy is triggered, grouped by action type. A policy must contain at least one action across all groups and may include at most one remediation.
@@ -71,10 +127,16 @@ type PolicyAttrs struct {
 	DisplayName any
 	// Boolean specifying if the policy is enabled or disabled.
 	Enabled any
+	Errors  any
 	// The finding type this policy is associated with. All remediation actions must match this finding type.
 	FindingTypeId any
 	// The integrations this policy applies to. Required when applies_to_all_integrations is false.
 	IntegrationIds any
+	Messages       any
+	// Response body for a policy configuration.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -86,16 +148,16 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "object",
-			Fields: Policy_ActionsFields,
+			Kind:     "object",
+			Fields:   Policy_ActionsFields,
 		},
 		"AppliesToAllIntegrations": ubx.FieldSpec{WireName: "applies_to_all_integrations"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FindingTypeId": ubx.FieldSpec{WireName: "finding_type_id"},
-		"IntegrationIds": ubx.FieldSpec{WireName: "integration_ids"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
+		"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+		"FindingTypeId":            ubx.FieldSpec{WireName: "finding_type_id"},
+		"IntegrationIds":           ubx.FieldSpec{WireName: "integration_ids"},
+		"AccountId":                ubx.FieldSpec{WireName: "account_id"},
+		"PolicyId":                 ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

@@ -4,12 +4,12 @@ package brapi
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Protocol_Domains struct {
-	Commands any
+	Commands     any
 	Dependencies any
-	Domain any
-	Events any
+	Domain       any
+	Events       any
 	Experimental any
-	Types any
+	Types        any
 }
 
 type Protocol_Version struct {

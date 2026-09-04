@@ -4,10 +4,10 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateConfig struct {
-	Body any
-	Category any
+	Body        any
+	Category    any
 	Description any
-	Name any
+	Name        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -15,14 +15,14 @@ type TemplateConfig struct {
 }
 
 type TemplateAttrs struct {
-	Body any
-	Category any
-	CreatedAt any
+	Body        any
+	Category    any
+	CreatedAt   any
 	Description any
-	Id any
-	Name any
-	Source any
-	UpdatedAt any
+	Id          any
+	Name        any
+	Source      any
+	UpdatedAt   any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,11 +32,11 @@ type TemplateAttrs struct {
 var Template = ubx.ResourceBinding{
 	WireType: "cloudflare_template",
 	Fields: ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Category": ubx.FieldSpec{WireName: "category"},
+		"Body":        ubx.FieldSpec{WireName: "body"},
+		"Category":    ubx.FieldSpec{WireName: "category"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"TemplateId":  ubx.FieldSpec{WireName: "template_id"},
 	},
 }

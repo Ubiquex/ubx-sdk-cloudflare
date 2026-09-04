@@ -4,118 +4,139 @@ package deviceposturerules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamsDevicesSingleResponse_Input_Locations struct {
-	Paths any
+	Paths       any
 	TrustStores any
 }
 
 type TeamsDevicesSingleResponse_Input struct {
-	ActiveThreats any
-	AuthState any
-	CertificateId any
-	CheckDisks any
-	CheckPrivateKey any
-	Cn any
-	ComplianceStatus any
-	ConnectionId any
-	CountOperator any
-	Domain any
-	EidLastSeen any
-	Enabled any
-	Exists any
-	ExtendedKeyUsage any
-	Id any
-	Infected any
-	IsActive any
-	IssueCount any
-	LastSeen any
-	Locations any
-	NetworkStatus any
-	OperatingSystem any
-	OperationalState any
-	Operator any
-	Os any
-	OsDistroName any
-	OsDistroRevision any
-	OsVersionExtra any
-	Overall any
-	Path any
-	RequireAll any
-	RiskLevel any
-	Score any
-	ScoreOperator any
-	SensorConfig any
-	Sha256 any
-	State any
+	ActiveThreats           any
+	AuthState               any
+	CertificateId           any
+	CheckDisks              any
+	CheckPrivateKey         any
+	Cn                      any
+	ComplianceStatus        any
+	ConnectionId            any
+	CountOperator           any
+	Domain                  any
+	EidLastSeen             any
+	Enabled                 any
+	Exists                  any
+	ExtendedKeyUsage        any
+	Id                      any
+	Infected                any
+	IsActive                any
+	IssueCount              any
+	LastSeen                any
+	Locations               any
+	NetworkStatus           any
+	OperatingSystem         any
+	OperationalState        any
+	Operator                any
+	Os                      any
+	OsDistroName            any
+	OsDistroRevision        any
+	OsVersionExtra          any
+	Overall                 any
+	Path                    any
+	RequireAll              any
+	RiskLevel               any
+	Score                   any
+	ScoreOperator           any
+	SensorConfig            any
+	Sha256                  any
+	State                   any
 	SubjectAlternativeNames any
-	Thumbprint any
-	TotalScore any
-	UpdateWindowDays any
-	Version any
-	VersionOperator any
+	Thumbprint              any
+	TotalScore              any
+	UpdateWindowDays        any
+	Version                 any
+	VersionOperator         any
 }
 
 type TeamsDevicesSingleResponse_Match struct {
 	Platform any
 }
 
+type TeamsDevicesSingleResponse_Result struct {
+	// The description of the device posture rule.
+	Description any
+	// Whether the rule is enabled. This is a computed, read-only value. It is false for deprecated Kolide posture rules that still use the issue_count input, and true otherwise.
+	Enabled any
+	// Sets the expiration time for a posture check result. If empty, the result remains valid until it is overwritten by new data from the WARP client.
+	Expiration any
+	// API UUID.
+	Id any
+	// The value to be checked against.
+	Input any
+	// The conditions that the client must match to run the rule.
+	Match any
+	// The name of the device posture rule.
+	Name any
+	// Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.
+	Schedule any
+	// The type of device posture rule.
+	Type any
+}
+
 var TeamsDevicesSingleResponse_Input_LocationsFields = ubx.FieldMap{
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"TrustStores": ubx.FieldSpec{WireName: "trust_stores"},
-	}
+	"Paths":       ubx.FieldSpec{WireName: "paths"},
+	"TrustStores": ubx.FieldSpec{WireName: "trust_stores"},
+}
 
 var TeamsDevicesSingleResponse_InputFields = ubx.FieldMap{
-		"ActiveThreats": ubx.FieldSpec{WireName: "active_threats"},
-		"AuthState": ubx.FieldSpec{WireName: "auth_state"},
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"CheckDisks": ubx.FieldSpec{WireName: "check_disks"},
-		"CheckPrivateKey": ubx.FieldSpec{WireName: "check_private_key"},
-		"Cn": ubx.FieldSpec{WireName: "cn"},
-		"ComplianceStatus": ubx.FieldSpec{WireName: "compliance_status"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"CountOperator": ubx.FieldSpec{WireName: "count_operator"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"EidLastSeen": ubx.FieldSpec{WireName: "eid_last_seen"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Exists": ubx.FieldSpec{WireName: "exists"},
-		"ExtendedKeyUsage": ubx.FieldSpec{WireName: "extended_key_usage"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Infected": ubx.FieldSpec{WireName: "infected"},
-		"IsActive": ubx.FieldSpec{WireName: "is_active"},
-		"IssueCount": ubx.FieldSpec{WireName: "issue_count"},
-		"LastSeen": ubx.FieldSpec{WireName: "last_seen"},
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "object",
-			Fields: TeamsDevicesSingleResponse_Input_LocationsFields,
-		},
-		"NetworkStatus": ubx.FieldSpec{WireName: "network_status"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"OperationalState": ubx.FieldSpec{WireName: "operational_state"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Os": ubx.FieldSpec{WireName: "os"},
-		"OsDistroName": ubx.FieldSpec{WireName: "os_distro_name"},
-		"OsDistroRevision": ubx.FieldSpec{WireName: "os_distro_revision"},
-		"OsVersionExtra": ubx.FieldSpec{WireName: "os_version_extra"},
-		"Overall": ubx.FieldSpec{WireName: "overall"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"RequireAll": ubx.FieldSpec{WireName: "require_all"},
-		"RiskLevel": ubx.FieldSpec{WireName: "risk_level"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"ScoreOperator": ubx.FieldSpec{WireName: "score_operator"},
-		"SensorConfig": ubx.FieldSpec{WireName: "sensor_config"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
-		"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
-		"TotalScore": ubx.FieldSpec{WireName: "total_score"},
-		"UpdateWindowDays": ubx.FieldSpec{WireName: "update_window_days"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"VersionOperator": ubx.FieldSpec{WireName: "version_operator"},
-	}
+	"ActiveThreats":    ubx.FieldSpec{WireName: "active_threats"},
+	"AuthState":        ubx.FieldSpec{WireName: "auth_state"},
+	"CertificateId":    ubx.FieldSpec{WireName: "certificate_id"},
+	"CheckDisks":       ubx.FieldSpec{WireName: "check_disks"},
+	"CheckPrivateKey":  ubx.FieldSpec{WireName: "check_private_key"},
+	"Cn":               ubx.FieldSpec{WireName: "cn"},
+	"ComplianceStatus": ubx.FieldSpec{WireName: "compliance_status"},
+	"ConnectionId":     ubx.FieldSpec{WireName: "connection_id"},
+	"CountOperator":    ubx.FieldSpec{WireName: "count_operator"},
+	"Domain":           ubx.FieldSpec{WireName: "domain"},
+	"EidLastSeen":      ubx.FieldSpec{WireName: "eid_last_seen"},
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"Exists":           ubx.FieldSpec{WireName: "exists"},
+	"ExtendedKeyUsage": ubx.FieldSpec{WireName: "extended_key_usage"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"Infected":         ubx.FieldSpec{WireName: "infected"},
+	"IsActive":         ubx.FieldSpec{WireName: "is_active"},
+	"IssueCount":       ubx.FieldSpec{WireName: "issue_count"},
+	"LastSeen":         ubx.FieldSpec{WireName: "last_seen"},
+	"Locations": ubx.FieldSpec{
+		WireName: "locations",
+		Kind:     "object",
+		Fields:   TeamsDevicesSingleResponse_Input_LocationsFields,
+	},
+	"NetworkStatus":           ubx.FieldSpec{WireName: "network_status"},
+	"OperatingSystem":         ubx.FieldSpec{WireName: "operating_system"},
+	"OperationalState":        ubx.FieldSpec{WireName: "operational_state"},
+	"Operator":                ubx.FieldSpec{WireName: "operator"},
+	"Os":                      ubx.FieldSpec{WireName: "os"},
+	"OsDistroName":            ubx.FieldSpec{WireName: "os_distro_name"},
+	"OsDistroRevision":        ubx.FieldSpec{WireName: "os_distro_revision"},
+	"OsVersionExtra":          ubx.FieldSpec{WireName: "os_version_extra"},
+	"Overall":                 ubx.FieldSpec{WireName: "overall"},
+	"Path":                    ubx.FieldSpec{WireName: "path"},
+	"RequireAll":              ubx.FieldSpec{WireName: "require_all"},
+	"RiskLevel":               ubx.FieldSpec{WireName: "risk_level"},
+	"Score":                   ubx.FieldSpec{WireName: "score"},
+	"ScoreOperator":           ubx.FieldSpec{WireName: "score_operator"},
+	"SensorConfig":            ubx.FieldSpec{WireName: "sensor_config"},
+	"Sha256":                  ubx.FieldSpec{WireName: "sha256"},
+	"State":                   ubx.FieldSpec{WireName: "state"},
+	"SubjectAlternativeNames": ubx.FieldSpec{WireName: "subject_alternative_names"},
+	"Thumbprint":              ubx.FieldSpec{WireName: "thumbprint"},
+	"TotalScore":              ubx.FieldSpec{WireName: "total_score"},
+	"UpdateWindowDays":        ubx.FieldSpec{WireName: "update_window_days"},
+	"Version":                 ubx.FieldSpec{WireName: "version"},
+	"VersionOperator":         ubx.FieldSpec{WireName: "version_operator"},
+}
 
 var TeamsDevicesSingleResponse_MatchFields = ubx.FieldMap{
-		"Platform": ubx.FieldSpec{WireName: "platform"},
-	}
+	"Platform": ubx.FieldSpec{WireName: "platform"},
+}
 
 type TeamsDevicesSingleResponseConfig struct {
 	// The description of the device posture rule.
@@ -148,7 +169,8 @@ type TeamsDevicesSingleResponseAttrs struct {
 	// The conditions that the client must match to run the rule.
 	Match any
 	// The name of the device posture rule.
-	Name any
+	Name   any
+	Result any
 	// Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.
 	Schedule any
 	// The type of device posture rule.
@@ -163,21 +185,21 @@ var TeamsDevicesSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_teams_devices_single_response",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expiration": ubx.FieldSpec{WireName: "expiration"},
+		"Expiration":  ubx.FieldSpec{WireName: "expiration"},
 		"Input": ubx.FieldSpec{
 			WireName: "input",
-			Kind: "object",
-			Fields: TeamsDevicesSingleResponse_InputFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesSingleResponse_InputFields,
 		},
 		"Match": ubx.FieldSpec{
 			WireName: "match",
-			Kind: "list",
-			Fields: TeamsDevicesSingleResponse_MatchFields,
+			Kind:     "list",
+			Fields:   TeamsDevicesSingleResponse_MatchFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Schedule":  ubx.FieldSpec{WireName: "schedule"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RuleId":    ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

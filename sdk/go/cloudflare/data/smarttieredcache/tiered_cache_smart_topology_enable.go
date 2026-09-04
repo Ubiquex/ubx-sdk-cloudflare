@@ -3,16 +3,20 @@ package smarttieredcache
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TieredCacheSmartTopologyEnable_Result struct {
+	Value any
+}
+
 type TieredCacheSmartTopologyEnableConfig struct {
 }
 
 type TieredCacheSmartTopologyEnableAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var TieredCacheSmartTopologyEnable = ubx.DataSourceBinding{
 	WireType: "cloudflare_tiered_cache_smart_topology_enable",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

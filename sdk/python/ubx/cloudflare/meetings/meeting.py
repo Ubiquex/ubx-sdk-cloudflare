@@ -261,6 +261,8 @@ class MeetingConfig:
 class MeetingAttrs:
     # The AI Config allows you to customize the behavior of meeting transcriptions and summaries
     ai_config: Any = None
+    # Data returned by the operation
+    data: Any = None
     # Specifies if the meeting should start getting livestreamed on start.
     live_stream_on_start: Any = None
     # If a meeting is set to persist_chat, meeting chat would remain for a week within the meeting space.
@@ -271,6 +273,8 @@ class MeetingAttrs:
     recording_config: Any = None
     # Time in seconds, for which a session remains active, after the last participant has left the meeting.
     session_keep_alive_time_in_secs: Any = None
+    # Success status of the operation
+    success: Any = None
     # Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.
     summarize_on_end: Any = None
     # Title of the meeting

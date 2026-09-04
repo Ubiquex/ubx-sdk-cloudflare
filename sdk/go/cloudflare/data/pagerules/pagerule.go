@@ -3,6 +3,42 @@ package pagerules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Pagerule_Errors_Source struct {
+	Pointer any
+}
+
+type Pagerule_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Pagerule_Result_Actions struct {
+	Id    any
+	Value any
+}
+
+type Pagerule_Result_Targets_Constraint struct {
+	Operator any
+	Value    any
+}
+
+type Pagerule_Result_Targets struct {
+	Constraint any
+	Target     any
+}
+
+type Pagerule_Result struct {
+	Actions    any
+	CreatedOn  any
+	Id         any
+	ModifiedOn any
+	Priority   any
+	Status     any
+	Targets    any
+}
+
 type PageruleConfig struct {
 	// The direction used to sort returned Page Rules.
 	Direction any
@@ -19,12 +55,17 @@ type PageruleConfig struct {
 type PageruleAttrs struct {
 	// The direction used to sort returned Page Rules.
 	Direction any
+	Errors    any
 	// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
-	Match any
+	Match    any
+	Messages any
 	// The field used to sort returned Page Rules.
-	Order any
+	Order  any
+	Result any
 	// The status of the Page Rule.
 	Status any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }
@@ -33,9 +74,9 @@ var Pagerule = ubx.DataSourceBinding{
 	WireType: "cloudflare_pagerule",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Match":     ubx.FieldSpec{WireName: "match"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

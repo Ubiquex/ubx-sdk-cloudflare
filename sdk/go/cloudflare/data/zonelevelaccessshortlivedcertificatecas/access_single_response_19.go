@@ -3,6 +3,15 @@ package zonelevelaccessshortlivedcertificatecas
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse19_Result struct {
+	// The Application Audience (AUD) tag. Identifies the application associated with the CA.
+	Aud any
+	// The ID of the CA.
+	Id any
+	// The public key to add to your SSH server configuration.
+	PublicKey any
+}
+
 type AccessSingleResponse19Config struct {
 	// UUID.
 	AppId any
@@ -12,7 +21,8 @@ type AccessSingleResponse19Config struct {
 
 type AccessSingleResponse19Attrs struct {
 	// UUID.
-	AppId any
+	AppId  any
+	Result any
 	// Identifier.
 	ZoneId any
 }
@@ -20,7 +30,7 @@ type AccessSingleResponse19Attrs struct {
 var AccessSingleResponse19 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_single_response_19",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":  ubx.FieldSpec{WireName: "app_id"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

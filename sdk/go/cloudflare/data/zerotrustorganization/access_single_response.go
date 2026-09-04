@@ -3,6 +3,90 @@ package zerotrustorganization
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse_Result_CreatedAt struct {
+}
+
+type AccessSingleResponse_Result_CustomPages struct {
+	// The uid of the custom page to use when a user is denied access after failing a non-identity rule.
+	Forbidden any
+	// The uid of the custom page to use when a user is denied access.
+	IdentityDenied any
+}
+
+type AccessSingleResponse_Result_LoginDesign struct {
+	// The background color on your login page.
+	BackgroundColor any
+	// The text at the bottom of your login page.
+	FooterText any
+	// The text at the top of your login page.
+	HeaderText any
+	// The URL of the logo on your login page.
+	LogoPath any
+	// The text color on your login page.
+	TextColor any
+}
+
+type AccessSingleResponse_Result_MfaConfig struct {
+	// Lists the MFA methods that users can authenticate with. The `piv_key` and `ssh_fido2_key` values are supported only for infrastructure applications.
+	AllowedAuthenticators any
+	// Allows a user to skip MFA via Authentication Method Reference (AMR) matching when the AMR claim provided by the IdP the user used to authenticate contains "mfa". Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days).
+	AmrMatchingSessionDuration any
+	// Specifies a Cloudflare List of required FIDO2 authenticator device AAGUIDs.
+	RequiredAaguids any
+	// Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.
+	SessionDuration any
+}
+
+type AccessSingleResponse_Result_MfaPivKeyRequirements struct {
+	// Defines when a PIN is required to use the SSH key. Valid values: `never` (no PIN required), `once` (PIN required once per session), `always` (PIN required for each use).
+	PinPolicy any
+	// Requires the PIV key to be stored on a FIPS 140-2 Level 1 or higher validated device.
+	RequireFipsDevice any
+	// Specifies the allowed SSH key sizes in bits. Valid sizes depend on key type. Ed25519 has a fixed key size and does not accept this parameter.
+	SshKeySize any
+	// Specifies the allowed SSH key types. Valid values are `ecdsa`, `ed25519`, and `rsa`.
+	SshKeyType any
+	// Defines when physical touch is required to use the SSH key. Valid values: `never` (no touch required), `always` (touch required for each use), `cached` (touch cached for 15 seconds).
+	TouchPolicy any
+}
+
+type AccessSingleResponse_Result struct {
+	// When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.
+	AllowAuthenticateViaWarp any
+	// The unique subdomain assigned to your Zero Trust organization.
+	AuthDomain any
+	// When set to `true`, users skip the identity provider selection step during login.
+	AutoRedirectToIdentity any
+	CreatedAt              any
+	CustomPages            any
+	// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
+	DenyUnmatchedRequests any
+	// Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.
+	DenyUnmatchedRequestsExemptedZoneNames any
+	// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
+	IsUiReadOnly any
+	LoginDesign  any
+	// Configures multi-factor authentication (MFA) settings for an organization.
+	MfaConfig any
+	// Configures PIV key requirements for MFA using hardware security keys.
+	MfaPivKeyRequirements any
+	// Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured. Note: 'allowed_authenticators' cannot contain only the infrastructure SSH authenticators ('piv_key' and 'ssh_fido2_key') if the organization has any non-infrastructure applications.
+	MfaRequiredForAllApps any
+	// The name of your Zero Trust organization.
+	Name any
+	// The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
+	SessionDuration any
+	// A description of the reason why the UI read only field is being toggled.
+	UiReadOnlyToggleReason any
+	UpdatedAt              any
+	// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
+	UserSeatExpirationInactiveTime any
+	// When enabled, unsuccessful WARP authentication requests with a non-HTML Accept header return a 401 response instead of redirecting to the login page.
+	WarpAuthNonBrowser401 any
+	// The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.
+	WarpAuthSessionDuration any
+}
+
 type AccessSingleResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +95,7 @@ type AccessSingleResponseConfig struct {
 type AccessSingleResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessSingleResponse = ubx.DataSourceBinding{

@@ -3,6 +3,22 @@ package workeraccountsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccountSetting_Errors_Source struct {
+	Pointer any
+}
+
+type AccountSetting_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type AccountSetting_Result struct {
+	DefaultUsageModel any
+	GreenCompute      any
+}
+
 type AccountSettingConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +27,11 @@ type AccountSettingConfig struct {
 type AccountSettingAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var AccountSetting = ubx.DataSourceBinding{

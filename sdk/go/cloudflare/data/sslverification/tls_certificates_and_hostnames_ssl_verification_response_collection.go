@@ -3,6 +3,22 @@ package sslverification
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesSslVerificationResponseCollection_Result_VerificationInfo struct {
+	RecordName   any
+	RecordTarget any
+}
+
+type TlsCertificatesAndHostnamesSslVerificationResponseCollection_Result struct {
+	BrandCheck         any
+	CertPackUuid       any
+	CertificateStatus  any
+	Signature          any
+	ValidationMethod   any
+	VerificationInfo   any
+	VerificationStatus any
+	VerificationType   any
+}
+
 type TlsCertificatesAndHostnamesSslVerificationResponseCollectionConfig struct {
 	// Immediately retry SSL Verification.
 	Retry any
@@ -11,6 +27,7 @@ type TlsCertificatesAndHostnamesSslVerificationResponseCollectionConfig struct {
 }
 
 type TlsCertificatesAndHostnamesSslVerificationResponseCollectionAttrs struct {
+	Result any
 	// Immediately retry SSL Verification.
 	Retry any
 	// Identifier.
@@ -20,7 +37,7 @@ type TlsCertificatesAndHostnamesSslVerificationResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesSslVerificationResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_ssl_verification_response_collection",
 	Fields: ubx.FieldMap{
-		"Retry": ubx.FieldSpec{WireName: "retry"},
+		"Retry":  ubx.FieldSpec{WireName: "retry"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

@@ -7,11 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseStatus_Result:
+    # Determines whether or not Leaked Credential Checks are enabled.
+    enabled: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseStatusConfig:
     pass
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseStatusAttrs:
+    # Defines the overall status for Leaked Credential Checks.
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

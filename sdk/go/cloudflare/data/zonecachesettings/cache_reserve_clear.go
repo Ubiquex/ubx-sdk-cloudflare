@@ -3,16 +3,31 @@ package zonecachesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CacheReserveClear_Errors struct {
+	Code    any
+	Message any
+}
+
+type CacheReserveClear_Result struct {
+	EndTs   any
+	StartTs any
+	State   any
+}
+
 type CacheReserveClearConfig struct {
 }
 
 type CacheReserveClearAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }
 
 var CacheReserveClear = ubx.DataSourceBinding{
 	WireType: "cloudflare_cache_reserve_clear",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

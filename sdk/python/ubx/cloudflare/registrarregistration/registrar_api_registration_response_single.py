@@ -38,6 +38,33 @@ class RegistrarApiRegistrationResponseSingle_Contacts:
     # Optional technical contact. Accepted only when the extension schema includes this role. When the registry requires an omitted contact, Cloudflare may derive it from `contacts.registrant`.
     technical: Any = None
 
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseSingle_Result:
+    # Whether automatic renewal occurs before expiration.
+    auto_renew: Any = None
+    # When the domain was registered. Present when the registration resource exists.
+    created_at: Any = None
+    # Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
+    domain_name: Any = None
+    # When the domain registration expires. Ready registrations include this value; only `registration_pending` may return null.
+    expires_at: Any = None
+    # Whether the domain is locked for transfer.
+    locked: Any = None
+    # Current WHOIS privacy mode for the registration.
+    privacy_mode: Any = None
+    # Current registration status. - `active`: The domain operates with an active registration. - `registration_pending`: Registration remains in progress. - `expired`: The domain registration expired. - `suspended`: The registry suspended the domain. - `redemption_period`: The domain entered the redemption grace period. - `pending_delete`: The registry scheduled the domain for deletion.
+    status: Any = None
+
 _RegistrarApiRegistrationResponseSingle_Contacts_Administrator_PostalInfo_AddressFields = {
     "city": ubx.FieldSpec(wire_name="city"),
     "country_code": ubx.FieldSpec(wire_name="country_code"),
@@ -121,8 +148,14 @@ class RegistrarApiRegistrationResponseSingleAttrs:
     contacts: Any = None
     # Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
     domain_name: Any = None
+    errors: Any = None
+    messages: Any = None
     # Sets the WHOIS privacy mode for the registration. Defaults to `redaction`. - `off`: Disables WHOIS privacy. - `redaction`: Requests WHOIS redaction where the extension supports it. Some extensions exclude privacy and redaction.
     privacy_mode: Any = None
+    # A domain registration resource representing the current state of a registered domain.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Sets the registration term from 1 to 10 years. When omitted, this field defaults to the registry's minimum registration period for the extension. Most extensions require 1 year, while some require longer minimum terms (e.g., `.ai` requires 2 years). Each registry may also enforce its own maximum registration term. A request above that maximum fails. When uncertain, omit this field to use the default.
     years: Any = None
     # path parameter, not part of the API's own resource representation

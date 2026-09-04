@@ -4,52 +4,52 @@ package applications
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OneApplicationDetailResponse_Result_AuthMethods struct {
-	DisplayName any
-	Id any
-	IsDefault any
+	DisplayName           any
+	Id                    any
+	IsDefault             any
 	SupportedEnvironments any
 }
 
 type OneApplicationDetailResponse_Result_UseCases_BaseScopes struct {
 	DisplayName any
-	Scope any
-	Severity any
+	Scope       any
+	Severity    any
 }
 
 type OneApplicationDetailResponse_Result_UseCases_Features struct {
 	Description any
 	DisplayName any
-	Id any
-	Scopes any
+	Id          any
+	Scopes      any
 }
 
 type OneApplicationDetailResponse_Result_UseCases struct {
-	BaseScopes any
+	BaseScopes  any
 	Description any
 	DisplayName any
-	Features any
-	Id any
+	Features    any
+	Id          any
 }
 
 type OneApplicationDetailResponse_Result struct {
-	AuthMethods any
-	Category any
-	Description any
-	DisplayName any
-	DlpEnabled any
-	Id any
+	AuthMethods  any
+	Category     any
+	Description  any
+	DisplayName  any
+	DlpEnabled   any
+	Id           any
 	Instructions any
-	Logo any
-	UseCases any
+	Logo         any
+	UseCases     any
 }
 
 type OneApplicationDetailResponseConfig struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
 }
 
 type OneApplicationDetailResponseAttrs struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
 	// List of errors.
 	Errors any
@@ -64,7 +64,7 @@ type OneApplicationDetailResponseAttrs struct {
 var OneApplicationDetailResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_one_application_detail_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
 	},
 }

@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaUnsubscribeEmailSingleResponse_Result:
+    # The account id
+    account_id: Any = None
+    email: Any = None
+    # The unique identifier of a notification policy
+    id: Any = None
+    # Name of the policy.
+    name: Any = None
+    token: Any = None
+
+@dataclasses.dataclass
 class AaaUnsubscribeEmailSingleResponseConfig:
     email: Any = None
     # The unique identifier of a notification policy
@@ -20,6 +31,8 @@ class AaaUnsubscribeEmailSingleResponseAttrs:
     email: Any = None
     # The unique identifier of a notification policy
     policy_id: Any = None
+    # Response body for the GET show-unsubscribe-details endpoint. All fields are populated.
+    result: Any = None
     token: Any = None
 
 AaaUnsubscribeEmailSingleResponse = ubx.DataSourceBinding(

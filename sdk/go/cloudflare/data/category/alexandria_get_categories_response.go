@@ -3,23 +3,47 @@ package category
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AlexandriaGetCategoriesResponse_Errors_Source struct {
+	Pointer any
+}
+
+type AlexandriaGetCategoriesResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type AlexandriaGetCategoriesResponse_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+}
+
 type AlexandriaGetCategoriesResponseConfig struct {
 	AccountId any
-	Limit any
-	Offset any
+	Limit     any
+	Offset    any
 }
 
 type AlexandriaGetCategoriesResponseAttrs struct {
 	AccountId any
-	Limit any
-	Offset any
+	Errors    any
+	Limit     any
+	Messages  any
+	Offset    any
+	// Returns the list of categories.
+	Result any
+	// Indicates whether the API call was successful.
+	Success any
 }
 
 var AlexandriaGetCategoriesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_alexandria_get_categories_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
 	},
 }

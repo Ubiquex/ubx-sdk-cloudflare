@@ -10,6 +10,19 @@ import ubx_sdk as ubx
 class FirewallFirewalluablockResponseCollection_Description:
     pass
 
+@dataclasses.dataclass
+class FirewallFirewalluablockResponseCollection_Result_Configuration:
+    target: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallFirewalluablockResponseCollection_Result:
+    configuration: Any = None
+    description: Any = None
+    id: Any = None
+    mode: Any = None
+    paused: Any = None
+
 _FirewallFirewalluablockResponseCollection_DescriptionFields = {
 }
 
@@ -34,6 +47,7 @@ class FirewallFirewalluablockResponseCollectionAttrs:
     paused: Any = None
     # The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
     per_page: Any = None
+    result: Any = None
     # A string to search for in the user agent values of existing rules.
     user_agent: Any = None
     # Defines an identifier.

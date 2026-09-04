@@ -16,7 +16,7 @@ type JsonFormatResponseAttrs struct {
 	// Array of result rows. Each row is an object with keys corresponding to the selected columns.
 	Data any
 	// Column metadata describing the name and type of each column in the result set.
-	Meta any
+	Meta  any
 	Query any
 	// Total number of rows in the result set.
 	Rows any

@@ -4,31 +4,30 @@ package browserextensionconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrexConfigResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type BrexConfigResponse_Result struct {
-	CreatedAt any
+	CreatedAt           any
 	MinExtensionVersion any
-	Mode any
-	ProxyUrl any
-	TeamDomain any
-	UpdatedAt any
+	Mode                any
+	ProxyUrl            any
+	TeamDomain          any
+	UpdatedAt           any
 }
 
 type BrexConfigResponseConfig struct {
 }
 
 type BrexConfigResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var BrexConfigResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_brex_config_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -3,15 +3,37 @@ package targetenvironments
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TargetEnvironment_Target struct {
-	Type any
+type TargetEnvironment_Errors_Source struct {
+	Pointer any
+}
+
+type TargetEnvironment_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type TargetEnvironment_Result_Target struct {
+	Type    any
 	ZoneTag any
 }
 
-var TargetEnvironment_TargetFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZoneTag": ubx.FieldSpec{WireName: "zone_tag"},
-	}
+type TargetEnvironment_Result struct {
+	// Optional description providing additional context.
+	Description any
+	// Target environment identifier.
+	Id any
+	// Human-readable name.
+	Name any
+	// Identifies the Cloudflare asset to scan. Uses a `type` discriminator. Currently the service supports only `zone` targets.
+	Target any
+}
+
+var TargetEnvironment_Result_TargetFields = ubx.FieldMap{
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"ZoneTag": ubx.FieldSpec{WireName: "zone_tag"},
+}
 
 type TargetEnvironmentConfig struct {
 	// Optional description.
@@ -29,8 +51,14 @@ type TargetEnvironmentConfig struct {
 type TargetEnvironmentAttrs struct {
 	// Optional description.
 	Description any
+	Errors      any
+	Messages    any
 	// Human-readable name.
-	Name any
+	Name       any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 	// Identifies the Cloudflare asset to scan. Uses a `type` discriminator. Currently the service supports only `zone` targets.
 	Target any
 	// path parameter, not part of the API's own resource representation
@@ -43,13 +71,13 @@ var TargetEnvironment = ubx.ResourceBinding{
 	WireType: "cloudflare_target_environment",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: TargetEnvironment_TargetFields,
+			Kind:     "object",
+			Fields:   TargetEnvironment_Result_TargetFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
 		"TargetEnvironmentId": ubx.FieldSpec{WireName: "target_environment_id"},
 	},
 }

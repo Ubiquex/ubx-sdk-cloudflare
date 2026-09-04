@@ -7,6 +7,7 @@ export interface BotManagementBotManagementResponseBodyConfig {
 }
 
 export interface BotManagementBotManagementResponseBodyAttrs {
+  result: unknown;
   /** Identifier. */
   zoneId: string;
 }

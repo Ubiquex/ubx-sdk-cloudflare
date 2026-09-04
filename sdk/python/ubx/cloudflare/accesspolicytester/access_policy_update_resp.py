@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessPolicyUpdateResp_Result:
+    # The UUID of the policy test.
+    id: Any = None
+    # The percentage of (processed) users approved based on policy evaluation results.
+    percent_approved: Any = None
+    # The percentage of (processed) users blocked based on policy evaluation results.
+    percent_blocked: Any = None
+    # The percentage of (processed) users errored based on policy evaluation results.
+    percent_errored: Any = None
+    # The percentage of users processed so far (of the entire user base).
+    percent_users_processed: Any = None
+    # The status of the policy test.
+    status: Any = None
+    # The total number of users in the user base.
+    total_users: Any = None
+    # The number of (processed) users approved based on policy evaluation results.
+    users_approved: Any = None
+    # The number of (processed) users blocked based on policy evaluation results.
+    users_blocked: Any = None
+    # The number of (processed) users errored based on policy evaluation results.
+    users_errored: Any = None
+
+@dataclasses.dataclass
 class AccessPolicyUpdateRespConfig:
     policies: Any = None
     # path parameter, not part of the API's own resource representation
@@ -17,6 +40,7 @@ class AccessPolicyUpdateRespConfig:
 @dataclasses.dataclass
 class AccessPolicyUpdateRespAttrs:
     policies: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

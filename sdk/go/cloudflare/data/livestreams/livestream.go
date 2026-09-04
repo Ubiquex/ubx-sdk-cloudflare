@@ -4,9 +4,9 @@ package livestreams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Livestream_Data_Paging struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	TotalCount any
+	TotalCount  any
 }
 
 type Livestream_Data struct {
@@ -21,11 +21,11 @@ type Livestream_Data struct {
 	// ID of the meeting.
 	MeetingId any
 	// Name of the livestream.
-	Name any
+	Name   any
 	Paging any
 	// The web address that viewers can use to watch the livestream.
 	PlaybackUrl any
-	Status any
+	Status      any
 	// Unique key for accessing each livestream.
 	StreamKey any
 	// Timestamp the object was updated at. The time is returned in ISO format.
@@ -33,36 +33,36 @@ type Livestream_Data struct {
 }
 
 type LivestreamConfig struct {
-	EndTime any
+	EndTime         any
 	ExcludeMeetings any
-	PageNo any
-	PerPage any
-	SortOrder any
-	StartTime any
-	Status any
+	PageNo          any
+	PerPage         any
+	SortOrder       any
+	StartTime       any
+	Status          any
 }
 
 type LivestreamAttrs struct {
-	Data any
-	EndTime any
+	Data            any
+	EndTime         any
 	ExcludeMeetings any
-	PageNo any
-	PerPage any
-	SortOrder any
-	StartTime any
-	Status any
-	Success any
+	PageNo          any
+	PerPage         any
+	SortOrder       any
+	StartTime       any
+	Status          any
+	Success         any
 }
 
 var Livestream = ubx.DataSourceBinding{
 	WireType: "cloudflare_livestream",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":         ubx.FieldSpec{WireName: "end_time"},
 		"ExcludeMeetings": ubx.FieldSpec{WireName: "exclude_meetings"},
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"PageNo":          ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":         ubx.FieldSpec{WireName: "per_page"},
+		"SortOrder":       ubx.FieldSpec{WireName: "sort_order"},
+		"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
 	},
 }

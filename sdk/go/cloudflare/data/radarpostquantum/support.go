@@ -31,8 +31,8 @@ type SupportConfig struct {
 
 type SupportAttrs struct {
 	// Hostname or IP address to test for Post-Quantum TLS support, optionally with port (defaults to 443).
-	Host any
-	Result any
+	Host    any
+	Result  any
 	Success any
 }
 

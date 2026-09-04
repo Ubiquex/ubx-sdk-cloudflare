@@ -7,12 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccount_Result:
+    # Specify the gateway internal ID.
+    gateway_tag: Any = None
+    # Specify the Cloudflare account ID.
+    id: Any = None
+    # Specify the provider name (usually Cloudflare).
+    provider_name: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountConfig_:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountAttrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayGatewayAccount = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_gateway_account",

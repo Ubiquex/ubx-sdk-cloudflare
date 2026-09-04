@@ -3,12 +3,104 @@ package workersforplatforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Script_Errors_Source struct {
+	Pointer any
+}
+
+type Script_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Script_Result_Script_CacheOptions struct {
+	CrossVersionCache any
+	Enabled           any
+}
+
+type Script_Result_Script_Exports struct {
+}
+
+type Script_Result_Script_NamedHandlers struct {
+	Handlers any
+	Name     any
+}
+
+type Script_Result_Script_Observability_Logs struct {
+	Destinations     any
+	Enabled          any
+	HeadSamplingRate any
+	InvocationLogs   any
+	Persist          any
+}
+
+type Script_Result_Script_Observability_Traces struct {
+	Destinations      any
+	Enabled           any
+	HeadSamplingRate  any
+	Persist           any
+	PropagationPolicy any
+}
+
+type Script_Result_Script_Observability struct {
+	Enabled           any
+	HeadSamplingRate  any
+	Logs              any
+	RedactQueryString any
+	Traces            any
+}
+
+type Script_Result_Script_Placement struct {
+	LastAnalyzedAt any
+	Status         any
+}
+
+type Script_Result_Script_TailConsumers struct {
+	Environment any
+	Namespace   any
+	Service     any
+}
+
+type Script_Result_Script struct {
+	CacheOptions       any
+	CompatibilityDate  any
+	CompatibilityFlags any
+	CreatedOn          any
+	Etag               any
+	Exports            any
+	Handlers           any
+	HasAssets          any
+	HasModules         any
+	Id                 any
+	LastDeployedFrom   any
+	Logpush            any
+	MigrationTag       any
+	ModifiedOn         any
+	NamedHandlers      any
+	Observability      any
+	Placement          any
+	PlacementMode      any
+	PlacementStatus    any
+	Tag                any
+	Tags               any
+	TailConsumers      any
+	UsageModel         any
+}
+
+type Script_Result struct {
+	CreatedOn         any
+	DispatchNamespace any
+	ModifiedOn        any
+	Script            any
+}
+
 type ScriptConfig struct {
 	// Identifier.
 	AccountId any
 	// Name of the Workers for Platforms dispatch namespace.
 	DispatchNamespace any
-	Tags any
+	Tags              any
 }
 
 type ScriptAttrs struct {
@@ -16,14 +108,19 @@ type ScriptAttrs struct {
 	AccountId any
 	// Name of the Workers for Platforms dispatch namespace.
 	DispatchNamespace any
-	Tags any
+	Errors            any
+	Messages          any
+	Result            any
+	// Whether the API call was successful.
+	Success any
+	Tags    any
 }
 
 var Script = ubx.DataSourceBinding{
 	WireType: "cloudflare_script",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":              ubx.FieldSpec{WireName: "tags"},
 	},
 }

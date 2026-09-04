@@ -7,12 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicVisibilityMnmMnmConfigSingleResponse_Result_WarpDevices:
+    id: Any = None
+    name: Any = None
+    router_ip: Any = None
+
+@dataclasses.dataclass
+class MagicVisibilityMnmMnmConfigSingleResponse_Result:
+    # Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.
+    default_sampling: Any = None
+    # The account name.
+    name: Any = None
+    router_ips: Any = None
+    warp_devices: Any = None
+
+@dataclasses.dataclass
 class MagicVisibilityMnmMnmConfigSingleResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class MagicVisibilityMnmMnmConfigSingleResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 MagicVisibilityMnmMnmConfigSingleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_visibility_mnm_mnm_config_single_response",

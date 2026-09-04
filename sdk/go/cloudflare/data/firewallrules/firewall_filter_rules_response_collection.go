@@ -3,6 +3,26 @@ package firewallrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallFilterRulesResponseCollection_Result_Filter struct {
+	Deleted     any
+	Description any
+	Expression  any
+	Id          any
+	Paused      any
+	Ref         any
+}
+
+type FirewallFilterRulesResponseCollection_Result struct {
+	Action      any
+	Description any
+	Filter      any
+	Id          any
+	Paused      any
+	Priority    any
+	Products    any
+	Ref         any
+}
+
 type FirewallFilterRulesResponseCollectionConfig struct {
 	// The action to search for. Must be an exact match.
 	Action any
@@ -29,6 +49,7 @@ type FirewallFilterRulesResponseCollectionAttrs struct {
 	Paused any
 	// Number of firewall rules per page.
 	PerPage any
+	Result  any
 	// Defines an identifier.
 	ZoneId any
 }
@@ -36,10 +57,10 @@ type FirewallFilterRulesResponseCollectionAttrs struct {
 var FirewallFilterRulesResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_filter_rules_response_collection",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"Paused":      ubx.FieldSpec{WireName: "paused"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
 	},
 }

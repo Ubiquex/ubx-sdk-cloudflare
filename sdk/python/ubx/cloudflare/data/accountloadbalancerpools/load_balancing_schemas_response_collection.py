@@ -7,6 +7,66 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_LoadShedding:
+    default_percent: Any = None
+    default_policy: Any = None
+    session_percent: Any = None
+    session_policy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_NotificationFilter_Origin:
+    disable: Any = None
+    healthy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_NotificationFilter:
+    origin: Any = None
+    pool: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_OriginSteering:
+    policy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_Origins_Header:
+    host: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result_Origins:
+    address: Any = None
+    disabled_at: Any = None
+    enabled: Any = None
+    flatten_cname: Any = None
+    header: Any = None
+    name: Any = None
+    port: Any = None
+    virtual_network_id: Any = None
+    weight: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasResponseCollection_Result:
+    check_regions: Any = None
+    created_on: Any = None
+    description: Any = None
+    disabled_at: Any = None
+    enabled: Any = None
+    health_sources: Any = None
+    id: Any = None
+    latitude: Any = None
+    load_shedding: Any = None
+    longitude: Any = None
+    minimum_origins: Any = None
+    modified_on: Any = None
+    monitor: Any = None
+    monitor_group: Any = None
+    name: Any = None
+    networks: Any = None
+    notification_email: Any = None
+    notification_filter: Any = None
+    origin_steering: Any = None
+    origins: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingSchemasResponseCollectionConfig:
     # The ID of the Monitor to use for checking the health of origins within this pool.
     monitor: Any = None
@@ -17,6 +77,7 @@ class LoadBalancingSchemasResponseCollectionAttrs:
     account_id: Any = None
     # The ID of the Monitor to use for checking the health of origins within this pool.
     monitor: Any = None
+    result: Any = None
 
 LoadBalancingSchemasResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_schemas_response_collection",

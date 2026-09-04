@@ -3,12 +3,26 @@ package accessbookmarkapplicationsdeprecated
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection14_Result_CreatedAt struct {
+}
+
+type AccessResponseCollection14_Result struct {
+	AppLauncherVisible any
+	CreatedAt          any
+	Domain             any
+	Id                 any
+	LogoUrl            any
+	Name               any
+	UpdatedAt          any
+}
+
 type AccessResponseCollection14Config struct {
 	AccountId any
 }
 
 type AccessResponseCollection14Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var AccessResponseCollection14 = ubx.DataSourceBinding{

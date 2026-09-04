@@ -3,6 +3,31 @@ package streamwatermarkprofile
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamWatermarkResponseSingle_Result struct {
+	// The date and a time a watermark profile was created.
+	Created any
+	// The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
+	DownloadedFrom any
+	// The height of the image in pixels.
+	Height any
+	// A short description of the watermark profile.
+	Name any
+	// The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.
+	Opacity any
+	// The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.
+	Padding any
+	// The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
+	Position any
+	// The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
+	Scale any
+	// The size of the image in bytes.
+	Size any
+	// The unique identifier for a watermark profile.
+	Uid any
+	// The width of the image in pixels.
+	Width any
+}
+
 type StreamWatermarkResponseSingleConfig struct {
 	// A short description of the watermark profile.
 	Name any
@@ -31,6 +56,7 @@ type StreamWatermarkResponseSingleAttrs struct {
 	Padding any
 	// The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
 	Position any
+	Result   any
 	// The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
 	Scale any
 	// URL of the watermark image to copy.
@@ -44,13 +70,13 @@ type StreamWatermarkResponseSingleAttrs struct {
 var StreamWatermarkResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_stream_watermark_response_single",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Opacity": ubx.FieldSpec{WireName: "opacity"},
-		"Padding": ubx.FieldSpec{WireName: "padding"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Opacity":    ubx.FieldSpec{WireName: "opacity"},
+		"Padding":    ubx.FieldSpec{WireName: "padding"},
+		"Position":   ubx.FieldSpec{WireName: "position"},
+		"Scale":      ubx.FieldSpec{WireName: "scale"},
+		"Url":        ubx.FieldSpec{WireName: "url"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

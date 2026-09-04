@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BinaryAst_Errors struct {
+	Code    any
+	Message any
+}
+
+type BinaryAst_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type BinaryAstConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type BinaryAstAttrs struct {
+	Errors   any
+	Messages any
+	// Controls Binary AST JavaScript parsing for the zone.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -7,10 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ZonesReportResponse_Since:
+class ZonesReportResponse_Query_Since:
     pass
 
-_ZonesReportResponse_SinceFields = {
+@dataclasses.dataclass
+class ZonesReportResponse_Query:
+    since: Any = None
+    until: Any = None
+
+@dataclasses.dataclass
+class ZonesReportResponse_Result_Totals_Bandwidth:
+    all: Any = None
+    egress: Any = None
+    ingress: Any = None
+
+@dataclasses.dataclass
+class ZonesReportResponse_Result_Totals:
+    bandwidth: Any = None
+
+@dataclasses.dataclass
+class ZonesReportResponse_Result:
+    totals: Any = None
+    zone_id: Any = None
+
+_ZonesReportResponse_Query_SinceFields = {
 }
 
 @dataclasses.dataclass
@@ -24,6 +44,8 @@ class ZonesReportResponseConfig:
 class ZonesReportResponseAttrs:
     # Include CDN traffic in the bandwidth aggregation.
     cdn_traffic: Any = None
+    query: Any = None
+    result: Any = None
     since: Any = None
     until: Any = None
 
@@ -34,12 +56,12 @@ ZonesReportResponse = ubx.DataSourceBinding(
         "since": ubx.FieldSpec(
             wire_name="since",
             kind="object",
-            fields=_ZonesReportResponse_SinceFields,
+            fields=_ZonesReportResponse_Query_SinceFields,
         ),
         "until": ubx.FieldSpec(
             wire_name="until",
             kind="object",
-            fields=_ZonesReportResponse_SinceFields,
+            fields=_ZonesReportResponse_Query_SinceFields,
         ),
     },
 )

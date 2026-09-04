@@ -15,8 +15,8 @@ type TranscriptConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Format any
+	AppId     any
+	Format    any
 	SessionId any
 }
 
@@ -24,19 +24,19 @@ type TranscriptAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
-	Format any
+	AppId     any
+	Data      any
+	Format    any
 	SessionId any
-	Success any
+	Success   any
 }
 
 var Transcript = ubx.DataSourceBinding{
 	WireType: "cloudflare_transcript",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
 	},
 }

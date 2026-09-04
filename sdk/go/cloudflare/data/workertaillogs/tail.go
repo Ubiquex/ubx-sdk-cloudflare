@@ -3,6 +3,26 @@ package workertaillogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Tail_Errors_Source struct {
+	Pointer any
+}
+
+type Tail_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Tail_Result_Id struct {
+}
+
+type Tail_Result struct {
+	ExpiresAt any
+	Id        any
+	Url       any
+}
+
 type TailConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +33,19 @@ type TailConfig struct {
 type TailAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Tail = ubx.DataSourceBinding{
 	WireType: "cloudflare_tail",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

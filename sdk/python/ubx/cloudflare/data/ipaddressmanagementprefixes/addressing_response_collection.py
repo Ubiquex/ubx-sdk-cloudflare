@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingResponseCollection_Result:
+    account_id: Any = None
+    advertised: Any = None
+    advertised_modified_at: Any = None
+    approved: Any = None
+    asn: Any = None
+    cidr: Any = None
+    created_at: Any = None
+    delegate_loa_creation: Any = None
+    description: Any = None
+    id: Any = None
+    irr_validation_state: Any = None
+    loa_document_id: Any = None
+    modified_at: Any = None
+    on_demand_enabled: Any = None
+    on_demand_locked: Any = None
+    ownership_validation_state: Any = None
+    ownership_validation_token: Any = None
+    rpki_validation_state: Any = None
+
+@dataclasses.dataclass
 class AddressingResponseCollectionConfig:
     # Identifier of a Cloudflare account.
     account_id: Any = None
@@ -15,6 +36,7 @@ class AddressingResponseCollectionConfig:
 class AddressingResponseCollectionAttrs:
     # Identifier of a Cloudflare account.
     account_id: Any = None
+    result: Any = None
 
 AddressingResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_addressing_response_collection",

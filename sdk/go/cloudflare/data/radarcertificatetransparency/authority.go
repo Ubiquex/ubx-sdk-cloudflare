@@ -4,15 +4,15 @@ package radarcertificatetransparency
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Authority_Result_CertificateAuthorities struct {
-	CertificateRecordType any
-	Country any
-	CountryName any
-	Name any
-	Owner any
-	ParentName any
+	CertificateRecordType   any
+	Country                 any
+	CountryName             any
+	Name                    any
+	Owner                   any
+	ParentName              any
 	ParentSha256Fingerprint any
-	RevocationStatus any
-	Sha256Fingerprint any
+	RevocationStatus        any
+	Sha256Fingerprint       any
 }
 
 type Authority_Result struct {
@@ -34,8 +34,8 @@ type AuthorityAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Skips the specified number of objects before fetching the results.
-	Offset any
-	Result any
+	Offset  any
+	Result  any
 	Success any
 }
 
@@ -43,7 +43,7 @@ var Authority = ubx.DataSourceBinding{
 	WireType: "cloudflare_authority",
 	Fields: ubx.FieldMap{
 		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},
 }

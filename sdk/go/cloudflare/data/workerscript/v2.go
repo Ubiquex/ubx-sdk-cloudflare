@@ -20,7 +20,7 @@ type V2Attrs struct {
 var V2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_v2",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

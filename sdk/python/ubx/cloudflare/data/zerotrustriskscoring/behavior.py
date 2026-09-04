@@ -7,12 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Behavior_Result_Behaviors:
+    description: Any = None
+    enabled: Any = None
+    name: Any = None
+    risk_level: Any = None
+
+@dataclasses.dataclass
+class Behavior_Result:
+    behaviors: Any = None
+
+@dataclasses.dataclass
 class BehaviorConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class BehaviorAttrs:
     account_id: Any = None
+    result: Any = None
 
 Behavior = ubx.DataSourceBinding(
     wire_type="cloudflare_behavior",

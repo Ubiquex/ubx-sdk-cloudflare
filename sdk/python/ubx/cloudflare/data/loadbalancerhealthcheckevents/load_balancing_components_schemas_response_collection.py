@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingComponentsSchemasResponseCollection_Result_Origins:
+    address: Any = None
+    changed: Any = None
+    enabled: Any = None
+    failure_reason: Any = None
+    healthy: Any = None
+    ip: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingComponentsSchemasResponseCollection_Result:
+    id: Any = None
+    origins: Any = None
+    pool: Any = None
+    timestamp: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingComponentsSchemasResponseCollectionConfig:
     # If true, filter events where the origin status is healthy. If false, filter events where the origin status is unhealthy.
     origin_healthy: Any = None
@@ -33,6 +50,7 @@ class LoadBalancingComponentsSchemasResponseCollectionAttrs:
     pool_id: Any = None
     # The name for the pool to filter.
     pool_name: Any = None
+    result: Any = None
     # Start date and time of requesting data period in the ISO8601 format.
     since: Any = None
     # End date and time of requesting data period in the ISO8601 format.

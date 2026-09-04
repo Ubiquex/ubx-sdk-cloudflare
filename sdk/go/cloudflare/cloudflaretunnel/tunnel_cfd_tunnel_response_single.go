@@ -3,6 +3,54 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelCfdTunnelResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelCfdTunnelResponseSingle_Result_Connections_OriginIp struct {
+}
+
+type TunnelCfdTunnelResponseSingle_Result_Connections struct {
+	ClientId           any
+	ClientVersion      any
+	ColoName           any
+	Id                 any
+	IsPendingReconnect any
+	OpenedAt           any
+	OriginIp           any
+	Uuid               any
+}
+
+type TunnelCfdTunnelResponseSingle_Result struct {
+	// Cloudflare account ID
+	AccountTag any
+	// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
+	ConfigSrc any
+	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	Connections any
+	// Timestamp of when the tunnel established at least one connection to Cloudflare's edge. If `null`, the tunnel is inactive.
+	ConnsActiveAt any
+	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's edge). If `null`, the tunnel is active.
+	ConnsInactiveAt any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// UUID of the tunnel.
+	Id any
+	// Metadata associated with the tunnel.
+	Metadata any
+	// A user-friendly name for a tunnel.
+	Name any
+	// If `true`, the tunnel can be configured remotely from the Zero Trust dashboard. If `false`, the tunnel must be configured locally on the origin machine.
+	RemoteConfig any
+	// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	Status any
+	// The type of tunnel.
+	TunType any
+}
+
 type TunnelCfdTunnelResponseSingleConfig struct {
 	// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
 	ConfigSrc any
@@ -19,8 +67,14 @@ type TunnelCfdTunnelResponseSingleConfig struct {
 type TunnelCfdTunnelResponseSingleAttrs struct {
 	// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.
 	ConfigSrc any
+	Errors    any
+	Messages  any
 	// A user-friendly name for a tunnel.
 	Name any
+	// A Cloudflare Tunnel that connects your origin to Cloudflare's edge.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.
 	TunnelSecret any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +86,10 @@ type TunnelCfdTunnelResponseSingleAttrs struct {
 var TunnelCfdTunnelResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tunnel_cfd_tunnel_response_single",
 	Fields: ubx.FieldMap{
-		"ConfigSrc": ubx.FieldSpec{WireName: "config_src"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ConfigSrc":    ubx.FieldSpec{WireName: "config_src"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"TunnelSecret": ubx.FieldSpec{WireName: "tunnel_secret"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"TunnelId":     ubx.FieldSpec{WireName: "tunnel_id"},
 	},
 }

@@ -4,20 +4,20 @@ package logexplorerdatasets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LexAvailableDestinationListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type LexAvailableDestinationListResponse_Result_Schema struct {
 	Properties any
-	Required any
-	Type any
+	Required   any
+	Type       any
 }
 
 type LexAvailableDestinationListResponse_Result struct {
-	Dataset any
-	ObjectType any
-	Schema any
+	Dataset        any
+	ObjectType     any
+	Schema         any
 	TimestampField any
 }
 
@@ -27,10 +27,10 @@ type LexAvailableDestinationListResponseConfig struct {
 
 type LexAvailableDestinationListResponseAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var LexAvailableDestinationListResponse = ubx.DataSourceBinding{

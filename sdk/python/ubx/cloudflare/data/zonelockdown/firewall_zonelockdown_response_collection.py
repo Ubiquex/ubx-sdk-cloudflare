@@ -10,6 +10,21 @@ import ubx_sdk as ubx
 class FirewallZonelockdownResponseCollection_Description:
     pass
 
+@dataclasses.dataclass
+class FirewallZonelockdownResponseCollection_Result_Configurations:
+    target: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallZonelockdownResponseCollection_Result:
+    configurations: Any = None
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    modified_on: Any = None
+    paused: Any = None
+    urls: Any = None
+
 _FirewallZonelockdownResponseCollection_DescriptionFields = {
 }
 
@@ -47,6 +62,7 @@ class FirewallZonelockdownResponseCollectionAttrs:
     # The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
     per_page: Any = None
     priority: Any = None
+    result: Any = None
     uri_search: Any = None
     # Defines an identifier.
     zone_id: Any = None

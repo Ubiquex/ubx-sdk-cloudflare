@@ -3,35 +3,44 @@ package accesspolicytester
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessPolicyUsersResp_Result struct {
+	Email  any
+	Id     any
+	Name   any
+	Status any
+}
+
 type AccessPolicyUsersRespConfig struct {
 	// Identifier.
 	AccountId any
 	// Page number of results.
-	Page any
+	Page    any
 	PerPage any
 	// The UUID of the policy test.
 	PolicyTestId any
-	Status any
+	Status       any
 }
 
 type AccessPolicyUsersRespAttrs struct {
 	// Identifier.
 	AccountId any
 	// Page number of results.
-	Page any
+	Page    any
 	PerPage any
 	// The UUID of the policy test.
 	PolicyTestId any
+	// Page of processed users.
+	Result any
 	Status any
 }
 
 var AccessPolicyUsersResp = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_policy_users_resp",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"Page":         ubx.FieldSpec{WireName: "page"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
 		"PolicyTestId": ubx.FieldSpec{WireName: "policy_test_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

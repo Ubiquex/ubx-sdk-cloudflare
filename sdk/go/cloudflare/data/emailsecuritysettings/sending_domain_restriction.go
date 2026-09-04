@@ -3,29 +3,43 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SendingDomainRestriction_Result_CreatedAt struct {
+}
+
+type SendingDomainRestriction_Result struct {
+	Comments     any
+	CreatedAt    any
+	Domain       any
+	Exclude      any
+	Id           any
+	LastModified any
+	ModifiedAt   any
+}
+
 type SendingDomainRestrictionConfig struct {
 	Direction any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Order     any
+	Page      any
+	PerPage   any
+	Search    any
 }
 
 type SendingDomainRestrictionAttrs struct {
 	Direction any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
+	Search    any
 }
 
 var SendingDomainRestriction = ubx.DataSourceBinding{
 	WireType: "cloudflare_sending_domain_restriction",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

@@ -4,6 +4,20 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamSinglePermissionGroupsResponse_AccountId {
 }
 
+export interface IamSinglePermissionGroupsResponse_Result_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface IamSinglePermissionGroupsResponse_Result {
+  /** Identifier of the permission group. */
+  id: string | Computed<string>;
+  /** Attributes associated to the permission group. */
+  meta?: IamSinglePermissionGroupsResponse_Result_Meta | Computed<IamSinglePermissionGroupsResponse_Result_Meta>;
+  /** Name of the permission group. */
+  name?: string | Computed<string>;
+}
+
 const IamSinglePermissionGroupsResponse_AccountIdFields: FieldMap = {
 };
 
@@ -19,6 +33,8 @@ export interface IamSinglePermissionGroupsResponseAttrs {
   accountId: IamSinglePermissionGroupsResponse_AccountId;
   /** Permission Group identifier tag. */
   permissionGroupId: IamSinglePermissionGroupsResponse_AccountId;
+  /** A named group of permissions that map to a group of operations against resources. */
+  result: IamSinglePermissionGroupsResponse_Result;
 }
 
 export const IamSinglePermissionGroupsResponse: DataSourceBinding<IamSinglePermissionGroupsResponseConfig, IamSinglePermissionGroupsResponseAttrs> = {

@@ -7,6 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_Bgp:
+    as_no: Any = None
+    cloudflare_endpoint: Any = None
+    customer_asn: Any = None
+    customer_endpoint: Any = None
+    export_filter_id: Any = None
+    extra_prefixes: Any = None
+    import_filter_id: Any = None
+    md5_key: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_Gre:
+    cloudflare_endpoint: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_HealthCheck:
+    direction: Any = None
+    enabled: Any = None
+    rate: Any = None
+    source: Any = None
+    target: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_VirtualPortReservationId:
+    pass
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects:
+    automatic_return_routing: Any = None
+    bgp: Any = None
+    colo_name: Any = None
+    created_on: Any = None
+    description: Any = None
+    gre: Any = None
+    health_check: Any = None
+    id: Any = None
+    interface_address: Any = None
+    interface_address6: Any = None
+    modified_on: Any = None
+    mtu: Any = None
+    name: Any = None
+    version: Any = None
+    virtual_port_reservation_id: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelsCollectionResponse_Result:
+    interconnects: Any = None
+
+@dataclasses.dataclass
 class MagicComponentsSchemasTunnelsCollectionResponseConfig:
     pass
 
@@ -14,6 +64,7 @@ class MagicComponentsSchemasTunnelsCollectionResponseConfig:
 class MagicComponentsSchemasTunnelsCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 MagicComponentsSchemasTunnelsCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_components_schemas_tunnels_collection_response",

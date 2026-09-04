@@ -3,22 +3,49 @@ package accessjitrequestlogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseSingle_Result_Events struct {
+	ActorEmail             any
+	ActorIdp               any
+	ActorUuid              any
+	DecisionOutcome        any
+	RayId                  any
+	SessionDurationSeconds any
+	Success                any
+	Timestamp              any
+	Type                   any
+}
+
+type AccessResponseSingle_Result struct {
+	AppAud               any
+	AppHostname          any
+	ApprovalsReceived    any
+	ApproverEmails       any
+	CreatedAt            any
+	Events               any
+	ExpiresAt            any
+	KnockRequestId       any
+	PurposeJustification any
+	RequesterEmail       any
+	Status               any
+}
+
 type AccessResponseSingleConfig struct {
 	// Identifier.
-	AccountId any
+	AccountId      any
 	KnockRequestId any
 }
 
 type AccessResponseSingleAttrs struct {
 	// Identifier.
-	AccountId any
+	AccountId      any
 	KnockRequestId any
+	Result         any
 }
 
 var AccessResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_single",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
 		"KnockRequestId": ubx.FieldSpec{WireName: "knock_request_id"},
 	},
 }

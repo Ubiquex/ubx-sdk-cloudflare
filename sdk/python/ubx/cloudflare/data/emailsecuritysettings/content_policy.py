@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ContentPolicy_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class ContentPolicy_Result:
+    created_at: Any = None
+    enabled: Any = None
+    id: Any = None
+    modified_at: Any = None
+    name: Any = None
+    notes: Any = None
+    pattern: Any = None
+    targets: Any = None
+
+@dataclasses.dataclass
 class ContentPolicyConfig:
     direction: Any = None
     enabled: Any = None
@@ -24,6 +39,7 @@ class ContentPolicyAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
 
 ContentPolicy = ubx.DataSourceBinding(

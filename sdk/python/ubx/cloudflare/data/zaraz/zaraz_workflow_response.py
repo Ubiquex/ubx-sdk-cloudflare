@@ -7,12 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZarazWorkflowResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ZarazWorkflowResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class ZarazWorkflowResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class ZarazWorkflowResponseAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Zaraz workflow.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

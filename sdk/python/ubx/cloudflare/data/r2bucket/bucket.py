@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bucket_Result_Buckets:
+    creation_date: Any = None
+    jurisdiction: Any = None
+    location: Any = None
+    name: Any = None
+    storage_class: Any = None
+
+@dataclasses.dataclass
+class Bucket_Result:
+    buckets: Any = None
+
+@dataclasses.dataclass
 class BucketConfig:
     # Account ID.
     account_id: Any = None
@@ -37,6 +49,7 @@ class BucketAttrs:
     order: Any = None
     # Maximum number of buckets to return in a single call.
     per_page: Any = None
+    result: Any = None
     # Bucket name to start searching after. Buckets are ordered lexicographically.
     start_after: Any = None
 

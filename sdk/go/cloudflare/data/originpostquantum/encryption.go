@@ -3,16 +3,20 @@ package originpostquantum
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Encryption_Result struct {
+	Value any
+}
+
 type EncryptionConfig struct {
 }
 
 type EncryptionAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var Encryption = ubx.DataSourceBinding{
 	WireType: "cloudflare_origin_post_quantum_encryption",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

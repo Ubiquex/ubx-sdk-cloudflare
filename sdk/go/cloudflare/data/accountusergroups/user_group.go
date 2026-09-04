@@ -6,8 +6,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type UserGroup_AccountId struct {
 }
 
-var UserGroup_AccountIdFields = ubx.FieldMap{
-	}
+type UserGroup_Result_Policies_PermissionGroups_Meta struct {
+	Key   any
+	Value any
+}
+
+type UserGroup_Result_Policies_PermissionGroups struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+type UserGroup_Result_Policies_ResourceGroups_Scope_Objects struct {
+	Key any
+}
+
+type UserGroup_Result_Policies_ResourceGroups_Scope struct {
+	Key     any
+	Objects any
+}
+
+type UserGroup_Result_Policies_ResourceGroups struct {
+	Id    any
+	Meta  any
+	Name  any
+	Scope any
+}
+
+type UserGroup_Result_Policies struct {
+	Access           any
+	Id               any
+	PermissionGroups any
+	ResourceGroups   any
+}
+
+type UserGroup_Result struct {
+	CreatedOn  any
+	Id         any
+	ModifiedOn any
+	Name       any
+	Policies   any
+}
+
+var UserGroup_AccountIdFields = ubx.FieldMap{}
 
 type UserGroupConfig struct {
 	// Account identifier tag.
@@ -41,6 +82,8 @@ type UserGroupAttrs struct {
 	Page any
 	// Maximum number of results per page.
 	PerPage any
+	// A list of user groups for the account.
+	Result any
 }
 
 var UserGroup = ubx.DataSourceBinding{
@@ -48,18 +91,18 @@ var UserGroup = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: UserGroup_AccountIdFields,
+			Kind:     "object",
+			Fields:   UserGroup_AccountIdFields,
 		},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
 		"FuzzyName": ubx.FieldSpec{WireName: "fuzzy_name"},
 		"Id": ubx.FieldSpec{
 			WireName: "id",
-			Kind: "object",
-			Fields: UserGroup_AccountIdFields,
+			Kind:     "object",
+			Fields:   UserGroup_AccountIdFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

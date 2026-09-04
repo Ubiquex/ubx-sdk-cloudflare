@@ -3,12 +3,48 @@ package dlpprofiles
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Custom_Result_ConfidenceThreshold struct {
+}
+
+type Custom_Result_ContextAwareness_Skip struct {
+	Files any
+}
+
+type Custom_Result_ContextAwareness struct {
+	Enabled any
+	Skip    any
+}
+
+type Custom_Result_SensitivityLevels struct {
+	GroupId any
+	LevelId any
+}
+
+type Custom_Result struct {
+	AiContextEnabled    any
+	AllowedMatchCount   any
+	ConfidenceThreshold any
+	ContextAwareness    any
+	CreatedAt           any
+	DataClasses         any
+	DataTags            any
+	Description         any
+	Entries             any
+	Id                  any
+	Name                any
+	OcrEnabled          any
+	SensitivityLevels   any
+	SharedEntries       any
+	UpdatedAt           any
+}
+
 type CustomConfig struct {
 	AccountId any
 }
 
 type CustomAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var Custom = ubx.DataSourceBinding{

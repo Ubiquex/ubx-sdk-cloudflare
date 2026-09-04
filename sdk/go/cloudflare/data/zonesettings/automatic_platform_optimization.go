@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AutomaticPlatformOptimization_Errors struct {
+	Code    any
+	Message any
+}
+
+type AutomaticPlatformOptimization_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type AutomaticPlatformOptimizationConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AutomaticPlatformOptimizationAttrs struct {
+	Errors   any
+	Messages any
+	// Controls Automatic Platform Optimization (APO) for WordPress.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -3,16 +3,39 @@ package accountbilling
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiUnpaidInvoicesResponseSingle_Result_Invoices struct {
+	Action            any
+	Amount            any
+	AmountToPay       any
+	Currency          any
+	Description       any
+	ExternalInvoiceId any
+	HostedInvoiceUrl  any
+	Id                any
+	InvoiceId         any
+	OccurredAt        any
+	ReceiptId         any
+	Source            any
+	SourceInvoiceId   any
+	Status            any
+	Type              any
+}
+
+type BillSubsApiUnpaidInvoicesResponseSingle_Result struct {
+	// List of unpaid invoices.
+	Invoices any
+}
+
 type BillSubsApiUnpaidInvoicesResponseSingleConfig struct {
 }
 
 type BillSubsApiUnpaidInvoicesResponseSingleAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var BillSubsApiUnpaidInvoicesResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_unpaid_invoices_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

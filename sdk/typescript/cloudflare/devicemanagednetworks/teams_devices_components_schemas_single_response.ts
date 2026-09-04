@@ -6,6 +6,17 @@ export interface TeamsDevicesComponentsSchemasSingleResponse_Config {
   tlsSockaddr?: string | Computed<string>;
 }
 
+export interface TeamsDevicesComponentsSchemasSingleResponse_Result {
+  /** The configuration object containing information for the WARP client to detect the managed network. */
+  config?: TeamsDevicesComponentsSchemasSingleResponse_Config | Computed<TeamsDevicesComponentsSchemasSingleResponse_Config>;
+  /** The name of the device managed network. This name must be unique. */
+  name?: string | Computed<string>;
+  /** API UUID. */
+  networkId?: string | Computed<string>;
+  /** The type of device managed network. */
+  type?: string | Computed<string>;
+}
+
 const TeamsDevicesComponentsSchemasSingleResponse_ConfigFields: FieldMap = {
   sha256: "sha256",
   tlsSockaddr: "tls_sockaddr",
@@ -29,6 +40,7 @@ export interface TeamsDevicesComponentsSchemasSingleResponseAttrs {
   config: TeamsDevicesComponentsSchemasSingleResponse_Config;
   /** The name of the device managed network. This name must be unique. */
   name: string;
+  result: TeamsDevicesComponentsSchemasSingleResponse_Result;
   /** The type of device managed network. */
   type: string;
   /** path parameter, not part of the API's own resource representation */

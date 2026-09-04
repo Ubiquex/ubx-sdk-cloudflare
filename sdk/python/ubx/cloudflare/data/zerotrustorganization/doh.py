@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Doh_Result:
+    # The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note that the maximum duration for this setting is the same as the key rotation period on the account.
+    doh_jwt_duration: Any = None
+
+@dataclasses.dataclass
 class DohConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +20,7 @@ class DohConfig:
 class DohAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 Doh = ubx.DataSourceBinding(
     wire_type="cloudflare_doh",

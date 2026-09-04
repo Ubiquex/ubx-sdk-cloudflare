@@ -4,7 +4,7 @@ package tsengabusecomplaintprocessorother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AbuseReportsEmailListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -13,11 +13,11 @@ type AbuseReportsEmailListResponse_Messages struct {
 }
 
 type AbuseReportsEmailListResponse_Result_Emails struct {
-	Body any
-	Id any
+	Body      any
+	Id        any
 	Recipient any
-	SentAt any
-	Subject any
+	SentAt    any
+	Subject   any
 }
 
 type AbuseReportsEmailListResponse_Result struct {
@@ -25,38 +25,38 @@ type AbuseReportsEmailListResponse_Result struct {
 }
 
 type AbuseReportsEmailListResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type AbuseReportsEmailListResponseConfig struct {
 	AccountId any
-	Page any
-	PerPage any
-	ReportId any
+	Page      any
+	PerPage   any
+	ReportId  any
 }
 
 type AbuseReportsEmailListResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	ReportId any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	ReportId   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AbuseReportsEmailListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_abuse_reports_email_list_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ReportId": ubx.FieldSpec{WireName: "report_id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"ReportId":  ubx.FieldSpec{WireName: "report_id"},
 	},
 }

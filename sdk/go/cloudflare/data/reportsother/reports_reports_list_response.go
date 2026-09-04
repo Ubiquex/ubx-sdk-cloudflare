@@ -4,12 +4,12 @@ package reportsother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportsReportsListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ReportsReportsListResponse_Result_ReportSettings_Value_TimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -18,21 +18,21 @@ type ReportsReportsListResponse_Result_ReportSettings_Value struct {
 }
 
 type ReportsReportsListResponse_Result_ReportSettings struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type ReportsReportsListResponse_Result struct {
-	GeneratedOn any
-	GenerationId any
-	PolicyId any
-	PolicyVersion any
-	Reason any
-	ReportId any
+	GeneratedOn    any
+	GenerationId   any
+	PolicyId       any
+	PolicyVersion  any
+	Reason         any
+	ReportId       any
 	ReportSettings any
-	ReportStatus any
-	ScheduledFor any
-	ScheduledOn any
+	ReportStatus   any
+	ScheduledFor   any
+	ScheduledOn    any
 }
 
 type ReportsReportsListResponseConfig struct {
@@ -43,10 +43,10 @@ type ReportsReportsListResponseConfig struct {
 type ReportsReportsListResponseAttrs struct {
 	// Cloudflare public account ID (32-character hexadecimal string)
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var ReportsReportsListResponse = ubx.DataSourceBinding{

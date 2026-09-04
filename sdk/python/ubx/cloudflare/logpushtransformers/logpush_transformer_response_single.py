@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushTransformerResponseSingle_Result_AssociatedJobs:
+    id: Any = None
+    name: Any = None
+    object_tag: Any = None
+    object_type: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerResponseSingle_Result:
+    # Logpush jobs that reference this transformer.
+    associated_jobs: Any = None
+    # When the transformer was created (RFC 3339).
+    created_at: Any = None
+    # The dataset this transformer operates on, derived from the SQL query's FROM clause. Informational only. May be absent if the dataset cannot be determined from the query.
+    dataset: Any = None
+    # Optional customer-provided description.
+    description: Any = None
+    # The transformer ID.
+    id: Any = None
+    # Customer-provided name for identification.
+    name: Any = None
+    # When the transformer was last modified (RFC 3339).
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class LogpushTransformerResponseSingleConfig:
     # The SQL transformer query. Maximum 32 KB. The query must contain a FROM clause referencing a valid logpush dataset.
     code: Any = None
@@ -27,6 +51,7 @@ class LogpushTransformerResponseSingleAttrs:
     description: Any = None
     # Customer-provided name for identification.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

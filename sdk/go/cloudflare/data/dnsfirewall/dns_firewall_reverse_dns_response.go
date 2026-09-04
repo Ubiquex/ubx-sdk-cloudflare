@@ -3,6 +3,10 @@ package dnsfirewall
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsFirewallReverseDnsResponse_Result struct {
+	Ptr any
+}
+
 type DnsFirewallReverseDnsResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -15,12 +19,13 @@ type DnsFirewallReverseDnsResponseAttrs struct {
 	AccountId any
 	// Identifier.
 	DnsFirewallId any
+	Result        any
 }
 
 var DnsFirewallReverseDnsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_dns_firewall_dns_firewall_reverse_dns_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"DnsFirewallId": ubx.FieldSpec{WireName: "dns_firewall_id"},
 	},
 }

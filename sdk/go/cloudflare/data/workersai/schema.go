@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_Result_Input struct {
 	AdditionalProperties any
-	Description any
-	Type any
+	Description          any
+	Type                 any
 }
 
 type Schema_Result struct {
-	Input any
+	Input  any
 	Output any
 }
 
@@ -23,8 +23,8 @@ type SchemaConfig struct {
 type SchemaAttrs struct {
 	AccountId any
 	// Model Name
-	Model any
-	Result any
+	Model   any
+	Result  any
 	Success any
 }
 
@@ -32,6 +32,6 @@ var Schema = ubx.DataSourceBinding{
 	WireType: "cloudflare_schema",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Model": ubx.FieldSpec{WireName: "model"},
+		"Model":     ubx.FieldSpec{WireName: "model"},
 	},
 }

@@ -10,50 +10,50 @@ type Destination_Errors struct {
 type Destination_Result_Configuration_JobStatus struct {
 	ErrorMessage any
 	LastComplete any
-	LastError any
+	LastError    any
 }
 
 type Destination_Result_Configuration struct {
 	DestinationConf any
-	Headers any
-	JobStatus any
-	LogpushDataset any
-	Type any
-	Url any
+	Headers         any
+	JobStatus       any
+	LogpushDataset  any
+	Type            any
+	Url             any
 }
 
 type Destination_Result struct {
 	Configuration any
-	Enabled any
-	Name any
-	Scripts any
-	Slug any
+	Enabled       any
+	Name          any
+	Scripts       any
+	Slug          any
 }
 
 type DestinationConfig struct {
-	Order any
+	Order   any
 	OrderBy any
-	Page any
+	Page    any
 	PerPage any
 }
 
 type DestinationAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Order any
-	OrderBy any
-	Page any
-	PerPage any
-	Result any
-	Success any
+	Order    any
+	OrderBy  any
+	Page     any
+	PerPage  any
+	Result   any
+	Success  any
 }
 
 var Destination = ubx.DataSourceBinding{
 	WireType: "cloudflare_destination",
 	Fields: ubx.FieldMap{
-		"Order": ubx.FieldSpec{WireName: "order"},
+		"Order":   ubx.FieldSpec{WireName: "order"},
 		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

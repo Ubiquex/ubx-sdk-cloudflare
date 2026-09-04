@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Worker_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class Worker_GitRepository:
     branch: Any = None
     grant_id: Any = None
@@ -36,6 +41,42 @@ class Worker_ProductionSettings:
     path_excludes: Any = None
     path_includes: Any = None
     root_directory: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_ProductionSettings_EnvironmentVariables:
+    created_on: Any = None
+    is_secret: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_ProductionSettings:
+    build_caching_enabled: Any = None
+    build_command: Any = None
+    # Build token UUID.
+    build_token_uuid: Any = None
+    deploy_command: Any = None
+    environment_variables: Any = None
+    path_excludes: Any = None
+    path_includes: Any = None
+    # Root directory path.
+    root_directory: Any = None
+
+@dataclasses.dataclass
+class Worker_Result:
+    # Git repository details linked to a Worker script build configuration
+    git_repository: Any = None
+    # Build and deploy settings for a Worker script environment
+    production_settings: Any = None
+    # System-generated worker script tag.
+    script_tag: Any = None
+
+@dataclasses.dataclass
+class Worker_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
 
 _Worker_GitRepositoryFields = {
     "branch": ubx.FieldSpec(wire_name="branch"),
@@ -90,11 +131,17 @@ class WorkerConfig:
 
 @dataclasses.dataclass
 class WorkerAttrs:
+    errors: Any = None
     git_repository: Any = None
+    messages: Any = None
     # Build and deploy settings when creating a Worker build configuration
     production_settings: Any = None
+    # Worker build configuration including git repository linkage and production settings
+    result: Any = None
+    result_info: Any = None
     # System-generated worker script tag.
     script_tag: Any = None
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
 

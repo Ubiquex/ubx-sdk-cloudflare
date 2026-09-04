@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecretResponse_Result:
+    # Freeform text describing the secret.
+    comment: Any = None
+    # When the secret was created.
+    created: Any = None
+    # Secret identifier tag.
+    id: Any = None
+    # When the secret was modified.
+    modified: Any = None
+    # The name of the secret.
+    name: Any = None
+    # The list of services that can use this secret.
+    scopes: Any = None
+    status: Any = None
+    # Store Identifier.
+    store_id: Any = None
+
+@dataclasses.dataclass
 class SecretResponseConfig:
     # Freeform text describing the secret.
     comment: Any = None
@@ -27,6 +45,7 @@ class SecretResponseAttrs:
     comment: Any = None
     # The name of the secret.
     name: Any = None
+    result: Any = None
     # The list of services that can use this secret.
     scopes: Any = None
     # path parameter, not part of the API's own resource representation

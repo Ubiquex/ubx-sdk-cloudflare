@@ -10,6 +10,15 @@ import ubx_sdk as ubx
 class WafProductApiBundleResponseCustomDetection_Id:
     pass
 
+@dataclasses.dataclass
+class WafProductApiBundleResponseCustomDetection_Result:
+    # Defines the unique ID for this custom detection.
+    id: Any = None
+    # Defines ehe ruleset expression to use in matching the password in a request.
+    password: Any = None
+    # Defines the ruleset expression to use in matching the username in a request.
+    username: Any = None
+
 _WafProductApiBundleResponseCustomDetection_IdFields = {
 }
 
@@ -32,6 +41,8 @@ class WafProductApiBundleResponseCustomDetectionAttrs:
     id: Any = None
     # Defines ehe ruleset expression to use in matching the password in a request.
     password: Any = None
+    # Defines a custom set of username/password expressions to match Leaked Credential Checks on.
+    result: Any = None
     # Defines the ruleset expression to use in matching the username in a request.
     username: Any = None
     # path parameter, not part of the API's own resource representation

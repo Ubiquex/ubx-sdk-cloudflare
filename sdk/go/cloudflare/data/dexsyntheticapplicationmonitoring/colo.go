@@ -3,25 +3,48 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Colo_Errors_Source struct {
+	Pointer any
+}
+
+type Colo_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Colo_Result struct {
+	AirportCode any
+	City        any
+	CountryCode any
+}
+
 type ColoConfig struct {
-	From any
+	From   any
 	SortBy any
-	To any
+	To     any
 }
 
 type ColoAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	From any
+	Errors    any
+	From      any
+	Messages  any
+	// array of colos.
+	Result any
 	SortBy any
-	To any
+	// Whether the API call was successful.
+	Success any
+	To      any
 }
 
 var Colo = ubx.DataSourceBinding{
 	WireType: "cloudflare_colo",
 	Fields: ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":   ubx.FieldSpec{WireName: "from"},
 		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"To":     ubx.FieldSpec{WireName: "to"},
 	},
 }

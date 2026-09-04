@@ -3,6 +3,19 @@ package web3hostname
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Web3ContentListEntrySingleResponse_Result struct {
+	// Specify the CID or content path of content to block.
+	Content   any
+	CreatedOn any
+	// Specify an optional description of the content list entry.
+	Description any
+	// Specify the identifier of the hostname.
+	Id         any
+	ModifiedOn any
+	// Specify the type of content list entry to block.
+	Type any
+}
+
 type Web3ContentListEntrySingleResponseConfig struct {
 	// Specify the CID or content path of content to block.
 	Content any
@@ -23,6 +36,8 @@ type Web3ContentListEntrySingleResponseAttrs struct {
 	Content any
 	// Specify an optional description of the content list entry.
 	Description any
+	// Specify a content list entry to block.
+	Result any
 	// Specify the type of content list entry to block.
 	Type any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +51,11 @@ type Web3ContentListEntrySingleResponseAttrs struct {
 var Web3ContentListEntrySingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_web3_content_list_entry_single_response",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Content":                    ubx.FieldSpec{WireName: "content"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"Type":                       ubx.FieldSpec{WireName: "type"},
+		"ZoneId":                     ubx.FieldSpec{WireName: "zone_id"},
+		"Identifier":                 ubx.FieldSpec{WireName: "identifier"},
 		"ContentListEntryIdentifier": ubx.FieldSpec{WireName: "content_list_entry_identifier"},
 	},
 }

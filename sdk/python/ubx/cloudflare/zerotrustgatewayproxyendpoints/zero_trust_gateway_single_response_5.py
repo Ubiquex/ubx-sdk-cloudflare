@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse5_Result:
+    created_at: Any = None
+    id: Any = None
+    ips: Any = None
+    kind: Any = None
+    name: Any = None
+    subdomain: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewaySingleResponse5Config:
     # The proxy endpoint kind.
     kind: Any = None
@@ -19,6 +29,7 @@ class ZeroTrustGatewaySingleResponse5Config:
 class ZeroTrustGatewaySingleResponse5Attrs:
     # The proxy endpoint kind.
     kind: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

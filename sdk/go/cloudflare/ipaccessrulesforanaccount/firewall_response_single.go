@@ -5,19 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallResponseSingle_Configuration struct {
 	Target any
-	Value any
+	Value  any
+}
+
+type FirewallResponseSingle_Result_Scope struct {
+	Email any
+	Id    any
+	Type  any
+}
+
+type FirewallResponseSingle_Result struct {
+	AllowedModes  any
+	Configuration any
+	CreatedOn     any
+	Id            any
+	Mode          any
+	ModifiedOn    any
+	Notes         any
+	Scope         any
 }
 
 var FirewallResponseSingle_ConfigurationFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallResponseSingleConfig struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode any
+	Mode  any
 	Notes any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -29,8 +46,9 @@ type FirewallResponseSingleAttrs struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode any
-	Notes any
+	Mode   any
+	Notes  any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -42,12 +60,12 @@ var FirewallResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: FirewallResponseSingle_ConfigurationFields,
+			Kind:     "object",
+			Fields:   FirewallResponseSingle_ConfigurationFields,
 		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
+		"Mode":      ubx.FieldSpec{WireName: "mode"},
+		"Notes":     ubx.FieldSpec{WireName: "notes"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RuleId":    ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

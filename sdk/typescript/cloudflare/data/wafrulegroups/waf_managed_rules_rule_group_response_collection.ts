@@ -4,6 +4,17 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface WafManagedRulesRuleGroupResponseCollection_Mode {
 }
 
+export interface WafManagedRulesRuleGroupResponseCollection_Result {
+  allowedModes?: string[] | Computed<string[]>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  modifiedRulesCount?: number | Computed<number>;
+  name?: string | Computed<string>;
+  packageId?: string | Computed<string>;
+  rulesCount?: number | Computed<number>;
+}
+
 const WafManagedRulesRuleGroupResponseCollection_ModeFields: FieldMap = {
 };
 
@@ -37,6 +48,7 @@ export interface WafManagedRulesRuleGroupResponseCollectionAttrs {
   page: number;
   /** Defines the number of rule groups per page. */
   perPage: number;
+  result: WafManagedRulesRuleGroupResponseCollection_Result[];
   /** Defines the number of rules in the current rule group. */
   rulesCount: number;
   /** Defines an identifier of a schema. */

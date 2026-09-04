@@ -3,6 +3,51 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumSitesResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type RumSitesResponseCollection_Result_Rules struct {
+	Created   any
+	Host      any
+	Id        any
+	Inclusive any
+	IsPaused  any
+	Paths     any
+	Priority  any
+}
+
+type RumSitesResponseCollection_Result_Ruleset struct {
+	Enabled  any
+	Id       any
+	ZoneName any
+	ZoneTag  any
+}
+
+type RumSitesResponseCollection_Result struct {
+	AutoInstall any
+	Created     any
+	Rules       any
+	Ruleset     any
+	SiteTag     any
+	SiteToken   any
+	Snippet     any
+}
+
+type RumSitesResponseCollection_ResultInfo struct {
+	// The total number of items on the current page.
+	Count any
+	// Current page within the paginated list of results.
+	Page any
+	// The maximum number of items to return per page of results.
+	PerPage any
+	// The total number of items.
+	TotalCount any
+	// The total number of pages.
+	TotalPages any
+}
+
 type RumSitesResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -17,20 +62,26 @@ type RumSitesResponseCollectionConfig struct {
 type RumSitesResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
 	// The property used to sort the list of results.
 	OrderBy any
 	// Current page within the paginated list of results.
 	Page any
 	// Number of items to return per page of results.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RumSitesResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_rum_sites_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

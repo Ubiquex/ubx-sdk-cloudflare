@@ -3,6 +3,17 @@ package ipaddressmanagementaddressmaps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingResponseCollection3_Result struct {
+	CanDelete    any
+	CanModifyIps any
+	CreatedAt    any
+	DefaultSni   any
+	Description  any
+	Enabled      any
+	Id           any
+	ModifiedAt   any
+}
+
 type AddressingResponseCollection3Config struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -11,6 +22,7 @@ type AddressingResponseCollection3Config struct {
 type AddressingResponseCollection3Attrs struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
+	Result    any
 }
 
 var AddressingResponseCollection3 = ubx.DataSourceBinding{

@@ -59,75 +59,60 @@ class Preset_Config:
     view_type: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Chat_Private:
+class Preset_Data_Permissions_Chat_Private:
     can_receive: Any = None
     can_send: Any = None
     files: Any = None
     text: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Chat_Public:
-    # Can send messages in general
+class Preset_Data_Permissions_Chat_Public:
     can_send: Any = None
-    # Can send file messages
     files: Any = None
-    # Can send text messages
     text: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Chat:
+class Preset_Data_Permissions_Chat:
     private: Any = None
     public: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_ConnectedMeetings:
+class Preset_Data_Permissions_ConnectedMeetings:
     can_alter_connected_meetings: Any = None
     can_switch_connected_meetings: Any = None
     can_switch_to_parent_meeting: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Media_Audio:
-    # Can produce audio
+class Preset_Data_Permissions_Media_Audio:
     can_produce: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Media:
-    # Audio permissions
+class Preset_Data_Permissions_Media:
     audio: Any = None
-    # Screenshare permissions
     screenshare: Any = None
-    # Video permissions
     video: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Plugins_Config:
+class Preset_Data_Permissions_Plugins_Config:
     access_control: Any = None
     handles_view_only: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Plugins:
-    # Can close plugins that are already open
+class Preset_Data_Permissions_Plugins:
     can_close: Any = None
-    # Can edit plugin config
     can_edit_config: Any = None
-    # Can start plugins
     can_start: Any = None
-    # Plugin configuration keyed by plugin UUID.
     config: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions_Polls:
-    # Can create polls
+class Preset_Data_Permissions_Polls:
     can_create: Any = None
-    # Can view polls
     can_view: Any = None
-    # Can vote on polls
     can_vote: Any = None
 
 @dataclasses.dataclass
-class Preset_Permissions:
+class Preset_Data_Permissions:
     accept_stage_requests: Any = None
-    # Whether this participant can accept waiting requests
     accept_waiting_requests: Any = None
     can_accept_production_requests: Any = None
     can_change_participant_permissions: Any = None
@@ -140,32 +125,26 @@ class Preset_Permissions:
     disable_participant_audio: Any = None
     disable_participant_screensharing: Any = None
     disable_participant_video: Any = None
-    # Whether this participant is visible to others or not
     hidden_participant: Any = None
     is_recorder: Any = None
     kick_participant: Any = None
-    # Media permissions
     media: Any = None
     pin_participant: Any = None
-    # Plugin permissions
     plugins: Any = None
-    # Poll permissions
     polls: Any = None
-    # Type of the recording peer
     recorder_type: Any = None
     show_participant_list: Any = None
     stage_access: Any = None
     stage_enabled: Any = None
     transcription_enabled: Any = None
-    # Waiting room type
     waiting_room_type: Any = None
 
 @dataclasses.dataclass
-class Preset_Ui_DesignTokens_Colors_Background:
+class Preset_Data_Ui_DesignTokens_Colors_Background:
     pass
 
 @dataclasses.dataclass
-class Preset_Ui_DesignTokens_Colors:
+class Preset_Data_Ui_DesignTokens_Colors:
     background: Any = None
     brand: Any = None
     danger: Any = None
@@ -176,7 +155,7 @@ class Preset_Ui_DesignTokens_Colors:
     warning: Any = None
 
 @dataclasses.dataclass
-class Preset_Ui_DesignTokens:
+class Preset_Data_Ui_DesignTokens:
     border_radius: Any = None
     border_width: Any = None
     colors: Any = None
@@ -187,8 +166,18 @@ class Preset_Ui_DesignTokens:
     theme: Any = None
 
 @dataclasses.dataclass
-class Preset_Ui:
+class Preset_Data_Ui:
     design_tokens: Any = None
+
+@dataclasses.dataclass
+class Preset_Data:
+    config: Any = None
+    created_at: Any = None
+    id: Any = None
+    name: Any = None
+    permissions: Any = None
+    ui: Any = None
+    updated_at: Any = None
 
 _Preset_Config_MaxVideoStreamsFields = {
     "desktop": ubx.FieldSpec(wire_name="desktop"),
@@ -245,83 +234,83 @@ _Preset_ConfigFields = {
     "view_type": ubx.FieldSpec(wire_name="view_type"),
 }
 
-_Preset_Permissions_Chat_PrivateFields = {
+_Preset_Data_Permissions_Chat_PrivateFields = {
     "can_receive": ubx.FieldSpec(wire_name="can_receive"),
     "can_send": ubx.FieldSpec(wire_name="can_send"),
     "files": ubx.FieldSpec(wire_name="files"),
     "text": ubx.FieldSpec(wire_name="text"),
 }
 
-_Preset_Permissions_Chat_PublicFields = {
+_Preset_Data_Permissions_Chat_PublicFields = {
     "can_send": ubx.FieldSpec(wire_name="can_send"),
     "files": ubx.FieldSpec(wire_name="files"),
     "text": ubx.FieldSpec(wire_name="text"),
 }
 
-_Preset_Permissions_ChatFields = {
+_Preset_Data_Permissions_ChatFields = {
     "private": ubx.FieldSpec(
         wire_name="private",
         kind="object",
-        fields=_Preset_Permissions_Chat_PrivateFields,
+        fields=_Preset_Data_Permissions_Chat_PrivateFields,
     ),
     "public": ubx.FieldSpec(
         wire_name="public",
         kind="object",
-        fields=_Preset_Permissions_Chat_PublicFields,
+        fields=_Preset_Data_Permissions_Chat_PublicFields,
     ),
 }
 
-_Preset_Permissions_ConnectedMeetingsFields = {
+_Preset_Data_Permissions_ConnectedMeetingsFields = {
     "can_alter_connected_meetings": ubx.FieldSpec(wire_name="can_alter_connected_meetings"),
     "can_switch_connected_meetings": ubx.FieldSpec(wire_name="can_switch_connected_meetings"),
     "can_switch_to_parent_meeting": ubx.FieldSpec(wire_name="can_switch_to_parent_meeting"),
 }
 
-_Preset_Permissions_Media_AudioFields = {
+_Preset_Data_Permissions_Media_AudioFields = {
     "can_produce": ubx.FieldSpec(wire_name="can_produce"),
 }
 
-_Preset_Permissions_MediaFields = {
+_Preset_Data_Permissions_MediaFields = {
     "audio": ubx.FieldSpec(
         wire_name="audio",
         kind="object",
-        fields=_Preset_Permissions_Media_AudioFields,
+        fields=_Preset_Data_Permissions_Media_AudioFields,
     ),
     "screenshare": ubx.FieldSpec(
         wire_name="screenshare",
         kind="object",
-        fields=_Preset_Permissions_Media_AudioFields,
+        fields=_Preset_Data_Permissions_Media_AudioFields,
     ),
     "video": ubx.FieldSpec(
         wire_name="video",
         kind="object",
-        fields=_Preset_Permissions_Media_AudioFields,
+        fields=_Preset_Data_Permissions_Media_AudioFields,
     ),
 }
 
-_Preset_Permissions_Plugins_ConfigFields = {
+_Preset_Data_Permissions_Plugins_ConfigFields = {
     "access_control": ubx.FieldSpec(wire_name="access_control"),
     "handles_view_only": ubx.FieldSpec(wire_name="handles_view_only"),
 }
 
-_Preset_Permissions_PluginsFields = {
+_Preset_Data_Permissions_PluginsFields = {
     "can_close": ubx.FieldSpec(wire_name="can_close"),
     "can_edit_config": ubx.FieldSpec(wire_name="can_edit_config"),
     "can_start": ubx.FieldSpec(wire_name="can_start"),
     "config": ubx.FieldSpec(
         wire_name="config",
         kind="map",
-        fields=_Preset_Permissions_Plugins_ConfigFields,
+        fields=_Preset_Data_Permissions_Plugins_ConfigFields,
     ),
 }
 
-_Preset_Permissions_PollsFields = {
+_Preset_Data_Permissions_PollsFields = {
     "can_create": ubx.FieldSpec(wire_name="can_create"),
     "can_view": ubx.FieldSpec(wire_name="can_view"),
     "can_vote": ubx.FieldSpec(wire_name="can_vote"),
 }
 
-_Preset_PermissionsFields = {
+_Preset_Data_PermissionsFields = {
     "accept_stage_requests": ubx.FieldSpec(wire_name="accept_stage_requests"),
     "accept_waiting_requests": ubx.FieldSpec(wire_name="accept_waiting_requests"),
     "can_accept_production_requests": ubx.FieldSpec(wire_name="can_accept_production_requests"),
@@ -333,12 +322,12 @@ _Preset_PermissionsFields = {
     "chat": ubx.FieldSpec(
         wire_name="chat",
         kind="object",
-        fields=_Preset_Permissions_ChatFields,
+        fields=_Preset_Data_Permissions_ChatFields,
     ),
     "connected_meetings": ubx.FieldSpec(
         wire_name="connected_meetings",
         kind="object",
-        fields=_Preset_Permissions_ConnectedMeetingsFields,
+        fields=_Preset_Data_Permissions_ConnectedMeetingsFields,
     ),
     "disable_participant_audio": ubx.FieldSpec(wire_name="disable_participant_audio"),
     "disable_participant_screensharing": ubx.FieldSpec(wire_name="disable_participant_screensharing"),
@@ -349,18 +338,18 @@ _Preset_PermissionsFields = {
     "media": ubx.FieldSpec(
         wire_name="media",
         kind="object",
-        fields=_Preset_Permissions_MediaFields,
+        fields=_Preset_Data_Permissions_MediaFields,
     ),
     "pin_participant": ubx.FieldSpec(wire_name="pin_participant"),
     "plugins": ubx.FieldSpec(
         wire_name="plugins",
         kind="object",
-        fields=_Preset_Permissions_PluginsFields,
+        fields=_Preset_Data_Permissions_PluginsFields,
     ),
     "polls": ubx.FieldSpec(
         wire_name="polls",
         kind="object",
-        fields=_Preset_Permissions_PollsFields,
+        fields=_Preset_Data_Permissions_PollsFields,
     ),
     "recorder_type": ubx.FieldSpec(wire_name="recorder_type"),
     "show_participant_list": ubx.FieldSpec(wire_name="show_participant_list"),
@@ -370,19 +359,19 @@ _Preset_PermissionsFields = {
     "waiting_room_type": ubx.FieldSpec(wire_name="waiting_room_type"),
 }
 
-_Preset_Ui_DesignTokens_Colors_BackgroundFields = {
+_Preset_Data_Ui_DesignTokens_Colors_BackgroundFields = {
 }
 
-_Preset_Ui_DesignTokens_ColorsFields = {
+_Preset_Data_Ui_DesignTokens_ColorsFields = {
     "background": ubx.FieldSpec(
         wire_name="background",
         kind="object",
-        fields=_Preset_Ui_DesignTokens_Colors_BackgroundFields,
+        fields=_Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
     ),
     "brand": ubx.FieldSpec(
         wire_name="brand",
         kind="object",
-        fields=_Preset_Ui_DesignTokens_Colors_BackgroundFields,
+        fields=_Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
     ),
     "danger": ubx.FieldSpec(wire_name="danger"),
     "success": ubx.FieldSpec(wire_name="success"),
@@ -392,13 +381,13 @@ _Preset_Ui_DesignTokens_ColorsFields = {
     "warning": ubx.FieldSpec(wire_name="warning"),
 }
 
-_Preset_Ui_DesignTokensFields = {
+_Preset_Data_Ui_DesignTokensFields = {
     "border_radius": ubx.FieldSpec(wire_name="border_radius"),
     "border_width": ubx.FieldSpec(wire_name="border_width"),
     "colors": ubx.FieldSpec(
         wire_name="colors",
         kind="object",
-        fields=_Preset_Ui_DesignTokens_ColorsFields,
+        fields=_Preset_Data_Ui_DesignTokens_ColorsFields,
     ),
     "font_family": ubx.FieldSpec(wire_name="font_family"),
     "google_font": ubx.FieldSpec(wire_name="google_font"),
@@ -407,11 +396,11 @@ _Preset_Ui_DesignTokensFields = {
     "theme": ubx.FieldSpec(wire_name="theme"),
 }
 
-_Preset_UiFields = {
+_Preset_Data_UiFields = {
     "design_tokens": ubx.FieldSpec(
         wire_name="design_tokens",
         kind="object",
-        fields=_Preset_Ui_DesignTokensFields,
+        fields=_Preset_Data_Ui_DesignTokensFields,
     ),
 }
 
@@ -432,9 +421,12 @@ class PresetConfig:
 @dataclasses.dataclass
 class PresetAttrs:
     config: Any = None
+    data: Any = None
     # Name of the preset
     name: Any = None
     permissions: Any = None
+    # Success status of the operation
+    success: Any = None
     ui: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -455,12 +447,12 @@ Preset = ubx.ResourceBinding(
         "permissions": ubx.FieldSpec(
             wire_name="permissions",
             kind="object",
-            fields=_Preset_PermissionsFields,
+            fields=_Preset_Data_PermissionsFields,
         ),
         "ui": ubx.FieldSpec(
             wire_name="ui",
             kind="object",
-            fields=_Preset_UiFields,
+            fields=_Preset_Data_UiFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "app_id": ubx.FieldSpec(wire_name="app_id"),

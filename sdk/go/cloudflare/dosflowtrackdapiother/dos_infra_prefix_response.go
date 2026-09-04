@@ -3,6 +3,32 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosInfraPrefixResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosInfraPrefixResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosInfraPrefixResponse_Result struct {
+	// An optional comment describing the allowlist prefix.
+	Comment any
+	// The creation timestamp of the allowlist prefix.
+	CreatedOn any
+	// Whether to enable the allowlist prefix into effect. Defaults to false.
+	Enabled any
+	// The unique ID of the allowlist prefix.
+	Id any
+	// The last modification timestamp of the allowlist prefix.
+	ModifiedOn any
+	// The allowlist prefix in CIDR format.
+	Prefix any
+}
+
 type DosInfraPrefixResponseConfig struct {
 	// An comment describing the allowlist prefix.
 	Comment any
@@ -20,9 +46,14 @@ type DosInfraPrefixResponseAttrs struct {
 	// An comment describing the allowlist prefix.
 	Comment any
 	// Whether to enable the allowlist prefix into effect.
-	Enabled any
+	Enabled  any
+	Errors   any
+	Messages any
 	// The allowlist prefix to add in CIDR format.
 	Prefix any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +63,10 @@ type DosInfraPrefixResponseAttrs struct {
 var DosInfraPrefixResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_infra_prefix_response",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Comment":   ubx.FieldSpec{WireName: "comment"},
+		"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+		"Prefix":    ubx.FieldSpec{WireName: "prefix"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

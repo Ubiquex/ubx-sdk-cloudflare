@@ -3,20 +3,86 @@ package policies
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Policy_Errors_Source struct {
+	Pointer any
+}
+
+type Policy_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Policy_Result_Actions_RemediationTypes struct {
+	DisplayName       any
+	RemediationType   any
+	RemediationTypeId any
+}
+
+type Policy_Result_Actions_WebhookConfigs struct {
+	DisplayName     any
+	WebhookConfigId any
+}
+
+type Policy_Result_Actions struct {
+	RemediationTypes any
+	WebhookConfigs   any
+}
+
+type Policy_Result struct {
+	Actions                  any
+	AppliesToAllIntegrations any
+	CreatedAt                any
+	Description              any
+	DisabledAt               any
+	DisplayName              any
+	Enabled                  any
+	FindingTypeId            any
+	Id                       any
+	IntegrationIds           any
+	LastTriggeredAt          any
+	UpdatedAt                any
+}
+
+type Policy_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
+	Cursor any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
 type PolicyConfig struct {
 	AccountId any
-	Cursor any
+	Cursor    any
 }
 
 type PolicyAttrs struct {
 	AccountId any
-	Cursor any
+	Cursor    any
+	Errors    any
+	Messages  any
+	Result    any
+	// Pagination and result information.
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Policy = ubx.DataSourceBinding{
 	WireType: "cloudflare_policy",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 	},
 }

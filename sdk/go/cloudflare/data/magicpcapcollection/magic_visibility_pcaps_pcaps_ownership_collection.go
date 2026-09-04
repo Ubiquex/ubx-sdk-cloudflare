@@ -3,16 +3,25 @@ package magicpcapcollection
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicVisibilityPcapsPcapsOwnershipCollection_Result struct {
+	DestinationConf any
+	Filename        any
+	Id              any
+	Status          any
+	Submitted       any
+	Validated       any
+}
+
 type MagicVisibilityPcapsPcapsOwnershipCollectionConfig struct {
 }
 
 type MagicVisibilityPcapsPcapsOwnershipCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var MagicVisibilityPcapsPcapsOwnershipCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_visibility_pcaps_pcaps_ownership_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

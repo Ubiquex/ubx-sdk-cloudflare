@@ -7,9 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiWebhookResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiWebhookResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class PostureApiWebhookResponse_Headers:
     key: Any = None
     value: Any = None
+
+@dataclasses.dataclass
+class PostureApiWebhookResponse_Result:
+    # Type of authentication used for the webhook.
+    authentication_type: Any = None
+    # Timestamp when the webhook configuration was created.
+    created_at: Any = None
+    # Target URL for the webhook configuration. Where resulting data will be sent.
+    destination_url: Any = None
+    # List of header keys configured for this webhook. Values are not included for security reasons.
+    headers: Any = None
+    # Unique identifier for the specific webhook configuration.
+    id: Any = None
+    # Account-specified display label for the webhook configuration.
+    label: Any = None
+    # Current status of the webhook configuration. If disabled, data cannot be sent through this configuration.
+    status: Any = None
+    # Timestamp when the webhook configuration was last updated.
+    updated_at: Any = None
+    # Version number of the configuration.
+    version: Any = None
 
 _PostureApiWebhookResponse_HeadersFields = {
     "key": ubx.FieldSpec(wire_name="key"),
@@ -39,12 +71,18 @@ class PostureApiWebhookResponseAttrs:
     authentication_type: Any = None
     # Target URL for the webhook configuration. Where resulting data will be sent.
     destination_url: Any = None
+    errors: Any = None
     # List of custom headers to include in webhook requests.
     headers: Any = None
     # Account-specified display label for the webhook configuration.
     label: Any = None
+    messages: Any = None
+    # Webhook configuration for sending finding notifications.
+    result: Any = None
     # Secret key used for HMAC signing when authentication_type is "HMAC-Signing".
     signing_secret: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

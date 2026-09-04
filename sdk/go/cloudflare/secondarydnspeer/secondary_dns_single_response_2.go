@@ -3,6 +3,20 @@ package secondarydnspeer
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsSingleResponse2_Result struct {
+	Id any
+	// IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
+	Ip any
+	// Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
+	IxfrEnable any
+	// The name of the peer.
+	Name any
+	// DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
+	Port any
+	// TSIG authentication will be used for zone transfer if configured.
+	TsigId any
+}
+
 type SecondaryDnsSingleResponse2Config struct {
 	// The name of the peer.
 	Name any
@@ -14,7 +28,8 @@ type SecondaryDnsSingleResponse2Config struct {
 
 type SecondaryDnsSingleResponse2Attrs struct {
 	// The name of the peer.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +39,8 @@ type SecondaryDnsSingleResponse2Attrs struct {
 var SecondaryDnsSingleResponse2 = ubx.ResourceBinding{
 	WireType: "cloudflare_secondary_dns_single_response_2",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PeerId": ubx.FieldSpec{WireName: "peer_id"},
+		"PeerId":    ubx.FieldSpec{WireName: "peer_id"},
 	},
 }

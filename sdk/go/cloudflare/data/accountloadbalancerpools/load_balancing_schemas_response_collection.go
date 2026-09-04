@@ -3,6 +3,66 @@ package accountloadbalancerpools
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingSchemasResponseCollection_Result_LoadShedding struct {
+	DefaultPercent any
+	DefaultPolicy  any
+	SessionPercent any
+	SessionPolicy  any
+}
+
+type LoadBalancingSchemasResponseCollection_Result_NotificationFilter_Origin struct {
+	Disable any
+	Healthy any
+}
+
+type LoadBalancingSchemasResponseCollection_Result_NotificationFilter struct {
+	Origin any
+	Pool   any
+}
+
+type LoadBalancingSchemasResponseCollection_Result_OriginSteering struct {
+	Policy any
+}
+
+type LoadBalancingSchemasResponseCollection_Result_Origins_Header struct {
+	Host any
+}
+
+type LoadBalancingSchemasResponseCollection_Result_Origins struct {
+	Address          any
+	DisabledAt       any
+	Enabled          any
+	FlattenCname     any
+	Header           any
+	Name             any
+	Port             any
+	VirtualNetworkId any
+	Weight           any
+}
+
+type LoadBalancingSchemasResponseCollection_Result struct {
+	CheckRegions       any
+	CreatedOn          any
+	Description        any
+	DisabledAt         any
+	Enabled            any
+	HealthSources      any
+	Id                 any
+	Latitude           any
+	LoadShedding       any
+	Longitude          any
+	MinimumOrigins     any
+	ModifiedOn         any
+	Monitor            any
+	MonitorGroup       any
+	Name               any
+	Networks           any
+	NotificationEmail  any
+	NotificationFilter any
+	OriginSteering     any
+	Origins            any
+}
+
 type LoadBalancingSchemasResponseCollectionConfig struct {
 	// The ID of the Monitor to use for checking the health of origins within this pool.
 	Monitor any
@@ -13,6 +73,7 @@ type LoadBalancingSchemasResponseCollectionAttrs struct {
 	AccountId any
 	// The ID of the Monitor to use for checking the health of origins within this pool.
 	Monitor any
+	Result  any
 }
 
 var LoadBalancingSchemasResponseCollection = ubx.DataSourceBinding{

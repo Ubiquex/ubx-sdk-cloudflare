@@ -5,13 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZeroTrustGatewayListSingleResponse_Items struct {
 	Description any
-	Value any
+	Value       any
+}
+
+type ZeroTrustGatewayListSingleResponse_Result_Items struct {
+	CreatedAt   any
+	Description any
+	Value       any
+}
+
+type ZeroTrustGatewayListSingleResponse_Result struct {
+	// Indicate the number of items in the list.
+	Count     any
+	CreatedAt any
+	// Provide the list description.
+	Description any
+	// Identify the API resource with a UUID.
+	Id any
+	// Provide the list items.
+	Items any
+	// Specify the list name.
+	Name any
+	// Specify the list type.
+	Type      any
+	UpdatedAt any
 }
 
 var ZeroTrustGatewayListSingleResponse_ItemsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Value":       ubx.FieldSpec{WireName: "value"},
+}
 
 type ZeroTrustGatewayListSingleResponseConfig struct {
 	// Provide the list description.
@@ -32,7 +55,8 @@ type ZeroTrustGatewayListSingleResponseAttrs struct {
 	// Add items to the list.
 	Items any
 	// Specify the list name.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,11 +69,11 @@ var ZeroTrustGatewayListSingleResponse = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Items": ubx.FieldSpec{
 			WireName: "items",
-			Kind: "list",
-			Fields: ZeroTrustGatewayListSingleResponse_ItemsFields,
+			Kind:     "list",
+			Fields:   ZeroTrustGatewayListSingleResponse_ItemsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ListId": ubx.FieldSpec{WireName: "list_id"},
+		"ListId":    ubx.FieldSpec{WireName: "list_id"},
 	},
 }

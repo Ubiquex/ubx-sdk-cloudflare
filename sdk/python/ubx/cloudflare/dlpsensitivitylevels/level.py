@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Level_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class LevelConfig:
     description: Any = None
     name: Any = None
@@ -21,6 +29,7 @@ class LevelConfig:
 class LevelAttrs:
     description: Any = None
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

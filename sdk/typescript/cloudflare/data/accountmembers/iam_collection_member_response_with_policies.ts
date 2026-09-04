@@ -4,6 +4,84 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamCollectionMemberResponseWithPolicies_AccountId {
 }
 
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups {
+  id?: string | Computed<string>;
+  meta?: IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects {
+  key?: unknown | Computed<unknown>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope {
+  key?: unknown | Computed<unknown>;
+  objects?: IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects[] | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects[]>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups {
+  id?: string | Computed<string>;
+  meta?: IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+  scope?: IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Policies {
+  access?: string | Computed<string>;
+  id?: string | Computed<string>;
+  permissionGroups?: IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups[] | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups[]>;
+  resourceGroups?: IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups[] | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups[]>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics {
+  read?: boolean | Computed<boolean>;
+  write?: boolean | Computed<boolean>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions {
+  analytics?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  billing?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  cachePurge?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  dns?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  dnsRecords?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  lb?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  logs?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  organization?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  ssl?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  waf?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  zoneSettings?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+  zones?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_Roles {
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+  permissions?: IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result_User {
+  email?: string | Computed<string>;
+  firstName?: string | Computed<string>;
+  id?: string | Computed<string>;
+  lastName?: string | Computed<string>;
+  twoFactorAuthenticationEnabled?: boolean | Computed<boolean>;
+}
+
+export interface IamCollectionMemberResponseWithPolicies_Result {
+  email?: string | Computed<string>;
+  id?: string | Computed<string>;
+  policies?: IamCollectionMemberResponseWithPolicies_Result_Policies[] | Computed<IamCollectionMemberResponseWithPolicies_Result_Policies[]>;
+  roles?: IamCollectionMemberResponseWithPolicies_Result_Roles[] | Computed<IamCollectionMemberResponseWithPolicies_Result_Roles[]>;
+  status?: unknown | Computed<unknown>;
+  user?: IamCollectionMemberResponseWithPolicies_Result_User | Computed<IamCollectionMemberResponseWithPolicies_Result_User>;
+}
+
 const IamCollectionMemberResponseWithPolicies_AccountIdFields: FieldMap = {
 };
 
@@ -33,6 +111,7 @@ export interface IamCollectionMemberResponseWithPoliciesAttrs {
   page: number;
   /** Maximum number of results per page. */
   perPage: number;
+  result: IamCollectionMemberResponseWithPolicies_Result[];
   /** A member's status in the account. */
   status: string;
 }

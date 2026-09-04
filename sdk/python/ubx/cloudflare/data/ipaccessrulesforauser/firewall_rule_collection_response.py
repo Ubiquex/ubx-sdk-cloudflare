@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallRuleCollectionResponse_Result_Configuration:
+    target: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallRuleCollectionResponse_Result:
+    allowed_modes: Any = None
+    configuration: Any = None
+    created_on: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    notes: Any = None
+
+@dataclasses.dataclass
 class FirewallRuleCollectionResponseConfig:
     # Defines the target to search in existing rules.
     configuration_target: Any = None
@@ -47,6 +62,7 @@ class FirewallRuleCollectionResponseAttrs:
     page: Any = None
     # Defines the maximum number of results requested.
     per_page: Any = None
+    result: Any = None
 
 FirewallRuleCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_firewall_rule_collection_response",

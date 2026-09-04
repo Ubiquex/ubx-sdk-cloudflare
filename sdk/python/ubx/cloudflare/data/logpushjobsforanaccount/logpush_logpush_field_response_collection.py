@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushLogpushFieldResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class LogpushLogpushFieldResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class LogpushLogpushFieldResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +30,11 @@ class LogpushLogpushFieldResponseCollectionAttrs:
     account_id: Any = None
     # Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
     dataset_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LogpushLogpushFieldResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_logpush_logpush_field_response_collection",

@@ -3,6 +3,31 @@ package cloudflaretunnelconfiguration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelMeshConfigurationResponseSingle_Result_Config_Vips struct {
+	Address any
+}
+
+type TunnelMeshConfigurationResponseSingle_Result_Config struct {
+	FnrId        any
+	Vips         any
+	VipsPrevious any
+}
+
+type TunnelMeshConfigurationResponseSingle_Result struct {
+	// Provider-specific configuration. Present for `aws` and `local` modes.
+	Config any
+	// Monotonically increasing configuration version, incremented on each PUT.
+	ConfigurationVersion any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// High-availability mode for the WARP Connector tunnel. `none` means HA is enabled but no provider is configured yet (newly created tunnels default to this). `disabled` means HA is explicitly turned off. `aws` uses AWS ENI move for failover. `local` uses virtual IPs (VIPs) on the local interface.
+	HaMode any
+	// UUID of the tunnel.
+	TunnelId any
+	// Timestamp of the last update. Null if never updated.
+	UpdatedAt any
+}
+
 type TunnelMeshConfigurationResponseSingleConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +36,7 @@ type TunnelMeshConfigurationResponseSingleConfig struct {
 type TunnelMeshConfigurationResponseSingleAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 	// UUID of the tunnel.
 	TunnelId any
 }

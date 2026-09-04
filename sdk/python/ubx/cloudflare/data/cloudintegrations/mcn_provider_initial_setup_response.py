@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnProviderInitialSetupResponse_Result:
+    aws_trust_policy: Any = None
+    azure_consent_url: Any = None
+    integration_identity_tag: Any = None
+    item_type: Any = None
+    tag_cli_command: Any = None
+
+@dataclasses.dataclass
 class McnProviderInitialSetupResponseConfig:
     account_id: Any = None
     provider_id: Any = None
@@ -15,6 +23,7 @@ class McnProviderInitialSetupResponseConfig:
 class McnProviderInitialSetupResponseAttrs:
     account_id: Any = None
     provider_id: Any = None
+    result: Any = None
 
 McnProviderInitialSetupResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_mcn_provider_initial_setup_response",

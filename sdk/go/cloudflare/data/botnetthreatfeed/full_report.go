@@ -3,22 +3,44 @@ package botnetthreatfeed
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FullReport_Errors_Source struct {
+	Pointer any
+}
+
+type FullReport_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type FullReport_Result struct {
+	Cidr         any
+	Date         any
+	OffenseCount any
+}
+
 type FullReportConfig struct {
 	// Identifier.
 	AccountId any
-	AsnId any
+	AsnId     any
 }
 
 type FullReportAttrs struct {
 	// Identifier.
 	AccountId any
-	AsnId any
+	AsnId     any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var FullReport = ubx.DataSourceBinding{
 	WireType: "cloudflare_full_report",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AsnId": ubx.FieldSpec{WireName: "asn_id"},
+		"AsnId":     ubx.FieldSpec{WireName: "asn_id"},
 	},
 }

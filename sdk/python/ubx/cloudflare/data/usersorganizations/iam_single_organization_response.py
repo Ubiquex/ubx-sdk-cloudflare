@@ -15,6 +15,7 @@ class IamSingleOrganizationResponseConfig:
 class IamSingleOrganizationResponseAttrs:
     # Identifier
     organization_id: Any = None
+    result: Any = None
 
 IamSingleOrganizationResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_single_organization_response",

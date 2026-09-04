@@ -3,6 +3,27 @@ package magiccf1siteramps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CollectionResponse_Result_Gre struct {
+	ManagedBy any
+}
+
+type CollectionResponse_Result_Id struct {
+}
+
+type CollectionResponse_Result struct {
+	CreatedOn        any
+	Description      any
+	Gre              any
+	GreInterconnect  any
+	Id               any
+	Ipsec            any
+	Mconn            any
+	ModifiedOn       any
+	MplsInterconnect any
+	Name             any
+	Type             any
+}
+
 type CollectionResponseConfig struct {
 }
 
@@ -11,10 +32,10 @@ type CollectionResponseAttrs struct {
 	AccountId any
 	// Identifier
 	Cf1SiteId any
+	Result    any
 }
 
 var CollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_cf1_site_ramps_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

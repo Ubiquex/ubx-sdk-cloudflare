@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StatusResponse_Result:
+    estimated_queued_users: Any = None
+    estimated_total_active_users: Any = None
+    event_id: Any = None
+    max_estimated_time_minutes: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class StatusResponseConfig:
     waiting_room_id: Any = None
     # Identifier.
@@ -14,6 +22,7 @@ class StatusResponseConfig:
 
 @dataclasses.dataclass
 class StatusResponseAttrs:
+    result: Any = None
     waiting_room_id: Any = None
     # Identifier.
     zone_id: Any = None

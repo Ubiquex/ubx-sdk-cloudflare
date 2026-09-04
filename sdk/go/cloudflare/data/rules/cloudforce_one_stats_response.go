@@ -8,10 +8,10 @@ type CloudforceOneStatsResponseConfig struct {
 }
 
 type CloudforceOneStatsResponseAttrs struct {
-	AccountId any
+	AccountId        any
 	PendingApprovals any
 	RulesByNamespace any
-	TotalRules any
+	TotalRules       any
 }
 
 var CloudforceOneStatsResponse = ubx.DataSourceBinding{

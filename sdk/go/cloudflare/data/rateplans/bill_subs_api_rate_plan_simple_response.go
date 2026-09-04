@@ -3,12 +3,24 @@ package rateplans
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiRatePlanSimpleResponse_Result struct {
+	// Pricing components that make up this rate plan.
+	Components any
+	// Currency of the rate plan pricing.
+	Currency any
+	// The uppercase rate plan public key.
+	Id any
+	// Human-readable description of the rate plan.
+	PublicName any
+}
+
 type BillSubsApiRatePlanSimpleResponseConfig struct {
 	PublicKey any
 }
 
 type BillSubsApiRatePlanSimpleResponseAttrs struct {
 	PublicKey any
+	Result    any
 }
 
 var BillSubsApiRatePlanSimpleResponse = ubx.DataSourceBinding{

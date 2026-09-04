@@ -7,12 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DataClass_Result_SensitivityLevels:
+    group_id: Any = None
+    level_id: Any = None
+
+@dataclasses.dataclass
+class DataClass_Result:
+    created_at: Any = None
+    data_tags: Any = None
+    description: Any = None
+    expression: Any = None
+    id: Any = None
+    name: Any = None
+    sensitivity_levels: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class DataClassConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class DataClassAttrs:
     account_id: Any = None
+    result: Any = None
 
 DataClass = ubx.DataSourceBinding(
     wire_type="cloudflare_data_class",

@@ -7,6 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Subscription_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Subscription_Result_Destination:
+    queue_id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Subscription_Result_Source:
+    model_name: Any = None
+    script_tag: Any = None
+    type: Any = None
+    worker_name: Any = None
+    workflow_name: Any = None
+
+@dataclasses.dataclass
+class Subscription_Result:
+    created_at: Any = None
+    destination: Any = None
+    enabled: Any = None
+    events: Any = None
+    id: Any = None
+    modified_at: Any = None
+    name: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Subscription_ResultInfo:
+    # Number of items in current page
+    count: Any = None
+    # Current page number
+    page: Any = None
+    # Items per page
+    per_page: Any = None
+    # Total number of items
+    total_count: Any = None
+    # Total number of pages
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class SubscriptionConfig:
     direction: Any = None
     order: Any = None
@@ -18,9 +60,15 @@ class SubscriptionAttrs:
     # A Resource identifier.
     account_id: Any = None
     direction: Any = None
+    errors: Any = None
+    messages: Any = None
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
 
 Subscription = ubx.DataSourceBinding(
     wire_type="cloudflare_subscription",

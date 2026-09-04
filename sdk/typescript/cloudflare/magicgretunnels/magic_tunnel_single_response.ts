@@ -22,6 +22,51 @@ export interface MagicTunnelSingleResponse_HealthCheck {
   type?: string | Computed<string>;
 }
 
+export interface MagicTunnelSingleResponse_Result_GreTunnel_BgpStatus {
+  bgpState?: string | Computed<string>;
+  cfSpeakerIp?: string | Computed<string>;
+  cfSpeakerPort?: number | Computed<number>;
+  customerSpeakerIp?: string | Computed<string>;
+  customerSpeakerPort?: number | Computed<number>;
+  state: string | Computed<string>;
+  tcpEstablished: boolean | Computed<boolean>;
+  updatedAt: string | Computed<string>;
+}
+
+export interface MagicTunnelSingleResponse_Result_GreTunnel {
+  /** True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected. */
+  automaticReturnRouting?: boolean | Computed<boolean>;
+  bgp?: MagicTunnelSingleResponse_Bgp | Computed<MagicTunnelSingleResponse_Bgp>;
+  bgpStatus?: MagicTunnelSingleResponse_Result_GreTunnel_BgpStatus | Computed<MagicTunnelSingleResponse_Result_GreTunnel_BgpStatus>;
+  /** The IP address assigned to the Cloudflare side of the GRE tunnel. */
+  cloudflareGreEndpoint: string | Computed<string>;
+  /** The date and time the tunnel was created. */
+  createdOn?: string | Computed<string>;
+  /** The IP address assigned to the customer side of the GRE tunnel. */
+  customerGreEndpoint: string | Computed<string>;
+  /** An optional description of the GRE tunnel. */
+  description?: string | Computed<string>;
+  healthCheck?: MagicTunnelSingleResponse_HealthCheck | Computed<MagicTunnelSingleResponse_HealthCheck>;
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255. */
+  interfaceAddress: string | Computed<string>;
+  /** A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127 */
+  interfaceAddress6?: string | Computed<string>;
+  /** The date and time the tunnel was last modified. */
+  modifiedOn?: string | Computed<string>;
+  /** Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576. */
+  mtu?: number | Computed<number>;
+  /** The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel. */
+  name: string | Computed<string>;
+  /** Time To Live (TTL) in number of hops of the GRE tunnel. */
+  ttl?: number | Computed<number>;
+}
+
+export interface MagicTunnelSingleResponse_Result {
+  greTunnel?: MagicTunnelSingleResponse_Result_GreTunnel | Computed<MagicTunnelSingleResponse_Result_GreTunnel>;
+}
+
 const MagicTunnelSingleResponse_BgpFields: FieldMap = {
   customerAsn: "customer_asn",
   exportFilterId: "export_filter_id",
@@ -84,6 +129,7 @@ export interface MagicTunnelSingleResponseAttrs {
   mtu: number;
   /** The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel. */
   name: string;
+  result: MagicTunnelSingleResponse_Result;
   /** Time To Live (TTL) in number of hops of the GRE tunnel. */
   ttl: number;
   /** path parameter, not part of the API's own resource representation */

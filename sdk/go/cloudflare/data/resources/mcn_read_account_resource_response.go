@@ -3,23 +3,111 @@ package resources
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnReadAccountResourceResponse_Result_ManagedBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnReadAccountResourceResponse_Result_MonthlyCostEstimate struct {
+	Currency    any
+	MonthlyCost any
+}
+
+type McnReadAccountResourceResponse_Result_Observations struct {
+	FirstObservedAt any
+	LastObservedAt  any
+	ProviderId      any
+	ResourceId      any
+}
+
+type McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_List_ResourcePreview struct {
+	CloudType    any
+	Detail       any
+	Id           any
+	Name         any
+	ResourceType any
+	Title        any
+}
+
+type McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_List struct {
+	ItemType        any
+	ResourcePreview any
+	String          any
+}
+
+type McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_YamlDiff struct {
+	Diff             any
+	LeftDescription  any
+	LeftYaml         any
+	RightDescription any
+	RightYaml        any
+}
+
+type McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value struct {
+	ItemType        any
+	List            any
+	ResourcePreview any
+	String          any
+	Yaml            any
+	YamlDiff        any
+}
+
+type McnReadAccountResourceResponse_Result_Sections_HiddenItems struct {
+	HelpText any
+	Name     any
+	Value    any
+}
+
+type McnReadAccountResourceResponse_Result_Sections struct {
+	HelpText     any
+	HiddenItems  any
+	Name         any
+	VisibleItems any
+}
+
+type McnReadAccountResourceResponse_Result struct {
+	AccountId           any
+	CloudType           any
+	Config              any
+	DeploymentProvider  any
+	Id                  any
+	Managed             any
+	ManagedBy           any
+	MonthlyCostEstimate any
+	Name                any
+	NativeId            any
+	Observations        any
+	ProviderIds         any
+	ProviderNamesById   any
+	Region              any
+	ResourceGroup       any
+	ResourceType        any
+	Sections            any
+	State               any
+	Tags                any
+	UpdatedAt           any
+	Url                 any
+}
+
 type McnReadAccountResourceResponseConfig struct {
-	AccountId any
+	AccountId  any
 	ResourceId any
-	V2 any
+	V2         any
 }
 
 type McnReadAccountResourceResponseAttrs struct {
-	AccountId any
+	AccountId  any
 	ResourceId any
-	V2 any
+	Result     any
+	V2         any
 }
 
 var McnReadAccountResourceResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_read_account_resource_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"V2": ubx.FieldSpec{WireName: "v2"},
+		"V2":         ubx.FieldSpec{WireName: "v2"},
 	},
 }

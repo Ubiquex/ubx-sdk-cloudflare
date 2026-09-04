@@ -24,8 +24,8 @@ type ScreenshotAttrs struct {
 var Screenshot = ubx.DataSourceBinding{
 	WireType: "cloudflare_screenshot",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
+		"ScanId":     ubx.FieldSpec{WireName: "scan_id"},
 	},
 }

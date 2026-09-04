@@ -3,16 +3,39 @@ package accountbilling
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiAccountCreditsResponse_Result struct {
+	// The confirmed credit balance in cents.
+	ConfirmedBalanceCents any
+	// Currency of the credit balance.
+	Currency any
+	// Days remaining until the credits expire.
+	DaysRemaining any
+	// Whether the account is eligible to receive credits.
+	Eligible any
+	// Whether a credit record exists for the account.
+	HasRecord any
+	// The original credit amount in cents.
+	OriginalAmountCents any
+	// Percentage of the original credit amount consumed.
+	PercentConsumed any
+	// Projected date when the credits will be depleted.
+	ProjectedDepletionDate any
+	// When the credits become valid.
+	ValidFrom any
+	// When the credits expire.
+	ValidTo any
+}
+
 type BillSubsApiAccountCreditsResponseConfig struct {
 }
 
 type BillSubsApiAccountCreditsResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var BillSubsApiAccountCreditsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_account_credits_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

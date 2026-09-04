@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EnvironmentVariable_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class EnvironmentVariable_Result:
+    created_on: Any = None
+    is_secret: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EnvironmentVariable_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class EnvironmentVariableConfig:
     # Account identifier.
     account_id: Any = None
@@ -17,6 +36,11 @@ class EnvironmentVariableConfig:
 class EnvironmentVariableAttrs:
     # Account identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    success: Any = None
     # Trigger UUID.
     trigger_uuid: Any = None
 

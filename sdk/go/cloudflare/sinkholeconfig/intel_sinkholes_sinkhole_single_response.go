@@ -3,6 +3,34 @@ package sinkholeconfig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSinkholesSinkholeSingleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type IntelSinkholesSinkholeSingleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type IntelSinkholesSinkholeSingleResponse_Result struct {
+	// The account tag that owns this sinkhole.
+	AccountTag any
+	// The date and time when the sinkhole was created.
+	CreatedOn any
+	// The unique identifier for the sinkhole.
+	Id any
+	// The date and time when the sinkhole was last modified.
+	ModifiedOn any
+	// The name of the sinkhole.
+	Name any
+	// The name of the R2 bucket to store results.
+	R2Bucket any
+	// The id of the R2 instance.
+	R2Id any
+}
+
 type IntelSinkholesSinkholeSingleResponseConfig struct {
 	// The name of the sinkhole.
 	Name any
@@ -19,6 +47,8 @@ type IntelSinkholesSinkholeSingleResponseConfig struct {
 }
 
 type IntelSinkholesSinkholeSingleResponseAttrs struct {
+	Errors   any
+	Messages any
 	// The name of the sinkhole.
 	Name any
 	// The name of the R2 bucket to store results. Required if you want to store large request bodies in R2.
@@ -27,6 +57,9 @@ type IntelSinkholesSinkholeSingleResponseAttrs struct {
 	R2Id any
 	// The secret key for the R2 API token. Required if you want to store large request bodies in R2.
 	R2Secret any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +69,11 @@ type IntelSinkholesSinkholeSingleResponseAttrs struct {
 var IntelSinkholesSinkholeSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_intel_sinkholes_sinkhole_single_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"R2Bucket": ubx.FieldSpec{WireName: "r2_bucket"},
-		"R2Id": ubx.FieldSpec{WireName: "r2_id"},
-		"R2Secret": ubx.FieldSpec{WireName: "r2_secret"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"R2Bucket":   ubx.FieldSpec{WireName: "r2_bucket"},
+		"R2Id":       ubx.FieldSpec{WireName: "r2_id"},
+		"R2Secret":   ubx.FieldSpec{WireName: "r2_secret"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"SinkholeId": ubx.FieldSpec{WireName: "sinkhole_id"},
 	},
 }

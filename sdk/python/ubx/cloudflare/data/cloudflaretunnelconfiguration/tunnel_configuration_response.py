@@ -7,6 +7,64 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelConfigurationResponse_Result_Config_Ingress_OriginRequest_Access:
+    aud_tag: Any = None
+    required: Any = None
+    team_name: Any = None
+
+@dataclasses.dataclass
+class TunnelConfigurationResponse_Result_Config_Ingress_OriginRequest:
+    access: Any = None
+    ca_pool: Any = None
+    connect_timeout: Any = None
+    disable_chunked_encoding: Any = None
+    http2_origin: Any = None
+    http_host_header: Any = None
+    keep_alive_connections: Any = None
+    keep_alive_timeout: Any = None
+    match_snito_host: Any = None
+    no_happy_eyeballs: Any = None
+    no_tlsverify: Any = None
+    origin_server_name: Any = None
+    proxy_type: Any = None
+    tcp_keep_alive: Any = None
+    tls_timeout: Any = None
+
+@dataclasses.dataclass
+class TunnelConfigurationResponse_Result_Config_Ingress:
+    hostname: Any = None
+    origin_request: Any = None
+    path: Any = None
+    service: Any = None
+
+@dataclasses.dataclass
+class TunnelConfigurationResponse_Result_Config_WarpRouting:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class TunnelConfigurationResponse_Result_Config:
+    # List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.
+    ingress: Any = None
+    # Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
+    origin_request: Any = None
+    # Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
+    warp_routing: Any = None
+
+@dataclasses.dataclass
+class TunnelConfigurationResponse_Result:
+    # Identifier.
+    account_id: Any = None
+    # The tunnel configuration and ingress rules.
+    config: Any = None
+    created_at: Any = None
+    # Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
+    source: Any = None
+    # UUID of the tunnel.
+    tunnel_id: Any = None
+    # The version of the Tunnel Configuration.
+    version: Any = None
+
+@dataclasses.dataclass
 class TunnelConfigurationResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +73,8 @@ class TunnelConfigurationResponseConfig:
 class TunnelConfigurationResponseAttrs:
     # Identifier.
     account_id: Any = None
+    # Cloudflare Tunnel configuration
+    result: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

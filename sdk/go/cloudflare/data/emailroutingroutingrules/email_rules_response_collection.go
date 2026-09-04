@@ -3,6 +3,35 @@ package emailroutingroutingrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailRulesResponseCollection_Result_Actions struct {
+	Type  any
+	Value any
+}
+
+type EmailRulesResponseCollection_Result_Matchers struct {
+	Field any
+	Type  any
+	Value any
+}
+
+type EmailRulesResponseCollection_Result struct {
+	Actions  any
+	Enabled  any
+	Id       any
+	Matchers any
+	Name     any
+	Priority any
+	Source   any
+	Tag      any
+}
+
+type EmailRulesResponseCollection_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+}
+
 type EmailRulesResponseCollectionConfig struct {
 	// Filter by enabled routing rules.
 	Enabled any
@@ -20,7 +49,9 @@ type EmailRulesResponseCollectionAttrs struct {
 	// Page number of paginated results.
 	Page any
 	// Maximum number of results per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// Identifier.
 	ZoneId any
 }
@@ -29,8 +60,8 @@ var EmailRulesResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_email_rules_response_collection",
 	Fields: ubx.FieldMap{
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

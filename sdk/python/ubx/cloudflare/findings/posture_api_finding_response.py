@@ -7,6 +7,145 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiFindingResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Finding_Category:
+    observation: Any = None
+    product: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Finding_Remediation:
+    frameworks: Any = None
+    guide: Any = None
+    id: Any = None
+    impact: Any = None
+    locale: Any = None
+    threat: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Finding:
+    category: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    remediation: Any = None
+    severity: Any = None
+    vendor: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Integration_Policy:
+    # OAuth client ID for the policy.
+    client_id: Any = None
+    # Compliance level for the policy.
+    compliance_level: Any = None
+    # Whether DLP is enabled for this policy.
+    dlp_enabled: Any = None
+    # Policy identifier.
+    id: Any = None
+    # Link to policy documentation.
+    link: Any = None
+    # Policy name.
+    name: Any = None
+    # List of permissions included in the policy.
+    permissions: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Integration_Vendor:
+    # Detailed information about what kinds of issues are detected for this vendor.
+    description: Any = None
+    # The display name of the vendor.
+    display_name: Any = None
+    # The id of the vendor.
+    id: Any = None
+    # Logo URL for the vendor.
+    logo: Any = None
+    # The name of the vendor.
+    name: Any = None
+    # The policies related to the vendor.
+    policies: Any = None
+    # Static logo URL for the vendor.
+    static_logo: Any = None
+    # The vendor's compatible Zero Trust products.
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Integration_ZtEnrollments:
+    description: Any = None
+    display_name: Any = None
+    enabled: Any = None
+    id: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_Integration:
+    # When entity was created.
+    created: Any = None
+    # Health status of integration credentials.
+    credential_health_status: Any = None
+    # The date and time when the integration credentials will expire.
+    credentials_expiry: Any = None
+    # Integration ID.
+    id: Any = None
+    # Whether the given integration is paused by the user.
+    is_paused: Any = None
+    # When were the integration credentials last updated.
+    last_hydrated: Any = None
+    # Name of the integration.
+    name: Any = None
+    # The vendor-specific permissions associated with the integration.
+    permissions: Any = None
+    # Policy configuration for an integration.
+    policy: Any = None
+    # Current status of the integration.
+    status: Any = None
+    # Last entity was updated.
+    updated: Any = None
+    # Whether the integrations permissions can be updated.
+    upgradable: Any = None
+    # UI State as to whether a potential permissions upgrade has been dismissed.
+    upgrade_dismissed: Any = None
+    # Information about a vendor/service provider.
+    vendor: Any = None
+    # Zero Trust products associated with this integration.
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result_SeverityOverride:
+    # User ID who created the override.
+    created_by: Any = None
+    # The severity level of a finding.
+    severity: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingResponse_Result:
+    # Number of active problematic instances identified in the security finding.
+    active_count: Any = None
+    # Number of archived instances identified in the security finding.
+    archived_count: Any = None
+    finding: Any = None
+    # Base64 encoded identifier of the security finding.
+    id: Any = None
+    # Determines if finding is currently ignored.
+    ignored: Any = None
+    # Number of total (Active or archived) problematic instances identified in the security finding.
+    instance_count: Any = None
+    # Summary information about an integration.
+    integration: Any = None
+    # Timestamp of the latest affliction date of an active finding.
+    latest_affliction_date: Any = None
+    # Override information for finding severity.
+    severity_override: Any = None
+
+@dataclasses.dataclass
 class PostureApiFindingResponseConfig:
     # A list of finding IDs to pass along.
     checks: Any = None
@@ -19,6 +158,12 @@ class PostureApiFindingResponseConfig:
 class PostureApiFindingResponseAttrs:
     # A list of finding IDs to pass along.
     checks: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Aggregated finding information with counts and metadata. This is optimized for list API queries and represents a finding along with its instance statistics.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

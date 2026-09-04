@@ -4,14 +4,14 @@ package radaraibots
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimeseriesGroup_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type TimeseriesGroup_Result_Meta_ConfidenceInfo struct {
@@ -21,20 +21,20 @@ type TimeseriesGroup_Result_Meta_ConfidenceInfo struct {
 }
 
 type TimeseriesGroup_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type TimeseriesGroup_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type TimeseriesGroup_Result_Meta struct {
 	// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-	AggInterval any
+	AggInterval    any
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -49,7 +49,7 @@ type TimeseriesGroup_Result_Serie0 struct {
 
 type TimeseriesGroup_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta   any
 	Serie0 any
 }
 
@@ -129,8 +129,8 @@ type TimeseriesGroupAttrs struct {
 	ResponseStatus any
 	// Filters results by HTTP response status code category.
 	ResponseStatusCategory any
-	Result any
-	Success any
+	Result                 any
+	Success                any
 	// Filters results by user agent.
 	UserAgent any
 	// Filters results by vertical.
@@ -140,24 +140,24 @@ type TimeseriesGroupAttrs struct {
 var TimeseriesGroup = ubx.DataSourceBinding{
 	WireType: "cloudflare_timeseries_group",
 	Fields: ubx.FieldMap{
-		"AggInterval": ubx.FieldSpec{WireName: "agg_interval"},
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"CrawlPurpose": ubx.FieldSpec{WireName: "crawl_purpose"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Industry": ubx.FieldSpec{WireName: "industry"},
-		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Normalization": ubx.FieldSpec{WireName: "normalization"},
-		"ResponseStatus": ubx.FieldSpec{WireName: "response_status"},
+		"AggInterval":            ubx.FieldSpec{WireName: "agg_interval"},
+		"Asn":                    ubx.FieldSpec{WireName: "asn"},
+		"ContentType":            ubx.FieldSpec{WireName: "content_type"},
+		"Continent":              ubx.FieldSpec{WireName: "continent"},
+		"CrawlPurpose":           ubx.FieldSpec{WireName: "crawl_purpose"},
+		"DateEnd":                ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":              ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":              ubx.FieldSpec{WireName: "date_start"},
+		"Dimension":              ubx.FieldSpec{WireName: "dimension"},
+		"Format":                 ubx.FieldSpec{WireName: "format"},
+		"Industry":               ubx.FieldSpec{WireName: "industry"},
+		"LimitPerGroup":          ubx.FieldSpec{WireName: "limit_per_group"},
+		"Location":               ubx.FieldSpec{WireName: "location"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Normalization":          ubx.FieldSpec{WireName: "normalization"},
+		"ResponseStatus":         ubx.FieldSpec{WireName: "response_status"},
 		"ResponseStatusCategory": ubx.FieldSpec{WireName: "response_status_category"},
-		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
-		"Vertical": ubx.FieldSpec{WireName: "vertical"},
+		"UserAgent":              ubx.FieldSpec{WireName: "user_agent"},
+		"Vertical":               ubx.FieldSpec{WireName: "vertical"},
 	},
 }

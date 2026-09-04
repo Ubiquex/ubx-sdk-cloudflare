@@ -3,12 +3,26 @@ package tenantlevelcustomnameservers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsCustomNameserversTcnsResponseCollection_Result_DnsRecords struct {
+	Type  any
+	Value any
+}
+
+type DnsCustomNameserversTcnsResponseCollection_Result struct {
+	DnsRecords any
+	NsName     any
+	NsSet      any
+	Status     any
+	ZoneTag    any
+}
+
 type DnsCustomNameserversTcnsResponseCollectionConfig struct {
 	// Tenant identifier tag.
 	TenantTag any
 }
 
 type DnsCustomNameserversTcnsResponseCollectionAttrs struct {
+	Result any
 	// Tenant identifier tag.
 	TenantTag any
 }

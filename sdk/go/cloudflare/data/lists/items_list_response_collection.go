@@ -3,6 +3,15 @@ package lists
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ItemsListResponseCollection_ResultInfo_Cursors struct {
+	After  any
+	Before any
+}
+
+type ItemsListResponseCollection_ResultInfo struct {
+	Cursors any
+}
+
 type ItemsListResponseCollectionConfig struct {
 	// The pagination cursor. An opaque string token that indicates where to continue when requesting the next/previous set of records. The response provides cursor values under `result_info.cursors`. You should make no assumptions about a cursor's content or length.
 	Cursor any
@@ -20,7 +29,9 @@ type ItemsListResponseCollectionAttrs struct {
 	// The unique ID of the list.
 	ListId any
 	// Amount of results to include in each paginated response. A non-negative 32 bit integer.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// A search query to filter returned items. Its meaning depends on the list type: IP addresses must start with the provided string, hostnames and bulk redirects must contain the string, and ASNs must match the string exactly.
 	Search any
 }
@@ -28,8 +39,8 @@ type ItemsListResponseCollectionAttrs struct {
 var ItemsListResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_lists_items_list_response_collection",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":  ubx.FieldSpec{WireName: "cursor"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":  ubx.FieldSpec{WireName: "search"},
 	},
 }

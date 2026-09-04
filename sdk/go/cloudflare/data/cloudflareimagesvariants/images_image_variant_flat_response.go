@@ -3,6 +3,25 @@ package cloudflareimagesvariants
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImageVariantFlatResponse_Result_Options struct {
+	// The fit property describes how the width and height dimensions should be interpreted.
+	Fit any
+	// Maximum height in image pixels.
+	Height any
+	// What EXIF data should be preserved in the output image.
+	Metadata any
+	// Maximum width in image pixels.
+	Width any
+}
+
+type ImagesImageVariantFlatResponse_Result struct {
+	Id any
+	// Indicates whether the variant can access an image without a signature, regardless of image access control.
+	NeverRequireSignedUrls any
+	// Allows you to define image resizing sizes for different use cases.
+	Options any
+}
+
 type ImagesImageVariantFlatResponseConfig struct {
 	VariantId any
 }
@@ -10,6 +29,7 @@ type ImagesImageVariantFlatResponseConfig struct {
 type ImagesImageVariantFlatResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 	VariantId any
 }
 

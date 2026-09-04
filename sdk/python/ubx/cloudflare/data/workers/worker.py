@@ -7,6 +7,89 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Worker_Result_Observability_Logs:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    invocation_logs: Any = None
+    persist: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_Observability_Traces:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    persist: Any = None
+    propagation_policy: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_Observability:
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    logs: Any = None
+    redact_query_string: Any = None
+    traces: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_References_DispatchNamespaceOutbounds:
+    namespace_id: Any = None
+    namespace_name: Any = None
+    worker_id: Any = None
+    worker_name: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_References_Domains:
+    certificate_id: Any = None
+    hostname: Any = None
+    id: Any = None
+    zone_id: Any = None
+    zone_name: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_References_Queues:
+    queue_consumer_id: Any = None
+    queue_id: Any = None
+    queue_name: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_References_Workers:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_References:
+    dispatch_namespace_outbounds: Any = None
+    domains: Any = None
+    durable_objects: Any = None
+    queues: Any = None
+    workers: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_Subdomain:
+    enabled: Any = None
+    preview_url_suffix: Any = None
+    previews_enabled: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class Worker_Result_TailConsumers:
+    name: Any = None
+
+@dataclasses.dataclass
+class Worker_Result:
+    created_on: Any = None
+    deployed_on: Any = None
+    id: Any = None
+    logpush: Any = None
+    name: Any = None
+    observability: Any = None
+    references: Any = None
+    subdomain: Any = None
+    tags: Any = None
+    tail_consumers: Any = None
+    updated_on: Any = None
+
+@dataclasses.dataclass
 class WorkerConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +106,7 @@ class WorkerAttrs:
     order_by: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 Worker = ubx.DataSourceBinding(
     wire_type="cloudflare_worker",

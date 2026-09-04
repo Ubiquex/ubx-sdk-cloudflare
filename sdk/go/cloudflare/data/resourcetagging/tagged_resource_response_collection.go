@@ -6,27 +6,50 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TaggedResourceResponseCollection_AccountId struct {
 }
 
-var TaggedResourceResponseCollection_AccountIdFields = ubx.FieldMap{
-	}
+type TaggedResourceResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type TaggedResourceResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type TaggedResourceResponseCollection_ResultInfo struct {
+	// Indicates the number of results returned in the current page.
+	Count any
+	// Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+	Cursor any
+}
+
+var TaggedResourceResponseCollection_AccountIdFields = ubx.FieldMap{}
 
 type TaggedResourceResponseCollectionConfig struct {
-	AccountId any
+	AccountId       any
 	CaseInsensitive any
-	Cursor any
-	Id any
-	Name any
-	Tag any
-	Type any
+	Cursor          any
+	Id              any
+	Name            any
+	Tag             any
+	Type            any
 }
 
 type TaggedResourceResponseCollectionAttrs struct {
-	AccountId any
+	AccountId       any
 	CaseInsensitive any
-	Cursor any
-	Id any
-	Name any
-	Tag any
-	Type any
+	Cursor          any
+	Errors          any
+	Id              any
+	Messages        any
+	Name            any
+	Result          any
+	ResultInfo      any
+	// Whether the API call was successful.
+	Success any
+	Tag     any
+	Type    any
 }
 
 var TaggedResourceResponseCollection = ubx.DataSourceBinding{
@@ -34,14 +57,14 @@ var TaggedResourceResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: TaggedResourceResponseCollection_AccountIdFields,
+			Kind:     "object",
+			Fields:   TaggedResourceResponseCollection_AccountIdFields,
 		},
 		"CaseInsensitive": ubx.FieldSpec{WireName: "case_insensitive"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Cursor":          ubx.FieldSpec{WireName: "cursor"},
+		"Id":              ubx.FieldSpec{WireName: "id"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Tag":             ubx.FieldSpec{WireName: "tag"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

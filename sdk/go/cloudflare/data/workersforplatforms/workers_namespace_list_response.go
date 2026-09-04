@@ -3,6 +3,28 @@ package workersforplatforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersNamespaceListResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersNamespaceListResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersNamespaceListResponse_Result struct {
+	CreatedBy      any
+	CreatedOn      any
+	ModifiedBy     any
+	ModifiedOn     any
+	NamespaceId    any
+	NamespaceName  any
+	ScriptCount    any
+	TrustedWorkers any
+}
+
 type WorkersNamespaceListResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +33,11 @@ type WorkersNamespaceListResponseConfig struct {
 type WorkersNamespaceListResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var WorkersNamespaceListResponse = ubx.DataSourceBinding{

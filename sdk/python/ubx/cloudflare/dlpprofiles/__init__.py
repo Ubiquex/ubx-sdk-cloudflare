@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .custom import Custom, CustomConfig
+from .predefined import Predefined, PredefinedConfig

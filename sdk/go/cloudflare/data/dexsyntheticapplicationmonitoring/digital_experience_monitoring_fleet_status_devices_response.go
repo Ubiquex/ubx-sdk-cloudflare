@@ -3,12 +3,108 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_CpuPctByApp struct {
+	CpuPct any
+	Name   any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_DeviceIpv4_Location struct {
+	City       any
+	CountryIso any
+	StateIso   any
+	Zip        any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_DeviceIpv4 struct {
+	Address  any
+	Asn      any
+	Aso      any
+	Location any
+	Name     any
+	Netmask  any
+	Version  any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_RamUsedPctByApp struct {
+	Name       any
+	RamUsedPct any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_Rtt_MinRttUs struct {
+	Downstream any
+	Upstream   any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_Rtt struct {
+	MinRttUs any
+	RttUs    any
+	RttVarUs any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result_TunnelStats struct {
+	BytesLost            any
+	BytesReceived        any
+	BytesRetransmitted   any
+	BytesSent            any
+	PacketsLost          any
+	PacketsReceived      any
+	PacketsRetransmitted any
+	PacketsSent          any
+	StatsWindowMs        any
+}
+
+type DigitalExperienceMonitoringFleetStatusDevicesResponse_Result struct {
+	AlwaysOn           any
+	BatteryCharging    any
+	BatteryCycles      any
+	BatteryPct         any
+	Colo               any
+	ConnectionType     any
+	CpuPct             any
+	CpuPctByApp        any
+	DeviceId           any
+	DeviceIpv4         any
+	DeviceIpv6         any
+	DeviceName         any
+	DeviceRegistration any
+	DiskReadBps        any
+	DiskUsagePct       any
+	DiskWriteBps       any
+	DohSubdomain       any
+	EstimatedLossPct   any
+	FirewallEnabled    any
+	GatewayIpv4        any
+	GatewayIpv6        any
+	HandshakeLatencyMs any
+	IspIpv4            any
+	IspIpv6            any
+	Metal              any
+	Mode               any
+	NetworkRcvdBps     any
+	NetworkSentBps     any
+	NetworkSsid        any
+	PersonEmail        any
+	Platform           any
+	RamAvailableKb     any
+	RamUsedPct         any
+	RamUsedPctByApp    any
+	RegistrationId     any
+	Rtt                any
+	Status             any
+	SwitchLocked       any
+	Timestamp          any
+	TunnelStats        any
+	TunnelType         any
+	Version            any
+	WifiStrengthDbm    any
+}
+
 type DigitalExperienceMonitoringFleetStatusDevicesResponseConfig struct {
 	// Cloudflare colo airport code.
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
+	From     any
 	// The mode under which the WARP client is run.
 	Mode any
 	// Page number of paginated results.
@@ -23,7 +119,7 @@ type DigitalExperienceMonitoringFleetStatusDevicesResponseConfig struct {
 	Source any
 	// Network status.
 	Status any
-	To any
+	To     any
 	// WARP client version.
 	Version any
 }
@@ -35,7 +131,7 @@ type DigitalExperienceMonitoringFleetStatusDevicesResponseAttrs struct {
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
+	From     any
 	// The mode under which the WARP client is run.
 	Mode any
 	// Page number of paginated results.
@@ -44,13 +140,14 @@ type DigitalExperienceMonitoringFleetStatusDevicesResponseAttrs struct {
 	PerPage any
 	// Operating system.
 	Platform any
+	Result   any
 	// Dimension to sort results by.
 	SortBy any
 	// Specifies fleet status details source.
 	Source any
 	// Network status.
 	Status any
-	To any
+	To     any
 	// WARP client version.
 	Version any
 }
@@ -58,17 +155,17 @@ type DigitalExperienceMonitoringFleetStatusDevicesResponseAttrs struct {
 var DigitalExperienceMonitoringFleetStatusDevicesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_digital_experience_monitoring_fleet_status_devices_response",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"From":     ubx.FieldSpec{WireName: "from"},
+		"Mode":     ubx.FieldSpec{WireName: "mode"},
+		"Page":     ubx.FieldSpec{WireName: "page"},
+		"PerPage":  ubx.FieldSpec{WireName: "per_page"},
 		"Platform": ubx.FieldSpec{WireName: "platform"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"SortBy":   ubx.FieldSpec{WireName: "sort_by"},
+		"Source":   ubx.FieldSpec{WireName: "source"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
+		"To":       ubx.FieldSpec{WireName: "to"},
+		"Version":  ubx.FieldSpec{WireName: "version"},
 	},
 }

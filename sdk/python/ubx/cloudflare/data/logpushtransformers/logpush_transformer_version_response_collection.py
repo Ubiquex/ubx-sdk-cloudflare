@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushTransformerVersionResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerVersionResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerVersionResponseCollection_Result:
+    created_at: Any = None
+    id: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class LogpushTransformerVersionResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -18,7 +35,12 @@ class LogpushTransformerVersionResponseCollectionConfig:
 class LogpushTransformerVersionResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     limit: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # The transformer ID.
     transformer_id: Any = None
 

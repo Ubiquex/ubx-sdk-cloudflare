@@ -3,23 +3,47 @@ package applications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AlexandriaGetApplicationsResponse_Result struct {
+	ApplicationConfidenceScore  any
+	ApplicationScoreComposition any
+	ApplicationSource           any
+	ApplicationType             any
+	ApplicationTypeDescription  any
+	CategoryId                  any
+	CreatedAt                   any
+	GenAiScore                  any
+	Hostnames                   any
+	HumanId                     any
+	Id                          any
+	IpSubnets                   any
+	Name                        any
+	PortProtocols               any
+	ReviewStatus                any
+	SupportDomains              any
+	Supported                   any
+	UpdatedAt                   any
+	Version                     any
+}
+
 type AlexandriaGetApplicationsResponseConfig struct {
 	AccountId any
-	Fields any
-	Filter any
-	Limit any
-	Offset any
-	OrderBy any
-	Search any
+	Fields    any
+	Filter    any
+	Limit     any
+	Offset    any
+	OrderBy   any
+	Search    any
 }
 
 type AlexandriaGetApplicationsResponseAttrs struct {
 	AccountId any
-	Fields any
-	Filter any
-	Limit any
-	Offset any
-	OrderBy any
+	Fields    any
+	Filter    any
+	Limit     any
+	Offset    any
+	OrderBy   any
+	// Returns the list of applications.
+	Result any
 	Search any
 }
 
@@ -27,11 +51,11 @@ var AlexandriaGetApplicationsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_alexandria_get_applications_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Fields":    ubx.FieldSpec{WireName: "fields"},
+		"Filter":    ubx.FieldSpec{WireName: "filter"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

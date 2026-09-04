@@ -3,12 +3,20 @@ package cloudflareips
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Ip_Result struct {
+	Etag         any
+	Ipv4Cidrs    any
+	Ipv6Cidrs    any
+	JdcloudCidrs any
+}
+
 type IpConfig struct {
 	Networks any
 }
 
 type IpAttrs struct {
 	Networks any
+	Result   any
 }
 
 var Ip = ubx.DataSourceBinding{

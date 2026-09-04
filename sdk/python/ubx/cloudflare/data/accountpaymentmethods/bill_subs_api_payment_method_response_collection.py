@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiPaymentMethodResponseCollection_Result:
+    address: Any = None
+    address2: Any = None
+    bank_account_type: Any = None
+    bank_code: Any = None
+    bank_country: Any = None
+    bank_name: Any = None
+    bank_routing_number: Any = None
+    cashapp_cash_tag: Any = None
+    city: Any = None
+    country: Any = None
+    default: Any = None
+    device_data: Any = None
+    expiration_date: Any = None
+    first_name: Any = None
+    id: Any = None
+    last_four: Any = None
+    last_name: Any = None
+    nick_name: Any = None
+    payment_account_email: Any = None
+    payment_email: Any = None
+    payment_gateway: Any = None
+    payment_nonce: Any = None
+    state: Any = None
+    type: Any = None
+    zipcode: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiPaymentMethodResponseCollectionConfig:
     # Page number of paginated results.
     page: Any = None
@@ -21,6 +49,7 @@ class BillSubsApiPaymentMethodResponseCollectionAttrs:
     page: Any = None
     # Number of items per page.
     per_page: Any = None
+    result: Any = None
 
 BillSubsApiPaymentMethodResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_payment_method_response_collection",

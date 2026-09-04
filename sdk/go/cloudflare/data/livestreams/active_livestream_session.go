@@ -8,7 +8,7 @@ type ActiveLivestreamSession_Data_Livestream struct {
 	CreatedAt any
 	// Specifies if the livestream was disabled.
 	Disabled any
-	Id any
+	Id       any
 	// The server URL to which the RTMP encoder sends the video and audio data.
 	IngestServer any
 	// ID of the meeting.
@@ -17,7 +17,7 @@ type ActiveLivestreamSession_Data_Livestream struct {
 	Name any
 	// The web address that viewers can use to watch the livestream.
 	PlaybackUrl any
-	Status any
+	Status      any
 	// Unique key for accessing each livestream.
 	StreamKey any
 	// Timestamp the object was updated at. The time is returned in ISO format.
@@ -26,13 +26,13 @@ type ActiveLivestreamSession_Data_Livestream struct {
 
 type ActiveLivestreamSession_Data_Session struct {
 	// Timestamp the object was created at. The time is returned in ISO format.
-	CreatedAt any
+	CreatedAt  any
 	ErrMessage any
-	Id any
+	Id         any
 	// The time duration for which the input was given or the meeting was streamed.
 	IngestSeconds any
 	// Timestamp the object was invoked. The time is returned in ISO format.
-	InvokedTime any
+	InvokedTime  any
 	LivestreamId any
 	// Timestamp the object was started. The time is returned in ISO format.
 	StartedTime any
@@ -46,14 +46,14 @@ type ActiveLivestreamSession_Data_Session struct {
 
 type ActiveLivestreamSession_Data struct {
 	Livestream any
-	Session any
+	Session    any
 }
 
 type ActiveLivestreamSessionConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId        any
 	LivestreamId any
 }
 
@@ -61,17 +61,17 @@ type ActiveLivestreamSessionAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
+	AppId        any
+	Data         any
 	LivestreamId any
-	Success any
+	Success      any
 }
 
 var ActiveLivestreamSession = ubx.DataSourceBinding{
 	WireType: "cloudflare_active_livestream_session",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"AppId":        ubx.FieldSpec{WireName: "app_id"},
 		"LivestreamId": ubx.FieldSpec{WireName: "livestream_id"},
 	},
 }

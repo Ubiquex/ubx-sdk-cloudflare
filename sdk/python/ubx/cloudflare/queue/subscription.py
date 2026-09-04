@@ -12,19 +12,43 @@ class Subscription_Destination:
     type: Any = None
 
 @dataclasses.dataclass
-class Subscription_Source:
+class Subscription_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Subscription_Result_Source:
     model_name: Any = None
     script_tag: Any = None
     type: Any = None
     worker_name: Any = None
     workflow_name: Any = None
 
+@dataclasses.dataclass
+class Subscription_Result:
+    # When the subscription was created
+    created_at: Any = None
+    # Destination configuration for the subscription
+    destination: Any = None
+    # Whether the subscription is active
+    enabled: Any = None
+    # List of event types this subscription handles
+    events: Any = None
+    # Unique identifier for the subscription
+    id: Any = None
+    # When the subscription was last modified
+    modified_at: Any = None
+    # Name of the subscription
+    name: Any = None
+    # Source configuration for the subscription
+    source: Any = None
+
 _Subscription_DestinationFields = {
     "queue_id": ubx.FieldSpec(wire_name="queue_id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Subscription_SourceFields = {
+_Subscription_Result_SourceFields = {
     "model_name": ubx.FieldSpec(wire_name="model_name"),
     "script_tag": ubx.FieldSpec(wire_name="script_tag"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -55,12 +79,17 @@ class SubscriptionAttrs:
     destination: Any = None
     # Whether the subscription is active
     enabled: Any = None
+    errors: Any = None
     # List of event types this subscription handles
     events: Any = None
+    messages: Any = None
     # Name of the subscription
     name: Any = None
+    result: Any = None
     # Source configuration for the subscription
     source: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -80,7 +109,7 @@ Subscription = ubx.ResourceBinding(
         "source": ubx.FieldSpec(
             wire_name="source",
             kind="object",
-            fields=_Subscription_SourceFields,
+            fields=_Subscription_Result_SourceFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "subscription_id": ubx.FieldSpec(wire_name="subscription_id"),

@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsFirewallReverseDnsResponse_Result:
+    ptr: Any = None
+
+@dataclasses.dataclass
 class DnsFirewallReverseDnsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +23,7 @@ class DnsFirewallReverseDnsResponseAttrs:
     account_id: Any = None
     # Identifier.
     dns_firewall_id: Any = None
+    result: Any = None
 
 DnsFirewallReverseDnsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dns_firewall_dns_firewall_reverse_dns_response",

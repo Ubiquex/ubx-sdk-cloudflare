@@ -3,6 +3,41 @@ package ipaddressmanagementbgpprefixes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingSingleResponseBgp_Result_BgpSignalOpts struct {
+	// Whether control of advertisement of the prefix to the Internet is enabled to be performed via BGP signal
+	Enabled any
+	// Last time BGP signaling control was toggled. This field is null if BGP signaling has never been enabled.
+	ModifiedAt any
+}
+
+type AddressingSingleResponseBgp_Result_OnDemand struct {
+	// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+	Advertised any
+	// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+	AdvertisedModifiedAt any
+	// Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.
+	OnDemandEnabled any
+	// Whether the advertisement status of the prefix is locked, meaning it cannot be changed.
+	OnDemandLocked any
+}
+
+type AddressingSingleResponseBgp_Result struct {
+	// Autonomous System Number (ASN) the prefix will be advertised under.
+	Asn any
+	// Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
+	AsnPrependCount any
+	// Determines if Cloudflare advertises a BYOIP BGP prefix even when there is no matching BGP prefix in the Magic routing table. When true, Cloudflare will automatically withdraw the BGP prefix when there are no matching BGP routes, and will resume advertising when there is at least one matching BGP route.
+	AutoAdvertiseWithdraw any
+	BgpSignalOpts         any
+	// IP Prefix in Classless Inter-Domain Routing format.
+	Cidr      any
+	CreatedAt any
+	// Identifier of BGP Prefix.
+	Id         any
+	ModifiedAt any
+	OnDemand   any
+}
+
 type AddressingSingleResponseBgpConfig struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
 	Cidr any
@@ -16,7 +51,8 @@ type AddressingSingleResponseBgpConfig struct {
 
 type AddressingSingleResponseBgpAttrs struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
-	Cidr any
+	Cidr   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +64,9 @@ type AddressingSingleResponseBgpAttrs struct {
 var AddressingSingleResponseBgp = ubx.ResourceBinding{
 	WireType: "cloudflare_addressing_single_response_bgp",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"Cidr":        ubx.FieldSpec{WireName: "cidr"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"PrefixId":    ubx.FieldSpec{WireName: "prefix_id"},
 		"BgpPrefixId": ubx.FieldSpec{WireName: "bgp_prefix_id"},
 	},
 }

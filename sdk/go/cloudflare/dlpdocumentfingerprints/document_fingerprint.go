@@ -3,10 +3,23 @@ package dlpdocumentfingerprints
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type DocumentFingerprintConfig struct {
-	Description any
+type DocumentFingerprint_Result struct {
+	CreatedAt    any
+	Description  any
+	EntryId      any
+	FileName     any
+	Id           any
 	MatchPercent any
-	Name any
+	Name         any
+	Status       any
+	UpdatedAt    any
+	Version      any
+}
+
+type DocumentFingerprintConfig struct {
+	Description  any
+	MatchPercent any
+	Name         any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -14,9 +27,10 @@ type DocumentFingerprintConfig struct {
 }
 
 type DocumentFingerprintAttrs struct {
-	Description any
+	Description  any
 	MatchPercent any
-	Name any
+	Name         any
+	Result       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -26,10 +40,10 @@ type DocumentFingerprintAttrs struct {
 var DocumentFingerprint = ubx.ResourceBinding{
 	WireType: "cloudflare_document_fingerprint",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MatchPercent": ubx.FieldSpec{WireName: "match_percent"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"MatchPercent":          ubx.FieldSpec{WireName: "match_percent"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"AccountId":             ubx.FieldSpec{WireName: "account_id"},
 		"DocumentFingerprintId": ubx.FieldSpec{WireName: "document_fingerprint_id"},
 	},
 }

@@ -3,16 +3,41 @@ package sinkholeconfig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSinkholesSinkholeCollectionResponse_Errors_Source struct {
+	Pointer any
+}
+
+type IntelSinkholesSinkholeCollectionResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type IntelSinkholesSinkholeCollectionResponse_Result struct {
+	AccountTag any
+	CreatedOn  any
+	Id         any
+	ModifiedOn any
+	Name       any
+	R2Bucket   any
+	R2Id       any
+}
+
 type IntelSinkholesSinkholeCollectionResponseConfig struct {
 }
 
 type IntelSinkholesSinkholeCollectionResponseAttrs struct {
 	// An identifier for the resource.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var IntelSinkholesSinkholeCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_intel_sinkholes_sinkhole_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

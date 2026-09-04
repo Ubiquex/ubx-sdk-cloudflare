@@ -6,21 +6,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamPermissionsGroupResponseCollection_AccountId struct {
 }
 
-var IamPermissionsGroupResponseCollection_AccountIdFields = ubx.FieldMap{
-	}
+type IamPermissionsGroupResponseCollection_Result struct {
+	Category any
+	Id       any
+	Name     any
+	Scopes   any
+}
+
+var IamPermissionsGroupResponseCollection_AccountIdFields = ubx.FieldMap{}
 
 type IamPermissionsGroupResponseCollectionConfig struct {
 	// Account identifier tag.
 	AccountId any
-	Name any
-	Scope any
+	Name      any
+	Scope     any
 }
 
 type IamPermissionsGroupResponseCollectionAttrs struct {
 	// Account identifier tag.
 	AccountId any
-	Name any
-	Scope any
+	Name      any
+	Result    any
+	Scope     any
 }
 
 var IamPermissionsGroupResponseCollection = ubx.DataSourceBinding{
@@ -28,10 +35,10 @@ var IamPermissionsGroupResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamPermissionsGroupResponseCollection_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamPermissionsGroupResponseCollection_AccountIdFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 	},
 }

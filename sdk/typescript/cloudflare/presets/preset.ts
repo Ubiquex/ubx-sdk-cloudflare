@@ -53,135 +53,124 @@ export interface Preset_Config {
   viewType: string | Computed<string>;
 }
 
-export interface Preset_Permissions_Chat_Private {
-  canReceive: boolean | Computed<boolean>;
-  canSend: boolean | Computed<boolean>;
-  files: boolean | Computed<boolean>;
-  text: boolean | Computed<boolean>;
+export interface Preset_Data_Permissions_Chat_Private {
+  canReceive?: boolean | Computed<boolean>;
+  canSend?: boolean | Computed<boolean>;
+  files?: boolean | Computed<boolean>;
+  text?: boolean | Computed<boolean>;
 }
 
-export interface Preset_Permissions_Chat_Public {
-  /** Can send messages in general */
-  canSend: boolean | Computed<boolean>;
-  /** Can send file messages */
-  files: boolean | Computed<boolean>;
-  /** Can send text messages */
-  text: boolean | Computed<boolean>;
+export interface Preset_Data_Permissions_Chat_Public {
+  canSend?: boolean | Computed<boolean>;
+  files?: boolean | Computed<boolean>;
+  text?: boolean | Computed<boolean>;
 }
 
-export interface Preset_Permissions_Chat {
-  private: Preset_Permissions_Chat_Private | Computed<Preset_Permissions_Chat_Private>;
-  public: Preset_Permissions_Chat_Public | Computed<Preset_Permissions_Chat_Public>;
+export interface Preset_Data_Permissions_Chat {
+  private?: Preset_Data_Permissions_Chat_Private | Computed<Preset_Data_Permissions_Chat_Private>;
+  public?: Preset_Data_Permissions_Chat_Public | Computed<Preset_Data_Permissions_Chat_Public>;
 }
 
-export interface Preset_Permissions_ConnectedMeetings {
-  canAlterConnectedMeetings: boolean | Computed<boolean>;
-  canSwitchConnectedMeetings: boolean | Computed<boolean>;
-  canSwitchToParentMeeting: boolean | Computed<boolean>;
+export interface Preset_Data_Permissions_ConnectedMeetings {
+  canAlterConnectedMeetings?: boolean | Computed<boolean>;
+  canSwitchConnectedMeetings?: boolean | Computed<boolean>;
+  canSwitchToParentMeeting?: boolean | Computed<boolean>;
 }
 
-export interface Preset_Permissions_Media_Audio {
-  /** Can produce audio */
-  canProduce: string | Computed<string>;
+export interface Preset_Data_Permissions_Media_Audio {
+  canProduce?: string | Computed<string>;
 }
 
-export interface Preset_Permissions_Media {
-  /** Audio permissions */
-  audio: Preset_Permissions_Media_Audio | Computed<Preset_Permissions_Media_Audio>;
-  /** Screenshare permissions */
-  screenshare: Preset_Permissions_Media_Audio | Computed<Preset_Permissions_Media_Audio>;
-  /** Video permissions */
-  video: Preset_Permissions_Media_Audio | Computed<Preset_Permissions_Media_Audio>;
+export interface Preset_Data_Permissions_Media {
+  audio?: Preset_Data_Permissions_Media_Audio | Computed<Preset_Data_Permissions_Media_Audio>;
+  screenshare?: Preset_Data_Permissions_Media_Audio | Computed<Preset_Data_Permissions_Media_Audio>;
+  video?: Preset_Data_Permissions_Media_Audio | Computed<Preset_Data_Permissions_Media_Audio>;
 }
 
-export interface Preset_Permissions_Plugins_Config {
+export interface Preset_Data_Permissions_Plugins_Config {
   accessControl?: string | Computed<string>;
   handlesViewOnly?: boolean | Computed<boolean>;
 }
 
-export interface Preset_Permissions_Plugins {
-  /** Can close plugins that are already open */
-  canClose: boolean | Computed<boolean>;
-  /** Can edit plugin config */
-  canEditConfig: boolean | Computed<boolean>;
-  /** Can start plugins */
-  canStart: boolean | Computed<boolean>;
-  /** Plugin configuration keyed by plugin UUID. */
-  config: Record<string, Preset_Permissions_Plugins_Config> | Computed<Record<string, Preset_Permissions_Plugins_Config>>;
+export interface Preset_Data_Permissions_Plugins {
+  canClose?: boolean | Computed<boolean>;
+  canEditConfig?: boolean | Computed<boolean>;
+  canStart?: boolean | Computed<boolean>;
+  config?: Record<string, Preset_Data_Permissions_Plugins_Config> | Computed<Record<string, Preset_Data_Permissions_Plugins_Config>>;
 }
 
-export interface Preset_Permissions_Polls {
-  /** Can create polls */
-  canCreate: boolean | Computed<boolean>;
-  /** Can view polls */
-  canView: boolean | Computed<boolean>;
-  /** Can vote on polls */
-  canVote: boolean | Computed<boolean>;
+export interface Preset_Data_Permissions_Polls {
+  canCreate?: boolean | Computed<boolean>;
+  canView?: boolean | Computed<boolean>;
+  canVote?: boolean | Computed<boolean>;
 }
 
-export interface Preset_Permissions {
+export interface Preset_Data_Permissions {
   acceptStageRequests?: boolean | Computed<boolean>;
-  /** Whether this participant can accept waiting requests */
-  acceptWaitingRequests: boolean | Computed<boolean>;
-  canAcceptProductionRequests: boolean | Computed<boolean>;
-  canChangeParticipantPermissions: boolean | Computed<boolean>;
-  canEditDisplayName: boolean | Computed<boolean>;
-  canLivestream: boolean | Computed<boolean>;
-  canRecord: boolean | Computed<boolean>;
-  canSpotlight: boolean | Computed<boolean>;
-  chat: Preset_Permissions_Chat | Computed<Preset_Permissions_Chat>;
-  connectedMeetings: Preset_Permissions_ConnectedMeetings | Computed<Preset_Permissions_ConnectedMeetings>;
-  disableParticipantAudio: boolean | Computed<boolean>;
-  disableParticipantScreensharing: boolean | Computed<boolean>;
-  disableParticipantVideo: boolean | Computed<boolean>;
-  /** Whether this participant is visible to others or not */
-  hiddenParticipant: boolean | Computed<boolean>;
+  acceptWaitingRequests?: boolean | Computed<boolean>;
+  canAcceptProductionRequests?: boolean | Computed<boolean>;
+  canChangeParticipantPermissions?: boolean | Computed<boolean>;
+  canEditDisplayName?: boolean | Computed<boolean>;
+  canLivestream?: boolean | Computed<boolean>;
+  canRecord?: boolean | Computed<boolean>;
+  canSpotlight?: boolean | Computed<boolean>;
+  chat?: Preset_Data_Permissions_Chat | Computed<Preset_Data_Permissions_Chat>;
+  connectedMeetings?: Preset_Data_Permissions_ConnectedMeetings | Computed<Preset_Data_Permissions_ConnectedMeetings>;
+  disableParticipantAudio?: boolean | Computed<boolean>;
+  disableParticipantScreensharing?: boolean | Computed<boolean>;
+  disableParticipantVideo?: boolean | Computed<boolean>;
+  hiddenParticipant?: boolean | Computed<boolean>;
   isRecorder?: boolean | Computed<boolean>;
-  kickParticipant: boolean | Computed<boolean>;
-  /** Media permissions */
-  media: Preset_Permissions_Media | Computed<Preset_Permissions_Media>;
-  pinParticipant: boolean | Computed<boolean>;
-  /** Plugin permissions */
-  plugins: Preset_Permissions_Plugins | Computed<Preset_Permissions_Plugins>;
-  /** Poll permissions */
-  polls: Preset_Permissions_Polls | Computed<Preset_Permissions_Polls>;
-  /** Type of the recording peer */
-  recorderType: string | Computed<string>;
-  showParticipantList: boolean | Computed<boolean>;
+  kickParticipant?: boolean | Computed<boolean>;
+  media?: Preset_Data_Permissions_Media | Computed<Preset_Data_Permissions_Media>;
+  pinParticipant?: boolean | Computed<boolean>;
+  plugins?: Preset_Data_Permissions_Plugins | Computed<Preset_Data_Permissions_Plugins>;
+  polls?: Preset_Data_Permissions_Polls | Computed<Preset_Data_Permissions_Polls>;
+  recorderType?: string | Computed<string>;
+  showParticipantList?: boolean | Computed<boolean>;
   stageAccess?: string | Computed<string>;
   stageEnabled?: boolean | Computed<boolean>;
   transcriptionEnabled?: boolean | Computed<boolean>;
-  /** Waiting room type */
-  waitingRoomType: string | Computed<string>;
+  waitingRoomType?: string | Computed<string>;
 }
 
-export interface Preset_Ui_DesignTokens_Colors_Background {
+export interface Preset_Data_Ui_DesignTokens_Colors_Background {
 }
 
-export interface Preset_Ui_DesignTokens_Colors {
-  background: Preset_Ui_DesignTokens_Colors_Background | Computed<Preset_Ui_DesignTokens_Colors_Background>;
-  brand: Preset_Ui_DesignTokens_Colors_Background | Computed<Preset_Ui_DesignTokens_Colors_Background>;
-  danger: string | Computed<string>;
-  success: string | Computed<string>;
-  text: string | Computed<string>;
-  textOnBrand: string | Computed<string>;
-  videoBg: string | Computed<string>;
-  warning: string | Computed<string>;
+export interface Preset_Data_Ui_DesignTokens_Colors {
+  background?: Preset_Data_Ui_DesignTokens_Colors_Background | Computed<Preset_Data_Ui_DesignTokens_Colors_Background>;
+  brand?: Preset_Data_Ui_DesignTokens_Colors_Background | Computed<Preset_Data_Ui_DesignTokens_Colors_Background>;
+  danger?: string | Computed<string>;
+  success?: string | Computed<string>;
+  text?: string | Computed<string>;
+  textOnBrand?: string | Computed<string>;
+  videoBg?: string | Computed<string>;
+  warning?: string | Computed<string>;
 }
 
-export interface Preset_Ui_DesignTokens {
-  borderRadius: string | Computed<string>;
-  borderWidth: string | Computed<string>;
-  colors: Preset_Ui_DesignTokens_Colors | Computed<Preset_Ui_DesignTokens_Colors>;
+export interface Preset_Data_Ui_DesignTokens {
+  borderRadius?: string | Computed<string>;
+  borderWidth?: string | Computed<string>;
+  colors?: Preset_Data_Ui_DesignTokens_Colors | Computed<Preset_Data_Ui_DesignTokens_Colors>;
   fontFamily?: string | Computed<string>;
   googleFont?: string | Computed<string>;
   logo?: string | Computed<string>;
-  spacingBase: number | Computed<number>;
-  theme: string | Computed<string>;
+  spacingBase?: number | Computed<number>;
+  theme?: string | Computed<string>;
 }
 
-export interface Preset_Ui {
-  designTokens: Preset_Ui_DesignTokens | Computed<Preset_Ui_DesignTokens>;
+export interface Preset_Data_Ui {
+  designTokens?: Preset_Data_Ui_DesignTokens | Computed<Preset_Data_Ui_DesignTokens>;
+}
+
+export interface Preset_Data {
+  config?: Preset_Config | Computed<Preset_Config>;
+  createdAt?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+  permissions?: Preset_Data_Permissions | Computed<Preset_Data_Permissions>;
+  ui?: Preset_Data_Ui | Computed<Preset_Data_Ui>;
+  updatedAt?: string | Computed<string>;
 }
 
 const Preset_Config_MaxVideoStreamsFields: FieldMap = {
@@ -239,83 +228,83 @@ const Preset_ConfigFields: FieldMap = {
   viewType: "view_type",
 };
 
-const Preset_Permissions_Chat_PrivateFields: FieldMap = {
+const Preset_Data_Permissions_Chat_PrivateFields: FieldMap = {
   canReceive: "can_receive",
   canSend: "can_send",
   files: "files",
   text: "text",
 };
 
-const Preset_Permissions_Chat_PublicFields: FieldMap = {
+const Preset_Data_Permissions_Chat_PublicFields: FieldMap = {
   canSend: "can_send",
   files: "files",
   text: "text",
 };
 
-const Preset_Permissions_ChatFields: FieldMap = {
+const Preset_Data_Permissions_ChatFields: FieldMap = {
   private: {
     wireName: "private",
     kind: "object",
-    fields: Preset_Permissions_Chat_PrivateFields,
+    fields: Preset_Data_Permissions_Chat_PrivateFields,
   },
   public: {
     wireName: "public",
     kind: "object",
-    fields: Preset_Permissions_Chat_PublicFields,
+    fields: Preset_Data_Permissions_Chat_PublicFields,
   },
 };
 
-const Preset_Permissions_ConnectedMeetingsFields: FieldMap = {
+const Preset_Data_Permissions_ConnectedMeetingsFields: FieldMap = {
   canAlterConnectedMeetings: "can_alter_connected_meetings",
   canSwitchConnectedMeetings: "can_switch_connected_meetings",
   canSwitchToParentMeeting: "can_switch_to_parent_meeting",
 };
 
-const Preset_Permissions_Media_AudioFields: FieldMap = {
+const Preset_Data_Permissions_Media_AudioFields: FieldMap = {
   canProduce: "can_produce",
 };
 
-const Preset_Permissions_MediaFields: FieldMap = {
+const Preset_Data_Permissions_MediaFields: FieldMap = {
   audio: {
     wireName: "audio",
     kind: "object",
-    fields: Preset_Permissions_Media_AudioFields,
+    fields: Preset_Data_Permissions_Media_AudioFields,
   },
   screenshare: {
     wireName: "screenshare",
     kind: "object",
-    fields: Preset_Permissions_Media_AudioFields,
+    fields: Preset_Data_Permissions_Media_AudioFields,
   },
   video: {
     wireName: "video",
     kind: "object",
-    fields: Preset_Permissions_Media_AudioFields,
+    fields: Preset_Data_Permissions_Media_AudioFields,
   },
 };
 
-const Preset_Permissions_Plugins_ConfigFields: FieldMap = {
+const Preset_Data_Permissions_Plugins_ConfigFields: FieldMap = {
   accessControl: "access_control",
   handlesViewOnly: "handles_view_only",
 };
 
-const Preset_Permissions_PluginsFields: FieldMap = {
+const Preset_Data_Permissions_PluginsFields: FieldMap = {
   canClose: "can_close",
   canEditConfig: "can_edit_config",
   canStart: "can_start",
   config: {
     wireName: "config",
     kind: "map",
-    fields: Preset_Permissions_Plugins_ConfigFields,
+    fields: Preset_Data_Permissions_Plugins_ConfigFields,
   },
 };
 
-const Preset_Permissions_PollsFields: FieldMap = {
+const Preset_Data_Permissions_PollsFields: FieldMap = {
   canCreate: "can_create",
   canView: "can_view",
   canVote: "can_vote",
 };
 
-const Preset_PermissionsFields: FieldMap = {
+const Preset_Data_PermissionsFields: FieldMap = {
   acceptStageRequests: "accept_stage_requests",
   acceptWaitingRequests: "accept_waiting_requests",
   canAcceptProductionRequests: "can_accept_production_requests",
@@ -327,12 +316,12 @@ const Preset_PermissionsFields: FieldMap = {
   chat: {
     wireName: "chat",
     kind: "object",
-    fields: Preset_Permissions_ChatFields,
+    fields: Preset_Data_Permissions_ChatFields,
   },
   connectedMeetings: {
     wireName: "connected_meetings",
     kind: "object",
-    fields: Preset_Permissions_ConnectedMeetingsFields,
+    fields: Preset_Data_Permissions_ConnectedMeetingsFields,
   },
   disableParticipantAudio: "disable_participant_audio",
   disableParticipantScreensharing: "disable_participant_screensharing",
@@ -343,18 +332,18 @@ const Preset_PermissionsFields: FieldMap = {
   media: {
     wireName: "media",
     kind: "object",
-    fields: Preset_Permissions_MediaFields,
+    fields: Preset_Data_Permissions_MediaFields,
   },
   pinParticipant: "pin_participant",
   plugins: {
     wireName: "plugins",
     kind: "object",
-    fields: Preset_Permissions_PluginsFields,
+    fields: Preset_Data_Permissions_PluginsFields,
   },
   polls: {
     wireName: "polls",
     kind: "object",
-    fields: Preset_Permissions_PollsFields,
+    fields: Preset_Data_Permissions_PollsFields,
   },
   recorderType: "recorder_type",
   showParticipantList: "show_participant_list",
@@ -364,19 +353,19 @@ const Preset_PermissionsFields: FieldMap = {
   waitingRoomType: "waiting_room_type",
 };
 
-const Preset_Ui_DesignTokens_Colors_BackgroundFields: FieldMap = {
+const Preset_Data_Ui_DesignTokens_Colors_BackgroundFields: FieldMap = {
 };
 
-const Preset_Ui_DesignTokens_ColorsFields: FieldMap = {
+const Preset_Data_Ui_DesignTokens_ColorsFields: FieldMap = {
   background: {
     wireName: "background",
     kind: "object",
-    fields: Preset_Ui_DesignTokens_Colors_BackgroundFields,
+    fields: Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
   },
   brand: {
     wireName: "brand",
     kind: "object",
-    fields: Preset_Ui_DesignTokens_Colors_BackgroundFields,
+    fields: Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
   },
   danger: "danger",
   success: "success",
@@ -386,13 +375,13 @@ const Preset_Ui_DesignTokens_ColorsFields: FieldMap = {
   warning: "warning",
 };
 
-const Preset_Ui_DesignTokensFields: FieldMap = {
+const Preset_Data_Ui_DesignTokensFields: FieldMap = {
   borderRadius: "border_radius",
   borderWidth: "border_width",
   colors: {
     wireName: "colors",
     kind: "object",
-    fields: Preset_Ui_DesignTokens_ColorsFields,
+    fields: Preset_Data_Ui_DesignTokens_ColorsFields,
   },
   fontFamily: "font_family",
   googleFont: "google_font",
@@ -401,11 +390,11 @@ const Preset_Ui_DesignTokensFields: FieldMap = {
   theme: "theme",
 };
 
-const Preset_UiFields: FieldMap = {
+const Preset_Data_UiFields: FieldMap = {
   designTokens: {
     wireName: "design_tokens",
     kind: "object",
-    fields: Preset_Ui_DesignTokensFields,
+    fields: Preset_Data_Ui_DesignTokensFields,
   },
 };
 
@@ -413,8 +402,8 @@ export interface PresetConfig {
   config: Preset_Config | Computed<Preset_Config>;
   /** Name of the preset */
   name: string | Computed<string>;
-  permissions: Preset_Permissions | Computed<Preset_Permissions>;
-  ui: Preset_Ui | Computed<Preset_Ui>;
+  permissions: Preset_Data_Permissions | Computed<Preset_Data_Permissions>;
+  ui: Preset_Data_Ui | Computed<Preset_Data_Ui>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -425,10 +414,13 @@ export interface PresetConfig {
 
 export interface PresetAttrs {
   config: Preset_Config;
+  data: Preset_Data;
   /** Name of the preset */
   name: string;
-  permissions: Preset_Permissions;
-  ui: Preset_Ui;
+  permissions: Preset_Data_Permissions;
+  /** Success status of the operation */
+  success: boolean;
+  ui: Preset_Data_Ui;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -449,12 +441,12 @@ export const Preset: ResourceBinding<PresetConfig, PresetAttrs> = {
     permissions: {
       wireName: "permissions",
       kind: "object",
-      fields: Preset_PermissionsFields,
+      fields: Preset_Data_PermissionsFields,
     },
     ui: {
       wireName: "ui",
       kind: "object",
-      fields: Preset_UiFields,
+      fields: Preset_Data_UiFields,
     },
     accountId: "account_id",
     appId: "app_id",

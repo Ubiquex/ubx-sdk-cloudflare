@@ -3,12 +3,20 @@ package devicesresilience
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesGlobalWarpOverrideResponse_Result struct {
+	// Disconnects all devices on the account using Global WARP override.
+	Disconnect any
+	// When the Global WARP override state was updated.
+	Timestamp any
+}
+
 type TeamsDevicesGlobalWarpOverrideResponseConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesGlobalWarpOverrideResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesGlobalWarpOverrideResponse = ubx.DataSourceBinding{

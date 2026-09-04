@@ -3,6 +3,11 @@ package notificationdestinationswithpagerduty
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaIdResponse_Result struct {
+	// UUID
+	Id any
+}
+
 type AaaIdResponseConfig struct {
 	// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
 	Name any
@@ -18,7 +23,8 @@ type AaaIdResponseConfig struct {
 
 type AaaIdResponseAttrs struct {
 	// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
-	Name any
+	Name   any
+	Result any
 	// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 	Secret any
 	// The POST endpoint to call when dispatching a notification.
@@ -32,10 +38,10 @@ type AaaIdResponseAttrs struct {
 var AaaIdResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_aaa_id_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Secret":    ubx.FieldSpec{WireName: "secret"},
+		"Url":       ubx.FieldSpec{WireName: "url"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TokenId": ubx.FieldSpec{WireName: "token_id"},
+		"TokenId":   ubx.FieldSpec{WireName: "token_id"},
 	},
 }

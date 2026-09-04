@@ -7,6 +7,54 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnReadAccountProvidersResponse_Result_Status_DiscoveryProgress:
+    done: Any = None
+    total: Any = None
+    unit: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountProvidersResponse_Result_Status_InUseBy:
+    client_type: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountProvidersResponse_Result_Status:
+    credentials_good_since: Any = None
+    credentials_missing_since: Any = None
+    credentials_rejected_since: Any = None
+    discovery_message: Any = None
+    discovery_message_v2: Any = None
+    discovery_progress: Any = None
+    discovery_progress_v2: Any = None
+    in_use_by: Any = None
+    last_discovery_completed_at: Any = None
+    last_discovery_completed_at_v2: Any = None
+    last_discovery_started_at: Any = None
+    last_discovery_started_at_v2: Any = None
+    last_discovery_status: Any = None
+    last_discovery_status_v2: Any = None
+    last_updated: Any = None
+    regions: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountProvidersResponse_Result:
+    aws_arn: Any = None
+    azure_subscription_id: Any = None
+    azure_tenant_id: Any = None
+    cloud_type: Any = None
+    description: Any = None
+    friendly_name: Any = None
+    gcp_project_id: Any = None
+    gcp_service_account_email: Any = None
+    id: Any = None
+    last_updated: Any = None
+    lifecycle_state: Any = None
+    state: Any = None
+    state_v2: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class McnReadAccountProvidersResponseConfig:
     account_id: Any = None
     cloudflare: Any = None
@@ -20,6 +68,7 @@ class McnReadAccountProvidersResponseAttrs:
     cloudflare: Any = None
     desc: Any = None
     order_by: Any = None
+    result: Any = None
     status: Any = None
 
 McnReadAccountProvidersResponse = ubx.DataSourceBinding(

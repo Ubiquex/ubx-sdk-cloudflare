@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomPagesCustomAssetResultList_Result:
+    description: Any = None
+    last_updated: Any = None
+    name: Any = None
+    size_bytes: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
 class CustomPagesCustomAssetResultListConfig:
     # Identifier.
     account_identifier: Any = None
@@ -19,6 +27,7 @@ class CustomPagesCustomAssetResultListAttrs:
     account_identifier: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 CustomPagesCustomAssetResultList = ubx.DataSourceBinding(
     wire_type="cloudflare_custom_pages_custom_asset_result_list",

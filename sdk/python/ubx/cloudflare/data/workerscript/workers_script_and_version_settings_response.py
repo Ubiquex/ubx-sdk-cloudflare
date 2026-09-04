@@ -7,6 +7,144 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_Annotations:
+    pass
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_CacheOptions:
+    # Whether cached responses are shared across Worker version uploads. This is independent of `enabled`. It can stay true while caching is off, so the preference survives turning caching off and back on.
+    cross_version_cache: Any = None
+    # Whether caching is enabled for this Worker.
+    enabled: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Info:
+    class_: Any = None
+    message: Any = None
+    namespace_id: Any = None
+    referencing_scripts: Any = None
+    scenario: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Renamed:
+    from_: Any = None
+    to: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_TransferPending:
+    class_: Any = None
+    from_: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Transferred:
+    class_: Any = None
+    phase: Any = None
+    to: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Warnings:
+    class_: Any = None
+    message: Any = None
+    namespace_id: Any = None
+    scenario: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation:
+    created: Any = None
+    deleted: Any = None
+    info: Any = None
+    removable_entries: Any = None
+    renamed: Any = None
+    transfer_pending: Any = None
+    transferred: Any = None
+    updated: Any = None
+    warnings: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_Limits:
+    # The amount of CPU time this Worker can use in milliseconds.
+    cpu_ms: Any = None
+    # The number of subrequests this Worker can make per request.
+    subrequests: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_Observability_Logs:
+    # A list of destinations where logs will be exported to.
+    destinations: Any = None
+    # Whether logs are enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+    invocation_logs: Any = None
+    # Whether log persistence is enabled for the Worker.
+    persist: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_Observability_Traces:
+    # A list of destinations where traces will be exported to.
+    destinations: Any = None
+    # Whether traces are enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for traces. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Whether trace persistence is enabled for the Worker.
+    persist: Any = None
+    # Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. "authenticated" honors inbound trace context only when accompanied by a valid trace auth token. "accept" unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.
+    propagation_policy: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result_Observability:
+    # Whether observability is enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Log settings for the Worker.
+    logs: Any = None
+    # Whether query strings are removed from request URLs in logs and traces.
+    redact_query_string: Any = None
+    # Trace settings for the Worker.
+    traces: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptAndVersionSettingsResponse_Result:
+    # Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.
+    annotations: Any = None
+    bindings: Any = None
+    # Global CacheW configuration for the Worker. When caching is on, the platform provisions a `cloudflare.app` zone for the Worker. A `type: worker` entry in the `exports` map can override this value for a single entrypoint.
+    cache_options: Any = None
+    compatibility_date: Any = None
+    compatibility_flags: Any = None
+    # Declarative exports for the Worker. Worker entrypoint entries (`type: worker`) carry cache configuration for that entrypoint.
+    exports: Any = None
+    # Summary of the declarative exports reconciliation that ran on this upload. Populated only when the uploaded metadata included an `exports` block. Durable Object entries drive reconciliation; `type: worker` entries do not contribute to this summary.
+    exports_reconciliation: Any = None
+    # Limits to apply for this Worker.
+    limits: Any = None
+    # Whether Logpush is turned on for the Worker.
+    logpush: Any = None
+    # Migrations to apply for Durable Objects associated with this Worker.
+    migrations: Any = None
+    # Observability settings for the Worker.
+    observability: Any = None
+    placement: Any = None
+    tags: Any = None
+    tail_consumers: Any = None
+    # Usage model for the Worker invocations.
+    usage_model: Any = None
+
+@dataclasses.dataclass
 class WorkersScriptAndVersionSettingsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +155,13 @@ class WorkersScriptAndVersionSettingsResponseConfig:
 class WorkersScriptAndVersionSettingsResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 WorkersScriptAndVersionSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_workers_script_and_version_settings_response",

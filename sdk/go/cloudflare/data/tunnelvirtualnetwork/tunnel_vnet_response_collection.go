@@ -3,6 +3,15 @@ package tunnelvirtualnetwork
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelVnetResponseCollection_Result struct {
+	Comment          any
+	CreatedAt        any
+	DeletedAt        any
+	Id               any
+	IsDefaultNetwork any
+	Name             any
+}
+
 type TunnelVnetResponseCollectionConfig struct {
 	// UUID of the virtual network.
 	Id any
@@ -28,16 +37,17 @@ type TunnelVnetResponseCollectionAttrs struct {
 	// If `true`, only include deleted virtual networks. If `false`, exclude deleted virtual networks. If empty, all virtual networks will be included.
 	IsDeleted any
 	// A user-friendly name for the virtual network.
-	Name any
+	Name   any
+	Result any
 }
 
 var TunnelVnetResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_vnet_response_collection",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
+		"IsDefault":        ubx.FieldSpec{WireName: "is_default"},
 		"IsDefaultNetwork": ubx.FieldSpec{WireName: "is_default_network"},
-		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IsDeleted":        ubx.FieldSpec{WireName: "is_deleted"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 	},
 }

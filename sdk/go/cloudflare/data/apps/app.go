@@ -5,39 +5,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_Data struct {
 	CreatedAt any
-	Id any
-	Name any
+	Id        any
+	Name      any
 }
 
 type App_Paging struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	TotalCount any
+	TotalCount  any
 }
 
 type AppConfig struct {
-	PageNo any
-	PerPage any
-	Search any
+	PageNo    any
+	PerPage   any
+	Search    any
 	SortOrder any
 }
 
 type AppAttrs struct {
-	Data any
-	PageNo any
-	Paging any
-	PerPage any
-	Search any
+	Data      any
+	PageNo    any
+	Paging    any
+	PerPage   any
+	Search    any
 	SortOrder any
-	Success any
+	Success   any
 }
 
 var App = ubx.DataSourceBinding{
 	WireType: "cloudflare_app",
 	Fields: ubx.FieldMap{
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"PageNo":    ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

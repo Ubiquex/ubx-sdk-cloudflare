@@ -4,19 +4,19 @@ package images
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Image_Result_Images struct {
-	Creator any
-	Filename any
-	Id any
-	Meta any
+	Creator           any
+	Filename          any
+	Id                any
+	Meta              any
 	RequireSignedUrls any
-	Uploaded any
-	Variants any
+	Uploaded          any
+	Variants          any
 }
 
 type Image_Result struct {
 	// Continuation token for a next page. List images V2 returns continuation_token
 	ContinuationToken any
-	Images any
+	Images            any
 }
 
 type ImageConfig struct {
@@ -41,19 +41,19 @@ type ImageAttrs struct {
 	Creator any
 	// Number of items per page
 	PerPage any
-	Result any
+	Result  any
 	// Sorting order by upload time
 	SortOrder any
-	Success any
+	Success   any
 }
 
 var Image = ubx.DataSourceBinding{
 	WireType: "cloudflare_image",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"ContinuationToken": ubx.FieldSpec{WireName: "continuation_token"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Creator":           ubx.FieldSpec{WireName: "creator"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
+		"SortOrder":         ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

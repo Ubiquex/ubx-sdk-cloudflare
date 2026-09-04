@@ -3,6 +3,25 @@ package hyperdrive
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Config_Errors_Source struct {
+	Pointer any
+}
+
+type Config_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Config_Result struct {
+	AccountId any
+	Frequency any
+	Id        any
+	Ips       any
+	Ports     any
+}
+
 type ConfigConfig struct {
 	// Defines the Account ID.
 	AccountId any
@@ -11,6 +30,11 @@ type ConfigConfig struct {
 type ConfigAttrs struct {
 	// Defines the Account ID.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Config = ubx.DataSourceBinding{

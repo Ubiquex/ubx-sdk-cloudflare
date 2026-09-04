@@ -7,12 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnGetMagicWanAddressSpaceResponse_Result:
+    prefixes: Any = None
+
+@dataclasses.dataclass
 class McnGetMagicWanAddressSpaceResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class McnGetMagicWanAddressSpaceResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 McnGetMagicWanAddressSpaceResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_mcn_get_magic_wan_address_space_response",

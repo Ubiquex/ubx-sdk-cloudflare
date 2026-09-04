@@ -15,6 +15,7 @@ class ProfileConfig:
 class ProfileAttrs:
     account_id: Any = None
     all: Any = None
+    result: Any = None
 
 Profile = ubx.DataSourceBinding(
     wire_type="cloudflare_profile",

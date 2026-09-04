@@ -3,6 +3,24 @@ package callsturnkeys
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CallsTurnKeyCollection_Errors_Source struct {
+	Pointer any
+}
+
+type CallsTurnKeyCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type CallsTurnKeyCollection_Result struct {
+	Created  any
+	Modified any
+	Name     any
+	Uid      any
+}
+
 type CallsTurnKeyCollectionConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -11,6 +29,11 @@ type CallsTurnKeyCollectionConfig struct {
 type CallsTurnKeyCollectionAttrs struct {
 	// The account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var CallsTurnKeyCollection = ubx.DataSourceBinding{

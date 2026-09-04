@@ -3,18 +3,31 @@ package accountsubscriptions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiCancelReasonResponseSingle_Result struct {
+	// The cancel reason identifier.
+	Id any
+	// Additional cancellation details.
+	Other any
+	// The cancellation reason codes.
+	ReasonCode any
+	// When the cancel reason was submitted.
+	Submitted any
+	// The subscription identifier.
+	SubscriptionId any
+}
+
 type BillSubsApiCancelReasonResponseSingleConfig struct {
 }
 
 type BillSubsApiCancelReasonResponseSingleAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 	// Subscription identifier tag.
 	SubscriptionIdentifier any
 }
 
 var BillSubsApiCancelReasonResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_cancel_reason_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

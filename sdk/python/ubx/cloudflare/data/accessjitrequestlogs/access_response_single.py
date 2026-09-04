@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseSingle_Result_Events:
+    actor_email: Any = None
+    actor_idp: Any = None
+    actor_uuid: Any = None
+    decision_outcome: Any = None
+    ray_id: Any = None
+    session_duration_seconds: Any = None
+    success: Any = None
+    timestamp: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AccessResponseSingle_Result:
+    app_aud: Any = None
+    app_hostname: Any = None
+    approvals_received: Any = None
+    approver_emails: Any = None
+    created_at: Any = None
+    events: Any = None
+    expires_at: Any = None
+    knock_request_id: Any = None
+    purpose_justification: Any = None
+    requester_email: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class AccessResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +43,7 @@ class AccessResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
     knock_request_id: Any = None
+    result: Any = None
 
 AccessResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_single",

@@ -7,11 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsSingleResponseOutgoing_Result:
+    # The time for a specific event.
+    checked_time: Any = None
+    # The time for a specific event.
+    created_time: Any = None
+    id: Any = None
+    # The time for a specific event.
+    last_transferred_time: Any = None
+    # Zone name.
+    name: Any = None
+    # A list of peer tags.
+    peers: Any = None
+    # The serial number of the SOA for the given zone.
+    soa_serial: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsSingleResponseOutgoingConfig:
     pass
 
 @dataclasses.dataclass
 class SecondaryDnsSingleResponseOutgoingAttrs:
+    result: Any = None
     zone_id: Any = None
 
 SecondaryDnsSingleResponseOutgoing = ubx.DataSourceBinding(

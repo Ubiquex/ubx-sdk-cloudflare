@@ -3,32 +3,51 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImpersonationRegistry_Result_CreatedAt struct {
+}
+
+type ImpersonationRegistry_Result struct {
+	Comments                any
+	CreatedAt               any
+	DirectoryId             any
+	DirectoryNodeId         any
+	Email                   any
+	ExternalDirectoryNodeId any
+	Id                      any
+	IsEmailRegex            any
+	LastModified            any
+	ModifiedAt              any
+	Name                    any
+	Provenance              any
+}
+
 type ImpersonationRegistryConfig struct {
-	Direction any
-	Order any
-	Page any
-	PerPage any
+	Direction  any
+	Order      any
+	Page       any
+	PerPage    any
 	Provenance any
-	Search any
+	Search     any
 }
 
 type ImpersonationRegistryAttrs struct {
-	Direction any
-	Order any
-	Page any
-	PerPage any
+	Direction  any
+	Order      any
+	Page       any
+	PerPage    any
 	Provenance any
-	Search any
+	Result     any
+	Search     any
 }
 
 var ImpersonationRegistry = ubx.DataSourceBinding{
 	WireType: "cloudflare_impersonation_registry",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Direction":  ubx.FieldSpec{WireName: "direction"},
+		"Order":      ubx.FieldSpec{WireName: "order"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
 		"Provenance": ubx.FieldSpec{WireName: "provenance"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":     ubx.FieldSpec{WireName: "search"},
 	},
 }

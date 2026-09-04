@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TrendResponse_Result:
+    # Cumulative Layout Shift trend.
+    cls: Any = None
+    # First Contentful Paint trend.
+    fcp: Any = None
+    # Largest Contentful Paint trend.
+    lcp: Any = None
+    # The Lighthouse score trend.
+    performance_score: Any = None
+    # Speed Index trend.
+    si: Any = None
+    # Total Blocking Time trend.
+    tbt: Any = None
+    # Time To First Byte trend.
+    ttfb: Any = None
+    # Time To Interactive trend.
+    tti: Any = None
+
+@dataclasses.dataclass
 class TrendResponseConfig:
     # The type of device.
     device_type: Any = None
@@ -29,6 +48,7 @@ class TrendResponseAttrs:
     metrics: Any = None
     # A test region.
     region: Any = None
+    result: Any = None
     start: Any = None
     tz: Any = None
     # A URL.

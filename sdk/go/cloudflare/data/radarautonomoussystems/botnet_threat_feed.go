@@ -4,17 +4,17 @@ package radarautonomoussystems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BotnetThreatFeed_Result_Ases struct {
-	Asn any
-	Country any
-	Name any
-	Rank any
+	Asn        any
+	Country    any
+	Name       any
+	Rank       any
 	RankChange any
 }
 
 type BotnetThreatFeed_Result_Meta struct {
 	CompareDate any
-	Date any
-	Total any
+	Date        any
+	Total       any
 }
 
 type BotnetThreatFeed_Result struct {
@@ -63,20 +63,20 @@ type BotnetThreatFeedAttrs struct {
 	Result any
 	// Sort order.
 	SortOrder any
-	Success any
+	Success   any
 }
 
 var BotnetThreatFeed = ubx.DataSourceBinding{
 	WireType: "cloudflare_botnet_threat_feed",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"Asn":              ubx.FieldSpec{WireName: "asn"},
 		"CompareDateRange": ubx.FieldSpec{WireName: "compare_date_range"},
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Date":             ubx.FieldSpec{WireName: "date"},
+		"Format":           ubx.FieldSpec{WireName: "format"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"Location":         ubx.FieldSpec{WireName: "location"},
+		"Metric":           ubx.FieldSpec{WireName: "metric"},
+		"Offset":           ubx.FieldSpec{WireName: "offset"},
+		"SortOrder":        ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

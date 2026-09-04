@@ -7,12 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesFallbackDomainResponseCollection_Result:
+    description: Any = None
+    dns_server: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesFallbackDomainResponseCollectionConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesFallbackDomainResponseCollectionAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesFallbackDomainResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_fallback_domain_response_collection",

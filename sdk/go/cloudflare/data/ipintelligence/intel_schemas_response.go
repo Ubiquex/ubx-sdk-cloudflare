@@ -3,6 +3,26 @@ package ipintelligence
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSchemasResponse_Result_BelongsToRef struct {
+	Country     any
+	Description any
+	Id          any
+	Type        any
+	Value       any
+}
+
+type IntelSchemasResponse_Result_RiskTypes struct {
+	Id              any
+	Name            any
+	SuperCategoryId any
+}
+
+type IntelSchemasResponse_Result struct {
+	BelongsToRef any
+	Ip           any
+	RiskTypes    any
+}
+
 type IntelSchemasResponseConfig struct {
 	Ipv4 any
 	Ipv6 any
@@ -11,8 +31,9 @@ type IntelSchemasResponseConfig struct {
 type IntelSchemasResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Ipv4 any
-	Ipv6 any
+	Ipv4      any
+	Ipv6      any
+	Result    any
 }
 
 var IntelSchemasResponse = ubx.DataSourceBinding{

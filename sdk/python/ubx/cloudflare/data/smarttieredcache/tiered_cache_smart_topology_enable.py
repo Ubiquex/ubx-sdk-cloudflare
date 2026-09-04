@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TieredCacheSmartTopologyEnable_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class TieredCacheSmartTopologyEnableConfig:
     pass
 
 @dataclasses.dataclass
 class TieredCacheSmartTopologyEnableAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

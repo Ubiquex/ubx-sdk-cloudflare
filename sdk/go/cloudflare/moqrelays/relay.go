@@ -3,6 +3,36 @@ package moqrelays
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Relay_Errors struct {
+	Code    any
+	Message any
+}
+
+type Relay_Result_Config_Upstreams_Upstreams struct {
+	Url any
+}
+
+type Relay_Result_Config_Upstreams struct {
+	Enabled any
+	// Ordered list of upstream MOQT server publishers. Each entry is an object (not a bare string) so per-upstream configuration can be added in the future without another breaking change.
+	Upstreams any
+}
+
+type Relay_Result_Config struct {
+	// Upstreams are external MOQT server publishers that a relay falls back to when it has no local publisher for a requested namespace/track.
+	Upstreams any
+}
+
+type Relay_Result struct {
+	Config   any
+	Created  any
+	Modified any
+	Name     any
+	// "connected" when active, omitted otherwise.
+	Status any
+	Uid    any
+}
+
 type RelayConfig struct {
 	// Human-readable name for the relay.
 	Name any
@@ -13,8 +43,13 @@ type RelayConfig struct {
 }
 
 type RelayAttrs struct {
+	Errors   any
+	Messages any
 	// Human-readable name for the relay.
 	Name any
+	// Full relay details (no tokens).
+	Result  any
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +59,8 @@ type RelayAttrs struct {
 var Relay = ubx.ResourceBinding{
 	WireType: "cloudflare_relay",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RelayId": ubx.FieldSpec{WireName: "relay_id"},
+		"RelayId":   ubx.FieldSpec{WireName: "relay_id"},
 	},
 }

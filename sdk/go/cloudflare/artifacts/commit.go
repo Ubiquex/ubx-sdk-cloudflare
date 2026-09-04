@@ -8,33 +8,33 @@ type Commit_Errors_Source struct {
 }
 
 type Commit_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Commit_Result_Author struct {
 	Email any
-	Name any
+	Name  any
 }
 
 type Commit_Result struct {
-	Author any
-	AuthoredAt any
+	Author      any
+	AuthoredAt  any
 	CommittedAt any
-	Committer any
-	Hash any
-	Message any
-	Parents any
-	TreeHash any
+	Committer   any
+	Hash        any
+	Message     any
+	Parents     any
+	TreeHash    any
 }
 
 type Commit_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -42,9 +42,9 @@ type Commit_ResultInfo struct {
 type CommitConfig struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Name any
-	ReadOnly any
+	Description   any
+	Name          any
+	ReadOnly      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -56,14 +56,14 @@ type CommitConfig struct {
 type CommitAttrs struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Errors any
-	Messages any
-	Name any
-	ReadOnly any
-	Result any
-	ResultInfo any
-	Success any
+	Description   any
+	Errors        any
+	Messages      any
+	Name          any
+	ReadOnly      any
+	Result        any
+	ResultInfo    any
+	Success       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -76,11 +76,11 @@ var Commit = ubx.ResourceBinding{
 	WireType: "cloudflare_commit",
 	Fields: ubx.FieldMap{
 		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Hash": ubx.FieldSpec{WireName: "hash"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ReadOnly":      ubx.FieldSpec{WireName: "read_only"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Namespace":     ubx.FieldSpec{WireName: "namespace"},
+		"Hash":          ubx.FieldSpec{WireName: "hash"},
 	},
 }

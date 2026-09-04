@@ -20,7 +20,7 @@ type CategoryAttrs struct {
 var Category = ubx.DataSourceBinding{
 	WireType: "cloudflare_category",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"DatasetIds": ubx.FieldSpec{WireName: "dataset_ids"},
 	},
 }

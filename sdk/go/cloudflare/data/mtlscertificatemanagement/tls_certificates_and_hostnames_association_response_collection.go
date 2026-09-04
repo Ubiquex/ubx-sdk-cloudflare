@@ -3,6 +3,11 @@ package mtlscertificatemanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesAssociationResponseCollection_Result struct {
+	Service any
+	Status  any
+}
+
 type TlsCertificatesAndHostnamesAssociationResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -15,12 +20,13 @@ type TlsCertificatesAndHostnamesAssociationResponseCollectionAttrs struct {
 	AccountId any
 	// Identifier.
 	MtlsCertificateId any
+	Result            any
 }
 
 var TlsCertificatesAndHostnamesAssociationResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_association_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"MtlsCertificateId": ubx.FieldSpec{WireName: "mtls_certificate_id"},
 	},
 }

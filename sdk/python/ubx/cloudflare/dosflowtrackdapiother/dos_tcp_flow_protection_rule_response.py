@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosTcpFlowProtectionRuleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosTcpFlowProtectionRuleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosTcpFlowProtectionRuleResponse_Result:
+    # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+    burst_sensitivity: Any = None
+    # The creation timestamp of the TCP Flow Protection rule.
+    created_on: Any = None
+    # The unique ID of the TCP Flow Protection rule.
+    id: Any = None
+    # The mode for TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+    mode: Any = None
+    # The last modification timestamp of the TCP Flow Protection rule.
+    modified_on: Any = None
+    # The name of the TCP Flow Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+    name: Any = None
+    # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+    rate_sensitivity: Any = None
+    # The scope for the TCP Flow Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosTcpFlowProtectionRuleResponseConfig:
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
@@ -27,14 +57,19 @@ class DosTcpFlowProtectionRuleResponseConfig:
 class DosTcpFlowProtectionRuleResponseAttrs:
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
+    errors: Any = None
+    messages: Any = None
     # The mode for the TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
     mode: Any = None
     # The name of the TCP Flow Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
     name: Any = None
     # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
     rate_sensitivity: Any = None
+    result: Any = None
     # The scope for the TCP Flow Protection rule.
     scope: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiUnpaidInvoicesResponseSingle_Result_Invoices:
+    action: Any = None
+    amount: Any = None
+    amount_to_pay: Any = None
+    currency: Any = None
+    description: Any = None
+    external_invoice_id: Any = None
+    hosted_invoice_url: Any = None
+    id: Any = None
+    invoice_id: Any = None
+    occurred_at: Any = None
+    receipt_id: Any = None
+    source: Any = None
+    source_invoice_id: Any = None
+    status: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiUnpaidInvoicesResponseSingle_Result:
+    # List of unpaid invoices.
+    invoices: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiUnpaidInvoicesResponseSingleConfig:
     pass
 
@@ -14,6 +37,7 @@ class BillSubsApiUnpaidInvoicesResponseSingleConfig:
 class BillSubsApiUnpaidInvoicesResponseSingleAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 BillSubsApiUnpaidInvoicesResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_unpaid_invoices_response_single",

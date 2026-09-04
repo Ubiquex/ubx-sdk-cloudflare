@@ -3,6 +3,18 @@ package accountloadbalancerpools
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingPoolsReferencesResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type LoadBalancingPoolsReferencesResponse_Result struct {
+	ReferenceType any
+	ResourceId    any
+	ResourceName  any
+	ResourceType  any
+}
+
 type LoadBalancingPoolsReferencesResponseConfig struct {
 	PoolId any
 }
@@ -10,7 +22,13 @@ type LoadBalancingPoolsReferencesResponseConfig struct {
 type LoadBalancingPoolsReferencesResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	PoolId any
+	Errors    any
+	Messages  any
+	PoolId    any
+	// List of resources that reference a given pool.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LoadBalancingPoolsReferencesResponse = ubx.DataSourceBinding{

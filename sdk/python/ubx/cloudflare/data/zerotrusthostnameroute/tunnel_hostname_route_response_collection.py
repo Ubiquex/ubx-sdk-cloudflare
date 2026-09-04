@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelHostnameRouteResponseCollection_Result_TunType:
+    pass
+
+@dataclasses.dataclass
+class TunnelHostnameRouteResponseCollection_Result:
+    comment: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    hostname: Any = None
+    id: Any = None
+    tun_type: Any = None
+    tunnel_id: Any = None
+    tunnel_name: Any = None
+
+@dataclasses.dataclass
 class TunnelHostnameRouteResponseCollectionConfig:
     # If set, only list hostname routes with the given comment.
     comment: Any = None
@@ -43,6 +58,7 @@ class TunnelHostnameRouteResponseCollectionAttrs:
     page: Any = None
     # Number of results to display.
     per_page: Any = None
+    result: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

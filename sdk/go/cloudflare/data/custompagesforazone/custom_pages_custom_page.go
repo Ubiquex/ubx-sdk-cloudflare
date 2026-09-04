@@ -11,13 +11,13 @@ type CustomPagesCustomPageConfig struct {
 }
 
 type CustomPagesCustomPageAttrs struct {
-	CreatedOn any
+	CreatedOn   any
 	Description any
-	Id any
+	Id          any
 	// Error Page Types
-	Identifier any
-	ModifiedOn any
-	PreviewTarget any
+	Identifier     any
+	ModifiedOn     any
+	PreviewTarget  any
 	RequiredTokens any
 	// The custom page state.
 	State any
@@ -30,7 +30,7 @@ type CustomPagesCustomPageAttrs struct {
 var CustomPagesCustomPage = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_pages_custom_page",
 	Fields: ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":     ubx.FieldSpec{WireName: "identifier"},
 		"ZoneIdentifier": ubx.FieldSpec{WireName: "zone_identifier"},
 	},
 }

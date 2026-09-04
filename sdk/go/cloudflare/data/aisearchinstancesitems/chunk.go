@@ -4,57 +4,57 @@ package aisearchinstancesitems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Chunk_Result_Item struct {
-	Key any
-	Metadata any
+	Key       any
+	Metadata  any
 	Timestamp any
 }
 
 type Chunk_Result struct {
-	EndByte any
-	Id any
-	Item any
+	EndByte   any
+	Id        any
+	Item      any
 	StartByte any
-	Text any
+	Text      any
 }
 
 type Chunk_ResultInfo struct {
-	Count any
-	Limit any
+	Count  any
+	Limit  any
 	Offset any
-	Total any
+	Total  any
 }
 
 type ChunkConfig struct {
 	AccountId any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
-	Id any
+	Id     any
 	ItemId any
-	Limit any
-	Name any
+	Limit  any
+	Name   any
 	Offset any
 }
 
 type ChunkAttrs struct {
 	AccountId any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
-	Id any
-	ItemId any
-	Limit any
-	Name any
-	Offset any
-	Result any
+	Id         any
+	ItemId     any
+	Limit      any
+	Name       any
+	Offset     any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var Chunk = ubx.DataSourceBinding{
 	WireType: "cloudflare_chunk",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ItemId": ubx.FieldSpec{WireName: "item_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"ItemId":    ubx.FieldSpec{WireName: "item_id"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
 	},
 }

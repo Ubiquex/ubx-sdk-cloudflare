@@ -12,6 +12,8 @@ class SecondaryDnsEnableTransferResponseConfig:
 
 @dataclasses.dataclass
 class SecondaryDnsEnableTransferResponseAttrs:
+    # The zone transfer status of a primary zone.
+    result: Any = None
     zone_id: Any = None
 
 SecondaryDnsEnableTransferResponse = ubx.DataSourceBinding(

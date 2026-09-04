@@ -4,20 +4,20 @@ package ipprofiles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpProfile_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type IpProfile_Result struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Enabled any
-	Id any
-	Match any
-	Name any
-	Precedence any
-	SubnetId any
-	UpdatedAt any
+	Enabled     any
+	Id          any
+	Match       any
+	Name        any
+	Precedence  any
+	SubnetId    any
+	UpdatedAt   any
 }
 
 type IpProfile_ResultInfo struct {
@@ -35,17 +35,17 @@ type IpProfile_ResultInfo struct {
 
 type IpProfileConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 }
 
 type IpProfileAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Whether the API call was successful.
 	Success any
@@ -55,7 +55,7 @@ var IpProfile = ubx.DataSourceBinding{
 	WireType: "cloudflare_ip_profile",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -3,6 +3,24 @@ package securitycenterinsights
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type State_Errors_Source struct {
+	Pointer any
+}
+
+type State_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type State_Result struct {
+	// Whether the account was recently reactivated from a dormant state (used to show the reactivation banner).
+	RecentDormantReactivation any
+	// Whether on-demand and scheduled scans are enabled for the account.
+	ScansEnabled any
+}
+
 type StateConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +29,11 @@ type StateConfig struct {
 type StateAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var State = ubx.DataSourceBinding{

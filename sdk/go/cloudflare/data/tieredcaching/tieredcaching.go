@@ -3,16 +3,20 @@ package tieredcaching
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Tieredcaching_Result struct {
+	Value any
+}
+
 type TieredcachingConfig struct {
 }
 
 type TieredcachingAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var Tieredcaching = ubx.DataSourceBinding{
 	WireType: "cloudflare_tiered_caching",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

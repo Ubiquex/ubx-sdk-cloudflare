@@ -10,6 +10,17 @@ import ubx_sdk as ubx
 class IamTokenVerifyResponseSingleSegment_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamTokenVerifyResponseSingleSegment_Result:
+    # The expiration time on or after which the JWT MUST NOT be accepted for processing.
+    expires_on: Any = None
+    # Token identifier tag.
+    id: Any = None
+    # The time before which the token MUST NOT be accepted for processing.
+    not_before: Any = None
+    # Status of the token.
+    status: Any = None
+
 _IamTokenVerifyResponseSingleSegment_AccountIdFields = {
 }
 
@@ -22,6 +33,7 @@ class IamTokenVerifyResponseSingleSegmentConfig:
 class IamTokenVerifyResponseSingleSegmentAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 IamTokenVerifyResponseSingleSegment = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_token_verify_response_single_segment",

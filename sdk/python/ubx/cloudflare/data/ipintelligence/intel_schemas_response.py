@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelSchemasResponse_Result_BelongsToRef:
+    country: Any = None
+    description: Any = None
+    id: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IntelSchemasResponse_Result_RiskTypes:
+    id: Any = None
+    name: Any = None
+    super_category_id: Any = None
+
+@dataclasses.dataclass
+class IntelSchemasResponse_Result:
+    belongs_to_ref: Any = None
+    ip: Any = None
+    risk_types: Any = None
+
+@dataclasses.dataclass
 class IntelSchemasResponseConfig:
     ipv4: Any = None
     ipv6: Any = None
@@ -17,6 +37,7 @@ class IntelSchemasResponseAttrs:
     account_id: Any = None
     ipv4: Any = None
     ipv6: Any = None
+    result: Any = None
 
 IntelSchemasResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_intel_schemas_response",

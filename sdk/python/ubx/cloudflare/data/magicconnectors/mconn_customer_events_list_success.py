@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerEventsListSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsListSuccess_Result_Items:
+    a: Any = None
+    k: Any = None
+    n: Any = None
+    t: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsListSuccess_Result:
+    count: Any = None
+    cursor: Any = None
+    items: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerEventsListSuccessConfig:
     connector_id: Any = None
     cursor: Any = None
@@ -21,9 +39,13 @@ class MconnCustomerEventsListSuccessAttrs:
     account_id: Any = None
     connector_id: Any = None
     cursor: Any = None
+    errors: Any = None
     from_: Any = None
     k: Any = None
     limit: Any = None
+    messages: Any = None
+    result: Any = None
+    success: Any = None
     to: Any = None
 
 MconnCustomerEventsListSuccess = ubx.DataSourceBinding(

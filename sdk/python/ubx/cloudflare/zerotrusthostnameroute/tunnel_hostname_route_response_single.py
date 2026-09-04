@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelHostnameRouteResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelHostnameRouteResponseSingle_Result_TunType:
+    pass
+
+@dataclasses.dataclass
+class TunnelHostnameRouteResponseSingle_Result:
+    # An optional description of the hostname route.
+    comment: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # The hostname of the route.
+    hostname: Any = None
+    # The hostname route ID.
+    id: Any = None
+    tun_type: Any = None
+    # UUID of the tunnel.
+    tunnel_id: Any = None
+    # A user-friendly name for a tunnel.
+    tunnel_name: Any = None
+
+@dataclasses.dataclass
 class TunnelHostnameRouteResponseSingleConfig:
     # An optional description of the hostname route.
     comment: Any = None
@@ -23,8 +50,13 @@ class TunnelHostnameRouteResponseSingleConfig:
 class TunnelHostnameRouteResponseSingleAttrs:
     # An optional description of the hostname route.
     comment: Any = None
+    errors: Any = None
     # The hostname of the route.
     hostname: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
     # path parameter, not part of the API's own resource representation

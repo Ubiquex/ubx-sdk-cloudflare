@@ -3,16 +3,38 @@ package accountloadbalancermonitors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingMonitorResponseCollection_Result struct {
+	AllowInsecure   any
+	ConsecutiveDown any
+	ConsecutiveUp   any
+	CreatedOn       any
+	Description     any
+	ExpectedBody    any
+	ExpectedCodes   any
+	FollowRedirects any
+	Header          any
+	Id              any
+	Interval        any
+	Method          any
+	ModifiedOn      any
+	Path            any
+	Port            any
+	ProbeZone       any
+	Retries         any
+	Timeout         any
+	Type            any
+}
+
 type LoadBalancingMonitorResponseCollectionConfig struct {
 }
 
 type LoadBalancingMonitorResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var LoadBalancingMonitorResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_load_balancing_monitor_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

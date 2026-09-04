@@ -30,6 +30,26 @@ class FirewallFilterRulesSingleResponse_Filter:
     # A short reference tag. Allows you to select related filters.
     ref: Any = None
 
+@dataclasses.dataclass
+class FirewallFilterRulesSingleResponse_Result_Filter:
+    deleted: Any = None
+    description: Any = None
+    expression: Any = None
+    id: Any = None
+    paused: Any = None
+    ref: Any = None
+
+@dataclasses.dataclass
+class FirewallFilterRulesSingleResponse_Result:
+    action: Any = None
+    description: Any = None
+    filter: Any = None
+    id: Any = None
+    paused: Any = None
+    priority: Any = None
+    products: Any = None
+    ref: Any = None
+
 _FirewallFilterRulesSingleResponse_Action_ResponseFields = {
     "body": ubx.FieldSpec(wire_name="body"),
     "content_type": ubx.FieldSpec(wire_name="content_type"),
@@ -70,6 +90,7 @@ class FirewallFilterRulesSingleResponseAttrs:
     filter: Any = None
     # The unique identifier of the resource.
     id: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

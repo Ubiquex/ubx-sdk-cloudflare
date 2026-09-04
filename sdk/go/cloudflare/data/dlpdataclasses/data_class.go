@@ -3,12 +3,29 @@ package dlpdataclasses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DataClass_Result_SensitivityLevels struct {
+	GroupId any
+	LevelId any
+}
+
+type DataClass_Result struct {
+	CreatedAt         any
+	DataTags          any
+	Description       any
+	Expression        any
+	Id                any
+	Name              any
+	SensitivityLevels any
+	UpdatedAt         any
+}
+
 type DataClassConfig struct {
 	AccountId any
 }
 
 type DataClassAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var DataClass = ubx.DataSourceBinding{

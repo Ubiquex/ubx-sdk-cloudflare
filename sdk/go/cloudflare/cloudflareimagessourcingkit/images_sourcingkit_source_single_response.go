@@ -3,6 +3,23 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitSourceSingleResponse_Result struct {
+	// The name of the storage bucket.
+	Bucket any
+	// When the source was created.
+	CreatedAt any
+	// Source unique identifier.
+	Id any
+	// A human-readable name for the source.
+	Name any
+	// The region of the storage bucket (S3 sources only).
+	Region any
+	// When the source was last updated.
+	UpdatedAt any
+	// The cloud storage vendor of the source bucket.
+	Vendor any
+}
+
 type ImagesSourcingkitSourceSingleResponseConfig struct {
 	// Account identifier for the bucket (required for R2 vendor).
 	Account any
@@ -26,7 +43,8 @@ type ImagesSourcingkitSourceSingleResponseAttrs struct {
 	// The name of the storage bucket.
 	Bucket any
 	// A human-readable name for the source.
-	Name any
+	Name   any
+	Result any
 	// Storage credentials for accessing the bucket. Shape depends on vendor.
 	Secret any
 	// The cloud storage vendor of the source bucket.
@@ -40,12 +58,12 @@ type ImagesSourcingkitSourceSingleResponseAttrs struct {
 var ImagesSourcingkitSourceSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_images_sourcingkit_source_single_response",
 	Fields: ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
+		"Account":   ubx.FieldSpec{WireName: "account"},
+		"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Secret":    ubx.FieldSpec{WireName: "secret"},
+		"Vendor":    ubx.FieldSpec{WireName: "vendor"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
+		"SourceId":  ubx.FieldSpec{WireName: "source_id"},
 	},
 }

@@ -4,14 +4,14 @@ package radarrobotstxt
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Directive_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Directive_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Directive_Result_Meta_ConfidenceInfo struct {
 }
 
 type Directive_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Directive_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Directive_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -42,10 +42,10 @@ type Directive_Result_Meta struct {
 }
 
 type Directive_Result_Top0 struct {
-	Fully any
-	Name any
+	Fully     any
+	Name      any
 	Partially any
-	Value any
+	Value     any
 }
 
 type Directive_Result struct {
@@ -83,8 +83,8 @@ type DirectiveAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 	// Filters results by user agent category.
 	UserAgentCategory any
@@ -93,12 +93,12 @@ type DirectiveAttrs struct {
 var Directive = ubx.DataSourceBinding{
 	WireType: "cloudflare_directive",
 	Fields: ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Directive": ubx.FieldSpec{WireName: "directive"},
-		"DomainCategory": ubx.FieldSpec{WireName: "domain_category"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Date":              ubx.FieldSpec{WireName: "date"},
+		"Directive":         ubx.FieldSpec{WireName: "directive"},
+		"DomainCategory":    ubx.FieldSpec{WireName: "domain_category"},
+		"Format":            ubx.FieldSpec{WireName: "format"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"UserAgentCategory": ubx.FieldSpec{WireName: "user_agent_category"},
 	},
 }

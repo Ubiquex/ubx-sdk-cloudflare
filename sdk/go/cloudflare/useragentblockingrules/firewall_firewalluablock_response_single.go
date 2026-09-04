@@ -10,10 +10,23 @@ type FirewallFirewalluablockResponseSingle_Configuration struct {
 	Value any
 }
 
+type FirewallFirewalluablockResponseSingle_Result struct {
+	// The configuration object for the current rule.
+	Configuration any
+	// An informative summary of the rule.
+	Description any
+	// The unique identifier of the User Agent Blocking rule.
+	Id any
+	// The action to apply to a matched request.
+	Mode any
+	// When true, indicates that the rule is currently paused.
+	Paused any
+}
+
 var FirewallFirewalluablockResponseSingle_ConfigurationFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallFirewalluablockResponseSingleConfig struct {
 	Configuration any
@@ -37,6 +50,7 @@ type FirewallFirewalluablockResponseSingleAttrs struct {
 	Mode any
 	// When true, indicates that the rule is currently paused.
 	Paused any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -48,13 +62,13 @@ var FirewallFirewalluablockResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: FirewallFirewalluablockResponseSingle_ConfigurationFields,
+			Kind:     "object",
+			Fields:   FirewallFirewalluablockResponseSingle_ConfigurationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"UaRuleId": ubx.FieldSpec{WireName: "ua_rule_id"},
+		"Mode":        ubx.FieldSpec{WireName: "mode"},
+		"Paused":      ubx.FieldSpec{WireName: "paused"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
+		"UaRuleId":    ubx.FieldSpec{WireName: "ua_rule_id"},
 	},
 }

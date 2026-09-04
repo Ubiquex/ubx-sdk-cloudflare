@@ -3,6 +3,15 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitConnectivityCheckResponse_Result struct {
+	// Machine-readable error code if connectivity failed.
+	Code any
+	// Whether the connectivity check succeeded.
+	ConnectivityStatus any
+	// Human-readable error description if connectivity failed.
+	Reason any
+}
+
 type ImagesSourcingkitConnectivityCheckResponseConfig struct {
 	// Sourcing kit resource identifier.
 	SourceId any
@@ -11,6 +20,7 @@ type ImagesSourcingkitConnectivityCheckResponseConfig struct {
 type ImagesSourcingkitConnectivityCheckResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 	// Sourcing kit resource identifier.
 	SourceId any
 }

@@ -3,6 +3,40 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosDnsProtectionRuleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosDnsProtectionRuleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosDnsProtectionRuleResponse_Result struct {
+	// Whether to block DNS ANY queries. Defaults to true.
+	BlockAnyQueries any
+	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+	BurstSensitivity any
+	// The creation timestamp of the DNS Protection rule.
+	CreatedOn any
+	// The unique ID of the DNS Protection rule.
+	Id any
+	// The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+	Mode any
+	// The last modification timestamp of the DNS Protection rule.
+	ModifiedOn any
+	// The name of the DNS Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+	Name any
+	// The profile sensitivity. Recommended setting is 'low'. Must be one of 'low', 'medium', 'high', or 'very_high'.
+	ProfileSensitivity any
+	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+	RateSensitivity any
+	// The scope for the DNS Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+	Scope any
+}
+
 type DosDnsProtectionRuleResponseConfig struct {
 	// Whether to block DNS ANY queries. Optional. Defaults to true.
 	BlockAnyQueries any
@@ -29,6 +63,8 @@ type DosDnsProtectionRuleResponseAttrs struct {
 	BlockAnyQueries any
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
+	Errors           any
+	Messages         any
 	// The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
 	Mode any
 	// The name of the DNS Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
@@ -37,8 +73,11 @@ type DosDnsProtectionRuleResponseAttrs struct {
 	ProfileSensitivity any
 	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
 	RateSensitivity any
+	Result          any
 	// The scope for the DNS Protection rule. Must be one of 'global', 'region', or 'datacenter'.
 	Scope any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -48,14 +87,14 @@ type DosDnsProtectionRuleResponseAttrs struct {
 var DosDnsProtectionRuleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_dns_protection_rule_response",
 	Fields: ubx.FieldMap{
-		"BlockAnyQueries": ubx.FieldSpec{WireName: "block_any_queries"},
-		"BurstSensitivity": ubx.FieldSpec{WireName: "burst_sensitivity"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"BlockAnyQueries":    ubx.FieldSpec{WireName: "block_any_queries"},
+		"BurstSensitivity":   ubx.FieldSpec{WireName: "burst_sensitivity"},
+		"Mode":               ubx.FieldSpec{WireName: "mode"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"ProfileSensitivity": ubx.FieldSpec{WireName: "profile_sensitivity"},
-		"RateSensitivity": ubx.FieldSpec{WireName: "rate_sensitivity"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RateSensitivity":    ubx.FieldSpec{WireName: "rate_sensitivity"},
+		"Scope":              ubx.FieldSpec{WireName: "scope"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"RuleId":             ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

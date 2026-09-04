@@ -3,12 +3,23 @@ package zerotrustgatewaypacfiles
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection10_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	Slug        any
+	UpdatedAt   any
+	Url         any
+}
+
 type ZeroTrustGatewayResponseCollection10Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollection10Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection10 = ubx.DataSourceBinding{

@@ -55,368 +55,356 @@ type Preset_Config struct {
 	ViewType any
 }
 
-type Preset_Permissions_Chat_Private struct {
+type Preset_Data_Permissions_Chat_Private struct {
 	CanReceive any
-	CanSend any
-	Files any
-	Text any
+	CanSend    any
+	Files      any
+	Text       any
 }
 
-type Preset_Permissions_Chat_Public struct {
-	// Can send messages in general
+type Preset_Data_Permissions_Chat_Public struct {
 	CanSend any
-	// Can send file messages
-	Files any
-	// Can send text messages
-	Text any
+	Files   any
+	Text    any
 }
 
-type Preset_Permissions_Chat struct {
+type Preset_Data_Permissions_Chat struct {
 	Private any
-	Public any
+	Public  any
 }
 
-type Preset_Permissions_ConnectedMeetings struct {
-	CanAlterConnectedMeetings any
+type Preset_Data_Permissions_ConnectedMeetings struct {
+	CanAlterConnectedMeetings  any
 	CanSwitchConnectedMeetings any
-	CanSwitchToParentMeeting any
+	CanSwitchToParentMeeting   any
 }
 
-type Preset_Permissions_Media_Audio struct {
-	// Can produce audio
+type Preset_Data_Permissions_Media_Audio struct {
 	CanProduce any
 }
 
-type Preset_Permissions_Media struct {
-	// Audio permissions
-	Audio any
-	// Screenshare permissions
+type Preset_Data_Permissions_Media struct {
+	Audio       any
 	Screenshare any
-	// Video permissions
-	Video any
+	Video       any
 }
 
-type Preset_Permissions_Plugins_Config struct {
-	AccessControl any
+type Preset_Data_Permissions_Plugins_Config struct {
+	AccessControl   any
 	HandlesViewOnly any
 }
 
-type Preset_Permissions_Plugins struct {
-	// Can close plugins that are already open
-	CanClose any
-	// Can edit plugin config
+type Preset_Data_Permissions_Plugins struct {
+	CanClose      any
 	CanEditConfig any
-	// Can start plugins
-	CanStart any
-	// Plugin configuration keyed by plugin UUID.
-	Config any
+	CanStart      any
+	Config        any
 }
 
-type Preset_Permissions_Polls struct {
-	// Can create polls
+type Preset_Data_Permissions_Polls struct {
 	CanCreate any
-	// Can view polls
-	CanView any
-	// Can vote on polls
-	CanVote any
+	CanView   any
+	CanVote   any
 }
 
-type Preset_Permissions struct {
-	AcceptStageRequests any
-	// Whether this participant can accept waiting requests
-	AcceptWaitingRequests any
-	CanAcceptProductionRequests any
+type Preset_Data_Permissions struct {
+	AcceptStageRequests             any
+	AcceptWaitingRequests           any
+	CanAcceptProductionRequests     any
 	CanChangeParticipantPermissions any
-	CanEditDisplayName any
-	CanLivestream any
-	CanRecord any
-	CanSpotlight any
-	Chat any
-	ConnectedMeetings any
-	DisableParticipantAudio any
+	CanEditDisplayName              any
+	CanLivestream                   any
+	CanRecord                       any
+	CanSpotlight                    any
+	Chat                            any
+	ConnectedMeetings               any
+	DisableParticipantAudio         any
 	DisableParticipantScreensharing any
-	DisableParticipantVideo any
-	// Whether this participant is visible to others or not
-	HiddenParticipant any
-	IsRecorder any
-	KickParticipant any
-	// Media permissions
-	Media any
-	PinParticipant any
-	// Plugin permissions
-	Plugins any
-	// Poll permissions
-	Polls any
-	// Type of the recording peer
-	RecorderType any
-	ShowParticipantList any
-	StageAccess any
-	StageEnabled any
-	TranscriptionEnabled any
-	// Waiting room type
-	WaitingRoomType any
+	DisableParticipantVideo         any
+	HiddenParticipant               any
+	IsRecorder                      any
+	KickParticipant                 any
+	Media                           any
+	PinParticipant                  any
+	Plugins                         any
+	Polls                           any
+	RecorderType                    any
+	ShowParticipantList             any
+	StageAccess                     any
+	StageEnabled                    any
+	TranscriptionEnabled            any
+	WaitingRoomType                 any
 }
 
-type Preset_Ui_DesignTokens_Colors_Background struct {
+type Preset_Data_Ui_DesignTokens_Colors_Background struct {
 }
 
-type Preset_Ui_DesignTokens_Colors struct {
-	Background any
-	Brand any
-	Danger any
-	Success any
-	Text any
+type Preset_Data_Ui_DesignTokens_Colors struct {
+	Background  any
+	Brand       any
+	Danger      any
+	Success     any
+	Text        any
 	TextOnBrand any
-	VideoBg any
-	Warning any
+	VideoBg     any
+	Warning     any
 }
 
-type Preset_Ui_DesignTokens struct {
+type Preset_Data_Ui_DesignTokens struct {
 	BorderRadius any
-	BorderWidth any
-	Colors any
-	FontFamily any
-	GoogleFont any
-	Logo any
-	SpacingBase any
-	Theme any
+	BorderWidth  any
+	Colors       any
+	FontFamily   any
+	GoogleFont   any
+	Logo         any
+	SpacingBase  any
+	Theme        any
 }
 
-type Preset_Ui struct {
+type Preset_Data_Ui struct {
 	DesignTokens any
 }
 
+type Preset_Data struct {
+	Config      any
+	CreatedAt   any
+	Id          any
+	Name        any
+	Permissions any
+	Ui          any
+	UpdatedAt   any
+}
+
 var Preset_Config_MaxVideoStreamsFields = ubx.FieldMap{
-		"Desktop": ubx.FieldSpec{WireName: "desktop"},
-		"Mobile": ubx.FieldSpec{WireName: "mobile"},
-	}
+	"Desktop": ubx.FieldSpec{WireName: "desktop"},
+	"Mobile":  ubx.FieldSpec{WireName: "mobile"},
+}
 
 var Preset_Config_Media_AudioFields = ubx.FieldMap{
-		"EnableHighBitrate": ubx.FieldSpec{WireName: "enable_high_bitrate"},
-		"EnableStereo": ubx.FieldSpec{WireName: "enable_stereo"},
-	}
+	"EnableHighBitrate": ubx.FieldSpec{WireName: "enable_high_bitrate"},
+	"EnableStereo":      ubx.FieldSpec{WireName: "enable_stereo"},
+}
 
 var Preset_Config_Media_ScreenshareFields = ubx.FieldMap{
-		"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-	}
+	"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
+	"Quality":   ubx.FieldSpec{WireName: "quality"},
+}
 
 var Preset_Config_Media_VideoFields = ubx.FieldMap{
-		"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
-		"Quality": ubx.FieldSpec{WireName: "quality"},
-		"Simulcast": ubx.FieldSpec{WireName: "simulcast"},
-	}
+	"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
+	"Quality":   ubx.FieldSpec{WireName: "quality"},
+	"Simulcast": ubx.FieldSpec{WireName: "simulcast"},
+}
 
 var Preset_Config_MediaFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: Preset_Config_Media_AudioFields,
-		},
-		"Screenshare": ubx.FieldSpec{
-			WireName: "screenshare",
-			Kind: "object",
-			Fields: Preset_Config_Media_ScreenshareFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: Preset_Config_Media_VideoFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   Preset_Config_Media_AudioFields,
+	},
+	"Screenshare": ubx.FieldSpec{
+		WireName: "screenshare",
+		Kind:     "object",
+		Fields:   Preset_Config_Media_ScreenshareFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   Preset_Config_Media_VideoFields,
+	},
+}
 
 var Preset_ConfigFields = ubx.FieldMap{
-		"LivestreamViewerQualities": ubx.FieldSpec{WireName: "livestream_viewer_qualities"},
-		"MaxScreenshareCount": ubx.FieldSpec{WireName: "max_screenshare_count"},
-		"MaxVideoStreams": ubx.FieldSpec{
-			WireName: "max_video_streams",
-			Kind: "object",
-			Fields: Preset_Config_MaxVideoStreamsFields,
-		},
-		"Media": ubx.FieldSpec{
-			WireName: "media",
-			Kind: "object",
-			Fields: Preset_Config_MediaFields,
-		},
-		"ViewType": ubx.FieldSpec{WireName: "view_type"},
-	}
+	"LivestreamViewerQualities": ubx.FieldSpec{WireName: "livestream_viewer_qualities"},
+	"MaxScreenshareCount":       ubx.FieldSpec{WireName: "max_screenshare_count"},
+	"MaxVideoStreams": ubx.FieldSpec{
+		WireName: "max_video_streams",
+		Kind:     "object",
+		Fields:   Preset_Config_MaxVideoStreamsFields,
+	},
+	"Media": ubx.FieldSpec{
+		WireName: "media",
+		Kind:     "object",
+		Fields:   Preset_Config_MediaFields,
+	},
+	"ViewType": ubx.FieldSpec{WireName: "view_type"},
+}
 
-var Preset_Permissions_Chat_PrivateFields = ubx.FieldMap{
-		"CanReceive": ubx.FieldSpec{WireName: "can_receive"},
-		"CanSend": ubx.FieldSpec{WireName: "can_send"},
-		"Files": ubx.FieldSpec{WireName: "files"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+var Preset_Data_Permissions_Chat_PrivateFields = ubx.FieldMap{
+	"CanReceive": ubx.FieldSpec{WireName: "can_receive"},
+	"CanSend":    ubx.FieldSpec{WireName: "can_send"},
+	"Files":      ubx.FieldSpec{WireName: "files"},
+	"Text":       ubx.FieldSpec{WireName: "text"},
+}
 
-var Preset_Permissions_Chat_PublicFields = ubx.FieldMap{
-		"CanSend": ubx.FieldSpec{WireName: "can_send"},
-		"Files": ubx.FieldSpec{WireName: "files"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+var Preset_Data_Permissions_Chat_PublicFields = ubx.FieldMap{
+	"CanSend": ubx.FieldSpec{WireName: "can_send"},
+	"Files":   ubx.FieldSpec{WireName: "files"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+}
 
-var Preset_Permissions_ChatFields = ubx.FieldMap{
-		"Private": ubx.FieldSpec{
-			WireName: "private",
-			Kind: "object",
-			Fields: Preset_Permissions_Chat_PrivateFields,
-		},
-		"Public": ubx.FieldSpec{
-			WireName: "public",
-			Kind: "object",
-			Fields: Preset_Permissions_Chat_PublicFields,
-		},
-	}
+var Preset_Data_Permissions_ChatFields = ubx.FieldMap{
+	"Private": ubx.FieldSpec{
+		WireName: "private",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_Chat_PrivateFields,
+	},
+	"Public": ubx.FieldSpec{
+		WireName: "public",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_Chat_PublicFields,
+	},
+}
 
-var Preset_Permissions_ConnectedMeetingsFields = ubx.FieldMap{
-		"CanAlterConnectedMeetings": ubx.FieldSpec{WireName: "can_alter_connected_meetings"},
-		"CanSwitchConnectedMeetings": ubx.FieldSpec{WireName: "can_switch_connected_meetings"},
-		"CanSwitchToParentMeeting": ubx.FieldSpec{WireName: "can_switch_to_parent_meeting"},
-	}
+var Preset_Data_Permissions_ConnectedMeetingsFields = ubx.FieldMap{
+	"CanAlterConnectedMeetings":  ubx.FieldSpec{WireName: "can_alter_connected_meetings"},
+	"CanSwitchConnectedMeetings": ubx.FieldSpec{WireName: "can_switch_connected_meetings"},
+	"CanSwitchToParentMeeting":   ubx.FieldSpec{WireName: "can_switch_to_parent_meeting"},
+}
 
-var Preset_Permissions_Media_AudioFields = ubx.FieldMap{
-		"CanProduce": ubx.FieldSpec{WireName: "can_produce"},
-	}
+var Preset_Data_Permissions_Media_AudioFields = ubx.FieldMap{
+	"CanProduce": ubx.FieldSpec{WireName: "can_produce"},
+}
 
-var Preset_Permissions_MediaFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: Preset_Permissions_Media_AudioFields,
-		},
-		"Screenshare": ubx.FieldSpec{
-			WireName: "screenshare",
-			Kind: "object",
-			Fields: Preset_Permissions_Media_AudioFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: Preset_Permissions_Media_AudioFields,
-		},
-	}
+var Preset_Data_Permissions_MediaFields = ubx.FieldMap{
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_Media_AudioFields,
+	},
+	"Screenshare": ubx.FieldSpec{
+		WireName: "screenshare",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_Media_AudioFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_Media_AudioFields,
+	},
+}
 
-var Preset_Permissions_Plugins_ConfigFields = ubx.FieldMap{
-		"AccessControl": ubx.FieldSpec{WireName: "access_control"},
-		"HandlesViewOnly": ubx.FieldSpec{WireName: "handles_view_only"},
-	}
+var Preset_Data_Permissions_Plugins_ConfigFields = ubx.FieldMap{
+	"AccessControl":   ubx.FieldSpec{WireName: "access_control"},
+	"HandlesViewOnly": ubx.FieldSpec{WireName: "handles_view_only"},
+}
 
-var Preset_Permissions_PluginsFields = ubx.FieldMap{
-		"CanClose": ubx.FieldSpec{WireName: "can_close"},
-		"CanEditConfig": ubx.FieldSpec{WireName: "can_edit_config"},
-		"CanStart": ubx.FieldSpec{WireName: "can_start"},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "map",
-			Fields: Preset_Permissions_Plugins_ConfigFields,
-		},
-	}
+var Preset_Data_Permissions_PluginsFields = ubx.FieldMap{
+	"CanClose":      ubx.FieldSpec{WireName: "can_close"},
+	"CanEditConfig": ubx.FieldSpec{WireName: "can_edit_config"},
+	"CanStart":      ubx.FieldSpec{WireName: "can_start"},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "map",
+		Fields:   Preset_Data_Permissions_Plugins_ConfigFields,
+	},
+}
 
-var Preset_Permissions_PollsFields = ubx.FieldMap{
-		"CanCreate": ubx.FieldSpec{WireName: "can_create"},
-		"CanView": ubx.FieldSpec{WireName: "can_view"},
-		"CanVote": ubx.FieldSpec{WireName: "can_vote"},
-	}
+var Preset_Data_Permissions_PollsFields = ubx.FieldMap{
+	"CanCreate": ubx.FieldSpec{WireName: "can_create"},
+	"CanView":   ubx.FieldSpec{WireName: "can_view"},
+	"CanVote":   ubx.FieldSpec{WireName: "can_vote"},
+}
 
-var Preset_PermissionsFields = ubx.FieldMap{
-		"AcceptStageRequests": ubx.FieldSpec{WireName: "accept_stage_requests"},
-		"AcceptWaitingRequests": ubx.FieldSpec{WireName: "accept_waiting_requests"},
-		"CanAcceptProductionRequests": ubx.FieldSpec{WireName: "can_accept_production_requests"},
-		"CanChangeParticipantPermissions": ubx.FieldSpec{WireName: "can_change_participant_permissions"},
-		"CanEditDisplayName": ubx.FieldSpec{WireName: "can_edit_display_name"},
-		"CanLivestream": ubx.FieldSpec{WireName: "can_livestream"},
-		"CanRecord": ubx.FieldSpec{WireName: "can_record"},
-		"CanSpotlight": ubx.FieldSpec{WireName: "can_spotlight"},
-		"Chat": ubx.FieldSpec{
-			WireName: "chat",
-			Kind: "object",
-			Fields: Preset_Permissions_ChatFields,
-		},
-		"ConnectedMeetings": ubx.FieldSpec{
-			WireName: "connected_meetings",
-			Kind: "object",
-			Fields: Preset_Permissions_ConnectedMeetingsFields,
-		},
-		"DisableParticipantAudio": ubx.FieldSpec{WireName: "disable_participant_audio"},
-		"DisableParticipantScreensharing": ubx.FieldSpec{WireName: "disable_participant_screensharing"},
-		"DisableParticipantVideo": ubx.FieldSpec{WireName: "disable_participant_video"},
-		"HiddenParticipant": ubx.FieldSpec{WireName: "hidden_participant"},
-		"IsRecorder": ubx.FieldSpec{WireName: "is_recorder"},
-		"KickParticipant": ubx.FieldSpec{WireName: "kick_participant"},
-		"Media": ubx.FieldSpec{
-			WireName: "media",
-			Kind: "object",
-			Fields: Preset_Permissions_MediaFields,
-		},
-		"PinParticipant": ubx.FieldSpec{WireName: "pin_participant"},
-		"Plugins": ubx.FieldSpec{
-			WireName: "plugins",
-			Kind: "object",
-			Fields: Preset_Permissions_PluginsFields,
-		},
-		"Polls": ubx.FieldSpec{
-			WireName: "polls",
-			Kind: "object",
-			Fields: Preset_Permissions_PollsFields,
-		},
-		"RecorderType": ubx.FieldSpec{WireName: "recorder_type"},
-		"ShowParticipantList": ubx.FieldSpec{WireName: "show_participant_list"},
-		"StageAccess": ubx.FieldSpec{WireName: "stage_access"},
-		"StageEnabled": ubx.FieldSpec{WireName: "stage_enabled"},
-		"TranscriptionEnabled": ubx.FieldSpec{WireName: "transcription_enabled"},
-		"WaitingRoomType": ubx.FieldSpec{WireName: "waiting_room_type"},
-	}
+var Preset_Data_PermissionsFields = ubx.FieldMap{
+	"AcceptStageRequests":             ubx.FieldSpec{WireName: "accept_stage_requests"},
+	"AcceptWaitingRequests":           ubx.FieldSpec{WireName: "accept_waiting_requests"},
+	"CanAcceptProductionRequests":     ubx.FieldSpec{WireName: "can_accept_production_requests"},
+	"CanChangeParticipantPermissions": ubx.FieldSpec{WireName: "can_change_participant_permissions"},
+	"CanEditDisplayName":              ubx.FieldSpec{WireName: "can_edit_display_name"},
+	"CanLivestream":                   ubx.FieldSpec{WireName: "can_livestream"},
+	"CanRecord":                       ubx.FieldSpec{WireName: "can_record"},
+	"CanSpotlight":                    ubx.FieldSpec{WireName: "can_spotlight"},
+	"Chat": ubx.FieldSpec{
+		WireName: "chat",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_ChatFields,
+	},
+	"ConnectedMeetings": ubx.FieldSpec{
+		WireName: "connected_meetings",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_ConnectedMeetingsFields,
+	},
+	"DisableParticipantAudio":         ubx.FieldSpec{WireName: "disable_participant_audio"},
+	"DisableParticipantScreensharing": ubx.FieldSpec{WireName: "disable_participant_screensharing"},
+	"DisableParticipantVideo":         ubx.FieldSpec{WireName: "disable_participant_video"},
+	"HiddenParticipant":               ubx.FieldSpec{WireName: "hidden_participant"},
+	"IsRecorder":                      ubx.FieldSpec{WireName: "is_recorder"},
+	"KickParticipant":                 ubx.FieldSpec{WireName: "kick_participant"},
+	"Media": ubx.FieldSpec{
+		WireName: "media",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_MediaFields,
+	},
+	"PinParticipant": ubx.FieldSpec{WireName: "pin_participant"},
+	"Plugins": ubx.FieldSpec{
+		WireName: "plugins",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_PluginsFields,
+	},
+	"Polls": ubx.FieldSpec{
+		WireName: "polls",
+		Kind:     "object",
+		Fields:   Preset_Data_Permissions_PollsFields,
+	},
+	"RecorderType":         ubx.FieldSpec{WireName: "recorder_type"},
+	"ShowParticipantList":  ubx.FieldSpec{WireName: "show_participant_list"},
+	"StageAccess":          ubx.FieldSpec{WireName: "stage_access"},
+	"StageEnabled":         ubx.FieldSpec{WireName: "stage_enabled"},
+	"TranscriptionEnabled": ubx.FieldSpec{WireName: "transcription_enabled"},
+	"WaitingRoomType":      ubx.FieldSpec{WireName: "waiting_room_type"},
+}
 
-var Preset_Ui_DesignTokens_Colors_BackgroundFields = ubx.FieldMap{
-	}
+var Preset_Data_Ui_DesignTokens_Colors_BackgroundFields = ubx.FieldMap{}
 
-var Preset_Ui_DesignTokens_ColorsFields = ubx.FieldMap{
-		"Background": ubx.FieldSpec{
-			WireName: "background",
-			Kind: "object",
-			Fields: Preset_Ui_DesignTokens_Colors_BackgroundFields,
-		},
-		"Brand": ubx.FieldSpec{
-			WireName: "brand",
-			Kind: "object",
-			Fields: Preset_Ui_DesignTokens_Colors_BackgroundFields,
-		},
-		"Danger": ubx.FieldSpec{WireName: "danger"},
-		"Success": ubx.FieldSpec{WireName: "success"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TextOnBrand": ubx.FieldSpec{WireName: "text_on_brand"},
-		"VideoBg": ubx.FieldSpec{WireName: "video_bg"},
-		"Warning": ubx.FieldSpec{WireName: "warning"},
-	}
+var Preset_Data_Ui_DesignTokens_ColorsFields = ubx.FieldMap{
+	"Background": ubx.FieldSpec{
+		WireName: "background",
+		Kind:     "object",
+		Fields:   Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
+	},
+	"Brand": ubx.FieldSpec{
+		WireName: "brand",
+		Kind:     "object",
+		Fields:   Preset_Data_Ui_DesignTokens_Colors_BackgroundFields,
+	},
+	"Danger":      ubx.FieldSpec{WireName: "danger"},
+	"Success":     ubx.FieldSpec{WireName: "success"},
+	"Text":        ubx.FieldSpec{WireName: "text"},
+	"TextOnBrand": ubx.FieldSpec{WireName: "text_on_brand"},
+	"VideoBg":     ubx.FieldSpec{WireName: "video_bg"},
+	"Warning":     ubx.FieldSpec{WireName: "warning"},
+}
 
-var Preset_Ui_DesignTokensFields = ubx.FieldMap{
-		"BorderRadius": ubx.FieldSpec{WireName: "border_radius"},
-		"BorderWidth": ubx.FieldSpec{WireName: "border_width"},
-		"Colors": ubx.FieldSpec{
-			WireName: "colors",
-			Kind: "object",
-			Fields: Preset_Ui_DesignTokens_ColorsFields,
-		},
-		"FontFamily": ubx.FieldSpec{WireName: "font_family"},
-		"GoogleFont": ubx.FieldSpec{WireName: "google_font"},
-		"Logo": ubx.FieldSpec{WireName: "logo"},
-		"SpacingBase": ubx.FieldSpec{WireName: "spacing_base"},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-	}
+var Preset_Data_Ui_DesignTokensFields = ubx.FieldMap{
+	"BorderRadius": ubx.FieldSpec{WireName: "border_radius"},
+	"BorderWidth":  ubx.FieldSpec{WireName: "border_width"},
+	"Colors": ubx.FieldSpec{
+		WireName: "colors",
+		Kind:     "object",
+		Fields:   Preset_Data_Ui_DesignTokens_ColorsFields,
+	},
+	"FontFamily":  ubx.FieldSpec{WireName: "font_family"},
+	"GoogleFont":  ubx.FieldSpec{WireName: "google_font"},
+	"Logo":        ubx.FieldSpec{WireName: "logo"},
+	"SpacingBase": ubx.FieldSpec{WireName: "spacing_base"},
+	"Theme":       ubx.FieldSpec{WireName: "theme"},
+}
 
-var Preset_UiFields = ubx.FieldMap{
-		"DesignTokens": ubx.FieldSpec{
-			WireName: "design_tokens",
-			Kind: "object",
-			Fields: Preset_Ui_DesignTokensFields,
-		},
-	}
+var Preset_Data_UiFields = ubx.FieldMap{
+	"DesignTokens": ubx.FieldSpec{
+		WireName: "design_tokens",
+		Kind:     "object",
+		Fields:   Preset_Data_Ui_DesignTokensFields,
+	},
+}
 
 type PresetConfig struct {
 	Config any
 	// Name of the preset
-	Name any
+	Name        any
 	Permissions any
-	Ui any
+	Ui          any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -427,10 +415,13 @@ type PresetConfig struct {
 
 type PresetAttrs struct {
 	Config any
+	Data   any
 	// Name of the preset
-	Name any
+	Name        any
 	Permissions any
-	Ui any
+	// Success status of the operation
+	Success any
+	Ui      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -444,22 +435,22 @@ var Preset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Preset_ConfigFields,
+			Kind:     "object",
+			Fields:   Preset_ConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{
 			WireName: "permissions",
-			Kind: "object",
-			Fields: Preset_PermissionsFields,
+			Kind:     "object",
+			Fields:   Preset_Data_PermissionsFields,
 		},
 		"Ui": ubx.FieldSpec{
 			WireName: "ui",
-			Kind: "object",
-			Fields: Preset_UiFields,
+			Kind:     "object",
+			Fields:   Preset_Data_UiFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"PresetId": ubx.FieldSpec{WireName: "preset_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"PresetId":  ubx.FieldSpec{WireName: "preset_id"},
 	},
 }

@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Web3SingleResponse_Result:
+    created_on: Any = None
+    # Specify an optional description of the hostname.
+    description: Any = None
+    # Specify the DNSLink value used if the target is ipfs.
+    dnslink: Any = None
+    # Specify the identifier of the hostname.
+    id: Any = None
+    modified_on: Any = None
+    # Specify the hostname that points to the target gateway via CNAME.
+    name: Any = None
+    # Specifies the status of the hostname's activation.
+    status: Any = None
+    # Specify the target gateway of the hostname.
+    target: Any = None
+
+@dataclasses.dataclass
 class Web3SingleResponseConfig:
     # Specify an optional description of the hostname.
     description: Any = None
@@ -29,6 +46,7 @@ class Web3SingleResponseAttrs:
     dnslink: Any = None
     # Specify the hostname that points to the target gateway via CNAME.
     name: Any = None
+    result: Any = None
     # Specify the target gateway of the hostname.
     target: Any = None
     # path parameter, not part of the API's own resource representation

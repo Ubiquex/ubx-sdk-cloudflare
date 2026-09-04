@@ -3,41 +3,46 @@ package apishieldlabels
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Label_Result struct {
+	MappedResources any
+}
+
 type LabelConfig struct {
 	// Direction to order results.
 	Direction any
-	Filter any
+	Filter    any
 	// Field to order by
-	Order any
-	Page any
+	Order   any
+	Page    any
 	PerPage any
 	// * `user` - label is owned by the user * `managed` - label is owned by cloudflare
-	Source any
+	Source                   any
 	WithMappedResourceCounts any
 }
 
 type LabelAttrs struct {
 	// Direction to order results.
 	Direction any
-	Filter any
+	Filter    any
 	// Field to order by
-	Order any
-	Page any
+	Order   any
+	Page    any
 	PerPage any
+	Result  any
 	// * `user` - label is owned by the user * `managed` - label is owned by cloudflare
-	Source any
+	Source                   any
 	WithMappedResourceCounts any
 }
 
 var Label = ubx.DataSourceBinding{
 	WireType: "cloudflare_label",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Direction":                ubx.FieldSpec{WireName: "direction"},
+		"Filter":                   ubx.FieldSpec{WireName: "filter"},
+		"Order":                    ubx.FieldSpec{WireName: "order"},
+		"Page":                     ubx.FieldSpec{WireName: "page"},
+		"PerPage":                  ubx.FieldSpec{WireName: "per_page"},
+		"Source":                   ubx.FieldSpec{WireName: "source"},
 		"WithMappedResourceCounts": ubx.FieldSpec{WireName: "with_mapped_resource_counts"},
 	},
 }

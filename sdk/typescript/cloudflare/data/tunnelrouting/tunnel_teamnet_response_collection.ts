@@ -4,6 +4,19 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TunnelTeamnetResponseCollection_NetworkSubset {
 }
 
+export interface TunnelTeamnetResponseCollection_Result {
+  comment?: string | Computed<string>;
+  createdAt?: string | Computed<string>;
+  deletedAt?: string | Computed<string>;
+  id?: string | Computed<string>;
+  network?: string | Computed<string>;
+  tunType?: string | Computed<string>;
+  tunnelId?: string | Computed<string>;
+  tunnelName?: string | Computed<string>;
+  virtualNetworkId?: string | Computed<string>;
+  virtualNetworkName?: string | Computed<string>;
+}
+
 const TunnelTeamnetResponseCollection_NetworkSubsetFields: FieldMap = {
 };
 
@@ -45,6 +58,7 @@ export interface TunnelTeamnetResponseCollectionAttrs {
   page: number;
   /** Number of results to display. */
   perPage: number;
+  result: TunnelTeamnetResponseCollection_Result[];
   /** UUID of the route. */
   routeId: string;
   /** The types of tunnels to filter by, separated by commas. */

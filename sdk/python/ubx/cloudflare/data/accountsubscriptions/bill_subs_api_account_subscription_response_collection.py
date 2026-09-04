@@ -7,6 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseCollection_Result_App:
+    install_id: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseCollection_Result_ComponentValues:
+    default: Any = None
+    display_name: Any = None
+    kind: Any = None
+    name: Any = None
+    price: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseCollection_Result_RatePlan:
+    currency: Any = None
+    externally_managed: Any = None
+    id: Any = None
+    is_contract: Any = None
+    public_name: Any = None
+    scope: Any = None
+    sets: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseCollection_Result_Zone:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseCollection_Result:
+    app: Any = None
+    component_values: Any = None
+    currency: Any = None
+    current_period_end: Any = None
+    current_period_start: Any = None
+    frequency: Any = None
+    id: Any = None
+    price: Any = None
+    rate_plan: Any = None
+    state: Any = None
+    zone: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiAccountSubscriptionResponseCollectionConfig:
     pass
 
@@ -14,6 +56,7 @@ class BillSubsApiAccountSubscriptionResponseCollectionConfig:
 class BillSubsApiAccountSubscriptionResponseCollectionAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 BillSubsApiAccountSubscriptionResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_account_subscription_response_collection",

@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result_DeviceStats_ByMode:
+    timestamp: Any = None
+    unique_devices_total: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result_DeviceStats:
+    by_mode: Any = None
+    by_status: Any = None
+    # Number of unique devices
+    unique_devices_total: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result:
+    device_stats: Any = None
+
+@dataclasses.dataclass
 class DigitalExperienceMonitoringFleetStatusOverTimeResponseConfig:
     # Cloudflare colo airport code.
     colo: Any = None
@@ -24,6 +41,7 @@ class DigitalExperienceMonitoringFleetStatusOverTimeResponseAttrs:
     # Unique identifier for the physical device (UUID).
     device_id: Any = None
     from_: Any = None
+    result: Any = None
     to: Any = None
 
 DigitalExperienceMonitoringFleetStatusOverTimeResponse = ubx.DataSourceBinding(

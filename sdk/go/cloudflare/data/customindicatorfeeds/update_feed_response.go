@@ -3,6 +3,19 @@ package customindicatorfeeds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UpdateFeedResponse_Result struct {
+	// Feed id
+	FileId any
+	// Name of the file unified in our system
+	Filename any
+	// Account-relative polling path. Prepend `/accounts/{account_id}` using the same account identifier and API host as the upload request. The path omits the account segment because the service does not have your account identifier in this context.
+	PollUrl any
+	// Current status of the upload at the moment the request returned. This is NOT a terminal state: the file is unified inline, but the durable loader has only accepted it, so the upload is still `Unifying`. Poll `poll_url` until the status reaches a terminal value (`Unified` or `Error`).
+	Status any
+	// Identifier of the upload row, for polling this upload to a terminal state via `poll_url`.
+	UploadId any
+}
+
 type UpdateFeedResponseConfig struct {
 	// Indicator feed ID
 	FeedId any
@@ -13,6 +26,7 @@ type UpdateFeedResponseAttrs struct {
 	AccountId any
 	// Indicator feed ID
 	FeedId any
+	Result any
 }
 
 var UpdateFeedResponse = ubx.DataSourceBinding{

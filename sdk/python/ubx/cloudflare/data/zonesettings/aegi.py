@@ -7,11 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Aegi_Result_Value:
+    enabled: Any = None
+    pool_id: Any = None
+
+@dataclasses.dataclass
+class Aegi_Result:
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class AegiConfig:
     pass
 
 @dataclasses.dataclass
 class AegiAttrs:
+    # Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -3,15 +3,33 @@ package secondarydnssecondaryzone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsSingleResponseIncoming_Result struct {
+	// How often should a secondary zone auto refresh regardless of DNS NOTIFY. Not applicable for primary zones.
+	AutoRefreshSeconds any
+	// The time for a specific event.
+	CheckedTime any
+	// The time for a specific event.
+	CreatedTime any
+	Id          any
+	// The time for a specific event.
+	ModifiedTime any
+	// Zone name.
+	Name any
+	// A list of peer tags.
+	Peers any
+	// The serial number of the SOA for the given zone.
+	SoaSerial any
+}
+
 type SecondaryDnsSingleResponseIncomingConfig struct {
 }
 
 type SecondaryDnsSingleResponseIncomingAttrs struct {
+	Result any
 	ZoneId any
 }
 
 var SecondaryDnsSingleResponseIncoming = ubx.DataSourceBinding{
 	WireType: "cloudflare_secondary_dns_single_response_incoming",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

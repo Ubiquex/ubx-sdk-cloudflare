@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .group import Group, GroupConfig
-from .member import Member, MemberConfig

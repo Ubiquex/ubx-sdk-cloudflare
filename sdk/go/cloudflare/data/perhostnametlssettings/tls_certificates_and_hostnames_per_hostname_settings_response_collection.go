@@ -3,6 +3,23 @@ package perhostnametlssettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection_Result struct {
+	CreatedAt any
+	Hostname  any
+	Status    any
+	UpdatedAt any
+	Value     any
+}
+
+type TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	// Total pages available of results.
+	TotalPages any
+}
+
 type TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionConfig struct {
 	// The TLS Setting name. The value type depends on the setting: - `ciphers`: value is an array of cipher suite strings (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: value is a TLS version string (`"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"`). - `http2`: value is `"on"` or `"off"`.
 	SettingId any
@@ -11,6 +28,8 @@ type TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionConfig stru
 }
 
 type TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionAttrs struct {
+	Result     any
+	ResultInfo any
 	// The TLS Setting name. The value type depends on the setting: - `ciphers`: value is an array of cipher suite strings (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: value is a TLS version string (`"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"`). - `http2`: value is `"on"` or `"off"`.
 	SettingId any
 	// Identifier.
@@ -21,6 +40,6 @@ var TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection = ubx.DataS
 	WireType: "cloudflare_tls_certificates_and_hostnames_per_hostname_settings_response_collection",
 	Fields: ubx.FieldMap{
 		"SettingId": ubx.FieldSpec{WireName: "setting_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

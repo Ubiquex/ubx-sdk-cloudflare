@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection5_Result:
+    ca: Any = None
+    certificates: Any = None
+    expires_on: Any = None
+    id: Any = None
+    issuer: Any = None
+    name: Any = None
+    serial_number: Any = None
+    signature: Any = None
+    type: Any = None
+    uploaded_on: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection5_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    # Total pages available of results.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseCollection5Config:
     # Identifier.
     account_id: Any = None
@@ -16,6 +38,8 @@ class TlsCertificatesAndHostnamesCertificateResponseCollection5Config:
 class TlsCertificatesAndHostnamesCertificateResponseCollection5Attrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
+    result_info: Any = None
     type: Any = None
 
 TlsCertificatesAndHostnamesCertificateResponseCollection5 = ubx.DataSourceBinding(

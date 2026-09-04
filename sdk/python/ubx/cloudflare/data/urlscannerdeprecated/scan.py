@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Scan_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Scan_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Scan_Result_Quota:
+    # The number of on-demand scans remaining in the current 24-hour window.
+    available: Any = None
+    # The number of on-demand scans initiated in the current 24-hour window.
+    used: Any = None
+
+@dataclasses.dataclass
+class Scan_Result_Scans:
+    scan_id: Any = None
+    started_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Scan_Result:
+    # Quota information for on-demand scans. Scans are rate limited per account per 24-hour rolling window.
+    quota: Any = None
+    # List of on-demand scans.
+    scans: Any = None
+
+@dataclasses.dataclass
 class ScanConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +46,11 @@ class ScanConfig:
 class ScanAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Scan = ubx.DataSourceBinding(
     wire_type="cloudflare_scan",

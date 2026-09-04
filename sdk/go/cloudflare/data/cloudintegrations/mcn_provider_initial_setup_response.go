@@ -3,20 +3,29 @@ package cloudintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnProviderInitialSetupResponse_Result struct {
+	AwsTrustPolicy         any
+	AzureConsentUrl        any
+	IntegrationIdentityTag any
+	ItemType               any
+	TagCliCommand          any
+}
+
 type McnProviderInitialSetupResponseConfig struct {
-	AccountId any
+	AccountId  any
 	ProviderId any
 }
 
 type McnProviderInitialSetupResponseAttrs struct {
-	AccountId any
+	AccountId  any
 	ProviderId any
+	Result     any
 }
 
 var McnProviderInitialSetupResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_provider_initial_setup_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
 	},
 }

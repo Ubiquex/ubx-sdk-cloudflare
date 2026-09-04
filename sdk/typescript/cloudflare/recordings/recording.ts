@@ -10,6 +10,50 @@ export interface Recording_AudioConfig {
   exportFile?: boolean | Computed<boolean>;
 }
 
+export interface Recording_Data_StartReason_Caller {
+  name?: string | Computed<string>;
+  type?: string | Computed<string>;
+  userId?: string | Computed<string>;
+}
+
+export interface Recording_Data_StartReason {
+  caller?: Recording_Data_StartReason_Caller | Computed<Recording_Data_StartReason_Caller>;
+  reason?: string | Computed<string>;
+}
+
+export interface Recording_Data_StorageConfig {
+  accessKey?: string | Computed<string>;
+  authMethod?: string | Computed<string>;
+  bucket?: string | Computed<string>;
+  host?: string | Computed<string>;
+  password?: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: number | Computed<number>;
+  privateKey?: string | Computed<string>;
+  region?: string | Computed<string>;
+  secret?: string | Computed<string>;
+  type?: string | Computed<string>;
+  username?: string | Computed<string>;
+}
+
+export interface Recording_Data {
+  audioDownloadUrl?: string | Computed<string>;
+  downloadUrl?: string | Computed<string>;
+  downloadUrlExpiry?: string | Computed<string>;
+  fileSize?: number | Computed<number>;
+  id?: string | Computed<string>;
+  invokedTime?: string | Computed<string>;
+  outputFileName?: string | Computed<string>;
+  recordingDuration?: number | Computed<number>;
+  sessionId?: string | Computed<string>;
+  startReason?: Recording_Data_StartReason | Computed<Recording_Data_StartReason>;
+  startedTime?: string | Computed<string>;
+  status?: string | Computed<string>;
+  stopReason?: Recording_Data_StartReason | Computed<Recording_Data_StartReason>;
+  stoppedTime?: string | Computed<string>;
+  storageConfig?: Recording_Data_StorageConfig | Computed<Recording_Data_StorageConfig>;
+}
+
 export interface Recording_InteractiveConfig {
   /** The metadata is presented in the form of ID3 tags. */
   type?: string | Computed<string>;
@@ -23,33 +67,6 @@ export interface Recording_RealtimekitBucketConfig {
 export interface Recording_RtmpOutConfig {
   /** RTMP URL to stream to */
   rtmpUrl?: string | Computed<string>;
-}
-
-export interface Recording_StorageConfig {
-  /** Access key of the storage medium. Access key is not required for the `gcs` storage media type. Note that this field is not readable by clients, only writeable. */
-  accessKey?: string | Computed<string>;
-  /** Authentication method used for "sftp" type storage medium */
-  authMethod?: string | Computed<string>;
-  /** Name of the storage medium's bucket. */
-  bucket: string | Computed<string>;
-  /** SSH destination server host for SFTP type storage medium */
-  host?: string | Computed<string>;
-  /** SSH destination server password for SFTP type storage medium when auth_method is "PASSWORD". If auth_method is "KEY", this specifies the password for the ssh private key. */
-  password?: string | Computed<string>;
-  /** Path relative to the bucket root at which the recording will be placed. */
-  path?: string | Computed<string>;
-  /** SSH destination server port for SFTP type storage medium */
-  port?: number | Computed<number>;
-  /** Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is "KEY" */
-  privateKey?: string | Computed<string>;
-  /** Region of the storage medium. */
-  region?: string | Computed<string>;
-  /** Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable. */
-  secret?: string | Computed<string>;
-  /** Type of storage media. */
-  type: string | Computed<string>;
-  /** SSH destination server username for SFTP type storage medium */
-  username?: string | Computed<string>;
 }
 
 export interface Recording_VideoConfig_Watermark_Size {
@@ -99,7 +116,7 @@ const Recording_RtmpOutConfigFields: FieldMap = {
   rtmpUrl: "rtmp_url",
 };
 
-const Recording_StorageConfigFields: FieldMap = {
+const Recording_Data_StorageConfigFields: FieldMap = {
   accessKey: "access_key",
   authMethod: "auth_method",
   bucket: "bucket",
@@ -156,7 +173,7 @@ export interface RecordingConfig {
   meetingId: string | Computed<string>;
   realtimekitBucketConfig?: Recording_RealtimekitBucketConfig | Computed<Recording_RealtimekitBucketConfig>;
   rtmpOutConfig?: Recording_RtmpOutConfig | Computed<Recording_RtmpOutConfig>;
-  storageConfig?: Recording_StorageConfig | Computed<Recording_StorageConfig>;
+  storageConfig?: Recording_Data_StorageConfig | Computed<Recording_Data_StorageConfig>;
   /** Pass a custom url to record arbitary screen */
   url?: string | Computed<string>;
   videoConfig?: Recording_VideoConfig | Computed<Recording_VideoConfig>;
@@ -173,6 +190,7 @@ export interface RecordingAttrs {
   allowMultipleRecordings: boolean;
   /** Object containing configuration regarding the audio that is being recorded. */
   audioConfig: Recording_AudioConfig;
+  data: Recording_Data;
   /** Update the recording file name. */
   fileNamePrefix: string;
   /** Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format. */
@@ -183,7 +201,9 @@ export interface RecordingAttrs {
   meetingId: string;
   realtimekitBucketConfig: Recording_RealtimekitBucketConfig;
   rtmpOutConfig: Recording_RtmpOutConfig;
-  storageConfig: Recording_StorageConfig;
+  storageConfig: Recording_Data_StorageConfig;
+  /** Success status of the operation */
+  success: boolean;
   /** Pass a custom url to record arbitary screen */
   url: string;
   videoConfig: Recording_VideoConfig;
@@ -225,7 +245,7 @@ export const Recording: ResourceBinding<RecordingConfig, RecordingAttrs> = {
     storageConfig: {
       wireName: "storage_config",
       kind: "object",
-      fields: Recording_StorageConfigFields,
+      fields: Recording_Data_StorageConfigFields,
     },
     url: "url",
     videoConfig: {

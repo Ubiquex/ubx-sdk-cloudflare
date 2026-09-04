@@ -3,6 +3,39 @@ package zerotrustsubnets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelSubnetResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelSubnetResponseSingle_Result_Capacity struct {
+	// Total number of assignable IPs in the subnet.
+	Total any
+	// Number of assigned IPs in the subnet.
+	Used any
+}
+
+type TunnelSubnetResponseSingle_Result struct {
+	// IP capacity information for the subnet.
+	Capacity any
+	// An optional description of the subnet.
+	Comment any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// The UUID of the subnet.
+	Id any
+	// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
+	IsDefaultNetwork any
+	// A user-friendly name for the subnet.
+	Name any
+	// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
+	Network any
+	// The type of subnet.
+	SubnetType any
+}
+
 type TunnelSubnetResponseSingleConfig struct {
 	// The UUID of the subnet.
 	SubnetId any
@@ -11,8 +44,13 @@ type TunnelSubnetResponseSingleConfig struct {
 type TunnelSubnetResponseSingleAttrs struct {
 	// Cloudflare account ID
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// The UUID of the subnet.
 	SubnetId any
+	// Whether the API call was successful
+	Success any
 }
 
 var TunnelSubnetResponseSingle = ubx.DataSourceBinding{

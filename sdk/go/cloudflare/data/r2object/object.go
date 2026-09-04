@@ -24,8 +24,8 @@ type ObjectAttrs struct {
 var Object = ubx.DataSourceBinding{
 	WireType: "cloudflare_object",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
+		"ObjectKey":  ubx.FieldSpec{WireName: "object_key"},
 	},
 }

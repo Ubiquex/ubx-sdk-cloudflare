@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesSourcingkitConnectivityCheckResponse_Result:
+    # Machine-readable error code if connectivity failed.
+    code: Any = None
+    # Whether the connectivity check succeeded.
+    connectivity_status: Any = None
+    # Human-readable error description if connectivity failed.
+    reason: Any = None
+
+@dataclasses.dataclass
 class ImagesSourcingkitConnectivityCheckResponseConfig:
     # Sourcing kit resource identifier.
     source_id: Any = None
@@ -15,6 +24,7 @@ class ImagesSourcingkitConnectivityCheckResponseConfig:
 class ImagesSourcingkitConnectivityCheckResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
     # Sourcing kit resource identifier.
     source_id: Any = None
 

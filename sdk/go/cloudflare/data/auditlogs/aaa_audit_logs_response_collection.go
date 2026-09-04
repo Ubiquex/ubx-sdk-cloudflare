@@ -10,7 +10,7 @@ type AaaAuditLogsResponseCollectionConfig struct {
 	ActorEmail any
 	// Filters by the IP address of the request that made the change by specific IP address or valid CIDR Range.
 	ActorIp any
-	Before any
+	Before  any
 	// Changes the direction of the chronological sorting.
 	Direction any
 	// Indicates that this request is an export of logs in CSV format.
@@ -23,7 +23,7 @@ type AaaAuditLogsResponseCollectionConfig struct {
 	Page any
 	// Sets the number of results to return per page.
 	PerPage any
-	Since any
+	Since   any
 	// Filters by the name of the zone associated to the change.
 	ZoneName any
 }
@@ -37,7 +37,7 @@ type AaaAuditLogsResponseCollectionAttrs struct {
 	ActorEmail any
 	// Filters by the IP address of the request that made the change by specific IP address or valid CIDR Range.
 	ActorIp any
-	Before any
+	Before  any
 	// Changes the direction of the chronological sorting.
 	Direction any
 	// Indicates that this request is an export of logs in CSV format.
@@ -50,7 +50,7 @@ type AaaAuditLogsResponseCollectionAttrs struct {
 	Page any
 	// Sets the number of results to return per page.
 	PerPage any
-	Since any
+	Since   any
 	// Filters by the name of the zone associated to the change.
 	ZoneName any
 }
@@ -58,17 +58,17 @@ type AaaAuditLogsResponseCollectionAttrs struct {
 var AaaAuditLogsResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_audit_logs_response_collection",
 	Fields: ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"ActorEmail": ubx.FieldSpec{WireName: "actor_email"},
-		"ActorIp": ubx.FieldSpec{WireName: "actor_ip"},
-		"Before": ubx.FieldSpec{WireName: "before"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Export": ubx.FieldSpec{WireName: "export"},
+		"ActionType":   ubx.FieldSpec{WireName: "action_type"},
+		"ActorEmail":   ubx.FieldSpec{WireName: "actor_email"},
+		"ActorIp":      ubx.FieldSpec{WireName: "actor_ip"},
+		"Before":       ubx.FieldSpec{WireName: "before"},
+		"Direction":    ubx.FieldSpec{WireName: "direction"},
+		"Export":       ubx.FieldSpec{WireName: "export"},
 		"HideUserLogs": ubx.FieldSpec{WireName: "hide_user_logs"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"ZoneName": ubx.FieldSpec{WireName: "zone_name"},
+		"Id":           ubx.FieldSpec{WireName: "id"},
+		"Page":         ubx.FieldSpec{WireName: "page"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
+		"Since":        ubx.FieldSpec{WireName: "since"},
+		"ZoneName":     ubx.FieldSpec{WireName: "zone_name"},
 	},
 }

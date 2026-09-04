@@ -107,125 +107,125 @@ type Meeting_RecordingConfig struct {
 	// Object containing configuration regarding the audio that is being recorded.
 	AudioConfig any
 	// Adds a prefix to the beginning of the file name of the recording.
-	FileNamePrefix any
+	FileNamePrefix      any
 	LiveStreamingConfig any
 	// Specifies the maximum duration for recording in seconds, ranging from a minimum of 60 seconds to a maximum of 24 hours.
-	MaxSeconds any
+	MaxSeconds              any
 	RealtimekitBucketConfig any
-	StorageConfig any
-	VideoConfig any
+	StorageConfig           any
+	VideoConfig             any
 }
 
 var Meeting_AiConfig_SummarizationFields = ubx.FieldMap{
-		"SummaryType": ubx.FieldSpec{WireName: "summary_type"},
-		"TextFormat": ubx.FieldSpec{WireName: "text_format"},
-		"WordLimit": ubx.FieldSpec{WireName: "word_limit"},
-	}
+	"SummaryType": ubx.FieldSpec{WireName: "summary_type"},
+	"TextFormat":  ubx.FieldSpec{WireName: "text_format"},
+	"WordLimit":   ubx.FieldSpec{WireName: "word_limit"},
+}
 
 var Meeting_AiConfig_TranscriptionFields = ubx.FieldMap{
-		"Keywords": ubx.FieldSpec{WireName: "keywords"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"ProfanityFilter": ubx.FieldSpec{WireName: "profanity_filter"},
-	}
+	"Keywords":        ubx.FieldSpec{WireName: "keywords"},
+	"Language":        ubx.FieldSpec{WireName: "language"},
+	"ProfanityFilter": ubx.FieldSpec{WireName: "profanity_filter"},
+}
 
 var Meeting_AiConfigFields = ubx.FieldMap{
-		"Summarization": ubx.FieldSpec{
-			WireName: "summarization",
-			Kind: "object",
-			Fields: Meeting_AiConfig_SummarizationFields,
-		},
-		"Transcription": ubx.FieldSpec{
-			WireName: "transcription",
-			Kind: "object",
-			Fields: Meeting_AiConfig_TranscriptionFields,
-		},
-	}
+	"Summarization": ubx.FieldSpec{
+		WireName: "summarization",
+		Kind:     "object",
+		Fields:   Meeting_AiConfig_SummarizationFields,
+	},
+	"Transcription": ubx.FieldSpec{
+		WireName: "transcription",
+		Kind:     "object",
+		Fields:   Meeting_AiConfig_TranscriptionFields,
+	},
+}
 
 var Meeting_RecordingConfig_AudioConfigFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"ExportFile": ubx.FieldSpec{WireName: "export_file"},
-	}
+	"Channel":    ubx.FieldSpec{WireName: "channel"},
+	"Codec":      ubx.FieldSpec{WireName: "codec"},
+	"ExportFile": ubx.FieldSpec{WireName: "export_file"},
+}
 
 var Meeting_RecordingConfig_LiveStreamingConfigFields = ubx.FieldMap{
-		"RtmpUrl": ubx.FieldSpec{WireName: "rtmp_url"},
-	}
+	"RtmpUrl": ubx.FieldSpec{WireName: "rtmp_url"},
+}
 
 var Meeting_RecordingConfig_RealtimekitBucketConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Meeting_RecordingConfig_StorageConfigFields = ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AccessKey":  ubx.FieldSpec{WireName: "access_key"},
+	"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Host":       ubx.FieldSpec{WireName: "host"},
+	"Password":   ubx.FieldSpec{WireName: "password"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Port":       ubx.FieldSpec{WireName: "port"},
+	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+	"Secret":     ubx.FieldSpec{WireName: "secret"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"Username":   ubx.FieldSpec{WireName: "username"},
+}
 
 var Meeting_RecordingConfig_VideoConfig_Watermark_SizeFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+}
 
 var Meeting_RecordingConfig_VideoConfig_WatermarkFields = ubx.FieldMap{
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Size": ubx.FieldSpec{
-			WireName: "size",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_VideoConfig_Watermark_SizeFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Size": ubx.FieldSpec{
+		WireName: "size",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_VideoConfig_Watermark_SizeFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Meeting_RecordingConfig_VideoConfigFields = ubx.FieldMap{
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"ExportFile": ubx.FieldSpec{WireName: "export_file"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Watermark": ubx.FieldSpec{
-			WireName: "watermark",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_VideoConfig_WatermarkFields,
-		},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Codec":      ubx.FieldSpec{WireName: "codec"},
+	"ExportFile": ubx.FieldSpec{WireName: "export_file"},
+	"Height":     ubx.FieldSpec{WireName: "height"},
+	"Watermark": ubx.FieldSpec{
+		WireName: "watermark",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_VideoConfig_WatermarkFields,
+	},
+	"Width": ubx.FieldSpec{WireName: "width"},
+}
 
 var Meeting_RecordingConfigFields = ubx.FieldMap{
-		"AudioConfig": ubx.FieldSpec{
-			WireName: "audio_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_AudioConfigFields,
-		},
-		"FileNamePrefix": ubx.FieldSpec{WireName: "file_name_prefix"},
-		"LiveStreamingConfig": ubx.FieldSpec{
-			WireName: "live_streaming_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_LiveStreamingConfigFields,
-		},
-		"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
-		"RealtimekitBucketConfig": ubx.FieldSpec{
-			WireName: "realtimekit_bucket_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_RealtimekitBucketConfigFields,
-		},
-		"StorageConfig": ubx.FieldSpec{
-			WireName: "storage_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_StorageConfigFields,
-		},
-		"VideoConfig": ubx.FieldSpec{
-			WireName: "video_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfig_VideoConfigFields,
-		},
-	}
+	"AudioConfig": ubx.FieldSpec{
+		WireName: "audio_config",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_AudioConfigFields,
+	},
+	"FileNamePrefix": ubx.FieldSpec{WireName: "file_name_prefix"},
+	"LiveStreamingConfig": ubx.FieldSpec{
+		WireName: "live_streaming_config",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_LiveStreamingConfigFields,
+	},
+	"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
+	"RealtimekitBucketConfig": ubx.FieldSpec{
+		WireName: "realtimekit_bucket_config",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_RealtimekitBucketConfigFields,
+	},
+	"StorageConfig": ubx.FieldSpec{
+		WireName: "storage_config",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_StorageConfigFields,
+	},
+	"VideoConfig": ubx.FieldSpec{
+		WireName: "video_config",
+		Kind:     "object",
+		Fields:   Meeting_RecordingConfig_VideoConfigFields,
+	},
+}
 
 type MeetingConfig struct {
 	// The AI Config allows you to customize the behavior of meeting transcriptions and summaries
@@ -257,6 +257,8 @@ type MeetingConfig struct {
 type MeetingAttrs struct {
 	// The AI Config allows you to customize the behavior of meeting transcriptions and summaries
 	AiConfig any
+	// Data returned by the operation
+	Data any
 	// Specifies if the meeting should start getting livestreamed on start.
 	LiveStreamOnStart any
 	// If a meeting is set to persist_chat, meeting chat would remain for a week within the meeting space.
@@ -267,6 +269,8 @@ type MeetingAttrs struct {
 	RecordingConfig any
 	// Time in seconds, for which a session remains active, after the last participant has left the meeting.
 	SessionKeepAliveTimeInSecs any
+	// Success status of the operation
+	Success any
 	// Automatically generate summary of meetings using transcripts. Requires Transcriptions to be enabled, and can be retrieved via Webhooks or summary API.
 	SummarizeOnEnd any
 	// Title of the meeting
@@ -286,23 +290,23 @@ var Meeting = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AiConfig": ubx.FieldSpec{
 			WireName: "ai_config",
-			Kind: "object",
-			Fields: Meeting_AiConfigFields,
+			Kind:     "object",
+			Fields:   Meeting_AiConfigFields,
 		},
 		"LiveStreamOnStart": ubx.FieldSpec{WireName: "live_stream_on_start"},
-		"PersistChat": ubx.FieldSpec{WireName: "persist_chat"},
-		"RecordOnStart": ubx.FieldSpec{WireName: "record_on_start"},
+		"PersistChat":       ubx.FieldSpec{WireName: "persist_chat"},
+		"RecordOnStart":     ubx.FieldSpec{WireName: "record_on_start"},
 		"RecordingConfig": ubx.FieldSpec{
 			WireName: "recording_config",
-			Kind: "object",
-			Fields: Meeting_RecordingConfigFields,
+			Kind:     "object",
+			Fields:   Meeting_RecordingConfigFields,
 		},
 		"SessionKeepAliveTimeInSecs": ubx.FieldSpec{WireName: "session_keep_alive_time_in_secs"},
-		"SummarizeOnEnd": ubx.FieldSpec{WireName: "summarize_on_end"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"TranscribeOnEnd": ubx.FieldSpec{WireName: "transcribe_on_end"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
+		"SummarizeOnEnd":             ubx.FieldSpec{WireName: "summarize_on_end"},
+		"Title":                      ubx.FieldSpec{WireName: "title"},
+		"TranscribeOnEnd":            ubx.FieldSpec{WireName: "transcribe_on_end"},
+		"AccountId":                  ubx.FieldSpec{WireName: "account_id"},
+		"AppId":                      ubx.FieldSpec{WireName: "app_id"},
+		"MeetingId":                  ubx.FieldSpec{WireName: "meeting_id"},
 	},
 }

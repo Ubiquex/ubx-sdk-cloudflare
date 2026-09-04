@@ -3,20 +3,52 @@ package aiaudit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Robot_Errors struct {
+	Code    any
+	Message any
+}
+
+type Robot_Result_UserAgents_ContentSignals struct {
+	AiInput any
+	AiTrain any
+	Search  any
+}
+
+type Robot_Result_UserAgents struct {
+	Allow          any
+	ContentSignals any
+	CrawlDelay     any
+	Disallow       any
+}
+
+type Robot_Result struct {
+	// List of sitemap URLs found in robots.txt.
+	Sitemaps any
+	// HTTP status code from fetching the robots.txt file.
+	Status any
+	// Map of user-agent string to its parsed rules.
+	UserAgents any
+}
+
 type RobotConfig struct {
 	Subdomain any
-	ZoneId any
+	ZoneId    any
 }
 
 type RobotAttrs struct {
+	Errors   any
+	Messages any
+	// Parsed robots.txt rules for a single domain.
+	Result    any
 	Subdomain any
-	ZoneId any
+	Success   any
+	ZoneId    any
 }
 
 var Robot = ubx.DataSourceBinding{
 	WireType: "cloudflare_robot",
 	Fields: ubx.FieldMap{
 		"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

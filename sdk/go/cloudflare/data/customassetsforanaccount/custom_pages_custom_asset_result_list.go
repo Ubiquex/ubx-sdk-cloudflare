@@ -3,25 +3,34 @@ package customassetsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPagesCustomAssetResultList_Result struct {
+	Description any
+	LastUpdated any
+	Name        any
+	SizeBytes   any
+	Url         any
+}
+
 type CustomPagesCustomAssetResultListConfig struct {
 	// Identifier.
 	AccountIdentifier any
-	Page any
-	PerPage any
+	Page              any
+	PerPage           any
 }
 
 type CustomPagesCustomAssetResultListAttrs struct {
 	// Identifier.
 	AccountIdentifier any
-	Page any
-	PerPage any
+	Page              any
+	PerPage           any
+	Result            any
 }
 
 var CustomPagesCustomAssetResultList = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_pages_custom_asset_result_list",
 	Fields: ubx.FieldMap{
 		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
 	},
 }

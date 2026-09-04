@@ -3,6 +3,14 @@ package zerotrustgatewayapplicationandapplicationtypemappings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection7_Result struct {
+	ApplicationTypeId any
+	CreatedAt         any
+	Description       any
+	Id                any
+	Name              any
+}
+
 type ZeroTrustGatewayResponseCollection7Config struct {
 	// Provide the identifier string.
 	AccountId any
@@ -11,6 +19,7 @@ type ZeroTrustGatewayResponseCollection7Config struct {
 type ZeroTrustGatewayResponseCollection7Attrs struct {
 	// Provide the identifier string.
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection7 = ubx.DataSourceBinding{

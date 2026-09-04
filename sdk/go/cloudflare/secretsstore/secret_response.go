@@ -3,6 +3,24 @@ package secretsstore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecretResponse_Result struct {
+	// Freeform text describing the secret.
+	Comment any
+	// When the secret was created.
+	Created any
+	// Secret identifier tag.
+	Id any
+	// When the secret was modified.
+	Modified any
+	// The name of the secret.
+	Name any
+	// The list of services that can use this secret.
+	Scopes any
+	Status any
+	// Store Identifier.
+	StoreId any
+}
+
 type SecretResponseConfig struct {
 	// Freeform text describing the secret.
 	Comment any
@@ -22,7 +40,8 @@ type SecretResponseAttrs struct {
 	// Freeform text describing the secret.
 	Comment any
 	// The name of the secret.
-	Name any
+	Name   any
+	Result any
 	// The list of services that can use this secret.
 	Scopes any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +55,11 @@ type SecretResponseAttrs struct {
 var SecretResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_secrets_store_secret_response",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"Comment":   ubx.FieldSpec{WireName: "comment"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Scopes":    ubx.FieldSpec{WireName: "scopes"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"StoreId": ubx.FieldSpec{WireName: "store_id"},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
+		"StoreId":   ubx.FieldSpec{WireName: "store_id"},
+		"SecretId":  ubx.FieldSpec{WireName: "secret_id"},
 	},
 }

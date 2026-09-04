@@ -6,13 +6,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type WafManagedRulesRuleResponseCollection_GroupId struct {
 }
 
-var WafManagedRulesRuleResponseCollection_GroupIdFields = ubx.FieldMap{
-	}
+var WafManagedRulesRuleResponseCollection_GroupIdFields = ubx.FieldMap{}
 
 type WafManagedRulesRuleResponseCollectionConfig struct {
 	// Defines the direction used to sort returned rules.
 	Direction any
-	GroupId any
+	GroupId   any
 	// Defines the search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 	Match any
 	// Defines the action/mode a rule has been overridden to perform.
@@ -30,7 +29,7 @@ type WafManagedRulesRuleResponseCollectionAttrs struct {
 	Description any
 	// Defines the direction used to sort returned rules.
 	Direction any
-	GroupId any
+	GroupId   any
 	// Defines the search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 	Match any
 	// Defines the action/mode a rule has been overridden to perform.
@@ -45,6 +44,7 @@ type WafManagedRulesRuleResponseCollectionAttrs struct {
 	PerPage any
 	// Defines the order in which the individual WAF rule is executed within its rule group.
 	Priority any
+	Result   any
 	// Defines an identifier of a schema.
 	ZoneId any
 }
@@ -55,13 +55,13 @@ var WafManagedRulesRuleResponseCollection = ubx.DataSourceBinding{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
 		"GroupId": ubx.FieldSpec{
 			WireName: "group_id",
-			Kind: "object",
-			Fields: WafManagedRulesRuleResponseCollection_GroupIdFields,
+			Kind:     "object",
+			Fields:   WafManagedRulesRuleResponseCollection_GroupIdFields,
 		},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Match":   ubx.FieldSpec{WireName: "match"},
+		"Mode":    ubx.FieldSpec{WireName: "mode"},
+		"Order":   ubx.FieldSpec{WireName: "order"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

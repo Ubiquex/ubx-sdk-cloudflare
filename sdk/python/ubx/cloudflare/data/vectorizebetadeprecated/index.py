@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Index_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Index_Result_Config:
+    dimensions: Any = None
+    metric: Any = None
+
+@dataclasses.dataclass
+class Index_Result:
+    config: Any = None
+    created_on: Any = None
+    description: Any = None
+    modified_on: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class IndexConfig:
     pass
 
@@ -14,6 +32,11 @@ class IndexConfig:
 class IndexAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 Index = ubx.DataSourceBinding(
     wire_type="cloudflare_index",

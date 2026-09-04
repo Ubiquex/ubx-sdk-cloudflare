@@ -3,67 +3,122 @@ package customhostnameforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundle struct {
-	CustomCertificate any
-	CustomKey any
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Errors_Source struct {
+	Pointer any
 }
 
-type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_Settings struct {
-	Ciphers any
-	EarlyHints any
-	Http2 any
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_DcvDelegationRecords struct {
+	Cname       any
+	CnameTarget any
+	Emails      any
+	HttpBody    any
+	HttpUrl     any
+	Status      any
+	TxtName     any
+	TxtValue    any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_Settings struct {
+	Ciphers       any
+	EarlyHints    any
+	Http2         any
 	MinTlsVersion any
-	Tls13 any
+	Tls13         any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_ValidationErrors struct {
+	Message any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl struct {
+	BundleMethod         any
+	CertificateAuthority any
+	CustomCertificate    any
+	CustomCsrId          any
+	CustomKey            any
+	DcvDelegationRecords any
+	ExpiresOn            any
+	Hosts                any
+	Id                   any
+	Issuer               any
+	Method               any
+	SerialNumber         any
+	Settings             any
+	Signature            any
+	Status               any
+	Type                 any
+	UploadedOn           any
+	ValidationErrors     any
+	ValidationRecords    any
+	Wildcard             any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result struct {
+	Hostname any
+	Id       any
+	Ssl      any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundle struct {
+	CustomCertificate any
+	CustomKey         any
 }
 
 type TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl struct {
-	BundleMethod any
+	BundleMethod         any
 	CertificateAuthority any
-	CloudflareBranding any
-	CustomCertBundle any
-	CustomCertificate any
-	CustomCsrId any
-	CustomKey any
-	Method any
-	Settings any
-	Type any
-	Wildcard any
+	CloudflareBranding   any
+	CustomCertBundle     any
+	CustomCertificate    any
+	CustomCsrId          any
+	CustomKey            any
+	Method               any
+	Settings             any
+	Type                 any
+	Wildcard             any
 }
 
 var TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundleFields = ubx.FieldMap{
-		"CustomCertificate": ubx.FieldSpec{WireName: "custom_certificate"},
-		"CustomKey": ubx.FieldSpec{WireName: "custom_key"},
-	}
+	"CustomCertificate": ubx.FieldSpec{WireName: "custom_certificate"},
+	"CustomKey":         ubx.FieldSpec{WireName: "custom_key"},
+}
 
-var TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_SettingsFields = ubx.FieldMap{
-		"Ciphers": ubx.FieldSpec{WireName: "ciphers"},
-		"EarlyHints": ubx.FieldSpec{WireName: "early_hints"},
-		"Http2": ubx.FieldSpec{WireName: "http2"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Tls13": ubx.FieldSpec{WireName: "tls_1_3"},
-	}
+var TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_SettingsFields = ubx.FieldMap{
+	"Ciphers":       ubx.FieldSpec{WireName: "ciphers"},
+	"EarlyHints":    ubx.FieldSpec{WireName: "early_hints"},
+	"Http2":         ubx.FieldSpec{WireName: "http2"},
+	"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
+	"Tls13":         ubx.FieldSpec{WireName: "tls_1_3"},
+}
 
 var TlsCertificatesAndHostnamesCustomHostnameResponseSingle_SslFields = ubx.FieldMap{
-		"BundleMethod": ubx.FieldSpec{WireName: "bundle_method"},
-		"CertificateAuthority": ubx.FieldSpec{WireName: "certificate_authority"},
-		"CloudflareBranding": ubx.FieldSpec{WireName: "cloudflare_branding"},
-		"CustomCertBundle": ubx.FieldSpec{
-			WireName: "custom_cert_bundle",
-			Kind: "list",
-			Fields: TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundleFields,
-		},
-		"CustomCertificate": ubx.FieldSpec{WireName: "custom_certificate"},
-		"CustomCsrId": ubx.FieldSpec{WireName: "custom_csr_id"},
-		"CustomKey": ubx.FieldSpec{WireName: "custom_key"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_SettingsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Wildcard": ubx.FieldSpec{WireName: "wildcard"},
-	}
+	"BundleMethod":         ubx.FieldSpec{WireName: "bundle_method"},
+	"CertificateAuthority": ubx.FieldSpec{WireName: "certificate_authority"},
+	"CloudflareBranding":   ubx.FieldSpec{WireName: "cloudflare_branding"},
+	"CustomCertBundle": ubx.FieldSpec{
+		WireName: "custom_cert_bundle",
+		Kind:     "list",
+		Fields:   TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundleFields,
+	},
+	"CustomCertificate": ubx.FieldSpec{WireName: "custom_certificate"},
+	"CustomCsrId":       ubx.FieldSpec{WireName: "custom_csr_id"},
+	"CustomKey":         ubx.FieldSpec{WireName: "custom_key"},
+	"Method":            ubx.FieldSpec{WireName: "method"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_SettingsFields,
+	},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+	"Wildcard": ubx.FieldSpec{WireName: "wildcard"},
+}
 
 type TlsCertificatesAndHostnamesCustomHostnameResponseSingleConfig struct {
 	// Unique key/value metadata for this hostname. These are per-hostname (customer) settings.
@@ -89,10 +144,16 @@ type TlsCertificatesAndHostnamesCustomHostnameResponseSingleAttrs struct {
 	CustomOriginServer any
 	// A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
 	CustomOriginSni any
+	Errors          any
 	// The custom hostname that will point to your hostname via CNAME.
 	Hostname any
+	// Informational messages returned by the custom hostname API.
+	Messages any
+	Result   any
 	// SSL properties used when creating the custom hostname.
 	Ssl any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -102,16 +163,16 @@ type TlsCertificatesAndHostnamesCustomHostnameResponseSingleAttrs struct {
 var TlsCertificatesAndHostnamesCustomHostnameResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_hostname_response_single",
 	Fields: ubx.FieldMap{
-		"CustomMetadata": ubx.FieldSpec{WireName: "custom_metadata"},
+		"CustomMetadata":     ubx.FieldSpec{WireName: "custom_metadata"},
 		"CustomOriginServer": ubx.FieldSpec{WireName: "custom_origin_server"},
-		"CustomOriginSni": ubx.FieldSpec{WireName: "custom_origin_sni"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"CustomOriginSni":    ubx.FieldSpec{WireName: "custom_origin_sni"},
+		"Hostname":           ubx.FieldSpec{WireName: "hostname"},
 		"Ssl": ubx.FieldSpec{
 			WireName: "ssl",
-			Kind: "object",
-			Fields: TlsCertificatesAndHostnamesCustomHostnameResponseSingle_SslFields,
+			Kind:     "object",
+			Fields:   TlsCertificatesAndHostnamesCustomHostnameResponseSingle_SslFields,
 		},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":           ubx.FieldSpec{WireName: "zone_id"},
 		"CustomHostnameId": ubx.FieldSpec{WireName: "custom_hostname_id"},
 	},
 }

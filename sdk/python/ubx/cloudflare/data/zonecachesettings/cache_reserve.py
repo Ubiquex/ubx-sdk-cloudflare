@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CacheReserve_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class CacheReserveConfig:
     pass
 
 @dataclasses.dataclass
 class CacheReserveAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

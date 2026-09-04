@@ -3,6 +3,27 @@ package accessidentityproviders
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessScimUsersResponse_Result_Emails struct {
+	Primary any
+	Type    any
+	Value   any
+}
+
+type AccessScimUsersResponse_Result_Meta struct {
+	Created      any
+	LastModified any
+}
+
+type AccessScimUsersResponse_Result struct {
+	Active      any
+	DisplayName any
+	Emails      any
+	ExternalId  any
+	Id          any
+	Meta        any
+	Schemas     any
+}
+
 type AccessScimUsersResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -41,6 +62,7 @@ type AccessScimUsersResponseAttrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 	// The username of the SCIM User resource.
 	Username any
 }
@@ -48,14 +70,14 @@ type AccessScimUsersResponseAttrs struct {
 var AccessScimUsersResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_scim_users_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CfResourceId": ubx.FieldSpec{WireName: "cf_resource_id"},
-		"Email": ubx.FieldSpec{WireName: "email"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"CfResourceId":       ubx.FieldSpec{WireName: "cf_resource_id"},
+		"Email":              ubx.FieldSpec{WireName: "email"},
 		"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
-		"IdpResourceId": ubx.FieldSpec{WireName: "idp_resource_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"IdpResourceId":      ubx.FieldSpec{WireName: "idp_resource_id"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Page":               ubx.FieldSpec{WireName: "page"},
+		"PerPage":            ubx.FieldSpec{WireName: "per_page"},
+		"Username":           ubx.FieldSpec{WireName: "username"},
 	},
 }

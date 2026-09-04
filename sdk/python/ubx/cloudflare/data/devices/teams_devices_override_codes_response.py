@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesOverrideCodesResponse_Result_DisableForTime:
+    pass
+
+@dataclasses.dataclass
+class TeamsDevicesOverrideCodesResponse_Result:
+    disable_for_time: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesOverrideCodesResponseConfig:
     account_id: Any = None
     # Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
@@ -17,6 +25,7 @@ class TeamsDevicesOverrideCodesResponseAttrs:
     account_id: Any = None
     # Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
     device_id: Any = None
+    result: Any = None
 
 TeamsDevicesOverrideCodesResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_override_codes_response",

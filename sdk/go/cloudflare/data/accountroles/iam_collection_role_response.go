@@ -6,8 +6,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamCollectionRoleResponse_AccountId struct {
 }
 
-var IamCollectionRoleResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamCollectionRoleResponse_Result_Permissions_Analytics struct {
+	Read  any
+	Write any
+}
+
+type IamCollectionRoleResponse_Result_Permissions struct {
+	Analytics    any
+	Billing      any
+	CachePurge   any
+	Dns          any
+	DnsRecords   any
+	Lb           any
+	Logs         any
+	Organization any
+	Ssl          any
+	Waf          any
+	ZoneSettings any
+	Zones        any
+}
+
+type IamCollectionRoleResponse_Result struct {
+	Description any
+	Id          any
+	Name        any
+	Permissions any
+}
+
+var IamCollectionRoleResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamCollectionRoleResponseConfig struct {
 	// Account identifier tag.
@@ -25,6 +51,7 @@ type IamCollectionRoleResponseAttrs struct {
 	Page any
 	// Number of roles per page.
 	PerPage any
+	Result  any
 }
 
 var IamCollectionRoleResponse = ubx.DataSourceBinding{
@@ -32,10 +59,10 @@ var IamCollectionRoleResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamCollectionRoleResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamCollectionRoleResponse_AccountIdFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

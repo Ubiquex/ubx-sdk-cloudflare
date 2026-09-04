@@ -128,6 +128,35 @@ export interface AccessSingleResponse22_Exclude {
   userRiskScore?: AccessSingleResponse22_Exclude_UserRiskScore | Computed<AccessSingleResponse22_Exclude_UserRiskScore>;
 }
 
+export interface AccessSingleResponse22_Result {
+  /** Administrators who can approve a temporary authentication request. */
+  approvalGroups?: AccessSingleResponse22_ApprovalGroups[] | Computed<AccessSingleResponse22_ApprovalGroups[]>;
+  /** Requires the user to request access from an administrator at the start of each session. */
+  approvalRequired?: boolean | Computed<boolean>;
+  createdAt?: string | Computed<string>;
+  /** The action Access will take if a user matches this policy. */
+  decision?: string | Computed<string>;
+  /** Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules. */
+  exclude?: AccessSingleResponse22_Exclude[] | Computed<AccessSingleResponse22_Exclude[]>;
+  /** UUID. */
+  id?: string | Computed<string>;
+  /** Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. */
+  include?: AccessSingleResponse22_Exclude[] | Computed<AccessSingleResponse22_Exclude[]>;
+  /** Require this application to be served in an isolated browser for users matching this policy. */
+  isolationRequired?: boolean | Computed<boolean>;
+  /** The name of the Access policy. */
+  name?: string | Computed<string>;
+  /** The order of execution for this policy. Must be unique for each policy. */
+  precedence?: number | Computed<number>;
+  /** A custom message that will appear on the purpose justification screen. */
+  purposeJustificationPrompt?: string | Computed<string>;
+  /** Require users to enter a justification when they log in to the application. */
+  purposeJustificationRequired?: boolean | Computed<boolean>;
+  /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
+  require?: AccessSingleResponse22_Exclude[] | Computed<AccessSingleResponse22_Exclude[]>;
+  updatedAt?: string | Computed<string>;
+}
+
 const AccessSingleResponse22_ApprovalGroupsFields: FieldMap = {
   approvalsNeeded: "approvals_needed",
   emailAddresses: "email_addresses",
@@ -401,6 +430,7 @@ export interface AccessSingleResponse22Attrs {
   purposeJustificationRequired: boolean;
   /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse22_Exclude[];
+  result: AccessSingleResponse22_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */

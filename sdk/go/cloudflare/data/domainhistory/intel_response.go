@@ -3,6 +3,22 @@ package domainhistory
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelResponse_Result_Categorizations_Categories struct {
+	Id   any
+	Name any
+}
+
+type IntelResponse_Result_Categorizations struct {
+	Categories any
+	End        any
+	Start      any
+}
+
+type IntelResponse_Result struct {
+	Categorizations any
+	Domain          any
+}
+
 type IntelResponseConfig struct {
 	Domain any
 }
@@ -10,7 +26,8 @@ type IntelResponseConfig struct {
 type IntelResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Domain any
+	Domain    any
+	Result    any
 }
 
 var IntelResponse = ubx.DataSourceBinding{

@@ -3,18 +3,31 @@ package apishieldschemavalidation20
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UserSchema_Result_CreatedAt struct {
+}
+
+type UserSchema_Result struct {
+	CreatedAt         any
+	Kind              any
+	Name              any
+	SchemaId          any
+	Source            any
+	ValidationEnabled any
+}
+
 type UserSchemaConfig struct {
 	OmitSource any
-	Page any
-	PerPage any
+	Page       any
+	PerPage    any
 	// Flag whether schema is enabled for validation.
 	ValidationEnabled any
 }
 
 type UserSchemaAttrs struct {
 	OmitSource any
-	Page any
-	PerPage any
+	Page       any
+	PerPage    any
+	Result     any
 	// Flag whether schema is enabled for validation.
 	ValidationEnabled any
 }
@@ -22,9 +35,9 @@ type UserSchemaAttrs struct {
 var UserSchema = ubx.DataSourceBinding{
 	WireType: "cloudflare_user_schema",
 	Fields: ubx.FieldMap{
-		"OmitSource": ubx.FieldSpec{WireName: "omit_source"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"OmitSource":        ubx.FieldSpec{WireName: "omit_source"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
 		"ValidationEnabled": ubx.FieldSpec{WireName: "validation_enabled"},
 	},
 }

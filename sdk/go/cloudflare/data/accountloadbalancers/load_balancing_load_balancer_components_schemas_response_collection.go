@@ -3,16 +3,129 @@ package accountloadbalancers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_AdaptiveRouting struct {
+	FailoverAcrossPools any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_LocationStrategy struct {
+	Mode      any
+	PreferEcs any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_FixedResponse struct {
+	ContentType any
+	Location    any
+	MessageBody any
+	StatusCode  any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Match_Topology struct {
+	Countries any
+	Pops      any
+	Regions   any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Match struct {
+	Default  any
+	Topology any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Overrides struct {
+	FallbackPool      any
+	PoolDefaultWeight any
+	PoolWeights       any
+	Pools             any
+	SteeringPolicy    any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets struct {
+	Disabled      any
+	FixedResponse any
+	Match         any
+	Name          any
+	Overrides     any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_RandomSteering struct {
+	DefaultWeight any
+	PoolWeights   any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules_Overrides_SessionAffinityAttributes struct {
+	DrainDuration        any
+	Headers              any
+	RequireAllHeaders    any
+	Samesite             any
+	Secure               any
+	ZeroDowntimeFailover any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules_Overrides struct {
+	AdaptiveRouting           any
+	CountryPools              any
+	DefaultPools              any
+	FallbackPool              any
+	LocationStrategy          any
+	PoolDefaultWeight         any
+	PoolWeights               any
+	Pools                     any
+	PopPools                  any
+	RandomSteering            any
+	RegionPools               any
+	SessionAffinity           any
+	SessionAffinityAttributes any
+	SessionAffinityTtl        any
+	SteeringPolicy            any
+	Ttl                       any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules struct {
+	Condition     any
+	Disabled      any
+	FixedResponse any
+	Name          any
+	Overrides     any
+	Priority      any
+	Terminates    any
+}
+
+type LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result struct {
+	AdaptiveRouting           any
+	CountryPools              any
+	CreatedOn                 any
+	DefaultPools              any
+	Description               any
+	Enabled                   any
+	FallbackPool              any
+	Id                        any
+	LocationStrategy          any
+	ModifiedOn                any
+	Name                      any
+	Networks                  any
+	PoolSets                  any
+	PopPools                  any
+	Proxied                   any
+	RandomSteering            any
+	RegionPools               any
+	Rules                     any
+	SessionAffinity           any
+	SessionAffinityAttributes any
+	SessionAffinityTtl        any
+	SteeringPolicy            any
+	Ttl                       any
+	ZoneName                  any
+}
+
 type LoadBalancingLoadBalancerComponentsSchemasResponseCollectionConfig struct {
 }
 
 type LoadBalancingLoadBalancerComponentsSchemasResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var LoadBalancingLoadBalancerComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_load_balancing_load_balancer_components_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

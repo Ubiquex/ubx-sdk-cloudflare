@@ -11,6 +11,29 @@ class ZeroTrustGatewayListSingleResponse_Items:
     description: Any = None
     value: Any = None
 
+@dataclasses.dataclass
+class ZeroTrustGatewayListSingleResponse_Result_Items:
+    created_at: Any = None
+    description: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayListSingleResponse_Result:
+    # Indicate the number of items in the list.
+    count: Any = None
+    created_at: Any = None
+    # Provide the list description.
+    description: Any = None
+    # Identify the API resource with a UUID.
+    id: Any = None
+    # Provide the list items.
+    items: Any = None
+    # Specify the list name.
+    name: Any = None
+    # Specify the list type.
+    type: Any = None
+    updated_at: Any = None
+
 _ZeroTrustGatewayListSingleResponse_ItemsFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -37,6 +60,7 @@ class ZeroTrustGatewayListSingleResponseAttrs:
     items: Any = None
     # Specify the list name.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

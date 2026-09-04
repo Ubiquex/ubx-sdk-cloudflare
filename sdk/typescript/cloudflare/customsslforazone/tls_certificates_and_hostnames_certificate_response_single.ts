@@ -5,6 +5,55 @@ export interface TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestric
   label?: string | Computed<string>;
 }
 
+export interface TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer_Tunnel {
+  privateIp?: string | Computed<string>;
+  vnetId?: string | Computed<string>;
+}
+
+export interface TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer {
+  createdOn?: string | Computed<string>;
+  enabled?: boolean | Computed<boolean>;
+  host?: string | Computed<string>;
+  id?: string | Computed<string>;
+  modifiedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+  permissions?: string[] | Computed<string[]>;
+  port?: number | Computed<number>;
+  status?: string | Computed<string>;
+  tunnel?: TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer_Tunnel | Computed<TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer_Tunnel>;
+}
+
+export interface TlsCertificatesAndHostnamesCertificateResponseSingle_Result {
+  /** A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it. */
+  bundleMethod?: string | Computed<string>;
+  /** The identifier for the Custom CSR that was used. */
+  customCsrId?: string | Computed<string>;
+  /** When the certificate from the authority expires. */
+  expiresOn?: string | Computed<string>;
+  /** Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance. */
+  geoRestrictions?: TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictions | Computed<TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictions>;
+  hosts?: string[] | Computed<string[]>;
+  /** Identifier. */
+  id: string | Computed<string>;
+  /** The certificate authority that issued the certificate. */
+  issuer?: string | Computed<string>;
+  keylessServer?: TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer | Computed<TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer>;
+  /** When the certificate was last modified. */
+  modifiedOn?: string | Computed<string>;
+  /** The policy restrictions returned by the API. This field is returned in responses when a policy has been set. The API accepts the "policy" field in requests but returns this field as "policy_restrictions" in responses. Specifies the region(s) where your private key can be held locally for optimal TLS performance. Format is a boolean expression, for example: "(country: US) or (region: EU)" */
+  policyRestrictions?: string | Computed<string>;
+  /** The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates. */
+  priority?: number | Computed<number>;
+  /** The type of hash used for the certificate. */
+  signature?: string | Computed<string>;
+  /** Status of the zone's custom SSL. */
+  status?: string | Computed<string>;
+  /** When the certificate was uploaded to Cloudflare. */
+  uploadedOn?: string | Computed<string>;
+  /** Identifier. */
+  zoneId: string | Computed<string>;
+}
+
 const TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictionsFields: FieldMap = {
   label: "label",
 };
@@ -47,6 +96,7 @@ export interface TlsCertificatesAndHostnamesCertificateResponseSingleAttrs {
   policy: string;
   /** The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare. */
   privateKey: string;
+  result: TlsCertificatesAndHostnamesCertificateResponseSingle_Result;
   /** The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake. */
   type: string;
   /** path parameter, not part of the API's own resource representation */

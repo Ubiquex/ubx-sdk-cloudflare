@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RealtimekitWebhook_Data struct {
 	CreatedAt any
-	Enabled any
-	Events any
-	Id any
-	Name any
+	Enabled   any
+	Events    any
+	Id        any
+	Name      any
 	UpdatedAt any
-	Url any
+	Url       any
 }
 
 type RealtimekitWebhookConfig struct {
@@ -24,8 +24,8 @@ type RealtimekitWebhookAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
+	AppId   any
+	Data    any
 	Success any
 }
 
@@ -33,6 +33,6 @@ var RealtimekitWebhook = ubx.DataSourceBinding{
 	WireType: "cloudflare_realtimekit_webhook",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

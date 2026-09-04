@@ -38,11 +38,23 @@ class BillSubsApiAccountSubscriptionResponseSingle_RatePlan:
     sets: Any = None
 
 @dataclasses.dataclass
-class BillSubsApiAccountSubscriptionResponseSingle_Zone:
-    # Identifier
+class BillSubsApiAccountSubscriptionResponseSingle_Result_Zone:
     id: Any = None
-    # The domain name
     name: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiAccountSubscriptionResponseSingle_Result:
+    app: Any = None
+    component_values: Any = None
+    currency: Any = None
+    current_period_end: Any = None
+    current_period_start: Any = None
+    frequency: Any = None
+    id: Any = None
+    price: Any = None
+    rate_plan: Any = None
+    state: Any = None
+    zone: Any = None
 
 _BillSubsApiAccountSubscriptionResponseSingle_AppFields = {
     "install_id": ubx.FieldSpec(wire_name="install_id"),
@@ -67,7 +79,7 @@ _BillSubsApiAccountSubscriptionResponseSingle_RatePlanFields = {
     "sets": ubx.FieldSpec(wire_name="sets"),
 }
 
-_BillSubsApiAccountSubscriptionResponseSingle_ZoneFields = {
+_BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "name": ubx.FieldSpec(wire_name="name"),
 }
@@ -109,6 +121,7 @@ class BillSubsApiAccountSubscriptionResponseSingleAttrs:
     price: Any = None
     # The rate plan applied to the subscription.
     rate_plan: Any = None
+    result: Any = None
     # The state that the subscription is in.
     state: Any = None
     # A simple zone object. May have null properties if not a zone subscription.
@@ -140,7 +153,7 @@ BillSubsApiAccountSubscriptionResponseSingle = ubx.ResourceBinding(
         "zone": ubx.FieldSpec(
             wire_name="zone",
             kind="object",
-            fields=_BillSubsApiAccountSubscriptionResponseSingle_ZoneFields,
+            fields=_BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "subscription_identifier": ubx.FieldSpec(wire_name="subscription_identifier"),

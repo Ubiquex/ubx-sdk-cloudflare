@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesSourcingkitMigrationListResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ImagesSourcingkitMigrationListResponse_Result_Migrations:
+    conflict_behaviour: Any = None
+    created_at: Any = None
+    ended_at: Any = None
+    excluded_content_types: Any = None
+    id: Any = None
+    images_path_prefix: Any = None
+    log_stopped: Any = None
+    path_prefix: Any = None
+    root_directory: Any = None
+    source_id: Any = None
+    started_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class ImagesSourcingkitMigrationListResponse_Result:
+    migrations: Any = None
+
+@dataclasses.dataclass
 class ImagesSourcingkitMigrationListResponseConfig:
     # Maximum number of items to return.
     limit: Any = None
@@ -17,10 +41,15 @@ class ImagesSourcingkitMigrationListResponseConfig:
 class ImagesSourcingkitMigrationListResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    errors: Any = None
     # Maximum number of items to return.
     limit: Any = None
+    messages: Any = None
     # Number of items to skip before returning results.
     offset: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 ImagesSourcingkitMigrationListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_images_sourcingkit_migration_list_response",

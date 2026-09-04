@@ -122,6 +122,21 @@ export interface AccessSingleResponse17_Exclude {
   userRiskScore?: AccessSingleResponse17_Exclude_UserRiskScore | Computed<AccessSingleResponse17_Exclude_UserRiskScore>;
 }
 
+export interface AccessSingleResponse17_Result {
+  createdAt?: string | Computed<string>;
+  /** Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules. */
+  exclude?: AccessSingleResponse17_Exclude[] | Computed<AccessSingleResponse17_Exclude[]>;
+  /** UUID. */
+  id?: string | Computed<string>;
+  /** Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. */
+  include?: AccessSingleResponse17_Exclude[] | Computed<AccessSingleResponse17_Exclude[]>;
+  /** The name of the Access group. */
+  name?: string | Computed<string>;
+  /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
+  require?: AccessSingleResponse17_Exclude[] | Computed<AccessSingleResponse17_Exclude[]>;
+  updatedAt?: string | Computed<string>;
+}
+
 const AccessSingleResponse17_Exclude_AuthContextFields: FieldMap = {
   acId: "ac_id",
   id: "id",
@@ -359,6 +374,7 @@ export interface AccessSingleResponse17Attrs {
   name: string;
   /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse17_Exclude[];
+  result: AccessSingleResponse17_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */

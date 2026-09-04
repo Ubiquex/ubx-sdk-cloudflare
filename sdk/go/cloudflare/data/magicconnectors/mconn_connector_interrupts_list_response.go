@@ -3,14 +3,27 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnConnectorInterruptsListResponse_Result_Reboot struct {
+	Purge any
+}
+
+type MconnConnectorInterruptsListResponse_Result struct {
+	Reboot      any
+	Restart     any
+	Shutdown    any
+	SubmittedAt any
+	TriggeredAt any
+}
+
 type MconnConnectorInterruptsListResponseConfig struct {
 	ConnectorId any
 }
 
 type MconnConnectorInterruptsListResponseAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
+	Result      any
 }
 
 var MconnConnectorInterruptsListResponse = ubx.DataSourceBinding{

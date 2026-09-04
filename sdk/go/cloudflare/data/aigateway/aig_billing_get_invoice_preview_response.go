@@ -4,20 +4,20 @@ package aigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AigBillingGetInvoicePreviewResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AigBillingGetInvoicePreviewResponse_Result_InvoiceLines_Period struct {
-	End any
+	End   any
 	Start any
 }
 
 type AigBillingGetInvoicePreviewResponse_Result_InvoiceLines_PretaxCreditAmounts struct {
-	Amount any
+	Amount                   any
 	CreditBalanceTransaction any
-	Discount any
-	Type any
+	Discount                 any
+	Type                     any
 }
 
 type AigBillingGetInvoicePreviewResponse_Result_InvoiceLines_Pricing struct {
@@ -25,31 +25,31 @@ type AigBillingGetInvoicePreviewResponse_Result_InvoiceLines_Pricing struct {
 }
 
 type AigBillingGetInvoicePreviewResponse_Result_InvoiceLines struct {
-	Amount any
-	Currency any
-	Description any
-	Period any
+	Amount              any
+	Currency            any
+	Description         any
+	Period              any
 	PretaxCreditAmounts any
-	Pricing any
-	Quantity any
+	Pricing             any
+	Quantity            any
 }
 
 type AigBillingGetInvoicePreviewResponse_Result struct {
-	AmountDue any
-	AmountPaid any
+	AmountDue       any
+	AmountPaid      any
 	AmountRemaining any
-	Currency any
-	Id any
-	InvoiceLines any
-	PeriodEnd any
-	PeriodStart any
-	Status any
+	Currency        any
+	Id              any
+	InvoiceLines    any
+	PeriodEnd       any
+	PeriodStart     any
+	Status          any
 }
 
 type AigBillingGetInvoicePreviewResponse_ResultInfo struct {
-	HasMore any
-	Page any
-	PerPage any
+	HasMore    any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -58,12 +58,12 @@ type AigBillingGetInvoicePreviewResponseConfig struct {
 }
 
 type AigBillingGetInvoicePreviewResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AigBillingGetInvoicePreviewResponse = ubx.DataSourceBinding{

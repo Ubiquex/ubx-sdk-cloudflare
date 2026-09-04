@@ -6,42 +6,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type BlockSender_PatternType struct {
 }
 
-var BlockSender_PatternTypeFields = ubx.FieldMap{
-	}
+type BlockSender_Result struct {
+	Comments     any
+	CreatedAt    any
+	Id           any
+	IsRegex      any
+	LastModified any
+	ModifiedAt   any
+	Pattern      any
+	PatternType  any
+}
+
+var BlockSender_PatternTypeFields = ubx.FieldMap{}
 
 type BlockSenderConfig struct {
-	Direction any
-	Order any
-	Page any
-	Pattern any
+	Direction   any
+	Order       any
+	Page        any
+	Pattern     any
 	PatternType any
-	PerPage any
-	Search any
+	PerPage     any
+	Search      any
 }
 
 type BlockSenderAttrs struct {
-	Direction any
-	Order any
-	Page any
-	Pattern any
+	Direction   any
+	Order       any
+	Page        any
+	Pattern     any
 	PatternType any
-	PerPage any
-	Search any
+	PerPage     any
+	Result      any
+	Search      any
 }
 
 var BlockSender = ubx.DataSourceBinding{
 	WireType: "cloudflare_block_sender",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"Pattern":   ubx.FieldSpec{WireName: "pattern"},
 		"PatternType": ubx.FieldSpec{
 			WireName: "pattern_type",
-			Kind: "object",
-			Fields: BlockSender_PatternTypeFields,
+			Kind:     "object",
+			Fields:   BlockSender_PatternTypeFields,
 		},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":  ubx.FieldSpec{WireName: "search"},
 	},
 }

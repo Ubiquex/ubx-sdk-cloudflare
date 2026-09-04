@@ -7,12 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SensitivityGroup_Result_Levels:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class SensitivityGroup_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    levels: Any = None
+    name: Any = None
+    template_id: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class SensitivityGroupConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class SensitivityGroupAttrs:
     account_id: Any = None
+    result: Any = None
 
 SensitivityGroup = ubx.DataSourceBinding(
     wire_type="cloudflare_sensitivity_group",

@@ -5,82 +5,82 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Server_Result_AuthConfigSummary_Config struct {
 	AuthorizationEndpoint any
-	Issuer any
-	Resource any
-	RevocationEndpoint any
-	TokenEndpoint any
+	Issuer                any
+	Resource              any
+	RevocationEndpoint    any
+	TokenEndpoint         any
 }
 
 type Server_Result_AuthConfigSummary_RegistrationInfo struct {
-	ClientId any
-	RedirectUris any
-	Scope any
+	ClientId                any
+	RedirectUris            any
+	Scope                   any
 	TokenEndpointAuthMethod any
 }
 
 type Server_Result_AuthConfigSummary struct {
-	AuthMode any
+	AuthMode            any
 	ClientSecretVersion any
-	Config any
-	HasClientSecret any
-	RegistrationInfo any
+	Config              any
+	HasClientSecret     any
+	RegistrationInfo    any
 }
 
 type Server_Result_ErrorDetails struct {
-	Cause any
+	Cause      any
 	IsUpstream any
-	McpCode any
-	Retryable any
+	McpCode    any
+	Retryable  any
 	StatusCode any
 }
 
 type Server_Result_UpdatedPrompts struct {
-	Alias any
+	Alias       any
 	Description any
-	Enabled any
-	Name any
+	Enabled     any
+	Name        any
 }
 
 type Server_Result struct {
-	AuthConfigSummary any
-	AuthType any
-	AuthenticationStatus any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Error any
-	ErrorDetails any
-	Hostname any
-	Id any
+	AuthConfigSummary            any
+	AuthType                     any
+	AuthenticationStatus         any
+	CreatedAt                    any
+	CreatedBy                    any
+	Description                  any
+	Error                        any
+	ErrorDetails                 any
+	Hostname                     any
+	Id                           any
 	IsSharedOauthCallbackEnabled any
-	LastSuccessfulSync any
-	LastSynced any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	Prompts any
-	SecureWebGateway any
-	Status any
-	Tools any
-	UpdatedPrompts any
-	UpdatedTools any
+	LastSuccessfulSync           any
+	LastSynced                   any
+	ModifiedAt                   any
+	ModifiedBy                   any
+	Name                         any
+	Prompts                      any
+	SecureWebGateway             any
+	Status                       any
+	Tools                        any
+	UpdatedPrompts               any
+	UpdatedTools                 any
 }
 
 type ServerConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Search by id, name
 	Search any
 }
 
 type ServerAttrs struct {
 	AccountId any
-	Page any
-	PerPage any
-	Result any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by id, name
-	Search any
+	Search  any
 	Success any
 }
 
@@ -88,8 +88,8 @@ var Server = ubx.DataSourceBinding{
 	WireType: "cloudflare_server",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

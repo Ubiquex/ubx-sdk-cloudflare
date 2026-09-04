@@ -6,8 +6,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamSingleRoleResponse_AccountId struct {
 }
 
-var IamSingleRoleResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamSingleRoleResponse_Result_Permissions_Analytics struct {
+	Read  any
+	Write any
+}
+
+type IamSingleRoleResponse_Result_Permissions struct {
+	Analytics    any
+	Billing      any
+	CachePurge   any
+	Dns          any
+	DnsRecords   any
+	Lb           any
+	Logs         any
+	Organization any
+	Ssl          any
+	Waf          any
+	ZoneSettings any
+	Zones        any
+}
+
+type IamSingleRoleResponse_Result struct {
+	// Description of role's permissions.
+	Description any
+	// Role identifier tag.
+	Id any
+	// Role name.
+	Name        any
+	Permissions any
+}
+
+var IamSingleRoleResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamSingleRoleResponseConfig struct {
 	// Account identifier tag.
@@ -19,6 +48,7 @@ type IamSingleRoleResponseConfig struct {
 type IamSingleRoleResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 	// Role identifier tag.
 	RoleId any
 }
@@ -28,8 +58,8 @@ var IamSingleRoleResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamSingleRoleResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamSingleRoleResponse_AccountIdFields,
 		},
 		"RoleId": ubx.FieldSpec{WireName: "role_id"},
 	},

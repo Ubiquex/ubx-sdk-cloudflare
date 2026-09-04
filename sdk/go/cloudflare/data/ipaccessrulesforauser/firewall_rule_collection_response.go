@@ -3,6 +3,21 @@ package ipaccessrulesforauser
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallRuleCollectionResponse_Result_Configuration struct {
+	Target any
+	Value  any
+}
+
+type FirewallRuleCollectionResponse_Result struct {
+	AllowedModes  any
+	Configuration any
+	CreatedOn     any
+	Id            any
+	Mode          any
+	ModifiedOn    any
+	Notes         any
+}
+
 type FirewallRuleCollectionResponseConfig struct {
 	// Defines the target to search in existing rules.
 	ConfigurationTarget any
@@ -43,19 +58,20 @@ type FirewallRuleCollectionResponseAttrs struct {
 	Page any
 	// Defines the maximum number of results requested.
 	PerPage any
+	Result  any
 }
 
 var FirewallRuleCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_rule_collection_response",
 	Fields: ubx.FieldMap{
 		"ConfigurationTarget": ubx.FieldSpec{WireName: "configuration_target"},
-		"ConfigurationValue": ubx.FieldSpec{WireName: "configuration_value"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"ConfigurationValue":  ubx.FieldSpec{WireName: "configuration_value"},
+		"Direction":           ubx.FieldSpec{WireName: "direction"},
+		"Match":               ubx.FieldSpec{WireName: "match"},
+		"Mode":                ubx.FieldSpec{WireName: "mode"},
+		"Notes":               ubx.FieldSpec{WireName: "notes"},
+		"Order":               ubx.FieldSpec{WireName: "order"},
+		"Page":                ubx.FieldSpec{WireName: "page"},
+		"PerPage":             ubx.FieldSpec{WireName: "per_page"},
 	},
 }

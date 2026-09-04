@@ -3,16 +3,45 @@ package accountbilling
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiBadDebtResponseSingle_Result_Invoices struct {
+	Action            any
+	Amount            any
+	AmountToPay       any
+	Currency          any
+	Description       any
+	ExternalInvoiceId any
+	HostedInvoiceUrl  any
+	Id                any
+	InvoiceId         any
+	OccurredAt        any
+	ReceiptId         any
+	Source            any
+	SourceInvoiceId   any
+	Status            any
+	Type              any
+}
+
+type BillSubsApiBadDebtResponseSingle_Result struct {
+	// Amount already paid towards the debt.
+	AlreadyPaid any
+	// The current bad debt status of the account.
+	BadDebtStatus any
+	// List of outstanding invoices contributing to bad debt.
+	Invoices any
+	// Total outstanding debt amount.
+	TotalDebtAmount any
+}
+
 type BillSubsApiBadDebtResponseSingleConfig struct {
 }
 
 type BillSubsApiBadDebtResponseSingleAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var BillSubsApiBadDebtResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_bad_debt_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -3,12 +3,24 @@ package perhostnameauthenticatedoriginpull
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseCollection4_Result struct {
+	Certificate  any
+	ExpiresOn    any
+	Id           any
+	Issuer       any
+	SerialNumber any
+	Signature    any
+	Status       any
+	UploadedOn   any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseCollection4Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesCertificateResponseCollection4Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

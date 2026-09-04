@@ -14,7 +14,7 @@ type ZeroTrustGatewayCustomCertificateSettingsAttrs struct {
 	// Specify whether to enable a custom certificate authority for signing Gateway traffic.
 	Enabled any
 	// Specify the UUID of the certificate (ID from MTLS certificate store).
-	Id any
+	Id        any
 	UpdatedAt any
 }
 

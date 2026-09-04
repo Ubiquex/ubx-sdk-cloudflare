@@ -7,6 +7,91 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_Asset_Category:
+    # Unique identifier for the asset category.
+    id: Any = None
+    # The specific service within the vendor the asset is part of (often none). Example - AWS is the vendor, S3 is the service.
+    service: Any = None
+    # The type of asset.
+    type: Any = None
+    # The vendor the asset is part of.
+    vendor: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_Asset_Fields:
+    link: Any = None
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_Asset:
+    # Category information for an asset.
+    category: Any = None
+    # External identifier from the source system.
+    external_id: Any = None
+    # The fields associated with the asset.
+    fields: Any = None
+    # Unique identifier for the asset.
+    id: Any = None
+    # Direct link to the asset.
+    link: Any = None
+    # Human-readable name of the asset.
+    name: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_DlpContexts:
+    created: Any = None
+    deleted: Any = None
+    entry_ids: Any = None
+    id: Any = None
+    match_context_max_extent: Any = None
+    match_context_min_extent: Any = None
+    match_context_payload: Any = None
+    profile_id: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_Remediations:
+    created_at: Any = None
+    id: Any = None
+    stale: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result_Webhooks:
+    latest_job: Any = None
+    webhook_id: Any = None
+    webhook_label: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingInstanceResponse_Result:
+    # When this specific instance was identified.
+    affliction_date: Any = None
+    # Asset information including metadata and categorization.
+    asset: Any = None
+    # DLP context information if this is a content finding.
+    dlp_contexts: Any = None
+    # Unique identifier for the finding instance.
+    id: Any = None
+    # Whether this finding instance has been archived.
+    is_archived: Any = None
+    # A list of the 10 most recent remediation jobs for this finding instance, ordered by creation time (most recent first). The 'stale' field indicates whether the remediation job was created before the finding instance's affliction_date (true) or after it (false). If there has never been a remediation job for this finding instance, this field will be an empty array.
+    remediations: Any = None
+    # The most recent webhook job invocation for each webhook configuration associated with this finding instance. Each entry represents the latest job (any status) per webhook config. The 'stale' field indicates whether the job was invoked before the finding instance's current affliction_date. If no webhook jobs have been created, this field will be an empty array.
+    webhooks: Any = None
+
+@dataclasses.dataclass
 class PostureApiFindingInstanceResponseConfig:
     # A list of finding instance IDs to pass along.
     check_instances: Any = None
@@ -21,6 +106,12 @@ class PostureApiFindingInstanceResponseConfig:
 class PostureApiFindingInstanceResponseAttrs:
     # A list of finding instance IDs to pass along.
     check_instances: Any = None
+    errors: Any = None
+    messages: Any = None
+    # A specific instance of a security finding. In the API interface, we refer to the 'finding' table in our DB as finding instances, optimized for the p99 use case.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

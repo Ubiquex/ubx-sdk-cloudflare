@@ -7,6 +7,458 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Bonds:
+    name: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_DhcpLeases:
+    client_id: Any = None
+    expiry_time: Any = None
+    hostname: Any = None
+    interface_name: Any = None
+    ip_address: Any = None
+    mac_address: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Disks:
+    discards: Any = None
+    discards_merged: Any = None
+    flushes: Any = None
+    in_progress: Any = None
+    major: Any = None
+    merged: Any = None
+    minor: Any = None
+    name: Any = None
+    reads: Any = None
+    sectors_discarded: Any = None
+    sectors_read: Any = None
+    sectors_written: Any = None
+    time_discarding_ms: Any = None
+    time_flushing_ms: Any = None
+    time_in_progress_ms: Any = None
+    time_reading_ms: Any = None
+    time_writing_ms: Any = None
+    weighted_time_in_progress_ms: Any = None
+    writes: Any = None
+    writes_merged: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Interfaces_IpAddresses:
+    interface_name: Any = None
+    ip_address: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Interfaces:
+    ip_addresses: Any = None
+    name: Any = None
+    operstate: Any = None
+    speed: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Mounts:
+    available_bytes: Any = None
+    available_inodes: Any = None
+    file_system: Any = None
+    is_read_only: Any = None
+    is_removable: Any = None
+    kind: Any = None
+    mount_point: Any = None
+    name: Any = None
+    total_bytes: Any = None
+    total_inodes: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Netdevs:
+    name: Any = None
+    recv_bytes: Any = None
+    recv_compressed: Any = None
+    recv_drop: Any = None
+    recv_errs: Any = None
+    recv_fifo: Any = None
+    recv_frame: Any = None
+    recv_multicast: Any = None
+    recv_packets: Any = None
+    sent_bytes: Any = None
+    sent_carrier: Any = None
+    sent_colls: Any = None
+    sent_compressed: Any = None
+    sent_drop: Any = None
+    sent_errs: Any = None
+    sent_fifo: Any = None
+    sent_packets: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Thermals:
+    critical_celcius: Any = None
+    current_celcius: Any = None
+    label: Any = None
+    max_celcius: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result_Tunnels:
+    health_state: Any = None
+    health_value: Any = None
+    interface_name: Any = None
+    jitter_ms: Any = None
+    latency_ms: Any = None
+    natd_result: Any = None
+    natd_state: Any = None
+    natd_target: Any = None
+    probed_mtu: Any = None
+    recent_healthy_pings: Any = None
+    recent_unhealthy_pings: Any = None
+    tunnel_id: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsGetSuccess_Result:
+    bonds: Any = None
+    # Count of failures to reclaim space
+    count_reclaim_failures: Any = None
+    # Count of reclaimed paths
+    count_reclaimed_paths: Any = None
+    # Count of failed snapshot recordings
+    count_record_failed: Any = None
+    # Count of failed snapshot transmissions
+    count_transmit_failures: Any = None
+    # Count of processors/cores
+    cpu_count: Any = None
+    # Percentage of time over a 10 second window that tasks were stalled
+    cpu_pressure_10s: Any = None
+    # Percentage of time over a 5 minute window that tasks were stalled
+    cpu_pressure_300s: Any = None
+    # Percentage of time over a 1 minute window that tasks were stalled
+    cpu_pressure_60s: Any = None
+    # Total stall time (microseconds)
+    cpu_pressure_total_us: Any = None
+    # Time spent running a virtual CPU or guest OS (milliseconds)
+    cpu_time_guest_ms: Any = None
+    # Time spent running a niced guest (milliseconds)
+    cpu_time_guest_nice_ms: Any = None
+    # Time spent in idle state (milliseconds)
+    cpu_time_idle_ms: Any = None
+    # Time spent wait for I/O to complete (milliseconds)
+    cpu_time_iowait_ms: Any = None
+    # Time spent servicing interrupts (milliseconds)
+    cpu_time_irq_ms: Any = None
+    # Time spent in low-priority user mode (milliseconds)
+    cpu_time_nice_ms: Any = None
+    # Time spent servicing softirqs (milliseconds)
+    cpu_time_softirq_ms: Any = None
+    # Time stolen (milliseconds)
+    cpu_time_steal_ms: Any = None
+    # Time spent in system mode (milliseconds)
+    cpu_time_system_ms: Any = None
+    # Time spent in user mode (milliseconds)
+    cpu_time_user_ms: Any = None
+    # Number of network operations applied during state transition
+    delta: Any = None
+    dhcp_leases: Any = None
+    disks: Any = None
+    # Simulated number of network operations applied during state transition
+    epsilon: Any = None
+    # Name of high availability state
+    ha_state: Any = None
+    # Numeric value associated with high availability state (0 = disabled, 1 = active, 2 = standby, 3 = stopped, 4 = fault)
+    ha_value: Any = None
+    interfaces: Any = None
+    # Percentage of time over a 10 second window that all tasks were stalled
+    io_pressure_full_10s: Any = None
+    # Percentage of time over a 5 minute window that all tasks were stalled
+    io_pressure_full_300s: Any = None
+    # Percentage of time over a 1 minute window that all tasks were stalled
+    io_pressure_full_60s: Any = None
+    # Total stall time (microseconds)
+    io_pressure_full_total_us: Any = None
+    # Percentage of time over a 10 second window that some tasks were stalled
+    io_pressure_some_10s: Any = None
+    # Percentage of time over a 3 minute window that some tasks were stalled
+    io_pressure_some_300s: Any = None
+    # Percentage of time over a 1 minute window that some tasks were stalled
+    io_pressure_some_60s: Any = None
+    # Total stall time (microseconds)
+    io_pressure_some_total_us: Any = None
+    # Boot time (seconds since Unix epoch)
+    kernel_btime: Any = None
+    # Number of context switches that the system underwent
+    kernel_ctxt: Any = None
+    # Number of forks since boot
+    kernel_processes: Any = None
+    # Number of processes blocked waiting for I/O
+    kernel_processes_blocked: Any = None
+    # Number of processes in runnable state
+    kernel_processes_running: Any = None
+    # The fifteen-minute load average
+    load_average_15m: Any = None
+    # The one-minute load average
+    load_average_1m: Any = None
+    # The five-minute load average
+    load_average_5m: Any = None
+    # Number of currently runnable kernel scheduling entities
+    load_average_cur: Any = None
+    # Number of kernel scheduling entities that currently exist on the system
+    load_average_max: Any = None
+    # Memory that has been used more recently
+    memory_active_bytes: Any = None
+    # Non-file backed huge pages mapped into user-space page tables
+    memory_anon_hugepages_bytes: Any = None
+    # Non-file backed pages mapped into user-space page tables
+    memory_anon_pages_bytes: Any = None
+    # Estimate of how much memory is available for starting new applications
+    memory_available_bytes: Any = None
+    # Memory used for block device bounce buffers
+    memory_bounce_bytes: Any = None
+    # Relatively temporary storage for raw disk blocks
+    memory_buffers_bytes: Any = None
+    # In-memory cache for files read from the disk
+    memory_cached_bytes: Any = None
+    # Free CMA (Contiguous Memory Allocator) pages
+    memory_cma_free_bytes: Any = None
+    # Total CMA (Contiguous Memory Allocator) pages
+    memory_cma_total_bytes: Any = None
+    # Total amount of memory currently available to be allocated on the system
+    memory_commit_limit_bytes: Any = None
+    # Amount of memory presently allocated on the system
+    memory_committed_as_bytes: Any = None
+    # Memory which is waiting to get written back to the disk
+    memory_dirty_bytes: Any = None
+    # The sum of LowFree and HighFree
+    memory_free_bytes: Any = None
+    # Amount of free highmem
+    memory_high_free_bytes: Any = None
+    # Total amount of highmem
+    memory_high_total_bytes: Any = None
+    # The number of huge pages in the pool that are not yet allocated
+    memory_hugepages_free: Any = None
+    # Number of huge pages for which a commitment has been made, but no allocation has yet been made
+    memory_hugepages_rsvd: Any = None
+    # Number of huge pages in the pool above the threshold
+    memory_hugepages_surp: Any = None
+    # The size of the pool of huge pages
+    memory_hugepages_total: Any = None
+    # The size of huge pages
+    memory_hugepagesize_bytes: Any = None
+    # Memory which has been less recently used
+    memory_inactive_bytes: Any = None
+    # Kernel allocations that the kernel will attempt to reclaim under memory pressure
+    memory_k_reclaimable_bytes: Any = None
+    # Amount of memory allocated to kernel stacks
+    memory_kernel_stack_bytes: Any = None
+    # Amount of free lowmem
+    memory_low_free_bytes: Any = None
+    # Total amount of lowmem
+    memory_low_total_bytes: Any = None
+    # Files which have been mapped into memory
+    memory_mapped_bytes: Any = None
+    # Amount of memory dedicated to the lowest level of page tables
+    memory_page_tables_bytes: Any = None
+    # Memory allocated to the per-cpu alloctor used to back per-cpu allocations
+    memory_per_cpu_bytes: Any = None
+    # Percentage of time over a 10 second window that all tasks were stalled
+    memory_pressure_full_10s: Any = None
+    # Percentage of time over a 5 minute window that all tasks were stalled
+    memory_pressure_full_300s: Any = None
+    # Percentage of time over a 1 minute window that all tasks were stalled
+    memory_pressure_full_60s: Any = None
+    # Total stall time (microseconds)
+    memory_pressure_full_total_us: Any = None
+    # Percentage of time over a 10 second window that some tasks were stalled
+    memory_pressure_some_10s: Any = None
+    # Percentage of time over a 5 minute window that some tasks were stalled
+    memory_pressure_some_300s: Any = None
+    # Percentage of time over a 1 minute window that some tasks were stalled
+    memory_pressure_some_60s: Any = None
+    # Total stall time (microseconds)
+    memory_pressure_some_total_us: Any = None
+    # Part of slab that can be reclaimed on memory pressure
+    memory_s_reclaimable_bytes: Any = None
+    # Part of slab that cannot be reclaimed on memory pressure
+    memory_s_unreclaim_bytes: Any = None
+    # Amount of memory dedicated to the lowest level of page tables
+    memory_secondary_page_tables_bytes: Any = None
+    # Amount of memory consumed by tmpfs
+    memory_shmem_bytes: Any = None
+    # Memory used by shmem and tmpfs, allocated with huge pages
+    memory_shmem_hugepages_bytes: Any = None
+    # Shared memory mapped into user space with huge pages
+    memory_shmem_pmd_mapped_bytes: Any = None
+    # In-kernel data structures cache
+    memory_slab_bytes: Any = None
+    # Memory swapped out and back in while still in swap file
+    memory_swap_cached_bytes: Any = None
+    # Amount of swap space that is currently unused
+    memory_swap_free_bytes: Any = None
+    # Total amount of swap space available
+    memory_swap_total_bytes: Any = None
+    # Total usable RAM
+    memory_total_bytes: Any = None
+    # Largest contiguous block of vmalloc area which is free
+    memory_vmalloc_chunk_bytes: Any = None
+    # Total size of vmalloc memory area
+    memory_vmalloc_total_bytes: Any = None
+    # Amount of vmalloc area which is used
+    memory_vmalloc_used_bytes: Any = None
+    # Memory which is actively being written back to the disk
+    memory_writeback_bytes: Any = None
+    # Memory used by FUSE for temporary writeback buffers
+    memory_writeback_tmp_bytes: Any = None
+    # Memory consumed by the zswap backend, compressed
+    memory_z_swap_bytes: Any = None
+    # Amount of anonymous memory stored in zswap, uncompressed
+    memory_z_swapped_bytes: Any = None
+    mounts: Any = None
+    netdevs: Any = None
+    # Platform identifier
+    platform: Any = None
+    # Site identifier
+    site_id: Any = None
+    # Number of ICMP Address Mask Reply messages received
+    snmp_icmp_in_addr_mask_reps: Any = None
+    # Number of ICMP Address Mask Request messages received
+    snmp_icmp_in_addr_masks: Any = None
+    # Number of ICMP messages received with bad checksums
+    snmp_icmp_in_csum_errors: Any = None
+    # Number of ICMP Destination Unreachable messages received
+    snmp_icmp_in_dest_unreachs: Any = None
+    # Number of ICMP Echo Reply messages received
+    snmp_icmp_in_echo_reps: Any = None
+    # Number of ICMP Echo (request) messages received
+    snmp_icmp_in_echos: Any = None
+    # Number of ICMP messages received with ICMP-specific errors
+    snmp_icmp_in_errors: Any = None
+    # Number of ICMP messages received
+    snmp_icmp_in_msgs: Any = None
+    # Number of ICMP Parameter Problem messages received
+    snmp_icmp_in_parm_probs: Any = None
+    # Number of ICMP Redirect messages received
+    snmp_icmp_in_redirects: Any = None
+    # Number of ICMP Source Quench messages received
+    snmp_icmp_in_src_quenchs: Any = None
+    # Number of ICMP Time Exceeded messages received
+    snmp_icmp_in_time_excds: Any = None
+    # Number of ICMP Address Mask Request messages received
+    snmp_icmp_in_timestamp_reps: Any = None
+    # Number of ICMP Timestamp (request) messages received
+    snmp_icmp_in_timestamps: Any = None
+    # Number of ICMP Address Mask Reply messages sent
+    snmp_icmp_out_addr_mask_reps: Any = None
+    # Number of ICMP Address Mask Request messages sent
+    snmp_icmp_out_addr_masks: Any = None
+    # Number of ICMP Destination Unreachable messages sent
+    snmp_icmp_out_dest_unreachs: Any = None
+    # Number of ICMP Echo Reply messages sent
+    snmp_icmp_out_echo_reps: Any = None
+    # Number of ICMP Echo (request) messages sent
+    snmp_icmp_out_echos: Any = None
+    # Number of ICMP messages which this entity did not send due to ICMP-specific errors
+    snmp_icmp_out_errors: Any = None
+    # Number of ICMP messages attempted to send
+    snmp_icmp_out_msgs: Any = None
+    # Number of ICMP Parameter Problem messages sent
+    snmp_icmp_out_parm_probs: Any = None
+    # Number of ICMP Redirect messages sent
+    snmp_icmp_out_redirects: Any = None
+    # Number of ICMP Source Quench messages sent
+    snmp_icmp_out_src_quenchs: Any = None
+    # Number of ICMP Time Exceeded messages sent
+    snmp_icmp_out_time_excds: Any = None
+    # Number of ICMP Timestamp Reply messages sent
+    snmp_icmp_out_timestamp_reps: Any = None
+    # Number of ICMP Timestamp (request) messages sent
+    snmp_icmp_out_timestamps: Any = None
+    # Default value of the Time-To-Live field of the IP header
+    snmp_ip_default_ttl: Any = None
+    # Number of datagrams forwarded to their final destination
+    snmp_ip_forw_datagrams: Any = None
+    # Set when acting as an IP gateway
+    snmp_ip_forwarding_enabled: Any = None
+    # Number of datagrams generated by fragmentation
+    snmp_ip_frag_creates: Any = None
+    # Number of datagrams discarded because fragmentation failed
+    snmp_ip_frag_fails: Any = None
+    # Number of datagrams successfully fragmented
+    snmp_ip_frag_oks: Any = None
+    # Number of input datagrams discarded due to errors in the IP address
+    snmp_ip_in_addr_errors: Any = None
+    # Number of input datagrams successfully delivered to IP user-protocols
+    snmp_ip_in_delivers: Any = None
+    # Number of input datagrams otherwise discarded
+    snmp_ip_in_discards: Any = None
+    # Number of input datagrams discarded due to errors in the IP header
+    snmp_ip_in_hdr_errors: Any = None
+    # Number of input datagrams received from interfaces
+    snmp_ip_in_receives: Any = None
+    # Number of input datagrams discarded due unknown or unsupported protocol
+    snmp_ip_in_unknown_protos: Any = None
+    # Number of output datagrams otherwise discarded
+    snmp_ip_out_discards: Any = None
+    # Number of output datagrams discarded because no route matched
+    snmp_ip_out_no_routes: Any = None
+    # Number of datagrams supplied for transmission
+    snmp_ip_out_requests: Any = None
+    # Number of failures detected by the reassembly algorithm
+    snmp_ip_reasm_fails: Any = None
+    # Number of datagrams successfully reassembled
+    snmp_ip_reasm_oks: Any = None
+    # Number of fragments received which needed to be reassembled
+    snmp_ip_reasm_reqds: Any = None
+    # Number of seconds fragments are held while awaiting reassembly
+    snmp_ip_reasm_timeout: Any = None
+    # Number of times TCP transitions to SYN-SENT from CLOSED
+    snmp_tcp_active_opens: Any = None
+    # Number of times TCP transitions to CLOSED from SYN-SENT or SYN-RCVD, plus transitions to LISTEN from SYN-RCVD
+    snmp_tcp_attempt_fails: Any = None
+    # Number of TCP connections in ESTABLISHED or CLOSE-WAIT
+    snmp_tcp_curr_estab: Any = None
+    # Number of times TCP transitions to CLOSED from ESTABLISHED or CLOSE-WAIT
+    snmp_tcp_estab_resets: Any = None
+    # Number of TCP segments received with checksum errors
+    snmp_tcp_in_csum_errors: Any = None
+    # Number of TCP segments received in error
+    snmp_tcp_in_errs: Any = None
+    # Number of TCP segments received
+    snmp_tcp_in_segs: Any = None
+    # Limit on the total number of TCP connections
+    snmp_tcp_max_conn: Any = None
+    # Number of TCP segments sent with RST flag
+    snmp_tcp_out_rsts: Any = None
+    # Number of TCP segments sent
+    snmp_tcp_out_segs: Any = None
+    # Number of times TCP transitions to SYN-RCVD from LISTEN
+    snmp_tcp_passive_opens: Any = None
+    # Number of TCP segments retransmitted
+    snmp_tcp_retrans_segs: Any = None
+    # Maximum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+    snmp_tcp_rto_max: Any = None
+    # Minimum value permitted by a TCP implementation for the retransmission timeout (milliseconds)
+    snmp_tcp_rto_min: Any = None
+    # Number of UDP datagrams delivered to UDP applications
+    snmp_udp_in_datagrams: Any = None
+    # Number of UDP datagrams failed to be delivered for reasons other than lack of application at the destination port
+    snmp_udp_in_errors: Any = None
+    # Number of UDP datagrams received for which there was not application at the destination port
+    snmp_udp_no_ports: Any = None
+    # Number of UDP datagrams sent
+    snmp_udp_out_datagrams: Any = None
+    # Boottime of the system (seconds since the Unix epoch)
+    system_boot_time_s: Any = None
+    # Time the Snapshot was recorded (seconds since the Unix epoch)
+    t: Any = None
+    thermals: Any = None
+    tunnels: Any = None
+    # Sum of how much time each core has spent idle
+    uptime_idle_ms: Any = None
+    # Uptime of the system, including time spent in suspend
+    uptime_total_ms: Any = None
+    # Version
+    v: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerSnapshotsGetSuccessConfig:
     connector_id: Any = None
     snapshot_t: Any = None
@@ -16,7 +468,12 @@ class MconnCustomerSnapshotsGetSuccessAttrs:
     # Account identifier
     account_id: Any = None
     connector_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Snapshot
+    result: Any = None
     snapshot_t: Any = None
+    success: Any = None
 
 MconnCustomerSnapshotsGetSuccess = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_customer_snapshots_get_success",

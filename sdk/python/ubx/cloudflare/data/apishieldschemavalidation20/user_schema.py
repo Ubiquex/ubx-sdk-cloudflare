@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UserSchema_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class UserSchema_Result:
+    created_at: Any = None
+    kind: Any = None
+    name: Any = None
+    schema_id: Any = None
+    source: Any = None
+    validation_enabled: Any = None
+
+@dataclasses.dataclass
 class UserSchemaConfig:
     omit_source: Any = None
     page: Any = None
@@ -19,6 +32,7 @@ class UserSchemaAttrs:
     omit_source: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # Flag whether schema is enabled for validation.
     validation_enabled: Any = None
 

@@ -10,6 +10,13 @@ import ubx_sdk as ubx
 class IamPermissionsGroupResponseCollection_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamPermissionsGroupResponseCollection_Result:
+    category: Any = None
+    id: Any = None
+    name: Any = None
+    scopes: Any = None
+
 _IamPermissionsGroupResponseCollection_AccountIdFields = {
 }
 
@@ -25,6 +32,7 @@ class IamPermissionsGroupResponseCollectionAttrs:
     # Account identifier tag.
     account_id: Any = None
     name: Any = None
+    result: Any = None
     scope: Any = None
 
 IamPermissionsGroupResponseCollection = ubx.DataSourceBinding(

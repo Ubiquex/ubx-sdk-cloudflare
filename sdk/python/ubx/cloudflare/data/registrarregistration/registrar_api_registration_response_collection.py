@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiRegistrationResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseCollection_Result:
+    auto_renew: Any = None
+    created_at: Any = None
+    domain_name: Any = None
+    expires_at: Any = None
+    locked: Any = None
+    privacy_mode: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiRegistrationResponseCollection_ResultInfo:
+    # Number of items in the current result set.
+    count: Any = None
+    # Opaque cursor for fetching the next page. Pass this value as the `cursor` query parameter in a subsequent request. An empty string indicates the end of pagination.
+    cursor: Any = None
+    # Maximum number of items per page.
+    per_page: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiRegistrationResponseCollectionConfig:
     cursor: Any = None
     direction: Any = None
@@ -19,8 +48,15 @@ class RegistrarApiRegistrationResponseCollectionAttrs:
     account_id: Any = None
     cursor: Any = None
     direction: Any = None
+    errors: Any = None
+    messages: Any = None
     per_page: Any = None
+    result: Any = None
+    # Provides cursor-based pagination metadata. List endpoints use this metadata for cursor pagination. Pass the `cursor` value as a query parameter in the next request to fetch the next page. An empty string indicates the end of pagination.
+    result_info: Any = None
     sort_by: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RegistrarApiRegistrationResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_registration_response_collection",

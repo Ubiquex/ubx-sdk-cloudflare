@@ -10,6 +10,23 @@ import ubx_sdk as ubx
 class TunnelSubnetResponseCollection_Network:
     pass
 
+@dataclasses.dataclass
+class TunnelSubnetResponseCollection_Result_Capacity:
+    total: Any = None
+    used: Any = None
+
+@dataclasses.dataclass
+class TunnelSubnetResponseCollection_Result:
+    capacity: Any = None
+    comment: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    id: Any = None
+    is_default_network: Any = None
+    name: Any = None
+    network: Any = None
+    subnet_type: Any = None
+
 _TunnelSubnetResponseCollection_NetworkFields = {
 }
 
@@ -60,6 +77,7 @@ class TunnelSubnetResponseCollectionAttrs:
     page: Any = None
     # Number of results to display.
     per_page: Any = None
+    result: Any = None
     # Sort order of the results. `asc` means oldest to newest, `desc` means newest to oldest. If not set, they will not be in any particular order.
     sort_order: Any = None
     # If set, the types of subnets to include, separated by comma.

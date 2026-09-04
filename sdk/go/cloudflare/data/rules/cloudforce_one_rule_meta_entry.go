@@ -4,16 +4,16 @@ package rules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudforceOneRuleMetaEntry_Meta struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type CloudforceOneRuleMetaEntry_PendingChange struct {
-	ApprovalId any
+	ApprovalId  any
 	RequestedAt any
 	RequestedBy any
-	Type any
+	Type        any
 }
 
 type CloudforceOneRuleMetaEntryConfig struct {
@@ -23,10 +23,10 @@ type CloudforceOneRuleMetaEntryConfig struct {
 }
 
 type CloudforceOneRuleMetaEntryAttrs struct {
-	AccountId any
-	Content any
-	CreatedAt any
-	CreatedBy any
+	AccountId   any
+	Content     any
+	CreatedAt   any
+	CreatedBy   any
 	Description any
 	// Whether this rule is active for dice consumers.
 	Enabled any
@@ -35,24 +35,24 @@ type CloudforceOneRuleMetaEntryAttrs struct {
 	// Whether this rule is visible to other internal accounts.
 	IsPublic any
 	// Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.
-	Meta any
-	Name any
+	Meta       any
+	Name       any
 	Namespaces any
-	Path any
+	Path       any
 	// ID of an open approval workflow targeting this rule, or null if none is pending.
 	PendingApprovalId any
 	// Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.
 	PendingChange any
 	// Original JSON payload for rules created via the structured rules API. Null for hand-written rules.
 	StructuredSource any
-	UpdatedAt any
-	UpdatedBy any
+	UpdatedAt        any
+	UpdatedBy        any
 }
 
 var CloudforceOneRuleMetaEntry = ubx.DataSourceBinding{
 	WireType: "cloudflare_cloudforce_one_rule_meta_entry",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

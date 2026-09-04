@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessPolicyUsersResp_Result:
+    email: Any = None
+    id: Any = None
+    name: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class AccessPolicyUsersRespConfig:
     # Identifier.
     account_id: Any = None
@@ -26,6 +33,8 @@ class AccessPolicyUsersRespAttrs:
     per_page: Any = None
     # The UUID of the policy test.
     policy_test_id: Any = None
+    # Page of processed users.
+    result: Any = None
     status: Any = None
 
 AccessPolicyUsersResp = ubx.DataSourceBinding(

@@ -4,12 +4,12 @@ package reportsother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportsReportSingleResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Input_TimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -18,58 +18,58 @@ type ReportsReportSingleResponse_Result_Report_Value_Input struct {
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Output_TopCountriesByMitigatedRequests struct {
-	Count any
+	Count         any
 	CountryAlpha2 any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Output_TopHostnamesByMitigatedRequests struct {
-	Count any
+	Count    any
 	Hostname any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Output_TopRulesByMitigatedRequests struct {
-	Count any
+	Count       any
 	Description any
-	Kind any
-	RuleId any
-	RulesetId any
-	Source any
+	Kind        any
+	RuleId      any
+	RulesetId   any
+	Source      any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Output_TotalRequests struct {
-	Count any
+	Count         any
 	PercentChange any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value_Output struct {
-	AccountId any
-	AccountName any
-	Industry any
-	IndustryPercentile any
-	TimeRange any
+	AccountId                       any
+	AccountName                     any
+	Industry                        any
+	IndustryPercentile              any
+	TimeRange                       any
 	TopCountriesByMitigatedRequests any
-	TopCountriesByServedRequests any
+	TopCountriesByServedRequests    any
 	TopHostnamesByMitigatedRequests any
-	TopRulesByMitigatedRequests any
-	TotalRequests any
-	TotalRequestsMitigated any
-	TotalRequestsServed any
-	TotalZones any
-	TotalZonesAnalyzed any
+	TopRulesByMitigatedRequests     any
+	TotalRequests                   any
+	TotalRequestsMitigated          any
+	TotalRequestsServed             any
+	TotalZones                      any
+	TotalZonesAnalyzed              any
 }
 
 type ReportsReportSingleResponse_Result_Report_Value struct {
-	Input any
+	Input  any
 	Output any
 }
 
 type ReportsReportSingleResponse_Result_Report struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type ReportsReportSingleResponse_Result_ReportSettings struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -108,18 +108,18 @@ type ReportsReportSingleResponseConfig struct {
 type ReportsReportSingleResponseAttrs struct {
 	// Cloudflare public account ID (32-character hexadecimal string)
 	AccountId any
-	Errors any
-	Messages any
+	Errors    any
+	Messages  any
 	// Unique report identifier
 	ReportId any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var ReportsReportSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_reports_report_single_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ReportId": ubx.FieldSpec{WireName: "report_id"},
+		"ReportId":  ubx.FieldSpec{WireName: "report_id"},
 	},
 }

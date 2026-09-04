@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsSettingsDnsViewResponseCollection_Result:
+    created_time: Any = None
+    id: Any = None
+    modified_time: Any = None
+    name: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
 class DnsSettingsDnsViewResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -59,6 +67,7 @@ class DnsSettingsDnsViewResponseCollectionAttrs:
     page: Any = None
     # Number of DNS views per page.
     per_page: Any = None
+    result: Any = None
     # A zone ID that exists in the zones list for the view.
     zone_id: Any = None
     # A zone name that exists in the zones list for the view.

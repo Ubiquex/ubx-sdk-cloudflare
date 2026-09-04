@@ -8,9 +8,118 @@ type Zone_Account struct {
 	Id any
 }
 
+type Zone_Errors struct {
+	Code    any
+	Message any
+}
+
+type Zone_Result_Account struct {
+	// Identifier
+	Id any
+	// The name of the account.
+	Name any
+}
+
+type Zone_Result_Meta struct {
+	// The zone is only configured for CDN.
+	CdnOnly any
+	// Number of Custom Certificates the zone can have.
+	CustomCertificateQuota any
+	// The zone is only configured for DNS.
+	DnsOnly any
+	// The zone is setup with Foundation DNS.
+	FoundationDns any
+	// Number of Page Rules a zone can have.
+	PageRuleQuota any
+	// The zone has been flagged for phishing.
+	PhishingDetected any
+	Step             any
+}
+
+type Zone_Result_Owner struct {
+	// Identifier
+	Id any
+	// Name of the owner.
+	Name any
+	// The type of owner.
+	Type any
+}
+
+type Zone_Result_Plan struct {
+	// States if the subscription can be activated.
+	CanSubscribe any
+	// The denomination of the customer.
+	Currency any
+	// If this Zone is managed by another company.
+	ExternallyManaged any
+	// How often the customer is billed.
+	Frequency any
+	// Identifier
+	Id any
+	// States if the subscription active.
+	IsSubscribed any
+	// If the legacy discount applies to this Zone.
+	LegacyDiscount any
+	// The legacy name of the plan.
+	LegacyId any
+	// Name of the owner.
+	Name any
+	// How much the customer is paying.
+	Price any
+}
+
+type Zone_Result struct {
+	// The account the zone belongs to.
+	Account any
+	// The last time proof of ownership was detected and the zone was made active.
+	ActivatedOn any
+	// Allows the customer to use a custom apex. *Tenants Only Configuration*.
+	CnameSuffix any
+	// When the zone was created.
+	CreatedOn any
+	// The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is 0.
+	DevelopmentMode any
+	// Identifier
+	Id any
+	// Metadata about the zone.
+	Meta any
+	// When the zone was last modified.
+	ModifiedOn any
+	// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+	Name any
+	// The name servers Cloudflare assigns to a zone.
+	NameServers any
+	// DNS host at the time of switching to Cloudflare.
+	OriginalDnshost any
+	// Original name servers before moving to Cloudflare.
+	OriginalNameServers any
+	// Registrar for the domain at the time of switching to Cloudflare.
+	OriginalRegistrar any
+	// The owner of the zone.
+	Owner any
+	// Indicates whether the zone is only using Cloudflare DNS services. A true value means the zone will not receive security or performance benefits.
+	Paused any
+	// Legacy permissions based on legacy user membership information.
+	Permissions any
+	// A Zones subscription information.
+	Plan any
+	// The zone status on Cloudflare.
+	Status any
+	// The root organizational unit that this zone belongs to (such as a tenant or organization).
+	Tenant any
+	// The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
+	TenantUnit any
+	// A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup.
+	Type any
+	// An array of domains used for custom name servers. This is only available for Business and Enterprise plans.
+	VanityNameServers any
+	// Verification key for partial zone setup.
+	VerificationKey any
+}
+
 var Zone_AccountFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 type ZoneConfig struct {
 	Account any
@@ -23,9 +132,14 @@ type ZoneConfig struct {
 }
 
 type ZoneAttrs struct {
-	Account any
+	Account  any
+	Errors   any
+	Messages any
 	// The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup.
 	Type any
 	// path parameter, not part of the API's own resource representation
@@ -37,11 +151,11 @@ var Zone = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Account": ubx.FieldSpec{
 			WireName: "account",
-			Kind: "object",
-			Fields: Zone_AccountFields,
+			Kind:     "object",
+			Fields:   Zone_AccountFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingPreviewResultResponse_Result_Origins:
+    failure_reason: Any = None
+    healthy: Any = None
+    response_code: Any = None
+    rtt: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingPreviewResultResponse_Result:
+    healthy: Any = None
+    origins: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingPreviewResultResponseConfig:
     preview_id: Any = None
 
@@ -15,6 +27,8 @@ class LoadBalancingPreviewResultResponseAttrs:
     # Identifier.
     account_id: Any = None
     preview_id: Any = None
+    # Resulting health data from a preview operation.
+    result: Any = None
 
 LoadBalancingPreviewResultResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_preview_result_response",

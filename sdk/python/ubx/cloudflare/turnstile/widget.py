@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Widget_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Widget_Result:
+    # If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only).
+    bot_fight_mode: Any = None
+    # If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
+    clearance_level: Any = None
+    # When the widget was created.
+    created_on: Any = None
+    domains: Any = None
+    # Return the Ephemeral ID in /siteverify (ENT only).
+    ephemeral_id: Any = None
+    # Widget Mode
+    mode: Any = None
+    # When the widget was modified.
+    modified_on: Any = None
+    # Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used.
+    name: Any = None
+    # Do not show any Cloudflare branding on the widget (ENT only).
+    offlabel: Any = None
+    # Region where this widget can be used. This cannot be changed after creation.
+    region: Any = None
+    # Secret key for this widget.
+    secret: Any = None
+    # Widget item identifier tag.
+    sitekey: Any = None
+
+@dataclasses.dataclass
 class WidgetConfig:
     # If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only).
     bot_fight_mode: Any = None
@@ -37,6 +68,8 @@ class WidgetAttrs:
     domains: Any = None
     # Return the Ephemeral ID in /siteverify (ENT only).
     ephemeral_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # Widget Mode
     mode: Any = None
     # Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used.
@@ -45,6 +78,10 @@ class WidgetAttrs:
     offlabel: Any = None
     # Region where this widget can be used. This cannot be changed after creation.
     region: Any = None
+    # A Turnstile widget's detailed configuration
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

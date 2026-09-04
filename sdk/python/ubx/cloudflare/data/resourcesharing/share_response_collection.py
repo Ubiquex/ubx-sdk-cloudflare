@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareResponseCollection_Result_Resources:
+    created: Any = None
+    id: Any = None
+    meta: Any = None
+    modified: Any = None
+    resource_account_id: Any = None
+    resource_id: Any = None
+    resource_type: Any = None
+    resource_version: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class ShareResponseCollection_Result:
+    account_id: Any = None
+    account_name: Any = None
+    associated_recipient_count: Any = None
+    associating_recipient_count: Any = None
+    created: Any = None
+    disassociated_recipient_count: Any = None
+    disassociating_recipient_count: Any = None
+    id: Any = None
+    kind: Any = None
+    modified: Any = None
+    name: Any = None
+    organization_id: Any = None
+    resources: Any = None
+    status: Any = None
+    target_type: Any = None
+
+@dataclasses.dataclass
 class ShareResponseCollectionConfig:
     # Account identifier.
     account_id: Any = None
@@ -34,6 +64,7 @@ class ShareResponseCollectionAttrs:
     page: Any = None
     per_page: Any = None
     resource_types: Any = None
+    result: Any = None
     status: Any = None
     tag: Any = None
     target_type: Any = None

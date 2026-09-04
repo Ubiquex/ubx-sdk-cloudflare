@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LocalUpload_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class LocalUpload_Result:
+    # Whether local uploads is enabled for this bucket. When enabled, object's data is written to the nearest region first, then asynchronously replicated to the bucket's primary region.
+    enabled: Any = None
+
+@dataclasses.dataclass
 class LocalUploadConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +29,12 @@ class LocalUploadAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Configuration for local uploads on a bucket.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LocalUpload = ubx.DataSourceBinding(
     wire_type="cloudflare_local_upload",

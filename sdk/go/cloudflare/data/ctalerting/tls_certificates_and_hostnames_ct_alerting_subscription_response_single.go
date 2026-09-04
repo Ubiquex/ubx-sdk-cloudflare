@@ -3,12 +3,18 @@ package ctalerting
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingle_Result struct {
+	Emails  any
+	Enabled any
+}
+
 type TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingleConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingleAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

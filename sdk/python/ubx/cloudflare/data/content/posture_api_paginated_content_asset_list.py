@@ -7,6 +7,102 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result_DlpContexts:
+    created: Any = None
+    deleted: Any = None
+    entry_ids: Any = None
+    id: Any = None
+    match_context_max_extent: Any = None
+    match_context_min_extent: Any = None
+    match_context_payload: Any = None
+    profile_id: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result_Integration_Policy:
+    client_id: Any = None
+    compliance_level: Any = None
+    dlp_enabled: Any = None
+    id: Any = None
+    link: Any = None
+    name: Any = None
+    permissions: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result_Integration_Vendor:
+    description: Any = None
+    display_name: Any = None
+    id: Any = None
+    logo: Any = None
+    name: Any = None
+    policies: Any = None
+    static_logo: Any = None
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result_Integration_ZtEnrollments:
+    description: Any = None
+    display_name: Any = None
+    enabled: Any = None
+    id: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result_Integration:
+    created: Any = None
+    credential_health_status: Any = None
+    credentials_expiry: Any = None
+    id: Any = None
+    is_paused: Any = None
+    last_hydrated: Any = None
+    name: Any = None
+    permissions: Any = None
+    policy: Any = None
+    status: Any = None
+    updated: Any = None
+    upgradable: Any = None
+    upgrade_dismissed: Any = None
+    vendor: Any = None
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_Result:
+    asset_id: Any = None
+    asset_name: Any = None
+    dlp_contexts: Any = None
+    dlp_profile_count: Any = None
+    dlp_profile_ids: Any = None
+    integration: Any = None
+    latest_affliction_date: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedContentAssetList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedContentAssetListConfig:
     account_id: Any = None
     direction: Any = None
@@ -26,13 +122,21 @@ class PostureApiPaginatedContentAssetListAttrs:
     account_id: Any = None
     direction: Any = None
     dlp_profile_id: Any = None
+    errors: Any = None
     integration_id: Any = None
     max_affliction_date: Any = None
+    messages: Any = None
     min_affliction_date: Any = None
     order: Any = None
     page: Any = None
     per_page: Any = None
+    # Array of content asset objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
     search: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Supported vendor types for integrations.
     vendor: Any = None
 

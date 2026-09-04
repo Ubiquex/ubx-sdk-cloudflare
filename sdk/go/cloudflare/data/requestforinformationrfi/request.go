@@ -7,14 +7,14 @@ type RequestConfig struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Id any
+	Id        any
 }
 
 type RequestAttrs struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Id any
+	Id        any
 }
 
 var Request = ubx.DataSourceBinding{
@@ -22,6 +22,6 @@ var Request = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

@@ -3,18 +3,35 @@ package magicsiteappconfigs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicAppConfigsCollectionResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type MagicAppConfigsCollectionResponse_Result struct {
+	Breakout      any
+	Id            any
+	PreferredWans any
+	Priority      any
+	SiteId        any
+}
+
 type MagicAppConfigsCollectionResponseConfig struct {
 }
 
 type MagicAppConfigsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Identifier
 	SiteId any
+	// Whether the API call was successful
+	Success any
 }
 
 var MagicAppConfigsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_app_configs_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

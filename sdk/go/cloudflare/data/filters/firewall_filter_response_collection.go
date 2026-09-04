@@ -3,13 +3,21 @@ package filters
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallFilterResponseCollection_Result struct {
+	Description any
+	Expression  any
+	Id          any
+	Paused      any
+	Ref         any
+}
+
 type FirewallFilterResponseCollectionConfig struct {
 	// A case-insensitive string to find in the description.
 	Description any
 	// A case-insensitive string to find in the expression.
 	Expression any
 	// Page number of paginated results.
-	Page any
+	Page   any
 	Paused any
 	// Number of filters per page.
 	PerPage any
@@ -25,12 +33,13 @@ type FirewallFilterResponseCollectionAttrs struct {
 	// The unique identifier of the filter.
 	Id any
 	// Page number of paginated results.
-	Page any
+	Page   any
 	Paused any
 	// Number of filters per page.
 	PerPage any
 	// The filter ref (a short reference tag) to search for. Must be an exact match.
-	Ref any
+	Ref    any
+	Result any
 	// Defines an identifier.
 	ZoneId any
 }
@@ -39,10 +48,10 @@ var FirewallFilterResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_filter_response_collection",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Expression":  ubx.FieldSpec{WireName: "expression"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"Paused":      ubx.FieldSpec{WireName: "paused"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
+		"Ref":         ubx.FieldSpec{WireName: "ref"},
 	},
 }

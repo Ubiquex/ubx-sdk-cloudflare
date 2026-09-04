@@ -3,9 +3,57 @@ package cloudintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnReadAccountProviderResponse_Result_Status_DiscoveryProgress struct {
+	Done  any
+	Total any
+	Unit  any
+}
+
+type McnReadAccountProviderResponse_Result_Status_InUseBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnReadAccountProviderResponse_Result_Status struct {
+	CredentialsGoodSince       any
+	CredentialsMissingSince    any
+	CredentialsRejectedSince   any
+	DiscoveryMessage           any
+	DiscoveryMessageV2         any
+	DiscoveryProgress          any
+	DiscoveryProgressV2        any
+	InUseBy                    any
+	LastDiscoveryCompletedAt   any
+	LastDiscoveryCompletedAtV2 any
+	LastDiscoveryStartedAt     any
+	LastDiscoveryStartedAtV2   any
+	LastDiscoveryStatus        any
+	LastDiscoveryStatusV2      any
+	LastUpdated                any
+	Regions                    any
+}
+
+type McnReadAccountProviderResponse_Result struct {
+	AwsArn                 any
+	AzureSubscriptionId    any
+	AzureTenantId          any
+	CloudType              any
+	Description            any
+	FriendlyName           any
+	GcpProjectId           any
+	GcpServiceAccountEmail any
+	Id                     any
+	LastUpdated            any
+	LifecycleState         any
+	State                  any
+	StateV2                any
+	Status                 any
+}
+
 type McnReadAccountProviderResponseConfig struct {
-	CloudType any
-	Description any
+	CloudType    any
+	Description  any
 	FriendlyName any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -14,9 +62,10 @@ type McnReadAccountProviderResponseConfig struct {
 }
 
 type McnReadAccountProviderResponseAttrs struct {
-	CloudType any
-	Description any
+	CloudType    any
+	Description  any
 	FriendlyName any
+	Result       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -26,10 +75,10 @@ type McnReadAccountProviderResponseAttrs struct {
 var McnReadAccountProviderResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_mcn_read_account_provider_response",
 	Fields: ubx.FieldMap{
-		"CloudType": ubx.FieldSpec{WireName: "cloud_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CloudType":    ubx.FieldSpec{WireName: "cloud_type"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"ProviderId":   ubx.FieldSpec{WireName: "provider_id"},
 	},
 }

@@ -7,12 +7,80 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesResponseCollection_Result_Input_Locations:
+    paths: Any = None
+    trust_stores: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesResponseCollection_Result_Input:
+    active_threats: Any = None
+    auth_state: Any = None
+    certificate_id: Any = None
+    check_disks: Any = None
+    check_private_key: Any = None
+    cn: Any = None
+    compliance_status: Any = None
+    connection_id: Any = None
+    count_operator: Any = None
+    domain: Any = None
+    eid_last_seen: Any = None
+    enabled: Any = None
+    exists: Any = None
+    extended_key_usage: Any = None
+    id: Any = None
+    infected: Any = None
+    is_active: Any = None
+    issue_count: Any = None
+    last_seen: Any = None
+    locations: Any = None
+    network_status: Any = None
+    operating_system: Any = None
+    operational_state: Any = None
+    operator: Any = None
+    os: Any = None
+    os_distro_name: Any = None
+    os_distro_revision: Any = None
+    os_version_extra: Any = None
+    overall: Any = None
+    path: Any = None
+    require_all: Any = None
+    risk_level: Any = None
+    score: Any = None
+    score_operator: Any = None
+    sensor_config: Any = None
+    sha256: Any = None
+    state: Any = None
+    subject_alternative_names: Any = None
+    thumbprint: Any = None
+    total_score: Any = None
+    update_window_days: Any = None
+    version: Any = None
+    version_operator: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesResponseCollection_Result_Match:
+    platform: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesResponseCollection_Result:
+    description: Any = None
+    enabled: Any = None
+    expiration: Any = None
+    id: Any = None
+    input: Any = None
+    match: Any = None
+    name: Any = None
+    schedule: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesResponseCollectionConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesResponseCollectionAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_response_collection",

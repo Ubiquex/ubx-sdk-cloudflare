@@ -3,12 +3,19 @@ package zonelevelaccessshortlivedcertificatecas
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection20_Result struct {
+	Aud       any
+	Id        any
+	PublicKey any
+}
+
 type AccessResponseCollection20Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollection20Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -3,16 +3,41 @@ package magicpcapcollection
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicVisibilityPcapsPcapsCollectionResponse_Result_FilterV1 struct {
+	DestinationAddress any
+	DestinationPort    any
+	Protocol           any
+	SourceAddress      any
+	SourcePort         any
+}
+
+type MagicVisibilityPcapsPcapsCollectionResponse_Result struct {
+	ByteLimit       any
+	ColoName        any
+	DestinationConf any
+	ErrorMessage    any
+	FilterV1        any
+	Id              any
+	OffsetTime      any
+	PacketsCaptured any
+	Status          any
+	StopRequested   any
+	Submitted       any
+	System          any
+	TimeLimit       any
+	Type            any
+}
+
 type MagicVisibilityPcapsPcapsCollectionResponseConfig struct {
 }
 
 type MagicVisibilityPcapsPcapsCollectionResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var MagicVisibilityPcapsPcapsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_visibility_pcaps_pcaps_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

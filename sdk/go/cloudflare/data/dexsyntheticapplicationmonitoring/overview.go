@@ -3,41 +3,127 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Overview_Result_OverviewMetrics struct {
+	// percentage availability for all HTTP test results in response.
+	AvgHttpAvailabilityPct any
+	// percentage availability for all traceroutes results in response.
+	AvgTracerouteAvailabilityPct any
+	// number of tests.
+	TestsTotal any
+}
+
+type Overview_Result_Tests_HttpResults_ResourceFetchTime_History_TimePeriod struct {
+	Units any
+	Value any
+}
+
+type Overview_Result_Tests_HttpResults_ResourceFetchTime_History struct {
+	AvgMs      any
+	DeltaPct   any
+	TimePeriod any
+}
+
+type Overview_Result_Tests_HttpResults_ResourceFetchTime_OverTime_Values struct {
+	AvgMs     any
+	Timestamp any
+}
+
+type Overview_Result_Tests_HttpResults_ResourceFetchTime_OverTime struct {
+	TimePeriod any
+	Values     any
+}
+
+type Overview_Result_Tests_HttpResults_ResourceFetchTime struct {
+	AvgMs    any
+	History  any
+	OverTime any
+}
+
+type Overview_Result_Tests_HttpResults struct {
+	ResourceFetchTime any
+}
+
+type Overview_Result_Tests_HttpResultsByColo struct {
+	Colo              any
+	ResourceFetchTime any
+}
+
+type Overview_Result_Tests_TargetPolicies struct {
+	Default any
+	Id      any
+	Name    any
+}
+
+type Overview_Result_Tests_TracerouteResults struct {
+	RoundTripTime any
+}
+
+type Overview_Result_Tests_TracerouteResultsByColo struct {
+	Colo          any
+	RoundTripTime any
+}
+
+type Overview_Result_Tests struct {
+	Created                 any
+	Description             any
+	Enabled                 any
+	Host                    any
+	HttpResults             any
+	HttpResultsByColo       any
+	Id                      any
+	Interval                any
+	Kind                    any
+	Method                  any
+	Name                    any
+	TargetPolicies          any
+	Targeted                any
+	TracerouteResults       any
+	TracerouteResultsByColo any
+	Updated                 any
+}
+
+type Overview_Result struct {
+	OverviewMetrics any
+	// array of test results objects.
+	Tests any
+}
+
 type OverviewConfig struct {
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	Kind any
-	Page any
-	PerPage any
+	Kind     any
+	Page     any
+	PerPage  any
 	// Unique identifier for the device registration (UUID). On multi-user devices, this uniquely identifies a user's registration on the device.
 	RegistrationId any
-	TestName any
+	TestName       any
 }
 
 type OverviewAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	Kind any
-	Page any
-	PerPage any
+	Kind     any
+	Page     any
+	PerPage  any
 	// Unique identifier for the device registration (UUID). On multi-user devices, this uniquely identifies a user's registration on the device.
 	RegistrationId any
-	TestName any
+	Result         any
+	TestName       any
 }
 
 var Overview = ubx.DataSourceBinding{
 	WireType: "cloudflare_overview",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Colo":           ubx.FieldSpec{WireName: "colo"},
+		"DeviceId":       ubx.FieldSpec{WireName: "device_id"},
+		"Kind":           ubx.FieldSpec{WireName: "kind"},
+		"Page":           ubx.FieldSpec{WireName: "page"},
+		"PerPage":        ubx.FieldSpec{WireName: "per_page"},
 		"RegistrationId": ubx.FieldSpec{WireName: "registration_id"},
-		"TestName": ubx.FieldSpec{WireName: "test_name"},
+		"TestName":       ubx.FieldSpec{WireName: "test_name"},
 	},
 }

@@ -10,6 +10,63 @@ import ubx_sdk as ubx
 class PageTestResponseSingle_Region:
     pass
 
+@dataclasses.dataclass
+class PageTestResponseSingle_Result_DesktopReport_Error:
+    # The error code of the Lighthouse result.
+    code: Any = None
+    # Detailed error message.
+    detail: Any = None
+    # The final URL displayed to the user.
+    final_displayed_url: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseSingle_Result_DesktopReport:
+    # Cumulative Layout Shift.
+    cls: Any = None
+    # The type of device.
+    device_type: Any = None
+    error: Any = None
+    # First Contentful Paint.
+    fcp: Any = None
+    # The URL to the full Lighthouse JSON report.
+    json_report_url: Any = None
+    # Largest Contentful Paint.
+    lcp: Any = None
+    # The Lighthouse performance score.
+    performance_score: Any = None
+    # Speed Index.
+    si: Any = None
+    # The state of the Lighthouse report.
+    state: Any = None
+    # Total Blocking Time.
+    tbt: Any = None
+    # Time To First Byte.
+    ttfb: Any = None
+    # Time To Interactive.
+    tti: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseSingle_Result_Region:
+    label: Any = None
+    # A test region.
+    value: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseSingle_Result:
+    date: Any = None
+    # The Lighthouse report.
+    desktop_report: Any = None
+    # UUID.
+    id: Any = None
+    # The Lighthouse report.
+    mobile_report: Any = None
+    # A test region with a label.
+    region: Any = None
+    # The frequency of the test.
+    schedule_frequency: Any = None
+    # A URL.
+    url: Any = None
+
 _PageTestResponseSingle_RegionFields = {
 }
 
@@ -26,6 +83,7 @@ class PageTestResponseSingleConfig:
 @dataclasses.dataclass
 class PageTestResponseSingleAttrs:
     region: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -3,16 +3,59 @@ package accountloadbalancermonitorgroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingMonitorGroupResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type LoadBalancingMonitorGroupResponseCollection_Result_Id struct {
+}
+
+type LoadBalancingMonitorGroupResponseCollection_Result_Members struct {
+	CreatedAt      any
+	Enabled        any
+	MonitorId      any
+	MonitoringOnly any
+	MustBeHealthy  any
+	UpdatedAt      any
+}
+
+type LoadBalancingMonitorGroupResponseCollection_Result struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	Members     any
+	ModifiedOn  any
+}
+
+type LoadBalancingMonitorGroupResponseCollection_ResultInfo struct {
+	// Total number of results on the current page.
+	Count any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page.
+	PerPage any
+	// Total results available without any search parameters.
+	TotalCount any
+	// Total number of pages available.
+	TotalPages any
+}
+
 type LoadBalancingMonitorGroupResponseCollectionConfig struct {
 }
 
 type LoadBalancingMonitorGroupResponseCollectionAttrs struct {
 	// Identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LoadBalancingMonitorGroupResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_load_balancing_monitor_group_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

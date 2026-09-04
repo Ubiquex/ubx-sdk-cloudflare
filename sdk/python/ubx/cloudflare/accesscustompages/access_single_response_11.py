@@ -10,6 +10,23 @@ import ubx_sdk as ubx
 class AccessSingleResponse11_CreatedAt:
     pass
 
+@dataclasses.dataclass
+class AccessSingleResponse11_Result:
+    # Number of apps the custom page is assigned to.
+    app_count: Any = None
+    # Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
+    contract_version: Any = None
+    created_at: Any = None
+    # Custom page HTML.
+    custom_html: Any = None
+    # Custom page name.
+    name: Any = None
+    # Custom page type.
+    type: Any = None
+    # UUID.
+    uid: Any = None
+    updated_at: Any = None
+
 _AccessSingleResponse11_CreatedAtFields = {
 }
 
@@ -45,6 +62,7 @@ class AccessSingleResponse11Attrs:
     custom_html: Any = None
     # Custom page name.
     name: Any = None
+    result: Any = None
     # Custom page type.
     type: Any = None
     # UUID.

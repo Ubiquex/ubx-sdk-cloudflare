@@ -3,12 +3,18 @@ package zonelevelauthenticatedoriginpulls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesEnabledResponse_Result struct {
+	// Indicates whether zone-level authenticated origin pulls is enabled.
+	Enabled any
+}
+
 type TlsCertificatesAndHostnamesEnabledResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesEnabledResponseAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

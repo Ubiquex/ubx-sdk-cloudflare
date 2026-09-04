@@ -3,15 +3,31 @@ package secondarydnsprimaryzone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsSingleResponseOutgoing_Result struct {
+	// The time for a specific event.
+	CheckedTime any
+	// The time for a specific event.
+	CreatedTime any
+	Id          any
+	// The time for a specific event.
+	LastTransferredTime any
+	// Zone name.
+	Name any
+	// A list of peer tags.
+	Peers any
+	// The serial number of the SOA for the given zone.
+	SoaSerial any
+}
+
 type SecondaryDnsSingleResponseOutgoingConfig struct {
 }
 
 type SecondaryDnsSingleResponseOutgoingAttrs struct {
+	Result any
 	ZoneId any
 }
 
 var SecondaryDnsSingleResponseOutgoing = ubx.DataSourceBinding{
 	WireType: "cloudflare_secondary_dns_single_response_outgoing",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

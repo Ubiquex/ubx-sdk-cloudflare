@@ -7,26 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ResourceGroup_Scope_Objects:
+class ResourceGroup_Result_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Result_Scope_Objects:
     key: Any = None
 
 @dataclasses.dataclass
-class ResourceGroup_Scope:
+class ResourceGroup_Result_Scope:
     # This is a combination of pre-defined resource name and identifier (like Account ID etc.)
     key: Any = None
-    # A list of scope objects for additional context. The number of Scope objects should not be zero.
+    # A list of scope objects for additional context.
     objects: Any = None
 
-_ResourceGroup_Scope_ObjectsFields = {
+@dataclasses.dataclass
+class ResourceGroup_Result:
+    # Identifier of the resource group.
+    id: Any = None
+    # Attributes associated to the resource group.
+    meta: Any = None
+    # Name of the resource group.
+    name: Any = None
+    # A scope is a combination of scope objects which provides additional context.
+    scope: Any = None
+
+_ResourceGroup_Result_Scope_ObjectsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
 }
 
-_ResourceGroup_ScopeFields = {
+_ResourceGroup_Result_ScopeFields = {
     "key": ubx.FieldSpec(wire_name="key"),
     "objects": ubx.FieldSpec(
         wire_name="objects",
         kind="list",
-        fields=_ResourceGroup_Scope_ObjectsFields,
+        fields=_ResourceGroup_Result_Scope_ObjectsFields,
     ),
 }
 
@@ -45,6 +61,8 @@ class ResourceGroupConfig:
 class ResourceGroupAttrs:
     # Name of the resource group
     name: Any = None
+    # A group of scoped resources.
+    result: Any = None
     # A scope is a combination of scope objects which provides additional context.
     scope: Any = None
     # path parameter, not part of the API's own resource representation
@@ -59,7 +77,7 @@ ResourceGroup = ubx.ResourceBinding(
         "scope": ubx.FieldSpec(
             wire_name="scope",
             kind="object",
-            fields=_ResourceGroup_ScopeFields,
+            fields=_ResourceGroup_Result_ScopeFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "resource_group_id": ubx.FieldSpec(wire_name="resource_group_id"),

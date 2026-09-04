@@ -3,16 +3,31 @@ package notificationmechanismeligibility
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaSchemasResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaSchemasResponseCollection_Result struct {
+	Eligible any
+	Ready    any
+	Type     any
+}
+
 type AaaSchemasResponseCollectionConfig struct {
 }
 
 type AaaSchemasResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

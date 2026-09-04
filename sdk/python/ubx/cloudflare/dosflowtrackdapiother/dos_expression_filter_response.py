@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosExpressionFilterResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosExpressionFilterResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosExpressionFilterResponse_Result:
+    # The creation timestamp of the expression filter.
+    created_on: Any = None
+    # The filter expression.
+    expression: Any = None
+    # The unique ID of the expression filter.
+    id: Any = None
+    # The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
+    mode: Any = None
+    # The last modification timestamp of the expression filter.
+    modified_on: Any = None
+
+@dataclasses.dataclass
 class DosExpressionFilterResponseConfig:
     # The filter expression.
     expression: Any = None
@@ -19,10 +43,15 @@ class DosExpressionFilterResponseConfig:
 
 @dataclasses.dataclass
 class DosExpressionFilterResponseAttrs:
+    errors: Any = None
     # The filter expression.
     expression: Any = None
+    messages: Any = None
     # The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
     mode: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

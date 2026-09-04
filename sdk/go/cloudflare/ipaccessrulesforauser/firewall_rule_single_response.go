@@ -5,19 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRuleSingleResponse_Configuration struct {
 	Target any
-	Value any
+	Value  any
+}
+
+type FirewallRuleSingleResponse_Result struct {
+	// The available actions that a rule can apply to a matched request.
+	AllowedModes any
+	// The rule configuration.
+	Configuration any
+	// The timestamp of when the rule was created.
+	CreatedOn any
+	// The unique identifier of the IP Access rule.
+	Id any
+	// The action to apply to a matched request.
+	Mode any
+	// The timestamp of when the rule was last modified.
+	ModifiedOn any
+	// An informative summary of the rule, typically used as a reminder or explanation.
+	Notes any
 }
 
 var FirewallRuleSingleResponse_ConfigurationFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallRuleSingleResponseConfig struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode any
+	Mode  any
 	Notes any
 	// path parameter, not part of the API's own resource representation
 	RuleId any
@@ -27,8 +44,9 @@ type FirewallRuleSingleResponseAttrs struct {
 	// The rule configuration.
 	Configuration any
 	// The action to apply to a matched request.
-	Mode any
-	Notes any
+	Mode   any
+	Notes  any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	RuleId any
 }
@@ -38,11 +56,11 @@ var FirewallRuleSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: FirewallRuleSingleResponse_ConfigurationFields,
+			Kind:     "object",
+			Fields:   FirewallRuleSingleResponse_ConfigurationFields,
 		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
+		"Mode":   ubx.FieldSpec{WireName: "mode"},
+		"Notes":  ubx.FieldSpec{WireName: "notes"},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

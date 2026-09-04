@@ -8,31 +8,31 @@ type AbuseReport_Errors struct {
 }
 
 type AbuseReport_Result_Reports_MitigationSummary struct {
-	AcceptedUrlCount any
-	ActiveCount any
+	AcceptedUrlCount     any
+	ActiveCount          any
 	ExternalHostNotified any
-	InReviewCount any
-	PendingCount any
+	InReviewCount        any
+	PendingCount         any
 }
 
 type AbuseReport_Result_Reports_Submitter struct {
-	Company any
-	Email any
-	Name any
+	Company   any
+	Email     any
+	Name      any
 	Telephone any
 }
 
 type AbuseReport_Result_Reports struct {
-	Cdate any
-	Domain any
-	Id any
-	Justification any
+	Cdate             any
+	Domain            any
+	Id                any
+	Justification     any
 	MitigationSummary any
-	OriginalWork any
-	Status any
-	Submitter any
-	Type any
-	Urls any
+	OriginalWork      any
+	Status            any
+	Submitter         any
+	Type              any
+	Urls              any
 }
 
 type AbuseReport_Result struct {
@@ -40,9 +40,9 @@ type AbuseReport_Result struct {
 }
 
 type AbuseReport_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -53,12 +53,12 @@ type AbuseReportConfig struct {
 	CreatedAfter any
 	// Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
 	CreatedBefore any
-	Domain any
+	Domain        any
 	// The status of a mitigation
 	MitigationStatus any
-	Page any
-	PerPage any
-	Sort any
+	Page             any
+	PerPage          any
+	Sort             any
 	// An enum value that represents the status of an abuse record
 	Status any
 	// The abuse report type
@@ -71,18 +71,18 @@ type AbuseReportAttrs struct {
 	CreatedAfter any
 	// Time in RFC 3339 format (https://www.rfc-editor.org/rfc/rfc3339.html)
 	CreatedBefore any
-	Domain any
-	Errors any
-	Messages any
+	Domain        any
+	Errors        any
+	Messages      any
 	// The status of a mitigation
 	MitigationStatus any
-	Page any
-	PerPage any
-	Result any
-	ResultInfo any
-	Sort any
+	Page             any
+	PerPage          any
+	Result           any
+	ResultInfo       any
+	Sort             any
 	// An enum value that represents the status of an abuse record
-	Status any
+	Status  any
 	Success any
 	// The abuse report type
 	Type any
@@ -91,15 +91,15 @@ type AbuseReportAttrs struct {
 var AbuseReport = ubx.DataSourceBinding{
 	WireType: "cloudflare_abuse_report",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"CreatedAfter":     ubx.FieldSpec{WireName: "created_after"},
+		"CreatedBefore":    ubx.FieldSpec{WireName: "created_before"},
+		"Domain":           ubx.FieldSpec{WireName: "domain"},
 		"MitigationStatus": ubx.FieldSpec{WireName: "mitigation_status"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"Sort":             ubx.FieldSpec{WireName: "sort"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 	},
 }

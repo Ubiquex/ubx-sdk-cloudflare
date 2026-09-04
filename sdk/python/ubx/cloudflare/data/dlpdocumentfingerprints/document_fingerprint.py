@@ -7,12 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DocumentFingerprint_Result:
+    created_at: Any = None
+    description: Any = None
+    entry_id: Any = None
+    file_name: Any = None
+    id: Any = None
+    match_percent: Any = None
+    name: Any = None
+    status: Any = None
+    updated_at: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class DocumentFingerprintConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class DocumentFingerprintAttrs:
     account_id: Any = None
+    result: Any = None
 
 DocumentFingerprint = ubx.DataSourceBinding(
     wire_type="cloudflare_document_fingerprint",

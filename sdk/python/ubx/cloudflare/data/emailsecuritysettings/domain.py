@@ -7,6 +7,47 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Domain_Result_Authorization:
+    authorized: Any = None
+    status_message: Any = None
+    timestamp: Any = None
+
+@dataclasses.dataclass
+class Domain_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class Domain_Result_EmailsProcessed:
+    timestamp: Any = None
+    total_emails_processed: Any = None
+    total_emails_processed_previous: Any = None
+
+@dataclasses.dataclass
+class Domain_Result:
+    allowed_delivery_modes: Any = None
+    authorization: Any = None
+    created_at: Any = None
+    dmarc_status: Any = None
+    domain: Any = None
+    drop_dispositions: Any = None
+    emails_processed: Any = None
+    folder: Any = None
+    id: Any = None
+    inbox_provider: Any = None
+    integration_id: Any = None
+    ip_restrictions: Any = None
+    last_modified: Any = None
+    lookback_hops: Any = None
+    modified_at: Any = None
+    o365_tenant_id: Any = None
+    regions: Any = None
+    require_tls_inbound: Any = None
+    require_tls_outbound: Any = None
+    spf_status: Any = None
+    status: Any = None
+    transport: Any = None
+
+@dataclasses.dataclass
 class DomainConfig:
     active_delivery_mode: Any = None
     allowed_delivery_mode: Any = None
@@ -29,6 +70,7 @@ class DomainAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
     status: Any = None
 

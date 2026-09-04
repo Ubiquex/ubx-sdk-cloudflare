@@ -3,14 +3,134 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type OverTime_Result_OverTime_BatteryCycles struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime_ConnectionType struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime_Rtt_Value_MinRttUs struct {
+	Downstream any
+	Upstream   any
+}
+
+type OverTime_Result_OverTime_Rtt_Value struct {
+	MinRttUs any
+	RttUs    any
+	RttVarUs any
+}
+
+type OverTime_Result_OverTime_Rtt struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime_TopCpuApplications_Value struct {
+	CpuPct any
+	Name   any
+}
+
+type OverTime_Result_OverTime_TopCpuApplications struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime_TopRamApplications_Value struct {
+	Name       any
+	RamUsedPct any
+}
+
+type OverTime_Result_OverTime_TopRamApplications struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime_TunnelStats_Value struct {
+	BytesLost            any
+	BytesReceived        any
+	BytesRetransmitted   any
+	BytesSent            any
+	PacketsLost          any
+	PacketsReceived      any
+	PacketsRetransmitted any
+	PacketsSent          any
+	StatsWindowMs        any
+}
+
+type OverTime_Result_OverTime_TunnelStats struct {
+	Timestamp any
+	Value     any
+}
+
+type OverTime_Result_OverTime struct {
+	// Battery cycle count over time.
+	BatteryCycles any
+	// Battery percentage over time.
+	BatteryPct any
+	// Connection type over time.
+	ConnectionType any
+	// CPU usage percentage over time.
+	CpuPct any
+	// Disk read throughput in bytes per second over time.
+	DiskReadBps any
+	// Disk usage percentage over time.
+	DiskUsagePct any
+	// Disk write throughput in bytes per second over time.
+	DiskWriteBps any
+	// WARP mode over time.
+	Mode any
+	// Network bytes received per second over time.
+	NetworkRcvdBps any
+	// Network bytes sent per second over time.
+	NetworkSentBps any
+	// Network SSID over time.
+	NetworkSsid any
+	// Available RAM in kilobytes over time.
+	RamAvailableKb any
+	// RAM usage percentage over time.
+	RamUsedPct any
+	// Round-trip time stats over time.
+	Rtt any
+	// Device status over time.
+	Status any
+	// Top CPU-consuming applications over time.
+	TopCpuApplications any
+	// Top RAM-consuming applications over time.
+	TopRamApplications any
+	// Tunnel stats over time.
+	TunnelStats any
+	// Tunnel type over time.
+	TunnelType any
+	// Unique network count over time.
+	UniqueNetworks any
+	// Wi-Fi signal strength over time in dBm.
+	WifiStrengthDbm any
+}
+
+type OverTime_Result_TopNetworks struct {
+	Count any
+	Name  any
+}
+
+type OverTime_Result struct {
+	// Time-bucketed device metrics.
+	OverTime any
+	// Top networks observed for the device.
+	TopNetworks any
+}
+
 type OverTimeConfig struct {
 	// Cloudflare colo airport code.
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
+	From     any
 	Interval any
-	To any
+	To       any
 }
 
 type OverTimeAttrs struct {
@@ -20,18 +140,19 @@ type OverTimeAttrs struct {
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
+	From     any
 	Interval any
-	To any
+	Result   any
+	To       any
 }
 
 var OverTime = ubx.DataSourceBinding{
 	WireType: "cloudflare_over_time",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":     ubx.FieldSpec{WireName: "from"},
 		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"To":       ubx.FieldSpec{WireName: "to"},
 	},
 }

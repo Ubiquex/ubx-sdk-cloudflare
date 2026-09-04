@@ -3,6 +3,23 @@ package web3hostname
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Web3SingleResponse_Result struct {
+	CreatedOn any
+	// Specify an optional description of the hostname.
+	Description any
+	// Specify the DNSLink value used if the target is ipfs.
+	Dnslink any
+	// Specify the identifier of the hostname.
+	Id         any
+	ModifiedOn any
+	// Specify the hostname that points to the target gateway via CNAME.
+	Name any
+	// Specifies the status of the hostname's activation.
+	Status any
+	// Specify the target gateway of the hostname.
+	Target any
+}
+
 type Web3SingleResponseConfig struct {
 	// Specify an optional description of the hostname.
 	Description any
@@ -24,7 +41,8 @@ type Web3SingleResponseAttrs struct {
 	// Specify the DNSLink value used if the target is ipfs.
 	Dnslink any
 	// Specify the hostname that points to the target gateway via CNAME.
-	Name any
+	Name   any
+	Result any
 	// Specify the target gateway of the hostname.
 	Target any
 	// path parameter, not part of the API's own resource representation
@@ -37,10 +55,10 @@ var Web3SingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_web3_single_response",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Dnslink": ubx.FieldSpec{WireName: "dnslink"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Dnslink":     ubx.FieldSpec{WireName: "dnslink"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Target":      ubx.FieldSpec{WireName: "target"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
+		"Identifier":  ubx.FieldSpec{WireName: "identifier"},
 	},
 }

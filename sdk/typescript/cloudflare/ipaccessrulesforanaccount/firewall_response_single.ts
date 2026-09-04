@@ -6,6 +6,23 @@ export interface FirewallResponseSingle_Configuration {
   value?: string | Computed<string>;
 }
 
+export interface FirewallResponseSingle_Result_Scope {
+  email?: string | Computed<string>;
+  id?: string | Computed<string>;
+  type?: string | Computed<string>;
+}
+
+export interface FirewallResponseSingle_Result {
+  allowedModes?: string[] | Computed<string[]>;
+  configuration?: FirewallResponseSingle_Configuration | Computed<FirewallResponseSingle_Configuration>;
+  createdOn?: string | Computed<string>;
+  id?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  modifiedOn?: string | Computed<string>;
+  notes?: string | Computed<string>;
+  scope?: FirewallResponseSingle_Result_Scope | Computed<FirewallResponseSingle_Result_Scope>;
+}
+
 const FirewallResponseSingle_ConfigurationFields: FieldMap = {
   target: "target",
   value: "value",
@@ -29,6 +46,7 @@ export interface FirewallResponseSingleAttrs {
   /** The action to apply to a matched request. */
   mode: string;
   notes: string;
+  result: FirewallResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

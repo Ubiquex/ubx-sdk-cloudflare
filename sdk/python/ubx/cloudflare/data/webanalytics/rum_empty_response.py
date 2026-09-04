@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumEmptyResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class RumEmptyResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -16,7 +21,13 @@ class RumEmptyResponseConfig:
 class RumEmptyResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     hostname: Any = None
+    messages: Any = None
+    # Empty result object.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RumEmptyResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_rum_empty_response",

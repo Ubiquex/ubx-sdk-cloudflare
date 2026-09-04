@@ -4,6 +4,29 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TagKeySummaryResponseCollection_AccountId {
 }
 
+export interface TagKeySummaryResponseCollection_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface TagKeySummaryResponseCollection_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: TagKeySummaryResponseCollection_Errors_Source | Computed<TagKeySummaryResponseCollection_Errors_Source>;
+}
+
+export interface TagKeySummaryResponseCollection_Result {
+  key?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
+}
+
+export interface TagKeySummaryResponseCollection_ResultInfo {
+  /** Indicates the number of results returned in the current page. */
+  count?: number | Computed<number>;
+  /** Provides a cursor for the next page of results. Include this value in the next request to continue pagination. */
+  cursor?: string | Computed<string>;
+}
+
 const TagKeySummaryResponseCollection_AccountIdFields: FieldMap = {
 };
 
@@ -15,6 +38,13 @@ export interface TagKeySummaryResponseCollectionConfig {
 export interface TagKeySummaryResponseCollectionAttrs {
   accountId: TagKeySummaryResponseCollection_AccountId;
   cursor: string;
+  errors: TagKeySummaryResponseCollection_Errors[];
+  messages: TagKeySummaryResponseCollection_Errors[];
+  /** Contains an array of tag keys with their distinct values. */
+  result: TagKeySummaryResponseCollection_Result[];
+  resultInfo: TagKeySummaryResponseCollection_ResultInfo;
+  /** Whether the API call was successful. */
+  success: boolean;
 }
 
 export const TagKeySummaryResponseCollection: DataSourceBinding<TagKeySummaryResponseCollectionConfig, TagKeySummaryResponseCollectionAttrs> = {

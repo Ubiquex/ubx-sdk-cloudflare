@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ApiShieldSingleOperationResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSingleOperationResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSingleOperationResponse_Result_Schemas_Learned:
+    parameters: Any = None
+    request_body: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSingleOperationResponse_Result_Schemas:
+    learned: Any = None
+    uploaded: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSingleOperationResponse_Result:
+    schemas: Any = None
+
+@dataclasses.dataclass
 class ApiShieldSingleOperationResponseConfig:
     # The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
     endpoint: Any = None
@@ -23,10 +48,15 @@ class ApiShieldSingleOperationResponseConfig:
 class ApiShieldSingleOperationResponseAttrs:
     # The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
     endpoint: Any = None
+    errors: Any = None
     # RFC3986-compliant host.
     host: Any = None
+    messages: Any = None
     # The HTTP method used to access the endpoint.
     method: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

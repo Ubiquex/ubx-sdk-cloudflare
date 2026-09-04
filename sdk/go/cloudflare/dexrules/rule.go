@@ -3,6 +3,32 @@ package dexrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Rule_Result_Id struct {
+}
+
+type Rule_Result_TargetedTests_Data struct {
+	Host   any
+	Kind   any
+	Method any
+}
+
+type Rule_Result_TargetedTests struct {
+	Data    any
+	Enabled any
+	Name    any
+	TestId  any
+}
+
+type Rule_Result struct {
+	CreatedAt     any
+	Description   any
+	Id            any
+	Match         any
+	Name          any
+	TargetedTests any
+	UpdatedAt     any
+}
+
 type RuleConfig struct {
 	Description any
 	// The wirefilter expression to match.
@@ -20,7 +46,8 @@ type RuleAttrs struct {
 	// The wirefilter expression to match.
 	Match any
 	// The name of the Rule.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -31,9 +58,9 @@ var Rule = ubx.ResourceBinding{
 	WireType: "cloudflare_rule",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"Match":       ubx.FieldSpec{WireName: "match"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"RuleId":      ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

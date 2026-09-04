@@ -3,12 +3,48 @@ package catalogsync
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnReadAccountCatalogSyncResponse_Result_Errors_Meta struct {
+	L10nKey       any
+	LoggableError any
+	TemplateData  any
+	TraceId       any
+}
+
+type McnReadAccountCatalogSyncResponse_Result_Errors_Source struct {
+	Parameter           any
+	ParameterValueIndex any
+	Pointer             any
+}
+
+type McnReadAccountCatalogSyncResponse_Result_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Meta             any
+	Source           any
+}
+
+type McnReadAccountCatalogSyncResponse_Result struct {
+	Description              any
+	DestinationId            any
+	DestinationType          any
+	Errors                   any
+	Id                       any
+	IncludesDiscoveriesUntil any
+	LastAttemptedUpdateAt    any
+	LastSuccessfulUpdateAt   any
+	LastUserUpdateAt         any
+	Name                     any
+	Policy                   any
+	UpdateMode               any
+}
+
 type McnReadAccountCatalogSyncResponseConfig struct {
-	Description any
+	Description     any
 	DestinationType any
-	Name any
-	Policy any
-	UpdateMode any
+	Name            any
+	Policy          any
+	UpdateMode      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -16,11 +52,12 @@ type McnReadAccountCatalogSyncResponseConfig struct {
 }
 
 type McnReadAccountCatalogSyncResponseAttrs struct {
-	Description any
+	Description     any
 	DestinationType any
-	Name any
-	Policy any
-	UpdateMode any
+	Name            any
+	Policy          any
+	Result          any
+	UpdateMode      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -30,12 +67,12 @@ type McnReadAccountCatalogSyncResponseAttrs struct {
 var McnReadAccountCatalogSyncResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_mcn_read_account_catalog_sync_response",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"UpdateMode": ubx.FieldSpec{WireName: "update_mode"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SyncId": ubx.FieldSpec{WireName: "sync_id"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Policy":          ubx.FieldSpec{WireName: "policy"},
+		"UpdateMode":      ubx.FieldSpec{WireName: "update_mode"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"SyncId":          ubx.FieldSpec{WireName: "sync_id"},
 	},
 }

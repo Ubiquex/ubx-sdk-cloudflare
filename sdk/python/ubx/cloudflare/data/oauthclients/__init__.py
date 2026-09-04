@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .iam_collection_oauth_client_response import IamCollectionOauthClientResponse, IamCollectionOauthClientResponseConfig
+from .iam_collection_oauth_scopes_response import IamCollectionOauthScopesResponse, IamCollectionOauthScopesResponseConfig

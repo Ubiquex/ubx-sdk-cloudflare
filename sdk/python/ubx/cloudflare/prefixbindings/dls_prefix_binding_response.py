@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DlsPrefixBindingResponse_Result:
+    # The CIDR that is bound.
+    cidr: Any = None
+    # The ID of the binding.
+    id: Any = None
+    # The ID of the parent prefix.
+    prefix_id: Any = None
+    # The region key used for the binding.
+    region_key: Any = None
+
+@dataclasses.dataclass
 class DlsPrefixBindingResponseConfig:
     # IP prefix in CIDR notation to bind.
     cidr: Any = None
@@ -27,6 +38,7 @@ class DlsPrefixBindingResponseAttrs:
     prefix_id: Any = None
     # Region key from managed regions (e.g., "us", "eu").
     region_key: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

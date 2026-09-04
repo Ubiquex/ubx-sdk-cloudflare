@@ -3,6 +3,139 @@ package workersforplatforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersNamespaceScriptResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersNamespaceScriptResponseSingle_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_CacheOptions struct {
+	// Whether cached responses are shared across Worker version uploads. This is independent of `enabled`. It can stay true while caching is off, so the preference survives turning caching off and back on.
+	CrossVersionCache any
+	// Whether caching is enabled for this Worker.
+	Enabled any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_Exports struct {
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_NamedHandlers struct {
+	Handlers any
+	Name     any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_Observability_Logs struct {
+	// A list of destinations where logs will be exported to.
+	Destinations any
+	// Whether logs are enabled for the Worker.
+	Enabled any
+	// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+	InvocationLogs any
+	// Whether log persistence is enabled for the Worker.
+	Persist any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_Observability_Traces struct {
+	// A list of destinations where traces will be exported to.
+	Destinations any
+	// Whether traces are enabled for the Worker.
+	Enabled any
+	// The sampling rate for traces. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Whether trace persistence is enabled for the Worker.
+	Persist any
+	// Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. "authenticated" honors inbound trace context only when accompanied by a valid trace auth token. "accept" unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.
+	PropagationPolicy any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_Observability struct {
+	// Whether observability is enabled for the Worker.
+	Enabled any
+	// The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Log settings for the Worker.
+	Logs any
+	// Whether query strings are removed from request URLs in logs and traces.
+	RedactQueryString any
+	// Trace settings for the Worker.
+	Traces any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_Placement struct {
+	LastAnalyzedAt any
+	Status         any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script_TailConsumers struct {
+	Environment any
+	Namespace   any
+	Service     any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result_Script struct {
+	// Global CacheW configuration for the Worker. When caching is on, the platform provisions a `cloudflare.app` zone for the Worker. A `type: worker` entry in the `exports` map can override this value for a single entrypoint.
+	CacheOptions any
+	// Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+	CompatibilityDate any
+	// Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
+	CompatibilityFlags any
+	// When the script was created.
+	CreatedOn any
+	// Hashed script content, can be used in a If-None-Match header when updating.
+	Etag any
+	// Declarative exports for the Worker's most recent version, including Durable Object classes (with their `storage` backend) and named Worker entrypoints. Tombstoned lifecycle entries are omitted, so only live exports (`created` and `expecting-transfer`) are returned.
+	Exports any
+	// The names of handlers exported as part of the default export.
+	Handlers any
+	// Whether a Worker contains assets.
+	HasAssets any
+	// Whether a Worker contains modules.
+	HasModules any
+	// The name used to identify the script.
+	Id any
+	// The client most recently used to deploy this Worker.
+	LastDeployedFrom any
+	// Whether Logpush is turned on for the Worker.
+	Logpush any
+	// The tag of the Durable Object migration that was most recently applied for this Worker.
+	MigrationTag any
+	// When the script was last modified.
+	ModifiedOn any
+	// Named exports, such as Durable Object class implementations and named entrypoints.
+	NamedHandlers any
+	// Observability settings for the Worker.
+	Observability any
+	// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
+	Placement       any
+	PlacementMode   any
+	PlacementStatus any
+	// The immutable ID of the script.
+	Tag any
+	// Tags associated with the Worker.
+	Tags any
+	// List of Workers that will consume logs from the attached Worker.
+	TailConsumers any
+	// Usage model for the Worker invocations.
+	UsageModel any
+}
+
+type WorkersNamespaceScriptResponseSingle_Result struct {
+	// When the script was created.
+	CreatedOn any
+	// Name of the Workers for Platforms dispatch namespace.
+	DispatchNamespace any
+	// When the script was last modified.
+	ModifiedOn any
+	Script     any
+}
+
 type WorkersNamespaceScriptResponseSingleConfig struct {
 	// Identifier.
 	AccountId any
@@ -17,15 +150,21 @@ type WorkersNamespaceScriptResponseSingleAttrs struct {
 	AccountId any
 	// Name of the Workers for Platforms dispatch namespace.
 	DispatchNamespace any
+	Errors            any
+	Messages          any
+	// Details about a worker uploaded to a Workers for Platforms namespace.
+	Result any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var WorkersNamespaceScriptResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_namespace_script_response_single",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+		"ScriptName":        ubx.FieldSpec{WireName: "script_name"},
 	},
 }

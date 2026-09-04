@@ -3,16 +3,27 @@ package clientsidesecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PageShield_Result struct {
+	// When true, indicates that Client-Side Security is enabled.
+	Enabled any
+	// The timestamp of when Client-Side Security was last updated.
+	UpdatedAt any
+	// When true, CSP reports will be sent to https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report
+	UseCloudflareReportingEndpoint any
+	// When true, the paths associated with connections URLs will also be analyzed.
+	UseConnectionUrlPath any
+}
+
 type PageShieldConfig struct {
 }
 
 type PageShieldAttrs struct {
+	Result any
 	// Identifier
 	ZoneId any
 }
 
 var PageShield = ubx.DataSourceBinding{
 	WireType: "cloudflare_page_shield",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

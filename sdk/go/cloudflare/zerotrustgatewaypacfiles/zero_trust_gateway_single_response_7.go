@@ -3,6 +3,22 @@ package zerotrustgatewaypacfiles
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewaySingleResponse7_Result struct {
+	// Actual contents of the PAC file
+	Contents  any
+	CreatedAt any
+	// Detailed description of the PAC file.
+	Description any
+	Id          any
+	// Name of the PAC file.
+	Name any
+	// URL-friendly version of the PAC file name.
+	Slug      any
+	UpdatedAt any
+	// Unique URL to download the PAC file.
+	Url any
+}
+
 type ZeroTrustGatewaySingleResponse7Config struct {
 	// Actual contents of the PAC file
 	Contents any
@@ -24,7 +40,8 @@ type ZeroTrustGatewaySingleResponse7Attrs struct {
 	// Detailed description of the PAC file.
 	Description any
 	// Name of the PAC file.
-	Name any
+	Name   any
+	Result any
 	// URL-friendly version of the PAC file name. If not provided, it will be auto-generated
 	Slug any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +53,11 @@ type ZeroTrustGatewaySingleResponse7Attrs struct {
 var ZeroTrustGatewaySingleResponse7 = ubx.ResourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_single_response_7",
 	Fields: ubx.FieldMap{
-		"Contents": ubx.FieldSpec{WireName: "contents"},
+		"Contents":    ubx.FieldSpec{WireName: "contents"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Slug": ubx.FieldSpec{WireName: "slug"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PacfileId": ubx.FieldSpec{WireName: "pacfile_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Slug":        ubx.FieldSpec{WireName: "slug"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"PacfileId":   ubx.FieldSpec{WireName: "pacfile_id"},
 	},
 }

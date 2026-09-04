@@ -3,6 +3,11 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessFailedLoginResponse_Result struct {
+	Expiration any
+	Metadata   any
+}
+
 type AccessFailedLoginResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,6 +18,7 @@ type AccessFailedLoginResponseConfig struct {
 type AccessFailedLoginResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 	// UUID.
 	UserId any
 }
@@ -21,6 +27,6 @@ var AccessFailedLoginResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_failed_login_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Sippy_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Sippy_Result_Destination:
+    # ID of the Cloudflare API token used when writing objects to this bucket.
+    access_key_id: Any = None
+    account: Any = None
+    # Name of the bucket on the provider.
+    bucket: Any = None
+    provider: Any = None
+
+@dataclasses.dataclass
+class Sippy_Result_Source:
+    # Name of the bucket on the provider (AWS, GCS only).
+    bucket: Any = None
+    # S3-compatible URL (Generic S3-compatible providers only).
+    bucket_url: Any = None
+    # Name of the Azure Blob Storage container (Azure only).
+    container: Any = None
+    provider: Any = None
+    # Region where the bucket resides (AWS only).
+    region: Any = None
+
+@dataclasses.dataclass
+class Sippy_Result:
+    # Details about the configured destination bucket.
+    destination: Any = None
+    # State of Sippy for this bucket.
+    enabled: Any = None
+    # Details about the configured source bucket.
+    source: Any = None
+
+@dataclasses.dataclass
 class SippyConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +54,11 @@ class SippyAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Sippy = ubx.DataSourceBinding(
     wire_type="cloudflare_sippy",

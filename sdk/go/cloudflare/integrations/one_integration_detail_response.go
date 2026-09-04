@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OneIntegrationDetailResponse_Result_AuthorizationLink struct {
 	Components any
-	Link any
+	Link       any
 }
 
 type OneIntegrationDetailResponse_Result struct {
-	Application any
-	AuthMethod any
+	Application       any
+	AuthMethod        any
 	AuthorizationLink any
-	Created any
+	Created           any
 	CredentialsExpiry any
-	DlpProfiles any
-	HealthDetails any
-	Id any
-	IsPaused any
-	LastHydrated any
-	Name any
-	Status any
-	Updated any
-	UseCases any
+	DlpProfiles       any
+	HealthDetails     any
+	Id                any
+	IsPaused          any
+	LastHydrated      any
+	Name              any
+	Status            any
+	Updated           any
+	UseCases          any
 }
 
 type OneIntegrationDetailResponseConfig struct {
@@ -79,13 +79,13 @@ var OneIntegrationDetailResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_one_integration_detail_response",
 	Fields: ubx.FieldMap{
 		"Application": ubx.FieldSpec{WireName: "application"},
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
+		"AuthMethod":  ubx.FieldSpec{WireName: "auth_method"},
 		"Credentials": ubx.FieldSpec{WireName: "credentials"},
 		"DlpProfiles": ubx.FieldSpec{WireName: "dlp_profiles"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"UseCases": ubx.FieldSpec{WireName: "use_cases"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"UseCases":    ubx.FieldSpec{WireName: "use_cases"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

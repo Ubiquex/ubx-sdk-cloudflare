@@ -3,16 +3,94 @@ package notificationpolicies
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaPoliciesComponentsSchemasResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaPoliciesComponentsSchemasResponseCollection_Result_Filters struct {
+	Actions                      any
+	AffectedAsns                 any
+	AffectedComponents           any
+	AffectedLocations            any
+	AirportCode                  any
+	AlertTriggerPreferences      any
+	AlertTriggerPreferencesValue any
+	Enabled                      any
+	Environment                  any
+	Event                        any
+	EventSource                  any
+	EventType                    any
+	GroupBy                      any
+	HealthCheckId                any
+	IncidentImpact               any
+	InputId                      any
+	InsightClass                 any
+	Limit                        any
+	LogoTag                      any
+	MegabitsPerSecond            any
+	NewHealth                    any
+	NewStatus                    any
+	PacketsPerSecond             any
+	PoolId                       any
+	PopNames                     any
+	Product                      any
+	ProjectId                    any
+	Protocol                     any
+	QueryTag                     any
+	RequestsPerSecond            any
+	Selectors                    any
+	Services                     any
+	Slo                          any
+	Status                       any
+	TargetHostname               any
+	TargetIp                     any
+	TargetZoneName               any
+	TrafficExclusions            any
+	TunnelId                     any
+	TunnelName                   any
+	Type                         any
+	Where                        any
+	Zones                        any
+}
+
+type AaaPoliciesComponentsSchemasResponseCollection_Result_Mechanisms_Email struct {
+	Id any
+}
+
+type AaaPoliciesComponentsSchemasResponseCollection_Result_Mechanisms struct {
+	Email     any
+	Pagerduty any
+	Webhooks  any
+}
+
+type AaaPoliciesComponentsSchemasResponseCollection_Result struct {
+	AlertInterval any
+	AlertType     any
+	Created       any
+	Description   any
+	Enabled       any
+	Filters       any
+	Id            any
+	Mechanisms    any
+	Modified      any
+	Name          any
+}
+
 type AaaPoliciesComponentsSchemasResponseCollectionConfig struct {
 }
 
 type AaaPoliciesComponentsSchemasResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaPoliciesComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_policies_components_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

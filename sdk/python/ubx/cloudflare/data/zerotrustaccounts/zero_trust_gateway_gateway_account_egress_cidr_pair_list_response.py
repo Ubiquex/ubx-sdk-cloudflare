@@ -7,12 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse_Result_Geolocation:
+    city: Any = None
+    country: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse_Result:
+    geolocation: Any = None
+    ipv4: Any = None
+    ipv4_colo_name: Any = None
+    ipv6_cidr: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountEgressCidrPairListResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountEgressCidrPairListResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_gateway_account_egress_cidr_pair_list_response",

@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CredentialSet_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class CredentialSet_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class CredentialSet_Result:
+    # Credential set identifier.
+    id: Any = None
+    # Human-readable name.
+    name: Any = None
+
+@dataclasses.dataclass
 class CredentialSetConfig:
     # Human-readable name.
     name: Any = None
@@ -17,8 +35,14 @@ class CredentialSetConfig:
 
 @dataclasses.dataclass
 class CredentialSetAttrs:
+    errors: Any = None
+    messages: Any = None
     # Human-readable name.
     name: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

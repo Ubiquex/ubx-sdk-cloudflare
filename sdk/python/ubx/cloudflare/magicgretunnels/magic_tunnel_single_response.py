@@ -27,6 +27,51 @@ class MagicTunnelSingleResponse_HealthCheck:
     target: Any = None
     type: Any = None
 
+@dataclasses.dataclass
+class MagicTunnelSingleResponse_Result_GreTunnel_BgpStatus:
+    bgp_state: Any = None
+    cf_speaker_ip: Any = None
+    cf_speaker_port: Any = None
+    customer_speaker_ip: Any = None
+    customer_speaker_port: Any = None
+    state: Any = None
+    tcp_established: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelSingleResponse_Result_GreTunnel:
+    # True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.
+    automatic_return_routing: Any = None
+    bgp: Any = None
+    bgp_status: Any = None
+    # The IP address assigned to the Cloudflare side of the GRE tunnel.
+    cloudflare_gre_endpoint: Any = None
+    # The date and time the tunnel was created.
+    created_on: Any = None
+    # The IP address assigned to the customer side of the GRE tunnel.
+    customer_gre_endpoint: Any = None
+    # An optional description of the GRE tunnel.
+    description: Any = None
+    health_check: Any = None
+    # Identifier
+    id: Any = None
+    # A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.
+    interface_address: Any = None
+    # A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
+    interface_address6: Any = None
+    # The date and time the tunnel was last modified.
+    modified_on: Any = None
+    # Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.
+    mtu: Any = None
+    # The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
+    name: Any = None
+    # Time To Live (TTL) in number of hops of the GRE tunnel.
+    ttl: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelSingleResponse_Result:
+    gre_tunnel: Any = None
+
 _MagicTunnelSingleResponse_BgpFields = {
     "customer_asn": ubx.FieldSpec(wire_name="customer_asn"),
     "export_filter_id": ubx.FieldSpec(wire_name="export_filter_id"),
@@ -90,6 +135,7 @@ class MagicTunnelSingleResponseAttrs:
     mtu: Any = None
     # The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.
     name: Any = None
+    result: Any = None
     # Time To Live (TTL) in number of hops of the GRE tunnel.
     ttl: Any = None
     # path parameter, not part of the API's own resource representation

@@ -15,6 +15,7 @@ class IntelAsnComponentsSchemasResponseAttrs:
     # Identifier.
     account_id: Any = None
     asn: Any = None
+    result: Any = None
 
 IntelAsnComponentsSchemasResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_intel_asn_components_schemas_response",

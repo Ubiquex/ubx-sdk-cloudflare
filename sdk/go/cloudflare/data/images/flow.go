@@ -4,31 +4,31 @@ package images
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flow_Result_Flows_Transformations struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Flow_Result_Flows_Trigger struct {
 	Extensions any
-	Params any
-	Paths any
-	Triggers any
-	Type any
+	Params     any
+	Paths      any
+	Triggers   any
+	Type       any
 }
 
 type Flow_Result_Flows struct {
-	Enabled any
-	Name any
-	Provider any
+	Enabled         any
+	Name            any
+	Provider        any
 	Transformations any
-	Trigger any
-	Type any
-	Version any
+	Trigger         any
+	Type            any
+	Version         any
 }
 
 type Flow_Result struct {
-	Etag any
-	Flows any
+	Etag    any
+	Flows   any
 	Version any
 }
 
@@ -42,8 +42,8 @@ type FlowConfig struct {
 type FlowAttrs struct {
 	// Account identifier.
 	AccountId any
-	Result any
-	Success any
+	Result    any
+	Success   any
 	// Zone identifier.
 	ZoneId any
 }
@@ -52,6 +52,6 @@ var Flow = ubx.DataSourceBinding{
 	WireType: "cloudflare_flow",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

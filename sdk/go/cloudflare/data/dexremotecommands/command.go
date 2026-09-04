@@ -3,40 +3,57 @@ package dexremotecommands
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Command_Result_Commands struct {
+	CompletedDate  any
+	CreatedDate    any
+	DeviceId       any
+	Filename       any
+	Id             any
+	RegistrationId any
+	Status         any
+	Type           any
+	UserEmail      any
+}
+
+type Command_Result struct {
+	Commands any
+}
+
 type CommandConfig struct {
 	CommandType any
-	DeviceId any
-	From any
-	Page any
-	PerPage any
-	Status any
-	To any
-	UserEmail any
+	DeviceId    any
+	From        any
+	Page        any
+	PerPage     any
+	Status      any
+	To          any
+	UserEmail   any
 }
 
 type CommandAttrs struct {
 	// Unique identifier linked to an account.
-	AccountId any
+	AccountId   any
 	CommandType any
-	DeviceId any
-	From any
-	Page any
-	PerPage any
-	Status any
-	To any
-	UserEmail any
+	DeviceId    any
+	From        any
+	Page        any
+	PerPage     any
+	Result      any
+	Status      any
+	To          any
+	UserEmail   any
 }
 
 var Command = ubx.DataSourceBinding{
 	WireType: "cloudflare_command",
 	Fields: ubx.FieldMap{
 		"CommandType": ubx.FieldSpec{WireName: "command_type"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
+		"DeviceId":    ubx.FieldSpec{WireName: "device_id"},
+		"From":        ubx.FieldSpec{WireName: "from"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
+		"To":          ubx.FieldSpec{WireName: "to"},
+		"UserEmail":   ubx.FieldSpec{WireName: "user_email"},
 	},
 }

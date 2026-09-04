@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type H2Prioritization_Errors struct {
+	Code    any
+	Message any
+}
+
+type H2Prioritization_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type H2PrioritizationConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type H2PrioritizationAttrs struct {
+	Errors   any
+	Messages any
+	// Controls HTTP/2 Prioritization for the zone.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

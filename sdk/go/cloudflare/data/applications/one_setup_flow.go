@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OneSetupFlow_Result_AuthConfig struct {
 	AuthorizationUrl any
-	ClientId any
-	RequiresPkce any
-	Scopes any
-	UrlPlaceholders any
+	ClientId         any
+	RequiresPkce     any
+	Scopes           any
+	UrlPlaceholders  any
 }
 
 type OneSetupFlow_Result_Steps_DynamicContent struct {
-	Label any
-	Type any
+	Label       any
+	Type        any
 	UrlTemplate any
-	ValueFrom any
+	ValueFrom   any
 }
 
 type OneSetupFlow_Result_Steps_FormFields struct {
-	Label any
-	Name any
-	Placeholder any
-	Required any
+	Label              any
+	Name               any
+	Placeholder        any
+	Required           any
 	SupportedFileTypes any
-	Type any
+	Type               any
 }
 
 type OneSetupFlow_Result_Steps struct {
-	ComponentId any
-	Description any
+	ComponentId    any
+	Description    any
 	DynamicContent any
-	FormFields any
-	IsRequired any
-	Parameters any
-	Title any
-	Type any
+	FormFields     any
+	IsRequired     any
+	Parameters     any
+	Title          any
+	Type           any
 }
 
 type OneSetupFlow_Result struct {
-	AuthConfig any
-	Default any
-	Description any
-	Id any
-	Name any
-	Steps any
+	AuthConfig            any
+	Default               any
+	Description           any
+	Id                    any
+	Name                  any
+	Steps                 any
 	SupportedEnvironments any
 }
 
@@ -64,24 +64,24 @@ type OneSetupFlow_ResultInfo struct {
 }
 
 type OneSetupFlowConfig struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
-	AuthMethod any
-	Environment any
-	Page any
-	PageSize any
+	AuthMethod    any
+	Environment   any
+	Page          any
+	PageSize      any
 }
 
 type OneSetupFlowAttrs struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
-	AuthMethod any
-	Environment any
+	AuthMethod    any
+	Environment   any
 	// List of errors.
 	Errors any
 	// List of messages.
 	Messages any
-	Page any
+	Page     any
 	PageSize any
 	// List of items.
 	Result any
@@ -94,11 +94,11 @@ type OneSetupFlowAttrs struct {
 var OneSetupFlow = ubx.DataSourceBinding{
 	WireType: "cloudflare_one_setup_flow",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"AuthMethod":    ubx.FieldSpec{WireName: "auth_method"},
+		"Environment":   ubx.FieldSpec{WireName: "environment"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
 	},
 }

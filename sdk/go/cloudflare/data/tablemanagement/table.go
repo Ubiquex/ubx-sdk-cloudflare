@@ -3,16 +3,46 @@ package tablemanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Table_Errors struct {
+	Code    any
+	Message any
+}
+
+type Table_Result_Details_Identifier struct {
+	Name      any
+	Namespace any
+}
+
+type Table_Result_Details struct {
+	CreatedAt        any
+	Identifier       any
+	Location         any
+	MetadataLocation any
+	TableUuid        any
+	UpdatedAt        any
+}
+
+type Table_Result struct {
+	// Contains detailed metadata for each table when return_details is true. Each object includes identifier, UUID, timestamps, and locations.
+	Details any
+	// Lists tables in the namespace.
+	Identifiers any
+	// Use this opaque token to fetch the next page of results. A null or absent value indicates the last page.
+	NextPageToken any
+	// Contains UUIDs for each table when return_uuids is true. The order corresponds to the identifiers array.
+	TableUuids any
+}
+
 type TableConfig struct {
 	// Use this to identify the account.
 	AccountId any
 	// Specifies the R2 bucket name.
-	BucketName any
-	Namespace any
-	PageSize any
-	PageToken any
+	BucketName    any
+	Namespace     any
+	PageSize      any
+	PageToken     any
 	ReturnDetails any
-	ReturnUuids any
+	ReturnUuids   any
 }
 
 type TableAttrs struct {
@@ -20,22 +50,30 @@ type TableAttrs struct {
 	AccountId any
 	// Specifies the R2 bucket name.
 	BucketName any
+	// Contains errors if the API call was unsuccessful.
+	Errors any
+	// Contains informational messages.
+	Messages  any
 	Namespace any
-	PageSize any
+	PageSize  any
 	PageToken any
+	// Contains the list of tables with optional pagination.
+	Result        any
 	ReturnDetails any
-	ReturnUuids any
+	ReturnUuids   any
+	// Indicates whether the API call was successful.
+	Success any
 }
 
 var Table = ubx.DataSourceBinding{
 	WireType: "cloudflare_table",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"BucketName":    ubx.FieldSpec{WireName: "bucket_name"},
+		"Namespace":     ubx.FieldSpec{WireName: "namespace"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":     ubx.FieldSpec{WireName: "page_token"},
 		"ReturnDetails": ubx.FieldSpec{WireName: "return_details"},
-		"ReturnUuids": ubx.FieldSpec{WireName: "return_uuids"},
+		"ReturnUuids":   ubx.FieldSpec{WireName: "return_uuids"},
 	},
 }

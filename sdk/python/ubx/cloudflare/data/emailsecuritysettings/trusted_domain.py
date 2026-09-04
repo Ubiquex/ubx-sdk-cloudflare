@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TrustedDomain_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class TrustedDomain_Result:
+    comments: Any = None
+    created_at: Any = None
+    id: Any = None
+    is_recent: Any = None
+    is_regex: Any = None
+    is_similarity: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+    pattern: Any = None
+
+@dataclasses.dataclass
 class TrustedDomainConfig:
     direction: Any = None
     is_recent: Any = None
@@ -26,6 +42,7 @@ class TrustedDomainAttrs:
     page: Any = None
     pattern: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
 
 TrustedDomain = ubx.DataSourceBinding(

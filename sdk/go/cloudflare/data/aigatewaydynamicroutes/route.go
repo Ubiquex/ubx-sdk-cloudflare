@@ -4,9 +4,9 @@ package aigatewaydynamicroutes
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Route_Data_Routes_Deployment struct {
-	CreatedAt any
+	CreatedAt    any
 	DeploymentId any
-	VersionId any
+	VersionId    any
 }
 
 type Route_Data_Routes_Elements_Outputs_Next struct {
@@ -22,38 +22,38 @@ type Route_Data_Routes_Elements_Properties struct {
 }
 
 type Route_Data_Routes_Elements struct {
-	Id any
-	Outputs any
+	Id         any
+	Outputs    any
 	Properties any
-	Type any
+	Type       any
 }
 
 type Route_Data_Routes_Version struct {
-	Active any
+	Active    any
 	CreatedAt any
-	Data any
-	IsValid any
+	Data      any
+	IsValid   any
 	VersionId any
 }
 
 type Route_Data_Routes struct {
 	AccountTag any
-	CreatedAt any
+	CreatedAt  any
 	Deployment any
-	Elements any
-	GatewayId any
-	Id any
+	Elements   any
+	GatewayId  any
+	Id         any
 	ModifiedAt any
-	Name any
-	Version any
+	Name       any
+	Version    any
 }
 
 type Route_Data struct {
-	OrderBy any
+	OrderBy          any
 	OrderByDirection any
-	Page any
-	PerPage any
-	Routes any
+	Page             any
+	PerPage          any
+	Routes           any
 }
 
 type RouteConfig struct {
@@ -67,7 +67,7 @@ type RouteConfig struct {
 
 type RouteAttrs struct {
 	AccountId any
-	Data any
+	Data      any
 	GatewayId any
 	// Page number
 	Page any
@@ -81,7 +81,7 @@ var Route = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

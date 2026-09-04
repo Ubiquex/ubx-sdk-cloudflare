@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FullReport_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class FullReport_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class FullReport_Result:
+    cidr: Any = None
+    date: Any = None
+    offense_count: Any = None
+
+@dataclasses.dataclass
 class FullReportConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +34,11 @@ class FullReportAttrs:
     # Identifier.
     account_id: Any = None
     asn_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 FullReport = ubx.DataSourceBinding(
     wire_type="cloudflare_full_report",

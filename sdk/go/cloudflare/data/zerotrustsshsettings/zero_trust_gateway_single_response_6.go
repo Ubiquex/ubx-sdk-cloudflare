@@ -3,12 +3,22 @@ package zerotrustsshsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewaySingleResponse6_Result struct {
+	CreatedAt any
+	// Provide the Base64-encoded HPKE public key that encrypts SSH session logs. See https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/use-cases/ssh/ssh-infrastructure-access/#enable-ssh-command-logging.
+	PublicKey any
+	// Identify the seed ID.
+	SeedId    any
+	UpdatedAt any
+}
+
 type ZeroTrustGatewaySingleResponse6Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewaySingleResponse6Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewaySingleResponse6 = ubx.DataSourceBinding{

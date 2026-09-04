@@ -10,6 +10,21 @@ import ubx_sdk as ubx
 class IamSsoConnectorCollectionResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamSsoConnectorCollectionResponse_Result_Verification:
+    code: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class IamSsoConnectorCollectionResponse_Result:
+    created_on: Any = None
+    email_domain: Any = None
+    enabled: Any = None
+    id: Any = None
+    updated_on: Any = None
+    use_fedramp_language: Any = None
+    verification: Any = None
+
 _IamSsoConnectorCollectionResponse_AccountIdFields = {
 }
 
@@ -22,6 +37,7 @@ class IamSsoConnectorCollectionResponseConfig:
 class IamSsoConnectorCollectionResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 IamSsoConnectorCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_sso_connector_collection_response",

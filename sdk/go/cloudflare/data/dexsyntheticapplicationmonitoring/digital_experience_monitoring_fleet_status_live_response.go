@@ -3,6 +3,25 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DigitalExperienceMonitoringFleetStatusLiveResponse_Result_DeviceStats_ByColo struct {
+	UniqueDevicesTotal any
+	Value              any
+}
+
+type DigitalExperienceMonitoringFleetStatusLiveResponse_Result_DeviceStats struct {
+	ByColo     any
+	ByMode     any
+	ByPlatform any
+	ByStatus   any
+	ByVersion  any
+	// Number of unique devices
+	UniqueDevicesTotal any
+}
+
+type DigitalExperienceMonitoringFleetStatusLiveResponse_Result struct {
+	DeviceStats any
+}
+
 type DigitalExperienceMonitoringFleetStatusLiveResponseConfig struct {
 	// Number of minutes before current time.
 	SinceMinutes any
@@ -11,6 +30,7 @@ type DigitalExperienceMonitoringFleetStatusLiveResponseConfig struct {
 type DigitalExperienceMonitoringFleetStatusLiveResponseAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
+	Result    any
 	// Number of minutes before current time.
 	SinceMinutes any
 }

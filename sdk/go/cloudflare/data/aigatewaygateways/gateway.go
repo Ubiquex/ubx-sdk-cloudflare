@@ -4,69 +4,69 @@ package aigatewaygateways
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateway_Result_Dlp_Policies struct {
-	Action any
-	Check any
-	Enabled any
-	Id any
+	Action   any
+	Check    any
+	Enabled  any
+	Id       any
 	Profiles any
 }
 
 type Gateway_Result_Dlp struct {
-	Action any
-	Enabled any
+	Action   any
+	Enabled  any
 	Policies any
 	Profiles any
 }
 
 type Gateway_Result_Guardrails_Prompt struct {
-	P1 any
-	S1 any
+	P1  any
+	S1  any
 	S10 any
 	S11 any
 	S12 any
 	S13 any
-	S2 any
-	S3 any
-	S4 any
-	S5 any
-	S6 any
-	S7 any
-	S8 any
-	S9 any
+	S2  any
+	S3  any
+	S4  any
+	S5  any
+	S6  any
+	S7  any
+	S8  any
+	S9  any
 }
 
 type Gateway_Result_Guardrails struct {
-	Prompt any
+	Prompt   any
 	Response any
 }
 
 type Gateway_Result_Otel struct {
 	Authorization any
-	ContentType any
-	Headers any
-	Url any
+	ContentType   any
+	Headers       any
+	Url           any
 }
 
 type Gateway_Result_SpendLimits_Rules_Metadata struct {
-	Mode any
+	Mode   any
 	Values any
 }
 
 type Gateway_Result_SpendLimits_Rules struct {
-	Enabled any
-	Id any
-	Limit any
+	Enabled   any
+	Id        any
+	Limit     any
 	LimitType any
-	Metadata any
-	Model any
-	Provider any
+	Metadata  any
+	Model     any
+	Provider  any
 	Technique any
-	Window any
+	Window    any
 }
 
 type Gateway_Result_SpendLimits struct {
 	Enabled any
-	Rules any
+	Rules   any
 }
 
 type Gateway_Result_Stripe_UsageEvents struct {
@@ -75,54 +75,54 @@ type Gateway_Result_Stripe_UsageEvents struct {
 
 type Gateway_Result_Stripe struct {
 	Authorization any
-	UsageEvents any
+	UsageEvents   any
 }
 
 type Gateway_Result struct {
-	Authentication any
+	Authentication          any
 	CacheInvalidateOnUpdate any
-	CacheTtl any
-	CollectLogs any
-	CreatedAt any
-	Dlp any
-	Guardrails any
-	Id any
-	IsDefault any
-	LogClassification any
-	LogManagement any
-	LogManagementStrategy any
-	Logpush any
-	LogpushPublicKey any
-	ModifiedAt any
-	Otel any
-	RateLimitingInterval any
-	RateLimitingLimit any
-	RateLimitingTechnique any
-	RetryBackoff any
-	RetryDelay any
-	RetryMaxAttempts any
-	SpendLimits any
-	StoreId any
-	Stripe any
-	WorkersAiBillingMode any
-	Zdr any
+	CacheTtl                any
+	CollectLogs             any
+	CreatedAt               any
+	Dlp                     any
+	Guardrails              any
+	Id                      any
+	IsDefault               any
+	LogClassification       any
+	LogManagement           any
+	LogManagementStrategy   any
+	Logpush                 any
+	LogpushPublicKey        any
+	ModifiedAt              any
+	Otel                    any
+	RateLimitingInterval    any
+	RateLimitingLimit       any
+	RateLimitingTechnique   any
+	RetryBackoff            any
+	RetryDelay              any
+	RetryMaxAttempts        any
+	SpendLimits             any
+	StoreId                 any
+	Stripe                  any
+	WorkersAiBillingMode    any
+	Zdr                     any
 }
 
 type GatewayConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Search by id
 	Search any
 }
 
 type GatewayAttrs struct {
 	AccountId any
-	Page any
-	PerPage any
-	Result any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by id
-	Search any
+	Search  any
 	Success any
 }
 
@@ -130,8 +130,8 @@ var Gateway = ubx.DataSourceBinding{
 	WireType: "cloudflare_gateway",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

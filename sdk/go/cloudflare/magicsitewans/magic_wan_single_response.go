@@ -3,7 +3,7 @@ package magicsitewans
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type MagicWanSingleResponse_StaticAddressing struct {
+type MagicWanSingleResponse_Result_StaticAddressing struct {
 	// A valid CIDR notation representing an IP range.
 	Address any
 	// A valid IPv4 address.
@@ -12,14 +12,31 @@ type MagicWanSingleResponse_StaticAddressing struct {
 	SecondaryAddress any
 }
 
-var MagicWanSingleResponse_StaticAddressingFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"GatewayAddress": ubx.FieldSpec{WireName: "gateway_address"},
-		"SecondaryAddress": ubx.FieldSpec{WireName: "secondary_address"},
-	}
+type MagicWanSingleResponse_Result struct {
+	// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
+	HealthCheckRate any
+	// Identifier
+	Id       any
+	Name     any
+	Physport any
+	// Priority of WAN for traffic loadbalancing.
+	Priority any
+	// Identifier
+	SiteId any
+	// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
+	StaticAddressing any
+	// VLAN ID. Use zero for untagged.
+	VlanTag any
+}
+
+var MagicWanSingleResponse_Result_StaticAddressingFields = ubx.FieldMap{
+	"Address":          ubx.FieldSpec{WireName: "address"},
+	"GatewayAddress":   ubx.FieldSpec{WireName: "gateway_address"},
+	"SecondaryAddress": ubx.FieldSpec{WireName: "secondary_address"},
+}
 
 type MagicWanSingleResponseConfig struct {
-	Name any
+	Name     any
 	Physport any
 	Priority any
 	// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
@@ -35,9 +52,10 @@ type MagicWanSingleResponseConfig struct {
 }
 
 type MagicWanSingleResponseAttrs struct {
-	Name any
+	Name     any
 	Physport any
 	Priority any
+	Result   any
 	// (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
 	StaticAddressing any
 	// VLAN ID. Use zero for untagged.
@@ -53,17 +71,17 @@ type MagicWanSingleResponseAttrs struct {
 var MagicWanSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_wan_single_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Physport": ubx.FieldSpec{WireName: "physport"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"StaticAddressing": ubx.FieldSpec{
 			WireName: "static_addressing",
-			Kind: "object",
-			Fields: MagicWanSingleResponse_StaticAddressingFields,
+			Kind:     "object",
+			Fields:   MagicWanSingleResponse_Result_StaticAddressingFields,
 		},
-		"VlanTag": ubx.FieldSpec{WireName: "vlan_tag"},
+		"VlanTag":   ubx.FieldSpec{WireName: "vlan_tag"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
-		"WanId": ubx.FieldSpec{WireName: "wan_id"},
+		"SiteId":    ubx.FieldSpec{WireName: "site_id"},
+		"WanId":     ubx.FieldSpec{WireName: "wan_id"},
 	},
 }

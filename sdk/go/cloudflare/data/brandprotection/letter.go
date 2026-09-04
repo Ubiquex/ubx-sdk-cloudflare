@@ -4,28 +4,28 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Letter_Letters struct {
-	CreatedAt any
-	Id any
-	LetterType any
+	CreatedAt        any
+	Id               any
+	LetterType       any
 	TakedownNoticeId any
-	TemplateId any
+	TemplateId       any
 }
 
 type LetterConfig struct {
 	AccountId any
-	NoticeId any
+	NoticeId  any
 }
 
 type LetterAttrs struct {
 	AccountId any
-	Letters any
-	NoticeId any
+	Letters   any
+	NoticeId  any
 }
 
 var Letter = ubx.DataSourceBinding{
 	WireType: "cloudflare_letter",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"NoticeId": ubx.FieldSpec{WireName: "notice_id"},
+		"NoticeId":  ubx.FieldSpec{WireName: "notice_id"},
 	},
 }

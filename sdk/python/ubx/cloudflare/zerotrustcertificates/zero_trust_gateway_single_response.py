@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse_Result:
+    # Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
+    binding_status: Any = None
+    # Provide the CA certificate (read-only).
+    certificate: Any = None
+    created_at: Any = None
+    expires_on: Any = None
+    # Provide the SHA256 fingerprint of the certificate (read-only).
+    fingerprint: Any = None
+    # Identify the certificate with a UUID.
+    id: Any = None
+    # Indicate whether Gateway TLS interception uses this certificate (read-only). You cannot set this value directly. To configure interception, use the Gateway configuration setting named `certificate` (read-only).
+    in_use: Any = None
+    # Indicate the organization that issued the certificate (read-only).
+    issuer_org: Any = None
+    # Provide the entire issuer field of the certificate (read-only).
+    issuer_raw: Any = None
+    # Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
+    type: Any = None
+    updated_at: Any = None
+    uploaded_on: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewaySingleResponseConfig:
     # Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation. Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
     validity_period_days: Any = None
@@ -17,6 +40,7 @@ class ZeroTrustGatewaySingleResponseConfig:
 
 @dataclasses.dataclass
 class ZeroTrustGatewaySingleResponseAttrs:
+    result: Any = None
     # Sets the certificate validity period in days (range: 1-10,950 days / ~30 years). Defaults to 1,825 days (5 years). **Important**: This field is only settable during the certificate creation. Certificates becomes immutable after creation - use the `/activate` and `/deactivate` endpoints to manage certificate lifecycle.
     validity_period_days: Any = None
     # path parameter, not part of the API's own resource representation

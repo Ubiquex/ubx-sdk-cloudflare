@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Transformation_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Transformation_Result:
+    cf_zone_tag: Any = None
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class TransformationConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +28,11 @@ class TransformationConfig:
 class TransformationAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Transformation = ubx.DataSourceBinding(
     wire_type="cloudflare_transformation",

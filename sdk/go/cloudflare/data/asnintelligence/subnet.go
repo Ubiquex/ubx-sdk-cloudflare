@@ -10,9 +10,9 @@ type SubnetConfig struct {
 type SubnetAttrs struct {
 	// Identifier.
 	AccountId any
-	Asn any
+	Asn       any
 	// Total results returned based on your search parameters.
-	Count any
+	Count        any
 	IpCountTotal any
 	// Current page within paginated list of results.
 	Page any

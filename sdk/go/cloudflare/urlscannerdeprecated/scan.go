@@ -8,11 +8,11 @@ type Scan_Errors struct {
 }
 
 type Scan_Result_Scan_Asns_Asn struct {
-	Asn any
-	Description any
+	Asn            any
+	Description    any
 	LocationAlpha2 any
-	Name any
-	OrgName any
+	Name           any
+	OrgName        any
 }
 
 type Scan_Result_Scan_Asns struct {
@@ -21,50 +21,50 @@ type Scan_Result_Scan_Asns struct {
 }
 
 type Scan_Result_Scan_Certificates struct {
-	Issuer any
+	Issuer      any
 	SubjectName any
-	ValidFrom any
-	ValidTo any
+	ValidFrom   any
+	ValidTo     any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom_Categories_Content struct {
-	Id any
-	Name any
+	Id              any
+	Name            any
 	SuperCategoryId any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom_Categories_Inherited struct {
 	Content any
-	From any
-	Risks any
+	From    any
+	Risks   any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom_Categories struct {
-	Content any
+	Content   any
 	Inherited any
-	Risks any
+	Risks     any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom_Dns struct {
-	Address any
+	Address     any
 	DnssecValid any
-	Name any
-	Type any
+	Name        any
+	Type        any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom_Rank struct {
 	Bucket any
-	Name any
+	Name   any
 	// Rank in the Global Radar Rank, if set. See more at https://blog.cloudflare.com/radar-domain-rankings/
 	Rank any
 }
 
 type Scan_Result_Scan_Domains_ExampleCom struct {
 	Categories any
-	Dns any
-	Name any
-	Rank any
-	Type any
+	Dns        any
+	Name       any
+	Rank       any
+	Type       any
 }
 
 type Scan_Result_Scan_Domains struct {
@@ -73,25 +73,25 @@ type Scan_Result_Scan_Domains struct {
 
 type Scan_Result_Scan_Geo struct {
 	Continents any
-	Locations any
+	Locations  any
 }
 
 type Scan_Result_Scan_Ips_Ip struct {
-	Asn any
-	AsnDescription any
+	Asn               any
+	AsnDescription    any
 	AsnLocationAlpha2 any
-	AsnName any
-	AsnOrgName any
-	Continent any
-	GeonameId any
-	Ip any
-	IpVersion any
-	Latitude any
-	LocationAlpha2 any
-	LocationName any
-	Longitude any
-	Subdivision1Name any
-	Subdivision2Name any
+	AsnName           any
+	AsnOrgName        any
+	Continent         any
+	GeonameId         any
+	Ip                any
+	IpVersion         any
+	Latitude          any
+	LocationAlpha2    any
+	LocationName      any
+	Longitude         any
+	Subdivision1Name  any
+	Subdivision2Name  any
 }
 
 type Scan_Result_Scan_Ips struct {
@@ -110,50 +110,50 @@ type Scan_Result_Scan_Links struct {
 
 type Scan_Result_Scan_Meta_Processors_Categories struct {
 	Content any
-	Risks any
+	Risks   any
 }
 
 type Scan_Result_Scan_Meta_Processors_Tech_Categories struct {
-	Groups any
-	Id any
-	Name any
+	Groups   any
+	Id       any
+	Name     any
 	Priority any
-	Slug any
+	Slug     any
 }
 
 type Scan_Result_Scan_Meta_Processors_Tech_Evidence_Patterns struct {
 	Confidence any
-	Excludes any
-	Implies any
-	Match any
-	Name any
-	Regex any
-	Type any
-	Value any
-	Version any
+	Excludes   any
+	Implies    any
+	Match      any
+	Name       any
+	Regex      any
+	Type       any
+	Value      any
+	Version    any
 }
 
 type Scan_Result_Scan_Meta_Processors_Tech_Evidence struct {
 	ImpliedBy any
-	Patterns any
+	Patterns  any
 }
 
 type Scan_Result_Scan_Meta_Processors_Tech struct {
-	Categories any
-	Confidence any
+	Categories  any
+	Confidence  any
 	Description any
-	Evidence any
-	Icon any
-	Name any
-	Slug any
-	Website any
+	Evidence    any
+	Icon        any
+	Name        any
+	Slug        any
+	Website     any
 }
 
 type Scan_Result_Scan_Meta_Processors struct {
 	Categories any
-	Phishing any
-	Rank any
-	Tech any
+	Phishing   any
+	Rank       any
+	Tech       any
 }
 
 type Scan_Result_Scan_Meta struct {
@@ -162,29 +162,29 @@ type Scan_Result_Scan_Meta struct {
 
 type Scan_Result_Scan_Page_Console struct {
 	Category any
-	Text any
-	Type any
-	Url any
+	Text     any
+	Type     any
+	Url      any
 }
 
 type Scan_Result_Scan_Page_Cookies struct {
-	Domain any
-	Expires any
-	HttpOnly any
-	Name any
-	Path any
-	Priority any
-	SameParty any
-	Secure any
-	Session any
-	Size any
-	SourcePort any
+	Domain       any
+	Expires      any
+	HttpOnly     any
+	Name         any
+	Path         any
+	Priority     any
+	SameParty    any
+	Secure       any
+	Session      any
+	Size         any
+	SourcePort   any
 	SourceScheme any
-	Value any
+	Value        any
 }
 
 type Scan_Result_Scan_Page_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -199,61 +199,61 @@ type Scan_Result_Scan_Page_Js struct {
 
 type Scan_Result_Scan_Page_SecurityViolations struct {
 	Category any
-	Text any
-	Url any
+	Text     any
+	Url      any
 }
 
 type Scan_Result_Scan_Page struct {
-	Asn any
-	AsnLocationAlpha2 any
-	Asnname any
-	Console any
-	Cookies any
-	Country any
+	Asn                   any
+	AsnLocationAlpha2     any
+	Asnname               any
+	Console               any
+	Cookies               any
+	Country               any
 	CountryLocationAlpha2 any
-	Domain any
-	Headers any
-	Ip any
-	Js any
-	SecurityViolations any
-	Status any
-	Subdivision1Name any
-	Subdivision2name any
-	Url any
+	Domain                any
+	Headers               any
+	Ip                    any
+	Js                    any
+	SecurityViolations    any
+	Status                any
+	Subdivision1Name      any
+	Subdivision2name      any
+	Url                   any
 }
 
 type Scan_Result_Scan_Performance struct {
-	ConnectEnd any
-	ConnectStart any
-	DecodedBodySize any
-	DomComplete any
-	DomContentLoadedEventEnd any
+	ConnectEnd                 any
+	ConnectStart               any
+	DecodedBodySize            any
+	DomComplete                any
+	DomContentLoadedEventEnd   any
 	DomContentLoadedEventStart any
-	DomInteractive any
-	DomainLookupEnd any
-	DomainLookupStart any
-	Duration any
-	EncodedBodySize any
-	EntryType any
-	FetchStart any
-	InitiatorType any
-	LoadEventEnd any
-	LoadEventStart any
-	Name any
-	NextHopProtocol any
-	RedirectCount any
-	RedirectEnd any
-	RedirectStart any
-	RequestStart any
-	ResponseEnd any
-	ResponseStart any
-	SecureConnectionStart any
-	StartTime any
-	TransferSize any
-	Type any
-	UnloadEventEnd any
-	UnloadEventStart any
-	WorkerStart any
+	DomInteractive             any
+	DomainLookupEnd            any
+	DomainLookupStart          any
+	Duration                   any
+	EncodedBodySize            any
+	EntryType                  any
+	FetchStart                 any
+	InitiatorType              any
+	LoadEventEnd               any
+	LoadEventStart             any
+	Name                       any
+	NextHopProtocol            any
+	RedirectCount              any
+	RedirectEnd                any
+	RedirectStart              any
+	RequestStart               any
+	ResponseEnd                any
+	ResponseStart              any
+	SecureConnectionStart      any
+	StartTime                  any
+	TransferSize               any
+	Type                       any
+	UnloadEventEnd             any
+	UnloadEventStart           any
+	WorkerStart                any
 }
 
 type Scan_Result_Scan_Task_ScannedFrom struct {
@@ -264,19 +264,19 @@ type Scan_Result_Scan_Task_ScannedFrom struct {
 type Scan_Result_Scan_Task struct {
 	// Submitter location
 	ClientLocation any
-	ClientType any
+	ClientType     any
 	// URL of the primary request, after all HTTP redirects
 	EffectiveUrl any
-	Errors any
-	ScannedFrom any
-	Status any
-	Success any
-	Time any
-	TimeEnd any
+	Errors       any
+	ScannedFrom  any
+	Status       any
+	Success      any
+	Time         any
+	TimeEnd      any
 	// Submitted URL
 	Url any
 	// Scan ID
-	Uuid any
+	Uuid       any
 	Visibility any
 }
 
@@ -284,7 +284,7 @@ type Scan_Result_Scan_Verdicts_Overall struct {
 	Categories any
 	// At least one of our subsystems marked the site as potentially malicious at the time of the scan.
 	Malicious any
-	Phishing any
+	Phishing  any
 }
 
 type Scan_Result_Scan_Verdicts struct {
@@ -293,17 +293,17 @@ type Scan_Result_Scan_Verdicts struct {
 
 type Scan_Result_Scan struct {
 	// Dictionary of Autonomous System Numbers where ASN's are the keys
-	Asns any
+	Asns         any
 	Certificates any
-	Domains any
-	Geo any
-	Ips any
-	Links any
-	Meta any
-	Page any
-	Performance any
-	Task any
-	Verdicts any
+	Domains      any
+	Geo          any
+	Ips          any
+	Links        any
+	Meta         any
+	Page         any
+	Performance  any
+	Task         any
+	Verdicts     any
 }
 
 type Scan_Result struct {
@@ -317,7 +317,7 @@ type ScanConfig struct {
 	CustomHeaders any
 	// Take multiple screenshots targeting different device types.
 	ScreenshotsResolutions any
-	Url any
+	Url                    any
 	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 	Visibility any
 	// path parameter, not part of the API's own resource representation
@@ -331,14 +331,14 @@ type ScanAttrs struct {
 	Country any
 	// Set custom headers.
 	CustomHeaders any
-	Errors any
-	Messages any
-	Result any
+	Errors        any
+	Messages      any
+	Result        any
 	// Take multiple screenshots targeting different device types.
 	ScreenshotsResolutions any
 	// Whether request was successful or not
 	Success any
-	Url any
+	Url     any
 	// The option `Public` means it will be included in listings like recent scans and search results. `Unlisted` means it will not be included in the aforementioned listings, users will need to have the scan's ID to access it. A a scan will be automatically marked as unlisted if it fails, if it contains potential PII or other sensitive material.
 	Visibility any
 	// path parameter, not part of the API's own resource representation
@@ -350,12 +350,12 @@ type ScanAttrs struct {
 var Scan = ubx.ResourceBinding{
 	WireType: "cloudflare_scan",
 	Fields: ubx.FieldMap{
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+		"Country":                ubx.FieldSpec{WireName: "country"},
+		"CustomHeaders":          ubx.FieldSpec{WireName: "custom_headers"},
 		"ScreenshotsResolutions": ubx.FieldSpec{WireName: "screenshots_resolutions"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Visibility": ubx.FieldSpec{WireName: "visibility"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
+		"Url":                    ubx.FieldSpec{WireName: "url"},
+		"Visibility":             ubx.FieldSpec{WireName: "visibility"},
+		"AccountId":              ubx.FieldSpec{WireName: "account_id"},
+		"ScanId":                 ubx.FieldSpec{WireName: "scan_id"},
 	},
 }

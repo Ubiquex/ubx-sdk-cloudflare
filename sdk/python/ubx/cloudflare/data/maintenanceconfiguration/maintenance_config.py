@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MaintenanceConfig_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MaintenanceConfig_Result_MaintenanceConfig_Compaction:
+    # Specifies the state of maintenance operations.
+    state: Any = None
+    # Sets the target file size for compaction in megabytes. Defaults to "128".
+    target_size_mb: Any = None
+
+@dataclasses.dataclass
+class MaintenanceConfig_Result_MaintenanceConfig_SnapshotExpiration:
+    # Specifies the maximum age for snapshots. The system deletes snapshots older than this age. Format: <number><unit> where unit is d (days), h (hours), m (minutes), or s (seconds). Examples: "7d" (7 days), "48h" (48 hours), "2880m" (2,880 minutes). Defaults to "7d".
+    max_snapshot_age: Any = None
+    # Specifies the minimum number of snapshots to retain. Defaults to 100.
+    min_snapshots_to_keep: Any = None
+    # Specifies the state of maintenance operations.
+    state: Any = None
+
+@dataclasses.dataclass
+class MaintenanceConfig_Result_MaintenanceConfig:
+    # Configures compaction for catalog maintenance.
+    compaction: Any = None
+    # Configures snapshot expiration settings.
+    snapshot_expiration: Any = None
+
+@dataclasses.dataclass
+class MaintenanceConfig_Result:
+    # Shows the credential configuration status.
+    credential_status: Any = None
+    # Configures maintenance for the catalog.
+    maintenance_config: Any = None
+
+@dataclasses.dataclass
 class MaintenanceConfigConfig:
     # Use this to identify the account.
     account_id: Any = None
@@ -19,6 +54,14 @@ class MaintenanceConfigAttrs:
     account_id: Any = None
     # Specifies the R2 bucket name.
     bucket_name: Any = None
+    # Contains errors if the API call was unsuccessful.
+    errors: Any = None
+    # Contains informational messages.
+    messages: Any = None
+    # Contains maintenance configuration and credential status.
+    result: Any = None
+    # Indicates whether the API call was successful.
+    success: Any = None
 
 MaintenanceConfig = ubx.DataSourceBinding(
     wire_type="cloudflare_maintenance_config",

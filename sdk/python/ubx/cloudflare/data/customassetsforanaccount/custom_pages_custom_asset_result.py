@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomPagesCustomAssetResult_Result:
+    # A short description of the custom asset.
+    description: Any = None
+    last_updated: Any = None
+    # The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
+    name: Any = None
+    # The size of the asset content in bytes.
+    size_bytes: Any = None
+    # The URL where the asset content is fetched from.
+    url: Any = None
+
+@dataclasses.dataclass
 class CustomPagesCustomAssetResultConfig:
     # The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
     asset_name: Any = None
@@ -17,6 +29,7 @@ class CustomPagesCustomAssetResultConfig:
 class CustomPagesCustomAssetResultAttrs:
     # The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
     asset_name: Any = None
+    result: Any = None
     # Identifier.
     zone_identifier: Any = None
 

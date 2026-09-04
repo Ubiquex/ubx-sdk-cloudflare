@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse7_Result:
+    # Actual contents of the PAC file
+    contents: Any = None
+    created_at: Any = None
+    # Detailed description of the PAC file.
+    description: Any = None
+    id: Any = None
+    # Name of the PAC file.
+    name: Any = None
+    # URL-friendly version of the PAC file name.
+    slug: Any = None
+    updated_at: Any = None
+    # Unique URL to download the PAC file.
+    url: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewaySingleResponse7Config:
     # Actual contents of the PAC file
     contents: Any = None
@@ -29,6 +45,7 @@ class ZeroTrustGatewaySingleResponse7Attrs:
     description: Any = None
     # Name of the PAC file.
     name: Any = None
+    result: Any = None
     # URL-friendly version of the PAC file name. If not provided, it will be auto-generated
     slug: Any = None
     # path parameter, not part of the API's own resource representation

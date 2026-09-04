@@ -8,16 +8,16 @@ type Namespace_Errors_Source struct {
 }
 
 type Namespace_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Namespace_Result struct {
 	CreatedAt any
-	Id any
-	Name any
+	Id        any
+	Name      any
 	UpdatedAt any
 }
 
@@ -31,24 +31,24 @@ type Namespace_ResultInfo struct {
 }
 
 type NamespaceConfig struct {
-	Cursor any
+	Cursor    any
 	Direction any
-	Order any
+	Order     any
 	// Number of results per page.
 	PerPage any
 }
 
 type NamespaceAttrs struct {
-	Cursor any
+	Cursor    any
 	Direction any
 	// Always empty for a successful response.
 	Errors any
 	// Informational, non-error messages, if any.
 	Messages any
-	Order any
+	Order    any
 	// Number of results per page.
-	PerPage any
-	Result any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Always true for a successful response.
 	Success any
@@ -57,9 +57,9 @@ type NamespaceAttrs struct {
 var Namespace = ubx.DataSourceBinding{
 	WireType: "cloudflare_namespace",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -3,6 +3,23 @@ package passivednsbyip
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelComponentsSchemasSingleResponse_Result_ReverseRecords struct {
+	FirstSeen any
+	Hostname  any
+	LastSeen  any
+}
+
+type IntelComponentsSchemasSingleResponse_Result struct {
+	// Total results returned based on your search parameters.
+	Count any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// Reverse DNS look-ups observed during the time period.
+	ReverseRecords any
+}
+
 type IntelComponentsSchemasSingleResponse_StartEndParams struct {
 	// Defaults to the current date.
 	End any
@@ -11,40 +28,41 @@ type IntelComponentsSchemasSingleResponse_StartEndParams struct {
 }
 
 var IntelComponentsSchemasSingleResponse_StartEndParamsFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type IntelComponentsSchemasSingleResponseConfig struct {
 	Ipv4 any
 	// Requested page within paginated list of results.
 	Page any
 	// Maximum number of results requested.
-	PerPage any
+	PerPage        any
 	StartEndParams any
 }
 
 type IntelComponentsSchemasSingleResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Ipv4 any
+	Ipv4      any
 	// Requested page within paginated list of results.
 	Page any
 	// Maximum number of results requested.
-	PerPage any
+	PerPage        any
+	Result         any
 	StartEndParams any
 }
 
 var IntelComponentsSchemasSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_intel_components_schemas_single_response",
 	Fields: ubx.FieldMap{
-		"Ipv4": ubx.FieldSpec{WireName: "ipv4"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Ipv4":    ubx.FieldSpec{WireName: "ipv4"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 		"StartEndParams": ubx.FieldSpec{
 			WireName: "start_end_params",
-			Kind: "object",
-			Fields: IntelComponentsSchemasSingleResponse_StartEndParamsFields,
+			Kind:     "object",
+			Fields:   IntelComponentsSchemasSingleResponse_StartEndParamsFields,
 		},
 	},
 }

@@ -3,35 +3,50 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ContentPolicy_Result_CreatedAt struct {
+}
+
+type ContentPolicy_Result struct {
+	CreatedAt  any
+	Enabled    any
+	Id         any
+	ModifiedAt any
+	Name       any
+	Notes      any
+	Pattern    any
+	Targets    any
+}
+
 type ContentPolicyConfig struct {
 	Direction any
-	Enabled any
-	Name any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Enabled   any
+	Name      any
+	Order     any
+	Page      any
+	PerPage   any
+	Search    any
 }
 
 type ContentPolicyAttrs struct {
 	Direction any
-	Enabled any
-	Name any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Enabled   any
+	Name      any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
+	Search    any
 }
 
 var ContentPolicy = ubx.DataSourceBinding{
 	WireType: "cloudflare_content_policy",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

@@ -3,16 +3,65 @@ package magicgretunnels
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicTunnelsCollectionResponse_Result_GreTunnels_Bgp struct {
+	CustomerAsn    any
+	ExportFilterId any
+	ExtraPrefixes  any
+	ImportFilterId any
+	Md5Key         any
+}
+
+type MagicTunnelsCollectionResponse_Result_GreTunnels_BgpStatus struct {
+	BgpState            any
+	CfSpeakerIp         any
+	CfSpeakerPort       any
+	CustomerSpeakerIp   any
+	CustomerSpeakerPort any
+	State               any
+	TcpEstablished      any
+	UpdatedAt           any
+}
+
+type MagicTunnelsCollectionResponse_Result_GreTunnels_HealthCheck struct {
+	Direction any
+	Enabled   any
+	Rate      any
+	Target    any
+	Type      any
+}
+
+type MagicTunnelsCollectionResponse_Result_GreTunnels struct {
+	AutomaticReturnRouting any
+	Bgp                    any
+	BgpStatus              any
+	CloudflareGreEndpoint  any
+	CreatedOn              any
+	CustomerGreEndpoint    any
+	Description            any
+	HealthCheck            any
+	Id                     any
+	InterfaceAddress       any
+	InterfaceAddress6      any
+	ModifiedOn             any
+	Mtu                    any
+	Name                   any
+	Ttl                    any
+}
+
+type MagicTunnelsCollectionResponse_Result struct {
+	GreTunnels any
+}
+
 type MagicTunnelsCollectionResponseConfig struct {
 }
 
 type MagicTunnelsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var MagicTunnelsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_tunnels_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

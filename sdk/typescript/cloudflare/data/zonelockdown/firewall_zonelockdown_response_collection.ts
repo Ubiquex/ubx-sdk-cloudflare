@@ -4,6 +4,21 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface FirewallZonelockdownResponseCollection_Description {
 }
 
+export interface FirewallZonelockdownResponseCollection_Result_Configurations {
+  target?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface FirewallZonelockdownResponseCollection_Result {
+  configurations?: FirewallZonelockdownResponseCollection_Result_Configurations[] | Computed<FirewallZonelockdownResponseCollection_Result_Configurations[]>;
+  createdOn?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  modifiedOn?: string | Computed<string>;
+  paused?: boolean | Computed<boolean>;
+  urls?: string[] | Computed<string[]>;
+}
+
 const FirewallZonelockdownResponseCollection_DescriptionFields: FieldMap = {
 };
 
@@ -40,6 +55,7 @@ export interface FirewallZonelockdownResponseCollectionAttrs {
   /** The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`. */
   perPage: number;
   priority: FirewallZonelockdownResponseCollection_Description;
+  result: FirewallZonelockdownResponseCollection_Result[];
   uriSearch: FirewallZonelockdownResponseCollection_Description;
   /** Defines an identifier. */
   zoneId: string;

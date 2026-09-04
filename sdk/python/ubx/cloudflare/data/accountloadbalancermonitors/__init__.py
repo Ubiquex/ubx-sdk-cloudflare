@@ -6,4 +6,5 @@ SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .load_balancing_monitor_references_response import LoadBalancingMonitorReferencesResponse, LoadBalancingMonitorReferencesResponseConfig
 from .load_balancing_monitor_response_collection import LoadBalancingMonitorResponseCollection, LoadBalancingMonitorResponseCollectionConfig
+from .load_balancing_monitor_response_single import LoadBalancingMonitorResponseSingle, LoadBalancingMonitorResponseSingleConfig
 from .load_balancing_preview_result_response import LoadBalancingPreviewResultResponse, LoadBalancingPreviewResultResponseConfig

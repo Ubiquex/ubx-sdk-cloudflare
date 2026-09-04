@@ -4,16 +4,16 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ase_Result_Asns struct {
-	Asn any
+	Asn   any
 	V424s any
 	V648s any
 }
 
 type Ase_Result struct {
 	AnchorTs any
-	Asns any
-	Country any
-	Metric any
+	Asns     any
+	Country  any
+	Metric   any
 }
 
 type AseConfig struct {
@@ -39,8 +39,8 @@ type AseAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Ranking metric: IPv4 /24 count or IPv6 /48 count.
-	Metric any
-	Result any
+	Metric  any
+	Result  any
 	Success any
 }
 
@@ -48,9 +48,9 @@ var Ase = ubx.DataSourceBinding{
 	WireType: "cloudflare_ase",
 	Fields: ubx.FieldMap{
 		"Country": ubx.FieldSpec{WireName: "country"},
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
+		"Date":    ubx.FieldSpec{WireName: "date"},
+		"Format":  ubx.FieldSpec{WireName: "format"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Metric":  ubx.FieldSpec{WireName: "metric"},
 	},
 }

@@ -3,16 +3,34 @@ package zonecachesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Variant_Result_Value struct {
+	Avif any
+	Bmp  any
+	Gif  any
+	Jp2  any
+	Jpeg any
+	Jpg  any
+	Jpg2 any
+	Png  any
+	Tif  any
+	Tiff any
+	Webp any
+}
+
+type Variant_Result struct {
+	Value any
+}
+
 type VariantConfig struct {
 }
 
 type VariantAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var Variant = ubx.DataSourceBinding{
 	WireType: "cloudflare_variant",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

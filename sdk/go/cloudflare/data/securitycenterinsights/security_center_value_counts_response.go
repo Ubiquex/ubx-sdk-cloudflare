@@ -3,37 +3,53 @@ package securitycenterinsights
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecurityCenterValueCountsResponse_Errors_Source struct {
+	Pointer any
+}
+
+type SecurityCenterValueCountsResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type SecurityCenterValueCountsResponseConfig struct {
 	// Identifier.
-	AccountId any
-	Dismissed any
+	AccountId  any
+	Dismissed  any
 	IssueClass any
-	IssueType any
-	Product any
-	Severity any
-	Subject any
+	IssueType  any
+	Product    any
+	Severity   any
+	Subject    any
 }
 
 type SecurityCenterValueCountsResponseAttrs struct {
 	// Identifier.
-	AccountId any
-	Dismissed any
+	AccountId  any
+	Dismissed  any
+	Errors     any
 	IssueClass any
-	IssueType any
-	Product any
-	Severity any
-	Subject any
+	IssueType  any
+	Messages   any
+	Product    any
+	Result     any
+	Severity   any
+	Subject    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var SecurityCenterValueCountsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_security_center_value_counts_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Dismissed": ubx.FieldSpec{WireName: "dismissed"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Dismissed":  ubx.FieldSpec{WireName: "dismissed"},
 		"IssueClass": ubx.FieldSpec{WireName: "issue_class"},
-		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
+		"IssueType":  ubx.FieldSpec{WireName: "issue_type"},
+		"Product":    ubx.FieldSpec{WireName: "product"},
+		"Severity":   ubx.FieldSpec{WireName: "severity"},
+		"Subject":    ubx.FieldSpec{WireName: "subject"},
 	},
 }

@@ -7,12 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AutomaticPlatformOptimization_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class AutomaticPlatformOptimization_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class AutomaticPlatformOptimizationConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AutomaticPlatformOptimizationAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Controls Automatic Platform Optimization (APO) for WordPress.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

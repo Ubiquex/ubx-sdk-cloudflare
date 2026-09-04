@@ -4,14 +4,14 @@ package brandprotection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Example_Templates struct {
-	Body any
-	Category any
-	CreatedAt any
+	Body        any
+	Category    any
+	CreatedAt   any
 	Description any
-	Id any
-	Name any
-	Source any
-	UpdatedAt any
+	Id          any
+	Name        any
+	Source      any
+	UpdatedAt   any
 }
 
 type ExampleConfig struct {

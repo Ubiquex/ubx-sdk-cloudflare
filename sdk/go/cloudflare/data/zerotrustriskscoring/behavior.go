@@ -3,12 +3,24 @@ package zerotrustriskscoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Behavior_Result_Behaviors struct {
+	Description any
+	Enabled     any
+	Name        any
+	RiskLevel   any
+}
+
+type Behavior_Result struct {
+	Behaviors any
+}
+
 type BehaviorConfig struct {
 	AccountId any
 }
 
 type BehaviorAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var Behavior = ubx.DataSourceBinding{

@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Preset_Data:
+    created_at: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Preset_Paging:
+    end_offset: Any = None
+    start_offset: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PresetConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -22,9 +35,12 @@ class PresetAttrs:
     account_id: Any = None
     # The app identifier tag.
     app_id: Any = None
+    data: Any = None
     page_no: Any = None
+    paging: Any = None
     per_page: Any = None
     search: Any = None
+    success: Any = None
 
 Preset = ubx.DataSourceBinding(
     wire_type="cloudflare_preset",

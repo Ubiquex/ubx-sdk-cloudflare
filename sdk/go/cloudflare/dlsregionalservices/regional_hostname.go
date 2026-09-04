@@ -3,6 +3,30 @@ package dlsregionalservices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegionalHostname_Errors_Source struct {
+	Pointer any
+}
+
+type RegionalHostname_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type RegionalHostname_Result_CreatedOn struct {
+}
+
+type RegionalHostname_Result struct {
+	CreatedOn any
+	// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
+	Hostname any
+	// Identifying key for the region
+	RegionKey any
+	// Configure which routing method to use for the regional hostname
+	Routing any
+}
+
 type RegionalHostnameConfig struct {
 	// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 	Hostname any
@@ -15,12 +39,17 @@ type RegionalHostnameConfig struct {
 }
 
 type RegionalHostnameAttrs struct {
+	Errors any
 	// DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
 	Hostname any
+	Messages any
 	// Identifying key for the region
 	RegionKey any
+	Result    any
 	// Configure which routing method to use for the regional hostname
 	Routing any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 }
@@ -28,9 +57,9 @@ type RegionalHostnameAttrs struct {
 var RegionalHostname = ubx.ResourceBinding{
 	WireType: "cloudflare_regional_hostname",
 	Fields: ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Hostname":  ubx.FieldSpec{WireName: "hostname"},
 		"RegionKey": ubx.FieldSpec{WireName: "region_key"},
-		"Routing": ubx.FieldSpec{WireName: "routing"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Routing":   ubx.FieldSpec{WireName: "routing"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

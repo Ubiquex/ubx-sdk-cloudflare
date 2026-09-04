@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingMonitorResponseCollection_Result:
+    allow_insecure: Any = None
+    consecutive_down: Any = None
+    consecutive_up: Any = None
+    created_on: Any = None
+    description: Any = None
+    expected_body: Any = None
+    expected_codes: Any = None
+    follow_redirects: Any = None
+    header: Any = None
+    id: Any = None
+    interval: Any = None
+    method: Any = None
+    modified_on: Any = None
+    path: Any = None
+    port: Any = None
+    probe_zone: Any = None
+    retries: Any = None
+    timeout: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingMonitorResponseCollectionConfig:
     pass
 
@@ -14,6 +36,7 @@ class LoadBalancingMonitorResponseCollectionConfig:
 class LoadBalancingMonitorResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 LoadBalancingMonitorResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_monitor_response_collection",

@@ -100,6 +100,27 @@ export interface AaaSingleResponse_Mechanisms {
   webhooks?: AaaSingleResponse_Mechanisms_Email[] | Computed<AaaSingleResponse_Mechanisms_Email[]>;
 }
 
+export interface AaaSingleResponse_Result {
+  /** Optional specification of how often to re-alert from the same incident, not support on all alert types. */
+  alertInterval?: string | Computed<string>;
+  /** Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values. */
+  alertType?: string | Computed<string>;
+  created?: string | Computed<string>;
+  /** Optional description for the Notification policy. */
+  description?: string | Computed<string>;
+  /** Whether or not the Notification policy is enabled. */
+  enabled?: boolean | Computed<boolean>;
+  /** Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details. */
+  filters?: AaaSingleResponse_Filters | Computed<AaaSingleResponse_Filters>;
+  /** The unique identifier of a notification policy */
+  id?: string | Computed<string>;
+  /** List of IDs that will be used when dispatching a notification. IDs for email type will be the email address. */
+  mechanisms?: AaaSingleResponse_Mechanisms | Computed<AaaSingleResponse_Mechanisms>;
+  modified?: string | Computed<string>;
+  /** Name of the policy. */
+  name?: string | Computed<string>;
+}
+
 const AaaSingleResponse_FiltersFields: FieldMap = {
   actions: "actions",
   affectedAsns: "affected_asns",
@@ -204,6 +225,7 @@ export interface AaaSingleResponseAttrs {
   mechanisms: AaaSingleResponse_Mechanisms;
   /** Name of the policy. */
   name: string;
+  result: AaaSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

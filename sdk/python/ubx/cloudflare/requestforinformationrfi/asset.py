@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Asset_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Asset_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Asset_Result_Created:
+    pass
+
+@dataclasses.dataclass
+class Asset_Result:
+    created: Any = None
+    description: Any = None
+    file_type: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class AssetConfig:
     # Page number of results.
     page: Any = None
@@ -21,10 +44,15 @@ class AssetConfig:
 
 @dataclasses.dataclass
 class AssetAttrs:
+    errors: Any = None
+    messages: Any = None
     # Page number of results.
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,12 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection17_Result:
+    pass
+
+@dataclasses.dataclass
 class AccessResponseCollection17Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollection17Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

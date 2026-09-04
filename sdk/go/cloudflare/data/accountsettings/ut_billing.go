@@ -3,6 +3,18 @@ package accountsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UtBilling_Errors struct {
+	Code    any
+	Message any
+}
+
+type UtBilling_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type UtBillingConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +23,12 @@ type UtBillingConfig struct {
 type UtBillingAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	// Controls Unique Transformations billing for the account.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var UtBilling = ubx.DataSourceBinding{

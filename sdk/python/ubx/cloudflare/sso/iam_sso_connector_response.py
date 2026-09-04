@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamSsoConnectorResponse_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class IamSsoConnectorResponse_Result_Verification:
+    # DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
+    code: Any = None
+    # The status of the verification code from the verification process.
+    status: Any = None
+
+@dataclasses.dataclass
+class IamSsoConnectorResponse_Result:
+    # Timestamp for the creation of the SSO connector
+    created_on: Any = None
+    email_domain: Any = None
+    enabled: Any = None
+    # SSO Connector identifier tag.
+    id: Any = None
+    # Timestamp for the last update of the SSO connector
+    updated_on: Any = None
+    # Controls the display of FedRAMP language to the user during SSO login
+    use_fedramp_language: Any = None
+    verification: Any = None
+
+@dataclasses.dataclass
 class IamSsoConnectorResponseConfig:
     # Begin the verification process after creation
     begin_verification: Any = None
@@ -25,6 +50,7 @@ class IamSsoConnectorResponseAttrs:
     begin_verification: Any = None
     # Email domain of the new SSO connector
     email_domain: Any = None
+    result: Any = None
     # Controls the display of FedRAMP language to the user during SSO login
     use_fedramp_language: Any = None
     # path parameter, not part of the API's own resource representation

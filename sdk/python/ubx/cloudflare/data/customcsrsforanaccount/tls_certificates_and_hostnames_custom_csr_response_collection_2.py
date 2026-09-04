@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomCsrResponseCollection2_Result:
+    account_tag: Any = None
+    common_name: Any = None
+    country: Any = None
+    created_at: Any = None
+    csr: Any = None
+    description: Any = None
+    id: Any = None
+    key_type: Any = None
+    locality: Any = None
+    name: Any = None
+    organization: Any = None
+    organizational_unit: Any = None
+    sans: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomCsrResponseCollection2Config:
     # Identifier.
     account_id: Any = None
@@ -31,6 +48,7 @@ class TlsCertificatesAndHostnamesCustomCsrResponseCollection2Attrs:
     page: Any = None
     # Number of custom CSRs per page.
     per_page: Any = None
+    result: Any = None
 
 TlsCertificatesAndHostnamesCustomCsrResponseCollection2 = ubx.DataSourceBinding(
     wire_type="cloudflare_tls_certificates_and_hostnames_custom_csr_response_collection_2",

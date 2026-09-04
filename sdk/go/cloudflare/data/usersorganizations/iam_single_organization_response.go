@@ -11,6 +11,7 @@ type IamSingleOrganizationResponseConfig struct {
 type IamSingleOrganizationResponseAttrs struct {
 	// Identifier
 	OrganizationId any
+	Result         any
 }
 
 var IamSingleOrganizationResponse = ubx.DataSourceBinding{

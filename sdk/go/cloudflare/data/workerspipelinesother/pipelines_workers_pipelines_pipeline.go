@@ -15,9 +15,9 @@ type PipelinesWorkersPipelinesPipeline_ResultInfo struct {
 }
 
 type PipelinesWorkersPipelinesPipeline_Results_Destination_Batch struct {
-	MaxBytes any
+	MaxBytes     any
 	MaxDurationS any
-	MaxRows any
+	MaxRows      any
 }
 
 type PipelinesWorkersPipelinesPipeline_Results_Destination_Compression struct {
@@ -28,18 +28,18 @@ type PipelinesWorkersPipelinesPipeline_Results_Destination_Path_Filename struct 
 }
 
 type PipelinesWorkersPipelinesPipeline_Results_Destination_Path struct {
-	Bucket any
+	Bucket   any
 	Filename any
 	Filepath any
-	Prefix any
+	Prefix   any
 }
 
 type PipelinesWorkersPipelinesPipeline_Results_Destination struct {
-	Batch any
+	Batch       any
 	Compression any
-	Format any
-	Path any
-	Type any
+	Format      any
+	Path        any
+	Type        any
 }
 
 type PipelinesWorkersPipelinesPipeline_Results_Source_Cors struct {
@@ -48,18 +48,18 @@ type PipelinesWorkersPipelinesPipeline_Results_Source_Cors struct {
 
 type PipelinesWorkersPipelinesPipeline_Results_Source struct {
 	Authentication any
-	Cors any
-	Format any
-	Type any
+	Cors           any
+	Format         any
+	Type           any
 }
 
 type PipelinesWorkersPipelinesPipeline_Results struct {
 	Destination any
-	Endpoint any
-	Id any
-	Name any
-	Source any
-	Version any
+	Endpoint    any
+	Id          any
+	Name        any
+	Source      any
+	Version     any
 }
 
 type PipelinesWorkersPipelinesPipelineConfig struct {
@@ -79,9 +79,9 @@ type PipelinesWorkersPipelinesPipelineAttrs struct {
 	// Specifies which page to retrieve.
 	Page any
 	// Specifies the number of pipelines per page.
-	PerPage any
+	PerPage    any
 	ResultInfo any
-	Results any
+	Results    any
 	// Specifies the prefix of pipeline name to search.
 	Search any
 	// Indicates whether the API call was successful.
@@ -92,8 +92,8 @@ var PipelinesWorkersPipelinesPipeline = ubx.DataSourceBinding{
 	WireType: "cloudflare_pipelines_workers_pipelines_pipeline",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

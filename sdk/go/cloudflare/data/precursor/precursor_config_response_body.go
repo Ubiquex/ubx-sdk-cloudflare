@@ -3,12 +3,28 @@ package precursor
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PrecursorConfigResponseBody_Result_EnforcementRules struct {
+	Description any
+	Enabled     any
+	Expression  any
+	Id          any
+	Mode        any
+}
+
+type PrecursorConfigResponseBody_Result struct {
+	// The zone-level Precursor enforcement mode applied to requests that do not match a more specific enforcement rule.
+	DefaultMode any
+	// The ordered list of enforcement rules for the zone.
+	EnforcementRules any
+}
+
 type PrecursorConfigResponseBodyConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type PrecursorConfigResponseBodyAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

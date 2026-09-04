@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesSourcingkitSourceSingleResponse_Result:
+    # The name of the storage bucket.
+    bucket: Any = None
+    # When the source was created.
+    created_at: Any = None
+    # Source unique identifier.
+    id: Any = None
+    # A human-readable name for the source.
+    name: Any = None
+    # The region of the storage bucket (S3 sources only).
+    region: Any = None
+    # When the source was last updated.
+    updated_at: Any = None
+    # The cloud storage vendor of the source bucket.
+    vendor: Any = None
+
+@dataclasses.dataclass
 class ImagesSourcingkitSourceSingleResponseConfig:
     # Account identifier for the bucket (required for R2 vendor).
     account: Any = None
@@ -31,6 +48,7 @@ class ImagesSourcingkitSourceSingleResponseAttrs:
     bucket: Any = None
     # A human-readable name for the source.
     name: Any = None
+    result: Any = None
     # Storage credentials for accessing the bucket. Shape depends on vendor.
     secret: Any = None
     # The cloud storage vendor of the source bucket.

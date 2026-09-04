@@ -7,12 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Font_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Font_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class FontConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class FontAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain, boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

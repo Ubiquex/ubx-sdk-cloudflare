@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TransformationsC2pa_Errors struct {
+	Code    any
+	Message any
+}
+
+type TransformationsC2pa_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type TransformationsC2paConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TransformationsC2paAttrs struct {
+	Errors   any
+	Messages any
+	// Controls C2PA signing for images processed through Cloudflare Image Transformations.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -3,10 +3,27 @@ package logpushtransformers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushTransformerVersionResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type LogpushTransformerVersionResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type LogpushTransformerVersionResponseCollection_Result struct {
+	CreatedAt any
+	Id        any
+	Version   any
+}
+
 type LogpushTransformerVersionResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
-	Limit any
+	Limit     any
 	// The transformer ID.
 	TransformerId any
 }
@@ -14,7 +31,12 @@ type LogpushTransformerVersionResponseCollectionConfig struct {
 type LogpushTransformerVersionResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Limit any
+	Errors    any
+	Limit     any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 	// The transformer ID.
 	TransformerId any
 }
@@ -22,8 +44,8 @@ type LogpushTransformerVersionResponseCollectionAttrs struct {
 var LogpushTransformerVersionResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_logpush_transformer_version_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
 		"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
 	},
 }

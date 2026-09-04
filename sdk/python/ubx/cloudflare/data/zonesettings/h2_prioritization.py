@@ -7,12 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class H2Prioritization_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class H2Prioritization_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class H2PrioritizationConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class H2PrioritizationAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Controls HTTP/2 Prioritization for the zone.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

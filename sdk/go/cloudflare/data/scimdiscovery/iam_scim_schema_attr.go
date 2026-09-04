@@ -8,17 +8,17 @@ type IamScimSchemaAttr_AccountId struct {
 
 type IamScimSchemaAttr_Attributes struct {
 	CanonicalValues any
-	CaseExact any
-	Description any
-	MultiValued any
-	Mutability any
-	Name any
-	ReferenceTypes any
-	Required any
-	Returned any
-	SubAttributes any
-	Type any
-	Uniqueness any
+	CaseExact       any
+	Description     any
+	MultiValued     any
+	Mutability      any
+	Name            any
+	ReferenceTypes  any
+	Required        any
+	Returned        any
+	SubAttributes   any
+	Type            any
+	Uniqueness      any
 }
 
 type IamScimSchemaAttr_Meta struct {
@@ -28,8 +28,7 @@ type IamScimSchemaAttr_Meta struct {
 	ResourceType any
 }
 
-var IamScimSchemaAttr_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimSchemaAttr_AccountIdFields = ubx.FieldMap{}
 
 type IamScimSchemaAttrConfig struct {
 	// Account identifier tag.
@@ -53,7 +52,7 @@ type IamScimSchemaAttrAttrs struct {
 	Name any
 	// The schema URI identifier.
 	SchemaId any
-	Schemas any
+	Schemas  any
 }
 
 var IamScimSchemaAttr = ubx.DataSourceBinding{
@@ -61,8 +60,8 @@ var IamScimSchemaAttr = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimSchemaAttr_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimSchemaAttr_AccountIdFields,
 		},
 		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
 	},

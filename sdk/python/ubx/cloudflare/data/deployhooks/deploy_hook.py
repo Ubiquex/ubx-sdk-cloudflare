@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DeployHook_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class DeployHook_Result_LatestBuild:
+    created_on: Any = None
+
+@dataclasses.dataclass
+class DeployHook_Result:
+    branch: Any = None
+    created_on: Any = None
+    deploy_hook_name: Any = None
+    deploy_hook_uuid: Any = None
+    external_script_id: Any = None
+    latest_build: Any = None
+    modified_on: Any = None
+
+@dataclasses.dataclass
+class DeployHook_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class DeployHookConfig:
     # Account identifier.
     account_id: Any = None
@@ -17,8 +44,13 @@ class DeployHookConfig:
 class DeployHookAttrs:
     # Account identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
     # Human-readable name of the worker.
     script_name: Any = None
+    success: Any = None
 
 DeployHook = ubx.DataSourceBinding(
     wire_type="cloudflare_deploy_hook",

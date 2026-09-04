@@ -3,6 +3,95 @@ package usersaccountmemberships
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamSingleMembershipResponseWithPolicies_Result_Account_ManagedBy struct {
+	ParentOrgId   any
+	ParentOrgName any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Account_Settings struct {
+	AbuseContactEmail any
+	EnforceTwofactor  any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Account struct {
+	CreatedOn any
+	Id        any
+	ManagedBy any
+	Name      any
+	Settings  any
+	Type      any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Permissions_Analytics struct {
+	Read  any
+	Write any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Permissions struct {
+	Analytics    any
+	Billing      any
+	CachePurge   any
+	Dns          any
+	DnsRecords   any
+	Lb           any
+	Logs         any
+	Organization any
+	Ssl          any
+	Waf          any
+	ZoneSettings any
+	Zones        any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies_PermissionGroups_Meta struct {
+	Key   any
+	Value any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies_PermissionGroups struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects struct {
+	Key any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups_Scope struct {
+	Key     any
+	Objects any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups struct {
+	Id    any
+	Meta  any
+	Name  any
+	Scope any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result_Policies struct {
+	Access           any
+	Id               any
+	PermissionGroups any
+	ResourceGroups   any
+}
+
+type IamSingleMembershipResponseWithPolicies_Result struct {
+	Account any
+	// Enterprise only. Indicates whether or not API access is enabled specifically for this user on a given account.
+	ApiAccessEnabled any
+	// Membership identifier tag.
+	Id any
+	// All access permissions for the user at the account.
+	Permissions any
+	// Access policy for the membership
+	Policies any
+	// List of role names the membership has for this account.
+	Roles any
+	// Status of this membership.
+	Status any
+}
+
 type IamSingleMembershipResponseWithPoliciesConfig struct {
 	// Whether to accept or reject this account invitation.
 	Status any
@@ -11,6 +100,7 @@ type IamSingleMembershipResponseWithPoliciesConfig struct {
 }
 
 type IamSingleMembershipResponseWithPoliciesAttrs struct {
+	Result any
 	// Whether to accept or reject this account invitation.
 	Status any
 	// path parameter, not part of the API's own resource representation
@@ -20,7 +110,7 @@ type IamSingleMembershipResponseWithPoliciesAttrs struct {
 var IamSingleMembershipResponseWithPolicies = ubx.ResourceBinding{
 	WireType: "cloudflare_iam_single_membership_response_with_policies",
 	Fields: ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 		"MembershipId": ubx.FieldSpec{WireName: "membership_id"},
 	},
 }

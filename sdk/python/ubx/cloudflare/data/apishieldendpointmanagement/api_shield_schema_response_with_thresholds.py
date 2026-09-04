@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ApiShieldSchemaResponseWithThresholds_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSchemaResponseWithThresholds_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ApiShieldSchemaResponseWithThresholds_Result:
+    schemas: Any = None
+    timestamp: Any = None
+
+@dataclasses.dataclass
 class ApiShieldSchemaResponseWithThresholdsConfig:
     feature: Any = None
     # Receive schema only for the given host(s).
@@ -15,10 +31,15 @@ class ApiShieldSchemaResponseWithThresholdsConfig:
 
 @dataclasses.dataclass
 class ApiShieldSchemaResponseWithThresholdsAttrs:
+    errors: Any = None
     feature: Any = None
     # Receive schema only for the given host(s).
     host: Any = None
     include_schema_kind: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 ApiShieldSchemaResponseWithThresholds = ubx.DataSourceBinding(
     wire_type="cloudflare_api_shield_schema_response_with_thresholds",

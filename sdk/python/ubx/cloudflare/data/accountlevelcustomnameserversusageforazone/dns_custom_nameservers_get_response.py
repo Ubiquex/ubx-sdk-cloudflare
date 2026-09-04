@@ -13,6 +13,10 @@ class DnsCustomNameserversGetResponseConfig:
 
 @dataclasses.dataclass
 class DnsCustomNameserversGetResponseAttrs:
+    # Whether zone uses account-level custom nameservers.
+    enabled: Any = None
+    # The number of the name server set to assign to the zone.
+    ns_set: Any = None
     # Identifier.
     zone_id: Any = None
 

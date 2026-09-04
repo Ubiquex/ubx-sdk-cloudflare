@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Context_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Context_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class ContextConfig:
     # Identifier.
     account_id: Any = None
@@ -16,7 +27,12 @@ class ContextConfig:
 class ContextAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     issue_id: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Context = ubx.DataSourceBinding(
     wire_type="cloudflare_context",

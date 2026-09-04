@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StoresResponseCollection_Result:
+    account_id: Any = None
+    created: Any = None
+    id: Any = None
+    modified: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class StoresResponseCollectionConfig:
     account_id: Any = None
     direction: Any = None
@@ -21,6 +29,7 @@ class StoresResponseCollectionAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 StoresResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_secrets_store_stores_response_collection",

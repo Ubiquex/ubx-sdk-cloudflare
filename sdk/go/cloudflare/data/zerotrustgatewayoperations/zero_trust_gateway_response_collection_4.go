@@ -3,6 +3,17 @@ package zerotrustgatewayoperations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection4_Result struct {
+	CreatedAt       any
+	Data            any
+	Id              any
+	OperationType   any
+	ProcessingError any
+	Result          any
+	Status          any
+	UpdatedAt       any
+}
+
 type ZeroTrustGatewayResponseCollection4Config struct {
 	// Provide the identifier string.
 	AccountId any
@@ -11,6 +22,7 @@ type ZeroTrustGatewayResponseCollection4Config struct {
 type ZeroTrustGatewayResponseCollection4Attrs struct {
 	// Provide the identifier string.
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection4 = ubx.DataSourceBinding{

@@ -3,16 +3,22 @@ package iplist
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelComponentsSchemasResponse_Result struct {
+	Description any
+	Id          any
+	Name        any
+}
+
 type IntelComponentsSchemasResponseConfig struct {
 }
 
 type IntelComponentsSchemasResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var IntelComponentsSchemasResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_intel_components_schemas_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

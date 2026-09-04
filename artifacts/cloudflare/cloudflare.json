@@ -1,13 +1,96 @@
 {
+  "cloudflare_aaa_silence_components_schemas_response_collection": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_aaa_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_idp_federation_grant_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_access_policy_update_resp": {
     "policies": "The Access policy IDs to include in the test."
   },
+  "cloudflare_access_single_response_10": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_access_single_response_11": {
     "created_at": "The timestamp when the resource was created, in RFC 3339 format.",
+    "result": "The requested resource, present when the API call succeeds.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
   },
+  "cloudflare_access_single_response_13": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_16": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_17": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_18": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_2": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_20": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_21": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_22": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_3": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_4": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_6": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_8": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_response_9": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_access_single_user_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_addressing_full_response": {
-    "ips": "The individual IP addresses included in the Address Map."
+    "ips": "The individual IP addresses included in the Address Map.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_addressing_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_addressing_single_response_bgp": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_alexandria_get_application_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_allow_policy": {
+    "comments": "A free-text note about this allow policy.",
+    "created_at": "When this allow policy was created.",
+    "id": "This allow policy's own real identifier.",
+    "is_regex": "Whether `pattern` is interpreted as a regular expression rather than a literal match.",
+    "modified_at": "When this allow policy was last modified."
+  },
+  "cloudflare_api_shield_public_schema_success_result": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_api_shield_single_operation_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_app": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
@@ -16,11 +99,39 @@
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_application": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_asset": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_bill_subs_api_account_subscription_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_binding": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_block_sender": {
+    "comments": "A free-text note about this block-sender entry.",
+    "created_at": "When this block-sender entry was created.",
+    "id": "This block-sender entry's own real identifier.",
+    "is_regex": "Whether `pattern` is interpreted as a regular expression rather than a literal match.",
+    "modified_at": "When this block-sender entry was last modified."
+  },
+  "cloudflare_bucket": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
   "cloudflare_bulk": {
     "action": "The remediation action to apply to every matching message (e.g. move, delete).",
     "comment": "An optional note describing why this bulk remediation job was run.",
     "destination": "The mailbox or quarantine location matching messages are moved to.",
     "expected_disposition": "The disposition (e.g. malicious, spam) the bulk job expects matching messages to have.",
+    "result": "The requested resource, present when the API call succeeds.",
     "search_params": "The search criteria used to select which messages this bulk job applies to."
   },
   "cloudflare_category": {
@@ -30,6 +141,9 @@
     "name": "The name of the threat event category.",
     "shortname": "A short, URL-safe identifier for the category.",
     "uuid": "The unique identifier of the resource."
+  },
+  "cloudflare_client_side_security_get_zone_policy_response": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_cloudforce_one_rule_preview": {
     "content": "The body of the detection rule.",
@@ -62,7 +176,22 @@
   },
   "cloudflare_config": {
     "caching": "The Hyperdrive configuration's own query-caching settings.",
-    "origin": "The real database Hyperdrive connects to."
+    "origin": "The real database Hyperdrive connects to.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_consumer": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_content_policy": {
+    "created_at": "When this content policy was created.",
+    "enabled": "Whether this content policy is currently active.",
+    "id": "This content policy's own real identifier.",
+    "modified_at": "When this content policy was last modified.",
+    "name": "This content policy's own real, human-readable name.",
+    "notes": "A free-text note about this content policy.",
+    "pattern": "The content pattern this policy matches against.",
+    "targets": "The real set of message parts (subject, body, attachments) this policy enforces against."
   },
   "cloudflare_cost": {
     "base_url": "The base URL of the custom AI provider's own API.",
@@ -82,12 +211,23 @@
   "cloudflare_crawl": {
     "errors": "A list of errors returned by the API. Empty on a successful response."
   },
+  "cloudflare_credential": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result_info": "Pagination metadata for this list response (page size, cursor or page number, total count)."
+  },
+  "cloudflare_credential_set": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result_info": "Pagination metadata for this list response (page size, cursor or page number, total count)."
+  },
   "cloudflare_custom": {
     "ai_context_enabled": "Whether AI-based context analysis is enabled for this profile.",
     "confidence_threshold": "The minimum confidence score a match must reach to trigger this profile.",
     "entries": "The detection entries that make up this DLP profile.",
     "name": "The name of the DLP profile.",
-    "ocr_enabled": "Whether OCR-based scanning of images is enabled for this profile."
+    "ocr_enabled": "Whether OCR-based scanning of images is enabled for this profile.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_custom_domain": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -106,11 +246,18 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_custom_pages_custom_asset_result": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_custom_pages_custom_page_result": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_custom_prompt_topic": {
     "description": "A human-readable description of the prompt topic.",
     "enabled": "Whether the prompt topic is active.",
     "name": "The name of the prompt topic.",
     "profile_id": "The DLP profile this prompt topic belongs to.",
+    "result": "The requested resource, present when the API call succeeds.",
     "topic": "The subject matter this topic scans AI prompts for."
   },
   "cloudflare_custom_provider": {
@@ -133,16 +280,23 @@
     "description": "A human-readable description of the data class.",
     "expression": "The detection expression identifying content matching this data class.",
     "name": "The name of the data class.",
+    "result": "The requested resource, present when the API call succeeds.",
     "sensitivity_levels": "The sensitivity levels associated with this data class."
   },
   "cloudflare_data_tag": {
     "description": "A human-readable description of the data tag.",
-    "name": "The name of the data tag."
+    "name": "The name of the data tag.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_data_tag_category": {
     "description": "A human-readable description of the data tag category.",
     "name": "The name of the data tag category.",
+    "result": "The requested resource, present when the API call succeeds.",
     "template_id": "The built-in template this category was seeded from, if any."
+  },
+  "cloudflare_database": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   },
   "cloudflare_dataset": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -161,18 +315,41 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_deploy_hook": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds.",
+    "result_info": "Pagination metadata for this list response (page size, cursor or page number, total count).",
+    "success": "Whether the API call succeeded."
+  },
+  "cloudflare_deployment": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
   "cloudflare_deployment_group": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
     "messages": "A list of informational messages returned by the API, if any."
   },
   "cloudflare_digital_experience_monitoring_dex_single_response": {
+    "result": "The requested resource, present when the API call succeeds.",
     "target_policies": "The device policies this DEX test applies to.",
     "targeted": "Whether this test targets a specific subset of devices rather than the whole fleet."
+  },
+  "cloudflare_dns_firewall_dns_firewall_single_response": {
+    "result": "The requested resource, present when the API call succeeds.",
+    "upstream_ips": "The real upstream DNS resolver IP addresses this DNS Firewall cluster queries."
+  },
+  "cloudflare_dns_records_dns_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_dns_settings_dns_view_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_document_fingerprint": {
     "description": "A human-readable description of the document fingerprint.",
     "match_percent": "The minimum similarity percentage required to trigger a match.",
-    "name": "The name of the document fingerprint."
+    "name": "The name of the document fingerprint.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_domain": {
     "allowed_delivery_modes": "The mail delivery modes permitted for this domain.",
@@ -185,14 +362,49 @@
     "regions": "The geographic regions this domain's own mail processing is restricted to.",
     "require_tls_inbound": "Whether inbound mail for this domain must use TLS.",
     "require_tls_outbound": "Whether outbound mail for this domain must use TLS.",
+    "result": "The requested resource, present when the API call succeeds.",
     "transport": "The transport mechanism used to deliver mail for this domain."
+  },
+  "cloudflare_dos_dns_protection_rule_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_dos_expression_filter_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_dos_infra_prefix_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_dos_prefix_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_dos_syn_protection_rule_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_dos_tcp_flow_protection_rule_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_email_destination_address_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_email_rule_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_email_sending_subdomain_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_entry": {
     "description": "A human-readable description of the DLP entry.",
     "enabled": "Whether the DLP entry is active.",
     "name": "The name of the DLP entry.",
     "pattern": "The detection pattern this entry matches against.",
-    "profile_id": "The DLP profile this entry belongs to."
+    "profile_id": "The DLP profile this entry belongs to.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_evaluation": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -251,8 +463,15 @@
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_firewall_filter_rules_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_firewall_ratelimit_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_firewall_response_single": {
-    "notes": "A free-text note describing the reason for this IP Access Rule."
+    "notes": "A free-text note describing the reason for this IP Access Rule.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_firewall_rule_single_response": {
     "notes": "A free-text note describing the reason for this IP Access Rule."
@@ -289,22 +508,50 @@
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format.",
     "uuid": "The unique identifier of the resource."
   },
+  "cloudflare_healthchecks_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_iam_response_single_account": {
+    "result": "The requested resource, present when the API call succeeds.",
     "type": "The type of the account."
   },
   "cloudflare_iam_scim_group": {
     "schemas": "The SCIM schema URIs this Group resource conforms to."
+  },
+  "cloudflare_iam_single_membership_response_with_policies": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_iam_sso_connector_response": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_image": {
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
   "cloudflare_images_image_variant_simple_response": {
-    "id": "The unique identifier of the image variant."
+    "id": "The unique identifier of the image variant.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_images_sourcingkit_migration_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_impersonation_registry": {
+    "comments": "A free-text note about this impersonation-registry entry.",
+    "created_at": "When this impersonation-registry entry was created.",
+    "directory_id": "The real directory this protected identity belongs to.",
+    "directory_node_id": "The real directory node (user or group) this protected identity resolves to.",
+    "email": "The real email address this entry protects against impersonation.",
+    "external_directory_node_id": "The real, external identity provider's own node ID this entry is linked to.",
+    "id": "This impersonation-registry entry's own real identifier.",
+    "is_email_regex": "Whether `email` is interpreted as a regular expression rather than a literal address.",
+    "modified_at": "When this impersonation-registry entry was last modified.",
+    "name": "The real, protected display name this entry watches for impersonation attempts against.",
+    "provenance": "Where this entry's own identity data came from (directory sync, or entered directly)."
   },
   "cloudflare_index": {
     "config": "The vector dimensionality and distance metric configuration for the index.",
-    "name": "The name of the Vectorize index."
+    "name": "The name of the Vectorize index.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_instance": {
     "ai_gateway_id": "The AI Gateway requests through this AI Search instance are routed through.",
@@ -331,7 +578,16 @@
     "type": "The type of AI Search instance."
   },
   "cloudflare_integration": {
-    "integration_type": "The type of the Zero Trust Risk Scoring integration."
+    "integration_type": "The type of the Zero Trust Risk Scoring integration.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_intel_sinkholes_ingress_single_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_intel_sinkholes_sinkhole_single_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   },
   "cloudflare_ip_profile": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
@@ -378,7 +634,8 @@
   },
   "cloudflare_level": {
     "description": "A human-readable description of the sensitivity level.",
-    "name": "The name of the sensitivity level."
+    "name": "The name of the sensitivity level.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_lex_dataset_detail_response": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
@@ -386,8 +643,30 @@
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_lists_item_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_lists_list_response_collection": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_load_balancing_load_balancer_components_schemas_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_load_balancing_monitor_group_single_response": {
-    "id": "The unique identifier of the monitor group."
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "id": "The unique identifier of the monitor group.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_load_balancing_monitor_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_load_balancing_schemas_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_log": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -409,25 +688,54 @@
   "cloudflare_magic_acl_single_response": {
     "protocols": "The network protocols this ACL rule applies to."
   },
+  "cloudflare_magic_cf1_site_ramp_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_magic_cf1_site_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_magic_lan_single_response": {
     "bond_id": "The bonded interface this LAN is attached to, if any.",
     "name": "The name of the LAN interface.",
     "physport": "The physical port this LAN interface is attached to.",
+    "result": "The requested resource, present when the API call succeeds.",
     "routed_subnets": "The subnets routed through this LAN interface."
   },
+  "cloudflare_magic_magic_bgp_filter_profile_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_magic_redundancy_group_with_members_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_magic_schemas_tunnel_single_response": {
+    "health_check": "The real health check configuration this IPsec tunnel uses to monitor its own liveness.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_magic_site_single_response": {
-    "description": "A human-readable description of the site."
+    "description": "A human-readable description of the site.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_magic_transit_endpoint_health_check_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_magic_tunnel_single_response": {
-    "health_check": "The health check configuration for the GRE tunnel."
+    "health_check": "The health check configuration for the GRE tunnel.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_magic_visibility_mnm_mnm_rules_single_response": {
-    "prefixes": "The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic."
+    "prefixes": "The IP prefixes this Magic Network Monitoring rule watches for anomalous traffic.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_magic_visibility_pcaps_pcaps_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_magic_wan_single_response": {
     "name": "The name of the WAN interface.",
     "physport": "The physical port this WAN interface is attached to.",
-    "priority": "The priority of this WAN interface relative to other WAN interfaces on the site."
+    "priority": "The priority of this WAN interface relative to other WAN interfaces on the site.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_mcn_get_onramp_response": {
     "adopted_hub_id": "The hub this onramp was adopted into, if any.",
@@ -442,6 +750,7 @@
     "manage_vpc_to_hub_attachments": "Whether Cloudflare automatically manages attachments between VPCs and hubs for this onramp.",
     "name": "The name of the onramp.",
     "region": "The cloud region this onramp is deployed in.",
+    "result": "The requested resource, present when the API call succeeds.",
     "type": "The type of onramp.",
     "vpc": "The cloud VPC this onramp connects to."
   },
@@ -450,12 +759,24 @@
     "destination_type": "The type of destination the catalog sync writes resource metadata to.",
     "name": "The name of the catalog sync.",
     "policy": "The policy controlling which resources are included in the sync.",
+    "result": "The requested resource, present when the API call succeeds.",
     "update_mode": "How the catalog sync applies updates (e.g. full refresh, incremental)."
   },
   "cloudflare_mcn_read_account_provider_response": {
     "cloud_type": "The cloud provider this registration connects to.",
     "description": "A human-readable description of the provider registration.",
-    "friendly_name": "A human-readable name for the provider registration."
+    "friendly_name": "A human-readable name for the provider registration.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_mconn_customer_connectors_get_response": {
+    "activated": "Whether this connector device has been activated.",
+    "interrupt_window_duration_hours": "How many hours this connector's own maintenance interrupt window lasts.",
+    "interrupt_window_hour_of_day": "The hour of day this connector's own maintenance interrupt window starts.",
+    "notes": "A free-text note about this connector device.",
+    "primary": "Whether this is the site's own primary connector device.",
+    "result": "The requested resource, present when the API call succeeds.",
+    "site_id": "The real Magic WAN Connector site this device belongs to.",
+    "timezone": "The real timezone this connector's own interrupt window is scheduled against."
   },
   "cloudflare_nsc_cni": {
     "id": "The unique identifier of the Cloud Network Interconnect.",
@@ -463,7 +784,8 @@
     "magic": "The Magic WAN configuration associated with this CNI."
   },
   "cloudflare_observatory_page_test_response_single": {
-    "region": "The region the Observatory test was run from."
+    "region": "The region the Observatory test was run from.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_organization": {
     "create_time": "The time the organization was created.",
@@ -476,22 +798,93 @@
     "profile": "The organization's own profile settings.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_origin_cloud_region": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
   "cloudflare_pipeline": {
     "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_policy": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   },
   "cloudflare_portal": {
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_posture_api_export_job_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_posture_api_finding_instance_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_posture_api_finding_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_posture_api_webhook_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_predefined": {
+    "ai_context_enabled": "Whether AI-based context analysis is enabled for this predefined DLP entry.",
+    "allowed_match_count": "How many real matches this predefined DLP entry allows before it triggers.",
+    "confidence_threshold": "The real minimum confidence level a match must reach before this predefined DLP entry triggers.",
+    "entries": "The real, individual detection entries this predefined DLP profile groups together.",
+    "ocr_enabled": "Whether this predefined DLP entry scans image text via OCR.",
+    "profile_id": "The real predefined DLP profile this entry belongs to.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_preset": {
+    "data": "The real preset records returned by this lookup.",
     "permissions": "The permissions granted to participants using this preset.",
     "ui": "The UI configuration applied to participants using this preset."
   },
+  "cloudflare_priority": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_project": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_queue": {
-    "queue_name": "The name of the queue."
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "queue_name": "The name of the queue.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_realtimekit_webhook_success_response": {
     "success": "Whether the API call was successful."
+  },
+  "cloudflare_recording": {
+    "data": "The real recording records returned by this lookup."
+  },
+  "cloudflare_regional_hostname": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_registrar_api_domain_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_registrar_api_registration_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_registrar_api_sandbox_registration_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_relay": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "success": "Whether the API call succeeded."
   },
   "cloudflare_repo": {
     "description": "A human-readable description of the repository.",
@@ -503,9 +896,25 @@
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_request": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_resource_sharing_share_excluded_recipient_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds."
+  },
+  "cloudflare_resource_sharing_share_recipient_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds."
+  },
+  "cloudflare_resource_sharing_share_resource_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds."
+  },
   "cloudflare_resource_sharing_share_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
     "recipients": "The recipients granted access to this share.",
-    "resources": "The resources included in this share."
+    "resources": "The resources included in this share.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_route": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -525,7 +934,20 @@
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
   "cloudflare_rule": {
-    "description": "A human-readable description of the rule."
+    "description": "A human-readable description of the rule.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_ruleset": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "id": "This ruleset's own real identifier.",
+    "result": "The requested resource, present when the API call succeeds.",
+    "success": "Whether the API call succeeded.",
+    "version": "This ruleset's own real, current version number."
+  },
+  "cloudflare_rum_site_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_scan": {
     "errors": "A list of errors returned by the API. Empty on a successful response.",
@@ -534,22 +956,52 @@
     "url": "The URL submitted for scanning."
   },
   "cloudflare_secondary_dns_single_response": {
-    "id": "The unique identifier of the TSIG key."
+    "id": "The unique identifier of the TSIG key.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_secondary_dns_single_response_2": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_secondary_dns_single_response_3": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_secrets_store_secret_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_sending_domain_restriction": {
+    "comments": "A free-text note about this sending-domain restriction.",
+    "created_at": "When this sending-domain restriction was created.",
+    "id": "This sending-domain restriction's own real identifier.",
+    "modified_at": "When this sending-domain restriction was last modified."
   },
   "cloudflare_sensitivity_group": {
     "description": "A human-readable description of the sensitivity group.",
     "name": "The name of the sensitivity group.",
+    "result": "The requested resource, present when the API call succeeds.",
     "template_id": "The built-in template this group was seeded from, if any."
   },
   "cloudflare_server": {
     "result": "The requested resource or collection of resources.",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_service": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_sink": {
     "result": "The requested resource or collection of resources."
   },
+  "cloudflare_smartshield_single_hc_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_spectrum_config_app_config_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_stream": {
     "result": "The requested resource or collection of resources."
+  },
+  "cloudflare_subscription": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   },
   "cloudflare_suppression": {
     "email": "The email address suppressed from receiving further routed mail.",
@@ -566,8 +1018,14 @@
     "status": "The current status of the takedown notice.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
   },
+  "cloudflare_target_environment": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result_info": "Pagination metadata for this list response (page size, cursor or page number, total count)."
+  },
   "cloudflare_teams_devices_device_settings_response": {
-    "description": "A human-readable description of the device settings policy."
+    "description": "A human-readable description of the device settings policy.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_template": {
     "body": "The body text of the letter template.",
@@ -578,6 +1036,22 @@
     "name": "The name of the letter template.",
     "source": "The source this letter template's own text was derived from.",
     "updated_at": "The timestamp when the resource was last updated, in RFC 3339 format."
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_tls_certificates_and_hostnames_certificate_response_single_5": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_tls_certificates_and_hostnames_custom_hostname_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_tls_certificates_and_hostnames_keyless_response_single": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_tls_certificates_and_hostnames_per_hostname_settings_response": {
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_token": {
     "cf_api_id": "The Cloudflare API key ID this token uses to authenticate.",
@@ -604,6 +1078,39 @@
     "result_info": "Pagination metadata for the result (e.g. total count, current page).",
     "success": "Whether the API call was successful."
   },
+  "cloudflare_trusted_domain": {
+    "comments": "A free-text note about this trusted-domain entry.",
+    "created_at": "When this trusted-domain entry was created.",
+    "id": "This trusted-domain entry's own real identifier.",
+    "is_regex": "Whether `pattern` is interpreted as a regular expression rather than a literal match.",
+    "modified_at": "When this trusted-domain entry was last modified.",
+    "pattern": "The domain pattern this entry trusts."
+  },
+  "cloudflare_tunnel_cfd_tunnel_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_tunnel_hostname_route_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_tunnel_route_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_tunnel_subnet_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_tunnel_vnet_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_tunnel_warp_connector_response_single": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
   "cloudflare_url": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
     "cache_invalidate_on_update": "Whether to invalidate cached responses when the underlying data changes.",
@@ -620,6 +1127,16 @@
     "store_id": "The identifier of the Secrets Store this gateway's own credentials are stored in.",
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
+  },
+  "cloudflare_user": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_user_schema": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_version": {
     "authentication": "Whether requests to this AI Gateway require authentication.",
@@ -638,11 +1155,35 @@
     "success": "Whether the API call was successful.",
     "zdr": "Whether Zero Data Retention is enabled, so request/response content is never persisted."
   },
+  "cloudflare_waitingroom_event_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_waitingroom_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_web3_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
   "cloudflare_widget": {
-    "domains": "The domains this Turnstile widget is valid on."
+    "domains": "The domains this Turnstile widget is valid on.",
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   },
   "cloudflare_worker": {
-    "git_repository": "The git repository this Worker is connected to for CI-driven deployment."
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "git_repository": "The git repository this Worker is connected to for CI-driven deployment.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result_info": "Pagination metadata for this list response (page size, cursor or page number, total count).",
+    "success": "Whether the API call succeeded."
+  },
+  "cloudflare_workers_namespace_single_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
+  },
+  "cloudflare_workers_versions_single_response": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result.",
+    "result": "The requested resource, present when the API call succeeds."
   },
   "cloudflare_workflow": {
     "class_name": "The Worker class implementing this Workflow.",
@@ -654,5 +1195,27 @@
     "schedules": "The recurring schedules configured to trigger new instances of this Workflow.",
     "script_name": "The Worker script that owns this Workflow.",
     "success": "Whether the API call was successful."
+  },
+  "cloudflare_zero_trust_gateway_list_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zero_trust_gateway_single_response": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zero_trust_gateway_single_response_3": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zero_trust_gateway_single_response_4": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zero_trust_gateway_single_response_5": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zero_trust_gateway_single_response_7": {
+    "result": "The requested resource, present when the API call succeeds."
+  },
+  "cloudflare_zone": {
+    "errors": "Errors returned by the API call, empty when the call succeeds.",
+    "messages": "Informational messages returned alongside the API call's own result."
   }
 }

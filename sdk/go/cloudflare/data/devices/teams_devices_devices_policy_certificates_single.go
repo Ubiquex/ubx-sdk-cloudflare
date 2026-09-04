@@ -3,11 +3,17 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesDevicesPolicyCertificatesSingle_Result struct {
+	// The current status of the device policy certificate provisioning feature for WARP clients.
+	Enabled any
+}
+
 type TeamsDevicesDevicesPolicyCertificatesSingleConfig struct {
 	ZoneId any
 }
 
 type TeamsDevicesDevicesPolicyCertificatesSingleAttrs struct {
+	Result any
 	ZoneId any
 }
 

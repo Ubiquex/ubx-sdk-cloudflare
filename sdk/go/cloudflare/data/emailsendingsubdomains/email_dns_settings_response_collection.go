@@ -3,12 +3,21 @@ package emailsendingsubdomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailDnsSettingsResponseCollection_Result struct {
+	Content  any
+	Name     any
+	Priority any
+	Ttl      any
+	Type     any
+}
+
 type EmailDnsSettingsResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type EmailDnsSettingsResponseCollectionAttrs struct {
+	Result any
 	// Sending subdomain identifier.
 	SubdomainId any
 	// Identifier.

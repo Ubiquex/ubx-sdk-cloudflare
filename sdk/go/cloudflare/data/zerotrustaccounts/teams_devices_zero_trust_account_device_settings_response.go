@@ -3,12 +3,34 @@ package zerotrustaccounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesZeroTrustAccountDeviceSettingsResponse_Result struct {
+	// Sets the time limit, in seconds, that a user can use an override code to bypass WARP.
+	DisableForTime any
+	// Controls whether the external emergency disconnect feature is enabled.
+	ExternalEmergencySignalEnabled any
+	// The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server's identity. The device will ignore any response if the server's certificate fingerprint does not exactly match this value.
+	ExternalEmergencySignalFingerprint any
+	// The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., "5m", "2m30s", "1h"). Minimum 30 seconds.
+	ExternalEmergencySignalInterval any
+	// The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.
+	ExternalEmergencySignalUrl any
+	// Enable gateway proxy filtering on TCP.
+	GatewayProxyEnabled any
+	// Enable gateway proxy filtering on UDP.
+	GatewayUdpProxyEnabled any
+	// Enable installation of cloudflare managed root certificate.
+	RootCertificateInstallationEnabled any
+	// Enable using CGNAT virtual IPv4.
+	UseZtVirtualIp any
+}
+
 type TeamsDevicesZeroTrustAccountDeviceSettingsResponseConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesZeroTrustAccountDeviceSettingsResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesZeroTrustAccountDeviceSettingsResponse = ubx.DataSourceBinding{

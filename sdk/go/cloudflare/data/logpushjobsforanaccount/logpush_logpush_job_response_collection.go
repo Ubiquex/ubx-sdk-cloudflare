@@ -3,6 +3,51 @@ package logpushjobsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushLogpushJobResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type LogpushLogpushJobResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type LogpushLogpushJobResponseCollection_Result_OutputOptions struct {
+	BatchPrefix      any
+	BatchSuffix      any
+	Cve202144228     any
+	FieldDelimiter   any
+	FieldNames       any
+	MergeSubrequests any
+	OutputType       any
+	RecordDelimiter  any
+	RecordPrefix     any
+	RecordSuffix     any
+	RecordTemplate   any
+	SampleRate       any
+	TimestampFormat  any
+}
+
+type LogpushLogpushJobResponseCollection_Result struct {
+	Dataset                  any
+	DestinationConf          any
+	Enabled                  any
+	ErrorMessage             any
+	Frequency                any
+	Id                       any
+	Kind                     any
+	LastComplete             any
+	LastError                any
+	LogpullOptions           any
+	MaxUploadBytes           any
+	MaxUploadIntervalSeconds any
+	MaxUploadRecords         any
+	Name                     any
+	OutputOptions            any
+}
+
 type LogpushLogpushJobResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -15,6 +60,11 @@ type LogpushLogpushJobResponseCollectionAttrs struct {
 	AccountId any
 	// Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
 	DatasetId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LogpushLogpushJobResponseCollection = ubx.DataSourceBinding{

@@ -7,12 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DataTagCategoryTemplate_Result_Tags:
+    description: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class DataTagCategoryTemplate_Result:
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    tags: Any = None
+
+@dataclasses.dataclass
 class DataTagCategoryTemplateConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class DataTagCategoryTemplateAttrs:
     account_id: Any = None
+    result: Any = None
 
 DataTagCategoryTemplate = ubx.DataSourceBinding(
     wire_type="cloudflare_data_tag_category_template",

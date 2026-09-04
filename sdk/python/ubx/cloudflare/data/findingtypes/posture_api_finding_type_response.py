@@ -7,6 +7,39 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiFindingTypeResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingTypeResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingTypeResponse_Result_Category:
+    # The type of the observation.
+    observation: Any = None
+    # The product category.
+    product: Any = None
+    # The type of the finding category.
+    type: Any = None
+
+@dataclasses.dataclass
+class PostureApiFindingTypeResponse_Result:
+    # Category information for a finding.
+    category: Any = None
+    # The unique identifier of the finding.
+    id: Any = None
+    # The name of the finding.
+    name: Any = None
+    # The severity level of a finding.
+    severity: Any = None
+    # The SaaS/Cloud vendor of the platform with which the finding is associated.
+    vendor: Any = None
+
+@dataclasses.dataclass
 class PostureApiFindingTypeResponseConfig:
     account_id: Any = None
     finding_type_id: Any = None
@@ -14,7 +47,13 @@ class PostureApiFindingTypeResponseConfig:
 @dataclasses.dataclass
 class PostureApiFindingTypeResponseAttrs:
     account_id: Any = None
+    errors: Any = None
     finding_type_id: Any = None
+    messages: Any = None
+    # Basic finding type information.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PostureApiFindingTypeResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_posture_api_finding_type_response",

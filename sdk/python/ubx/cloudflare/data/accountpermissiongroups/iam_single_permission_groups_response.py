@@ -10,6 +10,20 @@ import ubx_sdk as ubx
 class IamSinglePermissionGroupsResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamSinglePermissionGroupsResponse_Result_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IamSinglePermissionGroupsResponse_Result:
+    # Identifier of the permission group.
+    id: Any = None
+    # Attributes associated to the permission group.
+    meta: Any = None
+    # Name of the permission group.
+    name: Any = None
+
 _IamSinglePermissionGroupsResponse_AccountIdFields = {
 }
 
@@ -26,6 +40,8 @@ class IamSinglePermissionGroupsResponseAttrs:
     account_id: Any = None
     # Permission Group identifier tag.
     permission_group_id: Any = None
+    # A named group of permissions that map to a group of operations against resources.
+    result: Any = None
 
 IamSinglePermissionGroupsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_single_permission_groups_response",

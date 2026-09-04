@@ -3,16 +3,30 @@ package cloudflareimages
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesMetadataKeysResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesMetadataKeysResponse_Result struct {
+	Keys      any
+	Truncated any
+}
+
 type ImagesMetadataKeysResponseConfig struct {
 }
 
 type ImagesMetadataKeysResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesMetadataKeysResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_metadata_keys_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

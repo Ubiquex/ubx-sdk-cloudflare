@@ -3,15 +3,47 @@ package webhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiWebhookResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiWebhookResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type PostureApiWebhookResponse_Headers struct {
-	Key any
+	Key   any
 	Value any
 }
 
+type PostureApiWebhookResponse_Result struct {
+	// Type of authentication used for the webhook.
+	AuthenticationType any
+	// Timestamp when the webhook configuration was created.
+	CreatedAt any
+	// Target URL for the webhook configuration. Where resulting data will be sent.
+	DestinationUrl any
+	// List of header keys configured for this webhook. Values are not included for security reasons.
+	Headers any
+	// Unique identifier for the specific webhook configuration.
+	Id any
+	// Account-specified display label for the webhook configuration.
+	Label any
+	// Current status of the webhook configuration. If disabled, data cannot be sent through this configuration.
+	Status any
+	// Timestamp when the webhook configuration was last updated.
+	UpdatedAt any
+	// Version number of the configuration.
+	Version any
+}
+
 var PostureApiWebhookResponse_HeadersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PostureApiWebhookResponseConfig struct {
 	// Type of authentication used for the webhook.
@@ -35,12 +67,18 @@ type PostureApiWebhookResponseAttrs struct {
 	AuthenticationType any
 	// Target URL for the webhook configuration. Where resulting data will be sent.
 	DestinationUrl any
+	Errors         any
 	// List of custom headers to include in webhook requests.
 	Headers any
 	// Account-specified display label for the webhook configuration.
-	Label any
+	Label    any
+	Messages any
+	// Webhook configuration for sending finding notifications.
+	Result any
 	// Secret key used for HMAC signing when authentication_type is "HMAC-Signing".
 	SigningSecret any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -51,15 +89,15 @@ var PostureApiWebhookResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_posture_api_webhook_response",
 	Fields: ubx.FieldMap{
 		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"DestinationUrl": ubx.FieldSpec{WireName: "destination_url"},
+		"DestinationUrl":     ubx.FieldSpec{WireName: "destination_url"},
 		"Headers": ubx.FieldSpec{
 			WireName: "headers",
-			Kind: "list",
-			Fields: PostureApiWebhookResponse_HeadersFields,
+			Kind:     "list",
+			Fields:   PostureApiWebhookResponse_HeadersFields,
 		},
-		"Label": ubx.FieldSpec{WireName: "label"},
+		"Label":         ubx.FieldSpec{WireName: "label"},
 		"SigningSecret": ubx.FieldSpec{WireName: "signing_secret"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"WebhookId": ubx.FieldSpec{WireName: "webhook_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"WebhookId":     ubx.FieldSpec{WireName: "webhook_id"},
 	},
 }

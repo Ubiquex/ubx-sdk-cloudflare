@@ -3,16 +3,42 @@ package customindicatorfeeds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IndicatorFeedResponse_Errors_Source struct {
+	Pointer any
+}
+
+type IndicatorFeedResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type IndicatorFeedResponse_Result struct {
+	CreatedOn      any
+	Description    any
+	Id             any
+	IsAttributable any
+	IsDownloadable any
+	IsPublic       any
+	ModifiedOn     any
+	Name           any
+}
+
 type IndicatorFeedResponseConfig struct {
 }
 
 type IndicatorFeedResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var IndicatorFeedResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_indicator_feeds_indicator_feed_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

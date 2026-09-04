@@ -3,22 +3,39 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareRecipientResponseCollection_Result_Resources struct {
+	Error           any
+	ResourceId      any
+	ResourceVersion any
+	Terminal        any
+}
+
+type ShareRecipientResponseCollection_Result struct {
+	AccountId         any
+	AssociationStatus any
+	Created           any
+	Id                any
+	Modified          any
+	Resources         any
+}
+
 type ShareRecipientResponseCollectionConfig struct {
 	// Account identifier.
-	AccountId any
+	AccountId        any
 	IncludeResources any
-	Page any
-	PerPage any
+	Page             any
+	PerPage          any
 	// Share identifier tag.
 	ShareId any
 }
 
 type ShareRecipientResponseCollectionAttrs struct {
 	// Account identifier.
-	AccountId any
+	AccountId        any
 	IncludeResources any
-	Page any
-	PerPage any
+	Page             any
+	PerPage          any
+	Result           any
 	// Share identifier tag.
 	ShareId any
 }
@@ -26,10 +43,10 @@ type ShareRecipientResponseCollectionAttrs struct {
 var ShareRecipientResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_resource_sharing_share_recipient_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
 		"IncludeResources": ubx.FieldSpec{WireName: "include_resources"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"ShareId":          ubx.FieldSpec{WireName: "share_id"},
 	},
 }

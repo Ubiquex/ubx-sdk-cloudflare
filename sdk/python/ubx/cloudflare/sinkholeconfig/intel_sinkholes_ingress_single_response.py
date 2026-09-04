@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelSinkholesIngressSingleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesIngressSingleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesIngressSingleResponse_Result:
+    # The CIDR block for the ingress rule.
+    cidr: Any = None
+    # The date and time when the ingress rule was created.
+    created_on: Any = None
+    # The unique identifier for the ingress rule.
+    id: Any = None
+    # The date and time when the ingress rule was last modified.
+    modified_on: Any = None
+    # The sinkhole this ingress rule belongs to.
+    sinkhole_id: Any = None
+    # The zone tag associated with this ingress rule.
+    zone_tag: Any = None
+
+@dataclasses.dataclass
 class IntelSinkholesIngressSingleResponseConfig:
     # The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns.
     cidr: Any = None
@@ -21,6 +47,11 @@ class IntelSinkholesIngressSingleResponseConfig:
 class IntelSinkholesIngressSingleResponseAttrs:
     # The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns.
     cidr: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Tail_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Tail_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Tail_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class Tail_Result:
+    expires_at: Any = None
+    id: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
 class TailConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +38,13 @@ class TailConfig:
 class TailAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Tail = ubx.DataSourceBinding(
     wire_type="cloudflare_tail",

@@ -14,7 +14,7 @@ type ChatConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
 	SessionId any
 }
 
@@ -22,17 +22,17 @@ type ChatAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
+	AppId     any
+	Data      any
 	SessionId any
-	Success any
+	Success   any
 }
 
 var Chat = ubx.DataSourceBinding{
 	WireType: "cloudflare_chat",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
 	},
 }

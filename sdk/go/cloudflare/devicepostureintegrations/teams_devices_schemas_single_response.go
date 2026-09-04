@@ -4,26 +4,45 @@ package devicepostureintegrations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamsDevicesSchemasSingleResponse_Config struct {
-	AccessClientId any
+	AccessClientId     any
 	AccessClientSecret any
-	ApiUrl any
-	AuthUrl any
+	ApiUrl             any
+	AuthUrl            any
+	ClientId           any
+	ClientKey          any
+	ClientSecret       any
+	CustomerId         any
+}
+
+type TeamsDevicesSchemasSingleResponse_Result_Config struct {
+	ApiUrl   any
+	AuthUrl  any
 	ClientId any
-	ClientKey any
-	ClientSecret any
-	CustomerId any
+}
+
+type TeamsDevicesSchemasSingleResponse_Result struct {
+	// The configuration object containing third-party integration information.
+	Config any
+	// API UUID.
+	Id any
+	// The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).
+	Interval any
+	// The name of the device posture integration.
+	Name any
+	// The type of device posture integration.
+	Type any
 }
 
 var TeamsDevicesSchemasSingleResponse_ConfigFields = ubx.FieldMap{
-		"AccessClientId": ubx.FieldSpec{WireName: "access_client_id"},
-		"AccessClientSecret": ubx.FieldSpec{WireName: "access_client_secret"},
-		"ApiUrl": ubx.FieldSpec{WireName: "api_url"},
-		"AuthUrl": ubx.FieldSpec{WireName: "auth_url"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
-	}
+	"AccessClientId":     ubx.FieldSpec{WireName: "access_client_id"},
+	"AccessClientSecret": ubx.FieldSpec{WireName: "access_client_secret"},
+	"ApiUrl":             ubx.FieldSpec{WireName: "api_url"},
+	"AuthUrl":            ubx.FieldSpec{WireName: "auth_url"},
+	"ClientId":           ubx.FieldSpec{WireName: "client_id"},
+	"ClientKey":          ubx.FieldSpec{WireName: "client_key"},
+	"ClientSecret":       ubx.FieldSpec{WireName: "client_secret"},
+	"CustomerId":         ubx.FieldSpec{WireName: "customer_id"},
+}
 
 type TeamsDevicesSchemasSingleResponseConfig struct {
 	// The configuration object containing third-party integration information.
@@ -46,7 +65,8 @@ type TeamsDevicesSchemasSingleResponseAttrs struct {
 	// The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).
 	Interval any
 	// The name of the device posture integration.
-	Name any
+	Name   any
+	Result any
 	// The type of device posture integration.
 	Type any
 	// path parameter, not part of the API's own resource representation
@@ -60,13 +80,13 @@ var TeamsDevicesSchemasSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: TeamsDevicesSchemasSingleResponse_ConfigFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesSchemasSingleResponse_ConfigFields,
 		},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Interval":      ubx.FieldSpec{WireName: "interval"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
 	},
 }

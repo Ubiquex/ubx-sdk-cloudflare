@@ -7,6 +7,38 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImageVariantListResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantListResponse_Result_Variants_Hero_Options:
+    # The fit property describes how the width and height dimensions should be interpreted.
+    fit: Any = None
+    # Maximum height in image pixels.
+    height: Any = None
+    # What EXIF data should be preserved in the output image.
+    metadata: Any = None
+    # Maximum width in image pixels.
+    width: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantListResponse_Result_Variants_Hero:
+    id: Any = None
+    # Indicates whether the variant can access an image without a signature, regardless of image access control.
+    never_require_signed_urls: Any = None
+    # Allows you to define image resizing sizes for different use cases.
+    options: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantListResponse_Result_Variants:
+    hero: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantListResponse_Result:
+    variants: Any = None
+
+@dataclasses.dataclass
 class ImagesImageVariantListResponseConfig:
     pass
 
@@ -14,6 +46,11 @@ class ImagesImageVariantListResponseConfig:
 class ImagesImageVariantListResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 ImagesImageVariantListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_images_image_variant_list_response",

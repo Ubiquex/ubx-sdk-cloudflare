@@ -3,22 +3,33 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumEmptyResponse_Errors struct {
+	Code    any
+	Message any
+}
+
 type RumEmptyResponseConfig struct {
 	// Identifier.
 	AccountId any
-	Hostname any
+	Hostname  any
 }
 
 type RumEmptyResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Hostname any
+	Errors    any
+	Hostname  any
+	Messages  any
+	// Empty result object.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RumEmptyResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_rum_empty_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Hostname":  ubx.FieldSpec{WireName: "hostname"},
 	},
 }

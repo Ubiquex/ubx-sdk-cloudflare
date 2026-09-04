@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareExcludedRecipientResponseCollection_Result:
+    account_id: Any = None
+    created: Any = None
+    id: Any = None
+    modified: Any = None
+
+@dataclasses.dataclass
 class ShareExcludedRecipientResponseCollectionConfig:
     # Account identifier.
     account_id: Any = None
@@ -21,6 +28,7 @@ class ShareExcludedRecipientResponseCollectionAttrs:
     account_id: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # Share identifier tag.
     share_id: Any = None
 

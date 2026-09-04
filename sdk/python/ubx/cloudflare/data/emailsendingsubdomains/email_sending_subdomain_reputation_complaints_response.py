@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailSendingSubdomainReputationComplaintsResponse_Result:
+    complaints: Any = None
+
+@dataclasses.dataclass
 class EmailSendingSubdomainReputationComplaintsResponseConfig:
     end_at: Any = None
     start_at: Any = None
@@ -16,6 +20,7 @@ class EmailSendingSubdomainReputationComplaintsResponseConfig:
 @dataclasses.dataclass
 class EmailSendingSubdomainReputationComplaintsResponseAttrs:
     end_at: Any = None
+    result: Any = None
     start_at: Any = None
     # Sending subdomain identifier.
     subdomain_id: Any = None

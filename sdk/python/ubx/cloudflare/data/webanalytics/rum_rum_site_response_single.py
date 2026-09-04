@@ -7,12 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumRumSiteResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class RumRumSiteResponseSingle_Result:
+    editable: Any = None
+    id: Any = None
+    # Current state of RUM. Returns On, Off, or Manual.
+    value: Any = None
+
+@dataclasses.dataclass
 class RumRumSiteResponseSingleConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class RumRumSiteResponseSingleAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

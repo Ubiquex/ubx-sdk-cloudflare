@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Binding_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Binding_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Binding_Result_Provisioning:
+    # When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
+    state: Any = None
+
+@dataclasses.dataclass
+class Binding_Result:
+    # IP Prefix in Classless Inter-Domain Routing format.
+    cidr: Any = None
+    # Identifier of a Service Binding.
+    id: Any = None
+    # Status of a Service Binding's deployment to the Cloudflare network
+    provisioning: Any = None
+    # Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.
+    service_id: Any = None
+    # Name of a service running on the Cloudflare network
+    service_name: Any = None
+
+@dataclasses.dataclass
 class BindingConfig:
     # IP Prefix in Classless Inter-Domain Routing format.
     cidr: Any = None
@@ -23,8 +52,13 @@ class BindingConfig:
 class BindingAttrs:
     # IP Prefix in Classless Inter-Domain Routing format.
     cidr: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.
     service_id: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

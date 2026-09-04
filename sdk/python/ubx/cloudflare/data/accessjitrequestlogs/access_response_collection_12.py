@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection12_Result:
+    app_aud: Any = None
+    app_hostname: Any = None
+    approvals_received: Any = None
+    approver_emails: Any = None
+    created_at: Any = None
+    expires_at: Any = None
+    knock_request_id: Any = None
+    purpose_justification: Any = None
+    requester_email: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection12Config:
     # Identifier.
     account_id: Any = None
@@ -28,6 +41,7 @@ class AccessResponseCollection12Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
     search: Any = None
     since: Any = None
     # JIT request status. `SPENT` is deprecated and interpreted as `APPROVED`.

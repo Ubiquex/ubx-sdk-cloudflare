@@ -20,7 +20,7 @@ type DownloadAttrs struct {
 var Download = ubx.DataSourceBinding{
 	WireType: "cloudflare_download",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"LoaDocumentId": ubx.FieldSpec{WireName: "loa_document_id"},
 	},
 }

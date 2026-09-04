@@ -3,6 +3,10 @@ package apishieldclientcertificatesforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesHostnameAssociationsResponse_Result struct {
+	Hostnames any
+}
+
 type TlsCertificatesAndHostnamesHostnameAssociationsResponseConfig struct {
 	// The UUID to match against for a certificate that was uploaded to the mTLS Certificate Management endpoint. If no mtls_certificate_id is given, the results will be the hostnames associated to your active Cloudflare Managed CA.
 	MtlsCertificateId any
@@ -13,6 +17,7 @@ type TlsCertificatesAndHostnamesHostnameAssociationsResponseConfig struct {
 type TlsCertificatesAndHostnamesHostnameAssociationsResponseAttrs struct {
 	// The UUID to match against for a certificate that was uploaded to the mTLS Certificate Management endpoint. If no mtls_certificate_id is given, the results will be the hostnames associated to your active Cloudflare Managed CA.
 	MtlsCertificateId any
+	Result            any
 	// Identifier.
 	ZoneId any
 }
@@ -21,6 +26,6 @@ var TlsCertificatesAndHostnamesHostnameAssociationsResponse = ubx.DataSourceBind
 	WireType: "cloudflare_tls_certificates_and_hostnames_hostname_associations_response",
 	Fields: ubx.FieldMap{
 		"MtlsCertificateId": ubx.FieldSpec{WireName: "mtls_certificate_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":            ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

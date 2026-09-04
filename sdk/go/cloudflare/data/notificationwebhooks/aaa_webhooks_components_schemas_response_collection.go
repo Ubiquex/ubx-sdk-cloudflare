@@ -3,16 +3,36 @@ package notificationwebhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaWebhooksComponentsSchemasResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaWebhooksComponentsSchemasResponseCollection_Result struct {
+	CreatedAt   any
+	Id          any
+	LastFailure any
+	LastSuccess any
+	Name        any
+	Secret      any
+	Type        any
+	Url         any
+}
+
 type AaaWebhooksComponentsSchemasResponseCollectionConfig struct {
 }
 
 type AaaWebhooksComponentsSchemasResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaWebhooksComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_webhooks_components_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

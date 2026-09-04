@@ -4,4 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .iam_schemas_collection_invite_response import IamSchemasCollectionInviteResponse, IamSchemasCollectionInviteResponseConfig
 from .iam_single_invite_response import IamSingleInviteResponse, IamSingleInviteResponseConfig

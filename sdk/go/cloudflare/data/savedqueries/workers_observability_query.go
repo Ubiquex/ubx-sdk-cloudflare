@@ -8,40 +8,40 @@ type WorkersObservabilityQuery_Errors struct {
 }
 
 type WorkersObservabilityQuery_Result_Parameters_Calculations struct {
-	Alias any
-	Key any
-	KeyType any
+	Alias    any
+	Key      any
+	KeyType  any
 	Operator any
 }
 
 type WorkersObservabilityQuery_Result_Parameters_Filters struct {
 	FilterCombination any
-	Filters any
-	Key any
-	Kind any
-	Operation any
-	Type any
-	Value any
+	Filters           any
+	Key               any
+	Kind              any
+	Operation         any
+	Type              any
+	Value             any
 }
 
 type WorkersObservabilityQuery_Result_Parameters_GroupBys struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type WorkersObservabilityQuery_Result_Parameters_Havings struct {
-	Key any
+	Key       any
 	Operation any
-	Value any
+	Value     any
 }
 
 type WorkersObservabilityQuery_Result_Parameters_Needle_Value struct {
 }
 
 type WorkersObservabilityQuery_Result_Parameters_Needle struct {
-	IsRegex any
+	IsRegex   any
 	MatchCase any
-	Value any
+	Value     any
 }
 
 type WorkersObservabilityQuery_Result_Parameters_OrderBy struct {
@@ -50,53 +50,53 @@ type WorkersObservabilityQuery_Result_Parameters_OrderBy struct {
 }
 
 type WorkersObservabilityQuery_Result_Parameters struct {
-	Calculations any
-	Datasets any
+	Calculations      any
+	Datasets          any
 	FilterCombination any
-	Filters any
-	GroupBys any
-	Havings any
-	Limit any
-	Needle any
-	OrderBy any
+	Filters           any
+	GroupBys          any
+	Havings           any
+	Limit             any
+	Needle            any
+	OrderBy           any
 }
 
 type WorkersObservabilityQuery_Result struct {
-	Adhoc any
-	Created any
-	CreatedBy any
+	Adhoc       any
+	Created     any
+	CreatedBy   any
 	Description any
-	Id any
-	Name any
-	Parameters any
-	Updated any
-	UpdatedBy any
+	Id          any
+	Name        any
+	Parameters  any
+	Updated     any
+	UpdatedBy   any
 }
 
 type WorkersObservabilityQueryConfig struct {
-	Order any
+	Order   any
 	OrderBy any
-	Page any
+	Page    any
 	PerPage any
 }
 
 type WorkersObservabilityQueryAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Order any
-	OrderBy any
-	Page any
-	PerPage any
-	Result any
-	Success any
+	Order    any
+	OrderBy  any
+	Page     any
+	PerPage  any
+	Result   any
+	Success  any
 }
 
 var WorkersObservabilityQuery = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_observability_query",
 	Fields: ubx.FieldMap{
-		"Order": ubx.FieldSpec{WireName: "order"},
+		"Order":   ubx.FieldSpec{WireName: "order"},
 		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

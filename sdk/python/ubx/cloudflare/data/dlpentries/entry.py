@@ -7,12 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Entry_Result_UploadStatus:
+    pass
+
+@dataclasses.dataclass
+class Entry_Result:
+    upload_status: Any = None
+
+@dataclasses.dataclass
 class EntryConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class EntryAttrs:
     account_id: Any = None
+    result: Any = None
 
 Entry = ubx.DataSourceBinding(
     wire_type="cloudflare_entry",

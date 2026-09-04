@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailAccountRulesResponseCollection_Result_Actions:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EmailAccountRulesResponseCollection_Result_Matchers:
+    field: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EmailAccountRulesResponseCollection_Result_Zone:
+    name: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
+class EmailAccountRulesResponseCollection_Result:
+    actions: Any = None
+    enabled: Any = None
+    id: Any = None
+    matchers: Any = None
+    name: Any = None
+    priority: Any = None
+    source: Any = None
+    tag: Any = None
+    zone: Any = None
+
+@dataclasses.dataclass
+class EmailAccountRulesResponseCollection_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class EmailAccountRulesResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -27,6 +62,8 @@ class EmailAccountRulesResponseCollectionAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
 
 EmailAccountRulesResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_email_account_rules_response_collection",

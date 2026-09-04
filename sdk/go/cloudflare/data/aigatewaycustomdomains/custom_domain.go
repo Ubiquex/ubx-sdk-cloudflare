@@ -4,20 +4,20 @@ package aigatewaycustomdomains
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDomain_Result struct {
-	CreatedAt any
-	GatewayId any
-	Hostname any
-	ModifiedAt any
+	CreatedAt     any
+	GatewayId     any
+	Hostname      any
+	ModifiedAt    any
 	SslHostnameId any
-	Status any
+	Status        any
 }
 
 type CustomDomainConfig struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Search by hostname
 	Search any
 	Status any
@@ -27,12 +27,12 @@ type CustomDomainAttrs struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Page any
-	PerPage any
-	Result any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by hostname
-	Search any
-	Status any
+	Search  any
+	Status  any
 	Success any
 }
 
@@ -41,9 +41,9 @@ var CustomDomain = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

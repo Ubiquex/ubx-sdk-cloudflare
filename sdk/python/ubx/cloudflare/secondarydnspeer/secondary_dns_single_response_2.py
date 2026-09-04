@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsSingleResponse2_Result:
+    id: Any = None
+    # IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.
+    ip: Any = None
+    # Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.
+    ixfr_enable: Any = None
+    # The name of the peer.
+    name: Any = None
+    # DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.
+    port: Any = None
+    # TSIG authentication will be used for zone transfer if configured.
+    tsig_id: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsSingleResponse2Config:
     # The name of the peer.
     name: Any = None
@@ -19,6 +33,7 @@ class SecondaryDnsSingleResponse2Config:
 class SecondaryDnsSingleResponse2Attrs:
     # The name of the peer.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

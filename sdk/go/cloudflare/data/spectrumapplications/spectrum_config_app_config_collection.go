@@ -6,8 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SpectrumConfigAppConfigCollection_ZoneId struct {
 }
 
-var SpectrumConfigAppConfigCollection_ZoneIdFields = ubx.FieldMap{
-	}
+var SpectrumConfigAppConfigCollection_ZoneIdFields = ubx.FieldMap{}
 
 type SpectrumConfigAppConfigCollectionConfig struct {
 	// Sets the direction by which results are ordered.
@@ -18,7 +17,7 @@ type SpectrumConfigAppConfigCollectionConfig struct {
 	Page any
 	// Sets the maximum number of results per page.
 	PerPage any
-	ZoneId any
+	ZoneId  any
 }
 
 type SpectrumConfigAppConfigCollectionAttrs struct {
@@ -30,20 +29,21 @@ type SpectrumConfigAppConfigCollectionAttrs struct {
 	Page any
 	// Sets the maximum number of results per page.
 	PerPage any
-	ZoneId any
+	Result  any
+	ZoneId  any
 }
 
 var SpectrumConfigAppConfigCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_spectrum_config_app_config_collection",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"ZoneId": ubx.FieldSpec{
 			WireName: "zone_id",
-			Kind: "object",
-			Fields: SpectrumConfigAppConfigCollection_ZoneIdFields,
+			Kind:     "object",
+			Fields:   SpectrumConfigAppConfigCollection_ZoneIdFields,
 		},
 	},
 }

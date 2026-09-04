@@ -3,12 +3,25 @@ package devicemanagednetworks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesComponentsSchemasResponseCollection_Result_Config struct {
+	Sha256      any
+	TlsSockaddr any
+}
+
+type TeamsDevicesComponentsSchemasResponseCollection_Result struct {
+	Config    any
+	Name      any
+	NetworkId any
+	Type      any
+}
+
 type TeamsDevicesComponentsSchemasResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesComponentsSchemasResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesComponentsSchemasResponseCollection = ubx.DataSourceBinding{

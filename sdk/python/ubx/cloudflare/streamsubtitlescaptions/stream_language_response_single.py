@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamLanguageResponseSingle_Result:
+    # Whether the caption was generated via AI.
+    generated: Any = None
+    # The language label displayed in the native language to users.
+    label: Any = None
+    # The language tag in BCP 47 format.
+    language: Any = None
+    # The status of a generated caption.
+    status: Any = None
+
+@dataclasses.dataclass
 class StreamLanguageResponseSingleConfig:
     # The WebVTT file containing the caption or subtitle content.
     file: Any = None
@@ -21,6 +32,7 @@ class StreamLanguageResponseSingleConfig:
 class StreamLanguageResponseSingleAttrs:
     # The WebVTT file containing the caption or subtitle content.
     file: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

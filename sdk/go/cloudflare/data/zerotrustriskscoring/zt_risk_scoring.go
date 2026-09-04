@@ -3,20 +3,40 @@ package zerotrustriskscoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZtRiskScoring_Result_Events struct {
+	EventDetails any
+	Id           any
+	Name         any
+	RiskLevel    any
+	Timestamp    any
+}
+
+type ZtRiskScoring_Result_RiskLevel struct {
+}
+
+type ZtRiskScoring_Result struct {
+	Email         any
+	Events        any
+	LastResetTime any
+	Name          any
+	RiskLevel     any
+}
+
 type ZtRiskScoringConfig struct {
 	AccountId any
-	UserId any
+	UserId    any
 }
 
 type ZtRiskScoringAttrs struct {
 	AccountId any
-	UserId any
+	Result    any
+	UserId    any
 }
 
 var ZtRiskScoring = ubx.DataSourceBinding{
 	WireType: "cloudflare_zt_risk_scoring",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

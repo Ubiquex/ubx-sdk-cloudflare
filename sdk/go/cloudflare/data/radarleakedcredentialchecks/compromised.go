@@ -4,14 +4,14 @@ package radarleakedcredentialchecks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Compromised_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Compromised_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Compromised_Result_Meta_ConfidenceInfo struct {
 }
 
 type Compromised_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Compromised_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Compromised_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -50,7 +50,7 @@ type Compromised_Result_Summary0 struct {
 
 type Compromised_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -81,19 +81,19 @@ type CompromisedAttrs struct {
 	// Format in which results will be returned.
 	Format any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 }
 
 var Compromised = ubx.DataSourceBinding{
 	WireType: "cloudflare_compromised",
 	Fields: ubx.FieldMap{
-		"BotClass": ubx.FieldSpec{WireName: "bot_class"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
+		"BotClass":  ubx.FieldSpec{WireName: "bot_class"},
+		"DateEnd":   ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

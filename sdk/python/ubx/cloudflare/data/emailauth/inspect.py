@@ -7,6 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Inspect_Result_Components_Nested_Components:
+    pass
+
+@dataclasses.dataclass
+class Inspect_Result_Components_Nested_Errors:
+    code: Any = None
+    details: Any = None
+    domain: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Inspect_Result_Components_Nested:
+    components: Any = None
+    domain: Any = None
+    errors: Any = None
+    record: Any = None
+    total_lookups: Any = None
+
+@dataclasses.dataclass
+class Inspect_Result_Components:
+    lookup_count: Any = None
+    nested: Any = None
+    result: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Inspect_Result:
+    # Parsed SPF components (mechanisms)
+    components: Any = None
+    # Domain being inspected
+    domain: Any = None
+    # All errors encountered during inspection, collected from the entire tree. This includes errors from nested includes at any depth, providing a quick overview of all issues without needing to traverse the nested structure. Each error includes a `domain` field to identify where it occurred. Empty array if no errors (omitted from JSON when empty).
+    errors: Any = None
+    # Raw SPF record content
+    record: Any = None
+    # Total number of DNS lookups performed across all includes
+    total_lookups: Any = None
+
+@dataclasses.dataclass
 class InspectConfig:
     id: Any = None
     # Identifier.
@@ -15,6 +55,8 @@ class InspectConfig:
 @dataclasses.dataclass
 class InspectAttrs:
     id: Any = None
+    # Recursive SPF inspection tree
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -3,26 +3,102 @@ package emailsecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bulk_Errors_Source struct {
+	Pointer any
+}
+
+type Bulk_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Bulk_Result_ActionParams struct {
+	Destination         any
+	ExpectedDisposition any
+	Type                any
+}
+
+type Bulk_Result_SearchParams struct {
+	ActionLog        any
+	AlertId          any
+	DeliveryStatus   any
+	DetectionsOnly   any
+	Domain           any
+	End              any
+	ExactSubject     any
+	FinalDisposition any
+	MessageAction    any
+	MessageId        any
+	Metric           any
+	Query            any
+	Recipient        any
+	Sender           any
+	SmtpHeloIp       any
+	Start            any
+	Subject          any
+	Submissions      any
+}
+
+type Bulk_Result struct {
+	ActionParams            any
+	ActionType              any
+	Comment                 any
+	CompletedAt             any
+	CreatedAt               any
+	JobId                   any
+	MessagesFailed          any
+	MessagesPending         any
+	MessagesSuccessful      any
+	SearchParams            any
+	StartedAt               any
+	Status                  any
+	StatusMessage           any
+	TotalMessagesDiscovered any
+}
+
+type Bulk_ResultInfo struct {
+	// Number of items in current page.
+	Count any
+	// Cursor for next page.
+	Next any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
+	Page any
+	// Number of items per page.
+	PerPage any
+	// Cursor for previous page.
+	Previous any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
+	TotalCount any
+}
+
 type BulkConfig struct {
 	ActionType any
-	Page any
-	PerPage any
-	Status any
+	Page       any
+	PerPage    any
+	Status     any
 }
 
 type BulkAttrs struct {
 	ActionType any
-	Page any
-	PerPage any
-	Status any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
+	ResultInfo any
+	Status     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Bulk = ubx.DataSourceBinding{
 	WireType: "cloudflare_bulk",
 	Fields: ubx.FieldMap{
 		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

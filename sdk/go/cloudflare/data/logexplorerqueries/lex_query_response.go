@@ -4,28 +4,28 @@ package logexplorerqueries
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LexQueryResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type LexQueryResponseConfig struct {
 	AccountId any
-	Query any
+	Query     any
 }
 
 type LexQueryResponseAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Query any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Query     any
+	Result    any
+	Success   any
 }
 
 var LexQueryResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_lex_query_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Query":     ubx.FieldSpec{WireName: "query"},
 	},
 }

@@ -7,12 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Integration_Result:
+    account_tag: Any = None
+    active: Any = None
+    created_at: Any = None
+    id: Any = None
+    integration_type: Any = None
+    reference_id: Any = None
+    tenant_url: Any = None
+    well_known_url: Any = None
+
+@dataclasses.dataclass
 class IntegrationConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class IntegrationAttrs:
     account_id: Any = None
+    result: Any = None
 
 Integration = ubx.DataSourceBinding(
     wire_type="cloudflare_integration",

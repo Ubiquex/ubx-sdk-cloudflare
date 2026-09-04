@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection3_Result_Items:
+    created_at: Any = None
+    description: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection3_Result:
+    count: Any = None
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    items: Any = None
+    name: Any = None
+    type: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection3Config:
     account_id: Any = None
     # Specify the list type.
@@ -15,6 +32,7 @@ class ZeroTrustGatewayResponseCollection3Config:
 @dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection3Attrs:
     account_id: Any = None
+    result: Any = None
     # Specify the list type.
     type: Any = None
 

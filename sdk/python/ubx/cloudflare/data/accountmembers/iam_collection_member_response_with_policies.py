@@ -10,6 +10,84 @@ import ubx_sdk as ubx
 class IamCollectionMemberResponseWithPolicies_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects:
+    key: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope:
+    key: Any = None
+    objects: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Policies:
+    access: Any = None
+    id: Any = None
+    permission_groups: Any = None
+    resource_groups: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics:
+    read: Any = None
+    write: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions:
+    analytics: Any = None
+    billing: Any = None
+    cache_purge: Any = None
+    dns: Any = None
+    dns_records: Any = None
+    lb: Any = None
+    logs: Any = None
+    organization: Any = None
+    ssl: Any = None
+    waf: Any = None
+    zone_settings: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_Roles:
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    permissions: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result_User:
+    email: Any = None
+    first_name: Any = None
+    id: Any = None
+    last_name: Any = None
+    two_factor_authentication_enabled: Any = None
+
+@dataclasses.dataclass
+class IamCollectionMemberResponseWithPolicies_Result:
+    email: Any = None
+    id: Any = None
+    policies: Any = None
+    roles: Any = None
+    status: Any = None
+    user: Any = None
+
 _IamCollectionMemberResponseWithPolicies_AccountIdFields = {
 }
 
@@ -40,6 +118,7 @@ class IamCollectionMemberResponseWithPoliciesAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
     # A member's status in the account.
     status: Any = None
 

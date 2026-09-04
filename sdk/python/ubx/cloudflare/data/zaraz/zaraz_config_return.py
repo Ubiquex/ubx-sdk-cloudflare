@@ -7,12 +7,147 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZarazConfigReturn_Analytics:
+    # Consent purpose assigned to Monitoring.
+    default_purpose: Any = None
+    # Whether Advanced Monitoring reports are enabled.
+    enabled: Any = None
+    # Session expiration time (seconds).
+    session_exp_time: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Consent_ButtonTextTranslations:
+    # Object where keys are language codes.
+    accept_all: Any = None
+    # Object where keys are language codes.
+    confirm_my_choices: Any = None
+    # Object where keys are language codes.
+    reject_all: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Consent_Purposes:
+    description: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Consent_PurposesWithTranslations:
+    description: Any = None
+    name: Any = None
+    order: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Consent:
+    button_text_translations: Any = None
+    company_email: Any = None
+    company_name: Any = None
+    company_street_address: Any = None
+    consent_modal_intro_html: Any = None
+    # Object where keys are language codes.
+    consent_modal_intro_htmlwith_translations: Any = None
+    cookie_name: Any = None
+    custom_css: Any = None
+    custom_intro_disclaimer_dismissed: Any = None
+    default_language: Any = None
+    enabled: Any = None
+    hide_modal: Any = None
+    # Object where keys are purpose alpha-numeric IDs.
+    purposes: Any = None
+    # Object where keys are purpose alpha-numeric IDs.
+    purposes_with_translations: Any = None
+    tcf_compliant: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Settings_ContextEnricher:
+    escaped_worker_name: Any = None
+    worker_tag: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Settings:
+    # Automatic injection of Zaraz scripts enabled.
+    auto_inject_script: Any = None
+    # Details of the worker that receives and edits Zaraz Context object.
+    context_enricher: Any = None
+    # The domain Zaraz will use for writing and reading its cookies.
+    cookie_domain: Any = None
+    # Ecommerce API enabled.
+    ecommerce: Any = None
+    # Custom endpoint for server-side track events.
+    events_api_path: Any = None
+    # Hiding external referrer URL enabled.
+    hide_external_referer: Any = None
+    # Trimming IP address enabled.
+    hide_ipaddress: Any = None
+    # Removing URL query params enabled.
+    hide_query_params: Any = None
+    # Removing sensitive data from User Agent string enabled.
+    hide_user_agent: Any = None
+    # Custom endpoint for Zaraz init script.
+    init_path: Any = None
+    # Injection of Zaraz scripts into iframes enabled.
+    inject_iframes: Any = None
+    # Custom path for Managed Components server functionalities.
+    mc_root_path: Any = None
+    # Custom endpoint for Zaraz main script.
+    script_path: Any = None
+    # Custom endpoint for Zaraz tracking requests.
+    track_path: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Triggers_ExcludeRules_Settings:
+    selector: Any = None
+    type: Any = None
+    wait_for_tags: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Triggers_ExcludeRules:
+    action: Any = None
+    id: Any = None
+    match: Any = None
+    op: Any = None
+    settings: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Triggers:
+    description: Any = None
+    exclude_rules: Any = None
+    load_rules: Any = None
+    name: Any = None
+    system: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigReturn_Variables:
+    name: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class ZarazConfigReturnConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class ZarazConfigReturnAttrs:
+    # Cloudflare Monitoring settings.
+    analytics: Any = None
+    # Consent management configuration.
+    consent: Any = None
+    # Data layer compatibility mode enabled.
+    data_layer: Any = None
+    # The key for Zaraz debug mode.
+    debug_key: Any = None
+    # Single Page Application support enabled.
+    history_change: Any = None
+    # General Zaraz settings.
+    settings: Any = None
+    # Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.
+    tools: Any = None
+    # Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
+    triggers: Any = None
+    # Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
+    variables: Any = None
+    # Zaraz internal version of the config.
+    zaraz_version: Any = None
     # Identifier.
     zone_id: Any = None
 

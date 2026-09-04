@@ -3,12 +3,24 @@ package zerotrustriskscoringintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Integration_Result struct {
+	AccountTag      any
+	Active          any
+	CreatedAt       any
+	Id              any
+	IntegrationType any
+	ReferenceId     any
+	TenantUrl       any
+	WellKnownUrl    any
+}
+
 type IntegrationConfig struct {
 	AccountId any
 }
 
 type IntegrationAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var Integration = ubx.DataSourceBinding{

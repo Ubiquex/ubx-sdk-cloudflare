@@ -3,12 +3,100 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_DnsSearchSuffixes struct {
+	Description any
+	Suffix      any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_Exclude struct {
+	Address     any
+	Description any
+	Host        any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_FallbackDomains struct {
+	Description any
+	DnsServer   any
+	Suffix      any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_GlobalAcceleration struct {
+	// IP:port entries for the API endpoints.
+	ApiEndpoints any
+	// Global acceleration settings are used only when "enabled".
+	Enabled any
+	// IP:port entries for the MASQUE tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.
+	MasqueEndpoints any
+	// IP:port entries for the WireGuard tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.
+	WireguardEndpoints any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_ServiceModeV2 struct {
+	// The mode to run the WARP client under.
+	Mode any
+	// The port number when used with proxy mode.
+	Port any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result_VirtualNetworks struct {
+	// List of virtual network IDs the device is allowed to access. When virtual_networks is set, at least one entry is required.
+	Allowed any
+	// The default virtual network ID. Must be included in the `allowed` list.
+	Default any
+}
+
+type TeamsDevicesDefaultDeviceSettingsResponse_Result struct {
+	// Whether to allow the user to switch WARP between modes.
+	AllowModeSwitch any
+	// Whether to receive update notifications when a new version of the client is available.
+	AllowUpdates any
+	// Whether to allow devices to leave the organization.
+	AllowedToLeave any
+	// The amount of time in seconds to reconnect after having been disabled.
+	AutoConnect any
+	// Turn on the captive portal after the specified amount of time.
+	CaptivePortal any
+	// Whether the policy will be applied to matching devices.
+	Default any
+	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
+	DisableAutoFallback any
+	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
+	DnsSearchSuffixes any
+	// Whether the policy will be applied to matching devices.
+	Enabled any
+	// List of routes excluded in the WARP client's tunnel.
+	Exclude any
+	// Whether to add Microsoft IPs to Split Tunnel exclusions.
+	ExcludeOfficeIps any
+	FallbackDomains  any
+	GatewayUniqueId  any
+	// Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.
+	GlobalAcceleration any
+	// List of routes included in the WARP client's tunnel.
+	Include  any
+	PolicyId any
+	// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
+	RegisterInterfaceIpWithDns any
+	// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
+	SccmVpnBoundarySupport any
+	ServiceModeV2          any
+	// The URL to launch when the Send Feedback button is clicked.
+	SupportUrl any
+	// Whether to allow the user to turn off the WARP switch and disconnect the client.
+	SwitchLocked any
+	// Determines which tunnel protocol to use.
+	TunnelProtocol any
+	// Virtual network access settings for the device.
+	VirtualNetworks any
+}
+
 type TeamsDevicesDefaultDeviceSettingsResponseConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesDefaultDeviceSettingsResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesDefaultDeviceSettingsResponse = ubx.DataSourceBinding{

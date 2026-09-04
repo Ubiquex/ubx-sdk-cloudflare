@@ -6,21 +6,59 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Domain_Folder struct {
 }
 
-var Domain_FolderFields = ubx.FieldMap{
-	}
+type Domain_Result_Authorization struct {
+	Authorized    any
+	StatusMessage any
+	Timestamp     any
+}
+
+type Domain_Result_EmailsProcessed struct {
+	Timestamp                    any
+	TotalEmailsProcessed         any
+	TotalEmailsProcessedPrevious any
+}
+
+type Domain_Result struct {
+	AllowedDeliveryModes any
+	Authorization        any
+	CreatedAt            any
+	DmarcStatus          any
+	Domain               any
+	DropDispositions     any
+	EmailsProcessed      any
+	Folder               any
+	// Domain identifier.
+	Id             any
+	InboxProvider  any
+	IntegrationId  any
+	IpRestrictions any
+	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
+	LastModified       any
+	LookbackHops       any
+	ModifiedAt         any
+	O365TenantId       any
+	Regions            any
+	RequireTlsInbound  any
+	RequireTlsOutbound any
+	SpfStatus          any
+	Status             any
+	Transport          any
+}
+
+var Domain_FolderFields = ubx.FieldMap{}
 
 type DomainConfig struct {
 	AllowedDeliveryModes any
-	Domain any
-	DropDispositions any
-	Folder any
-	IntegrationId any
-	IpRestrictions any
-	LookbackHops any
-	Regions any
-	RequireTlsInbound any
-	RequireTlsOutbound any
-	Transport any
+	Domain               any
+	DropDispositions     any
+	Folder               any
+	IntegrationId        any
+	IpRestrictions       any
+	LookbackHops         any
+	Regions              any
+	RequireTlsInbound    any
+	RequireTlsOutbound   any
+	Transport            any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -29,16 +67,17 @@ type DomainConfig struct {
 
 type DomainAttrs struct {
 	AllowedDeliveryModes any
-	Domain any
-	DropDispositions any
-	Folder any
-	IntegrationId any
-	IpRestrictions any
-	LookbackHops any
-	Regions any
-	RequireTlsInbound any
-	RequireTlsOutbound any
-	Transport any
+	Domain               any
+	DropDispositions     any
+	Folder               any
+	IntegrationId        any
+	IpRestrictions       any
+	LookbackHops         any
+	Regions              any
+	RequireTlsInbound    any
+	RequireTlsOutbound   any
+	Result               any
+	Transport            any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -49,21 +88,21 @@ var Domain = ubx.ResourceBinding{
 	WireType: "cloudflare_domain",
 	Fields: ubx.FieldMap{
 		"AllowedDeliveryModes": ubx.FieldSpec{WireName: "allowed_delivery_modes"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DropDispositions": ubx.FieldSpec{WireName: "drop_dispositions"},
+		"Domain":               ubx.FieldSpec{WireName: "domain"},
+		"DropDispositions":     ubx.FieldSpec{WireName: "drop_dispositions"},
 		"Folder": ubx.FieldSpec{
 			WireName: "folder",
-			Kind: "object",
-			Fields: Domain_FolderFields,
+			Kind:     "object",
+			Fields:   Domain_FolderFields,
 		},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"IpRestrictions": ubx.FieldSpec{WireName: "ip_restrictions"},
-		"LookbackHops": ubx.FieldSpec{WireName: "lookback_hops"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"RequireTlsInbound": ubx.FieldSpec{WireName: "require_tls_inbound"},
+		"IntegrationId":      ubx.FieldSpec{WireName: "integration_id"},
+		"IpRestrictions":     ubx.FieldSpec{WireName: "ip_restrictions"},
+		"LookbackHops":       ubx.FieldSpec{WireName: "lookback_hops"},
+		"Regions":            ubx.FieldSpec{WireName: "regions"},
+		"RequireTlsInbound":  ubx.FieldSpec{WireName: "require_tls_inbound"},
 		"RequireTlsOutbound": ubx.FieldSpec{WireName: "require_tls_outbound"},
-		"Transport": ubx.FieldSpec{WireName: "transport"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DomainId": ubx.FieldSpec{WireName: "domain_id"},
+		"Transport":          ubx.FieldSpec{WireName: "transport"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"DomainId":           ubx.FieldSpec{WireName: "domain_id"},
 	},
 }

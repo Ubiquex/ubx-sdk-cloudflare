@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Stat_Result_Engine_R2 struct {
 	MetadataSizeBytes any
-	ObjectCount any
-	PayloadSizeBytes any
+	ObjectCount       any
+	PayloadSizeBytes  any
 }
 
 type Stat_Result_Engine_Vectorize struct {
-	Dimensions any
+	Dimensions   any
 	VectorsCount any
 }
 
@@ -26,15 +26,15 @@ type Stat_Result struct {
 	// True when status counts are unavailable (e.g. legacy stats query exceeded D1 statement-size limit). Counts are omitted in this case.
 	Degraded any
 	// Engine-specific metadata. Present only for managed (v3) instances.
-	Engine any
-	Error any
-	FileEmbedErrors any
+	Engine            any
+	Error             any
+	FileEmbedErrors   any
 	IndexSourceErrors any
-	LastActivity any
-	Outdated any
-	Queued any
-	Running any
-	Skipped any
+	LastActivity      any
+	Outdated          any
+	Queued            any
+	Running           any
+	Skipped           any
 }
 
 type StatConfig struct {
@@ -46,8 +46,8 @@ type StatConfig struct {
 type StatAttrs struct {
 	AccountId any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
-	Id any
-	Result any
+	Id      any
+	Result  any
 	Success any
 }
 
@@ -55,6 +55,6 @@ var Stat = ubx.DataSourceBinding{
 	WireType: "cloudflare_stat",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

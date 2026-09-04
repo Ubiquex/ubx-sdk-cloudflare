@@ -18,13 +18,13 @@ type Stream_Http struct {
 
 type Stream_Result_Schema_Fields struct {
 	MetadataKey any
-	Name any
-	Required any
-	SqlName any
+	Name        any
+	Required    any
+	SqlName     any
 }
 
 type Stream_Result_Schema struct {
-	Fields any
+	Fields   any
 	Inferred any
 }
 
@@ -39,61 +39,61 @@ type Stream_Result struct {
 	Endpoint any
 	// Defines the data format of the events.
 	Format any
-	Http any
+	Http   any
 	// Indicates a unique identifier for this stream.
-	Id any
+	Id         any
 	ModifiedAt any
 	// Indicates the name of the Stream.
 	Name any
 	// Defines the schema of the events in the data stream.
 	Schema any
 	// Indicates the current version of this stream.
-	Version any
+	Version       any
 	WorkerBinding any
 }
 
 var Stream_Http_CorsFields = ubx.FieldMap{
-		"Origins": ubx.FieldSpec{WireName: "origins"},
-	}
+	"Origins": ubx.FieldSpec{WireName: "origins"},
+}
 
 var Stream_HttpFields = ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
-		"Cors": ubx.FieldSpec{
-			WireName: "cors",
-			Kind: "object",
-			Fields: Stream_Http_CorsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Authentication": ubx.FieldSpec{WireName: "authentication"},
+	"Cors": ubx.FieldSpec{
+		WireName: "cors",
+		Kind:     "object",
+		Fields:   Stream_Http_CorsFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Stream_Result_Schema_FieldsFields = ubx.FieldMap{
-		"MetadataKey": ubx.FieldSpec{WireName: "metadata_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"SqlName": ubx.FieldSpec{WireName: "sql_name"},
-	}
+	"MetadataKey": ubx.FieldSpec{WireName: "metadata_key"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"SqlName":     ubx.FieldSpec{WireName: "sql_name"},
+}
 
 var Stream_Result_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Stream_Result_Schema_FieldsFields,
-		},
-		"Inferred": ubx.FieldSpec{WireName: "inferred"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Stream_Result_Schema_FieldsFields,
+	},
+	"Inferred": ubx.FieldSpec{WireName: "inferred"},
+}
 
 var Stream_Result_WorkerBindingFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 type StreamConfig struct {
 	// Defines the data format of the events.
 	Format any
-	Http any
+	Http   any
 	// Specifies the name of the Stream.
 	Name any
 	// Defines the schema of the events in the data stream.
-	Schema any
+	Schema        any
 	WorkerBinding any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -104,14 +104,14 @@ type StreamConfig struct {
 type StreamAttrs struct {
 	// Defines the data format of the events.
 	Format any
-	Http any
+	Http   any
 	// Specifies the name of the Stream.
-	Name any
+	Name   any
 	Result any
 	// Defines the schema of the events in the data stream.
 	Schema any
 	// Indicates whether the API call was successful.
-	Success any
+	Success       any
 	WorkerBinding any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -125,21 +125,21 @@ var Stream = ubx.ResourceBinding{
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"Http": ubx.FieldSpec{
 			WireName: "http",
-			Kind: "object",
-			Fields: Stream_HttpFields,
+			Kind:     "object",
+			Fields:   Stream_HttpFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Stream_Result_SchemaFields,
+			Kind:     "object",
+			Fields:   Stream_Result_SchemaFields,
 		},
 		"WorkerBinding": ubx.FieldSpec{
 			WireName: "worker_binding",
-			Kind: "object",
-			Fields: Stream_Result_WorkerBindingFields,
+			Kind:     "object",
+			Fields:   Stream_Result_WorkerBindingFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"StreamId": ubx.FieldSpec{WireName: "stream_id"},
+		"StreamId":  ubx.FieldSpec{WireName: "stream_id"},
 	},
 }

@@ -3,6 +3,28 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Cor_Errors struct {
+	Code    any
+	Message any
+}
+
+type Cor_Result_Rules_Allowed struct {
+	Headers any
+	Methods any
+	Origins any
+}
+
+type Cor_Result_Rules struct {
+	Allowed       any
+	ExposeHeaders any
+	Id            any
+	MaxAgeSeconds any
+}
+
+type Cor_Result struct {
+	Rules any
+}
+
 type CorConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +37,17 @@ type CorAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Cor = ubx.DataSourceBinding{
 	WireType: "cloudflare_cor",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

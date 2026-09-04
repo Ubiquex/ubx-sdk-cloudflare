@@ -3,18 +3,37 @@ package magicsiteacls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicAclsCollectionResponse_Result_Lan1 struct {
+	LanId      any
+	LanName    any
+	PortRanges any
+	Ports      any
+	Subnets    any
+}
+
+type MagicAclsCollectionResponse_Result struct {
+	Description    any
+	ForwardLocally any
+	Id             any
+	Lan1           any
+	Lan2           any
+	Name           any
+	Protocols      any
+	Unidirectional any
+}
+
 type MagicAclsCollectionResponseConfig struct {
 }
 
 type MagicAclsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 	// Identifier
 	SiteId any
 }
 
 var MagicAclsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_acls_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

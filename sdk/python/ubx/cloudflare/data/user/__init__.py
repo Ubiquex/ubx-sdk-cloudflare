@@ -4,4 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .iam_single_user_response import IamSingleUserResponse, IamSingleUserResponseConfig
 from .tenant import Tenant, TenantConfig

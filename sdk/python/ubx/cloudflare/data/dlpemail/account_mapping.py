@@ -7,12 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccountMapping_Result_AuthRequirements:
+    allowed_microsoft_organizations: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AccountMapping_Result:
+    addin_identifier_token: Any = None
+    auth_requirements: Any = None
+
+@dataclasses.dataclass
 class AccountMappingConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class AccountMappingAttrs:
     account_id: Any = None
+    result: Any = None
 
 AccountMapping = ubx.DataSourceBinding(
     wire_type="cloudflare_account_mapping",

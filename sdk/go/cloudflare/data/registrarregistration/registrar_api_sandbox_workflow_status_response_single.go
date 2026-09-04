@@ -3,6 +3,41 @@ package registrarregistration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegistrarApiSandboxWorkflowStatusResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiSandboxWorkflowStatusResponseSingle_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiSandboxWorkflowStatusResponseSingle_Result_Error struct {
+	Code    any
+	Message any
+}
+
+type RegistrarApiSandboxWorkflowStatusResponseSingle_Result_Links struct {
+	// URL to the domain resource.
+	Resource any
+	// URL to this status resource.
+	Self any
+}
+
+type RegistrarApiSandboxWorkflowStatusResponseSingle_Result struct {
+	// Indicates whether the workflow reached a terminal state. A `succeeded` or `failed` state returns `true`; `pending`, `in_progress`, `action_required`, and `blocked` return `false`.
+	Completed any
+	// Provides workflow-specific data. For domain-centric workflows, `context.domain_name` identifies the workflow subject.
+	Context   any
+	CreatedAt any
+	Error     any
+	Links     any
+	// Describes the workflow lifecycle state. - `pending`: The workflow awaits processing. - `in_progress`: Processing started. Continue polling `links.self`. An internal deadline limits the duration of this state. - `action_required`: The workflow pauses for user action. See `context.action` for details. Stop automated polling until the user completes the required action. - `blocked`: A third party, such as the domain extension's registry or a losing registrar, prevents progress. Continue polling because the block may resolve when the third party responds. - `succeeded`: Terminal state. The operation completed successfully. `completed` equals `true`. For registrations, `context.registration` contains the resulting registration resource. - `failed`: Terminal state. The operation failed. `completed` equals `true`. See `error.code` and `error.message` for the reason. Require user review before retrying.
+	State     any
+	UpdatedAt any
+}
+
 type RegistrarApiSandboxWorkflowStatusResponseSingleConfig struct {
 	// Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
 	DomainName any
@@ -13,6 +48,12 @@ type RegistrarApiSandboxWorkflowStatusResponseSingleAttrs struct {
 	AccountId any
 	// Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
 	DomainName any
+	Errors     any
+	Messages   any
+	// Status of an async registration workflow.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiSandboxWorkflowStatusResponseSingle = ubx.DataSourceBinding{

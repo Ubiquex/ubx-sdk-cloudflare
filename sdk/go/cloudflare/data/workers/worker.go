@@ -3,31 +3,115 @@ package workers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Worker_Result_Observability_Logs struct {
+	Destinations     any
+	Enabled          any
+	HeadSamplingRate any
+	InvocationLogs   any
+	Persist          any
+}
+
+type Worker_Result_Observability_Traces struct {
+	Destinations      any
+	Enabled           any
+	HeadSamplingRate  any
+	Persist           any
+	PropagationPolicy any
+}
+
+type Worker_Result_Observability struct {
+	Enabled           any
+	HeadSamplingRate  any
+	Logs              any
+	RedactQueryString any
+	Traces            any
+}
+
+type Worker_Result_References_DispatchNamespaceOutbounds struct {
+	NamespaceId   any
+	NamespaceName any
+	WorkerId      any
+	WorkerName    any
+}
+
+type Worker_Result_References_Domains struct {
+	CertificateId any
+	Hostname      any
+	Id            any
+	ZoneId        any
+	ZoneName      any
+}
+
+type Worker_Result_References_Queues struct {
+	QueueConsumerId any
+	QueueId         any
+	QueueName       any
+}
+
+type Worker_Result_References_Workers struct {
+	Id   any
+	Name any
+}
+
+type Worker_Result_References struct {
+	DispatchNamespaceOutbounds any
+	Domains                    any
+	DurableObjects             any
+	Queues                     any
+	Workers                    any
+}
+
+type Worker_Result_Subdomain struct {
+	Enabled          any
+	PreviewUrlSuffix any
+	PreviewsEnabled  any
+	Url              any
+}
+
+type Worker_Result_TailConsumers struct {
+	Name any
+}
+
+type Worker_Result struct {
+	CreatedOn     any
+	DeployedOn    any
+	Id            any
+	Logpush       any
+	Name          any
+	Observability any
+	References    any
+	Subdomain     any
+	Tags          any
+	TailConsumers any
+	UpdatedOn     any
+}
+
 type WorkerConfig struct {
 	// Identifier.
 	AccountId any
-	Order any
-	OrderBy any
-	Page any
-	PerPage any
+	Order     any
+	OrderBy   any
+	Page      any
+	PerPage   any
 }
 
 type WorkerAttrs struct {
 	// Identifier.
 	AccountId any
-	Order any
-	OrderBy any
-	Page any
-	PerPage any
+	Order     any
+	OrderBy   any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var Worker = ubx.DataSourceBinding{
 	WireType: "cloudflare_worker",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

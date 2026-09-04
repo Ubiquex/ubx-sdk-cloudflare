@@ -7,11 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiPlanResponseCollection_Result_Components:
+    default: Any = None
+    name: Any = None
+    unit_price: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiPlanResponseCollection_Result:
+    components: Any = None
+    currency: Any = None
+    duration: Any = None
+    frequency: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiPlanResponseCollectionConfig:
     pass
 
 @dataclasses.dataclass
 class BillSubsApiPlanResponseCollectionAttrs:
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

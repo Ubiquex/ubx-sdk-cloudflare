@@ -17,6 +17,18 @@ class ImagesImageVariantSimpleResponse_Options:
     # Maximum width in image pixels.
     width: Any = None
 
+@dataclasses.dataclass
+class ImagesImageVariantSimpleResponse_Result_Variant:
+    id: Any = None
+    # Indicates whether the variant can access an image without a signature, regardless of image access control.
+    never_require_signed_urls: Any = None
+    # Allows you to define image resizing sizes for different use cases.
+    options: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantSimpleResponse_Result:
+    variant: Any = None
+
 _ImagesImageVariantSimpleResponse_OptionsFields = {
     "fit": ubx.FieldSpec(wire_name="fit"),
     "height": ubx.FieldSpec(wire_name="height"),
@@ -43,6 +55,7 @@ class ImagesImageVariantSimpleResponseAttrs:
     never_require_signed_urls: Any = None
     # Allows you to define image resizing sizes for different use cases.
     options: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

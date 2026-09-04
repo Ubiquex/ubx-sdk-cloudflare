@@ -3,6 +3,177 @@ package pagesproject
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Project_Result_BuildConfig struct {
+	BuildCaching      any
+	BuildCommand      any
+	DestinationDir    any
+	RootDir           any
+	WebAnalyticsTag   any
+	WebAnalyticsToken any
+}
+
+type Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata struct {
+	Branch        any
+	CommitDirty   any
+	CommitHash    any
+	CommitMessage any
+}
+
+type Project_Result_CanonicalDeployment_DeploymentTrigger struct {
+	Metadata any
+	Type     any
+}
+
+type Project_Result_CanonicalDeployment_EnvVars struct {
+	Type  any
+	Value any
+}
+
+type Project_Result_CanonicalDeployment_LatestStage struct {
+	EndedOn   any
+	Name      any
+	StartedOn any
+	Status    any
+}
+
+type Project_Result_CanonicalDeployment_Source_Config struct {
+	DeploymentsEnabled           any
+	Owner                        any
+	OwnerId                      any
+	PathExcludes                 any
+	PathIncludes                 any
+	PrCommentsEnabled            any
+	PreviewBranchExcludes        any
+	PreviewBranchIncludes        any
+	PreviewDeploymentSetting     any
+	ProductionBranch             any
+	ProductionDeploymentsEnabled any
+	RepoId                       any
+	RepoName                     any
+}
+
+type Project_Result_CanonicalDeployment_Source struct {
+	Config any
+	Type   any
+}
+
+type Project_Result_CanonicalDeployment struct {
+	Aliases           any
+	BuildConfig       any
+	CreatedOn         any
+	DeploymentTrigger any
+	EnvVars           any
+	Environment       any
+	Id                any
+	IsSkipped         any
+	LatestStage       any
+	ModifiedOn        any
+	ProjectId         any
+	ProjectName       any
+	ShortId           any
+	SkipReason        any
+	Source            any
+	Stages            any
+	Url               any
+	UsesFunctions     any
+}
+
+type Project_Result_DeploymentConfigs_Preview_AiBindings struct {
+	ProjectId any
+}
+
+type Project_Result_DeploymentConfigs_Preview_AnalyticsEngineDatasets struct {
+	Dataset any
+}
+
+type Project_Result_DeploymentConfigs_Preview_D1Databases struct {
+	Id any
+}
+
+type Project_Result_DeploymentConfigs_Preview_DurableObjectNamespaces struct {
+	NamespaceId any
+}
+
+type Project_Result_DeploymentConfigs_Preview_Limits struct {
+	CpuMs any
+}
+
+type Project_Result_DeploymentConfigs_Preview_MtlsCertificates struct {
+	CertificateId any
+}
+
+type Project_Result_DeploymentConfigs_Preview_Placement struct {
+	Mode any
+}
+
+type Project_Result_DeploymentConfigs_Preview_QueueProducers struct {
+	Name any
+}
+
+type Project_Result_DeploymentConfigs_Preview_R2Buckets struct {
+	Jurisdiction any
+	Name         any
+}
+
+type Project_Result_DeploymentConfigs_Preview_Services struct {
+	Entrypoint  any
+	Environment any
+	Service     any
+}
+
+type Project_Result_DeploymentConfigs_Preview_VectorizeBindings struct {
+	IndexName any
+}
+
+type Project_Result_DeploymentConfigs_Preview struct {
+	AiBindings                       any
+	AlwaysUseLatestCompatibilityDate any
+	AnalyticsEngineDatasets          any
+	Browsers                         any
+	BuildImageMajorVersion           any
+	CompatibilityDate                any
+	CompatibilityFlags               any
+	D1Databases                      any
+	DurableObjectNamespaces          any
+	EnvVars                          any
+	FailOpen                         any
+	HyperdriveBindings               any
+	KvNamespaces                     any
+	Limits                           any
+	MtlsCertificates                 any
+	Placement                        any
+	QueueProducers                   any
+	R2Buckets                        any
+	Services                         any
+	UsageModel                       any
+	VectorizeBindings                any
+	WranglerConfigHash               any
+}
+
+type Project_Result_DeploymentConfigs struct {
+	Preview    any
+	Production any
+}
+
+type Project_Result struct {
+	BuildConfig          any
+	CanonicalDeployment  any
+	CreatedOn            any
+	DeploymentConfigs    any
+	Domains              any
+	Framework            any
+	FrameworkVersion     any
+	Id                   any
+	LatestDeployment     any
+	Name                 any
+	PreviewScriptName    any
+	ProductionBranch     any
+	ProductionScriptName any
+	Source               any
+	Subdomain            any
+	UsesFunctions        any
+}
+
 type ProjectConfig struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +190,14 @@ type ProjectAttrs struct {
 	Page any
 	// How many projects to return per page.
 	PerPage any
+	Result  any
 }
 
 var Project = ubx.DataSourceBinding{
 	WireType: "cloudflare_project",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

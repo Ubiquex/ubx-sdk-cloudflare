@@ -3,6 +3,16 @@ package workerscript
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ScriptsSearch_Result struct {
+	CreatedOn            any
+	EnvironmentIsDefault any
+	EnvironmentName      any
+	Id                   any
+	ModifiedOn           any
+	ScriptName           any
+	ServiceName          any
+}
+
 type ScriptsSearchConfig struct {
 	// Identifier.
 	AccountId any
@@ -12,7 +22,7 @@ type ScriptsSearchConfig struct {
 	Name any
 	// Property to sort results by. Results are sorted in ascending order.
 	OrderBy any
-	Page any
+	Page    any
 	PerPage any
 }
 
@@ -25,18 +35,19 @@ type ScriptsSearchAttrs struct {
 	Name any
 	// Property to sort results by. Results are sorted in ascending order.
 	OrderBy any
-	Page any
+	Page    any
 	PerPage any
+	Result  any
 }
 
 var ScriptsSearch = ubx.DataSourceBinding{
 	WireType: "cloudflare_scripts_search",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

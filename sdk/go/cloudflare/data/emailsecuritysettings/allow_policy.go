@@ -6,54 +6,72 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AllowPolicy_PatternType struct {
 }
 
-var AllowPolicy_PatternTypeFields = ubx.FieldMap{
-	}
+type AllowPolicy_Result struct {
+	Comments           any
+	CreatedAt          any
+	Id                 any
+	IsAcceptableSender any
+	IsExemptRecipient  any
+	IsRecipient        any
+	IsRegex            any
+	IsSender           any
+	IsSpoof            any
+	IsTrustedSender    any
+	LastModified       any
+	ModifiedAt         any
+	Pattern            any
+	PatternType        any
+	VerifySender       any
+}
+
+var AllowPolicy_PatternTypeFields = ubx.FieldMap{}
 
 type AllowPolicyConfig struct {
-	Direction any
+	Direction          any
 	IsAcceptableSender any
-	IsExemptRecipient any
-	IsTrustedSender any
-	Order any
-	Page any
-	Pattern any
-	PatternType any
-	PerPage any
-	Search any
-	VerifySender any
+	IsExemptRecipient  any
+	IsTrustedSender    any
+	Order              any
+	Page               any
+	Pattern            any
+	PatternType        any
+	PerPage            any
+	Search             any
+	VerifySender       any
 }
 
 type AllowPolicyAttrs struct {
-	Direction any
+	Direction          any
 	IsAcceptableSender any
-	IsExemptRecipient any
-	IsTrustedSender any
-	Order any
-	Page any
-	Pattern any
-	PatternType any
-	PerPage any
-	Search any
-	VerifySender any
+	IsExemptRecipient  any
+	IsTrustedSender    any
+	Order              any
+	Page               any
+	Pattern            any
+	PatternType        any
+	PerPage            any
+	Result             any
+	Search             any
+	VerifySender       any
 }
 
 var AllowPolicy = ubx.DataSourceBinding{
 	WireType: "cloudflare_allow_policy",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Direction":          ubx.FieldSpec{WireName: "direction"},
 		"IsAcceptableSender": ubx.FieldSpec{WireName: "is_acceptable_sender"},
-		"IsExemptRecipient": ubx.FieldSpec{WireName: "is_exempt_recipient"},
-		"IsTrustedSender": ubx.FieldSpec{WireName: "is_trusted_sender"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"IsExemptRecipient":  ubx.FieldSpec{WireName: "is_exempt_recipient"},
+		"IsTrustedSender":    ubx.FieldSpec{WireName: "is_trusted_sender"},
+		"Order":              ubx.FieldSpec{WireName: "order"},
+		"Page":               ubx.FieldSpec{WireName: "page"},
+		"Pattern":            ubx.FieldSpec{WireName: "pattern"},
 		"PatternType": ubx.FieldSpec{
 			WireName: "pattern_type",
-			Kind: "object",
-			Fields: AllowPolicy_PatternTypeFields,
+			Kind:     "object",
+			Fields:   AllowPolicy_PatternTypeFields,
 		},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
+		"Search":       ubx.FieldSpec{WireName: "search"},
 		"VerifySender": ubx.FieldSpec{WireName: "verify_sender"},
 	},
 }

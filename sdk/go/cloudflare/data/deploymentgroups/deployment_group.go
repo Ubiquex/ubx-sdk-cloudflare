@@ -4,21 +4,21 @@ package deploymentgroups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentGroup_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type DeploymentGroup_Result_VersionConfig struct {
 	TargetEnvironment any
-	Version any
+	Version           any
 }
 
 type DeploymentGroup_Result struct {
-	CreatedAt any
-	Id any
-	Name any
-	PolicyIds any
-	UpdatedAt any
+	CreatedAt     any
+	Id            any
+	Name          any
+	PolicyIds     any
+	UpdatedAt     any
 	VersionConfig any
 }
 
@@ -37,17 +37,17 @@ type DeploymentGroup_ResultInfo struct {
 
 type DeploymentGroupConfig struct {
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 }
 
 type DeploymentGroupAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Indicates whether the API call was successful.
 	Success any
@@ -57,7 +57,7 @@ var DeploymentGroup = ubx.DataSourceBinding{
 	WireType: "cloudflare_deployment_group",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

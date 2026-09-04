@@ -3,6 +3,44 @@ package r2catalogmanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type R2Catalog_Errors struct {
+	Code    any
+	Message any
+}
+
+type R2Catalog_Result_Warehouses_CredentialStatus struct {
+}
+
+type R2Catalog_Result_Warehouses_MaintenanceConfig_Compaction struct {
+	State        any
+	TargetSizeMb any
+}
+
+type R2Catalog_Result_Warehouses_MaintenanceConfig_SnapshotExpiration struct {
+	MaxSnapshotAge     any
+	MinSnapshotsToKeep any
+	State              any
+}
+
+type R2Catalog_Result_Warehouses_MaintenanceConfig struct {
+	Compaction         any
+	SnapshotExpiration any
+}
+
+type R2Catalog_Result_Warehouses struct {
+	Bucket            any
+	CredentialStatus  any
+	Id                any
+	MaintenanceConfig any
+	Name              any
+	Status            any
+}
+
+type R2Catalog_Result struct {
+	// Lists catalogs in the account.
+	Warehouses any
+}
+
 type R2CatalogConfig struct {
 	// Use this to identify the account.
 	AccountId any
@@ -11,6 +49,14 @@ type R2CatalogConfig struct {
 type R2CatalogAttrs struct {
 	// Use this to identify the account.
 	AccountId any
+	// Contains errors if the API call was unsuccessful.
+	Errors any
+	// Contains informational messages.
+	Messages any
+	// Contains the list of catalogs.
+	Result any
+	// Indicates whether the API call was successful.
+	Success any
 }
 
 var R2Catalog = ubx.DataSourceBinding{

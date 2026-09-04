@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection7_Result:
+    pass
+
+@dataclasses.dataclass
 class AccessResponseCollection7Config:
     # Identifier.
     account_id: Any = None
@@ -43,6 +47,7 @@ class AccessResponseCollection7Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
     # Search for apps by other listed query parameters.
     search: Any = None
     # Target Criteria attributes in key=value format.

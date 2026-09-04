@@ -4,6 +4,24 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TagValuesResponseCollection_AccountId {
 }
 
+export interface TagValuesResponseCollection_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface TagValuesResponseCollection_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: TagValuesResponseCollection_Errors_Source | Computed<TagValuesResponseCollection_Errors_Source>;
+}
+
+export interface TagValuesResponseCollection_ResultInfo {
+  /** Indicates the number of results returned in the current page. */
+  count?: number | Computed<number>;
+  /** Provides a cursor for the next page of results. Include this value in the next request to continue pagination. */
+  cursor?: string | Computed<string>;
+}
+
 const TagValuesResponseCollection_AccountIdFields: FieldMap = {
 };
 
@@ -18,6 +36,12 @@ export interface TagValuesResponseCollectionConfig {
 export interface TagValuesResponseCollectionAttrs {
   accountId: TagValuesResponseCollection_AccountId;
   cursor: string;
+  errors: TagValuesResponseCollection_Errors[];
+  messages: TagValuesResponseCollection_Errors[];
+  result: string[];
+  resultInfo: TagValuesResponseCollection_ResultInfo;
+  /** Whether the API call was successful. */
+  success: boolean;
   tagKey: string;
   /** Identifies the type of resource. */
   type: string;

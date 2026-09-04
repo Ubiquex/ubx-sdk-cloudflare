@@ -7,6 +7,69 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SingleResponse_Result_HttpConfig:
+    # Do not validate the certificate when the health check uses HTTPS.
+    allow_insecure: Any = None
+    # A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy.
+    expected_body: Any = None
+    # The expected HTTP response codes (e.g. "200") or code ranges (e.g. "2xx" for all codes starting with 2) of the health check.
+    expected_codes: Any = None
+    # Follow redirects if the origin returns a 3xx status code.
+    follow_redirects: Any = None
+    # The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden.
+    header: Any = None
+    # The HTTP method to use for the health check.
+    method: Any = None
+    # The endpoint path to health check against.
+    path: Any = None
+    # Port number to connect to for the health check. Defaults to 80 if type is HTTP or 443 if type is HTTPS.
+    port: Any = None
+
+@dataclasses.dataclass
+class SingleResponse_Result_TcpConfig:
+    # The TCP connection method to use for the health check.
+    method: Any = None
+    # Port number to connect to for the health check. Defaults to 80.
+    port: Any = None
+
+@dataclasses.dataclass
+class SingleResponse_Result:
+    # The hostname or IP address of the origin server to run health checks on.
+    address: Any = None
+    # A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
+    check_regions: Any = None
+    # The number of consecutive fails required from a health check before changing the health to unhealthy.
+    consecutive_fails: Any = None
+    # The number of consecutive successes required from a health check before changing the health to healthy.
+    consecutive_successes: Any = None
+    created_on: Any = None
+    # A human-readable description of the health check.
+    description: Any = None
+    # The current failure reason if status is unhealthy.
+    failure_reason: Any = None
+    # Parameters specific to an HTTP or HTTPS health check.
+    http_config: Any = None
+    # Identifier
+    id: Any = None
+    # The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
+    interval: Any = None
+    modified_on: Any = None
+    # A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
+    name: Any = None
+    # The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
+    retries: Any = None
+    # The current status of the origin server according to the health check.
+    status: Any = None
+    # If suspended, no health checks are sent to the origin.
+    suspended: Any = None
+    # Parameters specific to TCP health check.
+    tcp_config: Any = None
+    # The timeout (in seconds) before marking the health check as failed.
+    timeout: Any = None
+    # The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'.
+    type: Any = None
+
+@dataclasses.dataclass
 class SingleResponseConfig:
     pass
 
@@ -14,6 +77,7 @@ class SingleResponseConfig:
 class SingleResponseAttrs:
     # Identifier
     healthcheck_id: Any = None
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

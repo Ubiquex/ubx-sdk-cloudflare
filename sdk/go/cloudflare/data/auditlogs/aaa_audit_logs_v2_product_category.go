@@ -13,9 +13,9 @@ type AaaAuditLogsV2ProductCategory_Result_Products struct {
 }
 
 type AaaAuditLogsV2ProductCategory_Result struct {
-	Label any
+	Label    any
 	Products any
-	Value any
+	Value    any
 }
 
 type AaaAuditLogsV2ProductCategoryConfig struct {
@@ -26,8 +26,8 @@ type AaaAuditLogsV2ProductCategoryConfig struct {
 type AaaAuditLogsV2ProductCategoryAttrs struct {
 	// The unique id that identifies the account.
 	AccountId any
-	Errors any
-	Result any
+	Errors    any
+	Result    any
 	// Indicates whether the API call was successful
 	Success any
 }

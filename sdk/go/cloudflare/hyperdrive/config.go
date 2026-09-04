@@ -15,21 +15,32 @@ type Config_Mtls struct {
 	Sslmode any
 }
 
-var Config_CachingFields = ubx.FieldMap{
-	}
+type Config_Result struct {
+	Caching               any
+	CreatedOn             any
+	Id                    any
+	ModifiedOn            any
+	Mtls                  any
+	Name                  any
+	Origin                any
+	OriginConnectionLimit any
+	RestartedOn           any
+}
+
+var Config_CachingFields = ubx.FieldMap{}
 
 var Config_MtlsFields = ubx.FieldMap{
-		"CaCertificateId": ubx.FieldSpec{WireName: "ca_certificate_id"},
-		"MtlsCertificateId": ubx.FieldSpec{WireName: "mtls_certificate_id"},
-		"Sslmode": ubx.FieldSpec{WireName: "sslmode"},
-	}
+	"CaCertificateId":   ubx.FieldSpec{WireName: "ca_certificate_id"},
+	"MtlsCertificateId": ubx.FieldSpec{WireName: "mtls_certificate_id"},
+	"Sslmode":           ubx.FieldSpec{WireName: "sslmode"},
+}
 
 type ConfigConfig struct {
 	Caching any
 	// mTLS configuration for the origin connection. Cannot be used with VPC Service origins; TLS must be managed on the VPC Service.
 	Mtls any
 	// The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.
-	Name any
+	Name   any
 	Origin any
 	// The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database. Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts. If not specified, defaults to 20 for free tier and 60 for paid tier. Certain Cloudflare-managed origins may be permitted a higher limit. Contact Cloudflare if you need a higher limit.
 	OriginConnectionLimit any
@@ -50,12 +61,13 @@ type ConfigAttrs struct {
 	// mTLS configuration for the origin connection. Cannot be used with VPC Service origins; TLS must be managed on the VPC Service.
 	Mtls any
 	// The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.
-	Name any
+	Name   any
 	Origin any
 	// The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database. Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts. If not specified, defaults to 20 for free tier and 60 for paid tier. Certain Cloudflare-managed origins may be permitted a higher limit. Contact Cloudflare if you need a higher limit.
 	OriginConnectionLimit any
 	// Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted.
 	RestartedOn any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -67,18 +79,18 @@ var Config = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Caching": ubx.FieldSpec{
 			WireName: "caching",
-			Kind: "object",
-			Fields: Config_CachingFields,
+			Kind:     "object",
+			Fields:   Config_CachingFields,
 		},
 		"Mtls": ubx.FieldSpec{
 			WireName: "mtls",
-			Kind: "object",
-			Fields: Config_MtlsFields,
+			Kind:     "object",
+			Fields:   Config_MtlsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Origin":                ubx.FieldSpec{WireName: "origin"},
 		"OriginConnectionLimit": ubx.FieldSpec{WireName: "origin_connection_limit"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"HyperdriveId": ubx.FieldSpec{WireName: "hyperdrive_id"},
+		"AccountId":             ubx.FieldSpec{WireName: "account_id"},
+		"HyperdriveId":          ubx.FieldSpec{WireName: "hyperdrive_id"},
 	},
 }

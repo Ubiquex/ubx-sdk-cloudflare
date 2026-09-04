@@ -3,6 +3,30 @@ package zonesnippets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Snippet_Messages struct {
+	Code    any
+	Message any
+}
+
+type Snippet_Result struct {
+	CreatedOn   any
+	ModifiedOn  any
+	SnippetName any
+}
+
+type Snippet_ResultInfo struct {
+	// Specify the number of results in the current page.
+	Count any
+	// Specifies the current page number.
+	Page any
+	// Specifies how many results to return per page.
+	PerPage any
+	// Specify the total number of results.
+	TotalCount any
+	// Specify the total number of pages.
+	TotalPages any
+}
+
 type SnippetConfig struct {
 	// Specifies the current page number.
 	Page any
@@ -13,10 +37,18 @@ type SnippetConfig struct {
 }
 
 type SnippetAttrs struct {
+	Errors any
+	// Contain warning messages.
+	Messages any
 	// Specifies the current page number.
 	Page any
 	// Specifies how many results to return per page.
 	PerPage any
+	// Contain snippets.
+	Result any
+	// Additional information to navigate the results.
+	ResultInfo any
+	Success    any
 	// Use this field to specify the unique ID of the zone.
 	ZoneId any
 }
@@ -24,8 +56,8 @@ type SnippetAttrs struct {
 var Snippet = ubx.DataSourceBinding{
 	WireType: "cloudflare_snippet",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

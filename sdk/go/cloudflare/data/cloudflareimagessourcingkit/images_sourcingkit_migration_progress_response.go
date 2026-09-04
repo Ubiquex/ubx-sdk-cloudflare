@@ -3,6 +3,35 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitMigrationProgressResponse_Result struct {
+	EndedAt any
+	// Objects that failed to import.
+	ImportErrorsCount any
+	// Objects successfully imported.
+	ImportSuccessCount any
+	// Whether the counts are accurate or estimated.
+	IsAccurate any
+	// Total number of objects scanned in the source.
+	ScannedCount any
+	// Objects skipped due to existing images at destination.
+	SkippedConflictCount any
+	// Objects skipped because their content type was excluded.
+	SkippedExcludedContentTypeCount any
+	// Objects skipped because the media could not be decoded.
+	SkippedInvalidMediaCount any
+	// Objects skipped because their name is not valid.
+	SkippedInvalidNameCount any
+	// Objects skipped because they exceed the size limit.
+	SkippedOversizeCount any
+	// Objects skipped due to unsupported storage class.
+	SkippedStorageClassCount any
+	// Objects skipped because their content type is not supported.
+	SkippedUnsupportedContentTypeCount any
+	StartedAt                          any
+	// Current status of the migration.
+	Status any
+}
+
 type ImagesSourcingkitMigrationProgressResponseConfig struct {
 	// Sourcing kit resource identifier.
 	MigrationId any
@@ -13,6 +42,7 @@ type ImagesSourcingkitMigrationProgressResponseAttrs struct {
 	AccountId any
 	// Sourcing kit resource identifier.
 	MigrationId any
+	Result      any
 }
 
 var ImagesSourcingkitMigrationProgressResponse = ubx.DataSourceBinding{

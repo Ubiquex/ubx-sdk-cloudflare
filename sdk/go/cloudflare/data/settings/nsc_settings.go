@@ -8,7 +8,7 @@ type NscSettingsConfig struct {
 }
 
 type NscSettingsAttrs struct {
-	AccountId any
+	AccountId  any
 	DefaultAsn any
 }
 

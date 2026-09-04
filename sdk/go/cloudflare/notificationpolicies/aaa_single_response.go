@@ -97,78 +97,99 @@ type AaaSingleResponse_Mechanisms_Email struct {
 }
 
 type AaaSingleResponse_Mechanisms struct {
-	Email any
+	Email     any
 	Pagerduty any
-	Webhooks any
+	Webhooks  any
+}
+
+type AaaSingleResponse_Result struct {
+	// Optional specification of how often to re-alert from the same incident, not support on all alert types.
+	AlertInterval any
+	// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
+	AlertType any
+	Created   any
+	// Optional description for the Notification policy.
+	Description any
+	// Whether or not the Notification policy is enabled.
+	Enabled any
+	// Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.
+	Filters any
+	// The unique identifier of a notification policy
+	Id any
+	// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
+	Mechanisms any
+	Modified   any
+	// Name of the policy.
+	Name any
 }
 
 var AaaSingleResponse_FiltersFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"AffectedAsns": ubx.FieldSpec{WireName: "affected_asns"},
-		"AffectedComponents": ubx.FieldSpec{WireName: "affected_components"},
-		"AffectedLocations": ubx.FieldSpec{WireName: "affected_locations"},
-		"AirportCode": ubx.FieldSpec{WireName: "airport_code"},
-		"AlertTriggerPreferences": ubx.FieldSpec{WireName: "alert_trigger_preferences"},
-		"AlertTriggerPreferencesValue": ubx.FieldSpec{WireName: "alert_trigger_preferences_value"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Event": ubx.FieldSpec{WireName: "event"},
-		"EventSource": ubx.FieldSpec{WireName: "event_source"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"HealthCheckId": ubx.FieldSpec{WireName: "health_check_id"},
-		"IncidentImpact": ubx.FieldSpec{WireName: "incident_impact"},
-		"InputId": ubx.FieldSpec{WireName: "input_id"},
-		"InsightClass": ubx.FieldSpec{WireName: "insight_class"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LogoTag": ubx.FieldSpec{WireName: "logo_tag"},
-		"MegabitsPerSecond": ubx.FieldSpec{WireName: "megabits_per_second"},
-		"NewHealth": ubx.FieldSpec{WireName: "new_health"},
-		"NewStatus": ubx.FieldSpec{WireName: "new_status"},
-		"PacketsPerSecond": ubx.FieldSpec{WireName: "packets_per_second"},
-		"PoolId": ubx.FieldSpec{WireName: "pool_id"},
-		"PopNames": ubx.FieldSpec{WireName: "pop_names"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"QueryTag": ubx.FieldSpec{WireName: "query_tag"},
-		"RequestsPerSecond": ubx.FieldSpec{WireName: "requests_per_second"},
-		"Selectors": ubx.FieldSpec{WireName: "selectors"},
-		"Services": ubx.FieldSpec{WireName: "services"},
-		"Slo": ubx.FieldSpec{WireName: "slo"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetHostname": ubx.FieldSpec{WireName: "target_hostname"},
-		"TargetIp": ubx.FieldSpec{WireName: "target_ip"},
-		"TargetZoneName": ubx.FieldSpec{WireName: "target_zone_name"},
-		"TrafficExclusions": ubx.FieldSpec{WireName: "traffic_exclusions"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
-		"TunnelName": ubx.FieldSpec{WireName: "tunnel_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Where": ubx.FieldSpec{WireName: "where"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"Actions":                      ubx.FieldSpec{WireName: "actions"},
+	"AffectedAsns":                 ubx.FieldSpec{WireName: "affected_asns"},
+	"AffectedComponents":           ubx.FieldSpec{WireName: "affected_components"},
+	"AffectedLocations":            ubx.FieldSpec{WireName: "affected_locations"},
+	"AirportCode":                  ubx.FieldSpec{WireName: "airport_code"},
+	"AlertTriggerPreferences":      ubx.FieldSpec{WireName: "alert_trigger_preferences"},
+	"AlertTriggerPreferencesValue": ubx.FieldSpec{WireName: "alert_trigger_preferences_value"},
+	"Enabled":                      ubx.FieldSpec{WireName: "enabled"},
+	"Environment":                  ubx.FieldSpec{WireName: "environment"},
+	"Event":                        ubx.FieldSpec{WireName: "event"},
+	"EventSource":                  ubx.FieldSpec{WireName: "event_source"},
+	"EventType":                    ubx.FieldSpec{WireName: "event_type"},
+	"GroupBy":                      ubx.FieldSpec{WireName: "group_by"},
+	"HealthCheckId":                ubx.FieldSpec{WireName: "health_check_id"},
+	"IncidentImpact":               ubx.FieldSpec{WireName: "incident_impact"},
+	"InputId":                      ubx.FieldSpec{WireName: "input_id"},
+	"InsightClass":                 ubx.FieldSpec{WireName: "insight_class"},
+	"Limit":                        ubx.FieldSpec{WireName: "limit"},
+	"LogoTag":                      ubx.FieldSpec{WireName: "logo_tag"},
+	"MegabitsPerSecond":            ubx.FieldSpec{WireName: "megabits_per_second"},
+	"NewHealth":                    ubx.FieldSpec{WireName: "new_health"},
+	"NewStatus":                    ubx.FieldSpec{WireName: "new_status"},
+	"PacketsPerSecond":             ubx.FieldSpec{WireName: "packets_per_second"},
+	"PoolId":                       ubx.FieldSpec{WireName: "pool_id"},
+	"PopNames":                     ubx.FieldSpec{WireName: "pop_names"},
+	"Product":                      ubx.FieldSpec{WireName: "product"},
+	"ProjectId":                    ubx.FieldSpec{WireName: "project_id"},
+	"Protocol":                     ubx.FieldSpec{WireName: "protocol"},
+	"QueryTag":                     ubx.FieldSpec{WireName: "query_tag"},
+	"RequestsPerSecond":            ubx.FieldSpec{WireName: "requests_per_second"},
+	"Selectors":                    ubx.FieldSpec{WireName: "selectors"},
+	"Services":                     ubx.FieldSpec{WireName: "services"},
+	"Slo":                          ubx.FieldSpec{WireName: "slo"},
+	"Status":                       ubx.FieldSpec{WireName: "status"},
+	"TargetHostname":               ubx.FieldSpec{WireName: "target_hostname"},
+	"TargetIp":                     ubx.FieldSpec{WireName: "target_ip"},
+	"TargetZoneName":               ubx.FieldSpec{WireName: "target_zone_name"},
+	"TrafficExclusions":            ubx.FieldSpec{WireName: "traffic_exclusions"},
+	"TunnelId":                     ubx.FieldSpec{WireName: "tunnel_id"},
+	"TunnelName":                   ubx.FieldSpec{WireName: "tunnel_name"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+	"Where":                        ubx.FieldSpec{WireName: "where"},
+	"Zones":                        ubx.FieldSpec{WireName: "zones"},
+}
 
 var AaaSingleResponse_Mechanisms_EmailFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var AaaSingleResponse_MechanismsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{
-			WireName: "email",
-			Kind: "list",
-			Fields: AaaSingleResponse_Mechanisms_EmailFields,
-		},
-		"Pagerduty": ubx.FieldSpec{
-			WireName: "pagerduty",
-			Kind: "list",
-			Fields: AaaSingleResponse_Mechanisms_EmailFields,
-		},
-		"Webhooks": ubx.FieldSpec{
-			WireName: "webhooks",
-			Kind: "list",
-			Fields: AaaSingleResponse_Mechanisms_EmailFields,
-		},
-	}
+	"Email": ubx.FieldSpec{
+		WireName: "email",
+		Kind:     "list",
+		Fields:   AaaSingleResponse_Mechanisms_EmailFields,
+	},
+	"Pagerduty": ubx.FieldSpec{
+		WireName: "pagerduty",
+		Kind:     "list",
+		Fields:   AaaSingleResponse_Mechanisms_EmailFields,
+	},
+	"Webhooks": ubx.FieldSpec{
+		WireName: "webhooks",
+		Kind:     "list",
+		Fields:   AaaSingleResponse_Mechanisms_EmailFields,
+	},
+}
 
 type AaaSingleResponseConfig struct {
 	// Optional specification of how often to re-alert from the same incident, not support on all alert types.
@@ -205,7 +226,8 @@ type AaaSingleResponseAttrs struct {
 	// List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
 	Mechanisms any
 	// Name of the policy.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -216,21 +238,21 @@ var AaaSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_aaa_single_response",
 	Fields: ubx.FieldMap{
 		"AlertInterval": ubx.FieldSpec{WireName: "alert_interval"},
-		"AlertType": ubx.FieldSpec{WireName: "alert_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"AlertType":     ubx.FieldSpec{WireName: "alert_type"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Enabled":       ubx.FieldSpec{WireName: "enabled"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: AaaSingleResponse_FiltersFields,
+			Kind:     "object",
+			Fields:   AaaSingleResponse_FiltersFields,
 		},
 		"Mechanisms": ubx.FieldSpec{
 			WireName: "mechanisms",
-			Kind: "object",
-			Fields: AaaSingleResponse_MechanismsFields,
+			Kind:     "object",
+			Fields:   AaaSingleResponse_MechanismsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

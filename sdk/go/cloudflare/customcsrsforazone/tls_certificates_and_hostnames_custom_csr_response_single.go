@@ -3,6 +3,31 @@ package customcsrsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomCsrResponseSingle_Result struct {
+	// The common name (domain) for the CSR.
+	CommonName any
+	// Two-letter ISO 3166-1 alpha-2 country code.
+	Country any
+	// When the CSR was created.
+	CreatedAt any
+	// The PEM-encoded Certificate Signing Request.
+	Csr any
+	// Custom CSR identifier tag.
+	Id any
+	// The key algorithm used to generate the CSR.
+	KeyType any
+	// City or locality name.
+	Locality any
+	// Organization name.
+	Organization any
+	// Organizational unit for the CSR subject.
+	OrganizationalUnit any
+	// Subject Alternative Names included in the CSR.
+	Sans any
+	// State or province name.
+	State any
+}
+
 type TlsCertificatesAndHostnamesCustomCsrResponseSingleConfig struct {
 	// The common name (domain) for the CSR. Must be at most 64 characters.
 	CommonName any
@@ -39,6 +64,8 @@ type TlsCertificatesAndHostnamesCustomCsrResponseSingleAttrs struct {
 	Organization any
 	// Organizational unit name.
 	OrganizationalUnit any
+	// A custom Certificate Signing Request (CSR).
+	Result any
 	// Subject Alternative Names for the CSR. At least one SAN is required. The list should include the common name.
 	Sans any
 	// State or province name.
@@ -52,15 +79,15 @@ type TlsCertificatesAndHostnamesCustomCsrResponseSingleAttrs struct {
 var TlsCertificatesAndHostnamesCustomCsrResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_csr_response_single",
 	Fields: ubx.FieldMap{
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"Locality": ubx.FieldSpec{WireName: "locality"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
+		"CommonName":         ubx.FieldSpec{WireName: "common_name"},
+		"Country":            ubx.FieldSpec{WireName: "country"},
+		"KeyType":            ubx.FieldSpec{WireName: "key_type"},
+		"Locality":           ubx.FieldSpec{WireName: "locality"},
+		"Organization":       ubx.FieldSpec{WireName: "organization"},
 		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-		"Sans": ubx.FieldSpec{WireName: "sans"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"CustomCsrId": ubx.FieldSpec{WireName: "custom_csr_id"},
+		"Sans":               ubx.FieldSpec{WireName: "sans"},
+		"State":              ubx.FieldSpec{WireName: "state"},
+		"ZoneId":             ubx.FieldSpec{WireName: "zone_id"},
+		"CustomCsrId":        ubx.FieldSpec{WireName: "custom_csr_id"},
 	},
 }

@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PdfConfig struct {
 	AccountId any
-	LetterId any
-	NoticeId any
+	LetterId  any
+	NoticeId  any
 }
 
 type PdfAttrs struct {
 	AccountId any
-	LetterId any
-	NoticeId any
+	LetterId  any
+	NoticeId  any
 }
 
 var Pdf = ubx.DataSourceBinding{
 	WireType: "cloudflare_pdf",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"LetterId": ubx.FieldSpec{WireName: "letter_id"},
-		"NoticeId": ubx.FieldSpec{WireName: "notice_id"},
+		"LetterId":  ubx.FieldSpec{WireName: "letter_id"},
+		"NoticeId":  ubx.FieldSpec{WireName: "notice_id"},
 	},
 }

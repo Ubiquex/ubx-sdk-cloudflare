@@ -3,6 +3,35 @@ package ipaddressmanagementservicebindings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Binding_Errors_Source struct {
+	Pointer any
+}
+
+type Binding_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Binding_Result_Provisioning struct {
+	// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
+	State any
+}
+
+type Binding_Result struct {
+	// IP Prefix in Classless Inter-Domain Routing format.
+	Cidr any
+	// Identifier of a Service Binding.
+	Id any
+	// Status of a Service Binding's deployment to the Cloudflare network
+	Provisioning any
+	// Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.
+	ServiceId any
+	// Name of a service running on the Cloudflare network
+	ServiceName any
+}
+
 type BindingConfig struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
 	Cidr any
@@ -18,9 +47,14 @@ type BindingConfig struct {
 
 type BindingAttrs struct {
 	// IP Prefix in Classless Inter-Domain Routing format.
-	Cidr any
+	Cidr     any
+	Errors   any
+	Messages any
+	Result   any
 	// Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the **List Services** endpoint.
 	ServiceId any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +66,10 @@ type BindingAttrs struct {
 var Binding = ubx.ResourceBinding{
 	WireType: "cloudflare_binding",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
+		"Cidr":      ubx.FieldSpec{WireName: "cidr"},
 		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 		"BindingId": ubx.FieldSpec{WireName: "binding_id"},
 	},
 }

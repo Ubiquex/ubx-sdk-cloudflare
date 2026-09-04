@@ -3,19 +3,69 @@ package findingtypes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiPaginatedFindingTypeList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedFindingTypeList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedFindingTypeList_Result_Category struct {
+	Observation any
+	Product     any
+	Type        any
+}
+
+type PostureApiPaginatedFindingTypeList_Result struct {
+	Category any
+	Id       any
+	Name     any
+	Severity any
+	Vendor   any
+}
+
+type PostureApiPaginatedFindingTypeList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
+	Cursor any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
 type PostureApiPaginatedFindingTypeListConfig struct {
 	AccountId any
-	Page any
-	PerPage any
-	Search any
-	Vendors any
+	Page      any
+	PerPage   any
+	Search    any
+	Vendors   any
 }
 
 type PostureApiPaginatedFindingTypeListAttrs struct {
 	AccountId any
-	Page any
-	PerPage any
-	Search any
+	Errors    any
+	Messages  any
+	Page      any
+	PerPage   any
+	// Array of finding type objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
+	Search     any
+	// Whether the API call was successful.
+	Success any
 	Vendors any
 }
 
@@ -23,9 +73,9 @@ var PostureApiPaginatedFindingTypeList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_finding_type_list",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Vendors": ubx.FieldSpec{WireName: "vendors"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"Vendors":   ubx.FieldSpec{WireName: "vendors"},
 	},
 }

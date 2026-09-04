@@ -8,86 +8,86 @@ type FlagshipChangelogEntry_Errors struct {
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Conditions struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules_Rollout struct {
-	Attribute any
+	Attribute  any
 	Percentage any
 }
 
 type FlagshipChangelogEntry_Result_After_Rules struct {
-	Conditions any
-	Priority any
-	Rollout any
+	Conditions     any
+	Priority       any
+	Rollout        any
 	ServeVariation any
 }
 
 type FlagshipChangelogEntry_Result_After struct {
 	DefaultVariation any
-	Description any
-	Enabled any
-	Key any
-	Rules any
-	Type any
-	UpdatedAt any
-	UpdatedBy any
-	Variations any
+	Description      any
+	Enabled          any
+	Key              any
+	Rules            any
+	Type             any
+	UpdatedAt        any
+	UpdatedBy        any
+	Variations       any
 }
 
 type FlagshipChangelogEntry_Result_Diff struct {
 	From any
-	To any
+	To   any
 }
 
 type FlagshipChangelogEntry_Result struct {
-	After any
-	Diff any
-	Event any
+	After   any
+	Diff    any
+	Event   any
 	FlagKey any
 }
 
@@ -122,20 +122,20 @@ type FlagshipChangelogEntryAttrs struct {
 	// Flag key (slug).
 	FlagKey any
 	// Max items to return (1–200).
-	Limit any
-	Messages any
-	Result any
+	Limit      any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var FlagshipChangelogEntry = ubx.DataSourceBinding{
 	WireType: "cloudflare_flagship_changelog_entry",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"FlagKey": ubx.FieldSpec{WireName: "flag_key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"FlagKey":   ubx.FieldSpec{WireName: "flag_key"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 	},
 }

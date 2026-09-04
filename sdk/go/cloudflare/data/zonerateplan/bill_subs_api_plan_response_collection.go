@@ -3,16 +3,31 @@ package zonerateplan
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiPlanResponseCollection_Result_Components struct {
+	Default   any
+	Name      any
+	UnitPrice any
+}
+
+type BillSubsApiPlanResponseCollection_Result struct {
+	Components any
+	Currency   any
+	Duration   any
+	Frequency  any
+	Id         any
+	Name       any
+}
+
 type BillSubsApiPlanResponseCollectionConfig struct {
 }
 
 type BillSubsApiPlanResponseCollectionAttrs struct {
+	Result any
 	// Identifier
 	ZoneId any
 }
 
 var BillSubsApiPlanResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_plan_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

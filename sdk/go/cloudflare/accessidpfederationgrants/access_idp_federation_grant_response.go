@@ -3,6 +3,17 @@ package accessidpfederationgrants
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessIdpFederationGrantResponse_Result_CreatedAt struct {
+}
+
+type AccessIdpFederationGrantResponse_Result struct {
+	CreatedAt any
+	// UID of the IdP federation grant.
+	Id any
+	// UID of the identity provider being federated.
+	IdpId any
+}
+
 type AccessIdpFederationGrantResponseConfig struct {
 	// UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
 	IdpId any
@@ -14,7 +25,8 @@ type AccessIdpFederationGrantResponseConfig struct {
 
 type AccessIdpFederationGrantResponseAttrs struct {
 	// UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
-	IdpId any
+	IdpId  any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +36,8 @@ type AccessIdpFederationGrantResponseAttrs struct {
 var AccessIdpFederationGrantResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_access_idp_federation_grant_response",
 	Fields: ubx.FieldMap{
-		"IdpId": ubx.FieldSpec{WireName: "idp_id"},
+		"IdpId":     ubx.FieldSpec{WireName: "idp_id"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"GrantId": ubx.FieldSpec{WireName: "grant_id"},
+		"GrantId":   ubx.FieldSpec{WireName: "grant_id"},
 	},
 }

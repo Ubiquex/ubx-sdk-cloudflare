@@ -3,38 +3,104 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type HttpTest_Result_HttpStats_AvailabilityPct_Slots struct {
+	Timestamp any
+	Value     any
+}
+
+type HttpTest_Result_HttpStats_AvailabilityPct struct {
+	// average observed in the time period.
+	Avg any
+	// highest observed in the time period.
+	Max any
+	// lowest observed in the time period.
+	Min   any
+	Slots any
+}
+
+type HttpTest_Result_HttpStats_HttpStatusCode struct {
+	Status200 any
+	Status300 any
+	Status400 any
+	Status500 any
+	Timestamp any
+}
+
+type HttpTest_Result_HttpStats struct {
+	AvailabilityPct      any
+	DnsResponseTimeMs    any
+	HttpStatusCode       any
+	ResourceFetchTimeMs  any
+	ServerResponseTimeMs any
+	// Count of unique devices that have run this test in the given time period.
+	UniqueDevicesTotal any
+}
+
+type HttpTest_Result_HttpStatsByColo struct {
+	AvailabilityPct      any
+	Colo                 any
+	DnsResponseTimeMs    any
+	HttpStatusCode       any
+	ResourceFetchTimeMs  any
+	ServerResponseTimeMs any
+	UniqueDevicesTotal   any
+}
+
+type HttpTest_Result_TargetPolicies struct {
+	Default any
+	Id      any
+	Name    any
+}
+
+type HttpTest_Result struct {
+	// The url of the HTTP synthetic application test.
+	Host            any
+	HttpStats       any
+	HttpStatsByColo any
+	// The interval at which the HTTP synthetic application test is set to run.
+	Interval any
+	Kind     any
+	// The HTTP method to use when running the test.
+	Method any
+	// The name of the HTTP synthetic application test.
+	Name           any
+	TargetPolicies any
+	Targeted       any
+}
+
 type HttpTestConfig struct {
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	From any
+	From     any
 	Interval any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 type HttpTestAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	From any
+	From     any
 	Interval any
+	Result   any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 var HttpTest = ubx.DataSourceBinding{
 	WireType: "cloudflare_http_test",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":     ubx.FieldSpec{WireName: "from"},
 		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"TestId": ubx.FieldSpec{WireName: "test_id"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"TestId":   ubx.FieldSpec{WireName: "test_id"},
+		"To":       ubx.FieldSpec{WireName: "to"},
 	},
 }

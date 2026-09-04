@@ -4,16 +4,16 @@ package clientversions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientVersion_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ClientVersion_Result struct {
-	PackageSize any
-	PackageUrl any
-	ReleaseDate any
+	PackageSize  any
+	PackageUrl   any
+	ReleaseDate  any
 	ReleaseNotes any
-	Version any
+	Version      any
 }
 
 type ClientVersion_ResultInfo struct {
@@ -30,34 +30,34 @@ type ClientVersion_ResultInfo struct {
 }
 
 type ClientVersionConfig struct {
-	AccountId any
-	Page any
-	PerPage any
-	ReleaseTrack any
+	AccountId         any
+	Page              any
+	PerPage           any
+	ReleaseTrack      any
 	TargetEnvironment any
 }
 
 type ClientVersionAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
+	AccountId    any
+	Errors       any
+	Messages     any
+	Page         any
+	PerPage      any
 	ReleaseTrack any
-	Result any
-	ResultInfo any
+	Result       any
+	ResultInfo   any
 	// Indicates whether the API call was successful.
-	Success any
+	Success           any
 	TargetEnvironment any
 }
 
 var ClientVersion = ubx.DataSourceBinding{
 	WireType: "cloudflare_client_version",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ReleaseTrack": ubx.FieldSpec{WireName: "release_track"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
+		"ReleaseTrack":      ubx.FieldSpec{WireName: "release_track"},
 		"TargetEnvironment": ubx.FieldSpec{WireName: "target_environment"},
 	},
 }

@@ -6,6 +6,23 @@ export interface FirewallRuleSingleResponse_Configuration {
   value?: string | Computed<string>;
 }
 
+export interface FirewallRuleSingleResponse_Result {
+  /** The available actions that a rule can apply to a matched request. */
+  allowedModes?: string[] | Computed<string[]>;
+  /** The rule configuration. */
+  configuration: FirewallRuleSingleResponse_Configuration | Computed<FirewallRuleSingleResponse_Configuration>;
+  /** The timestamp of when the rule was created. */
+  createdOn?: string | Computed<string>;
+  /** The unique identifier of the IP Access rule. */
+  id?: string | Computed<string>;
+  /** The action to apply to a matched request. */
+  mode: string | Computed<string>;
+  /** The timestamp of when the rule was last modified. */
+  modifiedOn?: string | Computed<string>;
+  /** An informative summary of the rule, typically used as a reminder or explanation. */
+  notes?: string | Computed<string>;
+}
+
 const FirewallRuleSingleResponse_ConfigurationFields: FieldMap = {
   target: "target",
   value: "value",
@@ -27,6 +44,7 @@ export interface FirewallRuleSingleResponseAttrs {
   /** The action to apply to a matched request. */
   mode: string;
   notes: string;
+  result: FirewallRuleSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   ruleId: string;
 }

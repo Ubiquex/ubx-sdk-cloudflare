@@ -14,12 +14,24 @@ type ImagesImageVariantSimpleResponse_Options struct {
 	Width any
 }
 
+type ImagesImageVariantSimpleResponse_Result_Variant struct {
+	Id any
+	// Indicates whether the variant can access an image without a signature, regardless of image access control.
+	NeverRequireSignedUrls any
+	// Allows you to define image resizing sizes for different use cases.
+	Options any
+}
+
+type ImagesImageVariantSimpleResponse_Result struct {
+	Variant any
+}
+
 var ImagesImageVariantSimpleResponse_OptionsFields = ubx.FieldMap{
-		"Fit": ubx.FieldSpec{WireName: "fit"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Fit":      ubx.FieldSpec{WireName: "fit"},
+	"Height":   ubx.FieldSpec{WireName: "height"},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	"Width":    ubx.FieldSpec{WireName: "width"},
+}
 
 type ImagesImageVariantSimpleResponseConfig struct {
 	Id any
@@ -39,6 +51,7 @@ type ImagesImageVariantSimpleResponseAttrs struct {
 	NeverRequireSignedUrls any
 	// Allows you to define image resizing sizes for different use cases.
 	Options any
+	Result  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -48,12 +61,12 @@ type ImagesImageVariantSimpleResponseAttrs struct {
 var ImagesImageVariantSimpleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_images_image_variant_simple_response",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                     ubx.FieldSpec{WireName: "id"},
 		"NeverRequireSignedUrls": ubx.FieldSpec{WireName: "never_require_signed_urls"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: ImagesImageVariantSimpleResponse_OptionsFields,
+			Kind:     "object",
+			Fields:   ImagesImageVariantSimpleResponse_OptionsFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"VariantId": ubx.FieldSpec{WireName: "variant_id"},

@@ -7,12 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ManagedHeader_Messages_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ManagedHeader_Messages:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ManagedHeader_Result_ManagedRequestHeaders_ConflictsWith:
+    pass
+
+@dataclasses.dataclass
+class ManagedHeader_Result_ManagedRequestHeaders:
+    conflicts_with: Any = None
+    enabled: Any = None
+    has_conflict: Any = None
+    id: Any = None
+
+@dataclasses.dataclass
+class ManagedHeader_Result:
+    # The list of Managed Request Transforms.
+    managed_request_headers: Any = None
+    # The list of Managed Response Transforms.
+    managed_response_headers: Any = None
+
+@dataclasses.dataclass
 class ManagedHeaderConfig:
     # The unique ID of the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class ManagedHeaderAttrs:
+    errors: Any = None
+    # A list of warning messages.
+    messages: Any = None
+    # A Managed Transforms object.
+    result: Any = None
+    success: Any = None
     # The unique ID of the zone.
     zone_id: Any = None
 

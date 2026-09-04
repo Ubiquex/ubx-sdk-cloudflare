@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bookmark_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Bookmark_Result:
+    # A bookmark representing a specific state of the database at a specific point in time.
+    bookmark: Any = None
+
+@dataclasses.dataclass
 class BookmarkConfig:
     # An ISO 8601 timestamp used for time travel operations. The database will be restored to the nearest available bookmark at or before this timestamp.
     timestamp: Any = None
@@ -17,6 +27,11 @@ class BookmarkAttrs:
     account_id: Any = None
     # D1 database identifier (UUID).
     database_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # An ISO 8601 timestamp used for time travel operations. The database will be restored to the nearest available bookmark at or before this timestamp.
     timestamp: Any = None
 

@@ -6,22 +6,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SessionConfig struct {
 	// Account ID.
 	AccountId any
-	Limit any
-	Offset any
+	Limit     any
+	Offset    any
 }
 
 type SessionAttrs struct {
 	// Account ID.
 	AccountId any
-	Limit any
-	Offset any
+	Limit     any
+	Offset    any
 }
 
 var Session = ubx.DataSourceBinding{
 	WireType: "cloudflare_session",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
 	},
 }

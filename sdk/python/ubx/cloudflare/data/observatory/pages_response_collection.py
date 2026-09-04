@@ -7,12 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PagesResponseCollection_Result_Region:
+    label: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class PagesResponseCollection_Result_Tests_DesktopReport_Error:
+    code: Any = None
+    detail: Any = None
+    final_displayed_url: Any = None
+
+@dataclasses.dataclass
+class PagesResponseCollection_Result_Tests_DesktopReport:
+    cls: Any = None
+    device_type: Any = None
+    error: Any = None
+    fcp: Any = None
+    json_report_url: Any = None
+    lcp: Any = None
+    performance_score: Any = None
+    si: Any = None
+    state: Any = None
+    tbt: Any = None
+    ttfb: Any = None
+    tti: Any = None
+
+@dataclasses.dataclass
+class PagesResponseCollection_Result_Tests:
+    date: Any = None
+    desktop_report: Any = None
+    id: Any = None
+    mobile_report: Any = None
+    region: Any = None
+    schedule_frequency: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class PagesResponseCollection_Result:
+    region: Any = None
+    schedule_frequency: Any = None
+    tests: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
 class PagesResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class PagesResponseCollectionAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

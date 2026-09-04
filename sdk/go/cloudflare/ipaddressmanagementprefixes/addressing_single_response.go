@@ -3,6 +3,43 @@ package ipaddressmanagementprefixes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingSingleResponse_Result struct {
+	// Identifier of a Cloudflare account.
+	AccountId any
+	// Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+	Advertised any
+	// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+	AdvertisedModifiedAt any
+	// Approval state of the prefix (P = pending, V = active).
+	Approved any
+	// Autonomous System Number (ASN) the prefix will be advertised under.
+	Asn any
+	// IP Prefix in Classless Inter-Domain Routing format.
+	Cidr      any
+	CreatedAt any
+	// Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
+	DelegateLoaCreation any
+	// Description of the prefix.
+	Description any
+	// Identifier of an IP Prefix.
+	Id any
+	// State of one kind of validation for an IP prefix.
+	IrrValidationState any
+	// Identifier for the uploaded LOA document.
+	LoaDocumentId any
+	ModifiedAt    any
+	// Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.
+	OnDemandEnabled any
+	// Whether advertisement status of the prefix is locked, meaning it cannot be changed.
+	OnDemandLocked any
+	// State of one kind of validation for an IP prefix.
+	OwnershipValidationState any
+	// Token provided to demonstrate ownership of the prefix.
+	OwnershipValidationToken any
+	// State of one kind of validation for an IP prefix.
+	RpkiValidationState any
+}
+
 type AddressingSingleResponseConfig struct {
 	// Autonomous System Number (ASN) the prefix will be advertised under.
 	Asn any
@@ -31,6 +68,7 @@ type AddressingSingleResponseAttrs struct {
 	Description any
 	// Identifier for the uploaded LOA document.
 	LoaDocumentId any
+	Result        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +78,12 @@ type AddressingSingleResponseAttrs struct {
 var AddressingSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_addressing_single_response",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
+		"Asn":                 ubx.FieldSpec{WireName: "asn"},
+		"Cidr":                ubx.FieldSpec{WireName: "cidr"},
 		"DelegateLoaCreation": ubx.FieldSpec{WireName: "delegate_loa_creation"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"LoaDocumentId": ubx.FieldSpec{WireName: "loa_document_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"LoaDocumentId":       ubx.FieldSpec{WireName: "loa_document_id"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
+		"PrefixId":            ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

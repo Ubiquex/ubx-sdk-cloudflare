@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayListItemResponseCollection_Result:
+    created_at: Any = None
+    description: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayListItemResponseCollection_ResultInfo:
+    # Shows the total results returned based on your search parameters.
+    count: Any = None
+    # Show the current page within paginated list of results.
+    page: Any = None
+    # Show the number of results per page of results.
+    per_page: Any = None
+    # Show the total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayListItemResponseCollectionConfig:
     account_id: Any = None
     # Identify the API resource with a UUID.
@@ -17,6 +34,9 @@ class ZeroTrustGatewayListItemResponseCollectionAttrs:
     account_id: Any = None
     # Identify the API resource with a UUID.
     list_id: Any = None
+    # Provide the list items.
+    result: Any = None
+    result_info: Any = None
 
 ZeroTrustGatewayListItemResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_list_item_response_collection",

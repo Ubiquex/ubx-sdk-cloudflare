@@ -3,16 +3,27 @@ package lists
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ListsResponseCollection_Result struct {
+	CreatedOn             any
+	Description           any
+	Id                    any
+	Kind                  any
+	ModifiedOn            any
+	Name                  any
+	NumItems              any
+	NumReferencingFilters any
+}
+
 type ListsResponseCollectionConfig struct {
 }
 
 type ListsResponseCollectionAttrs struct {
 	// The Account ID for this resource.
 	AccountId any
+	Result    any
 }
 
 var ListsResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_lists_lists_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -9,19 +9,19 @@ type Stream_Result_Http_Cors struct {
 
 type Stream_Result_Http struct {
 	Authentication any
-	Cors any
-	Enabled any
+	Cors           any
+	Enabled        any
 }
 
 type Stream_Result_Schema_Fields struct {
 	MetadataKey any
-	Name any
-	Required any
-	SqlName any
+	Name        any
+	Required    any
+	SqlName     any
 }
 
 type Stream_Result_Schema struct {
-	Fields any
+	Fields   any
 	Inferred any
 }
 
@@ -30,15 +30,15 @@ type Stream_Result_WorkerBinding struct {
 }
 
 type Stream_Result struct {
-	CreatedAt any
-	Endpoint any
-	Format any
-	Http any
-	Id any
-	ModifiedAt any
-	Name any
-	Schema any
-	Version any
+	CreatedAt     any
+	Endpoint      any
+	Format        any
+	Http          any
+	Id            any
+	ModifiedAt    any
+	Name          any
+	Schema        any
+	Version       any
 	WorkerBinding any
 }
 
@@ -56,9 +56,9 @@ type Stream_ResultInfo struct {
 type StreamConfig struct {
 	// Specifies the public ID of the account.
 	AccountId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 	// Specifies the public ID of the pipeline.
 	PipelineId any
 }
@@ -66,12 +66,12 @@ type StreamConfig struct {
 type StreamAttrs struct {
 	// Specifies the public ID of the account.
 	AccountId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 	// Specifies the public ID of the pipeline.
 	PipelineId any
-	Result any
+	Result     any
 	ResultInfo any
 	// Indicates whether the API call was successful.
 	Success any
@@ -80,10 +80,10 @@ type StreamAttrs struct {
 var Stream = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
 	},
 }

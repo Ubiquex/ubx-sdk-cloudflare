@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleUserResponse_Result:
+    # True if the user has authenticated with Cloudflare Access.
+    access_seat: Any = None
+    # The number of active devices registered to the user.
+    active_device_count: Any = None
+    created_at: Any = None
+    # The email of the user.
+    email: Any = None
+    # True if the user has logged into the WARP client.
+    gateway_seat: Any = None
+    # UUID.
+    id: Any = None
+    # The time at which the user last successfully logged in.
+    last_successful_login: Any = None
+    # The name of the user.
+    name: Any = None
+    # The unique API identifier for the Zero Trust seat.
+    seat_uid: Any = None
+    # The unique API identifier for the user.
+    uid: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessSingleUserResponseConfig:
     # The email of the user.
     email: Any = None
@@ -23,6 +46,7 @@ class AccessSingleUserResponseAttrs:
     email: Any = None
     # The name of the user.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

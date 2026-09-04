@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Secret_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Secret_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Secret_Result:
+    algorithm: Any = None
+    format: Any = None
+    key_base64: Any = None
+    key_jwk: Any = None
+    name: Any = None
+    text: Any = None
+    type: Any = None
+    usages: Any = None
+
+@dataclasses.dataclass
 class SecretConfig:
     # Identifier.
     account_id: Any = None
@@ -21,8 +43,13 @@ class SecretAttrs:
     account_id: Any = None
     # Name of the Workers for Platforms dispatch namespace.
     dispatch_namespace: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Secret = ubx.DataSourceBinding(
     wire_type="cloudflare_secret",

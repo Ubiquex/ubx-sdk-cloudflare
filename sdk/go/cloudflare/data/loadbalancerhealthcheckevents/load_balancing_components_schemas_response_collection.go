@@ -3,6 +3,23 @@ package loadbalancerhealthcheckevents
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingComponentsSchemasResponseCollection_Result_Origins struct {
+	Address       any
+	Changed       any
+	Enabled       any
+	FailureReason any
+	Healthy       any
+	Ip            any
+	Name          any
+}
+
+type LoadBalancingComponentsSchemasResponseCollection_Result struct {
+	Id        any
+	Origins   any
+	Pool      any
+	Timestamp any
+}
+
 type LoadBalancingComponentsSchemasResponseCollectionConfig struct {
 	// If true, filter events where the origin status is healthy. If false, filter events where the origin status is unhealthy.
 	OriginHealthy any
@@ -10,7 +27,7 @@ type LoadBalancingComponentsSchemasResponseCollectionConfig struct {
 	OriginName any
 	// If true, filter events where the pool status is healthy. If false, filter events where the pool status is unhealthy.
 	PoolHealthy any
-	PoolId any
+	PoolId      any
 	// The name for the pool to filter.
 	PoolName any
 	// Start date and time of requesting data period in the ISO8601 format.
@@ -26,9 +43,10 @@ type LoadBalancingComponentsSchemasResponseCollectionAttrs struct {
 	OriginName any
 	// If true, filter events where the pool status is healthy. If false, filter events where the pool status is unhealthy.
 	PoolHealthy any
-	PoolId any
+	PoolId      any
 	// The name for the pool to filter.
 	PoolName any
+	Result   any
 	// Start date and time of requesting data period in the ISO8601 format.
 	Since any
 	// End date and time of requesting data period in the ISO8601 format.
@@ -39,11 +57,11 @@ var LoadBalancingComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_load_balancing_components_schemas_response_collection",
 	Fields: ubx.FieldMap{
 		"OriginHealthy": ubx.FieldSpec{WireName: "origin_healthy"},
-		"OriginName": ubx.FieldSpec{WireName: "origin_name"},
-		"PoolHealthy": ubx.FieldSpec{WireName: "pool_healthy"},
-		"PoolId": ubx.FieldSpec{WireName: "pool_id"},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"Until": ubx.FieldSpec{WireName: "until"},
+		"OriginName":    ubx.FieldSpec{WireName: "origin_name"},
+		"PoolHealthy":   ubx.FieldSpec{WireName: "pool_healthy"},
+		"PoolId":        ubx.FieldSpec{WireName: "pool_id"},
+		"PoolName":      ubx.FieldSpec{WireName: "pool_name"},
+		"Since":         ubx.FieldSpec{WireName: "since"},
+		"Until":         ubx.FieldSpec{WireName: "until"},
 	},
 }

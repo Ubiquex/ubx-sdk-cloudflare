@@ -43,6 +43,7 @@ export interface WafManagedRulesRuleResponseCollectionAttrs {
   perPage: number;
   /** Defines the order in which the individual WAF rule is executed within its rule group. */
   priority: string;
+  result: unknown[];
   /** Defines an identifier of a schema. */
   zoneId: string;
 }

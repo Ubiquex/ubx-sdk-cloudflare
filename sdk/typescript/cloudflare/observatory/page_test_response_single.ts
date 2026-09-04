@@ -4,6 +4,63 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface PageTestResponseSingle_Region {
 }
 
+export interface PageTestResponseSingle_Result_DesktopReport_Error {
+  /** The error code of the Lighthouse result. */
+  code?: string | Computed<string>;
+  /** Detailed error message. */
+  detail?: string | Computed<string>;
+  /** The final URL displayed to the user. */
+  finalDisplayedUrl?: string | Computed<string>;
+}
+
+export interface PageTestResponseSingle_Result_DesktopReport {
+  /** Cumulative Layout Shift. */
+  cls?: number | Computed<number>;
+  /** The type of device. */
+  deviceType?: string | Computed<string>;
+  error?: PageTestResponseSingle_Result_DesktopReport_Error | Computed<PageTestResponseSingle_Result_DesktopReport_Error>;
+  /** First Contentful Paint. */
+  fcp?: number | Computed<number>;
+  /** The URL to the full Lighthouse JSON report. */
+  jsonReportUrl?: string | Computed<string>;
+  /** Largest Contentful Paint. */
+  lcp?: number | Computed<number>;
+  /** The Lighthouse performance score. */
+  performanceScore?: number | Computed<number>;
+  /** Speed Index. */
+  si?: number | Computed<number>;
+  /** The state of the Lighthouse report. */
+  state?: string | Computed<string>;
+  /** Total Blocking Time. */
+  tbt?: number | Computed<number>;
+  /** Time To First Byte. */
+  ttfb?: number | Computed<number>;
+  /** Time To Interactive. */
+  tti?: number | Computed<number>;
+}
+
+export interface PageTestResponseSingle_Result_Region {
+  label?: string | Computed<string>;
+  /** A test region. */
+  value?: string | Computed<string>;
+}
+
+export interface PageTestResponseSingle_Result {
+  date?: string | Computed<string>;
+  /** The Lighthouse report. */
+  desktopReport?: PageTestResponseSingle_Result_DesktopReport | Computed<PageTestResponseSingle_Result_DesktopReport>;
+  /** UUID. */
+  id?: string | Computed<string>;
+  /** The Lighthouse report. */
+  mobileReport?: PageTestResponseSingle_Result_DesktopReport | Computed<PageTestResponseSingle_Result_DesktopReport>;
+  /** A test region with a label. */
+  region?: PageTestResponseSingle_Result_Region | Computed<PageTestResponseSingle_Result_Region>;
+  /** The frequency of the test. */
+  scheduleFrequency?: string | Computed<string>;
+  /** A URL. */
+  url?: string | Computed<string>;
+}
+
 const PageTestResponseSingle_RegionFields: FieldMap = {
 };
 
@@ -19,6 +76,7 @@ export interface PageTestResponseSingleConfig {
 
 export interface PageTestResponseSingleAttrs {
   region: PageTestResponseSingle_Region;
+  result: PageTestResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */

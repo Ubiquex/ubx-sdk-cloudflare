@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Colo_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Colo_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Colo_Result:
+    airport_code: Any = None
+    city: Any = None
+    country_code: Any = None
+
+@dataclasses.dataclass
 class ColoConfig:
     from_: Any = None
     sort_by: Any = None
@@ -16,8 +33,14 @@ class ColoConfig:
 class ColoAttrs:
     # Unique identifier linked to an account.
     account_id: Any = None
+    errors: Any = None
     from_: Any = None
+    messages: Any = None
+    # array of colos.
+    result: Any = None
     sort_by: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     to: Any = None
 
 Colo = ubx.DataSourceBinding(

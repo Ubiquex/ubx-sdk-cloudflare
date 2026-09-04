@@ -3,16 +3,27 @@ package cloudflareimages
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImagesStatsResponse_Result_Count struct {
+	// Cloudflare Images allowed usage.
+	Allowed any
+	// Cloudflare Images current usage.
+	Current any
+}
+
+type ImagesImagesStatsResponse_Result struct {
+	Count any
+}
+
 type ImagesImagesStatsResponseConfig struct {
 }
 
 type ImagesImagesStatsResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var ImagesImagesStatsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_images_stats_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

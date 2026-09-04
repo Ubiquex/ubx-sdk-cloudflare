@@ -13,6 +13,7 @@ class ArgoAnalyticsResponseSingleConfig:
 @dataclasses.dataclass
 class ArgoAnalyticsResponseSingleAttrs:
     bins: Any = None
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

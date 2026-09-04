@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelComponentsSchemasSingleResponse_Result_ReverseRecords:
+    first_seen: Any = None
+    hostname: Any = None
+    last_seen: Any = None
+
+@dataclasses.dataclass
+class IntelComponentsSchemasSingleResponse_Result:
+    # Total results returned based on your search parameters.
+    count: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # Reverse DNS look-ups observed during the time period.
+    reverse_records: Any = None
+
+@dataclasses.dataclass
 class IntelComponentsSchemasSingleResponse_StartEndParams:
     # Defaults to the current date.
     end: Any = None
@@ -36,6 +53,7 @@ class IntelComponentsSchemasSingleResponseAttrs:
     page: Any = None
     # Maximum number of results requested.
     per_page: Any = None
+    result: Any = None
     start_end_params: Any = None
 
 IntelComponentsSchemasSingleResponse = ubx.DataSourceBinding(

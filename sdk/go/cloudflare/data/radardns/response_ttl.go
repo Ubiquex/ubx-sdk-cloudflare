@@ -4,14 +4,14 @@ package radardns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseTtl_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type ResponseTtl_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type ResponseTtl_Result_Meta_ConfidenceInfo struct {
 }
 
 type ResponseTtl_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type ResponseTtl_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type ResponseTtl_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -60,7 +60,7 @@ type ResponseTtl_Result_Summary0 struct {
 
 type ResponseTtl_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -118,8 +118,8 @@ type ResponseTtlAttrs struct {
 	QueryType any
 	// Filters results by DNS response code.
 	ResponseCode any
-	Result any
-	Success any
+	Result       any
+	Success      any
 	// Filters results by top-level domain. Incompatible with the `ipVersion`, `protocol`, `dnssecE2e`, `dnssecAware`, `responseTtl`, and `cacheHit` filters/dimensions; this restriction does not apply to country-code TLDs (2-letter, e.g. `uk`).
 	Tld any
 }
@@ -127,18 +127,18 @@ type ResponseTtlAttrs struct {
 var ResponseTtl = ubx.DataSourceBinding{
 	WireType: "cloudflare_response_ttl",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nodata": ubx.FieldSpec{WireName: "nodata"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"QueryType": ubx.FieldSpec{WireName: "query_type"},
+		"Asn":          ubx.FieldSpec{WireName: "asn"},
+		"Continent":    ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":      ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":    ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":    ubx.FieldSpec{WireName: "date_start"},
+		"Format":       ubx.FieldSpec{WireName: "format"},
+		"Location":     ubx.FieldSpec{WireName: "location"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Nodata":       ubx.FieldSpec{WireName: "nodata"},
+		"Protocol":     ubx.FieldSpec{WireName: "protocol"},
+		"QueryType":    ubx.FieldSpec{WireName: "query_type"},
 		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-		"Tld": ubx.FieldSpec{WireName: "tld"},
+		"Tld":          ubx.FieldSpec{WireName: "tld"},
 	},
 }

@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Rule_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class Rule_Result_TargetedTests_Data:
+    host: Any = None
+    kind: Any = None
+    method: Any = None
+
+@dataclasses.dataclass
+class Rule_Result_TargetedTests:
+    data: Any = None
+    enabled: Any = None
+    name: Any = None
+    test_id: Any = None
+
+@dataclasses.dataclass
+class Rule_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    match: Any = None
+    name: Any = None
+    targeted_tests: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class RuleConfig:
     description: Any = None
     # The wirefilter expression to match.
@@ -25,6 +52,7 @@ class RuleAttrs:
     match: Any = None
     # The name of the Rule.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -3,6 +3,23 @@ package customcsrsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomCsrResponseCollection2_Result struct {
+	AccountTag         any
+	CommonName         any
+	Country            any
+	CreatedAt          any
+	Csr                any
+	Description        any
+	Id                 any
+	KeyType            any
+	Locality           any
+	Name               any
+	Organization       any
+	OrganizationalUnit any
+	Sans               any
+	State              any
+}
+
 type TlsCertificatesAndHostnamesCustomCsrResponseCollection2Config struct {
 	// Identifier.
 	AccountId any
@@ -27,6 +44,7 @@ type TlsCertificatesAndHostnamesCustomCsrResponseCollection2Attrs struct {
 	Page any
 	// Number of custom CSRs per page.
 	PerPage any
+	Result  any
 }
 
 var TlsCertificatesAndHostnamesCustomCsrResponseCollection2 = ubx.DataSourceBinding{
@@ -34,8 +52,8 @@ var TlsCertificatesAndHostnamesCustomCsrResponseCollection2 = ubx.DataSourceBind
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

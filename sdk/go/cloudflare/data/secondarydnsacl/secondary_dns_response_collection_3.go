@@ -3,15 +3,21 @@ package secondarydnsacl
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsResponseCollection3_Result struct {
+	Id      any
+	IpRange any
+	Name    any
+}
+
 type SecondaryDnsResponseCollection3Config struct {
 }
 
 type SecondaryDnsResponseCollection3Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var SecondaryDnsResponseCollection3 = ubx.DataSourceBinding{
 	WireType: "cloudflare_secondary_dns_response_collection_3",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

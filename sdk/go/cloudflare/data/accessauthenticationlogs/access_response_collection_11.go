@@ -3,84 +3,112 @@ package accessauthenticationlogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection11_Errors_Source struct {
+	Pointer any
+}
+
+type AccessResponseCollection11_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type AccessResponseCollection11_Result struct {
+	Action     any
+	Allowed    any
+	AppDomain  any
+	AppUid     any
+	Connection any
+	CreatedAt  any
+	IpAddress  any
+	RayId      any
+	UserEmail  any
+}
+
 type AccessResponseCollection11Config struct {
 	// Identifier.
-	AccountId any
-	AllowedOp any
-	AppTypeOp any
-	AppUidOp any
+	AccountId     any
+	AllowedOp     any
+	AppTypeOp     any
+	AppUidOp      any
 	CountryCodeOp any
-	Direction any
+	Direction     any
 	// The email address of the authenticating user.
-	Email any
-	EmailExact any
-	EmailOp any
-	Fields any
-	IdpOp any
-	Limit any
+	Email         any
+	EmailExact    any
+	EmailOp       any
+	Fields        any
+	IdpOp         any
+	Limit         any
 	NonIdentityOp any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
 	RayIdOp any
-	Since any
-	Until any
+	Since   any
+	Until   any
 	// The UUID of the authenticating user.
-	UserId any
+	UserId   any
 	UserIdOp any
 }
 
 type AccessResponseCollection11Attrs struct {
 	// Identifier.
-	AccountId any
-	AllowedOp any
-	AppTypeOp any
-	AppUidOp any
+	AccountId     any
+	AllowedOp     any
+	AppTypeOp     any
+	AppUidOp      any
 	CountryCodeOp any
-	Direction any
+	Direction     any
 	// The email address of the authenticating user.
-	Email any
-	EmailExact any
-	EmailOp any
-	Fields any
-	IdpOp any
-	Limit any
+	Email         any
+	EmailExact    any
+	EmailOp       any
+	Errors        any
+	Fields        any
+	IdpOp         any
+	Limit         any
+	Messages      any
 	NonIdentityOp any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
 	RayIdOp any
-	Since any
-	Until any
+	Result  any
+	Since   any
+	// Whether the API call was successful.
+	Success any
+	Until   any
 	// The UUID of the authenticating user.
-	UserId any
+	UserId   any
 	UserIdOp any
 }
 
 var AccessResponseCollection11 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_11",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AllowedOp": ubx.FieldSpec{WireName: "allowed_op"},
-		"AppTypeOp": ubx.FieldSpec{WireName: "app_type_op"},
-		"AppUidOp": ubx.FieldSpec{WireName: "app_uid_op"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"AllowedOp":     ubx.FieldSpec{WireName: "allowed_op"},
+		"AppTypeOp":     ubx.FieldSpec{WireName: "app_type_op"},
+		"AppUidOp":      ubx.FieldSpec{WireName: "app_uid_op"},
 		"CountryCodeOp": ubx.FieldSpec{WireName: "country_code_op"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"EmailExact": ubx.FieldSpec{WireName: "email_exact"},
-		"EmailOp": ubx.FieldSpec{WireName: "email_op"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"IdpOp": ubx.FieldSpec{WireName: "idp_op"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Direction":     ubx.FieldSpec{WireName: "direction"},
+		"Email":         ubx.FieldSpec{WireName: "email"},
+		"EmailExact":    ubx.FieldSpec{WireName: "email_exact"},
+		"EmailOp":       ubx.FieldSpec{WireName: "email_op"},
+		"Fields":        ubx.FieldSpec{WireName: "fields"},
+		"IdpOp":         ubx.FieldSpec{WireName: "idp_op"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
 		"NonIdentityOp": ubx.FieldSpec{WireName: "non_identity_op"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"RayIdOp": ubx.FieldSpec{WireName: "ray_id_op"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"Until": ubx.FieldSpec{WireName: "until"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-		"UserIdOp": ubx.FieldSpec{WireName: "user_id_op"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
+		"RayIdOp":       ubx.FieldSpec{WireName: "ray_id_op"},
+		"Since":         ubx.FieldSpec{WireName: "since"},
+		"Until":         ubx.FieldSpec{WireName: "until"},
+		"UserId":        ubx.FieldSpec{WireName: "user_id"},
+		"UserIdOp":      ubx.FieldSpec{WireName: "user_id_op"},
 	},
 }

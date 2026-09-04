@@ -3,6 +3,46 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumSiteResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type RumSiteResponseSingle_Result_Rules struct {
+	Created   any
+	Host      any
+	Id        any
+	Inclusive any
+	IsPaused  any
+	Paths     any
+	Priority  any
+}
+
+type RumSiteResponseSingle_Result_Ruleset struct {
+	// Whether the ruleset is enabled.
+	Enabled any
+	// The Web Analytics ruleset identifier.
+	Id       any
+	ZoneName any
+	// The zone identifier.
+	ZoneTag any
+}
+
+type RumSiteResponseSingle_Result struct {
+	// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
+	AutoInstall any
+	Created     any
+	// A list of rules.
+	Rules   any
+	Ruleset any
+	// The Web Analytics site identifier.
+	SiteTag any
+	// The Web Analytics site token.
+	SiteToken any
+	// Encoded JavaScript snippet.
+	Snippet any
+}
+
 type RumSiteResponseSingleConfig struct {
 	// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 	AutoInstall any
@@ -19,8 +59,13 @@ type RumSiteResponseSingleConfig struct {
 type RumSiteResponseSingleAttrs struct {
 	// If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.
 	AutoInstall any
+	Errors      any
 	// The hostname to use for gray-clouded sites.
-	Host any
+	Host     any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// The zone identifier.
 	ZoneTag any
 	// path parameter, not part of the API's own resource representation
@@ -33,9 +78,9 @@ var RumSiteResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_rum_site_response_single",
 	Fields: ubx.FieldMap{
 		"AutoInstall": ubx.FieldSpec{WireName: "auto_install"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"ZoneTag": ubx.FieldSpec{WireName: "zone_tag"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"Host":        ubx.FieldSpec{WireName: "host"},
+		"ZoneTag":     ubx.FieldSpec{WireName: "zone_tag"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"SiteId":      ubx.FieldSpec{WireName: "site_id"},
 	},
 }

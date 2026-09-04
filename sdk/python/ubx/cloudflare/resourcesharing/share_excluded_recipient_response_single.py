@@ -10,6 +10,22 @@ import ubx_sdk as ubx
 class ShareExcludedRecipientResponseSingle_AccountId:
     pass
 
+@dataclasses.dataclass
+class ShareExcludedRecipientResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ShareExcludedRecipientResponseSingle_Result:
+    # Account identifier.
+    account_id: Any = None
+    # When the share was created.
+    created: Any = None
+    # Share Excluded Recipient identifier tag.
+    id: Any = None
+    # When the share was modified.
+    modified: Any = None
+
 _ShareExcludedRecipientResponseSingle_AccountIdFields = {
 }
 
@@ -30,6 +46,10 @@ class ShareExcludedRecipientResponseSingleConfig:
 class ShareExcludedRecipientResponseSingleAttrs:
     # The account to exclude from the organization-targeted share.
     account_id: Any = None
+    errors: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute)
     account_id_path: Any = None
     # path parameter, not part of the API's own resource representation

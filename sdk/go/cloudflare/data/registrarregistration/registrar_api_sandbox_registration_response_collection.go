@@ -3,28 +3,64 @@ package registrarregistration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegistrarApiSandboxRegistrationResponseCollectionConfig struct {
+type RegistrarApiSandboxRegistrationResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiSandboxRegistrationResponseCollection_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiSandboxRegistrationResponseCollection_Result struct {
+	AutoRenew   any
+	CreatedAt   any
+	DomainName  any
+	ExpiresAt   any
+	Locked      any
+	PrivacyMode any
+	Status      any
+}
+
+type RegistrarApiSandboxRegistrationResponseCollection_ResultInfo struct {
+	// Number of items in the current result set.
+	Count any
+	// Opaque cursor for fetching the next page. Pass this value as the `cursor` query parameter in a subsequent request. An empty string indicates the end of pagination.
 	Cursor any
-	Direction any
+	// Maximum number of items per page.
 	PerPage any
-	SortBy any
+}
+
+type RegistrarApiSandboxRegistrationResponseCollectionConfig struct {
+	Cursor    any
+	Direction any
+	PerPage   any
+	SortBy    any
 }
 
 type RegistrarApiSandboxRegistrationResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Cursor any
+	Cursor    any
 	Direction any
-	PerPage any
-	SortBy any
+	Errors    any
+	Messages  any
+	PerPage   any
+	Result    any
+	// Provides cursor-based pagination metadata. List endpoints use this metadata for cursor pagination. Pass the `cursor` value as a query parameter in the next request to fetch the next page. An empty string indicates the end of pagination.
+	ResultInfo any
+	SortBy     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiSandboxRegistrationResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_registrar_api_sandbox_registration_response_collection",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

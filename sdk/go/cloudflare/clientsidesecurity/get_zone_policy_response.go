@@ -3,6 +3,15 @@ package clientsidesecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type GetZonePolicyResponse_Result struct {
+	Action      any
+	Description any
+	Enabled     any
+	Expression  any
+	Id          any
+	Value       any
+}
+
 type GetZonePolicyResponseConfig struct {
 	// The action to take if the expression matches
 	Action any
@@ -29,6 +38,7 @@ type GetZonePolicyResponseAttrs struct {
 	Enabled any
 	// The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
 	Expression any
+	Result     any
 	// The policy which will be applied
 	Value any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +50,12 @@ type GetZonePolicyResponseAttrs struct {
 var GetZonePolicyResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_client_side_security_get_zone_policy_response",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Expression":  ubx.FieldSpec{WireName: "expression"},
+		"Value":       ubx.FieldSpec{WireName: "value"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
+		"PolicyId":    ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

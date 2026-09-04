@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaIdResponse_Result:
+    # UUID
+    id: Any = None
+
+@dataclasses.dataclass
 class AaaIdResponseConfig:
     # The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
     name: Any = None
@@ -23,6 +28,7 @@ class AaaIdResponseConfig:
 class AaaIdResponseAttrs:
     # The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
     name: Any = None
+    result: Any = None
     # Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
     secret: Any = None
     # The POST endpoint to call when dispatching a notification.

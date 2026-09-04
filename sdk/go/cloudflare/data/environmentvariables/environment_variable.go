@@ -3,6 +3,25 @@ package environmentvariables
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EnvironmentVariable_Errors struct {
+	Code    any
+	Message any
+}
+
+type EnvironmentVariable_Result struct {
+	CreatedOn any
+	IsSecret  any
+	Value     any
+}
+
+type EnvironmentVariable_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type EnvironmentVariableConfig struct {
 	// Account identifier.
 	AccountId any
@@ -12,7 +31,12 @@ type EnvironmentVariableConfig struct {
 
 type EnvironmentVariableAttrs struct {
 	// Account identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
+	ResultInfo any
+	Success    any
 	// Trigger UUID.
 	TriggerUuid any
 }
@@ -20,7 +44,7 @@ type EnvironmentVariableAttrs struct {
 var EnvironmentVariable = ubx.DataSourceBinding{
 	WireType: "cloudflare_environment_variable",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"TriggerUuid": ubx.FieldSpec{WireName: "trigger_uuid"},
 	},
 }

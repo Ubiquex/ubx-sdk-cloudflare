@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomCsrResponseSingle_Result:
+    # The common name (domain) for the CSR.
+    common_name: Any = None
+    # Two-letter ISO 3166-1 alpha-2 country code.
+    country: Any = None
+    # When the CSR was created.
+    created_at: Any = None
+    # The PEM-encoded Certificate Signing Request.
+    csr: Any = None
+    # Custom CSR identifier tag.
+    id: Any = None
+    # The key algorithm used to generate the CSR.
+    key_type: Any = None
+    # City or locality name.
+    locality: Any = None
+    # Organization name.
+    organization: Any = None
+    # Organizational unit for the CSR subject.
+    organizational_unit: Any = None
+    # Subject Alternative Names included in the CSR.
+    sans: Any = None
+    # State or province name.
+    state: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomCsrResponseSingleConfig:
     # The common name (domain) for the CSR. Must be at most 64 characters.
     common_name: Any = None
@@ -43,6 +68,8 @@ class TlsCertificatesAndHostnamesCustomCsrResponseSingleAttrs:
     organization: Any = None
     # Organizational unit name.
     organizational_unit: Any = None
+    # A custom Certificate Signing Request (CSR).
+    result: Any = None
     # Subject Alternative Names for the CSR. At least one SAN is required. The list should include the common name.
     sans: Any = None
     # State or province name.

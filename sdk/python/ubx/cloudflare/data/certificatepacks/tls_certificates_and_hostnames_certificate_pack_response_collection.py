@@ -7,6 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_Certificates_GeoRestrictions:
+    label: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_Certificates:
+    bundle_method: Any = None
+    expires_on: Any = None
+    geo_restrictions: Any = None
+    hosts: Any = None
+    id: Any = None
+    issuer: Any = None
+    modified_on: Any = None
+    priority: Any = None
+    signature: Any = None
+    status: Any = None
+    uploaded_on: Any = None
+    zone_id: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_DcvDelegationRecords:
+    cname: Any = None
+    cname_target: Any = None
+    emails: Any = None
+    http_body: Any = None
+    http_url: Any = None
+    status: Any = None
+    txt_name: Any = None
+    txt_value: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_ValidationErrors:
+    message: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result:
+    certificate_authority: Any = None
+    certificates: Any = None
+    cloudflare_branding: Any = None
+    dcv_delegation_records: Any = None
+    hosts: Any = None
+    id: Any = None
+    primary_certificate: Any = None
+    status: Any = None
+    type: Any = None
+    validation_errors: Any = None
+    validation_method: Any = None
+    validation_records: Any = None
+    validity_days: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificatePackResponseCollectionConfig:
     # Specify the deployment environment for the certificate packs.
     deploy: Any = None
@@ -27,6 +77,7 @@ class TlsCertificatesAndHostnamesCertificatePackResponseCollectionAttrs:
     page: Any = None
     # Number of certificate packs per page.
     per_page: Any = None
+    result: Any = None
     # Include Certificate Packs of all statuses, not just active ones.
     status: Any = None
     # Identifier.

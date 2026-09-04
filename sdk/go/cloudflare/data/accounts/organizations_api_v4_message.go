@@ -4,15 +4,15 @@ package accounts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationsApiV4Message_Messages struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type OrganizationsApiV4Message_Result struct {
-	BusinessAddress any
-	BusinessEmail any
-	BusinessName any
-	BusinessPhone any
+	BusinessAddress  any
+	BusinessEmail    any
+	BusinessName     any
+	BusinessPhone    any
 	ExternalMetadata any
 }
 
@@ -22,10 +22,10 @@ type OrganizationsApiV4MessageConfig struct {
 
 type OrganizationsApiV4MessageAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var OrganizationsApiV4Message = ubx.DataSourceBinding{

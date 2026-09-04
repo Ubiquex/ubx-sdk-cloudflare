@@ -3,12 +3,46 @@ package webhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiWebhookListResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiWebhookListResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiWebhookListResponse_Result_Headers struct {
+	Key   any
+	Value any
+}
+
+type PostureApiWebhookListResponse_Result struct {
+	AuthenticationType any
+	CreatedAt          any
+	DestinationUrl     any
+	Headers            any
+	Id                 any
+	Label              any
+	Status             any
+	UpdatedAt          any
+	Version            any
+}
+
 type PostureApiWebhookListResponseConfig struct {
 	AccountId any
 }
 
 type PostureApiWebhookListResponseAttrs struct {
 	AccountId any
+	Errors    any
+	Messages  any
+	// List of webhook configurations.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PostureApiWebhookListResponse = ubx.DataSourceBinding{

@@ -6,14 +6,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamCollectionTokensResponse_AccountId struct {
 }
 
-var IamCollectionTokensResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamCollectionTokensResponse_Result_Condition_RequestIp struct {
+	In    any
+	NotIn any
+}
+
+type IamCollectionTokensResponse_Result_Condition struct {
+	RequestIp any
+}
+
+type IamCollectionTokensResponse_Result_Policies_PermissionGroups_Meta struct {
+	Key   any
+	Value any
+}
+
+type IamCollectionTokensResponse_Result_Policies_PermissionGroups struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+type IamCollectionTokensResponse_Result_Policies struct {
+	Effect           any
+	Id               any
+	PermissionGroups any
+	Resources        any
+}
+
+type IamCollectionTokensResponse_Result struct {
+	Condition  any
+	ExpiresOn  any
+	Id         any
+	IssuedOn   any
+	LastUsedOn any
+	ModifiedOn any
+	Name       any
+	NotBefore  any
+	Policies   any
+	Status     any
+}
+
+var IamCollectionTokensResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamCollectionTokensResponseConfig struct {
 	// Account identifier tag.
 	AccountId any
 	// Direction to order results.
-	Direction any
+	Direction      any
 	IncludeExpired any
 	// Page number of paginated results.
 	Page any
@@ -25,12 +64,13 @@ type IamCollectionTokensResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
 	// Direction to order results.
-	Direction any
+	Direction      any
 	IncludeExpired any
 	// Page number of paginated results.
 	Page any
 	// Maximum number of results per page.
 	PerPage any
+	Result  any
 }
 
 var IamCollectionTokensResponse = ubx.DataSourceBinding{
@@ -38,12 +78,12 @@ var IamCollectionTokensResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamCollectionTokensResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamCollectionTokensResponse_AccountIdFields,
 		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Direction":      ubx.FieldSpec{WireName: "direction"},
 		"IncludeExpired": ubx.FieldSpec{WireName: "include_expired"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":           ubx.FieldSpec{WireName: "page"},
+		"PerPage":        ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -3,16 +3,40 @@ package customindicatorfeeds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PermissionListItemResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PermissionListItemResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PermissionListItemResponse_Result struct {
+	Description    any
+	Id             any
+	IsAttributable any
+	IsDownloadable any
+	IsPublic       any
+	Name           any
+}
+
 type PermissionListItemResponseConfig struct {
 }
 
 type PermissionListItemResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PermissionListItemResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_indicator_feeds_permission_list_item_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

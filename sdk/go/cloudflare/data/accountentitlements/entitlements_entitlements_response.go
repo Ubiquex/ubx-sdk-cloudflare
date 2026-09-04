@@ -4,29 +4,29 @@ package accountentitlements
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntitlementsEntitlementsResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type EntitlementsEntitlementsResponse_Result_Allocation struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type EntitlementsEntitlementsResponse_Result_Feature struct {
 	FeatureSet any
-	Id any
-	Key any
-	Name any
+	Id         any
+	Key        any
+	Name       any
 }
 
 type EntitlementsEntitlementsResponse_Result struct {
-	Allocation any
+	Allocation  any
 	CreatedDate any
 	DeletedDate any
-	EditedDate any
-	Feature any
-	Id any
+	EditedDate  any
+	Feature     any
+	Id          any
 }
 
 type EntitlementsEntitlementsResponseConfig struct {

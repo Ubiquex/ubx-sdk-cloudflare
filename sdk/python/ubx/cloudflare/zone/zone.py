@@ -11,6 +11,115 @@ class Zone_Account:
     # Identifier
     id: Any = None
 
+@dataclasses.dataclass
+class Zone_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Zone_Result_Account:
+    # Identifier
+    id: Any = None
+    # The name of the account.
+    name: Any = None
+
+@dataclasses.dataclass
+class Zone_Result_Meta:
+    # The zone is only configured for CDN.
+    cdn_only: Any = None
+    # Number of Custom Certificates the zone can have.
+    custom_certificate_quota: Any = None
+    # The zone is only configured for DNS.
+    dns_only: Any = None
+    # The zone is setup with Foundation DNS.
+    foundation_dns: Any = None
+    # Number of Page Rules a zone can have.
+    page_rule_quota: Any = None
+    # The zone has been flagged for phishing.
+    phishing_detected: Any = None
+    step: Any = None
+
+@dataclasses.dataclass
+class Zone_Result_Owner:
+    # Identifier
+    id: Any = None
+    # Name of the owner.
+    name: Any = None
+    # The type of owner.
+    type: Any = None
+
+@dataclasses.dataclass
+class Zone_Result_Plan:
+    # States if the subscription can be activated.
+    can_subscribe: Any = None
+    # The denomination of the customer.
+    currency: Any = None
+    # If this Zone is managed by another company.
+    externally_managed: Any = None
+    # How often the customer is billed.
+    frequency: Any = None
+    # Identifier
+    id: Any = None
+    # States if the subscription active.
+    is_subscribed: Any = None
+    # If the legacy discount applies to this Zone.
+    legacy_discount: Any = None
+    # The legacy name of the plan.
+    legacy_id: Any = None
+    # Name of the owner.
+    name: Any = None
+    # How much the customer is paying.
+    price: Any = None
+
+@dataclasses.dataclass
+class Zone_Result:
+    # The account the zone belongs to.
+    account: Any = None
+    # The last time proof of ownership was detected and the zone was made active.
+    activated_on: Any = None
+    # Allows the customer to use a custom apex. *Tenants Only Configuration*.
+    cname_suffix: Any = None
+    # When the zone was created.
+    created_on: Any = None
+    # The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is 0.
+    development_mode: Any = None
+    # Identifier
+    id: Any = None
+    # Metadata about the zone.
+    meta: Any = None
+    # When the zone was last modified.
+    modified_on: Any = None
+    # The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
+    name: Any = None
+    # The name servers Cloudflare assigns to a zone.
+    name_servers: Any = None
+    # DNS host at the time of switching to Cloudflare.
+    original_dnshost: Any = None
+    # Original name servers before moving to Cloudflare.
+    original_name_servers: Any = None
+    # Registrar for the domain at the time of switching to Cloudflare.
+    original_registrar: Any = None
+    # The owner of the zone.
+    owner: Any = None
+    # Indicates whether the zone is only using Cloudflare DNS services. A true value means the zone will not receive security or performance benefits.
+    paused: Any = None
+    # Legacy permissions based on legacy user membership information.
+    permissions: Any = None
+    # A Zones subscription information.
+    plan: Any = None
+    # The zone status on Cloudflare.
+    status: Any = None
+    # The root organizational unit that this zone belongs to (such as a tenant or organization).
+    tenant: Any = None
+    # The immediate parent organizational unit that this zone belongs to (such as under a tenant or sub-organization).
+    tenant_unit: Any = None
+    # A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup.
+    type: Any = None
+    # An array of domains used for custom name servers. This is only available for Business and Enterprise plans.
+    vanity_name_servers: Any = None
+    # Verification key for partial zone setup.
+    verification_key: Any = None
+
 _Zone_AccountFields = {
     "id": ubx.FieldSpec(wire_name="id"),
 }
@@ -28,8 +137,13 @@ class ZoneConfig:
 @dataclasses.dataclass
 class ZoneAttrs:
     account: Any = None
+    errors: Any = None
+    messages: Any = None
     # The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment ("label") not exceeding 63 characters.
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # A full zone implies that DNS is hosted with Cloudflare. A partial zone is typically a partner-hosted zone or a CNAME setup.
     type: Any = None
     # path parameter, not part of the API's own resource representation

@@ -3,25 +3,195 @@ package onramps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnGetOnrampResponse_Result_PlannedMonthlyCostEstimate struct {
+	Currency            any
+	CurrentMonthlyCost  any
+	Diff                any
+	ProposedMonthlyCost any
+}
+
+type McnGetOnrampResponse_Result_PlannedResources_Diff struct {
+	Diff             any
+	LeftDescription  any
+	LeftYaml         any
+	RightDescription any
+	RightYaml        any
+}
+
+type McnGetOnrampResponse_Result_PlannedResources_Resource struct {
+	CloudType    any
+	Detail       any
+	Id           any
+	Name         any
+	ResourceType any
+	Title        any
+}
+
+type McnGetOnrampResponse_Result_PlannedResources struct {
+	Diff                    any
+	KeysRequireReplace      any
+	MonthlyCostEstimateDiff any
+	PlannedAction           any
+	Resource                any
+}
+
+type McnGetOnrampResponse_Result_PostApplyMonthlyCostEstimate struct {
+	Currency    any
+	MonthlyCost any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_ManagedBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_Observations struct {
+	FirstObservedAt any
+	LastObservedAt  any
+	ProviderId      any
+	ResourceId      any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems_Value_List struct {
+	ItemType        any
+	ResourcePreview any
+	String          any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems_Value struct {
+	ItemType        any
+	List            any
+	ResourcePreview any
+	String          any
+	Yaml            any
+	YamlDiff        any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems struct {
+	HelpText any
+	Name     any
+	Value    any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources_Sections struct {
+	HelpText     any
+	HiddenItems  any
+	Name         any
+	VisibleItems any
+}
+
+type McnGetOnrampResponse_Result_PostApplyResources struct {
+	AccountId           any
+	CloudType           any
+	Config              any
+	DeploymentProvider  any
+	Id                  any
+	Managed             any
+	ManagedBy           any
+	MonthlyCostEstimate any
+	Name                any
+	NativeId            any
+	Observations        any
+	ProviderIds         any
+	ProviderNamesById   any
+	Region              any
+	ResourceGroup       any
+	ResourceType        any
+	Sections            any
+	State               any
+	Tags                any
+	UpdatedAt           any
+	Url                 any
+}
+
+type McnGetOnrampResponse_Result_Status_ApplyProgress struct {
+	Done  any
+	Total any
+}
+
+type McnGetOnrampResponse_Result_Status_LifecycleErrors_Meta struct {
+	L10nKey       any
+	LoggableError any
+	TemplateData  any
+	TraceId       any
+}
+
+type McnGetOnrampResponse_Result_Status_LifecycleErrors_Source struct {
+	Parameter           any
+	ParameterValueIndex any
+	Pointer             any
+}
+
+type McnGetOnrampResponse_Result_Status_LifecycleErrors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Meta             any
+	Source           any
+}
+
+type McnGetOnrampResponse_Result_Status struct {
+	ApplyProgress   any
+	LifecycleErrors any
+	LifecycleState  any
+	PlanProgress    any
+	Routes          any
+	Tunnels         any
+}
+
+type McnGetOnrampResponse_Result struct {
+	AttachedHubs                  any
+	AttachedVpcs                  any
+	CloudAsn                      any
+	CloudType                     any
+	Description                   any
+	DynamicRouting                any
+	Hub                           any
+	Id                            any
+	InstallRoutesInCloud          any
+	InstallRoutesInMagicWan       any
+	LastAppliedAt                 any
+	LastExportedAt                any
+	LastPlannedAt                 any
+	ManageHubToHubAttachments     any
+	ManageVpcToHubAttachments     any
+	Name                          any
+	PlannedMonthlyCostEstimate    any
+	PlannedResources              any
+	PlannedResourcesUnavailable   any
+	PostApplyMonthlyCostEstimate  any
+	PostApplyResources            any
+	PostApplyResourcesUnavailable any
+	Region                        any
+	Status                        any
+	Type                          any
+	UpdatedAt                     any
+	Vpc                           any
+	VpcsById                      any
+	// The list of vpc IDs for which resource details failed to generate.
+	VpcsByIdUnavailable any
+}
+
 type McnGetOnrampResponseConfig struct {
 	AdoptedHubId any
 	AttachedHubs any
 	AttachedVpcs any
 	// Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
-	CloudAsn any
-	CloudType any
+	CloudAsn    any
+	CloudType   any
 	Description any
 	// Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
-	DynamicRouting any
-	HubProviderId any
-	InstallRoutesInCloud any
-	InstallRoutesInMagicWan any
+	DynamicRouting            any
+	HubProviderId             any
+	InstallRoutesInCloud      any
+	InstallRoutesInMagicWan   any
 	ManageHubToHubAttachments any
 	ManageVpcToHubAttachments any
-	Name any
-	Region any
-	Type any
-	Vpc any
+	Name                      any
+	Region                    any
+	Type                      any
+	Vpc                       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -33,20 +203,21 @@ type McnGetOnrampResponseAttrs struct {
 	AttachedHubs any
 	AttachedVpcs any
 	// Sets the cloud-side ASN. If unset or zero, the cloud's default ASN takes effect.
-	CloudAsn any
-	CloudType any
+	CloudAsn    any
+	CloudType   any
 	Description any
 	// Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.
-	DynamicRouting any
-	HubProviderId any
-	InstallRoutesInCloud any
-	InstallRoutesInMagicWan any
+	DynamicRouting            any
+	HubProviderId             any
+	InstallRoutesInCloud      any
+	InstallRoutesInMagicWan   any
 	ManageHubToHubAttachments any
 	ManageVpcToHubAttachments any
-	Name any
-	Region any
-	Type any
-	Vpc any
+	Name                      any
+	Region                    any
+	Result                    any
+	Type                      any
+	Vpc                       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -56,23 +227,23 @@ type McnGetOnrampResponseAttrs struct {
 var McnGetOnrampResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_mcn_get_onramp_response",
 	Fields: ubx.FieldMap{
-		"AdoptedHubId": ubx.FieldSpec{WireName: "adopted_hub_id"},
-		"AttachedHubs": ubx.FieldSpec{WireName: "attached_hubs"},
-		"AttachedVpcs": ubx.FieldSpec{WireName: "attached_vpcs"},
-		"CloudAsn": ubx.FieldSpec{WireName: "cloud_asn"},
-		"CloudType": ubx.FieldSpec{WireName: "cloud_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DynamicRouting": ubx.FieldSpec{WireName: "dynamic_routing"},
-		"HubProviderId": ubx.FieldSpec{WireName: "hub_provider_id"},
-		"InstallRoutesInCloud": ubx.FieldSpec{WireName: "install_routes_in_cloud"},
-		"InstallRoutesInMagicWan": ubx.FieldSpec{WireName: "install_routes_in_magic_wan"},
+		"AdoptedHubId":              ubx.FieldSpec{WireName: "adopted_hub_id"},
+		"AttachedHubs":              ubx.FieldSpec{WireName: "attached_hubs"},
+		"AttachedVpcs":              ubx.FieldSpec{WireName: "attached_vpcs"},
+		"CloudAsn":                  ubx.FieldSpec{WireName: "cloud_asn"},
+		"CloudType":                 ubx.FieldSpec{WireName: "cloud_type"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"DynamicRouting":            ubx.FieldSpec{WireName: "dynamic_routing"},
+		"HubProviderId":             ubx.FieldSpec{WireName: "hub_provider_id"},
+		"InstallRoutesInCloud":      ubx.FieldSpec{WireName: "install_routes_in_cloud"},
+		"InstallRoutesInMagicWan":   ubx.FieldSpec{WireName: "install_routes_in_magic_wan"},
 		"ManageHubToHubAttachments": ubx.FieldSpec{WireName: "manage_hub_to_hub_attachments"},
 		"ManageVpcToHubAttachments": ubx.FieldSpec{WireName: "manage_vpc_to_hub_attachments"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"OnrampId": ubx.FieldSpec{WireName: "onramp_id"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"Region":                    ubx.FieldSpec{WireName: "region"},
+		"Type":                      ubx.FieldSpec{WireName: "type"},
+		"Vpc":                       ubx.FieldSpec{WireName: "vpc"},
+		"AccountId":                 ubx.FieldSpec{WireName: "account_id"},
+		"OnrampId":                  ubx.FieldSpec{WireName: "onramp_id"},
 	},
 }

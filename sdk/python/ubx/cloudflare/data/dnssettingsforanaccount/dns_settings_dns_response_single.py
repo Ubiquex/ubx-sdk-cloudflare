@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsSettingsDnsResponseSingle_Result_ZoneDefaults_Nameservers:
+    type: Any = None
+
+@dataclasses.dataclass
+class DnsSettingsDnsResponseSingle_Result_ZoneDefaults:
+    nameservers: Any = None
+
+@dataclasses.dataclass
+class DnsSettingsDnsResponseSingle_Result:
+    # When enabled, forces all proxied DNS records in the account to behave as DNS-only at the edge, regardless of each record's individual proxy setting. Note that this account-level override does not modify the records themselves; it only affects how they are served at the edge. See more on [Enforce DNS-only](https://developers.cloudflare.com/dns/proxy-status/enforce-dns-only).
+    enforce_dns_only: Any = None
+    zone_defaults: Any = None
+
+@dataclasses.dataclass
 class DnsSettingsDnsResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +29,7 @@ class DnsSettingsDnsResponseSingleConfig:
 class DnsSettingsDnsResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 DnsSettingsDnsResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_dns_settings_dns_response_single",

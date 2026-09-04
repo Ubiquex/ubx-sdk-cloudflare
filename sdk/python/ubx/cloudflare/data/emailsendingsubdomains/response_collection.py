@@ -7,12 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResponseCollection_Result:
+    created: Any = None
+    dkim_selector: Any = None
+    drop_suppressed_recipients: Any = None
+    enabled: Any = None
+    modified: Any = None
+    name: Any = None
+    preview_enabled: Any = None
+    return_path_domain: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
 class ResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class ResponseCollectionAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

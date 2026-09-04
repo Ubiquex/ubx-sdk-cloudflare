@@ -3,12 +3,31 @@ package dlpsensitivitygroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SensitivityGroup_Result_Levels struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
+type SensitivityGroup_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Levels      any
+	Name        any
+	TemplateId  any
+	UpdatedAt   any
+}
+
 type SensitivityGroupConfig struct {
 	AccountId any
 }
 
 type SensitivityGroupAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var SensitivityGroup = ubx.DataSourceBinding{

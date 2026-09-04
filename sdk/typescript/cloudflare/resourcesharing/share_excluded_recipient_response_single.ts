@@ -4,6 +4,22 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ShareExcludedRecipientResponseSingle_AccountId {
 }
 
+export interface ShareExcludedRecipientResponseSingle_Errors {
+  code?: number | Computed<number>;
+  message?: string | Computed<string>;
+}
+
+export interface ShareExcludedRecipientResponseSingle_Result {
+  /** Account identifier. */
+  accountId: string | Computed<string>;
+  /** When the share was created. */
+  created: string | Computed<string>;
+  /** Share Excluded Recipient identifier tag. */
+  id: string | Computed<string>;
+  /** When the share was modified. */
+  modified: string | Computed<string>;
+}
+
 const ShareExcludedRecipientResponseSingle_AccountIdFields: FieldMap = {
 };
 
@@ -23,6 +39,10 @@ export interface ShareExcludedRecipientResponseSingleConfig {
 export interface ShareExcludedRecipientResponseSingleAttrs {
   /** The account to exclude from the organization-targeted share. */
   accountId: ShareExcludedRecipientResponseSingle_AccountId;
+  errors: ShareExcludedRecipientResponseSingle_Errors[];
+  result: ShareExcludedRecipientResponseSingle_Result;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute) */
   accountIdPath: string;
   /** path parameter, not part of the API's own resource representation */

@@ -3,20 +3,39 @@ package zerotrustriskscoringintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ReferenceId_Result struct {
+	// The Cloudflare account tag.
+	AccountTag any
+	// Whether this integration is enabled and should export changes in risk score.
+	Active any
+	// When the integration was created in RFC3339 format.
+	CreatedAt any
+	// The id of the integration, a UUIDv4.
+	Id              any
+	IntegrationType any
+	// A reference ID defined by the client. Should be set to the Access-Okta IDP integration ID. Useful when the risk-score integration needs to be associated with a secondary asset and recalled using that ID.
+	ReferenceId any
+	// The base URL for the tenant. E.g. "https://tenant.okta.com".
+	TenantUrl any
+	// The URL for the Shared Signals Framework configuration, e.g. "/.well-known/sse-configuration/{integration_uuid}/". https://openid.net/specs/openid-sse-framework-1_0.html#rfc.section.6.2.1.
+	WellKnownUrl any
+}
+
 type ReferenceIdConfig struct {
-	AccountId any
+	AccountId   any
 	ReferenceId any
 }
 
 type ReferenceIdAttrs struct {
-	AccountId any
+	AccountId   any
 	ReferenceId any
+	Result      any
 }
 
 var ReferenceId = ubx.DataSourceBinding{
 	WireType: "cloudflare_reference_id",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
 	},
 }

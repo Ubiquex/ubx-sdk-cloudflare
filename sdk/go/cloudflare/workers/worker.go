@@ -3,14 +3,19 @@ package workers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Worker_Errors struct {
+	Code    any
+	Message any
+}
+
 type Worker_GitRepository struct {
-	Branch any
-	GrantId any
-	ProviderAccountId any
+	Branch              any
+	GrantId             any
+	ProviderAccountId   any
 	ProviderAccountName any
-	ProviderType any
-	RepoId any
-	RepoName any
+	ProviderType        any
+	RepoId              any
+	RepoName            any
 }
 
 type Worker_ProductionSettings_BuildCachingEnabled struct {
@@ -18,61 +23,96 @@ type Worker_ProductionSettings_BuildCachingEnabled struct {
 
 type Worker_ProductionSettings_EnvironmentVariables struct {
 	IsSecret any
-	Value any
+	Value    any
 }
 
 type Worker_ProductionSettings struct {
 	BuildCachingEnabled any
-	BuildCommand any
+	BuildCommand        any
 	// Build token UUID.
-	BuildTokenUuid any
-	DeployCommand any
+	BuildTokenUuid       any
+	DeployCommand        any
 	EnvironmentVariables any
-	PathExcludes any
-	PathIncludes any
+	PathExcludes         any
+	PathIncludes         any
+	RootDirectory        any
+}
+
+type Worker_Result_ProductionSettings_EnvironmentVariables struct {
+	CreatedOn any
+	IsSecret  any
+	Value     any
+}
+
+type Worker_Result_ProductionSettings struct {
+	BuildCachingEnabled any
+	BuildCommand        any
+	// Build token UUID.
+	BuildTokenUuid       any
+	DeployCommand        any
+	EnvironmentVariables any
+	PathExcludes         any
+	PathIncludes         any
+	// Root directory path.
 	RootDirectory any
 }
 
-var Worker_GitRepositoryFields = ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"GrantId": ubx.FieldSpec{WireName: "grant_id"},
-		"ProviderAccountId": ubx.FieldSpec{WireName: "provider_account_id"},
-		"ProviderAccountName": ubx.FieldSpec{WireName: "provider_account_name"},
-		"ProviderType": ubx.FieldSpec{WireName: "provider_type"},
-		"RepoId": ubx.FieldSpec{WireName: "repo_id"},
-		"RepoName": ubx.FieldSpec{WireName: "repo_name"},
-	}
+type Worker_Result struct {
+	// Git repository details linked to a Worker script build configuration
+	GitRepository any
+	// Build and deploy settings for a Worker script environment
+	ProductionSettings any
+	// System-generated worker script tag.
+	ScriptTag any
+}
 
-var Worker_ProductionSettings_BuildCachingEnabledFields = ubx.FieldMap{
-	}
+type Worker_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
+var Worker_GitRepositoryFields = ubx.FieldMap{
+	"Branch":              ubx.FieldSpec{WireName: "branch"},
+	"GrantId":             ubx.FieldSpec{WireName: "grant_id"},
+	"ProviderAccountId":   ubx.FieldSpec{WireName: "provider_account_id"},
+	"ProviderAccountName": ubx.FieldSpec{WireName: "provider_account_name"},
+	"ProviderType":        ubx.FieldSpec{WireName: "provider_type"},
+	"RepoId":              ubx.FieldSpec{WireName: "repo_id"},
+	"RepoName":            ubx.FieldSpec{WireName: "repo_name"},
+}
+
+var Worker_ProductionSettings_BuildCachingEnabledFields = ubx.FieldMap{}
 
 var Worker_ProductionSettings_EnvironmentVariablesFields = ubx.FieldMap{
-		"IsSecret": ubx.FieldSpec{WireName: "is_secret"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"IsSecret": ubx.FieldSpec{WireName: "is_secret"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Worker_ProductionSettingsFields = ubx.FieldMap{
-		"BuildCachingEnabled": ubx.FieldSpec{
-			WireName: "build_caching_enabled",
-			Kind: "object",
-			Fields: Worker_ProductionSettings_BuildCachingEnabledFields,
-		},
-		"BuildCommand": ubx.FieldSpec{WireName: "build_command"},
-		"BuildTokenUuid": ubx.FieldSpec{WireName: "build_token_uuid"},
-		"DeployCommand": ubx.FieldSpec{WireName: "deploy_command"},
-		"EnvironmentVariables": ubx.FieldSpec{
-			WireName: "environment_variables",
-			Kind: "map",
-			Fields: Worker_ProductionSettings_EnvironmentVariablesFields,
-		},
-		"PathExcludes": ubx.FieldSpec{WireName: "path_excludes"},
-		"PathIncludes": ubx.FieldSpec{WireName: "path_includes"},
-		"RootDirectory": ubx.FieldSpec{
-			WireName: "root_directory",
-			Kind: "object",
-			Fields: Worker_ProductionSettings_BuildCachingEnabledFields,
-		},
-	}
+	"BuildCachingEnabled": ubx.FieldSpec{
+		WireName: "build_caching_enabled",
+		Kind:     "object",
+		Fields:   Worker_ProductionSettings_BuildCachingEnabledFields,
+	},
+	"BuildCommand":   ubx.FieldSpec{WireName: "build_command"},
+	"BuildTokenUuid": ubx.FieldSpec{WireName: "build_token_uuid"},
+	"DeployCommand":  ubx.FieldSpec{WireName: "deploy_command"},
+	"EnvironmentVariables": ubx.FieldSpec{
+		WireName: "environment_variables",
+		Kind:     "map",
+		Fields:   Worker_ProductionSettings_EnvironmentVariablesFields,
+	},
+	"PathExcludes": ubx.FieldSpec{WireName: "path_excludes"},
+	"PathIncludes": ubx.FieldSpec{WireName: "path_includes"},
+	"RootDirectory": ubx.FieldSpec{
+		WireName: "root_directory",
+		Kind:     "object",
+		Fields:   Worker_ProductionSettings_BuildCachingEnabledFields,
+	},
+}
 
 type WorkerConfig struct {
 	GitRepository any
@@ -85,11 +125,17 @@ type WorkerConfig struct {
 }
 
 type WorkerAttrs struct {
+	Errors        any
 	GitRepository any
+	Messages      any
 	// Build and deploy settings when creating a Worker build configuration
 	ProductionSettings any
+	// Worker build configuration including git repository linkage and production settings
+	Result     any
+	ResultInfo any
 	// System-generated worker script tag.
 	ScriptTag any
+	Success   any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -99,13 +145,13 @@ var Worker = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GitRepository": ubx.FieldSpec{
 			WireName: "git_repository",
-			Kind: "object",
-			Fields: Worker_GitRepositoryFields,
+			Kind:     "object",
+			Fields:   Worker_GitRepositoryFields,
 		},
 		"ProductionSettings": ubx.FieldSpec{
 			WireName: "production_settings",
-			Kind: "object",
-			Fields: Worker_ProductionSettingsFields,
+			Kind:     "object",
+			Fields:   Worker_ProductionSettingsFields,
 		},
 		"ScriptTag": ubx.FieldSpec{WireName: "script_tag"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},

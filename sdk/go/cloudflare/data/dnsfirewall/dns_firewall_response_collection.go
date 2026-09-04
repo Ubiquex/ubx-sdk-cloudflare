@@ -3,6 +3,27 @@ package dnsfirewall
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsFirewallResponseCollection_Result_AttackMitigation struct {
+	Enabled                   any
+	OnlyWhenUpstreamUnhealthy any
+}
+
+type DnsFirewallResponseCollection_Result struct {
+	AttackMitigation     any
+	DeprecateAnyRequests any
+	DnsFirewallIps       any
+	EcsFallback          any
+	Id                   any
+	MaximumCacheTtl      any
+	MinimumCacheTtl      any
+	ModifiedOn           any
+	Name                 any
+	NegativeCacheTtl     any
+	Ratelimit            any
+	Retries              any
+	UpstreamIps          any
+}
+
 type DnsFirewallResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +40,14 @@ type DnsFirewallResponseCollectionAttrs struct {
 	Page any
 	// Number of clusters per page
 	PerPage any
+	Result  any
 }
 
 var DnsFirewallResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_dns_firewall_dns_firewall_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

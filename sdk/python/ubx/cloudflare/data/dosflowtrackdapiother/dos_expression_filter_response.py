@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosExpressionFilterResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosExpressionFilterResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosExpressionFilterResponse_Result:
+    # The creation timestamp of the expression filter.
+    created_on: Any = None
+    # The filter expression.
+    expression: Any = None
+    # The unique ID of the expression filter.
+    id: Any = None
+    # The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
+    mode: Any = None
+    # The last modification timestamp of the expression filter.
+    modified_on: Any = None
+
+@dataclasses.dataclass
 class DosExpressionFilterResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +41,13 @@ class DosExpressionFilterResponseConfig:
 class DosExpressionFilterResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     # UUID.
     filter_id: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 DosExpressionFilterResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_expression_filter_response",

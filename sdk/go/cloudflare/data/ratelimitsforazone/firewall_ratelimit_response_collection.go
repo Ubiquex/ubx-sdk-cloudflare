@@ -3,6 +3,55 @@ package ratelimitsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallRatelimitResponseCollection_Result_Action_Response struct {
+	Body        any
+	ContentType any
+}
+
+type FirewallRatelimitResponseCollection_Result_Action struct {
+	Mode     any
+	Response any
+	Timeout  any
+}
+
+type FirewallRatelimitResponseCollection_Result_Bypass struct {
+	Name  any
+	Value any
+}
+
+type FirewallRatelimitResponseCollection_Result_Match_Headers struct {
+	Name  any
+	Op    any
+	Value any
+}
+
+type FirewallRatelimitResponseCollection_Result_Match_Request struct {
+	Methods any
+	Schemes any
+	Url     any
+}
+
+type FirewallRatelimitResponseCollection_Result_Match_Response struct {
+	OriginTraffic any
+}
+
+type FirewallRatelimitResponseCollection_Result_Match struct {
+	Headers  any
+	Request  any
+	Response any
+}
+
+type FirewallRatelimitResponseCollection_Result struct {
+	Action      any
+	Bypass      any
+	Description any
+	Disabled    any
+	Id          any
+	Match       any
+	Period      any
+	Threshold   any
+}
+
 type FirewallRatelimitResponseCollectionConfig struct {
 	// Defines the page number of paginated results.
 	Page any
@@ -15,6 +64,7 @@ type FirewallRatelimitResponseCollectionAttrs struct {
 	Page any
 	// Defines the maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
 	PerPage any
+	Result  any
 	// Defines an identifier.
 	ZoneId any
 }
@@ -22,7 +72,7 @@ type FirewallRatelimitResponseCollectionAttrs struct {
 var FirewallRatelimitResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_ratelimit_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

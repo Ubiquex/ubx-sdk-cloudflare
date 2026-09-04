@@ -3,12 +3,23 @@ package dlpsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PayloadLog_Result_MaskingLevel struct {
+}
+
+type PayloadLog_Result struct {
+	MaskingLevel any
+	// Base64-encoded public key for encrypting payload logs. Null when payload logging is disabled.
+	PublicKey any
+	UpdatedAt any
+}
+
 type PayloadLogConfig struct {
 	AccountId any
 }
 
 type PayloadLogAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var PayloadLog = ubx.DataSourceBinding{

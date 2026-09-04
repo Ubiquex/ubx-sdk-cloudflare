@@ -4,14 +4,14 @@ package radaremailsecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Tld_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Tld_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Tld_Result_Meta_ConfidenceInfo struct {
 }
 
 type Tld_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Tld_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Tld_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -92,10 +92,10 @@ type TldAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Array of names used to label the series in the response.
-	Name any
+	Name   any
 	Result any
 	// Filters results by SPF (Sender Policy Framework) validation status.
-	Spf any
+	Spf     any
 	Success any
 	// Filters results by TLD category.
 	TldCategory any
@@ -106,17 +106,17 @@ type TldAttrs struct {
 var Tld = ubx.DataSourceBinding{
 	WireType: "cloudflare_tld",
 	Fields: ubx.FieldMap{
-		"Arc": ubx.FieldSpec{WireName: "arc"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Dkim": ubx.FieldSpec{WireName: "dkim"},
-		"Dmarc": ubx.FieldSpec{WireName: "dmarc"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Spf": ubx.FieldSpec{WireName: "spf"},
+		"Arc":         ubx.FieldSpec{WireName: "arc"},
+		"DateEnd":     ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":   ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":   ubx.FieldSpec{WireName: "date_start"},
+		"Dkim":        ubx.FieldSpec{WireName: "dkim"},
+		"Dmarc":       ubx.FieldSpec{WireName: "dmarc"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Spf":         ubx.FieldSpec{WireName: "spf"},
 		"TldCategory": ubx.FieldSpec{WireName: "tld_category"},
-		"TlsVersion": ubx.FieldSpec{WireName: "tls_version"},
+		"TlsVersion":  ubx.FieldSpec{WireName: "tls_version"},
 	},
 }

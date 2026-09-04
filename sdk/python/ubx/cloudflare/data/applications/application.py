@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Application_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Application_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class ApplicationConfig:
     # Image url.
     image: Any = None
@@ -15,10 +26,16 @@ class ApplicationConfig:
 
 @dataclasses.dataclass
 class ApplicationAttrs:
+    errors: Any = None
     # Image url.
     image: Any = None
+    messages: Any = None
     # The application name.
     name: Any = None
+    # The public Containers API returns a list of applications.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Application = ubx.DataSourceBinding(
     wire_type="cloudflare_application",

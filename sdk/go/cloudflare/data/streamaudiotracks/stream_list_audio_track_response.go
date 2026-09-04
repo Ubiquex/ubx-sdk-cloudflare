@@ -3,6 +3,29 @@ package streamaudiotracks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamListAudioTrackResponse_Errors_Source struct {
+	Pointer any
+}
+
+type StreamListAudioTrackResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamListAudioTrackResponse_Result_Audio struct {
+	Default any
+	Label   any
+	Status  any
+	Uid     any
+}
+
+type StreamListAudioTrackResponse_Result struct {
+	// Array of audio tracks for the video.
+	Audio any
+}
+
 type StreamListAudioTrackResponseConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -13,14 +36,19 @@ type StreamListAudioTrackResponseConfig struct {
 type StreamListAudioTrackResponseAttrs struct {
 	// The account identifier tag.
 	AccountId any
+	Errors    any
 	// A Cloudflare-generated unique identifier for a media item.
 	Identifier any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamListAudioTrackResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_list_audio_track_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

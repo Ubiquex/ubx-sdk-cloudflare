@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CallsTurnKeyCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class CallsTurnKeyCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class CallsTurnKeyCollection_Result:
+    created: Any = None
+    modified: Any = None
+    name: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
 class CallsTurnKeyCollectionConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -15,6 +33,11 @@ class CallsTurnKeyCollectionConfig:
 class CallsTurnKeyCollectionAttrs:
     # The account identifier tag.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 CallsTurnKeyCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_calls_turn_key_collection",

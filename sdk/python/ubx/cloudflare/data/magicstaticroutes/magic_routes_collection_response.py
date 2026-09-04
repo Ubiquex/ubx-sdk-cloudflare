@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicRoutesCollectionResponse_Result_Routes_Scope:
+    colo_names: Any = None
+    colo_regions: Any = None
+
+@dataclasses.dataclass
+class MagicRoutesCollectionResponse_Result_Routes:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    modified_on: Any = None
+    nexthop: Any = None
+    prefix: Any = None
+    priority: Any = None
+    scope: Any = None
+    weight: Any = None
+
+@dataclasses.dataclass
+class MagicRoutesCollectionResponse_Result:
+    routes: Any = None
+
+@dataclasses.dataclass
 class MagicRoutesCollectionResponseConfig:
     pass
 
@@ -14,6 +35,7 @@ class MagicRoutesCollectionResponseConfig:
 class MagicRoutesCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 MagicRoutesCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_routes_collection_response",

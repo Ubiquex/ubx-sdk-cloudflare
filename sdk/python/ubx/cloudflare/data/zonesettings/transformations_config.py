@@ -7,12 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TransformationsConfig_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TransformationsConfig_Result_Value:
+    allowed_origins: Any = None
+    c2pa: Any = None
+    transformations: Any = None
+
+@dataclasses.dataclass
+class TransformationsConfig_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class TransformationsConfigConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TransformationsConfigAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Combined view of Transformations, Allowed Origins, and C2PA settings for a zone.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

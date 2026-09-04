@@ -7,12 +7,99 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_LoadShedding:
+    # The percent of traffic to shed from the pool, according to the default policy. Applies to new sessions and traffic without session affinity.
+    default_percent: Any = None
+    # The default policy to use when load shedding. A random policy randomly sheds a given percent of requests. A hash policy computes a hash over the CF-Connecting-IP address and sheds all requests originating from a percent of IPs.
+    default_policy: Any = None
+    # The percent of existing sessions to shed from the pool, according to the session policy.
+    session_percent: Any = None
+    # Only the hash policy is supported for existing sessions (to avoid exponential decay).
+    session_policy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_NotificationFilter_Origin:
+    # If set true, disable notifications for this type of resource (pool or origin).
+    disable: Any = None
+    # If present, send notifications only for this health status (e.g. false for only DOWN events). Use null to reset (all events).
+    healthy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_NotificationFilter:
+    # Filter options for a particular resource type (pool or origin). Use null to reset.
+    origin: Any = None
+    # Filter options for a particular resource type (pool or origin). Use null to reset.
+    pool: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_OriginSteering:
+    # The type of origin steering policy to use. - `"random"`: Select an origin randomly. - `"hash"`: Select an origin by computing a hash over the CF-Connecting-IP address. - `"least_outstanding_requests"`: Select an origin by taking into consideration origin weights, as well as each origin's number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others. - `"least_connections"`: Select an origin by taking into consideration origin weights, as well as each origin's number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.
+    policy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_Origins_Header:
+    host: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result_Origins:
+    address: Any = None
+    disabled_at: Any = None
+    enabled: Any = None
+    flatten_cname: Any = None
+    header: Any = None
+    name: Any = None
+    port: Any = None
+    virtual_network_id: Any = None
+    weight: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result:
+    # A list of regions from which to run health checks. Null means every Cloudflare data center.
+    check_regions: Any = None
+    created_on: Any = None
+    # A human-readable description of the pool.
+    description: Any = None
+    # This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.
+    disabled_at: Any = None
+    # Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
+    enabled: Any = None
+    # A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array ["regional", "global"]; any other combination is rejected. Null (the default) behaves like ["local", "global"]. ["regional", "global"] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.
+    health_sources: Any = None
+    id: Any = None
+    # The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.
+    latitude: Any = None
+    # Configures load shedding policies and percentages for the pool.
+    load_shedding: Any = None
+    # The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.
+    longitude: Any = None
+    # The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.
+    minimum_origins: Any = None
+    modified_on: Any = None
+    # The ID of the Monitor to use for checking the health of origins within this pool.
+    monitor: Any = None
+    # The ID of the Monitor Group to use for checking the health of origins within this pool.
+    monitor_group: Any = None
+    # A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+    name: Any = None
+    # List of networks where Load Balancer or Pool is enabled.
+    networks: Any = None
+    # This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
+    notification_email: Any = None
+    # Filter pool and origin health notifications by resource type or health status. Use null to reset.
+    notification_filter: Any = None
+    # Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
+    origin_steering: Any = None
+    # The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+    origins: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingSchemasSingleResponseConfig:
     pool_id: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingSchemasSingleResponseAttrs:
     pool_id: Any = None
+    result: Any = None
 
 LoadBalancingSchemasSingleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_schemas_single_response",

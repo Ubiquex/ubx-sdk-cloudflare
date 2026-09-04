@@ -3,27 +3,33 @@ package logpushtransformers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushTransformerContentResponse_Result struct {
+	// The SQL query content.
+	Content any
+}
+
 type LogpushTransformerContentResponseConfig struct {
 	// Identifier.
 	AccountId any
 	// The transformer ID.
 	TransformerId any
-	VersionId any
+	VersionId     any
 }
 
 type LogpushTransformerContentResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 	// The transformer ID.
 	TransformerId any
-	VersionId any
+	VersionId     any
 }
 
 var LogpushTransformerContentResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_logpush_transformer_content_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"VersionId":     ubx.FieldSpec{WireName: "version_id"},
 	},
 }

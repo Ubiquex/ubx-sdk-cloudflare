@@ -14,6 +14,22 @@ export interface MagicAclSingleResponse_Lan1 {
   subnets?: string[] | Computed<string[]>;
 }
 
+export interface MagicAclSingleResponse_Result {
+  /** Description for the ACL. */
+  description?: string | Computed<string>;
+  /** The desired forwarding action for this ACL policy. If set to "false", the policy will forward traffic to Cloudflare. If set to "true", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false. */
+  forwardLocally?: boolean | Computed<boolean>;
+  /** Identifier */
+  id?: string | Computed<string>;
+  lan1?: MagicAclSingleResponse_Lan1 | Computed<MagicAclSingleResponse_Lan1>;
+  lan2?: MagicAclSingleResponse_Lan1 | Computed<MagicAclSingleResponse_Lan1>;
+  /** The name of the ACL. */
+  name?: string | Computed<string>;
+  protocols?: string[] | Computed<string[]>;
+  /** The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false. */
+  unidirectional?: boolean | Computed<boolean>;
+}
+
 const MagicAclSingleResponse_Lan1Fields: FieldMap = {
   lanId: "lan_id",
   lanName: "lan_name",
@@ -52,6 +68,8 @@ export interface MagicAclSingleResponseAttrs {
   /** The name of the ACL. */
   name: string;
   protocols: string[];
+  /** Bidirectional ACL policy for network traffic within a site. */
+  result: MagicAclSingleResponse_Result;
   /** The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false. */
   unidirectional: boolean;
   /** path parameter, not part of the API's own resource representation */

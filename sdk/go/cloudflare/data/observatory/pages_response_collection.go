@@ -3,12 +3,56 @@ package observatory
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PagesResponseCollection_Result_Region struct {
+	Label any
+	Value any
+}
+
+type PagesResponseCollection_Result_Tests_DesktopReport_Error struct {
+	Code              any
+	Detail            any
+	FinalDisplayedUrl any
+}
+
+type PagesResponseCollection_Result_Tests_DesktopReport struct {
+	Cls              any
+	DeviceType       any
+	Error            any
+	Fcp              any
+	JsonReportUrl    any
+	Lcp              any
+	PerformanceScore any
+	Si               any
+	State            any
+	Tbt              any
+	Ttfb             any
+	Tti              any
+}
+
+type PagesResponseCollection_Result_Tests struct {
+	Date              any
+	DesktopReport     any
+	Id                any
+	MobileReport      any
+	Region            any
+	ScheduleFrequency any
+	Url               any
+}
+
+type PagesResponseCollection_Result struct {
+	Region            any
+	ScheduleFrequency any
+	Tests             any
+	Url               any
+}
+
 type PagesResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type PagesResponseCollectionAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

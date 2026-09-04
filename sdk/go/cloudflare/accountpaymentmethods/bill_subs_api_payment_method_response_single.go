@@ -3,6 +3,59 @@ package accountpaymentmethods
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiPaymentMethodResponseSingle_Result struct {
+	// Billing address line 1.
+	Address any
+	// Billing address line 2.
+	Address2 any
+	// Bank account type.
+	BankAccountType any
+	// Bank code.
+	BankCode any
+	// Bank country.
+	BankCountry any
+	// Bank name for bank-based payment methods.
+	BankName any
+	// Bank routing number.
+	BankRoutingNumber any
+	// Cash App cash tag.
+	CashappCashTag any
+	// Billing city.
+	City any
+	// Billing country.
+	Country any
+	// Whether this is the default payment method.
+	Default any
+	// Device data for fraud prevention.
+	DeviceData any
+	// Card expiration date.
+	ExpirationDate any
+	// Billing first name.
+	FirstName any
+	// Payment method identifier.
+	Id any
+	// Last four digits of the card number.
+	LastFour any
+	// Billing last name.
+	LastName any
+	// A nickname for the payment method.
+	NickName any
+	// Email associated with the payment account.
+	PaymentAccountEmail any
+	// Payment email address.
+	PaymentEmail any
+	// The payment gateway used.
+	PaymentGateway any
+	// Payment nonce for tokenized payments.
+	PaymentNonce any
+	// Billing state.
+	State any
+	// The payment method type.
+	Type any
+	// Billing zip code.
+	Zipcode any
+}
+
 type BillSubsApiPaymentMethodResponseSingleConfig struct {
 	// Billing address line 1.
 	Address any
@@ -99,6 +152,7 @@ type BillSubsApiPaymentMethodResponseSingleAttrs struct {
 	PaymentGateway any
 	// Payment nonce for tokenized payments.
 	PaymentNonce any
+	Result       any
 	// Billing state.
 	State any
 	// The payment method type.
@@ -114,29 +168,29 @@ type BillSubsApiPaymentMethodResponseSingleAttrs struct {
 var BillSubsApiPaymentMethodResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_bill_subs_api_payment_method_response_single",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Address2": ubx.FieldSpec{WireName: "address2"},
-		"BankAccountType": ubx.FieldSpec{WireName: "bank_account_type"},
-		"BankCode": ubx.FieldSpec{WireName: "bank_code"},
-		"BankCountry": ubx.FieldSpec{WireName: "bank_country"},
-		"BankName": ubx.FieldSpec{WireName: "bank_name"},
-		"BankRoutingNumber": ubx.FieldSpec{WireName: "bank_routing_number"},
-		"CashappCashTag": ubx.FieldSpec{WireName: "cashapp_cash_tag"},
-		"City": ubx.FieldSpec{WireName: "city"},
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"DeviceData": ubx.FieldSpec{WireName: "device_data"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"NickName": ubx.FieldSpec{WireName: "nick_name"},
+		"Address":             ubx.FieldSpec{WireName: "address"},
+		"Address2":            ubx.FieldSpec{WireName: "address2"},
+		"BankAccountType":     ubx.FieldSpec{WireName: "bank_account_type"},
+		"BankCode":            ubx.FieldSpec{WireName: "bank_code"},
+		"BankCountry":         ubx.FieldSpec{WireName: "bank_country"},
+		"BankName":            ubx.FieldSpec{WireName: "bank_name"},
+		"BankRoutingNumber":   ubx.FieldSpec{WireName: "bank_routing_number"},
+		"CashappCashTag":      ubx.FieldSpec{WireName: "cashapp_cash_tag"},
+		"City":                ubx.FieldSpec{WireName: "city"},
+		"Country":             ubx.FieldSpec{WireName: "country"},
+		"Default":             ubx.FieldSpec{WireName: "default"},
+		"DeviceData":          ubx.FieldSpec{WireName: "device_data"},
+		"FirstName":           ubx.FieldSpec{WireName: "first_name"},
+		"LastName":            ubx.FieldSpec{WireName: "last_name"},
+		"NickName":            ubx.FieldSpec{WireName: "nick_name"},
 		"PaymentAccountEmail": ubx.FieldSpec{WireName: "payment_account_email"},
-		"PaymentEmail": ubx.FieldSpec{WireName: "payment_email"},
-		"PaymentGateway": ubx.FieldSpec{WireName: "payment_gateway"},
-		"PaymentNonce": ubx.FieldSpec{WireName: "payment_nonce"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Zipcode": ubx.FieldSpec{WireName: "zipcode"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PaymentMethodId": ubx.FieldSpec{WireName: "payment_method_id"},
+		"PaymentEmail":        ubx.FieldSpec{WireName: "payment_email"},
+		"PaymentGateway":      ubx.FieldSpec{WireName: "payment_gateway"},
+		"PaymentNonce":        ubx.FieldSpec{WireName: "payment_nonce"},
+		"State":               ubx.FieldSpec{WireName: "state"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
+		"Zipcode":             ubx.FieldSpec{WireName: "zipcode"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
+		"PaymentMethodId":     ubx.FieldSpec{WireName: "payment_method_id"},
 	},
 }

@@ -7,12 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection21_Result:
+    associated_hostnames: Any = None
+    created_at: Any = None
+    expires_on: Any = None
+    fingerprint: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection21Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollection21Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -7,6 +7,39 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelSubnetResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelSubnetResponseSingle_Result_Capacity:
+    # Total number of assignable IPs in the subnet.
+    total: Any = None
+    # Number of assigned IPs in the subnet.
+    used: Any = None
+
+@dataclasses.dataclass
+class TunnelSubnetResponseSingle_Result:
+    # IP capacity information for the subnet.
+    capacity: Any = None
+    # An optional description of the subnet.
+    comment: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # The UUID of the subnet.
+    id: Any = None
+    # If `true`, this is the default subnet for the account. There can only be one default subnet per account.
+    is_default_network: Any = None
+    # A user-friendly name for the subnet.
+    name: Any = None
+    # The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
+    network: Any = None
+    # The type of subnet.
+    subnet_type: Any = None
+
+@dataclasses.dataclass
 class TunnelSubnetResponseSingleConfig:
     # An optional description of the subnet.
     comment: Any = None
@@ -25,12 +58,17 @@ class TunnelSubnetResponseSingleConfig:
 class TunnelSubnetResponseSingleAttrs:
     # An optional description of the subnet.
     comment: Any = None
+    errors: Any = None
     # If `true`, this is the default subnet for the account. There can only be one default subnet per account.
     is_default_network: Any = None
+    messages: Any = None
     # A user-friendly name for the subnet.
     name: Any = None
     # The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
     network: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

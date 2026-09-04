@@ -4,22 +4,22 @@ package aigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AigBillingGetTopupConfigResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AigBillingGetTopupConfigResponse_Result struct {
-	Amount any
+	Amount         any
 	DisabledReason any
-	Error any
-	LastFailedAt any
-	Threshold any
+	Error          any
+	LastFailedAt   any
+	Threshold      any
 }
 
 type AigBillingGetTopupConfigResponse_ResultInfo struct {
-	HasMore any
-	Page any
-	PerPage any
+	HasMore    any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -28,12 +28,12 @@ type AigBillingGetTopupConfigResponseConfig struct {
 }
 
 type AigBillingGetTopupConfigResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AigBillingGetTopupConfigResponse = ubx.DataSourceBinding{

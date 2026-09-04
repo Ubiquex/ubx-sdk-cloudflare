@@ -7,12 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsCustomNameserversTcnsResponseCollection_Result_DnsRecords:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class DnsCustomNameserversTcnsResponseCollection_Result:
+    dns_records: Any = None
+    ns_name: Any = None
+    ns_set: Any = None
+    status: Any = None
+    zone_tag: Any = None
+
+@dataclasses.dataclass
 class DnsCustomNameserversTcnsResponseCollectionConfig:
     # Tenant identifier tag.
     tenant_tag: Any = None
 
 @dataclasses.dataclass
 class DnsCustomNameserversTcnsResponseCollectionAttrs:
+    result: Any = None
     # Tenant identifier tag.
     tenant_tag: Any = None
 

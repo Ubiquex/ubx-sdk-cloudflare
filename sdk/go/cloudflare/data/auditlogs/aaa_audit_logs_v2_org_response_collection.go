@@ -3,6 +3,64 @@ package auditlogs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaAuditLogsV2OrgResponseCollection_Errors struct {
+	Message any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result_Action struct {
+	Description any
+	Result      any
+	Time        any
+	Type        any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result_Actor struct {
+	Context   any
+	Email     any
+	Id        any
+	IpAddress any
+	TokenId   any
+	TokenName any
+	Type      any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result_Organization struct {
+	Id any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result_Raw struct {
+	CfRayId    any
+	Method     any
+	StatusCode any
+	Uri        any
+	UserAgent  any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result_Resource struct {
+	Id       any
+	Product  any
+	Request  any
+	Response any
+	Scope    any
+	Type     any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_Result struct {
+	Action       any
+	Actor        any
+	Id           any
+	Organization any
+	Raw          any
+	Resource     any
+}
+
+type AaaAuditLogsV2OrgResponseCollection_ResultInfo struct {
+	// The number of records returned in the response.
+	Count any
+	// The cursor token used for pagination.
+	Cursor any
+}
+
 type AaaAuditLogsV2OrgResponseCollectionConfig struct {
 	// Filters by whether the action was successful or not.
 	ActionResult any
@@ -40,7 +98,7 @@ type AaaAuditLogsV2OrgResponseCollectionConfig struct {
 	ActorType any
 	// Filters out audit logs by the actor type.
 	ActorTypeNot any
-	Before any
+	Before       any
 	// The cursor is an opaque token used to paginate through large sets of records. It indicates the position from which to continue when requesting the next set of records. A valid cursor value can be obtained from the cursor object in the result_info structure of a previous response.
 	Cursor any
 	// Sets sorting order.
@@ -85,7 +143,7 @@ type AaaAuditLogsV2OrgResponseCollectionConfig struct {
 	ResourceType any
 	// Filters out audit logs based on the unique type of resource changed by the action.
 	ResourceTypeNot any
-	Since any
+	Since           any
 }
 
 type AaaAuditLogsV2OrgResponseCollectionAttrs struct {
@@ -125,11 +183,12 @@ type AaaAuditLogsV2OrgResponseCollectionAttrs struct {
 	ActorType any
 	// Filters out audit logs by the actor type.
 	ActorTypeNot any
-	Before any
+	Before       any
 	// The cursor is an opaque token used to paginate through large sets of records. It indicates the position from which to continue when requesting the next set of records. A valid cursor value can be obtained from the cursor object in the result_info structure of a previous response.
 	Cursor any
 	// Sets sorting order.
 	Direction any
+	Errors    any
 	// Finds a specific log by its ID.
 	Id any
 	// Filters out audit logs by their IDs.
@@ -170,53 +229,58 @@ type AaaAuditLogsV2OrgResponseCollectionAttrs struct {
 	ResourceType any
 	// Filters out audit logs based on the unique type of resource changed by the action.
 	ResourceTypeNot any
-	Since any
+	Result          any
+	// Provides information about the result of the request, including count and cursor.
+	ResultInfo any
+	Since      any
+	// Indicates whether the API call was successful
+	Success any
 }
 
 var AaaAuditLogsV2OrgResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_audit_logs_v2_org_response_collection",
 	Fields: ubx.FieldMap{
-		"ActionResult": ubx.FieldSpec{WireName: "action_result"},
-		"ActionResultNot": ubx.FieldSpec{WireName: "action_result_not"},
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"ActionTypeNot": ubx.FieldSpec{WireName: "action_type_not"},
-		"ActorContext": ubx.FieldSpec{WireName: "actor_context"},
-		"ActorContextNot": ubx.FieldSpec{WireName: "actor_context_not"},
-		"ActorEmail": ubx.FieldSpec{WireName: "actor_email"},
-		"ActorEmailNot": ubx.FieldSpec{WireName: "actor_email_not"},
-		"ActorId": ubx.FieldSpec{WireName: "actor_id"},
-		"ActorIdNot": ubx.FieldSpec{WireName: "actor_id_not"},
-		"ActorIpAddress": ubx.FieldSpec{WireName: "actor_ip_address"},
-		"ActorIpAddressNot": ubx.FieldSpec{WireName: "actor_ip_address_not"},
-		"ActorTokenId": ubx.FieldSpec{WireName: "actor_token_id"},
-		"ActorTokenIdNot": ubx.FieldSpec{WireName: "actor_token_id_not"},
-		"ActorTokenName": ubx.FieldSpec{WireName: "actor_token_name"},
-		"ActorTokenNameNot": ubx.FieldSpec{WireName: "actor_token_name_not"},
-		"ActorType": ubx.FieldSpec{WireName: "actor_type"},
-		"ActorTypeNot": ubx.FieldSpec{WireName: "actor_type_not"},
-		"Before": ubx.FieldSpec{WireName: "before"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdNot": ubx.FieldSpec{WireName: "id_not"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"RawCfRayId": ubx.FieldSpec{WireName: "raw_cf_ray_id"},
-		"RawCfRayIdNot": ubx.FieldSpec{WireName: "raw_cf_ray_id_not"},
-		"RawMethod": ubx.FieldSpec{WireName: "raw_method"},
-		"RawMethodNot": ubx.FieldSpec{WireName: "raw_method_not"},
-		"RawStatusCode": ubx.FieldSpec{WireName: "raw_status_code"},
-		"RawStatusCodeNot": ubx.FieldSpec{WireName: "raw_status_code_not"},
-		"RawUri": ubx.FieldSpec{WireName: "raw_uri"},
-		"RawUriNot": ubx.FieldSpec{WireName: "raw_uri_not"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceIdNot": ubx.FieldSpec{WireName: "resource_id_not"},
-		"ResourceProduct": ubx.FieldSpec{WireName: "resource_product"},
+		"ActionResult":       ubx.FieldSpec{WireName: "action_result"},
+		"ActionResultNot":    ubx.FieldSpec{WireName: "action_result_not"},
+		"ActionType":         ubx.FieldSpec{WireName: "action_type"},
+		"ActionTypeNot":      ubx.FieldSpec{WireName: "action_type_not"},
+		"ActorContext":       ubx.FieldSpec{WireName: "actor_context"},
+		"ActorContextNot":    ubx.FieldSpec{WireName: "actor_context_not"},
+		"ActorEmail":         ubx.FieldSpec{WireName: "actor_email"},
+		"ActorEmailNot":      ubx.FieldSpec{WireName: "actor_email_not"},
+		"ActorId":            ubx.FieldSpec{WireName: "actor_id"},
+		"ActorIdNot":         ubx.FieldSpec{WireName: "actor_id_not"},
+		"ActorIpAddress":     ubx.FieldSpec{WireName: "actor_ip_address"},
+		"ActorIpAddressNot":  ubx.FieldSpec{WireName: "actor_ip_address_not"},
+		"ActorTokenId":       ubx.FieldSpec{WireName: "actor_token_id"},
+		"ActorTokenIdNot":    ubx.FieldSpec{WireName: "actor_token_id_not"},
+		"ActorTokenName":     ubx.FieldSpec{WireName: "actor_token_name"},
+		"ActorTokenNameNot":  ubx.FieldSpec{WireName: "actor_token_name_not"},
+		"ActorType":          ubx.FieldSpec{WireName: "actor_type"},
+		"ActorTypeNot":       ubx.FieldSpec{WireName: "actor_type_not"},
+		"Before":             ubx.FieldSpec{WireName: "before"},
+		"Cursor":             ubx.FieldSpec{WireName: "cursor"},
+		"Direction":          ubx.FieldSpec{WireName: "direction"},
+		"Id":                 ubx.FieldSpec{WireName: "id"},
+		"IdNot":              ubx.FieldSpec{WireName: "id_not"},
+		"Limit":              ubx.FieldSpec{WireName: "limit"},
+		"OrganizationId":     ubx.FieldSpec{WireName: "organization_id"},
+		"RawCfRayId":         ubx.FieldSpec{WireName: "raw_cf_ray_id"},
+		"RawCfRayIdNot":      ubx.FieldSpec{WireName: "raw_cf_ray_id_not"},
+		"RawMethod":          ubx.FieldSpec{WireName: "raw_method"},
+		"RawMethodNot":       ubx.FieldSpec{WireName: "raw_method_not"},
+		"RawStatusCode":      ubx.FieldSpec{WireName: "raw_status_code"},
+		"RawStatusCodeNot":   ubx.FieldSpec{WireName: "raw_status_code_not"},
+		"RawUri":             ubx.FieldSpec{WireName: "raw_uri"},
+		"RawUriNot":          ubx.FieldSpec{WireName: "raw_uri_not"},
+		"ResourceId":         ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceIdNot":      ubx.FieldSpec{WireName: "resource_id_not"},
+		"ResourceProduct":    ubx.FieldSpec{WireName: "resource_product"},
 		"ResourceProductNot": ubx.FieldSpec{WireName: "resource_product_not"},
-		"ResourceScope": ubx.FieldSpec{WireName: "resource_scope"},
-		"ResourceScopeNot": ubx.FieldSpec{WireName: "resource_scope_not"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceTypeNot": ubx.FieldSpec{WireName: "resource_type_not"},
-		"Since": ubx.FieldSpec{WireName: "since"},
+		"ResourceScope":      ubx.FieldSpec{WireName: "resource_scope"},
+		"ResourceScopeNot":   ubx.FieldSpec{WireName: "resource_scope_not"},
+		"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceTypeNot":    ubx.FieldSpec{WireName: "resource_type_not"},
+		"Since":              ubx.FieldSpec{WireName: "since"},
 	},
 }

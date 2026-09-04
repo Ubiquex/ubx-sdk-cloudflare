@@ -4,55 +4,55 @@ package cnis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NscCni_Items_Bgp struct {
-	CustomerAsn any
+	CustomerAsn   any
 	ExtraPrefixes any
-	Md5Key any
+	Md5Key        any
 }
 
 type NscCni_Items_Magic struct {
 	ConduitName any
 	Description any
-	Mtu any
+	Mtu         any
 }
 
 type NscCni_Items struct {
-	Account any
-	Bgp any
-	BgpMode any
-	CustIp any
-	Id any
+	Account      any
+	Bgp          any
+	BgpMode      any
+	CustIp       any
+	Id           any
 	Interconnect any
-	Magic any
-	P2pIp any
+	Magic        any
+	P2pIp        any
 }
 
 type NscCniConfig struct {
 	// Customer account tag
 	AccountId any
-	Cursor any
-	Limit any
-	Slot any
-	TunnelId any
+	Cursor    any
+	Limit     any
+	Slot      any
+	TunnelId  any
 }
 
 type NscCniAttrs struct {
 	// Customer account tag
 	AccountId any
-	Cursor any
-	Items any
-	Limit any
-	Next any
-	Slot any
-	TunnelId any
+	Cursor    any
+	Items     any
+	Limit     any
+	Next      any
+	Slot      any
+	TunnelId  any
 }
 
 var NscCni = ubx.DataSourceBinding{
 	WireType: "cloudflare_nsc_cni",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Slot": ubx.FieldSpec{WireName: "slot"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Slot":      ubx.FieldSpec{WireName: "slot"},
+		"TunnelId":  ubx.FieldSpec{WireName: "tunnel_id"},
 	},
 }

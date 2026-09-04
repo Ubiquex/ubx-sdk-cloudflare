@@ -40,19 +40,19 @@ type GlobalAttrs struct {
 	// Limits the number of objects per search category.
 	LimitPerGroup any
 	// String used to perform the search operation.
-	Query any
-	Result any
+	Query   any
+	Result  any
 	Success any
 }
 
 var Global = ubx.DataSourceBinding{
 	WireType: "cloudflare_global",
 	Fields: ubx.FieldMap{
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Exclude":       ubx.FieldSpec{WireName: "exclude"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
+		"Include":       ubx.FieldSpec{WireName: "include"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
 		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Query":         ubx.FieldSpec{WireName: "query"},
 	},
 }

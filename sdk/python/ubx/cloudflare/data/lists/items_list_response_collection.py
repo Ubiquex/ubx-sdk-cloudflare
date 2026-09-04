@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ItemsListResponseCollection_ResultInfo_Cursors:
+    after: Any = None
+    before: Any = None
+
+@dataclasses.dataclass
+class ItemsListResponseCollection_ResultInfo:
+    cursors: Any = None
+
+@dataclasses.dataclass
 class ItemsListResponseCollectionConfig:
     # The pagination cursor. An opaque string token that indicates where to continue when requesting the next/previous set of records. The response provides cursor values under `result_info.cursors`. You should make no assumptions about a cursor's content or length.
     cursor: Any = None
@@ -25,6 +34,8 @@ class ItemsListResponseCollectionAttrs:
     list_id: Any = None
     # Amount of results to include in each paginated response. A non-negative 32 bit integer.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # A search query to filter returned items. Its meaning depends on the list type: IP addresses must start with the provided string, hostnames and bulk redirects must contain the string, and ASNs must match the string exactly.
     search: Any = None
 

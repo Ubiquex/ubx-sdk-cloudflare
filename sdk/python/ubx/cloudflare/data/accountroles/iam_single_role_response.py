@@ -10,6 +10,36 @@ import ubx_sdk as ubx
 class IamSingleRoleResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamSingleRoleResponse_Result_Permissions_Analytics:
+    read: Any = None
+    write: Any = None
+
+@dataclasses.dataclass
+class IamSingleRoleResponse_Result_Permissions:
+    analytics: Any = None
+    billing: Any = None
+    cache_purge: Any = None
+    dns: Any = None
+    dns_records: Any = None
+    lb: Any = None
+    logs: Any = None
+    organization: Any = None
+    ssl: Any = None
+    waf: Any = None
+    zone_settings: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class IamSingleRoleResponse_Result:
+    # Description of role's permissions.
+    description: Any = None
+    # Role identifier tag.
+    id: Any = None
+    # Role name.
+    name: Any = None
+    permissions: Any = None
+
 _IamSingleRoleResponse_AccountIdFields = {
 }
 
@@ -24,6 +54,7 @@ class IamSingleRoleResponseConfig:
 class IamSingleRoleResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
     # Role identifier tag.
     role_id: Any = None
 

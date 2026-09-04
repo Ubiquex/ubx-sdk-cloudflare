@@ -6,15 +6,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type WafManagedRulesRuleGroupResponseCollection_Mode struct {
 }
 
-var WafManagedRulesRuleGroupResponseCollection_ModeFields = ubx.FieldMap{
-	}
+type WafManagedRulesRuleGroupResponseCollection_Result struct {
+	AllowedModes       any
+	Description        any
+	Id                 any
+	Mode               any
+	ModifiedRulesCount any
+	Name               any
+	PackageId          any
+	RulesCount         any
+}
+
+var WafManagedRulesRuleGroupResponseCollection_ModeFields = ubx.FieldMap{}
 
 type WafManagedRulesRuleGroupResponseCollectionConfig struct {
 	// Defines the direction used to sort returned rule groups.
 	Direction any
 	// Defines the condition for search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 	Match any
-	Mode any
+	Mode  any
 	// Defines the field used to sort returned rule groups.
 	Order any
 	// Defines the page number of paginated results.
@@ -28,7 +38,7 @@ type WafManagedRulesRuleGroupResponseCollectionAttrs struct {
 	Direction any
 	// Defines the condition for search requirements. When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
 	Match any
-	Mode any
+	Mode  any
 	// Defines the name of the rule group.
 	Name any
 	// Defines the field used to sort returned rule groups.
@@ -39,6 +49,7 @@ type WafManagedRulesRuleGroupResponseCollectionAttrs struct {
 	Page any
 	// Defines the number of rule groups per page.
 	PerPage any
+	Result  any
 	// Defines the number of rules in the current rule group.
 	RulesCount any
 	// Defines an identifier of a schema.
@@ -49,14 +60,14 @@ var WafManagedRulesRuleGroupResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_managed_rules_rule_group_response_collection",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
+		"Match":     ubx.FieldSpec{WireName: "match"},
 		"Mode": ubx.FieldSpec{
 			WireName: "mode",
-			Kind: "object",
-			Fields: WafManagedRulesRuleGroupResponseCollection_ModeFields,
+			Kind:     "object",
+			Fields:   WafManagedRulesRuleGroupResponseCollection_ModeFields,
 		},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Order":   ubx.FieldSpec{WireName: "order"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

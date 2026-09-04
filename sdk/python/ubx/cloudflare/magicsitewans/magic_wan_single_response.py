@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class MagicWanSingleResponse_StaticAddressing:
+class MagicWanSingleResponse_Result_StaticAddressing:
     # A valid CIDR notation representing an IP range.
     address: Any = None
     # A valid IPv4 address.
@@ -15,7 +15,24 @@ class MagicWanSingleResponse_StaticAddressing:
     # A valid CIDR notation representing an IP range.
     secondary_address: Any = None
 
-_MagicWanSingleResponse_StaticAddressingFields = {
+@dataclasses.dataclass
+class MagicWanSingleResponse_Result:
+    # Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
+    health_check_rate: Any = None
+    # Identifier
+    id: Any = None
+    name: Any = None
+    physport: Any = None
+    # Priority of WAN for traffic loadbalancing.
+    priority: Any = None
+    # Identifier
+    site_id: Any = None
+    # (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
+    static_addressing: Any = None
+    # VLAN ID. Use zero for untagged.
+    vlan_tag: Any = None
+
+_MagicWanSingleResponse_Result_StaticAddressingFields = {
     "address": ubx.FieldSpec(wire_name="address"),
     "gateway_address": ubx.FieldSpec(wire_name="gateway_address"),
     "secondary_address": ubx.FieldSpec(wire_name="secondary_address"),
@@ -42,6 +59,7 @@ class MagicWanSingleResponseAttrs:
     name: Any = None
     physport: Any = None
     priority: Any = None
+    result: Any = None
     # (optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.
     static_addressing: Any = None
     # VLAN ID. Use zero for untagged.
@@ -62,7 +80,7 @@ MagicWanSingleResponse = ubx.ResourceBinding(
         "static_addressing": ubx.FieldSpec(
             wire_name="static_addressing",
             kind="object",
-            fields=_MagicWanSingleResponse_StaticAddressingFields,
+            fields=_MagicWanSingleResponse_Result_StaticAddressingFields,
         ),
         "vlan_tag": ubx.FieldSpec(wire_name="vlan_tag"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),

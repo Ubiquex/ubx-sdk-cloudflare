@@ -3,6 +3,39 @@ package zerotrustsubnets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelSubnetResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelSubnetResponseSingle_Result_Capacity struct {
+	// Total number of assignable IPs in the subnet.
+	Total any
+	// Number of assigned IPs in the subnet.
+	Used any
+}
+
+type TunnelSubnetResponseSingle_Result struct {
+	// IP capacity information for the subnet.
+	Capacity any
+	// An optional description of the subnet.
+	Comment any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// The UUID of the subnet.
+	Id any
+	// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
+	IsDefaultNetwork any
+	// A user-friendly name for the subnet.
+	Name any
+	// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
+	Network any
+	// The type of subnet.
+	SubnetType any
+}
+
 type TunnelSubnetResponseSingleConfig struct {
 	// An optional description of the subnet.
 	Comment any
@@ -21,12 +54,17 @@ type TunnelSubnetResponseSingleConfig struct {
 type TunnelSubnetResponseSingleAttrs struct {
 	// An optional description of the subnet.
 	Comment any
+	Errors  any
 	// If `true`, this is the default subnet for the account. There can only be one default subnet per account.
 	IsDefaultNetwork any
+	Messages         any
 	// A user-friendly name for the subnet.
 	Name any
 	// The private IPv4 or IPv6 range defining the subnet, in CIDR notation.
 	Network any
+	Result  any
+	// Whether the API call was successful
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +74,11 @@ type TunnelSubnetResponseSingleAttrs struct {
 var TunnelSubnetResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tunnel_subnet_response_single",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
+		"Comment":          ubx.FieldSpec{WireName: "comment"},
 		"IsDefaultNetwork": ubx.FieldSpec{WireName: "is_default_network"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Network":          ubx.FieldSpec{WireName: "network"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"AddressFamily":    ubx.FieldSpec{WireName: "address_family"},
 	},
 }

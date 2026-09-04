@@ -3,6 +3,37 @@ package urlscannerdeprecated
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Scan_Errors_Source struct {
+	Pointer any
+}
+
+type Scan_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Scan_Result_Quota struct {
+	// The number of on-demand scans remaining in the current 24-hour window.
+	Available any
+	// The number of on-demand scans initiated in the current 24-hour window.
+	Used any
+}
+
+type Scan_Result_Scans struct {
+	ScanId    any
+	StartedAt any
+	Status    any
+}
+
+type Scan_Result struct {
+	// Quota information for on-demand scans. Scans are rate limited per account per 24-hour rolling window.
+	Quota any
+	// List of on-demand scans.
+	Scans any
+}
+
 type ScanConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +42,11 @@ type ScanConfig struct {
 type ScanAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Scan = ubx.DataSourceBinding{

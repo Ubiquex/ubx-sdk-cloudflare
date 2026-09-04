@@ -3,32 +3,136 @@ package content
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiPaginatedContentAssetList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedContentAssetList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedContentAssetList_Result_DlpContexts struct {
+	Created               any
+	Deleted               any
+	EntryIds              any
+	Id                    any
+	MatchContextMaxExtent any
+	MatchContextMinExtent any
+	MatchContextPayload   any
+	ProfileId             any
+	Updated               any
+}
+
+type PostureApiPaginatedContentAssetList_Result_Integration_Policy struct {
+	ClientId        any
+	ComplianceLevel any
+	DlpEnabled      any
+	Id              any
+	Link            any
+	Name            any
+	Permissions     any
+}
+
+type PostureApiPaginatedContentAssetList_Result_Integration_Vendor struct {
+	Description   any
+	DisplayName   any
+	Id            any
+	Logo          any
+	Name          any
+	Policies      any
+	StaticLogo    any
+	ZtEnrollments any
+}
+
+type PostureApiPaginatedContentAssetList_Result_Integration_ZtEnrollments struct {
+	Description any
+	DisplayName any
+	Enabled     any
+	Id          any
+}
+
+type PostureApiPaginatedContentAssetList_Result_Integration struct {
+	Created                any
+	CredentialHealthStatus any
+	CredentialsExpiry      any
+	Id                     any
+	IsPaused               any
+	LastHydrated           any
+	Name                   any
+	Permissions            any
+	Policy                 any
+	Status                 any
+	Updated                any
+	Upgradable             any
+	UpgradeDismissed       any
+	Vendor                 any
+	ZtEnrollments          any
+}
+
+type PostureApiPaginatedContentAssetList_Result struct {
+	AssetId              any
+	AssetName            any
+	DlpContexts          any
+	DlpProfileCount      any
+	DlpProfileIds        any
+	Integration          any
+	LatestAfflictionDate any
+}
+
+type PostureApiPaginatedContentAssetList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
+	Cursor any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
 type PostureApiPaginatedContentAssetListConfig struct {
-	AccountId any
-	Direction any
-	DlpProfileId any
-	IntegrationId any
+	AccountId         any
+	Direction         any
+	DlpProfileId      any
+	IntegrationId     any
 	MaxAfflictionDate any
 	MinAfflictionDate any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Order             any
+	Page              any
+	PerPage           any
+	Search            any
 	// Supported vendor types for integrations.
 	Vendor any
 }
 
 type PostureApiPaginatedContentAssetListAttrs struct {
-	AccountId any
-	Direction any
-	DlpProfileId any
-	IntegrationId any
+	AccountId         any
+	Direction         any
+	DlpProfileId      any
+	Errors            any
+	IntegrationId     any
 	MaxAfflictionDate any
+	Messages          any
 	MinAfflictionDate any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	Order             any
+	Page              any
+	PerPage           any
+	// Array of content asset objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
+	Search     any
+	// Whether the API call was successful.
+	Success any
 	// Supported vendor types for integrations.
 	Vendor any
 }
@@ -36,16 +140,16 @@ type PostureApiPaginatedContentAssetListAttrs struct {
 var PostureApiPaginatedContentAssetList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_content_asset_list",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DlpProfileId": ubx.FieldSpec{WireName: "dlp_profile_id"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"DlpProfileId":      ubx.FieldSpec{WireName: "dlp_profile_id"},
+		"IntegrationId":     ubx.FieldSpec{WireName: "integration_id"},
 		"MaxAfflictionDate": ubx.FieldSpec{WireName: "max_affliction_date"},
 		"MinAfflictionDate": ubx.FieldSpec{WireName: "min_affliction_date"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
+		"Order":             ubx.FieldSpec{WireName: "order"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
+		"Search":            ubx.FieldSpec{WireName: "search"},
+		"Vendor":            ubx.FieldSpec{WireName: "vendor"},
 	},
 }

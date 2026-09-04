@@ -7,6 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Pagerule_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Result_Actions:
+    id: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Result_Targets_Constraint:
+    operator: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Result_Targets:
+    constraint: Any = None
+    target: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Result:
+    actions: Any = None
+    created_on: Any = None
+    id: Any = None
+    modified_on: Any = None
+    priority: Any = None
+    status: Any = None
+    targets: Any = None
+
+@dataclasses.dataclass
 class PageruleConfig:
     # The direction used to sort returned Page Rules.
     direction: Any = None
@@ -23,12 +59,17 @@ class PageruleConfig:
 class PageruleAttrs:
     # The direction used to sort returned Page Rules.
     direction: Any = None
+    errors: Any = None
     # When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
     match: Any = None
+    messages: Any = None
     # The field used to sort returned Page Rules.
     order: Any = None
+    result: Any = None
     # The status of the Page Rule.
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

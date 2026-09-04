@@ -3,16 +3,40 @@ package usersinvites
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamSingleInviteResponse_Result struct {
+	// When the invite is no longer active.
+	ExpiresOn any
+	// Invite identifier tag.
+	Id any
+	// The email address of the user who created the invite.
+	InvitedBy any
+	// Email address of the user to add to the organization.
+	InvitedMemberEmail any
+	// ID of the user to add to the organization.
+	InvitedMemberId any
+	// When the invite was sent.
+	InvitedOn any
+	// ID of the organization the user will be added to.
+	OrganizationId                   any
+	OrganizationIsEnforcingTwofactor any
+	// Organization name.
+	OrganizationName any
+	// List of role names the membership has for this account.
+	Roles any
+	// Current status of the invitation.
+	Status any
+}
+
 type IamSingleInviteResponseConfig struct {
 }
 
 type IamSingleInviteResponseAttrs struct {
 	// Invite identifier tag.
 	InviteId any
+	Result   any
 }
 
 var IamSingleInviteResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_iam_single_invite_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

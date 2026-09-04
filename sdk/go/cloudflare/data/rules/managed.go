@@ -4,13 +4,13 @@ package rules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Managed_Metadata struct {
-	FetchedAt any
+	FetchedAt  any
 	TotalRules any
 }
 
 type Managed_Rules struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type ManagedConfig struct {
@@ -19,8 +19,8 @@ type ManagedConfig struct {
 
 type ManagedAttrs struct {
 	AccountId any
-	Metadata any
-	Rules any
+	Metadata  any
+	Rules     any
 }
 
 var Managed = ubx.DataSourceBinding{

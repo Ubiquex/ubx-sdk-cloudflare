@@ -26,18 +26,87 @@ export interface TeamsDevicesDeviceSettingsResponse_GlobalAcceleration {
   wireguardEndpoints: string[] | Computed<string[]>;
 }
 
-export interface TeamsDevicesDeviceSettingsResponse_ServiceModeV2 {
+export interface TeamsDevicesDeviceSettingsResponse_Result_FallbackDomains {
+  description?: string | Computed<string>;
+  dnsServer?: string[] | Computed<string[]>;
+  suffix?: string | Computed<string>;
+}
+
+export interface TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2 {
   /** The mode to run the WARP client under. */
   mode?: string | Computed<string>;
   /** The port number when used with proxy mode. */
   port?: number | Computed<number>;
 }
 
-export interface TeamsDevicesDeviceSettingsResponse_VirtualNetworks {
+export interface TeamsDevicesDeviceSettingsResponse_Result_TargetTests {
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
+export interface TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks {
   /** List of virtual network IDs the device is allowed to access. When virtual_networks is set, at least one entry is required. */
   allowed: string[] | Computed<string[]>;
   /** The default virtual network ID. Must be included in the `allowed` list. */
   default: string | Computed<string>;
+}
+
+export interface TeamsDevicesDeviceSettingsResponse_Result {
+  /** Whether to allow the user to switch WARP between modes. */
+  allowModeSwitch?: boolean | Computed<boolean>;
+  /** Whether to receive update notifications when a new version of the client is available. */
+  allowUpdates?: boolean | Computed<boolean>;
+  /** Whether to allow devices to leave the organization. */
+  allowedToLeave?: boolean | Computed<boolean>;
+  /** The amount of time in seconds to reconnect after having been disabled. */
+  autoConnect?: number | Computed<number>;
+  /** Turn on the captive portal after the specified amount of time. */
+  captivePortal?: number | Computed<number>;
+  /** Whether the policy is the default policy for an account. */
+  default?: boolean | Computed<boolean>;
+  /** A description of the policy. */
+  description?: string | Computed<string>;
+  /** If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`. */
+  disableAutoFallback?: boolean | Computed<boolean>;
+  /** List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear. */
+  dnsSearchSuffixes?: TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixes[] | Computed<TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixes[]>;
+  /** Whether the policy will be applied to matching devices. */
+  enabled?: boolean | Computed<boolean>;
+  /** List of routes excluded in the WARP client's tunnel. */
+  exclude?: TeamsDevicesDeviceSettingsResponse_Exclude[] | Computed<TeamsDevicesDeviceSettingsResponse_Exclude[]>;
+  /** Whether to add Microsoft IPs to Split Tunnel exclusions. */
+  excludeOfficeIps?: boolean | Computed<boolean>;
+  fallbackDomains?: TeamsDevicesDeviceSettingsResponse_Result_FallbackDomains[] | Computed<TeamsDevicesDeviceSettingsResponse_Result_FallbackDomains[]>;
+  gatewayUniqueId?: string | Computed<string>;
+  /** Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/. */
+  globalAcceleration?: TeamsDevicesDeviceSettingsResponse_GlobalAcceleration | Computed<TeamsDevicesDeviceSettingsResponse_GlobalAcceleration>;
+  /** List of routes included in the WARP client's tunnel. */
+  include?: TeamsDevicesDeviceSettingsResponse_Exclude[] | Computed<TeamsDevicesDeviceSettingsResponse_Exclude[]>;
+  /** The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset. */
+  lanAllowMinutes?: number | Computed<number>;
+  /** The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset. */
+  lanAllowSubnetSize?: number | Computed<number>;
+  /** The wirefilter expression to match devices. Available values: "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.service_token_uuid", "identity.saml_attributes", "network", "os.name", "os.version". */
+  match?: string | Computed<string>;
+  /** The name of the device settings profile. */
+  name?: string | Computed<string>;
+  policyId?: string | Computed<string>;
+  /** The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field. */
+  precedence?: number | Computed<number>;
+  /** Determines if the operating system will register WARP's local interface IP with your on-premises DNS server. */
+  registerInterfaceIpWithDns?: boolean | Computed<boolean>;
+  /** Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only). */
+  sccmVpnBoundarySupport?: boolean | Computed<boolean>;
+  serviceModeV2?: TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2 | Computed<TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2>;
+  /** The URL to launch when the Send Feedback button is clicked. */
+  supportUrl?: string | Computed<string>;
+  /** Whether to allow the user to turn off the WARP switch and disconnect the client. */
+  switchLocked?: boolean | Computed<boolean>;
+  targetTests?: TeamsDevicesDeviceSettingsResponse_Result_TargetTests[] | Computed<TeamsDevicesDeviceSettingsResponse_Result_TargetTests[]>;
+  /** Determines which tunnel protocol to use. */
+  tunnelProtocol?: string | Computed<string>;
+  /** Virtual network access settings for the device. */
+  virtualNetworks?: TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks | Computed<TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks>;
 }
 
 const TeamsDevicesDeviceSettingsResponse_DescriptionFields: FieldMap = {
@@ -61,12 +130,12 @@ const TeamsDevicesDeviceSettingsResponse_GlobalAccelerationFields: FieldMap = {
   wireguardEndpoints: "wireguard_endpoints",
 };
 
-const TeamsDevicesDeviceSettingsResponse_ServiceModeV2Fields: FieldMap = {
+const TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2Fields: FieldMap = {
   mode: "mode",
   port: "port",
 };
 
-const TeamsDevicesDeviceSettingsResponse_VirtualNetworksFields: FieldMap = {
+const TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworksFields: FieldMap = {
   allowed: "allowed",
   default: "default",
 };
@@ -111,7 +180,7 @@ export interface TeamsDevicesDeviceSettingsResponseConfig {
   registerInterfaceIpWithDns?: boolean | Computed<boolean>;
   /** Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only). */
   sccmVpnBoundarySupport?: boolean | Computed<boolean>;
-  serviceModeV2?: TeamsDevicesDeviceSettingsResponse_ServiceModeV2 | Computed<TeamsDevicesDeviceSettingsResponse_ServiceModeV2>;
+  serviceModeV2?: TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2 | Computed<TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2>;
   /** The URL to launch when the Send Feedback button is clicked. */
   supportUrl?: string | Computed<string>;
   /** Whether to allow the user to turn off the WARP switch and disconnect the client. */
@@ -119,7 +188,7 @@ export interface TeamsDevicesDeviceSettingsResponseConfig {
   /** Determines which tunnel protocol to use. */
   tunnelProtocol?: string | Computed<string>;
   /** Virtual network access settings for the device. */
-  virtualNetworks?: TeamsDevicesDeviceSettingsResponse_VirtualNetworks | Computed<TeamsDevicesDeviceSettingsResponse_VirtualNetworks>;
+  virtualNetworks?: TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks | Computed<TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -164,9 +233,10 @@ export interface TeamsDevicesDeviceSettingsResponseAttrs {
   precedence: number;
   /** Determines if the operating system will register WARP's local interface IP with your on-premises DNS server. */
   registerInterfaceIpWithDns: boolean;
+  result: TeamsDevicesDeviceSettingsResponse_Result;
   /** Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only). */
   sccmVpnBoundarySupport: boolean;
-  serviceModeV2: TeamsDevicesDeviceSettingsResponse_ServiceModeV2;
+  serviceModeV2: TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2;
   /** The URL to launch when the Send Feedback button is clicked. */
   supportUrl: string;
   /** Whether to allow the user to turn off the WARP switch and disconnect the client. */
@@ -174,7 +244,7 @@ export interface TeamsDevicesDeviceSettingsResponseAttrs {
   /** Determines which tunnel protocol to use. */
   tunnelProtocol: string;
   /** Virtual network access settings for the device. */
-  virtualNetworks: TeamsDevicesDeviceSettingsResponse_VirtualNetworks;
+  virtualNetworks: TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -227,7 +297,7 @@ export const TeamsDevicesDeviceSettingsResponse: ResourceBinding<TeamsDevicesDev
     serviceModeV2: {
       wireName: "service_mode_v2",
       kind: "object",
-      fields: TeamsDevicesDeviceSettingsResponse_ServiceModeV2Fields,
+      fields: TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2Fields,
     },
     supportUrl: "support_url",
     switchLocked: "switch_locked",
@@ -235,7 +305,7 @@ export const TeamsDevicesDeviceSettingsResponse: ResourceBinding<TeamsDevicesDev
     virtualNetworks: {
       wireName: "virtual_networks",
       kind: "object",
-      fields: TeamsDevicesDeviceSettingsResponse_VirtualNetworksFields,
+      fields: TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworksFields,
     },
     accountId: "account_id",
     policyId: "policy_id",

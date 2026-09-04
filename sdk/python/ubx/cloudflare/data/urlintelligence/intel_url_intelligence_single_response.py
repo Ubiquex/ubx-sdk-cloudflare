@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelUrlIntelligenceSingleResponse_Result_ContentCategories:
+    id: Any = None
+    name: Any = None
+    source_id: Any = None
+    super_category_id: Any = None
+
+@dataclasses.dataclass
+class IntelUrlIntelligenceSingleResponse_Result:
+    # Content categories associated with this URL.
+    content_categories: Any = None
+    # The full URL that was looked up.
+    full_url: Any = None
+    # The hostname of the URL.
+    hostname: Any = None
+    # Security risk types associated with this URL.
+    risk_type: Any = None
+    # The path component of the URL.
+    url_path: Any = None
+
+@dataclasses.dataclass
 class IntelUrlIntelligenceSingleResponseConfig:
     url: Any = None
 
@@ -14,6 +34,7 @@ class IntelUrlIntelligenceSingleResponseConfig:
 class IntelUrlIntelligenceSingleResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     url: Any = None
 
 IntelUrlIntelligenceSingleResponse = ubx.DataSourceBinding(

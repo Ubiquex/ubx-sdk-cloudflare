@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicVisibilityPcapsPcapsOwnershipCollection_Result:
+    destination_conf: Any = None
+    filename: Any = None
+    id: Any = None
+    status: Any = None
+    submitted: Any = None
+    validated: Any = None
+
+@dataclasses.dataclass
 class MagicVisibilityPcapsPcapsOwnershipCollectionConfig:
     pass
 
@@ -14,6 +23,7 @@ class MagicVisibilityPcapsPcapsOwnershipCollectionConfig:
 class MagicVisibilityPcapsPcapsOwnershipCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 MagicVisibilityPcapsPcapsOwnershipCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_visibility_pcaps_pcaps_ownership_collection",

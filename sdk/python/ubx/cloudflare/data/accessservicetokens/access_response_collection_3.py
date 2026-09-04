@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection3_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessResponseCollection3_Result:
+    client_id: Any = None
+    created_at: Any = None
+    duration: Any = None
+    enabled: Any = None
+    expires_at: Any = None
+    id: Any = None
+    last_seen_at: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection3Config:
     # Identifier.
     account_id: Any = None
@@ -29,6 +45,7 @@ class AccessResponseCollection3Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
     # Search for service tokens by other listed query parameters.
     search: Any = None
 

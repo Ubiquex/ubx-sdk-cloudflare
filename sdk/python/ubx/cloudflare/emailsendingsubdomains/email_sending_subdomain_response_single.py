@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailSendingSubdomainResponseSingle_Result:
+    created: Any = None
+    dkim_selector: Any = None
+    drop_suppressed_recipients: Any = None
+    enabled: Any = None
+    modified: Any = None
+    name: Any = None
+    preview_enabled: Any = None
+    return_path_domain: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
 class EmailSendingSubdomainResponseSingleConfig:
     # The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
     name: Any = None
@@ -19,6 +31,7 @@ class EmailSendingSubdomainResponseSingleConfig:
 class EmailSendingSubdomainResponseSingleAttrs:
     # The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UtBilling_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class UtBilling_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class UtBillingConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +27,12 @@ class UtBillingConfig:
 class UtBillingAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Controls Unique Transformations billing for the account.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 UtBilling = ubx.DataSourceBinding(
     wire_type="cloudflare_ut_billing",

@@ -6,8 +6,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamCollectionPermissionGroupsResponse_AccountId struct {
 }
 
-var IamCollectionPermissionGroupsResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamCollectionPermissionGroupsResponse_Result_Meta struct {
+	Key   any
+	Value any
+}
+
+type IamCollectionPermissionGroupsResponse_Result struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+var IamCollectionPermissionGroupsResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamCollectionPermissionGroupsResponseConfig struct {
 	// Account identifier tag.
@@ -37,6 +47,8 @@ type IamCollectionPermissionGroupsResponseAttrs struct {
 	Page any
 	// Maximum number of results per page.
 	PerPage any
+	// A set of permission groups that are specified to the policy.
+	Result any
 }
 
 var IamCollectionPermissionGroupsResponse = ubx.DataSourceBinding{
@@ -44,13 +56,13 @@ var IamCollectionPermissionGroupsResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamCollectionPermissionGroupsResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamCollectionPermissionGroupsResponse_AccountIdFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Id":      ubx.FieldSpec{WireName: "id"},
+		"Label":   ubx.FieldSpec{WireName: "label"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

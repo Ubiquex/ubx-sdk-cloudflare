@@ -3,12 +3,147 @@ package zaraz
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZarazConfigReturn_Analytics struct {
+	// Consent purpose assigned to Monitoring.
+	DefaultPurpose any
+	// Whether Advanced Monitoring reports are enabled.
+	Enabled any
+	// Session expiration time (seconds).
+	SessionExpTime any
+}
+
+type ZarazConfigReturn_Consent_ButtonTextTranslations struct {
+	// Object where keys are language codes.
+	AcceptAll any
+	// Object where keys are language codes.
+	ConfirmMyChoices any
+	// Object where keys are language codes.
+	RejectAll any
+}
+
+type ZarazConfigReturn_Consent_Purposes struct {
+	Description any
+	Name        any
+}
+
+type ZarazConfigReturn_Consent_PurposesWithTranslations struct {
+	Description any
+	Name        any
+	Order       any
+}
+
+type ZarazConfigReturn_Consent struct {
+	ButtonTextTranslations any
+	CompanyEmail           any
+	CompanyName            any
+	CompanyStreetAddress   any
+	ConsentModalIntroHtml  any
+	// Object where keys are language codes.
+	ConsentModalIntroHtmlwithTranslations any
+	CookieName                            any
+	CustomCss                             any
+	CustomIntroDisclaimerDismissed        any
+	DefaultLanguage                       any
+	Enabled                               any
+	HideModal                             any
+	// Object where keys are purpose alpha-numeric IDs.
+	Purposes any
+	// Object where keys are purpose alpha-numeric IDs.
+	PurposesWithTranslations any
+	TcfCompliant             any
+}
+
+type ZarazConfigReturn_Settings_ContextEnricher struct {
+	EscapedWorkerName any
+	WorkerTag         any
+}
+
+type ZarazConfigReturn_Settings struct {
+	// Automatic injection of Zaraz scripts enabled.
+	AutoInjectScript any
+	// Details of the worker that receives and edits Zaraz Context object.
+	ContextEnricher any
+	// The domain Zaraz will use for writing and reading its cookies.
+	CookieDomain any
+	// Ecommerce API enabled.
+	Ecommerce any
+	// Custom endpoint for server-side track events.
+	EventsApiPath any
+	// Hiding external referrer URL enabled.
+	HideExternalReferer any
+	// Trimming IP address enabled.
+	HideIpaddress any
+	// Removing URL query params enabled.
+	HideQueryParams any
+	// Removing sensitive data from User Agent string enabled.
+	HideUserAgent any
+	// Custom endpoint for Zaraz init script.
+	InitPath any
+	// Injection of Zaraz scripts into iframes enabled.
+	InjectIframes any
+	// Custom path for Managed Components server functionalities.
+	McRootPath any
+	// Custom endpoint for Zaraz main script.
+	ScriptPath any
+	// Custom endpoint for Zaraz tracking requests.
+	TrackPath any
+}
+
+type ZarazConfigReturn_Triggers_ExcludeRules_Settings struct {
+	Selector    any
+	Type        any
+	WaitForTags any
+}
+
+type ZarazConfigReturn_Triggers_ExcludeRules struct {
+	Action   any
+	Id       any
+	Match    any
+	Op       any
+	Settings any
+	Value    any
+}
+
+type ZarazConfigReturn_Triggers struct {
+	Description  any
+	ExcludeRules any
+	LoadRules    any
+	Name         any
+	System       any
+}
+
+type ZarazConfigReturn_Variables struct {
+	Name  any
+	Type  any
+	Value any
+}
+
 type ZarazConfigReturnConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type ZarazConfigReturnAttrs struct {
+	// Cloudflare Monitoring settings.
+	Analytics any
+	// Consent management configuration.
+	Consent any
+	// Data layer compatibility mode enabled.
+	DataLayer any
+	// The key for Zaraz debug mode.
+	DebugKey any
+	// Single Page Application support enabled.
+	HistoryChange any
+	// General Zaraz settings.
+	Settings any
+	// Tools set up under Zaraz configuration, where key is the alpha-numeric tool ID and value is the tool configuration object.
+	Tools any
+	// Triggers set up under Zaraz configuration, where key is the trigger alpha-numeric ID and value is the trigger configuration.
+	Triggers any
+	// Variables set up under Zaraz configuration, where key is the variable alpha-numeric ID and value is the variable configuration. Values of variables of type secret are not included.
+	Variables any
+	// Zaraz internal version of the config.
+	ZarazVersion any
 	// Identifier.
 	ZoneId any
 }

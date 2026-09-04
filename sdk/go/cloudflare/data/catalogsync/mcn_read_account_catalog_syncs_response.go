@@ -3,12 +3,49 @@ package catalogsync
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnReadAccountCatalogSyncsResponse_Result_Errors_Meta struct {
+	L10nKey       any
+	LoggableError any
+	TemplateData  any
+	TraceId       any
+}
+
+type McnReadAccountCatalogSyncsResponse_Result_Errors_Source struct {
+	Parameter           any
+	ParameterValueIndex any
+	Pointer             any
+}
+
+type McnReadAccountCatalogSyncsResponse_Result_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Meta             any
+	Source           any
+}
+
+type McnReadAccountCatalogSyncsResponse_Result struct {
+	Description              any
+	DestinationId            any
+	DestinationType          any
+	Errors                   any
+	Id                       any
+	IncludesDiscoveriesUntil any
+	LastAttemptedUpdateAt    any
+	LastSuccessfulUpdateAt   any
+	LastUserUpdateAt         any
+	Name                     any
+	Policy                   any
+	UpdateMode               any
+}
+
 type McnReadAccountCatalogSyncsResponseConfig struct {
 	AccountId any
 }
 
 type McnReadAccountCatalogSyncsResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var McnReadAccountCatalogSyncsResponse = ubx.DataSourceBinding{

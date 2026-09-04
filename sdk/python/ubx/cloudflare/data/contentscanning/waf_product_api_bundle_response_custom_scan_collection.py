@@ -7,11 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseCustomScanCollection_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class WafProductApiBundleResponseCustomScanCollection_Result:
+    id: Any = None
+    payload: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseCustomScanCollectionConfig:
     pass
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseCustomScanCollectionAttrs:
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

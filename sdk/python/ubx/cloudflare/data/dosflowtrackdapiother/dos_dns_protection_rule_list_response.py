@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosDnsProtectionRuleListResponse_Result:
+    block_any_queries: Any = None
+    burst_sensitivity: Any = None
+    created_on: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    name: Any = None
+    profile_sensitivity: Any = None
+    rate_sensitivity: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosDnsProtectionRuleListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +36,7 @@ class DosDnsProtectionRuleListResponseAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 DosDnsProtectionRuleListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_dns_protection_rule_list_response",

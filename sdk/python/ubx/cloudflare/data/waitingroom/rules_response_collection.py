@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RulesResponseCollection_Result:
+    action: Any = None
+    description: Any = None
+    enabled: Any = None
+    expression: Any = None
+    id: Any = None
+    last_updated: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class RulesResponseCollectionConfig:
     waiting_room_id: Any = None
     # Identifier.
@@ -14,6 +24,7 @@ class RulesResponseCollectionConfig:
 
 @dataclasses.dataclass
 class RulesResponseCollectionAttrs:
+    result: Any = None
     waiting_room_id: Any = None
     # Identifier.
     zone_id: Any = None

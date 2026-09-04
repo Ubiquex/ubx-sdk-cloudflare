@@ -4,67 +4,67 @@ package sessions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PeerReport_Data_Participant_PeerEvents struct {
-	CreatedAt any
-	EventName any
-	Id any
+	CreatedAt       any
+	EventName       any
+	Id              any
 	MinutesConsumed any
-	ParticipantId any
-	PeerId any
-	PresetViewType any
-	SessionId any
+	ParticipantId   any
+	PeerId          any
+	PresetViewType  any
+	SessionId       any
 	SocketSessionId any
-	UpdatedAt any
+	UpdatedAt       any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_AudioDevicesUpdates_Added struct {
 	DeviceId any
-	Kind any
-	Label any
+	Kind     any
+	Label    any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_AudioDevicesUpdates struct {
-	Added any
-	Removed any
+	Added     any
+	Removed   any
 	Timestamp any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_BrowserMetadata struct {
-	Browser any
+	Browser        any
 	BrowserVersion any
-	Engine any
-	UserAgent any
-	WebglSupport any
+	Engine         any
+	UserAgent      any
+	WebglSupport   any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_CandidatePairs_ConsumingTransport struct {
-	AvailableIncomingBitrate any
-	AvailableOutgoingBitrate any
-	BytesDiscardedOnSend any
-	BytesReceived any
-	BytesSent any
-	CurrentRoundTripTime any
-	LastPacketReceivedTimestamp any
-	LastPacketSentTimestamp any
-	LocalCandidateAddress any
-	LocalCandidateId any
-	LocalCandidateNetworkType any
-	LocalCandidatePort any
-	LocalCandidateProtocol any
+	AvailableIncomingBitrate     any
+	AvailableOutgoingBitrate     any
+	BytesDiscardedOnSend         any
+	BytesReceived                any
+	BytesSent                    any
+	CurrentRoundTripTime         any
+	LastPacketReceivedTimestamp  any
+	LastPacketSentTimestamp      any
+	LocalCandidateAddress        any
+	LocalCandidateId             any
+	LocalCandidateNetworkType    any
+	LocalCandidatePort           any
+	LocalCandidateProtocol       any
 	LocalCandidateRelatedAddress any
-	LocalCandidateRelatedPort any
-	LocalCandidateType any
-	LocalCandidateUrl any
-	Nominated any
-	PacketsDiscardedOnSend any
-	PacketsReceived any
-	PacketsSent any
-	RemoteCandidateAddress any
-	RemoteCandidateId any
-	RemoteCandidatePort any
-	RemoteCandidateProtocol any
-	RemoteCandidateType any
-	RemoteCandidateUrl any
-	TotalRoundTripTime any
+	LocalCandidateRelatedPort    any
+	LocalCandidateType           any
+	LocalCandidateUrl            any
+	Nominated                    any
+	PacketsDiscardedOnSend       any
+	PacketsReceived              any
+	PacketsSent                  any
+	RemoteCandidateAddress       any
+	RemoteCandidateId            any
+	RemoteCandidatePort          any
+	RemoteCandidateProtocol      any
+	RemoteCandidateType          any
+	RemoteCandidateUrl           any
+	TotalRoundTripTime           any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_CandidatePairs struct {
@@ -73,33 +73,33 @@ type PeerReport_Data_Participant_PeerReport_Metadata_CandidatePairs struct {
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_DeviceInfo struct {
-	Cpus any
-	IsMobile any
-	Os any
+	Cpus      any
+	IsMobile  any
+	Os        any
 	OsVersion any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_Events struct {
-	Metadata any
-	Name any
+	Metadata  any
+	Name      any
 	Timestamp any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_IpInformation_Asn struct {
-	Asn any
+	Asn    any
 	Domain any
-	Name any
-	Route any
-	Type any
+	Name   any
+	Route  any
+	Type   any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_IpInformation struct {
-	Asn any
-	City any
-	Country any
-	Ipv4 any
-	Org any
-	Region any
+	Asn      any
+	City     any
+	Country  any
+	Ipv4     any
+	Org      any
+	Region   any
 	Timezone any
 }
 
@@ -109,52 +109,52 @@ type PeerReport_Data_Participant_PeerReport_Metadata_NativeMetadata struct {
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_PcMetadata struct {
-	EffectiveNetworkType any
+	EffectiveNetworkType  any
 	ReflexiveConnectivity any
-	RelayConnectivity any
-	Sdp any
-	Timestamp any
-	TurnConnectivity any
+	RelayConnectivity     any
+	Sdp                   any
+	Timestamp             any
+	TurnConnectivity      any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata_SelectedDeviceUpdates struct {
-	Device any
+	Device    any
 	Timestamp any
 }
 
 type PeerReport_Data_Participant_PeerReport_Metadata struct {
-	AudioDevicesUpdates any
-	BrowserMetadata any
-	CandidatePairs any
-	DeviceInfo any
-	Events any
-	IpInformation any
-	NativeMetadata any
-	PcMetadata any
-	RoomViewType any
-	SdkName any
-	SdkType any
-	SdkVersion any
+	AudioDevicesUpdates   any
+	BrowserMetadata       any
+	CandidatePairs        any
+	DeviceInfo            any
+	Events                any
+	IpInformation         any
+	NativeMetadata        any
+	PcMetadata            any
+	RoomViewType          any
+	SdkName               any
+	SdkType               any
+	SdkVersion            any
 	SelectedDeviceUpdates any
 	SpeakerDevicesUpdates any
-	VideoDevicesUpdates any
+	VideoDevicesUpdates   any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_AudioConsumer struct {
-	BytesReceived any
-	ConcealmentEvents any
-	ConsumerId any
-	Jitter any
-	JitterBufferDelay any
+	BytesReceived            any
+	ConcealmentEvents        any
+	ConsumerId               any
+	Jitter                   any
+	JitterBufferDelay        any
 	JitterBufferEmittedCount any
-	Mid any
-	MosQuality any
-	PacketsLost any
-	PacketsReceived any
-	PeerId any
-	ProducerId any
-	Ssrc any
-	Timestamp any
+	Mid                      any
+	MosQuality               any
+	PacketsLost              any
+	PacketsReceived          any
+	PeerId                   any
+	ProducerId               any
+	Ssrc                     any
+	Timestamp                any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_AudioConsumerCumulative_JitterBufferDelay struct {
@@ -178,16 +178,16 @@ type PeerReport_Data_Participant_PeerReport_Quality_AudioConsumerCumulative stru
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_AudioProducer struct {
-	BytesSent any
-	Jitter any
-	Mid any
-	MosQuality any
+	BytesSent   any
+	Jitter      any
+	Mid         any
+	MosQuality  any
 	PacketsLost any
 	PacketsSent any
-	ProducerId any
-	Rtt any
-	Ssrc any
-	Timestamp any
+	ProducerId  any
+	Rtt         any
+	Ssrc        any
+	Timestamp   any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_AudioProducerCumulative struct {
@@ -200,31 +200,31 @@ type PeerReport_Data_Participant_PeerReport_Quality_AudioProducerCumulative stru
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoConsumer struct {
-	BytesReceived any
-	ConsumerId any
-	FirCount any
-	FrameHeight any
-	FrameWidth any
-	FramesDecoded any
-	FramesDropped any
-	FramesPerSecond any
-	Jitter any
-	JitterBufferDelay any
+	BytesReceived            any
+	ConsumerId               any
+	FirCount                 any
+	FrameHeight              any
+	FrameWidth               any
+	FramesDecoded            any
+	FramesDropped            any
+	FramesPerSecond          any
+	Jitter                   any
+	JitterBufferDelay        any
 	JitterBufferEmittedCount any
-	KeyFramesDecoded any
-	Mid any
-	MosQuality any
-	PacketsLost any
-	PacketsReceived any
-	PeerId any
-	ProducerId any
-	Ssrc any
-	Timestamp any
+	KeyFramesDecoded         any
+	Mid                      any
+	MosQuality               any
+	PacketsLost              any
+	PacketsReceived          any
+	PeerId                   any
+	ProducerId               any
+	Ssrc                     any
+	Timestamp                any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoConsumerCumulative_Issues struct {
-	LagFraction any
-	NoVideoFraction any
+	LagFraction            any
+	NoVideoFraction        any
 	PoorResolutionFraction any
 }
 
@@ -233,9 +233,9 @@ type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoConsumerCumu
 	FramePerSecond any
 	// Distribution summary with average and percentiles.
 	FrameWidth any
-	Issues any
+	Issues     any
 	// Cumulative latency distribution (milliseconds-based thresholds).
-	JitterBufferDelay any
+	JitterBufferDelay        any
 	KeyFramesDecodedFraction any
 	// Cumulative packet loss distribution.
 	PacketLoss any
@@ -245,50 +245,50 @@ type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoConsumerCumu
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoProducer_QualityLimitationDurations struct {
 	Bandwidth any
-	Cpu any
-	None any
-	Other any
+	Cpu       any
+	None      any
+	Other     any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoProducer struct {
-	BytesSent any
-	FirCount any
-	FrameHeight any
-	FrameWidth any
-	FramesEncoded any
-	FramesPerSecond any
-	Jitter any
-	KeyFramesEncoded any
-	Mid any
-	MosQuality any
-	PacketsLost any
-	PacketsSent any
-	PliCount any
-	ProducerId any
-	QualityLimitationDurations any
-	QualityLimitationReason any
+	BytesSent                          any
+	FirCount                           any
+	FrameHeight                        any
+	FrameWidth                         any
+	FramesEncoded                      any
+	FramesPerSecond                    any
+	Jitter                             any
+	KeyFramesEncoded                   any
+	Mid                                any
+	MosQuality                         any
+	PacketsLost                        any
+	PacketsSent                        any
+	PliCount                           any
+	ProducerId                         any
+	QualityLimitationDurations         any
+	QualityLimitationReason            any
 	QualityLimitationResolutionChanges any
-	Rtt any
-	Ssrc any
-	Timestamp any
+	Rtt                                any
+	Ssrc                               any
+	Timestamp                          any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoProducerCumulative_Issues struct {
 	BandwidthQualityLimitationFraction any
-	CpuQualityLimitationFraction any
-	NoVideoFraction any
-	PoorResolutionFraction any
-	QualityLimitationFraction any
+	CpuQualityLimitationFraction       any
+	NoVideoFraction                    any
+	PoorResolutionFraction             any
+	QualityLimitationFraction          any
 }
 
 type PeerReport_Data_Participant_PeerReport_Quality_ScreenshareVideoProducerCumulative struct {
 	// Distribution summary with average and percentiles.
 	FramePerSecond any
 	// Distribution summary with average and percentiles.
-	FrameWidth any
+	FrameWidth                   any
 	HighNegativeFeedbackFraction any
-	Issues any
-	KeyFramesEncodedFraction any
+	Issues                       any
+	KeyFramesEncodedFraction     any
 	// Cumulative packet loss distribution.
 	PacketLoss any
 	// Distribution summary with average and percentiles.
@@ -301,25 +301,25 @@ type PeerReport_Data_Participant_PeerReport_Quality struct {
 	AudioConsumer any
 	// Aggregated inbound (consumer) audio statistics for the session.
 	AudioConsumerCumulative any
-	AudioProducer any
+	AudioProducer           any
 	// Aggregated outbound (producer) audio statistics for the session.
-	AudioProducerCumulative any
+	AudioProducerCumulative  any
 	ScreenshareAudioConsumer any
 	// Aggregated inbound (consumer) audio statistics for the session.
 	ScreenshareAudioConsumerCumulative any
-	ScreenshareAudioProducer any
+	ScreenshareAudioProducer           any
 	// Aggregated outbound (producer) audio statistics for the session.
 	ScreenshareAudioProducerCumulative any
-	ScreenshareVideoConsumer any
+	ScreenshareVideoConsumer           any
 	// Aggregated inbound (consumer) video statistics for the session.
 	ScreenshareVideoConsumerCumulative any
-	ScreenshareVideoProducer any
+	ScreenshareVideoProducer           any
 	// Aggregated outbound (producer) video statistics for the session.
 	ScreenshareVideoProducerCumulative any
-	VideoConsumer any
+	VideoConsumer                      any
 	// Aggregated inbound (consumer) video statistics for the session.
 	VideoConsumerCumulative any
-	VideoProducer any
+	VideoProducer           any
 	// Aggregated outbound (producer) video statistics for the session.
 	VideoProducerCumulative any
 }
@@ -351,7 +351,7 @@ type PeerReport_Data_Participant struct {
 	// Peer call statistics report.
 	PeerReport any
 	// Name of the preset associated with the participant.
-	Role any
+	Role      any
 	SessionId any
 	// timestamp when this participant's data was last updated.
 	UpdatedAt any
@@ -367,31 +367,31 @@ type PeerReportConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Filters any
+	AppId             any
+	Filters           any
 	IncludePeerEvents any
-	PeerId any
+	PeerId            any
 }
 
 type PeerReportAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
-	Filters any
+	AppId             any
+	Data              any
+	Filters           any
 	IncludePeerEvents any
-	PeerId any
-	Success any
+	PeerId            any
+	Success           any
 }
 
 var PeerReport = ubx.DataSourceBinding{
 	WireType: "cloudflare_peer_report",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Filters": ubx.FieldSpec{WireName: "filters"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"AppId":             ubx.FieldSpec{WireName: "app_id"},
+		"Filters":           ubx.FieldSpec{WireName: "filters"},
 		"IncludePeerEvents": ubx.FieldSpec{WireName: "include_peer_events"},
-		"PeerId": ubx.FieldSpec{WireName: "peer_id"},
+		"PeerId":            ubx.FieldSpec{WireName: "peer_id"},
 	},
 }

@@ -3,6 +3,24 @@ package callsapps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CallsAppResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type CallsAppResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type CallsAppResponseCollection_Result struct {
+	Created  any
+	Modified any
+	Name     any
+	Uid      any
+}
+
 type CallsAppResponseCollectionConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -11,6 +29,11 @@ type CallsAppResponseCollectionConfig struct {
 type CallsAppResponseCollectionAttrs struct {
 	// The account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var CallsAppResponseCollection = ubx.DataSourceBinding{

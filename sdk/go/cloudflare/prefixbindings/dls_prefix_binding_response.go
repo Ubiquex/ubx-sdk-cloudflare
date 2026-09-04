@@ -3,6 +3,17 @@ package prefixbindings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DlsPrefixBindingResponse_Result struct {
+	// The CIDR that is bound.
+	Cidr any
+	// The ID of the binding.
+	Id any
+	// The ID of the parent prefix.
+	PrefixId any
+	// The region key used for the binding.
+	RegionKey any
+}
+
 type DlsPrefixBindingResponseConfig struct {
 	// IP prefix in CIDR notation to bind.
 	Cidr any
@@ -23,6 +34,7 @@ type DlsPrefixBindingResponseAttrs struct {
 	PrefixId any
 	// Region key from managed regions (e.g., "us", "eu").
 	RegionKey any
+	Result    any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,8 +44,8 @@ type DlsPrefixBindingResponseAttrs struct {
 var DlsPrefixBindingResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dls_prefix_binding_response",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"Cidr":      ubx.FieldSpec{WireName: "cidr"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 		"RegionKey": ubx.FieldSpec{WireName: "region_key"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"BindingId": ubx.FieldSpec{WireName: "binding_id"},

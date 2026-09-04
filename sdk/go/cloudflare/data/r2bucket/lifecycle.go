@@ -3,6 +3,52 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Lifecycle_Errors struct {
+	Code    any
+	Message any
+}
+
+type Lifecycle_Result_Rules_AbortMultipartUploadsTransition_Condition struct {
+	MaxAge any
+	Type   any
+}
+
+type Lifecycle_Result_Rules_AbortMultipartUploadsTransition struct {
+	Condition any
+}
+
+type Lifecycle_Result_Rules_Conditions struct {
+	Prefix any
+}
+
+type Lifecycle_Result_Rules_DeleteObjectsTransition_Condition struct {
+	Date   any
+	MaxAge any
+	Type   any
+}
+
+type Lifecycle_Result_Rules_DeleteObjectsTransition struct {
+	Condition any
+}
+
+type Lifecycle_Result_Rules_StorageClassTransitions struct {
+	Condition    any
+	StorageClass any
+}
+
+type Lifecycle_Result_Rules struct {
+	AbortMultipartUploadsTransition any
+	Conditions                      any
+	DeleteObjectsTransition         any
+	Enabled                         any
+	Id                              any
+	StorageClassTransitions         any
+}
+
+type Lifecycle_Result struct {
+	Rules any
+}
+
 type LifecycleConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +61,17 @@ type LifecycleAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Lifecycle = ubx.DataSourceBinding{
 	WireType: "cloudflare_lifecycle",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

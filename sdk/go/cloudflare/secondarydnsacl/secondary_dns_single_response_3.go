@@ -3,6 +3,14 @@ package secondarydnsacl
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SecondaryDnsSingleResponse3_Result struct {
+	Id any
+	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.
+	IpRange any
+	// The name of the acl.
+	Name any
+}
+
 type SecondaryDnsSingleResponse3Config struct {
 	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.
 	IpRange any
@@ -18,7 +26,8 @@ type SecondaryDnsSingleResponse3Attrs struct {
 	// Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.
 	IpRange any
 	// The name of the acl.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +37,9 @@ type SecondaryDnsSingleResponse3Attrs struct {
 var SecondaryDnsSingleResponse3 = ubx.ResourceBinding{
 	WireType: "cloudflare_secondary_dns_single_response_3",
 	Fields: ubx.FieldMap{
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IpRange":   ubx.FieldSpec{WireName: "ip_range"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AclId": ubx.FieldSpec{WireName: "acl_id"},
+		"AclId":     ubx.FieldSpec{WireName: "acl_id"},
 	},
 }

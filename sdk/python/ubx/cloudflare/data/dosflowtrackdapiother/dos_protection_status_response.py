@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosProtectionStatusResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosProtectionStatusResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosProtectionStatusResponse_Result:
+    enabled: Any = None
+
+@dataclasses.dataclass
 class DosProtectionStatusResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +30,11 @@ class DosProtectionStatusResponseConfig:
 class DosProtectionStatusResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 DosProtectionStatusResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_protection_status_response",

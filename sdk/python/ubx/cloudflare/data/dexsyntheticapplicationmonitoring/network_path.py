@@ -7,6 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class NetworkPath_Result_ExecutionContext:
+    pass
+
+@dataclasses.dataclass
+class NetworkPath_Result_Hops_Location:
+    city: Any = None
+    state: Any = None
+    zip: Any = None
+
+@dataclasses.dataclass
+class NetworkPath_Result_Hops:
+    asn: Any = None
+    aso: Any = None
+    ip_address: Any = None
+    location: Any = None
+    mile: Any = None
+    name: Any = None
+    packet_loss_pct: Any = None
+    rtt_ms: Any = None
+    ttl: Any = None
+
+@dataclasses.dataclass
+class NetworkPath_Result:
+    # Cloudflare colo airport code.
+    colo: Any = None
+    # Name of the device associated with this network path response.
+    device_name: Any = None
+    # Whether the test was run inside or outside of the WARP tunnel.
+    execution_context: Any = None
+    # An array of the hops taken by the device to reach the end destination.
+    hops: Any = None
+    # API Resource UUID tag.
+    result_id: Any = None
+    # API Resource UUID tag.
+    test_id: Any = None
+    # Name of the traceroute test.
+    test_name: Any = None
+    # Timestamp indicating when the traceroute test execution began.
+    time_start: Any = None
+    tunnel_type: Any = None
+
+@dataclasses.dataclass
 class NetworkPathConfig:
     # API Resource UUID tag.
     test_result_id: Any = None
@@ -15,6 +57,7 @@ class NetworkPathConfig:
 class NetworkPathAttrs:
     # Unique identifier linked to an account.
     account_id: Any = None
+    result: Any = None
     # API Resource UUID tag.
     test_result_id: Any = None
 

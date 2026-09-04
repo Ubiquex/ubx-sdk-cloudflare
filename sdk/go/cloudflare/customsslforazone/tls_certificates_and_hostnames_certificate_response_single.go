@@ -7,9 +7,58 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictions struct
 	Label any
 }
 
+type TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer_Tunnel struct {
+	PrivateIp any
+	VnetId    any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer struct {
+	CreatedOn   any
+	Enabled     any
+	Host        any
+	Id          any
+	ModifiedOn  any
+	Name        any
+	Permissions any
+	Port        any
+	Status      any
+	Tunnel      any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseSingle_Result struct {
+	// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
+	BundleMethod any
+	// The identifier for the Custom CSR that was used.
+	CustomCsrId any
+	// When the certificate from the authority expires.
+	ExpiresOn any
+	// Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.
+	GeoRestrictions any
+	Hosts           any
+	// Identifier.
+	Id any
+	// The certificate authority that issued the certificate.
+	Issuer        any
+	KeylessServer any
+	// When the certificate was last modified.
+	ModifiedOn any
+	// The policy restrictions returned by the API. This field is returned in responses when a policy has been set. The API accepts the "policy" field in requests but returns this field as "policy_restrictions" in responses. Specifies the region(s) where your private key can be held locally for optimal TLS performance. Format is a boolean expression, for example: "(country: US) or (region: EU)"
+	PolicyRestrictions any
+	// The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
+	Priority any
+	// The type of hash used for the certificate.
+	Signature any
+	// Status of the zone's custom SSL.
+	Status any
+	// When the certificate was uploaded to Cloudflare.
+	UploadedOn any
+	// Identifier.
+	ZoneId any
+}
+
 var TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictionsFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+}
 
 type TlsCertificatesAndHostnamesCertificateResponseSingleConfig struct {
 	// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
@@ -49,6 +98,7 @@ type TlsCertificatesAndHostnamesCertificateResponseSingleAttrs struct {
 	Policy any
 	// The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare.
 	PrivateKey any
+	Result     any
 	// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
 	Type any
 	// path parameter, not part of the API's own resource representation
@@ -61,18 +111,18 @@ var TlsCertificatesAndHostnamesCertificateResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_single",
 	Fields: ubx.FieldMap{
 		"BundleMethod": ubx.FieldSpec{WireName: "bundle_method"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"CustomCsrId": ubx.FieldSpec{WireName: "custom_csr_id"},
-		"Deploy": ubx.FieldSpec{WireName: "deploy"},
+		"Certificate":  ubx.FieldSpec{WireName: "certificate"},
+		"CustomCsrId":  ubx.FieldSpec{WireName: "custom_csr_id"},
+		"Deploy":       ubx.FieldSpec{WireName: "deploy"},
 		"GeoRestrictions": ubx.FieldSpec{
 			WireName: "geo_restrictions",
-			Kind: "object",
-			Fields: TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictionsFields,
+			Kind:     "object",
+			Fields:   TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictionsFields,
 		},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Policy":              ubx.FieldSpec{WireName: "policy"},
+		"PrivateKey":          ubx.FieldSpec{WireName: "private_key"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
+		"ZoneId":              ubx.FieldSpec{WireName: "zone_id"},
 		"CustomCertificateId": ubx.FieldSpec{WireName: "custom_certificate_id"},
 	},
 }

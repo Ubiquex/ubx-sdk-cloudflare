@@ -7,11 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TargetEnvironment_Target:
+class TargetEnvironment_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TargetEnvironment_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TargetEnvironment_Result_Target:
     type: Any = None
     zone_tag: Any = None
 
-_TargetEnvironment_TargetFields = {
+@dataclasses.dataclass
+class TargetEnvironment_Result:
+    # Optional description providing additional context.
+    description: Any = None
+    # Target environment identifier.
+    id: Any = None
+    # Human-readable name.
+    name: Any = None
+    # Identifies the Cloudflare asset to scan. Uses a `type` discriminator. Currently the service supports only `zone` targets.
+    target: Any = None
+
+_TargetEnvironment_Result_TargetFields = {
     "type": ubx.FieldSpec(wire_name="type"),
     "zone_tag": ubx.FieldSpec(wire_name="zone_tag"),
 }
@@ -33,8 +55,14 @@ class TargetEnvironmentConfig:
 class TargetEnvironmentAttrs:
     # Optional description.
     description: Any = None
+    errors: Any = None
+    messages: Any = None
     # Human-readable name.
     name: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifies the Cloudflare asset to scan. Uses a `type` discriminator. Currently the service supports only `zone` targets.
     target: Any = None
     # path parameter, not part of the API's own resource representation
@@ -50,7 +78,7 @@ TargetEnvironment = ubx.ResourceBinding(
         "target": ubx.FieldSpec(
             wire_name="target",
             kind="object",
-            fields=_TargetEnvironment_TargetFields,
+            fields=_TargetEnvironment_Result_TargetFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "target_environment_id": ubx.FieldSpec(wire_name="target_environment_id"),

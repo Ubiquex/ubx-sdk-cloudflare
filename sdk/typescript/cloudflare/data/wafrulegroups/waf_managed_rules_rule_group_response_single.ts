@@ -9,6 +9,7 @@ export interface WafManagedRulesRuleGroupResponseSingleAttrs {
   groupId: string;
   /** Defines the unique identifier of a WAF package. */
   packageId: string;
+  result: unknown;
   /** Defines an identifier of a schema. */
   zoneId: string;
 }

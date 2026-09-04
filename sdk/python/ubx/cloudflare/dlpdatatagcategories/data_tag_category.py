@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DataTagCategory_Result_Tags:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class DataTagCategory_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    tags: Any = None
+    template_id: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class DataTagCategory_Tags:
     description: Any = None
     name: Any = None
@@ -32,6 +50,7 @@ class DataTagCategoryConfig:
 class DataTagCategoryAttrs:
     description: Any = None
     name: Any = None
+    result: Any = None
     # Tags to create with the category. Mutually exclusive with `template_id`.
     tags: Any = None
     template_id: Any = None

@@ -6,8 +6,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ShareExcludedRecipientResponseSingle_AccountId struct {
 }
 
-var ShareExcludedRecipientResponseSingle_AccountIdFields = ubx.FieldMap{
-	}
+type ShareExcludedRecipientResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type ShareExcludedRecipientResponseSingle_Result struct {
+	// Account identifier.
+	AccountId any
+	// When the share was created.
+	Created any
+	// Share Excluded Recipient identifier tag.
+	Id any
+	// When the share was modified.
+	Modified any
+}
+
+var ShareExcludedRecipientResponseSingle_AccountIdFields = ubx.FieldMap{}
 
 type ShareExcludedRecipientResponseSingleConfig struct {
 	// The account to exclude from the organization-targeted share.
@@ -25,6 +40,10 @@ type ShareExcludedRecipientResponseSingleConfig struct {
 type ShareExcludedRecipientResponseSingleAttrs struct {
 	// The account to exclude from the organization-targeted share.
 	AccountId any
+	Errors    any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute)
 	AccountIdPath any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +59,12 @@ var ShareExcludedRecipientResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: ShareExcludedRecipientResponseSingle_AccountIdFields,
+			Kind:     "object",
+			Fields:   ShareExcludedRecipientResponseSingle_AccountIdFields,
 		},
-		"AccountIdPath": ubx.FieldSpec{WireName: "account_id_path"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
+		"AccountIdPath":       ubx.FieldSpec{WireName: "account_id_path"},
+		"ShareId":             ubx.FieldSpec{WireName: "share_id"},
 		"ExcludedRecipientId": ubx.FieldSpec{WireName: "excluded_recipient_id"},
-		"AccountIdPath2": ubx.FieldSpec{WireName: "account_id_path2"},
+		"AccountIdPath2":      ubx.FieldSpec{WireName: "account_id_path2"},
 	},
 }

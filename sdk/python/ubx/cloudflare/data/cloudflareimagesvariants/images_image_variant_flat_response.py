@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImageVariantFlatResponse_Result_Options:
+    # The fit property describes how the width and height dimensions should be interpreted.
+    fit: Any = None
+    # Maximum height in image pixels.
+    height: Any = None
+    # What EXIF data should be preserved in the output image.
+    metadata: Any = None
+    # Maximum width in image pixels.
+    width: Any = None
+
+@dataclasses.dataclass
+class ImagesImageVariantFlatResponse_Result:
+    id: Any = None
+    # Indicates whether the variant can access an image without a signature, regardless of image access control.
+    never_require_signed_urls: Any = None
+    # Allows you to define image resizing sizes for different use cases.
+    options: Any = None
+
+@dataclasses.dataclass
 class ImagesImageVariantFlatResponseConfig:
     variant_id: Any = None
 
@@ -14,6 +33,7 @@ class ImagesImageVariantFlatResponseConfig:
 class ImagesImageVariantFlatResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
     variant_id: Any = None
 
 ImagesImageVariantFlatResponse = ubx.DataSourceBinding(

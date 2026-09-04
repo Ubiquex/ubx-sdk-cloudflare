@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UploadStatusResponse_Result:
+    attempts: Any = None
+    created_at: Any = None
+    # Sanitized terminal error; omitted for non-error states.
+    error: Any = None
+    # Indicator feed ID
+    feed_id: Any = None
+    filename: Any = None
+    # Recommended delay before the next poll; 0 means terminal.
+    poll_after_seconds: Any = None
+    # Sanitized durable loader stage, when available.
+    stage: Any = None
+    # `Unifying` while work is queued or active, optionally with attempt progress; `Unified` or `Error` when terminal.
+    status: Any = None
+    updated_at: Any = None
+    upload_id: Any = None
+
+@dataclasses.dataclass
 class UploadStatusResponseConfig:
     # Indicator feed ID
     feed_id: Any = None
@@ -18,6 +36,7 @@ class UploadStatusResponseAttrs:
     account_id: Any = None
     # Indicator feed ID
     feed_id: Any = None
+    result: Any = None
     upload_id: Any = None
 
 UploadStatusResponse = ubx.DataSourceBinding(

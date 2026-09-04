@@ -3,33 +3,68 @@ package workerversions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersVersionsListResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersVersionsListResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersVersionsListResponse_Result_Items_Metadata struct {
+	AuthorEmail any
+	AuthorId    any
+	CreatedOn   any
+	HasPreview  any
+	ModifiedOn  any
+	Source      any
+}
+
+type WorkersVersionsListResponse_Result_Items struct {
+	Id       any
+	Metadata any
+	Number   any
+}
+
+type WorkersVersionsListResponse_Result struct {
+	Items any
+}
+
 type WorkersVersionsListResponseConfig struct {
 	// Identifier.
-	AccountId any
+	AccountId  any
 	Deployable any
-	Page any
-	PerPage any
+	Page       any
+	PerPage    any
 	// Name of the script.
 	ScriptName any
 }
 
 type WorkersVersionsListResponseAttrs struct {
 	// Identifier.
-	AccountId any
+	AccountId  any
 	Deployable any
-	Page any
-	PerPage any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
 	// Name of the script.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var WorkersVersionsListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_versions_list_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Deployable": ubx.FieldSpec{WireName: "deployable"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

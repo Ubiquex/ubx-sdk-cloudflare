@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesHostnameAssociationsResponse_Result:
+    hostnames: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesHostnameAssociationsResponseConfig:
     # The UUID to match against for a certificate that was uploaded to the mTLS Certificate Management endpoint. If no mtls_certificate_id is given, the results will be the hostnames associated to your active Cloudflare Managed CA.
     mtls_certificate_id: Any = None
@@ -17,6 +21,7 @@ class TlsCertificatesAndHostnamesHostnameAssociationsResponseConfig:
 class TlsCertificatesAndHostnamesHostnameAssociationsResponseAttrs:
     # The UUID to match against for a certificate that was uploaded to the mTLS Certificate Management endpoint. If no mtls_certificate_id is given, the results will be the hostnames associated to your active Cloudflare Managed CA.
     mtls_certificate_id: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

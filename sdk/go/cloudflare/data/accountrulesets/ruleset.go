@@ -3,6 +3,38 @@ package accountrulesets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Ruleset_Messages_Source struct {
+	Pointer any
+}
+
+type Ruleset_Messages struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type Ruleset_Result_Id struct {
+}
+
+type Ruleset_Result struct {
+	Description any
+	Id          any
+	Kind        any
+	LastUpdated any
+	Name        any
+	Phase       any
+	Version     any
+}
+
+type Ruleset_ResultInfo_Cursors struct {
+	After any
+}
+
+type Ruleset_ResultInfo struct {
+	// The set of cursors.
+	Cursors any
+}
+
 type RulesetConfig struct {
 	// The unique ID of the account.
 	AccountId any
@@ -17,15 +49,23 @@ type RulesetAttrs struct {
 	AccountId any
 	// The cursor to use for the next page.
 	Cursor any
+	Errors any
+	// A list of warning messages.
+	Messages any
 	// The number of rulesets to return per page.
 	PerPage any
+	// A list of rulesets. The returned information will not include the rules in each ruleset.
+	Result any
+	// Information to navigate the results.
+	ResultInfo any
+	Success    any
 }
 
 var Ruleset = ubx.DataSourceBinding{
 	WireType: "cloudflare_ruleset",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

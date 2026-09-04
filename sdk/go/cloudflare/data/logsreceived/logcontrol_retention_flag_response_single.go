@@ -3,12 +3,18 @@ package logsreceived
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogcontrolRetentionFlagResponseSingle_Result struct {
+	// The log retention flag for Logpull API.
+	Flag any
+}
+
 type LogcontrolRetentionFlagResponseSingleConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type LogcontrolRetentionFlagResponseSingleAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

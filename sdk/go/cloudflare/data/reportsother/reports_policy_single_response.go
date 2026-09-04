@@ -4,7 +4,7 @@ package reportsother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportsPolicySingleResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -37,18 +37,18 @@ type ReportsPolicySingleResponseConfig struct {
 type ReportsPolicySingleResponseAttrs struct {
 	// Cloudflare public account ID (32-character hexadecimal string)
 	AccountId any
-	Errors any
-	Messages any
+	Errors    any
+	Messages  any
 	// Unique identifier for the policy (UUID format)
 	PolicyId any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var ReportsPolicySingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_reports_policy_single_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

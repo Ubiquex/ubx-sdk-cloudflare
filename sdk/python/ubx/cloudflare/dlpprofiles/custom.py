@@ -135,6 +135,7 @@ class CustomAttrs:
     entries: Any = None
     name: Any = None
     ocr_enabled: Any = None
+    result: Any = None
     # Sensitivity levels to associate with the profile.
     sensitivity_levels: Any = None
     # Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).

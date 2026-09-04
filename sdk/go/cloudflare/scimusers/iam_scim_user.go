@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IamScimUser_Emails struct {
 	Primary any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 type IamScimUser_Meta struct {
@@ -24,16 +24,16 @@ type IamScimUser_Name struct {
 }
 
 var IamScimUser_EmailsFields = ubx.FieldMap{
-		"Primary": ubx.FieldSpec{WireName: "primary"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Primary": ubx.FieldSpec{WireName: "primary"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Value":   ubx.FieldSpec{WireName: "value"},
+}
 
 var IamScimUser_NameFields = ubx.FieldMap{
-		"FamilyName": ubx.FieldSpec{WireName: "family_name"},
-		"Formatted": ubx.FieldSpec{WireName: "formatted"},
-		"GivenName": ubx.FieldSpec{WireName: "given_name"},
-	}
+	"FamilyName": ubx.FieldSpec{WireName: "family_name"},
+	"Formatted":  ubx.FieldSpec{WireName: "formatted"},
+	"GivenName":  ubx.FieldSpec{WireName: "given_name"},
+}
 
 type IamScimUserConfig struct {
 	// A Boolean value indicating the user's administrative status. Must be `true` for user creation.
@@ -86,22 +86,22 @@ type IamScimUserAttrs struct {
 var IamScimUser = ubx.ResourceBinding{
 	WireType: "cloudflare_iam_scim_user",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
+		"Active":      ubx.FieldSpec{WireName: "active"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Emails": ubx.FieldSpec{
 			WireName: "emails",
-			Kind: "list",
-			Fields: IamScimUser_EmailsFields,
+			Kind:     "list",
+			Fields:   IamScimUser_EmailsFields,
 		},
 		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
 		"Name": ubx.FieldSpec{
 			WireName: "name",
-			Kind: "object",
-			Fields: IamScimUser_NameFields,
+			Kind:     "object",
+			Fields:   IamScimUser_NameFields,
 		},
-		"Schemas": ubx.FieldSpec{WireName: "schemas"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"Schemas":   ubx.FieldSpec{WireName: "schemas"},
+		"UserName":  ubx.FieldSpec{WireName: "user_name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

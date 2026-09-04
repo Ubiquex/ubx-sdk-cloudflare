@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SpectrumConfigProtocolCollection_Result:
+    description: Any = None
+    name: Any = None
+    ports: Any = None
+    transport: Any = None
+
+@dataclasses.dataclass
 class SpectrumConfigProtocolCollection_ZoneId:
     pass
 
@@ -19,6 +26,7 @@ class SpectrumConfigProtocolCollectionConfig:
 
 @dataclasses.dataclass
 class SpectrumConfigProtocolCollectionAttrs:
+    result: Any = None
     zone_id: Any = None
 
 SpectrumConfigProtocolCollection = ubx.DataSourceBinding(

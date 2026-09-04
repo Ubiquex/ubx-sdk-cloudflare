@@ -7,6 +7,96 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CloudforceOneWhoisSchemasSingleResponse_Result:
+    administrative_city: Any = None
+    administrative_country: Any = None
+    administrative_email: Any = None
+    administrative_fax: Any = None
+    administrative_fax_ext: Any = None
+    administrative_id: Any = None
+    administrative_name: Any = None
+    administrative_org: Any = None
+    administrative_phone: Any = None
+    administrative_phone_ext: Any = None
+    administrative_postal_code: Any = None
+    administrative_province: Any = None
+    administrative_referral_url: Any = None
+    administrative_street: Any = None
+    billing_city: Any = None
+    billing_country: Any = None
+    billing_email: Any = None
+    billing_fax: Any = None
+    billing_fax_ext: Any = None
+    billing_id: Any = None
+    billing_name: Any = None
+    billing_org: Any = None
+    billing_phone: Any = None
+    billing_phone_ext: Any = None
+    billing_postal_code: Any = None
+    billing_province: Any = None
+    billing_referral_url: Any = None
+    billing_street: Any = None
+    created_date: Any = None
+    created_date_raw: Any = None
+    dnssec: Any = None
+    domain: Any = None
+    expiration_date: Any = None
+    expiration_date_raw: Any = None
+    extension: Any = None
+    found: Any = None
+    id: Any = None
+    nameservers: Any = None
+    punycode: Any = None
+    registrant: Any = None
+    registrant_city: Any = None
+    registrant_country: Any = None
+    registrant_email: Any = None
+    registrant_fax: Any = None
+    registrant_fax_ext: Any = None
+    registrant_id: Any = None
+    registrant_name: Any = None
+    registrant_org: Any = None
+    registrant_phone: Any = None
+    registrant_phone_ext: Any = None
+    registrant_postal_code: Any = None
+    registrant_province: Any = None
+    registrant_referral_url: Any = None
+    registrant_street: Any = None
+    registrar: Any = None
+    registrar_city: Any = None
+    registrar_country: Any = None
+    registrar_email: Any = None
+    registrar_fax: Any = None
+    registrar_fax_ext: Any = None
+    registrar_id: Any = None
+    registrar_name: Any = None
+    registrar_org: Any = None
+    registrar_phone: Any = None
+    registrar_phone_ext: Any = None
+    registrar_postal_code: Any = None
+    registrar_province: Any = None
+    registrar_referral_url: Any = None
+    registrar_street: Any = None
+    status: Any = None
+    technical_city: Any = None
+    technical_country: Any = None
+    technical_email: Any = None
+    technical_fax: Any = None
+    technical_fax_ext: Any = None
+    technical_id: Any = None
+    technical_name: Any = None
+    technical_org: Any = None
+    technical_phone: Any = None
+    technical_phone_ext: Any = None
+    technical_postal_code: Any = None
+    technical_province: Any = None
+    technical_referral_url: Any = None
+    technical_street: Any = None
+    updated_date: Any = None
+    updated_date_raw: Any = None
+    whois_server: Any = None
+
+@dataclasses.dataclass
 class CloudforceOneWhoisSchemasSingleResponseConfig:
     domain: Any = None
 
@@ -15,6 +105,7 @@ class CloudforceOneWhoisSchemasSingleResponseAttrs:
     # Use to uniquely identify or reference the resource.
     account_id: Any = None
     domain: Any = None
+    result: Any = None
 
 CloudforceOneWhoisSchemasSingleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_cloudforce_one_whois_schemas_single_response",

@@ -6,8 +6,85 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamCollectionMemberResponseWithPolicies_AccountId struct {
 }
 
-var IamCollectionMemberResponseWithPolicies_AccountIdFields = ubx.FieldMap{
-	}
+type IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups_Meta struct {
+	Key   any
+	Value any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Policies_PermissionGroups struct {
+	Id   any
+	Meta any
+	Name any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects struct {
+	Key any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups_Scope struct {
+	Key     any
+	Objects any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Policies_ResourceGroups struct {
+	Id    any
+	Meta  any
+	Name  any
+	Scope any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Policies struct {
+	Access           any
+	Id               any
+	PermissionGroups any
+	ResourceGroups   any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions_Analytics struct {
+	Read  any
+	Write any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Roles_Permissions struct {
+	Analytics    any
+	Billing      any
+	CachePurge   any
+	Dns          any
+	DnsRecords   any
+	Lb           any
+	Logs         any
+	Organization any
+	Ssl          any
+	Waf          any
+	ZoneSettings any
+	Zones        any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_Roles struct {
+	Description any
+	Id          any
+	Name        any
+	Permissions any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result_User struct {
+	Email                          any
+	FirstName                      any
+	Id                             any
+	LastName                       any
+	TwoFactorAuthenticationEnabled any
+}
+
+type IamCollectionMemberResponseWithPolicies_Result struct {
+	Email    any
+	Id       any
+	Policies any
+	Roles    any
+	Status   any
+	User     any
+}
+
+var IamCollectionMemberResponseWithPolicies_AccountIdFields = ubx.FieldMap{}
 
 type IamCollectionMemberResponseWithPoliciesConfig struct {
 	// Account identifier tag.
@@ -35,6 +112,7 @@ type IamCollectionMemberResponseWithPoliciesAttrs struct {
 	Page any
 	// Maximum number of results per page.
 	PerPage any
+	Result  any
 	// A member's status in the account.
 	Status any
 }
@@ -44,13 +122,13 @@ var IamCollectionMemberResponseWithPolicies = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamCollectionMemberResponseWithPolicies_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamCollectionMemberResponseWithPolicies_AccountIdFields,
 		},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

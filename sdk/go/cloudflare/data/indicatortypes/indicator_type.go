@@ -19,14 +19,14 @@ type IndicatorTypeAttrs struct {
 	AccountId any
 	// Dataset UUIDs to query, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, queries all accessible datasets.
 	DatasetIds any
-	Items any
-	Type any
+	Items      any
+	Type       any
 }
 
 var IndicatorType = ubx.DataSourceBinding{
 	WireType: "cloudflare_indicator_type",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"DatasetIds": ubx.FieldSpec{WireName: "dataset_ids"},
 	},
 }

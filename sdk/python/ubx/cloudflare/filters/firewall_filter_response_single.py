@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallFilterResponseSingle_Result:
+    # An informative summary of the filter.
+    description: Any = None
+    # The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
+    expression: Any = None
+    # The unique identifier of the filter.
+    id: Any = None
+    # When true, indicates that the filter is currently paused.
+    paused: Any = None
+    # A short reference tag. Allows you to select related filters.
+    ref: Any = None
+
+@dataclasses.dataclass
 class FirewallFilterResponseSingleConfig:
     # An informative summary of the filter.
     description: Any = None
@@ -33,6 +46,7 @@ class FirewallFilterResponseSingleAttrs:
     paused: Any = None
     # A short reference tag. Allows you to select related filters.
     ref: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

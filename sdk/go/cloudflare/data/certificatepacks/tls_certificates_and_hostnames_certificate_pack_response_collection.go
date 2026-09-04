@@ -3,6 +3,56 @@ package certificatepacks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_Certificates_GeoRestrictions struct {
+	Label any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_Certificates struct {
+	BundleMethod    any
+	ExpiresOn       any
+	GeoRestrictions any
+	Hosts           any
+	Id              any
+	Issuer          any
+	ModifiedOn      any
+	Priority        any
+	Signature       any
+	Status          any
+	UploadedOn      any
+	ZoneId          any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_DcvDelegationRecords struct {
+	Cname       any
+	CnameTarget any
+	Emails      any
+	HttpBody    any
+	HttpUrl     any
+	Status      any
+	TxtName     any
+	TxtValue    any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result_ValidationErrors struct {
+	Message any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseCollection_Result struct {
+	CertificateAuthority any
+	Certificates         any
+	CloudflareBranding   any
+	DcvDelegationRecords any
+	Hosts                any
+	Id                   any
+	PrimaryCertificate   any
+	Status               any
+	Type                 any
+	ValidationErrors     any
+	ValidationMethod     any
+	ValidationRecords    any
+	ValidityDays         any
+}
+
 type TlsCertificatesAndHostnamesCertificatePackResponseCollectionConfig struct {
 	// Specify the deployment environment for the certificate packs.
 	Deploy any
@@ -23,6 +73,7 @@ type TlsCertificatesAndHostnamesCertificatePackResponseCollectionAttrs struct {
 	Page any
 	// Number of certificate packs per page.
 	PerPage any
+	Result  any
 	// Include Certificate Packs of all statuses, not just active ones.
 	Status any
 	// Identifier.
@@ -32,10 +83,10 @@ type TlsCertificatesAndHostnamesCertificatePackResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesCertificatePackResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_pack_response_collection",
 	Fields: ubx.FieldMap{
-		"Deploy": ubx.FieldSpec{WireName: "deploy"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Deploy":  ubx.FieldSpec{WireName: "deploy"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Status":  ubx.FieldSpec{WireName: "status"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

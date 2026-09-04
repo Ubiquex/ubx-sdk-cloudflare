@@ -12,6 +12,25 @@ export interface TeamsDevicesSchemasSingleResponse_Config {
   customerId?: string | Computed<string>;
 }
 
+export interface TeamsDevicesSchemasSingleResponse_Result_Config {
+  apiUrl?: string | Computed<string>;
+  authUrl?: string | Computed<string>;
+  clientId?: string | Computed<string>;
+}
+
+export interface TeamsDevicesSchemasSingleResponse_Result {
+  /** The configuration object containing third-party integration information. */
+  config?: TeamsDevicesSchemasSingleResponse_Result_Config | Computed<TeamsDevicesSchemasSingleResponse_Result_Config>;
+  /** API UUID. */
+  id?: string | Computed<string>;
+  /** The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`). */
+  interval?: string | Computed<string>;
+  /** The name of the device posture integration. */
+  name?: string | Computed<string>;
+  /** The type of device posture integration. */
+  type?: string | Computed<string>;
+}
+
 const TeamsDevicesSchemasSingleResponse_ConfigFields: FieldMap = {
   accessClientId: "access_client_id",
   accessClientSecret: "access_client_secret",
@@ -45,6 +64,7 @@ export interface TeamsDevicesSchemasSingleResponseAttrs {
   interval: string;
   /** The name of the device posture integration. */
   name: string;
+  result: TeamsDevicesSchemasSingleResponse_Result;
   /** The type of device posture integration. */
   type: string;
   /** path parameter, not part of the API's own resource representation */

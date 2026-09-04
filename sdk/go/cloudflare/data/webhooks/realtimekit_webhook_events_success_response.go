@@ -14,8 +14,8 @@ type RealtimekitWebhookEventsSuccessResponseAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
+	AppId   any
+	Data    any
 	Success any
 }
 
@@ -23,6 +23,6 @@ var RealtimekitWebhookEventsSuccessResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_realtimekit_webhook_events_success_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

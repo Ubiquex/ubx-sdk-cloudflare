@@ -4,46 +4,46 @@ package logexplorerdatasets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LexV4Error2_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type LexV4Error2_Result_Fields struct {
 	Enabled any
-	Name any
+	Name    any
 }
 
 type LexV4Error2_Result struct {
-	CreatedAt any
-	Dataset any
-	DatasetId any
+	CreatedAt          any
+	Dataset            any
+	DatasetId          any
 	DeletionProtection any
-	Enabled any
-	Fields any
-	Filter any
-	ObjectId any
-	ObjectType any
-	UpdatedAt any
+	Enabled            any
+	Fields             any
+	Filter             any
+	ObjectId           any
+	ObjectType         any
+	UpdatedAt          any
 }
 
 type LexV4Error2Config struct {
 	DatasetId any
-	ZoneId any
+	ZoneId    any
 }
 
 type LexV4Error2Attrs struct {
 	DatasetId any
-	Errors any
-	Messages any
-	Result any
-	Success any
-	ZoneId any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
+	ZoneId    any
 }
 
 var LexV4Error2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_lex_v4_error_2",
 	Fields: ubx.FieldMap{
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

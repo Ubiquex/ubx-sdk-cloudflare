@@ -10,6 +10,42 @@ import ubx_sdk as ubx
 class Request_CompletedAfter:
     pass
 
+@dataclasses.dataclass
+class Request_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Request_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Request_Result:
+    completed: Any = None
+    # Request content.
+    content: Any = None
+    created: Any = None
+    # UUID.
+    id: Any = None
+    # Tokens for the request messages.
+    message_tokens: Any = None
+    priority: Any = None
+    # Readable Request ID.
+    readable_id: Any = None
+    # Requested information from request.
+    request: Any = None
+    # Request Status.
+    status: Any = None
+    # Brief description of the request.
+    summary: Any = None
+    # The CISA defined Traffic Light Protocol (TLP).
+    tlp: Any = None
+    # Tokens for the request.
+    tokens: Any = None
+    updated: Any = None
+
 _Request_CompletedAfterFields = {
 }
 
@@ -50,18 +86,23 @@ class RequestAttrs:
     created_after: Any = None
     # Retrieve requests created before this time.
     created_before: Any = None
+    errors: Any = None
+    messages: Any = None
     # Page number of results.
     page: Any = None
     # Number of results per page.
     per_page: Any = None
     # Requested information from request.
     request_type: Any = None
+    result: Any = None
     # Field to sort results by.
     sort_by: Any = None
     # Sort order (asc or desc).
     sort_order: Any = None
     # Request Status.
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

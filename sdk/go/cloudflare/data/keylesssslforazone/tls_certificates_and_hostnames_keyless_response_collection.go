@@ -3,12 +3,31 @@ package keylesssslforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesKeylessResponseCollection_Result_Tunnel struct {
+	PrivateIp any
+	VnetId    any
+}
+
+type TlsCertificatesAndHostnamesKeylessResponseCollection_Result struct {
+	CreatedOn   any
+	Enabled     any
+	Host        any
+	Id          any
+	ModifiedOn  any
+	Name        any
+	Permissions any
+	Port        any
+	Status      any
+	Tunnel      any
+}
+
 type TlsCertificatesAndHostnamesKeylessResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesKeylessResponseCollectionAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

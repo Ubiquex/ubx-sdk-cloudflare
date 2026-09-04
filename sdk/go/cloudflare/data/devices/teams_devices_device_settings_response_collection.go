@@ -3,12 +3,85 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesDeviceSettingsResponseCollection_Result_DnsSearchSuffixes struct {
+	Description any
+	Suffix      any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_Exclude struct {
+	Address     any
+	Description any
+	Host        any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_FallbackDomains struct {
+	Description any
+	DnsServer   any
+	Suffix      any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_GlobalAcceleration struct {
+	ApiEndpoints       any
+	Enabled            any
+	MasqueEndpoints    any
+	WireguardEndpoints any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_ServiceModeV2 struct {
+	Mode any
+	Port any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_TargetTests struct {
+	Id   any
+	Name any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result_VirtualNetworks struct {
+	Allowed any
+	Default any
+}
+
+type TeamsDevicesDeviceSettingsResponseCollection_Result struct {
+	AllowModeSwitch            any
+	AllowUpdates               any
+	AllowedToLeave             any
+	AutoConnect                any
+	CaptivePortal              any
+	Default                    any
+	Description                any
+	DisableAutoFallback        any
+	DnsSearchSuffixes          any
+	Enabled                    any
+	Exclude                    any
+	ExcludeOfficeIps           any
+	FallbackDomains            any
+	GatewayUniqueId            any
+	GlobalAcceleration         any
+	Include                    any
+	LanAllowMinutes            any
+	LanAllowSubnetSize         any
+	Match                      any
+	Name                       any
+	PolicyId                   any
+	Precedence                 any
+	RegisterInterfaceIpWithDns any
+	SccmVpnBoundarySupport     any
+	ServiceModeV2              any
+	SupportUrl                 any
+	SwitchLocked               any
+	TargetTests                any
+	TunnelProtocol             any
+	VirtualNetworks            any
+}
+
 type TeamsDevicesDeviceSettingsResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesDeviceSettingsResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesDeviceSettingsResponseCollection = ubx.DataSourceBinding{

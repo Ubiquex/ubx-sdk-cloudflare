@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OneApplicationList_Result_AuthMethods struct {
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type OneApplicationList_Result_Permissions struct {
 	DisplayName any
-	Scope any
-	Severity any
+	Scope       any
+	Severity    any
 }
 
 type OneApplicationList_Result struct {
-	AuthMethods any
-	Category any
-	Description any
-	DisplayName any
-	DlpEnabled any
-	Id any
-	Logo any
-	Permissions any
+	AuthMethods           any
+	Category              any
+	Description           any
+	DisplayName           any
+	DlpEnabled            any
+	Id                    any
+	Logo                  any
+	Permissions           any
 	SupportedEnvironments any
-	UseCases any
+	UseCases              any
 }
 
 type OneApplicationList_ResultInfo struct {
@@ -43,20 +43,20 @@ type OneApplicationList_ResultInfo struct {
 }
 
 type OneApplicationListConfig struct {
-	AccountId any
+	AccountId   any
 	Environment any
-	Page any
-	PageSize any
+	Page        any
+	PageSize    any
 }
 
 type OneApplicationListAttrs struct {
-	AccountId any
+	AccountId   any
 	Environment any
 	// List of errors.
 	Errors any
 	// List of messages.
 	Messages any
-	Page any
+	Page     any
 	PageSize any
 	// List of items.
 	Result any
@@ -69,9 +69,9 @@ type OneApplicationListAttrs struct {
 var OneApplicationList = ubx.DataSourceBinding{
 	WireType: "cloudflare_one_application_list",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
 	},
 }

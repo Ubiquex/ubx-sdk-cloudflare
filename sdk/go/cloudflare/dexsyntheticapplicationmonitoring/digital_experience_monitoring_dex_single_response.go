@@ -12,17 +12,37 @@ type DigitalExperienceMonitoringDexSingleResponse_Data struct {
 	Method any
 }
 
-type DigitalExperienceMonitoringDexSingleResponse_TargetPolicies struct {
+type DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies struct {
+}
+
+type DigitalExperienceMonitoringDexSingleResponse_Result struct {
+	// Date the test was created, in RFC 3339 format.
+	Created any
+	// The configuration object which contains the details for the WARP client to conduct the test.
+	Data any
+	// Additional details about the test.
+	Description any
+	// Determines whether or not the test is active.
+	Enabled any
+	// How often the test will run.
+	Interval any
+	// The name of the DEX test. Must be unique.
+	Name           any
+	TargetPolicies any
+	Targeted       any
+	// The unique identifier for the test.
+	TestId any
+	// Date the test was last updated, in RFC 3339 format.
+	Updated any
 }
 
 var DigitalExperienceMonitoringDexSingleResponse_DataFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-	}
+	"Host":   ubx.FieldSpec{WireName: "host"},
+	"Kind":   ubx.FieldSpec{WireName: "kind"},
+	"Method": ubx.FieldSpec{WireName: "method"},
+}
 
-var DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields = ubx.FieldMap{
-	}
+var DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields = ubx.FieldMap{}
 
 type DigitalExperienceMonitoringDexSingleResponseConfig struct {
 	// The configuration object which contains the details for the WARP client to conduct the test.
@@ -34,9 +54,9 @@ type DigitalExperienceMonitoringDexSingleResponseConfig struct {
 	// How often the test will run.
 	Interval any
 	// The name of the DEX test. Must be unique.
-	Name any
+	Name           any
 	TargetPolicies any
-	Targeted any
+	Targeted       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -55,9 +75,10 @@ type DigitalExperienceMonitoringDexSingleResponseAttrs struct {
 	// How often the test will run.
 	Interval any
 	// The name of the DEX test. Must be unique.
-	Name any
+	Name           any
+	Result         any
 	TargetPolicies any
-	Targeted any
+	Targeted       any
 	// The unique identifier for the test.
 	TestId any
 	// Date the test was last updated, in RFC 3339 format.
@@ -73,19 +94,19 @@ var DigitalExperienceMonitoringDexSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: DigitalExperienceMonitoringDexSingleResponse_DataFields,
+			Kind:     "object",
+			Fields:   DigitalExperienceMonitoringDexSingleResponse_DataFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Interval":    ubx.FieldSpec{WireName: "interval"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"TargetPolicies": ubx.FieldSpec{
 			WireName: "target_policies",
-			Kind: "object",
-			Fields: DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields,
+			Kind:     "object",
+			Fields:   DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields,
 		},
-		"Targeted": ubx.FieldSpec{WireName: "targeted"},
+		"Targeted":  ubx.FieldSpec{WireName: "targeted"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"DexTestId": ubx.FieldSpec{WireName: "dex_test_id"},
 	},

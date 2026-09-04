@@ -7,12 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseSettings_Result:
+    # Whether AI Security for Apps is enabled on the zone.
+    enabled: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseSettingsConfig:
     # Defines the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseSettingsAttrs:
+    # AI Security for Apps enablement status for a zone.
+    result: Any = None
     # Defines the zone.
     zone_id: Any = None
 

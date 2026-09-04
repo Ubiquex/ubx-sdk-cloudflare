@@ -7,24 +7,24 @@ type PayPerCrawlGetTermsSignatureResponse_Errors_ErrorChain struct {
 }
 
 type PayPerCrawlGetTermsSignatureResponse_Errors_Source struct {
-	Parameter any
+	Parameter           any
 	ParameterValueIndex any
-	Pointer any
+	Pointer             any
 }
 
 type PayPerCrawlGetTermsSignatureResponse_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	ErrorChain any
-	Message any
-	Meta any
-	Source any
+	ErrorChain       any
+	Message          any
+	Meta             any
+	Source           any
 }
 
 type PayPerCrawlGetTermsSignatureResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	// TotalPages is a pointer so that if TotalPages == 0 we return that there are indeed 0 pages. omitempty would have removed the field otherwise. This is important as a customer may be relying on always reading this property and it should not be absent just because it is 0, only absent if a value is never provided.
 	TotalPages any
@@ -32,23 +32,23 @@ type PayPerCrawlGetTermsSignatureResponse_ResultInfo struct {
 
 type PayPerCrawlGetTermsSignatureResponseConfig struct {
 	AccountId any
-	Remote any
+	Remote    any
 }
 
 type PayPerCrawlGetTermsSignatureResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Remote any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Remote     any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var PayPerCrawlGetTermsSignatureResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_pay_per_crawl_get_terms_signature_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Remote": ubx.FieldSpec{WireName: "remote"},
+		"Remote":    ubx.FieldSpec{WireName: "remote"},
 	},
 }

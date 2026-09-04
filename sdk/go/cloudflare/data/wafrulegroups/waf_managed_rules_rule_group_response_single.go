@@ -11,12 +11,12 @@ type WafManagedRulesRuleGroupResponseSingleAttrs struct {
 	GroupId any
 	// Defines the unique identifier of a WAF package.
 	PackageId any
+	Result    any
 	// Defines an identifier of a schema.
 	ZoneId any
 }
 
 var WafManagedRulesRuleGroupResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_managed_rules_rule_group_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

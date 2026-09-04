@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTunnelConnectionsResponse_Result_Conns_OriginIp:
+    pass
+
+@dataclasses.dataclass
+class TunnelTunnelConnectionsResponse_Result_Conns:
+    client_id: Any = None
+    client_version: Any = None
+    colo_name: Any = None
+    id: Any = None
+    is_pending_reconnect: Any = None
+    opened_at: Any = None
+    origin_ip: Any = None
+    uuid: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelConnectionsResponse_Result:
+    arch: Any = None
+    config_version: Any = None
+    conns: Any = None
+    features: Any = None
+    id: Any = None
+    run_at: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class TunnelTunnelConnectionsResponseConfig:
     pass
 
@@ -14,6 +39,7 @@ class TunnelTunnelConnectionsResponseConfig:
 class TunnelTunnelConnectionsResponseAttrs:
     # Cloudflare account ID
     account_id: Any = None
+    result: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

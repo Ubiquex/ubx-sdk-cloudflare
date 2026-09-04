@@ -6,31 +6,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Indicator_Indicators_RelatedEvents struct {
 	DatasetId any
 	EventDate any
-	EventId any
+	EventId   any
 }
 
 type Indicator_Indicators_Tags struct {
-	CategoryId any
+	CategoryId   any
 	CategoryName any
-	Uuid any
-	Value any
+	Uuid         any
+	Value        any
 }
 
 type Indicator_Indicators struct {
-	CreatedAt any
-	DatasetId any
+	CreatedAt     any
+	DatasetId     any
 	IndicatorType any
 	RelatedEvents any
-	Tags any
-	Tlp any
-	UpdatedAt any
-	Uuid any
-	Value any
+	Tags          any
+	Tlp           any
+	UpdatedAt     any
+	Uuid          any
+	Value         any
 }
 
 type Indicator_Pagination struct {
-	Page any
-	PageSize any
+	Page       any
+	PageSize   any
 	TotalCount any
 	TotalPages any
 }
@@ -39,11 +39,11 @@ type IndicatorConfig struct {
 	// Account ID.
 	AccountId any
 	// Dataset UUID.
-	DatasetId any
+	DatasetId     any
 	IndicatorType any
 	// Filter by indicator value (substring match)
-	Name any
-	Page any
+	Name     any
+	Page     any
 	PageSize any
 	// Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.
 	RelatedEvent any
@@ -53,13 +53,13 @@ type IndicatorAttrs struct {
 	// Account ID.
 	AccountId any
 	// Dataset UUID.
-	DatasetId any
+	DatasetId     any
 	IndicatorType any
-	Indicators any
+	Indicators    any
 	// Filter by indicator value (substring match)
-	Name any
-	Page any
-	PageSize any
+	Name       any
+	Page       any
+	PageSize   any
 	Pagination any
 	// Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.
 	RelatedEvent any
@@ -68,12 +68,12 @@ type IndicatorAttrs struct {
 var Indicator = ubx.DataSourceBinding{
 	WireType: "cloudflare_indicator",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"DatasetId":     ubx.FieldSpec{WireName: "dataset_id"},
 		"IndicatorType": ubx.FieldSpec{WireName: "indicator_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"RelatedEvent": ubx.FieldSpec{WireName: "related_event"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"RelatedEvent":  ubx.FieldSpec{WireName: "related_event"},
 	},
 }

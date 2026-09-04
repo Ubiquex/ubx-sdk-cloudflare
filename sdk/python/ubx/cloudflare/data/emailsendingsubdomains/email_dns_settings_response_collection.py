@@ -7,12 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailDnsSettingsResponseCollection_Result:
+    content: Any = None
+    name: Any = None
+    priority: Any = None
+    ttl: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class EmailDnsSettingsResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class EmailDnsSettingsResponseCollectionAttrs:
+    result: Any = None
     # Sending subdomain identifier.
     subdomain_id: Any = None
     # Identifier.

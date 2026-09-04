@@ -7,12 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PayloadLog_Result_MaskingLevel:
+    pass
+
+@dataclasses.dataclass
+class PayloadLog_Result:
+    masking_level: Any = None
+    # Base64-encoded public key for encrypting payload logs. Null when payload logging is disabled.
+    public_key: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class PayloadLogConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class PayloadLogAttrs:
     account_id: Any = None
+    result: Any = None
 
 PayloadLog = ubx.DataSourceBinding(
     wire_type="cloudflare_payload_log",

@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CollectionResponse_Result_RedundancyGroups_MemberData:
+    data: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class CollectionResponse_Result_RedundancyGroups:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    member_data: Any = None
+    modified_on: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class CollectionResponse_Result:
+    redundancy_groups: Any = None
+
+@dataclasses.dataclass
 class CollectionResponseConfig:
     pass
 
@@ -14,6 +32,7 @@ class CollectionResponseConfig:
 class CollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 CollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_redundancy_groups_collection_response",

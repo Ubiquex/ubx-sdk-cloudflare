@@ -8,11 +8,11 @@ type Email_Errors struct {
 }
 
 type Email_Result_Emails struct {
-	Body any
-	Id any
+	Body      any
+	Id        any
 	Recipient any
-	SentAt any
-	Subject any
+	SentAt    any
+	Subject   any
 }
 
 type Email_Result struct {
@@ -20,38 +20,38 @@ type Email_Result struct {
 }
 
 type Email_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type EmailConfig struct {
 	AccountId any
-	Page any
-	PerPage any
-	ReportId any
+	Page      any
+	PerPage   any
+	ReportId  any
 }
 
 type EmailAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	ReportId any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	ReportId   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var Email = ubx.DataSourceBinding{
 	WireType: "cloudflare_email",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ReportId": ubx.FieldSpec{WireName: "report_id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"ReportId":  ubx.FieldSpec{WireName: "report_id"},
 	},
 }

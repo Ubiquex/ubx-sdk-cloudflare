@@ -3,17 +3,42 @@ package magicstaticroutes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type MagicRouteSingleResponse_Scope struct {
+type MagicRouteSingleResponse_Result_Route_Scope struct {
 	// List of colo names for the ECMP scope.
 	ColoNames any
 	// List of colo regions for the ECMP scope.
 	ColoRegions any
 }
 
-var MagicRouteSingleResponse_ScopeFields = ubx.FieldMap{
-		"ColoNames": ubx.FieldSpec{WireName: "colo_names"},
-		"ColoRegions": ubx.FieldSpec{WireName: "colo_regions"},
-	}
+type MagicRouteSingleResponse_Result_Route struct {
+	// When the route was created.
+	CreatedOn any
+	// An optional human provided description of the static route.
+	Description any
+	// Identifier
+	Id any
+	// When the route was last modified.
+	ModifiedOn any
+	// The next-hop IP Address for the static route.
+	Nexthop any
+	// IP Prefix in Classless Inter-Domain Routing format.
+	Prefix any
+	// Priority of the static route.
+	Priority any
+	// Used only for ECMP routes.
+	Scope any
+	// Optional weight of the ECMP scope - if provided.
+	Weight any
+}
+
+type MagicRouteSingleResponse_Result struct {
+	Route any
+}
+
+var MagicRouteSingleResponse_Result_Route_ScopeFields = ubx.FieldMap{
+	"ColoNames":   ubx.FieldSpec{WireName: "colo_names"},
+	"ColoRegions": ubx.FieldSpec{WireName: "colo_regions"},
+}
 
 type MagicRouteSingleResponseConfig struct {
 	// An optional human provided description of the static route.
@@ -43,6 +68,7 @@ type MagicRouteSingleResponseAttrs struct {
 	Prefix any
 	// Priority of the static route.
 	Priority any
+	Result   any
 	// Used only for ECMP routes.
 	Scope any
 	// Optional weight of the ECMP scope - if provided.
@@ -57,16 +83,16 @@ var MagicRouteSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_route_single_response",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Nexthop": ubx.FieldSpec{WireName: "nexthop"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Nexthop":     ubx.FieldSpec{WireName: "nexthop"},
+		"Prefix":      ubx.FieldSpec{WireName: "prefix"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: MagicRouteSingleResponse_ScopeFields,
+			Kind:     "object",
+			Fields:   MagicRouteSingleResponse_Result_Route_ScopeFields,
 		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
+		"Weight":    ubx.FieldSpec{WireName: "weight"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RouteId": ubx.FieldSpec{WireName: "route_id"},
+		"RouteId":   ubx.FieldSpec{WireName: "route_id"},
 	},
 }

@@ -3,6 +3,17 @@ package callsapps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CallsAppResponseSingle_Result struct {
+	// The date and time the item was created.
+	Created any
+	// The date and time the item was last modified.
+	Modified any
+	// A short description of Calls app, not shown to end users.
+	Name any
+	// A Cloudflare-generated unique identifier for a item.
+	Uid any
+}
+
 type CallsAppResponseSingleConfig struct {
 	// A short description of Calls app, not shown to end users.
 	Name any
@@ -14,7 +25,8 @@ type CallsAppResponseSingleConfig struct {
 
 type CallsAppResponseSingleAttrs struct {
 	// A short description of Calls app, not shown to end users.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +36,8 @@ type CallsAppResponseSingleAttrs struct {
 var CallsAppResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_calls_app_response_single",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

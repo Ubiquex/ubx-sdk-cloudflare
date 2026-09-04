@@ -3,13 +3,30 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result_DeviceStats_ByMode struct {
+	Timestamp          any
+	UniqueDevicesTotal any
+	Value              any
+}
+
+type DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result_DeviceStats struct {
+	ByMode   any
+	ByStatus any
+	// Number of unique devices
+	UniqueDevicesTotal any
+}
+
+type DigitalExperienceMonitoringFleetStatusOverTimeResponse_Result struct {
+	DeviceStats any
+}
+
 type DigitalExperienceMonitoringFleetStatusOverTimeResponseConfig struct {
 	// Cloudflare colo airport code.
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
-	To any
+	From     any
+	To       any
 }
 
 type DigitalExperienceMonitoringFleetStatusOverTimeResponseAttrs struct {
@@ -19,16 +36,17 @@ type DigitalExperienceMonitoringFleetStatusOverTimeResponseAttrs struct {
 	Colo any
 	// Unique identifier for the physical device (UUID).
 	DeviceId any
-	From any
-	To any
+	From     any
+	Result   any
+	To       any
 }
 
 var DigitalExperienceMonitoringFleetStatusOverTimeResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_digital_experience_monitoring_fleet_status_over_time_response",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"From":     ubx.FieldSpec{WireName: "from"},
+		"To":       ubx.FieldSpec{WireName: "to"},
 	},
 }

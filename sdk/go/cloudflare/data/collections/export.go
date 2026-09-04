@@ -24,8 +24,8 @@ type ExportAttrs struct {
 var Export = ubx.DataSourceBinding{
 	WireType: "cloudflare_export",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
-		"IncludeIds": ubx.FieldSpec{WireName: "include_ids"},
+		"IncludeIds":   ubx.FieldSpec{WireName: "include_ids"},
 	},
 }

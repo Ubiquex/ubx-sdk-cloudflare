@@ -3,31 +3,62 @@ package dexrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Rule_Result_Rules_Id struct {
+}
+
+type Rule_Result_Rules_TargetedTests_Data struct {
+	Host   any
+	Kind   any
+	Method any
+}
+
+type Rule_Result_Rules_TargetedTests struct {
+	Data    any
+	Enabled any
+	Name    any
+	TestId  any
+}
+
+type Rule_Result_Rules struct {
+	CreatedAt     any
+	Description   any
+	Id            any
+	Match         any
+	Name          any
+	TargetedTests any
+	UpdatedAt     any
+}
+
+type Rule_Result struct {
+	Rules any
+}
+
 type RuleConfig struct {
-	Name any
-	Page any
-	PerPage any
-	SortBy any
+	Name      any
+	Page      any
+	PerPage   any
+	SortBy    any
 	SortOrder any
 }
 
 type RuleAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	Name any
-	Page any
-	PerPage any
-	SortBy any
+	Name      any
+	Page      any
+	PerPage   any
+	Result    any
+	SortBy    any
 	SortOrder any
 }
 
 var Rule = ubx.DataSourceBinding{
 	WireType: "cloudflare_rule",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

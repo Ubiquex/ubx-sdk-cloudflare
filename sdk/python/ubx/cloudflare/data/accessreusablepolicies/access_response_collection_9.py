@@ -7,6 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection9_Result_ApprovalGroups:
+    approvals_needed: Any = None
+    email_addresses: Any = None
+    email_list_uuid: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection9_Result_ConnectionRules_Rdp:
+    allowed_clipboard_local_to_remote_formats: Any = None
+    allowed_clipboard_remote_to_local_formats: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection9_Result_ConnectionRules:
+    rdp: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection9_Result_MfaConfig:
+    allowed_authenticators: Any = None
+    mfa_disabled: Any = None
+    session_duration: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection9_Result:
+    app_count: Any = None
+    approval_groups: Any = None
+    approval_required: Any = None
+    connection_rules: Any = None
+    isolation_required: Any = None
+    mfa_config: Any = None
+    purpose_justification_prompt: Any = None
+    purpose_justification_required: Any = None
+    reusable: Any = None
+    session_duration: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection9Config:
     # Identifier.
     account_id: Any = None
@@ -23,6 +57,7 @@ class AccessResponseCollection9Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
 
 AccessResponseCollection9 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_collection_9",

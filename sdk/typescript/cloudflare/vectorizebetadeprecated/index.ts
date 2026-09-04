@@ -4,6 +4,24 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface Index_Config {
 }
 
+export interface Index_Result_Config {
+  /** Specifies the number of dimensions for the index */
+  dimensions: number | Computed<number>;
+  /** Specifies the type of metric to use calculating distance. */
+  metric: string | Computed<string>;
+}
+
+export interface Index_Result {
+  config?: Index_Result_Config | Computed<Index_Result_Config>;
+  /** Specifies the timestamp the resource was created as an ISO8601 string. */
+  createdOn?: string | Computed<string>;
+  /** Specifies the description of the index. */
+  description?: string | Computed<string>;
+  /** Specifies the timestamp the resource was modified as an ISO8601 string. */
+  modifiedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
 const Index_ConfigFields: FieldMap = {
 };
 
@@ -23,6 +41,7 @@ export interface IndexAttrs {
   /** Specifies the description of the index. */
   description: string;
   name: string;
+  result: Index_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

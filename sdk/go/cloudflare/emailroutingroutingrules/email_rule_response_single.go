@@ -4,26 +4,37 @@ package emailroutingroutingrules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailRuleResponseSingle_Actions struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type EmailRuleResponseSingle_Matchers struct {
 	Field any
-	Type any
+	Type  any
 	Value any
 }
 
+type EmailRuleResponseSingle_Result struct {
+	Actions  any
+	Enabled  any
+	Id       any
+	Matchers any
+	Name     any
+	Priority any
+	Source   any
+	Tag      any
+}
+
 var EmailRuleResponseSingle_ActionsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EmailRuleResponseSingle_MatchersFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type EmailRuleResponseSingleConfig struct {
 	// List actions patterns.
@@ -59,6 +70,7 @@ type EmailRuleResponseSingleAttrs struct {
 	OwnerWorkerTag any
 	// Priority of the routing rule.
 	Priority any
+	Result   any
 	// Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
 	Source any
 	// path parameter, not part of the API's own resource representation
@@ -72,20 +84,20 @@ var EmailRuleResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: EmailRuleResponseSingle_ActionsFields,
+			Kind:     "list",
+			Fields:   EmailRuleResponseSingle_ActionsFields,
 		},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"Matchers": ubx.FieldSpec{
 			WireName: "matchers",
-			Kind: "list",
-			Fields: EmailRuleResponseSingle_MatchersFields,
+			Kind:     "list",
+			Fields:   EmailRuleResponseSingle_MatchersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"OwnerWorkerTag": ubx.FieldSpec{WireName: "owner_worker_tag"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Priority":       ubx.FieldSpec{WireName: "priority"},
+		"Source":         ubx.FieldSpec{WireName: "source"},
+		"ZoneId":         ubx.FieldSpec{WireName: "zone_id"},
 		"RuleIdentifier": ubx.FieldSpec{WireName: "rule_identifier"},
 	},
 }

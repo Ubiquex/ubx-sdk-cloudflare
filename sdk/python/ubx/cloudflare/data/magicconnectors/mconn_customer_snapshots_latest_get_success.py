@@ -7,6 +7,297 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Bonds:
+    name: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_DhcpLeases:
+    client_id: Any = None
+    expiry_time: Any = None
+    hostname: Any = None
+    interface_name: Any = None
+    ip_address: Any = None
+    mac_address: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Disks:
+    discards: Any = None
+    discards_merged: Any = None
+    flushes: Any = None
+    in_progress: Any = None
+    major: Any = None
+    merged: Any = None
+    minor: Any = None
+    name: Any = None
+    reads: Any = None
+    sectors_discarded: Any = None
+    sectors_read: Any = None
+    sectors_written: Any = None
+    time_discarding_ms: Any = None
+    time_flushing_ms: Any = None
+    time_in_progress_ms: Any = None
+    time_reading_ms: Any = None
+    time_writing_ms: Any = None
+    weighted_time_in_progress_ms: Any = None
+    writes: Any = None
+    writes_merged: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Interfaces_IpAddresses:
+    interface_name: Any = None
+    ip_address: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Interfaces:
+    ip_addresses: Any = None
+    name: Any = None
+    operstate: Any = None
+    speed: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Mounts:
+    available_bytes: Any = None
+    available_inodes: Any = None
+    file_system: Any = None
+    is_read_only: Any = None
+    is_removable: Any = None
+    kind: Any = None
+    mount_point: Any = None
+    name: Any = None
+    total_bytes: Any = None
+    total_inodes: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Netdevs:
+    name: Any = None
+    recv_bytes: Any = None
+    recv_compressed: Any = None
+    recv_drop: Any = None
+    recv_errs: Any = None
+    recv_fifo: Any = None
+    recv_frame: Any = None
+    recv_multicast: Any = None
+    recv_packets: Any = None
+    sent_bytes: Any = None
+    sent_carrier: Any = None
+    sent_colls: Any = None
+    sent_compressed: Any = None
+    sent_drop: Any = None
+    sent_errs: Any = None
+    sent_fifo: Any = None
+    sent_packets: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Thermals:
+    critical_celcius: Any = None
+    current_celcius: Any = None
+    label: Any = None
+    max_celcius: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Tunnels:
+    health_state: Any = None
+    health_value: Any = None
+    interface_name: Any = None
+    jitter_ms: Any = None
+    latency_ms: Any = None
+    natd_result: Any = None
+    natd_state: Any = None
+    natd_target: Any = None
+    probed_mtu: Any = None
+    recent_healthy_pings: Any = None
+    recent_unhealthy_pings: Any = None
+    tunnel_id: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result_Items:
+    bonds: Any = None
+    count_reclaim_failures: Any = None
+    count_reclaimed_paths: Any = None
+    count_record_failed: Any = None
+    count_transmit_failures: Any = None
+    cpu_count: Any = None
+    cpu_pressure_10s: Any = None
+    cpu_pressure_300s: Any = None
+    cpu_pressure_60s: Any = None
+    cpu_pressure_total_us: Any = None
+    cpu_time_guest_ms: Any = None
+    cpu_time_guest_nice_ms: Any = None
+    cpu_time_idle_ms: Any = None
+    cpu_time_iowait_ms: Any = None
+    cpu_time_irq_ms: Any = None
+    cpu_time_nice_ms: Any = None
+    cpu_time_softirq_ms: Any = None
+    cpu_time_steal_ms: Any = None
+    cpu_time_system_ms: Any = None
+    cpu_time_user_ms: Any = None
+    delta: Any = None
+    dhcp_leases: Any = None
+    disks: Any = None
+    epsilon: Any = None
+    ha_state: Any = None
+    ha_value: Any = None
+    interfaces: Any = None
+    io_pressure_full_10s: Any = None
+    io_pressure_full_300s: Any = None
+    io_pressure_full_60s: Any = None
+    io_pressure_full_total_us: Any = None
+    io_pressure_some_10s: Any = None
+    io_pressure_some_300s: Any = None
+    io_pressure_some_60s: Any = None
+    io_pressure_some_total_us: Any = None
+    kernel_btime: Any = None
+    kernel_ctxt: Any = None
+    kernel_processes: Any = None
+    kernel_processes_blocked: Any = None
+    kernel_processes_running: Any = None
+    load_average_15m: Any = None
+    load_average_1m: Any = None
+    load_average_5m: Any = None
+    load_average_cur: Any = None
+    load_average_max: Any = None
+    memory_active_bytes: Any = None
+    memory_anon_hugepages_bytes: Any = None
+    memory_anon_pages_bytes: Any = None
+    memory_available_bytes: Any = None
+    memory_bounce_bytes: Any = None
+    memory_buffers_bytes: Any = None
+    memory_cached_bytes: Any = None
+    memory_cma_free_bytes: Any = None
+    memory_cma_total_bytes: Any = None
+    memory_commit_limit_bytes: Any = None
+    memory_committed_as_bytes: Any = None
+    memory_dirty_bytes: Any = None
+    memory_free_bytes: Any = None
+    memory_high_free_bytes: Any = None
+    memory_high_total_bytes: Any = None
+    memory_hugepages_free: Any = None
+    memory_hugepages_rsvd: Any = None
+    memory_hugepages_surp: Any = None
+    memory_hugepages_total: Any = None
+    memory_hugepagesize_bytes: Any = None
+    memory_inactive_bytes: Any = None
+    memory_k_reclaimable_bytes: Any = None
+    memory_kernel_stack_bytes: Any = None
+    memory_low_free_bytes: Any = None
+    memory_low_total_bytes: Any = None
+    memory_mapped_bytes: Any = None
+    memory_page_tables_bytes: Any = None
+    memory_per_cpu_bytes: Any = None
+    memory_pressure_full_10s: Any = None
+    memory_pressure_full_300s: Any = None
+    memory_pressure_full_60s: Any = None
+    memory_pressure_full_total_us: Any = None
+    memory_pressure_some_10s: Any = None
+    memory_pressure_some_300s: Any = None
+    memory_pressure_some_60s: Any = None
+    memory_pressure_some_total_us: Any = None
+    memory_s_reclaimable_bytes: Any = None
+    memory_s_unreclaim_bytes: Any = None
+    memory_secondary_page_tables_bytes: Any = None
+    memory_shmem_bytes: Any = None
+    memory_shmem_hugepages_bytes: Any = None
+    memory_shmem_pmd_mapped_bytes: Any = None
+    memory_slab_bytes: Any = None
+    memory_swap_cached_bytes: Any = None
+    memory_swap_free_bytes: Any = None
+    memory_swap_total_bytes: Any = None
+    memory_total_bytes: Any = None
+    memory_vmalloc_chunk_bytes: Any = None
+    memory_vmalloc_total_bytes: Any = None
+    memory_vmalloc_used_bytes: Any = None
+    memory_writeback_bytes: Any = None
+    memory_writeback_tmp_bytes: Any = None
+    memory_z_swap_bytes: Any = None
+    memory_z_swapped_bytes: Any = None
+    mounts: Any = None
+    netdevs: Any = None
+    platform: Any = None
+    site_id: Any = None
+    snmp_icmp_in_addr_mask_reps: Any = None
+    snmp_icmp_in_addr_masks: Any = None
+    snmp_icmp_in_csum_errors: Any = None
+    snmp_icmp_in_dest_unreachs: Any = None
+    snmp_icmp_in_echo_reps: Any = None
+    snmp_icmp_in_echos: Any = None
+    snmp_icmp_in_errors: Any = None
+    snmp_icmp_in_msgs: Any = None
+    snmp_icmp_in_parm_probs: Any = None
+    snmp_icmp_in_redirects: Any = None
+    snmp_icmp_in_src_quenchs: Any = None
+    snmp_icmp_in_time_excds: Any = None
+    snmp_icmp_in_timestamp_reps: Any = None
+    snmp_icmp_in_timestamps: Any = None
+    snmp_icmp_out_addr_mask_reps: Any = None
+    snmp_icmp_out_addr_masks: Any = None
+    snmp_icmp_out_dest_unreachs: Any = None
+    snmp_icmp_out_echo_reps: Any = None
+    snmp_icmp_out_echos: Any = None
+    snmp_icmp_out_errors: Any = None
+    snmp_icmp_out_msgs: Any = None
+    snmp_icmp_out_parm_probs: Any = None
+    snmp_icmp_out_redirects: Any = None
+    snmp_icmp_out_src_quenchs: Any = None
+    snmp_icmp_out_time_excds: Any = None
+    snmp_icmp_out_timestamp_reps: Any = None
+    snmp_icmp_out_timestamps: Any = None
+    snmp_ip_default_ttl: Any = None
+    snmp_ip_forw_datagrams: Any = None
+    snmp_ip_forwarding_enabled: Any = None
+    snmp_ip_frag_creates: Any = None
+    snmp_ip_frag_fails: Any = None
+    snmp_ip_frag_oks: Any = None
+    snmp_ip_in_addr_errors: Any = None
+    snmp_ip_in_delivers: Any = None
+    snmp_ip_in_discards: Any = None
+    snmp_ip_in_hdr_errors: Any = None
+    snmp_ip_in_receives: Any = None
+    snmp_ip_in_unknown_protos: Any = None
+    snmp_ip_out_discards: Any = None
+    snmp_ip_out_no_routes: Any = None
+    snmp_ip_out_requests: Any = None
+    snmp_ip_reasm_fails: Any = None
+    snmp_ip_reasm_oks: Any = None
+    snmp_ip_reasm_reqds: Any = None
+    snmp_ip_reasm_timeout: Any = None
+    snmp_tcp_active_opens: Any = None
+    snmp_tcp_attempt_fails: Any = None
+    snmp_tcp_curr_estab: Any = None
+    snmp_tcp_estab_resets: Any = None
+    snmp_tcp_in_csum_errors: Any = None
+    snmp_tcp_in_errs: Any = None
+    snmp_tcp_in_segs: Any = None
+    snmp_tcp_max_conn: Any = None
+    snmp_tcp_out_rsts: Any = None
+    snmp_tcp_out_segs: Any = None
+    snmp_tcp_passive_opens: Any = None
+    snmp_tcp_retrans_segs: Any = None
+    snmp_tcp_rto_max: Any = None
+    snmp_tcp_rto_min: Any = None
+    snmp_udp_in_datagrams: Any = None
+    snmp_udp_in_errors: Any = None
+    snmp_udp_no_ports: Any = None
+    snmp_udp_out_datagrams: Any = None
+    system_boot_time_s: Any = None
+    t: Any = None
+    thermals: Any = None
+    tunnels: Any = None
+    uptime_idle_ms: Any = None
+    uptime_total_ms: Any = None
+    v: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsLatestGetSuccess_Result:
+    count: Any = None
+    items: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerSnapshotsLatestGetSuccessConfig:
     connector_id: Any = None
 
@@ -15,6 +306,10 @@ class MconnCustomerSnapshotsLatestGetSuccessAttrs:
     # Account identifier
     account_id: Any = None
     connector_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    success: Any = None
 
 MconnCustomerSnapshotsLatestGetSuccess = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_customer_snapshots_latest_get_success",

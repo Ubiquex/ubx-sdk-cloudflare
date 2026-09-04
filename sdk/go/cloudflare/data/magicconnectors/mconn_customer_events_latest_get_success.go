@@ -3,14 +3,39 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerEventsLatestGetSuccess_Errors struct {
+	Code    any
+	Message any
+}
+
+type MconnCustomerEventsLatestGetSuccess_Result_Items_E struct {
+	K any
+}
+
+type MconnCustomerEventsLatestGetSuccess_Result_Items struct {
+	E any
+	N any
+	T any
+	V any
+}
+
+type MconnCustomerEventsLatestGetSuccess_Result struct {
+	Count any
+	Items any
+}
+
 type MconnCustomerEventsLatestGetSuccessConfig struct {
 	ConnectorId any
 }
 
 type MconnCustomerEventsLatestGetSuccessAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
+	Errors      any
+	Messages    any
+	Result      any
+	Success     any
 }
 
 var MconnCustomerEventsLatestGetSuccess = ubx.DataSourceBinding{

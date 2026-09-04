@@ -3,6 +3,17 @@ package zerotrustapplicationsreviewstatus
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayApplicationsReviewStatusResponse_Result struct {
+	// Contains the ids of the approved applications.
+	ApprovedApps any
+	CreatedAt    any
+	// Contains the ids of the applications in review.
+	InReviewApps any
+	// Contains the ids of the unapproved applications.
+	UnapprovedApps any
+	UpdatedAt      any
+}
+
 type ZeroTrustGatewayApplicationsReviewStatusResponseConfig struct {
 	// Provide the identifier string.
 	AccountId any
@@ -11,6 +22,7 @@ type ZeroTrustGatewayApplicationsReviewStatusResponseConfig struct {
 type ZeroTrustGatewayApplicationsReviewStatusResponseAttrs struct {
 	// Provide the identifier string.
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayApplicationsReviewStatusResponse = ubx.DataSourceBinding{

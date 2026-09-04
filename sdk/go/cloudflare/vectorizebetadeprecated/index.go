@@ -6,14 +6,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Index_Config struct {
 }
 
-var Index_ConfigFields = ubx.FieldMap{
-	}
+type Index_Result_Config struct {
+	// Specifies the number of dimensions for the index
+	Dimensions any
+	// Specifies the type of metric to use calculating distance.
+	Metric any
+}
+
+type Index_Result struct {
+	Config any
+	// Specifies the timestamp the resource was created as an ISO8601 string.
+	CreatedOn any
+	// Specifies the description of the index.
+	Description any
+	// Specifies the timestamp the resource was modified as an ISO8601 string.
+	ModifiedOn any
+	Name       any
+}
+
+var Index_ConfigFields = ubx.FieldMap{}
 
 type IndexConfig struct {
 	Config any
 	// Specifies the description of the index.
 	Description any
-	Name any
+	Name        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,7 +41,8 @@ type IndexAttrs struct {
 	Config any
 	// Specifies the description of the index.
 	Description any
-	Name any
+	Name        any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,12 +54,12 @@ var Index = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Index_ConfigFields,
+			Kind:     "object",
+			Fields:   Index_ConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"IndexName":   ubx.FieldSpec{WireName: "index_name"},
 	},
 }

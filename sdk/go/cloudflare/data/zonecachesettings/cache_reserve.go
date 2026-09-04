@@ -3,16 +3,20 @@ package zonecachesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CacheReserve_Result struct {
+	Value any
+}
+
 type CacheReserveConfig struct {
 }
 
 type CacheReserveAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var CacheReserve = ubx.DataSourceBinding{
 	WireType: "cloudflare_cache_reserve",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessFailedLoginResponse_Result:
+    expiration: Any = None
+    metadata: Any = None
+
+@dataclasses.dataclass
 class AccessFailedLoginResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +22,7 @@ class AccessFailedLoginResponseConfig:
 class AccessFailedLoginResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     # UUID.
     user_id: Any = None
 

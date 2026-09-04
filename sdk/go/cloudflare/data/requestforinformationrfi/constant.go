@@ -3,6 +3,23 @@ package requestforinformationrfi
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Constant_Errors_Source struct {
+	Pointer any
+}
+
+type Constant_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Constant_Result struct {
+	Priority any
+	Status   any
+	Tlp      any
+}
+
 type ConstantConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +28,11 @@ type ConstantConfig struct {
 type ConstantAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Constant = ubx.DataSourceBinding{

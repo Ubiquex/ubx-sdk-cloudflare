@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Asn_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Asn_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Asn_Result:
+    asn: Any = None
+
+@dataclasses.dataclass
 class AsnConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +30,11 @@ class AsnConfig:
 class AsnAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Asn = ubx.DataSourceBinding(
     wire_type="cloudflare_asn",

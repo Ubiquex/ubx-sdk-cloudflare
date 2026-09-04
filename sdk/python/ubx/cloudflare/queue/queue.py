@@ -7,6 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Queue_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Queue_Result_Consumers_Settings:
+    batch_size: Any = None
+    max_concurrency: Any = None
+    max_retries: Any = None
+    max_wait_time_ms: Any = None
+    retry_delay: Any = None
+
+@dataclasses.dataclass
+class Queue_Result_Consumers:
+    consumer_id: Any = None
+    created_on: Any = None
+    dead_letter_queue: Any = None
+    queue_name: Any = None
+    script_name: Any = None
+    settings: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Queue_Result_Producers:
+    bucket_name: Any = None
+    script: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Queue_Result_Settings:
+    # Number of seconds to delay delivery of all messages to consumers.
+    delivery_delay: Any = None
+    # Indicates if message delivery to consumers is currently paused.
+    delivery_paused: Any = None
+    # Number of seconds after which an unconsumed message will be delayed.
+    message_retention_period: Any = None
+
+@dataclasses.dataclass
+class Queue_Result:
+    consumers: Any = None
+    consumers_total_count: Any = None
+    created_on: Any = None
+    modified_on: Any = None
+    producers: Any = None
+    producers_total_count: Any = None
+    queue_id: Any = None
+    queue_name: Any = None
+    settings: Any = None
+
+@dataclasses.dataclass
 class QueueConfig:
     queue_name: Any = None
     # path parameter, not part of the API's own resource representation
@@ -16,7 +66,12 @@ class QueueConfig:
 
 @dataclasses.dataclass
 class QueueAttrs:
+    errors: Any = None
+    messages: Any = None
     queue_name: Any = None
+    result: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

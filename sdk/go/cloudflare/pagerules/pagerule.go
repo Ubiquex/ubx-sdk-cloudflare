@@ -4,38 +4,55 @@ package pagerules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pagerule_Actions struct {
-	Id any
+	Id    any
 	Value any
 }
 
-type Pagerule_Targets_Constraint struct {
+type Pagerule_Result_Targets_Constraint struct {
 	Operator any
-	Value any
+	Value    any
 }
 
-type Pagerule_Targets struct {
+type Pagerule_Result_Targets struct {
 	Constraint any
-	Target any
+	Target     any
+}
+
+type Pagerule_Result struct {
+	// The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both.
+	Actions any
+	// The timestamp of when the Page Rule was created.
+	CreatedOn any
+	// Identifier.
+	Id any
+	// The timestamp of when the Page Rule was last modified.
+	ModifiedOn any
+	// The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A.
+	Priority any
+	// The status of the Page Rule.
+	Status any
+	// The rule targets to evaluate on each request.
+	Targets any
 }
 
 var Pagerule_ActionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
-var Pagerule_Targets_ConstraintFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+var Pagerule_Result_Targets_ConstraintFields = ubx.FieldMap{
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
-var Pagerule_TargetsFields = ubx.FieldMap{
-		"Constraint": ubx.FieldSpec{
-			WireName: "constraint",
-			Kind: "object",
-			Fields: Pagerule_Targets_ConstraintFields,
-		},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+var Pagerule_Result_TargetsFields = ubx.FieldMap{
+	"Constraint": ubx.FieldSpec{
+		WireName: "constraint",
+		Kind:     "object",
+		Fields:   Pagerule_Result_Targets_ConstraintFields,
+	},
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 type PageruleConfig struct {
 	// The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both.
@@ -57,6 +74,7 @@ type PageruleAttrs struct {
 	Actions any
 	// The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A.
 	Priority any
+	Result   any
 	// The status of the Page Rule.
 	Status any
 	// The rule targets to evaluate on each request.
@@ -72,17 +90,17 @@ var Pagerule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Pagerule_ActionsFields,
+			Kind:     "list",
+			Fields:   Pagerule_ActionsFields,
 		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
 		"Targets": ubx.FieldSpec{
 			WireName: "targets",
-			Kind: "list",
-			Fields: Pagerule_TargetsFields,
+			Kind:     "list",
+			Fields:   Pagerule_Result_TargetsFields,
 		},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":     ubx.FieldSpec{WireName: "zone_id"},
 		"PageruleId": ubx.FieldSpec{WireName: "pagerule_id"},
 	},
 }

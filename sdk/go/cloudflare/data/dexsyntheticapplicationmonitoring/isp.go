@@ -3,42 +3,71 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Isp_Result_Isps_Ip_Location struct {
+	City       any
+	CountryIso any
+	StateIso   any
+	Zip        any
+}
+
+type Isp_Result_Isps_Ip struct {
+	Address  any
+	Asn      any
+	Aso      any
+	Location any
+	Name     any
+	Netmask  any
+	Version  any
+}
+
+type Isp_Result_Isps struct {
+	Ip           any
+	TestId       any
+	TestResultId any
+	TimeStart    any
+}
+
+type Isp_Result struct {
+	Isps any
+}
+
 type IspConfig struct {
 	Cursor any
 	// API Resource UUID tag.
-	DeviceId any
-	From any
-	Page any
-	PerPage any
-	SortBy any
+	DeviceId  any
+	From      any
+	Page      any
+	PerPage   any
+	SortBy    any
 	SortOrder any
-	To any
+	To        any
 }
 
 type IspAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	Cursor any
+	Cursor    any
 	// API Resource UUID tag.
-	DeviceId any
-	From any
-	Page any
-	PerPage any
-	SortBy any
+	DeviceId  any
+	From      any
+	Page      any
+	PerPage   any
+	Result    any
+	SortBy    any
 	SortOrder any
-	To any
+	To        any
 }
 
 var Isp = ubx.DataSourceBinding{
 	WireType: "cloudflare_isp",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"DeviceId":  ubx.FieldSpec{WireName: "device_id"},
+		"From":      ubx.FieldSpec{WireName: "from"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"To":        ubx.FieldSpec{WireName: "to"},
 	},
 }

@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsFirewallResponseCollection_Result_AttackMitigation:
+    enabled: Any = None
+    only_when_upstream_unhealthy: Any = None
+
+@dataclasses.dataclass
+class DnsFirewallResponseCollection_Result:
+    attack_mitigation: Any = None
+    deprecate_any_requests: Any = None
+    dns_firewall_ips: Any = None
+    ecs_fallback: Any = None
+    id: Any = None
+    maximum_cache_ttl: Any = None
+    minimum_cache_ttl: Any = None
+    modified_on: Any = None
+    name: Any = None
+    negative_cache_ttl: Any = None
+    ratelimit: Any = None
+    retries: Any = None
+    upstream_ips: Any = None
+
+@dataclasses.dataclass
 class DnsFirewallResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +44,7 @@ class DnsFirewallResponseCollectionAttrs:
     page: Any = None
     # Number of clusters per page
     per_page: Any = None
+    result: Any = None
 
 DnsFirewallResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_dns_firewall_dns_firewall_response_collection",

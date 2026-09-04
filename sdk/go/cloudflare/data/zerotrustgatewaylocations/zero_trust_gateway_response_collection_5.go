@@ -3,12 +3,62 @@ package zerotrustgatewaylocations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection5_Result_Endpoints_Doh_Networks struct {
+	Network any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result_Endpoints_Doh struct {
+	Enabled      any
+	Networks     any
+	RequireToken any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result_Endpoints_Dot struct {
+	Enabled  any
+	Networks any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result_Endpoints_Ipv4 struct {
+	Enabled any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result_Endpoints struct {
+	Doh  any
+	Dot  any
+	Ipv4 any
+	Ipv6 any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result_MaxTtl struct {
+	Mode    any
+	TtlSecs any
+}
+
+type ZeroTrustGatewayResponseCollection5_Result struct {
+	ClientDefault             any
+	CreatedAt                 any
+	DnsDestinationIpsId       any
+	DnsDestinationIpv6BlockId any
+	DohSubdomain              any
+	EcsSupport                any
+	Endpoints                 any
+	Id                        any
+	Ip                        any
+	Ipv4Destination           any
+	Ipv4DestinationBackup     any
+	MaxTtl                    any
+	Name                      any
+	Networks                  any
+	UpdatedAt                 any
+}
+
 type ZeroTrustGatewayResponseCollection5Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollection5Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection5 = ubx.DataSourceBinding{

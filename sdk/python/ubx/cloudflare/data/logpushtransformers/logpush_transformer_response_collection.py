@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushTransformerResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerResponseCollection_Result_AssociatedJobs:
+    id: Any = None
+    name: Any = None
+    object_tag: Any = None
+    object_type: Any = None
+
+@dataclasses.dataclass
+class LogpushTransformerResponseCollection_Result:
+    associated_jobs: Any = None
+    created_at: Any = None
+    dataset: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class LogpushTransformerResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +43,11 @@ class LogpushTransformerResponseCollectionConfig:
 class LogpushTransformerResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LogpushTransformerResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_logpush_transformer_response_collection",

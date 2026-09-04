@@ -4,26 +4,26 @@ package ratelimitsforazone
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallRatelimitResponseSingle_Action_Response struct {
-	Body any
+	Body        any
 	ContentType any
 }
 
 type FirewallRatelimitResponseSingle_Action struct {
-	Mode any
+	Mode     any
 	Response any
-	Timeout any
+	Timeout  any
 }
 
 type FirewallRatelimitResponseSingle_Match_Headers struct {
-	Name any
-	Op any
+	Name  any
+	Op    any
 	Value any
 }
 
 type FirewallRatelimitResponseSingle_Match_Request struct {
 	Methods any
 	Schemes any
-	Url any
+	Url     any
 }
 
 type FirewallRatelimitResponseSingle_Match_Response struct {
@@ -31,59 +31,75 @@ type FirewallRatelimitResponseSingle_Match_Response struct {
 }
 
 type FirewallRatelimitResponseSingle_Match struct {
-	Headers any
-	Request any
+	Headers  any
+	Request  any
 	Response any
 }
 
+type FirewallRatelimitResponseSingle_Result_Bypass struct {
+	Name  any
+	Value any
+}
+
+type FirewallRatelimitResponseSingle_Result struct {
+	Action      any
+	Bypass      any
+	Description any
+	Disabled    any
+	Id          any
+	Match       any
+	Period      any
+	Threshold   any
+}
+
 var FirewallRatelimitResponseSingle_Action_ResponseFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-	}
+	"Body":        ubx.FieldSpec{WireName: "body"},
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+}
 
 var FirewallRatelimitResponseSingle_ActionFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: FirewallRatelimitResponseSingle_Action_ResponseFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   FirewallRatelimitResponseSingle_Action_ResponseFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var FirewallRatelimitResponseSingle_Match_HeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Op": ubx.FieldSpec{WireName: "op"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Op":    ubx.FieldSpec{WireName: "op"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FirewallRatelimitResponseSingle_Match_RequestFields = ubx.FieldMap{
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Schemes": ubx.FieldSpec{WireName: "schemes"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Methods": ubx.FieldSpec{WireName: "methods"},
+	"Schemes": ubx.FieldSpec{WireName: "schemes"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 var FirewallRatelimitResponseSingle_Match_ResponseFields = ubx.FieldMap{
-		"OriginTraffic": ubx.FieldSpec{WireName: "origin_traffic"},
-	}
+	"OriginTraffic": ubx.FieldSpec{WireName: "origin_traffic"},
+}
 
 var FirewallRatelimitResponseSingle_MatchFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: FirewallRatelimitResponseSingle_Match_HeadersFields,
-		},
-		"Request": ubx.FieldSpec{
-			WireName: "request",
-			Kind: "object",
-			Fields: FirewallRatelimitResponseSingle_Match_RequestFields,
-		},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: FirewallRatelimitResponseSingle_Match_ResponseFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   FirewallRatelimitResponseSingle_Match_HeadersFields,
+	},
+	"Request": ubx.FieldSpec{
+		WireName: "request",
+		Kind:     "object",
+		Fields:   FirewallRatelimitResponseSingle_Match_RequestFields,
+	},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   FirewallRatelimitResponseSingle_Match_ResponseFields,
+	},
+}
 
 type FirewallRatelimitResponseSingleConfig struct {
 	// The action to perform when the threshold of matched traffic within the configured period is exceeded.
@@ -107,6 +123,7 @@ type FirewallRatelimitResponseSingleAttrs struct {
 	Match any
 	// The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
 	Period any
+	Result any
 	// The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.
 	Threshold any
 	// path parameter, not part of the API's own resource representation
@@ -120,17 +137,17 @@ var FirewallRatelimitResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: FirewallRatelimitResponseSingle_ActionFields,
+			Kind:     "object",
+			Fields:   FirewallRatelimitResponseSingle_ActionFields,
 		},
 		"Match": ubx.FieldSpec{
 			WireName: "match",
-			Kind: "object",
-			Fields: FirewallRatelimitResponseSingle_MatchFields,
+			Kind:     "object",
+			Fields:   FirewallRatelimitResponseSingle_MatchFields,
 		},
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Period":      ubx.FieldSpec{WireName: "period"},
+		"Threshold":   ubx.FieldSpec{WireName: "threshold"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"RateLimitId": ubx.FieldSpec{WireName: "rate_limit_id"},
 	},
 }

@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TransformationsAllowedOrigin_Errors struct {
+	Code    any
+	Message any
+}
+
+type TransformationsAllowedOrigin_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type TransformationsAllowedOriginConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TransformationsAllowedOriginAttrs struct {
+	Errors   any
+	Messages any
+	// Controls which origins are allowed to request image and video transformations.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

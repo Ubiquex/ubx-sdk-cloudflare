@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesSslVerificationResponseCollection_Result_VerificationInfo:
+    record_name: Any = None
+    record_target: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesSslVerificationResponseCollection_Result:
+    brand_check: Any = None
+    cert_pack_uuid: Any = None
+    certificate_status: Any = None
+    signature: Any = None
+    validation_method: Any = None
+    verification_info: Any = None
+    verification_status: Any = None
+    verification_type: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesSslVerificationResponseCollectionConfig:
     # Immediately retry SSL Verification.
     retry: Any = None
@@ -15,6 +31,7 @@ class TlsCertificatesAndHostnamesSslVerificationResponseCollectionConfig:
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesSslVerificationResponseCollectionAttrs:
+    result: Any = None
     # Immediately retry SSL Verification.
     retry: Any = None
     # Identifier.

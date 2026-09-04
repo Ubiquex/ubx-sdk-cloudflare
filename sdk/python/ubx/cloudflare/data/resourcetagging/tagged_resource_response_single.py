@@ -10,6 +10,17 @@ import ubx_sdk as ubx
 class TaggedResourceResponseSingle_AccountId:
     pass
 
+@dataclasses.dataclass
+class TaggedResourceResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TaggedResourceResponseSingle_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
 _TaggedResourceResponseSingle_AccountIdFields = {
 }
 
@@ -26,10 +37,15 @@ class TaggedResourceResponseSingleConfig:
 @dataclasses.dataclass
 class TaggedResourceResponseSingleAttrs:
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # Identifies the unique resource.
     resource_id: Any = None
     # Identifies the type of account-level resource.
     resource_type: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Worker ID is required only for worker_version resources
     worker_id: Any = None
 

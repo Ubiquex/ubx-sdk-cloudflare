@@ -3,6 +3,19 @@ package custompagesforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPagesCustomPageResult_Result struct {
+	CreatedOn      any
+	Description    any
+	Id             any
+	ModifiedOn     any
+	PreviewTarget  any
+	RequiredTokens any
+	// The custom page state.
+	State any
+	// The URL associated with the custom page.
+	Url any
+}
+
 type CustomPagesCustomPageResultConfig struct {
 	// The custom page state.
 	State any
@@ -15,6 +28,7 @@ type CustomPagesCustomPageResultConfig struct {
 }
 
 type CustomPagesCustomPageResultAttrs struct {
+	Result any
 	// The custom page state.
 	State any
 	// The URL associated with the custom page.
@@ -28,9 +42,9 @@ type CustomPagesCustomPageResultAttrs struct {
 var CustomPagesCustomPageResult = ubx.ResourceBinding{
 	WireType: "cloudflare_custom_pages_custom_page_result",
 	Fields: ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"State":             ubx.FieldSpec{WireName: "state"},
+		"Url":               ubx.FieldSpec{WireName: "url"},
 		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Identifier":        ubx.FieldSpec{WireName: "identifier"},
 	},
 }

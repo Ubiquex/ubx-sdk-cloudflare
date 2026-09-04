@@ -3,6 +3,30 @@ package magicnetworkmonitoringrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicVisibilityMnmMnmRulesSingleResponse_Result struct {
+	// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
+	AutomaticAdvertisement any
+	// The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
+	BandwidthThreshold any
+	// The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values ["1m","5m","10m","15m","20m","30m","45m","60m"].
+	Duration any
+	// The id of the rule. Must be unique.
+	Id any
+	// The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.
+	Name any
+	// The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.
+	PacketThreshold any
+	// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
+	PrefixMatch any
+	Prefixes    any
+	// MNM rule type.
+	Type any
+	// Level of sensitivity set for zscore rules.
+	ZscoreSensitivity any
+	// Target of the zscore rule analysis.
+	ZscoreTarget any
+}
+
 type MagicVisibilityMnmMnmRulesSingleResponseConfig struct {
 	// Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.
 	AutomaticAdvertisement any
@@ -16,7 +40,7 @@ type MagicVisibilityMnmMnmRulesSingleResponseConfig struct {
 	PacketThreshold any
 	// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 	PrefixMatch any
-	Prefixes any
+	Prefixes    any
 	// MNM rule type.
 	Type any
 	// Level of sensitivity set for zscore rules.
@@ -42,7 +66,8 @@ type MagicVisibilityMnmMnmRulesSingleResponseAttrs struct {
 	PacketThreshold any
 	// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
 	PrefixMatch any
-	Prefixes any
+	Prefixes    any
+	Result      any
 	// MNM rule type.
 	Type any
 	// Level of sensitivity set for zscore rules.
@@ -59,16 +84,16 @@ var MagicVisibilityMnmMnmRulesSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_visibility_mnm_mnm_rules_single_response",
 	Fields: ubx.FieldMap{
 		"AutomaticAdvertisement": ubx.FieldSpec{WireName: "automatic_advertisement"},
-		"BandwidthThreshold": ubx.FieldSpec{WireName: "bandwidth_threshold"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PacketThreshold": ubx.FieldSpec{WireName: "packet_threshold"},
-		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-		"Prefixes": ubx.FieldSpec{WireName: "prefixes"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZscoreSensitivity": ubx.FieldSpec{WireName: "zscore_sensitivity"},
-		"ZscoreTarget": ubx.FieldSpec{WireName: "zscore_target"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"BandwidthThreshold":     ubx.FieldSpec{WireName: "bandwidth_threshold"},
+		"Duration":               ubx.FieldSpec{WireName: "duration"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"PacketThreshold":        ubx.FieldSpec{WireName: "packet_threshold"},
+		"PrefixMatch":            ubx.FieldSpec{WireName: "prefix_match"},
+		"Prefixes":               ubx.FieldSpec{WireName: "prefixes"},
+		"Type":                   ubx.FieldSpec{WireName: "type"},
+		"ZscoreSensitivity":      ubx.FieldSpec{WireName: "zscore_sensitivity"},
+		"ZscoreTarget":           ubx.FieldSpec{WireName: "zscore_target"},
+		"AccountId":              ubx.FieldSpec{WireName: "account_id"},
+		"RuleId":                 ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

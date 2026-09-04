@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UrlIgnorePattern_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class UrlIgnorePattern_Result:
+    comments: Any = None
+    created_at: Any = None
+    id: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+    pattern: Any = None
+
+@dataclasses.dataclass
 class UrlIgnorePatternConfig:
     page: Any = None
     per_page: Any = None
@@ -15,6 +28,7 @@ class UrlIgnorePatternConfig:
 class UrlIgnorePatternAttrs:
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 UrlIgnorePattern = ubx.DataSourceBinding(
     wire_type="cloudflare_url_ignore_pattern",

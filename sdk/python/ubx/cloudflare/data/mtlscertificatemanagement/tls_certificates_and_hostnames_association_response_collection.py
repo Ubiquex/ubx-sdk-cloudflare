@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesAssociationResponseCollection_Result:
+    service: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesAssociationResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +24,7 @@ class TlsCertificatesAndHostnamesAssociationResponseCollectionAttrs:
     account_id: Any = None
     # Identifier.
     mtls_certificate_id: Any = None
+    result: Any = None
 
 TlsCertificatesAndHostnamesAssociationResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_tls_certificates_and_hostnames_association_response_collection",

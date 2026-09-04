@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LevelOrder_Result:
+    level_ids: Any = None
+
+@dataclasses.dataclass
 class LevelOrderConfig:
     account_id: Any = None
     sensitivity_group_id: Any = None
@@ -14,6 +18,8 @@ class LevelOrderConfig:
 @dataclasses.dataclass
 class LevelOrderAttrs:
     account_id: Any = None
+    # The ordered list of level IDs for a sensitivity group. Used to get and set the ordering of levels independently of level attributes.
+    result: Any = None
     sensitivity_group_id: Any = None
 
 LevelOrder = ubx.DataSourceBinding(

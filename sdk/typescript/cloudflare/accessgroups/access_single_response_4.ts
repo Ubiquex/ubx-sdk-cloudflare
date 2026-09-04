@@ -122,6 +122,26 @@ export interface AccessSingleResponse4_Exclude {
   userRiskScore?: AccessSingleResponse4_Exclude_UserRiskScore | Computed<AccessSingleResponse4_Exclude_UserRiskScore>;
 }
 
+export interface AccessSingleResponse4_Result_CreatedAt {
+}
+
+export interface AccessSingleResponse4_Result {
+  createdAt?: AccessSingleResponse4_Result_CreatedAt | Computed<AccessSingleResponse4_Result_CreatedAt>;
+  /** Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules. */
+  exclude?: AccessSingleResponse4_Exclude[] | Computed<AccessSingleResponse4_Exclude[]>;
+  /** UUID. */
+  id?: string | Computed<string>;
+  /** Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. */
+  include?: AccessSingleResponse4_Exclude[] | Computed<AccessSingleResponse4_Exclude[]>;
+  /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
+  isDefault?: AccessSingleResponse4_Exclude[] | Computed<AccessSingleResponse4_Exclude[]>;
+  /** The name of the Access group. */
+  name?: string | Computed<string>;
+  /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
+  require?: AccessSingleResponse4_Exclude[] | Computed<AccessSingleResponse4_Exclude[]>;
+  updatedAt?: AccessSingleResponse4_Result_CreatedAt | Computed<AccessSingleResponse4_Result_CreatedAt>;
+}
+
 const AccessSingleResponse4_Exclude_AuthContextFields: FieldMap = {
   acId: "ac_id",
   id: "id",
@@ -363,6 +383,7 @@ export interface AccessSingleResponse4Attrs {
   name: string;
   /** Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules. */
   require: AccessSingleResponse4_Exclude[];
+  result: AccessSingleResponse4_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

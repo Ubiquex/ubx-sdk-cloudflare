@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiWorkflowStatusResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiWorkflowStatusResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiWorkflowStatusResponseSingle_Result_Error:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiWorkflowStatusResponseSingle_Result_Links:
+    # URL to the domain resource.
+    resource: Any = None
+    # URL to this status resource.
+    self: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiWorkflowStatusResponseSingle_Result:
+    # Indicates whether the workflow reached a terminal state. A `succeeded` or `failed` state returns `true`; `pending`, `in_progress`, `action_required`, and `blocked` return `false`.
+    completed: Any = None
+    # Provides workflow-specific data. For domain-centric workflows, `context.domain_name` identifies the workflow subject.
+    context: Any = None
+    created_at: Any = None
+    error: Any = None
+    links: Any = None
+    # Describes the workflow lifecycle state. - `pending`: The workflow awaits processing. - `in_progress`: Processing started. Continue polling `links.self`. An internal deadline limits the duration of this state. - `action_required`: The workflow pauses for user action. See `context.action` for details. Stop automated polling until the user completes the required action. - `blocked`: A third party, such as the domain extension's registry or a losing registrar, prevents progress. Continue polling because the block may resolve when the third party responds. - `succeeded`: Terminal state. The operation completed successfully. `completed` equals `true`. For registrations, `context.registration` contains the resulting registration resource. - `failed`: Terminal state. The operation failed. `completed` equals `true`. See `error.code` and `error.message` for the reason. Require user review before retrying.
+    state: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiWorkflowStatusResponseSingleConfig:
     # Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
     domain_name: Any = None
@@ -17,6 +52,12 @@ class RegistrarApiWorkflowStatusResponseSingleAttrs:
     account_id: Any = None
     # Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
     domain_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Status of an async registration workflow.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RegistrarApiWorkflowStatusResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_workflow_status_response_single",

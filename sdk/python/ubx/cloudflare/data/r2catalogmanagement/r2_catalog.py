@@ -7,6 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class R2Catalog_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class R2Catalog_Result_Warehouses_CredentialStatus:
+    pass
+
+@dataclasses.dataclass
+class R2Catalog_Result_Warehouses_MaintenanceConfig_Compaction:
+    state: Any = None
+    target_size_mb: Any = None
+
+@dataclasses.dataclass
+class R2Catalog_Result_Warehouses_MaintenanceConfig_SnapshotExpiration:
+    max_snapshot_age: Any = None
+    min_snapshots_to_keep: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
+class R2Catalog_Result_Warehouses_MaintenanceConfig:
+    compaction: Any = None
+    snapshot_expiration: Any = None
+
+@dataclasses.dataclass
+class R2Catalog_Result_Warehouses:
+    bucket: Any = None
+    credential_status: Any = None
+    id: Any = None
+    maintenance_config: Any = None
+    name: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class R2Catalog_Result:
+    # Lists catalogs in the account.
+    warehouses: Any = None
+
+@dataclasses.dataclass
 class R2CatalogConfig:
     # Use this to identify the account.
     account_id: Any = None
@@ -15,6 +54,14 @@ class R2CatalogConfig:
 class R2CatalogAttrs:
     # Use this to identify the account.
     account_id: Any = None
+    # Contains errors if the API call was unsuccessful.
+    errors: Any = None
+    # Contains informational messages.
+    messages: Any = None
+    # Contains the list of catalogs.
+    result: Any = None
+    # Indicates whether the API call was successful.
+    success: Any = None
 
 R2Catalog = ubx.DataSourceBinding(
     wire_type="cloudflare_r2_catalog",

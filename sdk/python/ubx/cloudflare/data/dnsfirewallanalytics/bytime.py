@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bytime_Result_Data:
+    metrics: Any = None
+
+@dataclasses.dataclass
+class Bytime_Result_Query:
+    time_delta: Any = None
+
+@dataclasses.dataclass
+class Bytime_Result:
+    data: Any = None
+    data_lag: Any = None
+    max: Any = None
+    min: Any = None
+    query: Any = None
+    rows: Any = None
+    time_intervals: Any = None
+    totals: Any = None
+
+@dataclasses.dataclass
 class BytimeConfig:
     # Identifier.
     account_id: Any = None
@@ -43,6 +62,7 @@ class BytimeAttrs:
     limit: Any = None
     # A comma-separated list of metrics to query.
     metrics: Any = None
+    result: Any = None
     # Start date and time of requesting data period in ISO 8601 format.
     since: Any = None
     # A comma-separated list of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).

@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelSinkholesSinkholeSingleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesSinkholeSingleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesSinkholeSingleResponse_Result:
+    # The account tag that owns this sinkhole.
+    account_tag: Any = None
+    # The date and time when the sinkhole was created.
+    created_on: Any = None
+    # The unique identifier for the sinkhole.
+    id: Any = None
+    # The date and time when the sinkhole was last modified.
+    modified_on: Any = None
+    # The name of the sinkhole.
+    name: Any = None
+    # The name of the R2 bucket to store results.
+    r2_bucket: Any = None
+    # The id of the R2 instance.
+    r2_id: Any = None
+
+@dataclasses.dataclass
 class IntelSinkholesSinkholeSingleResponseConfig:
     # The name of the sinkhole.
     name: Any = None
@@ -23,6 +51,8 @@ class IntelSinkholesSinkholeSingleResponseConfig:
 
 @dataclasses.dataclass
 class IntelSinkholesSinkholeSingleResponseAttrs:
+    errors: Any = None
+    messages: Any = None
     # The name of the sinkhole.
     name: Any = None
     # The name of the R2 bucket to store results. Required if you want to store large request bodies in R2.
@@ -31,6 +61,9 @@ class IntelSinkholesSinkholeSingleResponseAttrs:
     r2_id: Any = None
     # The secret key for the R2 API token. Required if you want to store large request bodies in R2.
     r2_secret: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

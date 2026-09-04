@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_Result struct {
 	Description any
-	EndReason any
-	EndedAt any
-	Id any
-	LastSeenAt any
-	Source any
-	StartedAt any
+	EndReason   any
+	EndedAt     any
+	Id          any
+	LastSeenAt  any
+	Source      any
+	StartedAt   any
 }
 
 type Job_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
 type JobConfig struct {
 	AccountId any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
-	Id any
-	Page any
+	Id      any
+	Page    any
 	PerPage any
 }
 
 type JobAttrs struct {
 	AccountId any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
-	Id any
-	Page any
-	PerPage any
-	Result any
+	Id         any
+	Page       any
+	PerPage    any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var Job = ubx.DataSourceBinding{
 	WireType: "cloudflare_job",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

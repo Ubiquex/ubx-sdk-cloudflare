@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DigitalExperienceMonitoringDevice_CpuPctByApp struct {
 	CpuPct any
-	Name any
+	Name   any
 }
 
 type DigitalExperienceMonitoringDevice_DeviceIpv4_Location struct {
-	City any
+	City       any
 	CountryIso any
-	StateIso any
-	Zip any
+	StateIso   any
+	Zip        any
 }
 
 type DigitalExperienceMonitoringDevice_DeviceIpv4 struct {
-	Address any
-	Asn any
-	Aso any
+	Address  any
+	Asn      any
+	Aso      any
 	Location any
-	Name any
-	Netmask any
-	Version any
+	Name     any
+	Netmask  any
+	Version  any
 }
 
 type DigitalExperienceMonitoringDevice_RamUsedPctByApp struct {
-	Name any
+	Name       any
 	RamUsedPct any
 }
 
 type DigitalExperienceMonitoringDevice_Rtt_MinRttUs struct {
 	Downstream any
-	Upstream any
+	Upstream   any
 }
 
 type DigitalExperienceMonitoringDevice_Rtt struct {
 	MinRttUs any
-	RttUs any
+	RttUs    any
 	RttVarUs any
 }
 
 type DigitalExperienceMonitoringDevice_TunnelStats struct {
-	BytesLost any
-	BytesReceived any
-	BytesRetransmitted any
-	BytesSent any
-	PacketsLost any
-	PacketsReceived any
+	BytesLost            any
+	BytesReceived        any
+	BytesRetransmitted   any
+	BytesSent            any
+	PacketsLost          any
+	PacketsReceived      any
 	PacketsRetransmitted any
-	PacketsSent any
-	StatsWindowMs any
+	PacketsSent          any
+	StatsWindowMs        any
 }
 
 type DigitalExperienceMonitoringDeviceConfig struct {
@@ -66,47 +66,47 @@ type DigitalExperienceMonitoringDeviceConfig struct {
 
 type DigitalExperienceMonitoringDeviceAttrs struct {
 	// Unique identifier linked to an account.
-	AccountId any
-	AlwaysOn any
+	AccountId       any
+	AlwaysOn        any
 	BatteryCharging any
-	BatteryCycles any
-	BatteryPct any
+	BatteryCycles   any
+	BatteryPct      any
 	// Cloudflare colo airport code.
-	Colo any
+	Colo           any
 	ConnectionType any
-	CpuPct any
-	CpuPctByApp any
+	CpuPct         any
+	CpuPctByApp    any
 	// Unique identifier for the physical device (UUID).
-	DeviceId any
+	DeviceId   any
 	DeviceIpv4 any
 	DeviceIpv6 any
 	// Device identifier (human readable).
 	DeviceName any
 	// Deprecated: use registrationId. Device registration identifier (UUID).
 	DeviceRegistration any
-	DiskReadBps any
-	DiskUsagePct any
-	DiskWriteBps any
-	DohSubdomain any
-	EstimatedLossPct any
-	FirewallEnabled any
-	GatewayIpv4 any
-	GatewayIpv6 any
+	DiskReadBps        any
+	DiskUsagePct       any
+	DiskWriteBps       any
+	DohSubdomain       any
+	EstimatedLossPct   any
+	FirewallEnabled    any
+	GatewayIpv4        any
+	GatewayIpv6        any
 	HandshakeLatencyMs any
-	IspIpv4 any
-	IspIpv6 any
-	Metal any
+	IspIpv4            any
+	IspIpv6            any
+	Metal              any
 	// The mode under which the WARP client is run.
-	Mode any
+	Mode           any
 	NetworkRcvdBps any
 	NetworkSentBps any
-	NetworkSsid any
+	NetworkSsid    any
 	// User contact email address
 	PersonEmail any
 	// Operating system.
-	Platform any
-	RamAvailableKb any
-	RamUsedPct any
+	Platform        any
+	RamAvailableKb  any
+	RamUsedPct      any
 	RamUsedPctByApp any
 	// Device registration identifier (UUID v4). On multi-user devices, this uniquely identifies a user's registration on the device.
 	RegistrationId any
@@ -115,25 +115,25 @@ type DigitalExperienceMonitoringDeviceAttrs struct {
 	// Number of minutes before current time.
 	SinceMinutes any
 	// Network status.
-	Status any
+	Status       any
 	SwitchLocked any
 	// Current time. Timestamp can be provided in ISO 8601 datetime format or milliseconds since epoch.
-	TimeNow any
+	TimeNow   any
 	Timestamp any
 	// WARP tunnel packet and byte counters.
 	TunnelStats any
-	TunnelType any
+	TunnelType  any
 	// WARP client version.
-	Version any
+	Version         any
 	WifiStrengthDbm any
 }
 
 var DigitalExperienceMonitoringDevice = ubx.DataSourceBinding{
 	WireType: "cloudflare_digital_experience_monitoring_device",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"Colo":         ubx.FieldSpec{WireName: "colo"},
+		"DeviceId":     ubx.FieldSpec{WireName: "device_id"},
 		"SinceMinutes": ubx.FieldSpec{WireName: "since_minutes"},
-		"TimeNow": ubx.FieldSpec{WireName: "time_now"},
+		"TimeNow":      ubx.FieldSpec{WireName: "time_now"},
 	},
 }

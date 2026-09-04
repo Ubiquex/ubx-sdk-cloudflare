@@ -3,6 +3,17 @@ package spectrumanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type QueryResponseAggregate_Result_AppId struct {
+}
+
+type QueryResponseAggregate_Result struct {
+	AppId        any
+	BytesEgress  any
+	BytesIngress any
+	Connections  any
+	DurationAvg  any
+}
+
 type QueryResponseAggregateConfig struct {
 	// Comma-delimited list of Spectrum Application Id(s). If provided, the response will be limited to Spectrum Application Id(s) that match.
 	AppId any
@@ -17,6 +28,7 @@ type QueryResponseAggregateAttrs struct {
 	AppId any
 	// Co-location identifier.
 	ColoName any
+	Result   any
 	// Identifier.
 	ZoneId any
 }
@@ -24,8 +36,8 @@ type QueryResponseAggregateAttrs struct {
 var QueryResponseAggregate = ubx.DataSourceBinding{
 	WireType: "cloudflare_spectrum_analytics_query_response_aggregate",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":    ubx.FieldSpec{WireName: "app_id"},
 		"ColoName": ubx.FieldSpec{WireName: "colo_name"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":   ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

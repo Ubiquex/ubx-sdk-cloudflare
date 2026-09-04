@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IamScimGroup_Members struct {
 	Display any
-	Value any
+	Value   any
 }
 
 type IamScimGroup_Meta struct {
@@ -34,7 +34,7 @@ type IamScimGroupAttrs struct {
 	// A list of members of the Group. Only populated for custom (Phase 2) groups on individual GET requests. Each member object contains a `value` (user tag) and optional `display` (email).
 	Members any
 	// Resource metadata for a SCIM Group.
-	Meta any
+	Meta    any
 	Schemas any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -46,8 +46,8 @@ var IamScimGroup = ubx.ResourceBinding{
 	WireType: "cloudflare_iam_scim_group",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"ExternalId":  ubx.FieldSpec{WireName: "external_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"GroupId":     ubx.FieldSpec{WireName: "group_id"},
 	},
 }

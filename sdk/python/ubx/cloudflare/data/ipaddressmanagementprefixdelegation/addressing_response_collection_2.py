@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingResponseCollection2_Result:
+    cidr: Any = None
+    created_at: Any = None
+    delegated_account_id: Any = None
+    id: Any = None
+    modified_at: Any = None
+    parent_prefix_id: Any = None
+
+@dataclasses.dataclass
 class AddressingResponseCollection2Config:
     # Identifier of a Cloudflare account.
     account_id: Any = None
@@ -19,6 +28,7 @@ class AddressingResponseCollection2Attrs:
     account_id: Any = None
     # Identifier of an IP Prefix.
     prefix_id: Any = None
+    result: Any = None
 
 AddressingResponseCollection2 = ubx.DataSourceBinding(
     wire_type="cloudflare_addressing_response_collection_2",

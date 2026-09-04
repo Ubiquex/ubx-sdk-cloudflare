@@ -3,6 +3,13 @@ package ipaddressmanagementdynamicadvertisement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingAdvertisedResponse_Result struct {
+	// Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.
+	Advertised any
+	// Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+	AdvertisedModifiedAt any
+}
+
 type AddressingAdvertisedResponseConfig struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -15,12 +22,13 @@ type AddressingAdvertisedResponseAttrs struct {
 	AccountId any
 	// Identifier of an IP Prefix.
 	PrefixId any
+	Result   any
 }
 
 var AddressingAdvertisedResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_addressing_advertised_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

@@ -7,12 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesEnabledResponse_Result:
+    # Indicates whether zone-level authenticated origin pulls is enabled.
+    enabled: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesEnabledResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesEnabledResponseAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

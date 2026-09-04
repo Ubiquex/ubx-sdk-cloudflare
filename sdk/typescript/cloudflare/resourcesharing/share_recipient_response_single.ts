@@ -4,6 +4,32 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ShareRecipientResponseSingle_AccountId {
 }
 
+export interface ShareRecipientResponseSingle_Errors {
+  code?: number | Computed<number>;
+  message?: string | Computed<string>;
+}
+
+export interface ShareRecipientResponseSingle_Result_Resources {
+  error?: string | Computed<string>;
+  resourceId?: string | Computed<string>;
+  resourceVersion?: number | Computed<number>;
+  terminal?: boolean | Computed<boolean>;
+}
+
+export interface ShareRecipientResponseSingle_Result {
+  /** Account identifier. */
+  accountId: string | Computed<string>;
+  /** The current state of the recipient relative to the share. The `desired_association_status` (not exposed in the response) tracks the target state set by the API; the background reconciliation workflow drives `current_association_status` toward it. - `associating` — The recipient was recently added; the workflow is pushing shared resources into the recipient account. - `associated` — Shared resources have been successfully applied to the recipient account. - `disassociating` — The recipient was removed (via DELETE or PUT replacement); the workflow is removing shared resources from the recipient account. - `disassociated` — Shared resources have been removed from the recipient account. The recipient record remains in the database. */
+  associationStatus: string | Computed<string>;
+  /** When the share was created. */
+  created: string | Computed<string>;
+  /** Share Recipient identifier tag. */
+  id: string | Computed<string>;
+  /** When the share was modified. */
+  modified: string | Computed<string>;
+  resources?: ShareRecipientResponseSingle_Result_Resources[] | Computed<ShareRecipientResponseSingle_Result_Resources[]>;
+}
+
 const ShareRecipientResponseSingle_AccountIdFields: FieldMap = {
 };
 
@@ -27,10 +53,15 @@ export interface ShareRecipientResponseSingleConfig {
 export interface ShareRecipientResponseSingleAttrs {
   /** Deprecated alias for `recipient_account_id`. Use `recipient_account_id` instead. The body field collided with the URL path parameter of the same name, which prevented SDK generators from distinguishing the source account (in the URL) from the recipient account (in the body). Both names will continue to be accepted until 2027-05-26 (see `x-sunset`). */
   accountId: ShareRecipientResponseSingle_AccountId;
+  errors: ShareRecipientResponseSingle_Errors[];
   /** Organization identifier. */
   organizationId: string;
   /** The account that will receive the share. */
   recipientAccountId: ShareRecipientResponseSingle_AccountId;
+  /** A recipient of a share. The `association_status` field tracks the lifecycle of the shared resources in the recipient account. All recipients are returned by the list endpoint regardless of status; filter client-side if only active recipients are needed. */
+  result: ShareRecipientResponseSingle_Result;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation (renamed from "account_id": that name is already used by a differently-typed, real response attribute) */
   accountIdPath: string;
   /** path parameter, not part of the API's own resource representation */

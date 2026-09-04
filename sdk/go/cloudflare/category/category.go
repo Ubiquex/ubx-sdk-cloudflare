@@ -4,11 +4,11 @@ package category
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CategoryConfig struct {
-	KillChain any
+	KillChain   any
 	MitreAttack any
-	MitreCapec any
-	Name any
-	Shortname any
+	MitreCapec  any
+	Name        any
+	Shortname   any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -16,12 +16,12 @@ type CategoryConfig struct {
 }
 
 type CategoryAttrs struct {
-	KillChain any
+	KillChain   any
 	MitreAttack any
-	MitreCapec any
-	Name any
-	Shortname any
-	Uuid any
+	MitreCapec  any
+	Name        any
+	Shortname   any
+	Uuid        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -31,12 +31,12 @@ type CategoryAttrs struct {
 var Category = ubx.ResourceBinding{
 	WireType: "cloudflare_category",
 	Fields: ubx.FieldMap{
-		"KillChain": ubx.FieldSpec{WireName: "kill_chain"},
+		"KillChain":   ubx.FieldSpec{WireName: "kill_chain"},
 		"MitreAttack": ubx.FieldSpec{WireName: "mitre_attack"},
-		"MitreCapec": ubx.FieldSpec{WireName: "mitre_capec"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Shortname": ubx.FieldSpec{WireName: "shortname"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
+		"MitreCapec":  ubx.FieldSpec{WireName: "mitre_capec"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Shortname":   ubx.FieldSpec{WireName: "shortname"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"CategoryId":  ubx.FieldSpec{WireName: "category_id"},
 	},
 }

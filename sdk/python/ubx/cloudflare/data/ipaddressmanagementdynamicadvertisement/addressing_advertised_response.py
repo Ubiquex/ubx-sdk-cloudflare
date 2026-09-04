@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingAdvertisedResponse_Result:
+    # Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.
+    advertised: Any = None
+    # Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+    advertised_modified_at: Any = None
+
+@dataclasses.dataclass
 class AddressingAdvertisedResponseConfig:
     # Identifier of a Cloudflare account.
     account_id: Any = None
@@ -19,6 +26,7 @@ class AddressingAdvertisedResponseAttrs:
     account_id: Any = None
     # Identifier of an IP Prefix.
     prefix_id: Any = None
+    result: Any = None
 
 AddressingAdvertisedResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_addressing_advertised_response",

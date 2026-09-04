@@ -7,12 +7,57 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AvailabilitiesResponse_Result_Quota_QuotasPerPlan_Value:
+    business: Any = None
+    enterprise: Any = None
+    free: Any = None
+    pro: Any = None
+
+@dataclasses.dataclass
+class AvailabilitiesResponse_Result_Quota_QuotasPerPlan:
+    # Counts per account plan.
+    value: Any = None
+
+@dataclasses.dataclass
+class AvailabilitiesResponse_Result_Quota:
+    # Cloudflare plan.
+    plan: Any = None
+    # The number of tests available per plan.
+    quotas_per_plan: Any = None
+    # The number of remaining schedules available.
+    remaining_schedules: Any = None
+    # The number of remaining tests available.
+    remaining_tests: Any = None
+    # The number of schedules available per plan.
+    schedule_quotas_per_plan: Any = None
+
+@dataclasses.dataclass
+class AvailabilitiesResponse_Result_Regions:
+    label: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class AvailabilitiesResponse_Result_RegionsPerPlan:
+    business: Any = None
+    enterprise: Any = None
+    free: Any = None
+    pro: Any = None
+
+@dataclasses.dataclass
+class AvailabilitiesResponse_Result:
+    quota: Any = None
+    regions: Any = None
+    # Available regions.
+    regions_per_plan: Any = None
+
+@dataclasses.dataclass
 class AvailabilitiesResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AvailabilitiesResponseAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

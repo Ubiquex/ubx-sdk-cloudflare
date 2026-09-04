@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnCatalogSyncsPrebuiltPoliciesResponse_Result:
+    applicable_destinations: Any = None
+    policy_description: Any = None
+    policy_name: Any = None
+    policy_string: Any = None
+
+@dataclasses.dataclass
 class McnCatalogSyncsPrebuiltPoliciesResponseConfig:
     account_id: Any = None
     destination_type: Any = None
@@ -15,6 +22,7 @@ class McnCatalogSyncsPrebuiltPoliciesResponseConfig:
 class McnCatalogSyncsPrebuiltPoliciesResponseAttrs:
     account_id: Any = None
     destination_type: Any = None
+    result: Any = None
 
 McnCatalogSyncsPrebuiltPoliciesResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_mcn_catalog_syncs_prebuilt_policies_response",

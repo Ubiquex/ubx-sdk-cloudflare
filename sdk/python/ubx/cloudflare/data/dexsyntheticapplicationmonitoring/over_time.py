@@ -7,6 +7,126 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class OverTime_Result_OverTime_BatteryCycles:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_ConnectionType:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_Rtt_Value_MinRttUs:
+    downstream: Any = None
+    upstream: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_Rtt_Value:
+    min_rtt_us: Any = None
+    rtt_us: Any = None
+    rtt_var_us: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_Rtt:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TopCpuApplications_Value:
+    cpu_pct: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TopCpuApplications:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TopRamApplications_Value:
+    name: Any = None
+    ram_used_pct: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TopRamApplications:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TunnelStats_Value:
+    bytes_lost: Any = None
+    bytes_received: Any = None
+    bytes_retransmitted: Any = None
+    bytes_sent: Any = None
+    packets_lost: Any = None
+    packets_received: Any = None
+    packets_retransmitted: Any = None
+    packets_sent: Any = None
+    stats_window_ms: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime_TunnelStats:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_OverTime:
+    # Battery cycle count over time.
+    battery_cycles: Any = None
+    # Battery percentage over time.
+    battery_pct: Any = None
+    # Connection type over time.
+    connection_type: Any = None
+    # CPU usage percentage over time.
+    cpu_pct: Any = None
+    # Disk read throughput in bytes per second over time.
+    disk_read_bps: Any = None
+    # Disk usage percentage over time.
+    disk_usage_pct: Any = None
+    # Disk write throughput in bytes per second over time.
+    disk_write_bps: Any = None
+    # WARP mode over time.
+    mode: Any = None
+    # Network bytes received per second over time.
+    network_rcvd_bps: Any = None
+    # Network bytes sent per second over time.
+    network_sent_bps: Any = None
+    # Network SSID over time.
+    network_ssid: Any = None
+    # Available RAM in kilobytes over time.
+    ram_available_kb: Any = None
+    # RAM usage percentage over time.
+    ram_used_pct: Any = None
+    # Round-trip time stats over time.
+    rtt: Any = None
+    # Device status over time.
+    status: Any = None
+    # Top CPU-consuming applications over time.
+    top_cpu_applications: Any = None
+    # Top RAM-consuming applications over time.
+    top_ram_applications: Any = None
+    # Tunnel stats over time.
+    tunnel_stats: Any = None
+    # Tunnel type over time.
+    tunnel_type: Any = None
+    # Unique network count over time.
+    unique_networks: Any = None
+    # Wi-Fi signal strength over time in dBm.
+    wifi_strength_dbm: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result_TopNetworks:
+    count: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class OverTime_Result:
+    # Time-bucketed device metrics.
+    over_time: Any = None
+    # Top networks observed for the device.
+    top_networks: Any = None
+
+@dataclasses.dataclass
 class OverTimeConfig:
     # Cloudflare colo airport code.
     colo: Any = None
@@ -26,6 +146,7 @@ class OverTimeAttrs:
     device_id: Any = None
     from_: Any = None
     interval: Any = None
+    result: Any = None
     to: Any = None
 
 OverTime = ubx.DataSourceBinding(

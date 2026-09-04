@@ -3,16 +3,30 @@ package notificationdestinationswithpagerduty
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaComponentsSchemasResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaComponentsSchemasResponseCollection_Result struct {
+	Id   any
+	Name any
+}
+
 type AaaComponentsSchemasResponseCollectionConfig struct {
 }
 
 type AaaComponentsSchemasResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_components_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

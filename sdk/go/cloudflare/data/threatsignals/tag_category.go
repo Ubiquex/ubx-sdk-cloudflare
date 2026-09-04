@@ -9,26 +9,26 @@ type TagCategory_Errors struct {
 
 type TagCategory_Result struct {
 	CategoryUuids any
-	SkillId any
+	SkillId       any
 }
 
 type TagCategoryConfig struct {
 	AccountId any
-	SkillId any
+	SkillId   any
 }
 
 type TagCategoryAttrs struct {
 	AccountId any
-	Errors any
-	Result any
-	SkillId any
-	Success any
+	Errors    any
+	Result    any
+	SkillId   any
+	Success   any
 }
 
 var TagCategory = ubx.DataSourceBinding{
 	WireType: "cloudflare_tag_category",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SkillId": ubx.FieldSpec{WireName: "skill_id"},
+		"SkillId":   ubx.FieldSpec{WireName: "skill_id"},
 	},
 }

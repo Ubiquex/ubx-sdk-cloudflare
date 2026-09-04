@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelRouteResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelRouteResponseSingle_Result:
+    # Optional remark describing the route.
+    comment: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # UUID of the route.
+    id: Any = None
+    # The private IPv4 or IPv6 range connected by the route, in CIDR notation.
+    network: Any = None
+    # UUID of the tunnel.
+    tunnel_id: Any = None
+    # UUID of the virtual network.
+    virtual_network_id: Any = None
+
+@dataclasses.dataclass
 class TunnelRouteResponseSingleConfig:
     # Optional remark describing the route.
     comment: Any = None
@@ -23,8 +45,13 @@ class TunnelRouteResponseSingleConfig:
 class TunnelRouteResponseSingleAttrs:
     # Optional remark describing the route.
     comment: Any = None
+    errors: Any = None
+    messages: Any = None
     # The private IPv4 or IPv6 range connected by the route, in CIDR notation.
     network: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
     # UUID of the virtual network.

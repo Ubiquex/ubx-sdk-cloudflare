@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Integration_Result:
+    # The Cloudflare account tag.
+    account_tag: Any = None
+    # Whether this integration is enabled and should export changes in risk score.
+    active: Any = None
+    # When the integration was created in RFC3339 format.
+    created_at: Any = None
+    # The id of the integration, a UUIDv4.
+    id: Any = None
+    integration_type: Any = None
+    # A reference ID defined by the client. Should be set to the Access-Okta IDP integration ID. Useful when the risk-score integration needs to be associated with a secondary asset and recalled using that ID.
+    reference_id: Any = None
+    # The base URL for the tenant. E.g. "https://tenant.okta.com".
+    tenant_url: Any = None
+    # The URL for the Shared Signals Framework configuration, e.g. "/.well-known/sse-configuration/{integration_uuid}/". https://openid.net/specs/openid-sse-framework-1_0.html#rfc.section.6.2.1.
+    well_known_url: Any = None
+
+@dataclasses.dataclass
 class IntegrationConfig:
     integration_type: Any = None
     # A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
@@ -23,6 +41,7 @@ class IntegrationAttrs:
     integration_type: Any = None
     # A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
     reference_id: Any = None
+    result: Any = None
     # The base url of the tenant, e.g. "https://tenant.okta.com".
     tenant_url: Any = None
     # path parameter, not part of the API's own resource representation

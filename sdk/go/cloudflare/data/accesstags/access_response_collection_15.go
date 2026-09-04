@@ -3,6 +3,16 @@ package accesstags
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection15_Result_CreatedAt struct {
+}
+
+type AccessResponseCollection15_Result struct {
+	AppCount  any
+	CreatedAt any
+	Name      any
+	UpdatedAt any
+}
+
 type AccessResponseCollection15Config struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +29,14 @@ type AccessResponseCollection15Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 }
 
 var AccessResponseCollection15 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_15",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -10,7 +10,28 @@ export interface DigitalExperienceMonitoringDexSingleResponse_Data {
   method?: string | Computed<string>;
 }
 
-export interface DigitalExperienceMonitoringDexSingleResponse_TargetPolicies {
+export interface DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies {
+}
+
+export interface DigitalExperienceMonitoringDexSingleResponse_Result {
+  /** Date the test was created, in RFC 3339 format. */
+  created?: string | Computed<string>;
+  /** The configuration object which contains the details for the WARP client to conduct the test. */
+  data: DigitalExperienceMonitoringDexSingleResponse_Data | Computed<DigitalExperienceMonitoringDexSingleResponse_Data>;
+  /** Additional details about the test. */
+  description?: string | Computed<string>;
+  /** Determines whether or not the test is active. */
+  enabled: boolean | Computed<boolean>;
+  /** How often the test will run. */
+  interval: string | Computed<string>;
+  /** The name of the DEX test. Must be unique. */
+  name: string | Computed<string>;
+  targetPolicies?: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies | Computed<DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies>;
+  targeted?: boolean | Computed<boolean>;
+  /** The unique identifier for the test. */
+  testId?: string | Computed<string>;
+  /** Date the test was last updated, in RFC 3339 format. */
+  updated?: string | Computed<string>;
 }
 
 const DigitalExperienceMonitoringDexSingleResponse_DataFields: FieldMap = {
@@ -19,7 +40,7 @@ const DigitalExperienceMonitoringDexSingleResponse_DataFields: FieldMap = {
   method: "method",
 };
 
-const DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields: FieldMap = {
+const DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields: FieldMap = {
 };
 
 export interface DigitalExperienceMonitoringDexSingleResponseConfig {
@@ -33,7 +54,7 @@ export interface DigitalExperienceMonitoringDexSingleResponseConfig {
   interval: string | Computed<string>;
   /** The name of the DEX test. Must be unique. */
   name: string | Computed<string>;
-  targetPolicies?: DigitalExperienceMonitoringDexSingleResponse_TargetPolicies | Computed<DigitalExperienceMonitoringDexSingleResponse_TargetPolicies>;
+  targetPolicies?: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies | Computed<DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies>;
   targeted?: boolean | Computed<boolean>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
@@ -54,7 +75,8 @@ export interface DigitalExperienceMonitoringDexSingleResponseAttrs {
   interval: string;
   /** The name of the DEX test. Must be unique. */
   name: string;
-  targetPolicies: DigitalExperienceMonitoringDexSingleResponse_TargetPolicies;
+  result: DigitalExperienceMonitoringDexSingleResponse_Result;
+  targetPolicies: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies;
   targeted: boolean;
   /** The unique identifier for the test. */
   testId: string;
@@ -81,7 +103,7 @@ export const DigitalExperienceMonitoringDexSingleResponse: ResourceBinding<Digit
     targetPolicies: {
       wireName: "target_policies",
       kind: "object",
-      fields: DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields,
+      fields: DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields,
     },
     targeted: "targeted",
     accountId: "account_id",

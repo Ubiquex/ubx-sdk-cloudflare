@@ -4,35 +4,35 @@ package radargeolocations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Geolocation_Result_Geolocations_Parent_Parent struct {
-	Code any
-	GeoId any
-	Latitude any
-	Locale any
+	Code      any
+	GeoId     any
+	Latitude  any
+	Locale    any
 	Longitude any
-	Name any
-	Type any
+	Name      any
+	Type      any
 }
 
 type Geolocation_Result_Geolocations_Parent struct {
-	Code any
-	GeoId any
-	Latitude any
-	Locale any
+	Code      any
+	GeoId     any
+	Latitude  any
+	Locale    any
 	Longitude any
-	Name any
-	Parent any
-	Type any
+	Name      any
+	Parent    any
+	Type      any
 }
 
 type Geolocation_Result_Geolocations struct {
-	Code any
-	GeoId any
-	Latitude any
-	Locale any
+	Code      any
+	GeoId     any
+	Latitude  any
+	Locale    any
 	Longitude any
-	Name any
-	Parent any
-	Type any
+	Name      any
+	Parent    any
+	Type      any
 }
 
 type Geolocation_Result struct {
@@ -62,18 +62,18 @@ type GeolocationAttrs struct {
 	// Filters results by location. Specify a comma-separated list of alpha-2 location codes.
 	Location any
 	// Skips the specified number of objects before fetching the results.
-	Offset any
-	Result any
+	Offset  any
+	Result  any
 	Success any
 }
 
 var Geolocation = ubx.DataSourceBinding{
 	WireType: "cloudflare_geolocation",
 	Fields: ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"GeoId": ubx.FieldSpec{WireName: "geo_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Format":   ubx.FieldSpec{WireName: "format"},
+		"GeoId":    ubx.FieldSpec{WireName: "geo_id"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"Location": ubx.FieldSpec{WireName: "location"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Offset":   ubx.FieldSpec{WireName: "offset"},
 	},
 }

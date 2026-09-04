@@ -3,12 +3,22 @@ package totaltls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesTotalTlsSettingsResponse_Result struct {
+	// The Certificate Authority that Total TLS certificates will be issued through.
+	CertificateAuthority any
+	// If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
+	Enabled any
+	// The validity period in days for the certificates ordered via Total TLS.
+	ValidityPeriod any
+}
+
 type TlsCertificatesAndHostnamesTotalTlsSettingsResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesTotalTlsSettingsResponseAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

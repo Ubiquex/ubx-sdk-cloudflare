@@ -3,16 +3,35 @@ package magicbgpfilterprofiles
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicMagicBgpFilterProfilesListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type MagicMagicBgpFilterProfilesListResponse_Result struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	MatchAction any
+	ModifiedOn  any
+	Name        any
+	Targets     any
+}
+
 type MagicMagicBgpFilterProfilesListResponseConfig struct {
 }
 
 type MagicMagicBgpFilterProfilesListResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var MagicMagicBgpFilterProfilesListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_magic_bgp_filter_profiles_list_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DocumentFingerprint_Result:
+    created_at: Any = None
+    description: Any = None
+    entry_id: Any = None
+    file_name: Any = None
+    id: Any = None
+    match_percent: Any = None
+    name: Any = None
+    status: Any = None
+    updated_at: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class DocumentFingerprintConfig:
     description: Any = None
     match_percent: Any = None
@@ -21,6 +34,7 @@ class DocumentFingerprintAttrs:
     description: Any = None
     match_percent: Any = None
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

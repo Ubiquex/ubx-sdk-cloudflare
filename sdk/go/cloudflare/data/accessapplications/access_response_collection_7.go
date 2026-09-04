@@ -3,6 +3,9 @@ package accessapplications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection7_Result struct {
+}
+
 type AccessResponseCollection7Config struct {
 	// Identifier.
 	AccountId any
@@ -39,6 +42,7 @@ type AccessResponseCollection7Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 	// Search for apps by other listed query parameters.
 	Search any
 	// Target Criteria attributes in key=value format.
@@ -48,14 +52,14 @@ type AccessResponseCollection7Attrs struct {
 var AccessResponseCollection7 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_7",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Aud": ubx.FieldSpec{WireName: "aud"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"Aud":              ubx.FieldSpec{WireName: "aud"},
+		"Domain":           ubx.FieldSpec{WireName: "domain"},
+		"Exact":            ubx.FieldSpec{WireName: "exact"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"Search":           ubx.FieldSpec{WireName: "search"},
 		"TargetAttributes": ubx.FieldSpec{WireName: "target_attributes"},
 	},
 }

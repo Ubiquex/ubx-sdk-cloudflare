@@ -3,6 +3,28 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Lock_Errors struct {
+	Code    any
+	Message any
+}
+
+type Lock_Result_Rules_Condition struct {
+	Date          any
+	MaxAgeSeconds any
+	Type          any
+}
+
+type Lock_Result_Rules struct {
+	Condition any
+	Enabled   any
+	Id        any
+	Prefix    any
+}
+
+type Lock_Result struct {
+	Rules any
+}
+
 type LockConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +37,17 @@ type LockAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Lock = ubx.DataSourceBinding{
 	WireType: "cloudflare_lock",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

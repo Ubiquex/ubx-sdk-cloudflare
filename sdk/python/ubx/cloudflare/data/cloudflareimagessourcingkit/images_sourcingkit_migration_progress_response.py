@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesSourcingkitMigrationProgressResponse_Result:
+    ended_at: Any = None
+    # Objects that failed to import.
+    import_errors_count: Any = None
+    # Objects successfully imported.
+    import_success_count: Any = None
+    # Whether the counts are accurate or estimated.
+    is_accurate: Any = None
+    # Total number of objects scanned in the source.
+    scanned_count: Any = None
+    # Objects skipped due to existing images at destination.
+    skipped_conflict_count: Any = None
+    # Objects skipped because their content type was excluded.
+    skipped_excluded_content_type_count: Any = None
+    # Objects skipped because the media could not be decoded.
+    skipped_invalid_media_count: Any = None
+    # Objects skipped because their name is not valid.
+    skipped_invalid_name_count: Any = None
+    # Objects skipped because they exceed the size limit.
+    skipped_oversize_count: Any = None
+    # Objects skipped due to unsupported storage class.
+    skipped_storage_class_count: Any = None
+    # Objects skipped because their content type is not supported.
+    skipped_unsupported_content_type_count: Any = None
+    started_at: Any = None
+    # Current status of the migration.
+    status: Any = None
+
+@dataclasses.dataclass
 class ImagesSourcingkitMigrationProgressResponseConfig:
     # Sourcing kit resource identifier.
     migration_id: Any = None
@@ -17,6 +46,7 @@ class ImagesSourcingkitMigrationProgressResponseAttrs:
     account_id: Any = None
     # Sourcing kit resource identifier.
     migration_id: Any = None
+    result: Any = None
 
 ImagesSourcingkitMigrationProgressResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_images_sourcingkit_migration_progress_response",

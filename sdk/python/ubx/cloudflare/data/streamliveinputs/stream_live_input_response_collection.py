@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamLiveInputResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseCollection_Result_LiveInputs:
+    created: Any = None
+    delete_recording_after_days: Any = None
+    enabled: Any = None
+    meta: Any = None
+    modified: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseCollection_Result:
+    live_inputs: Any = None
+    # The total number of remaining live inputs based on cursor position.
+    range: Any = None
+    # The total number of live inputs that match the provided filters.
+    total: Any = None
+
+@dataclasses.dataclass
 class StreamLiveInputResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +45,13 @@ class StreamLiveInputResponseCollectionConfig:
 class StreamLiveInputResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     # Includes the total number of videos associated with the submitted query parameters.
     include_counts: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 StreamLiveInputResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_live_input_response_collection",

@@ -4,12 +4,12 @@ package radarbots
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bot_Result_Bots struct {
-	Category any
-	Description any
-	Kind any
-	Name any
-	Operator any
-	Slug any
+	Category          any
+	Description       any
+	Kind              any
+	Name              any
+	Operator          any
+	Slug              any
 	UserAgentPatterns any
 }
 
@@ -48,20 +48,20 @@ type BotAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Skips the specified number of objects before fetching the results.
-	Offset any
-	Result any
+	Offset  any
+	Result  any
 	Success any
 }
 
 var Bot = ubx.DataSourceBinding{
 	WireType: "cloudflare_bot",
 	Fields: ubx.FieldMap{
-		"BotCategory": ubx.FieldSpec{WireName: "bot_category"},
-		"BotOperator": ubx.FieldSpec{WireName: "bot_operator"},
+		"BotCategory":           ubx.FieldSpec{WireName: "bot_category"},
+		"BotOperator":           ubx.FieldSpec{WireName: "bot_operator"},
 		"BotVerificationStatus": ubx.FieldSpec{WireName: "bot_verification_status"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Format":                ubx.FieldSpec{WireName: "format"},
+		"Kind":                  ubx.FieldSpec{WireName: "kind"},
+		"Limit":                 ubx.FieldSpec{WireName: "limit"},
+		"Offset":                ubx.FieldSpec{WireName: "offset"},
 	},
 }

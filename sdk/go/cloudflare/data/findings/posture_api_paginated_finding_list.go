@@ -3,44 +3,168 @@ package findings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PostureApiPaginatedFindingListConfig struct {
-	AccountId any
+type PostureApiPaginatedFindingList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedFindingList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedFindingList_Result_Finding_Category struct {
+	Observation any
+	Product     any
+	Type        any
+}
+
+type PostureApiPaginatedFindingList_Result_Finding_Remediation struct {
+	Frameworks any
+	Guide      any
+	Id         any
+	Impact     any
+	Locale     any
+	Threat     any
+}
+
+type PostureApiPaginatedFindingList_Result_Finding struct {
+	Category    any
+	Description any
+	Id          any
+	Name        any
+	Remediation any
+	Severity    any
+	Vendor      any
+}
+
+type PostureApiPaginatedFindingList_Result_Integration_Policy struct {
+	ClientId        any
+	ComplianceLevel any
+	DlpEnabled      any
+	Id              any
+	Link            any
+	Name            any
+	Permissions     any
+}
+
+type PostureApiPaginatedFindingList_Result_Integration_Vendor struct {
+	Description   any
+	DisplayName   any
+	Id            any
+	Logo          any
+	Name          any
+	Policies      any
+	StaticLogo    any
+	ZtEnrollments any
+}
+
+type PostureApiPaginatedFindingList_Result_Integration_ZtEnrollments struct {
+	Description any
+	DisplayName any
+	Enabled     any
+	Id          any
+}
+
+type PostureApiPaginatedFindingList_Result_Integration struct {
+	Created                any
+	CredentialHealthStatus any
+	CredentialsExpiry      any
+	Id                     any
+	IsPaused               any
+	LastHydrated           any
+	Name                   any
+	Permissions            any
+	Policy                 any
+	Status                 any
+	Updated                any
+	Upgradable             any
+	UpgradeDismissed       any
+	Vendor                 any
+	ZtEnrollments          any
+}
+
+type PostureApiPaginatedFindingList_Result_SeverityOverride struct {
+	CreatedBy any
+	Severity  any
+}
+
+type PostureApiPaginatedFindingList_Result struct {
+	ActiveCount          any
+	ArchivedCount        any
+	Finding              any
+	Id                   any
+	Ignored              any
+	InstanceCount        any
+	Integration          any
+	LatestAfflictionDate any
+	SeverityOverride     any
+}
+
+type PostureApiPaginatedFindingList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
 	Cursor any
-	Direction any
-	FindingTypeIds any
-	Ignored any
-	IntegrationId any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
+type PostureApiPaginatedFindingListConfig struct {
+	AccountId         any
+	Cursor            any
+	Direction         any
+	FindingTypeIds    any
+	Ignored           any
+	IntegrationId     any
 	MaxAfflictionDate any
 	MinAfflictionDate any
-	Observation any
-	Order any
-	Page any
-	PerPage any
-	Product any
-	Search any
-	Severity any
-	Type any
+	Observation       any
+	Order             any
+	Page              any
+	PerPage           any
+	Product           any
+	Search            any
+	Severity          any
+	Type              any
 	// Supported vendor types for integrations.
 	Vendor any
 }
 
 type PostureApiPaginatedFindingListAttrs struct {
-	AccountId any
-	Cursor any
-	Direction any
-	FindingTypeIds any
-	Ignored any
-	IntegrationId any
+	AccountId         any
+	Cursor            any
+	Direction         any
+	Errors            any
+	FindingTypeIds    any
+	Ignored           any
+	IntegrationId     any
 	MaxAfflictionDate any
+	Messages          any
 	MinAfflictionDate any
-	Observation any
-	Order any
-	Page any
-	PerPage any
-	Product any
-	Search any
-	Severity any
-	Type any
+	Observation       any
+	Order             any
+	Page              any
+	PerPage           any
+	Product           any
+	// Array of finding objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
+	Search     any
+	Severity   any
+	// Whether the API call was successful.
+	Success any
+	Type    any
 	// Supported vendor types for integrations.
 	Vendor any
 }
@@ -48,22 +172,22 @@ type PostureApiPaginatedFindingListAttrs struct {
 var PostureApiPaginatedFindingList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_finding_list",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"FindingTypeIds": ubx.FieldSpec{WireName: "finding_type_ids"},
-		"Ignored": ubx.FieldSpec{WireName: "ignored"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":            ubx.FieldSpec{WireName: "cursor"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"FindingTypeIds":    ubx.FieldSpec{WireName: "finding_type_ids"},
+		"Ignored":           ubx.FieldSpec{WireName: "ignored"},
+		"IntegrationId":     ubx.FieldSpec{WireName: "integration_id"},
 		"MaxAfflictionDate": ubx.FieldSpec{WireName: "max_affliction_date"},
 		"MinAfflictionDate": ubx.FieldSpec{WireName: "min_affliction_date"},
-		"Observation": ubx.FieldSpec{WireName: "observation"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
+		"Observation":       ubx.FieldSpec{WireName: "observation"},
+		"Order":             ubx.FieldSpec{WireName: "order"},
+		"Page":              ubx.FieldSpec{WireName: "page"},
+		"PerPage":           ubx.FieldSpec{WireName: "per_page"},
+		"Product":           ubx.FieldSpec{WireName: "product"},
+		"Search":            ubx.FieldSpec{WireName: "search"},
+		"Severity":          ubx.FieldSpec{WireName: "severity"},
+		"Type":              ubx.FieldSpec{WireName: "type"},
+		"Vendor":            ubx.FieldSpec{WireName: "vendor"},
 	},
 }

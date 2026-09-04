@@ -3,12 +3,42 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesDevicesResponse_Result_User struct {
+	Email any
+	Id    any
+	Name  any
+}
+
+type TeamsDevicesDevicesResponse_Result struct {
+	Created          any
+	Deleted          any
+	DeviceType       any
+	Id               any
+	Ip               any
+	Key              any
+	LastSeen         any
+	MacAddress       any
+	Manufacturer     any
+	Model            any
+	Name             any
+	OsDistroName     any
+	OsDistroRevision any
+	OsVersion        any
+	OsVersionExtra   any
+	RevokedAt        any
+	SerialNumber     any
+	Updated          any
+	User             any
+	Version          any
+}
+
 type TeamsDevicesDevicesResponseConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesDevicesResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesDevicesResponse = ubx.DataSourceBinding{

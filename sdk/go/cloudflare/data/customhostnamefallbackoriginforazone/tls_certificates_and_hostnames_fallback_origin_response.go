@@ -3,12 +3,26 @@ package customhostnamefallbackoriginforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesFallbackOriginResponse_Result struct {
+	// This is the time the fallback origin was created.
+	CreatedAt any
+	// These are errors that were encountered while trying to activate a fallback origin.
+	Errors any
+	// Your origin hostname that requests to your custom hostnames will be sent to.
+	Origin any
+	// Status of the fallback origin's activation.
+	Status any
+	// This is the time the fallback origin was updated.
+	UpdatedAt any
+}
+
 type TlsCertificatesAndHostnamesFallbackOriginResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesFallbackOriginResponseAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

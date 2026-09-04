@@ -15,91 +15,91 @@ type Item_PublicEndpointParams_Mcp struct {
 }
 
 type Item_PublicEndpointParams_RateLimit struct {
-	PeriodMs any
-	Requests any
+	PeriodMs  any
+	Requests  any
 	Technique any
 }
 
 type Item_PublicEndpointParams struct {
-	AuthorizedHosts any
+	AuthorizedHosts         any
 	ChatCompletionsEndpoint any
 	// Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
 	CustomDomains any
 	// When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
 	DefaultDomainEnabled any
-	Enabled any
+	Enabled              any
 	// Instance IDs exposed through the namespace public endpoint. Empty means nothing is searchable. Every ID must be an existing instance in this namespace, and the list cannot exceed the account's multi-instance search limit.
 	InstancesAllowed any
-	Mcp any
-	RateLimit any
-	SearchEndpoint any
+	Mcp              any
+	RateLimit        any
+	SearchEndpoint   any
 }
 
 type Item_Result struct {
-	Checksum any
+	Checksum    any
 	ChunksCount any
-	CreatedAt any
-	Error any
-	FileSize any
-	Id any
-	Key any
-	LastSeenAt any
+	CreatedAt   any
+	Error       any
+	FileSize    any
+	Id          any
+	Key         any
+	LastSeenAt  any
 	// Built-in, configured filterable, and retained source metadata for the item.
-	Metadata any
-	Namespace any
+	Metadata   any
+	Namespace  any
 	NextAction any
 	// Identifies which data source this item belongs to. "builtin" for uploaded files, "{type}:{source}" for external sources, null for legacy items.
 	SourceId any
-	Status any
+	Status   any
 }
 
 var Item_PublicEndpointParams_ChatCompletionsEndpointFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var Item_PublicEndpointParams_McpFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+}
 
 var Item_PublicEndpointParams_RateLimitFields = ubx.FieldMap{
-		"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-		"Technique": ubx.FieldSpec{WireName: "technique"},
-	}
+	"PeriodMs":  ubx.FieldSpec{WireName: "period_ms"},
+	"Requests":  ubx.FieldSpec{WireName: "requests"},
+	"Technique": ubx.FieldSpec{WireName: "technique"},
+}
 
 var Item_PublicEndpointParamsFields = ubx.FieldMap{
-		"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
-		"ChatCompletionsEndpoint": ubx.FieldSpec{
-			WireName: "chat_completions_endpoint",
-			Kind: "object",
-			Fields: Item_PublicEndpointParams_ChatCompletionsEndpointFields,
-		},
-		"CustomDomains": ubx.FieldSpec{WireName: "custom_domains"},
-		"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"InstancesAllowed": ubx.FieldSpec{WireName: "instances_allowed"},
-		"Mcp": ubx.FieldSpec{
-			WireName: "mcp",
-			Kind: "object",
-			Fields: Item_PublicEndpointParams_McpFields,
-		},
-		"RateLimit": ubx.FieldSpec{
-			WireName: "rate_limit",
-			Kind: "object",
-			Fields: Item_PublicEndpointParams_RateLimitFields,
-		},
-		"SearchEndpoint": ubx.FieldSpec{
-			WireName: "search_endpoint",
-			Kind: "object",
-			Fields: Item_PublicEndpointParams_ChatCompletionsEndpointFields,
-		},
-	}
+	"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
+	"ChatCompletionsEndpoint": ubx.FieldSpec{
+		WireName: "chat_completions_endpoint",
+		Kind:     "object",
+		Fields:   Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+	},
+	"CustomDomains":        ubx.FieldSpec{WireName: "custom_domains"},
+	"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"InstancesAllowed":     ubx.FieldSpec{WireName: "instances_allowed"},
+	"Mcp": ubx.FieldSpec{
+		WireName: "mcp",
+		Kind:     "object",
+		Fields:   Item_PublicEndpointParams_McpFields,
+	},
+	"RateLimit": ubx.FieldSpec{
+		WireName: "rate_limit",
+		Kind:     "object",
+		Fields:   Item_PublicEndpointParams_RateLimitFields,
+	},
+	"SearchEndpoint": ubx.FieldSpec{
+		WireName: "search_endpoint",
+		Kind:     "object",
+		Fields:   Item_PublicEndpointParams_ChatCompletionsEndpointFields,
+	},
+}
 
 type ItemConfig struct {
 	// Optional description for the namespace. Max 256 characters.
-	Description any
-	Name any
+	Description          any
+	Name                 any
 	PublicEndpointParams any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -111,11 +111,11 @@ type ItemConfig struct {
 
 type ItemAttrs struct {
 	// Optional description for the namespace. Max 256 characters.
-	Description any
-	Name any
+	Description          any
+	Name                 any
 	PublicEndpointParams any
-	Result any
-	Success any
+	Result               any
+	Success              any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -128,14 +128,14 @@ var Item = ubx.ResourceBinding{
 	WireType: "cloudflare_item",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PublicEndpointParams": ubx.FieldSpec{
 			WireName: "public_endpoint_params",
-			Kind: "object",
-			Fields: Item_PublicEndpointParamsFields,
+			Kind:     "object",
+			Fields:   Item_PublicEndpointParamsFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ItemId": ubx.FieldSpec{WireName: "item_id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"ItemId":    ubx.FieldSpec{WireName: "item_id"},
 	},
 }

@@ -7,66 +7,66 @@ type Organization_Id struct {
 }
 
 type Organization_Messages struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Organization_Meta_TenantFlags struct {
-	AccountCreation any
+	AccountCreation                      any
 	AccountCreationAppliesTenantDefaults any
-	AccountDeletion any
-	AccountMigration any
-	AccountMobility any
-	EnterpriseCapability any
-	MemberManagement any
-	SubOrgCreation any
+	AccountDeletion                      any
+	AccountMigration                     any
+	AccountMobility                      any
+	EnterpriseCapability                 any
+	MemberManagement                     any
+	SubOrgCreation                       any
 }
 
 type Organization_Meta struct {
 	// Ordered chain of organization tags from the root organization down to (and including) this organization itself. Root organizations return a single-element array containing their own tag; sub-organizations return `[rootTag, ...intermediateTags, parentTag, selfTag]`. Useful for constructing authorization scopes that need to cover every ancestor in the hierarchy.
 	HierarchyTags any
-	ManagedBy any
-	TenantFlags any
+	ManagedBy     any
+	TenantFlags   any
 }
 
 type Organization_Parent struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type Organization_Profile struct {
-	BusinessAddress any
-	BusinessEmail any
-	BusinessName any
-	BusinessPhone any
+	BusinessAddress  any
+	BusinessEmail    any
+	BusinessName     any
+	BusinessPhone    any
 	ExternalMetadata any
 }
 
 type Organization_Result struct {
 	CreateTime any
-	Id any
-	Meta any
-	Name any
-	Parent any
-	Profile any
+	Id         any
+	Meta       any
+	Name       any
+	Parent     any
+	Profile    any
 }
 
 var Organization_ParentFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Organization_ProfileFields = ubx.FieldMap{
-		"BusinessAddress": ubx.FieldSpec{WireName: "business_address"},
-		"BusinessEmail": ubx.FieldSpec{WireName: "business_email"},
-		"BusinessName": ubx.FieldSpec{WireName: "business_name"},
-		"BusinessPhone": ubx.FieldSpec{WireName: "business_phone"},
-		"ExternalMetadata": ubx.FieldSpec{WireName: "external_metadata"},
-	}
+	"BusinessAddress":  ubx.FieldSpec{WireName: "business_address"},
+	"BusinessEmail":    ubx.FieldSpec{WireName: "business_email"},
+	"BusinessName":     ubx.FieldSpec{WireName: "business_name"},
+	"BusinessPhone":    ubx.FieldSpec{WireName: "business_phone"},
+	"ExternalMetadata": ubx.FieldSpec{WireName: "external_metadata"},
+}
 
 type OrganizationConfig struct {
-	Name any
-	Parent any
+	Name    any
+	Parent  any
 	Profile any
 	// path parameter, not part of the API's own resource representation
 	OrganizationId any
@@ -74,15 +74,15 @@ type OrganizationConfig struct {
 
 type OrganizationAttrs struct {
 	CreateTime any
-	Errors any
-	Id any
-	Messages any
-	Meta any
-	Name any
-	Parent any
-	Profile any
+	Errors     any
+	Id         any
+	Messages   any
+	Meta       any
+	Name       any
+	Parent     any
+	Profile    any
 	// References an Organization in the Cloudflare data model.
-	Result any
+	Result  any
 	Success any
 	// path parameter, not part of the API's own resource representation
 	OrganizationId any
@@ -94,13 +94,13 @@ var Organization = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parent": ubx.FieldSpec{
 			WireName: "parent",
-			Kind: "object",
-			Fields: Organization_ParentFields,
+			Kind:     "object",
+			Fields:   Organization_ParentFields,
 		},
 		"Profile": ubx.FieldSpec{
 			WireName: "profile",
-			Kind: "object",
-			Fields: Organization_ProfileFields,
+			Kind:     "object",
+			Fields:   Organization_ProfileFields,
 		},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},

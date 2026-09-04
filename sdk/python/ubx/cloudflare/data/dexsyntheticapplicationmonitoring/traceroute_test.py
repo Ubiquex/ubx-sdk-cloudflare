@@ -7,6 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TracerouteTest_Result_TargetPolicies:
+    default: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class TracerouteTest_Result_TracerouteStats_AvailabilityPct_Slots:
+    timestamp: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class TracerouteTest_Result_TracerouteStats_AvailabilityPct:
+    # average observed in the time period.
+    avg: Any = None
+    # highest observed in the time period.
+    max: Any = None
+    # lowest observed in the time period.
+    min: Any = None
+    slots: Any = None
+
+@dataclasses.dataclass
+class TracerouteTest_Result_TracerouteStats:
+    availability_pct: Any = None
+    hops_count: Any = None
+    packet_loss_pct: Any = None
+    round_trip_time_ms: Any = None
+    # Count of unique devices that have run this test in the given time period.
+    unique_devices_total: Any = None
+
+@dataclasses.dataclass
+class TracerouteTest_Result_TracerouteStatsByColo:
+    availability_pct: Any = None
+    colo: Any = None
+    hops_count: Any = None
+    packet_loss_pct: Any = None
+    round_trip_time_ms: Any = None
+    unique_devices_total: Any = None
+
+@dataclasses.dataclass
+class TracerouteTest_Result:
+    # The host of the Traceroute synthetic application test.
+    host: Any = None
+    # The interval at which the Traceroute synthetic application test is set to run.
+    interval: Any = None
+    kind: Any = None
+    # The name of the Traceroute synthetic application test.
+    name: Any = None
+    target_policies: Any = None
+    targeted: Any = None
+    traceroute_stats: Any = None
+    traceroute_stats_by_colo: Any = None
+
+@dataclasses.dataclass
 class TracerouteTestConfig:
     colo: Any = None
     device_id: Any = None
@@ -24,6 +77,7 @@ class TracerouteTestAttrs:
     device_id: Any = None
     from_: Any = None
     interval: Any = None
+    result: Any = None
     # API Resource UUID tag.
     test_id: Any = None
     to: Any = None

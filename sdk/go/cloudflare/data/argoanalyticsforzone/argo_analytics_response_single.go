@@ -8,7 +8,8 @@ type ArgoAnalyticsResponseSingleConfig struct {
 }
 
 type ArgoAnalyticsResponseSingleAttrs struct {
-	Bins any
+	Bins   any
+	Result any
 	// Identifier
 	ZoneId any
 }

@@ -15,11 +15,10 @@ type IamScimSchemaExtension_Meta struct {
 
 type IamScimSchemaExtension_SchemaExtensions struct {
 	Required any
-	Schema any
+	Schema   any
 }
 
-var IamScimSchemaExtension_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimSchemaExtension_AccountIdFields = ubx.FieldMap{}
 
 type IamScimSchemaExtensionConfig struct {
 	// Account identifier tag.
@@ -47,7 +46,7 @@ type IamScimSchemaExtensionAttrs struct {
 	Schema any
 	// A list of URIs of the resource type's schema extensions.
 	SchemaExtensions any
-	Schemas any
+	Schemas          any
 }
 
 var IamScimSchemaExtension = ubx.DataSourceBinding{
@@ -55,8 +54,8 @@ var IamScimSchemaExtension = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimSchemaExtension_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimSchemaExtension_AccountIdFields,
 		},
 		"ResourceTypeId": ubx.FieldSpec{WireName: "resource_type_id"},
 	},

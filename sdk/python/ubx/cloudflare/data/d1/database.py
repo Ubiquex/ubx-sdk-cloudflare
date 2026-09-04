@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Database_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Database_Result:
+    created_at: Any = None
+    jurisdiction: Any = None
+    name: Any = None
+    uuid: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class Database_ResultInfo:
+    # Total number of results for the requested service
+    count: Any = None
+    # Current page within paginated list of results
+    page: Any = None
+    # Number of results per page of results
+    per_page: Any = None
+    # Total results available without any search parameters
+    total_count: Any = None
+
+@dataclasses.dataclass
 class DatabaseConfig:
     # a database name to search for.
     name: Any = None
@@ -19,12 +43,18 @@ class DatabaseConfig:
 class DatabaseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # a database name to search for.
     name: Any = None
     # Page number of paginated results.
     page: Any = None
     # Number of items per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 Database = ubx.DataSourceBinding(
     wire_type="cloudflare_database",

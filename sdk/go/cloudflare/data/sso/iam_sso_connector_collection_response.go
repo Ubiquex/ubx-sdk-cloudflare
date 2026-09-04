@@ -6,8 +6,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamSsoConnectorCollectionResponse_AccountId struct {
 }
 
-var IamSsoConnectorCollectionResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamSsoConnectorCollectionResponse_Result_Verification struct {
+	Code   any
+	Status any
+}
+
+type IamSsoConnectorCollectionResponse_Result struct {
+	CreatedOn          any
+	EmailDomain        any
+	Enabled            any
+	Id                 any
+	UpdatedOn          any
+	UseFedrampLanguage any
+	Verification       any
+}
+
+var IamSsoConnectorCollectionResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamSsoConnectorCollectionResponseConfig struct {
 	// Account identifier tag.
@@ -17,6 +31,7 @@ type IamSsoConnectorCollectionResponseConfig struct {
 type IamSsoConnectorCollectionResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var IamSsoConnectorCollectionResponse = ubx.DataSourceBinding{
@@ -24,8 +39,8 @@ var IamSsoConnectorCollectionResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamSsoConnectorCollectionResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamSsoConnectorCollectionResponse_AccountIdFields,
 		},
 	},
 }

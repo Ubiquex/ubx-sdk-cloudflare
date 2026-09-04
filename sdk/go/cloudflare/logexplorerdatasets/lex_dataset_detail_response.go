@@ -4,32 +4,32 @@ package logexplorerdatasets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LexDatasetDetailResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type LexDatasetDetailResponse_Fields struct {
 	Enabled any
-	Name any
+	Name    any
 }
 
 type LexDatasetDetailResponse_Result struct {
-	CreatedAt any
-	Dataset any
-	DatasetId any
+	CreatedAt          any
+	Dataset            any
+	DatasetId          any
 	DeletionProtection any
-	Enabled any
-	Fields any
-	Filter any
-	ObjectId any
-	ObjectType any
-	UpdatedAt any
+	Enabled            any
+	Fields             any
+	Filter             any
+	ObjectId           any
+	ObjectType         any
+	UpdatedAt          any
 }
 
 var LexDatasetDetailResponse_FieldsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+}
 
 type LexDatasetDetailResponseConfig struct {
 	// Dataset type name to create (e.g. `http_requests`).
@@ -47,14 +47,14 @@ type LexDatasetDetailResponseConfig struct {
 type LexDatasetDetailResponseAttrs struct {
 	// Dataset type name to create (e.g. `http_requests`).
 	Dataset any
-	Errors any
+	Errors  any
 	// Controls which fields the API ingests. Defaults to all available fields when absent.
 	Fields any
 	// Optional Logpush filter predicate to restrict which events are ingested. If provided, replaces the dataset's default filter entirely. See [Logpush filters](https://developers.cloudflare.com/logs/reference/filters/) for syntax and examples.
-	Filter any
+	Filter   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -67,10 +67,10 @@ var LexDatasetDetailResponse = ubx.ResourceBinding{
 		"Dataset": ubx.FieldSpec{WireName: "dataset"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: LexDatasetDetailResponse_FieldsFields,
+			Kind:     "list",
+			Fields:   LexDatasetDetailResponse_FieldsFields,
 		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":    ubx.FieldSpec{WireName: "filter"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
 	},

@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TakedownNotice_Notices struct {
 	CreatedAt any
-	Domain any
-	Id any
-	MatchId any
+	Domain    any
+	Id        any
+	MatchId   any
 	MatchType any
-	QueryId any
-	Status any
+	QueryId   any
+	Status    any
 	UpdatedAt any
 }
 
@@ -20,7 +20,7 @@ type TakedownNoticeConfig struct {
 
 type TakedownNoticeAttrs struct {
 	AccountId any
-	Notices any
+	Notices   any
 }
 
 var TakedownNotice = ubx.DataSourceBinding{

@@ -50,6 +50,7 @@ class WafManagedRulesRuleResponseCollectionAttrs:
     per_page: Any = None
     # Defines the order in which the individual WAF rule is executed within its rule group.
     priority: Any = None
+    result: Any = None
     # Defines an identifier of a schema.
     zone_id: Any = None
 

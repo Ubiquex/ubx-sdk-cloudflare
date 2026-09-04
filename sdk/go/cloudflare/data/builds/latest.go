@@ -3,6 +3,89 @@ package builds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Latest_Errors struct {
+	Code    any
+	Message any
+}
+
+type Latest_Result_Builds_BuildTriggerMetadata struct {
+	Author               any
+	Branch               any
+	BuildCommand         any
+	BuildTokenName       any
+	BuildTokenUuid       any
+	BuildTriggerSource   any
+	CommitHash           any
+	CommitMessage        any
+	DeployCommand        any
+	EnvironmentVariables any
+	ProviderAccountName  any
+	ProviderType         any
+	RepoName             any
+	RootDirectory        any
+}
+
+type Latest_Result_Builds_PullRequest struct {
+	CreatedOn      any
+	PullRequestUrl any
+}
+
+type Latest_Result_Builds_Trigger_RepoConnection struct {
+	CreatedOn           any
+	DeletedOn           any
+	ModifiedOn          any
+	ProviderAccountId   any
+	ProviderAccountName any
+	ProviderType        any
+	RepoConnectionUuid  any
+	RepoId              any
+	RepoName            any
+}
+
+type Latest_Result_Builds_Trigger struct {
+	BranchExcludes      any
+	BranchIncludes      any
+	BuildCachingEnabled any
+	BuildCommand        any
+	CreatedOn           any
+	DeletedOn           any
+	DeployCommand       any
+	ExternalScriptId    any
+	ModifiedOn          any
+	PathExcludes        any
+	PathIncludes        any
+	RepoConnection      any
+	RootDirectory       any
+	TriggerName         any
+	TriggerUuid         any
+}
+
+type Latest_Result_Builds struct {
+	BuildOutcome         any
+	BuildTriggerMetadata any
+	BuildUuid            any
+	CreatedOn            any
+	InitializingOn       any
+	ModifiedOn           any
+	PullRequest          any
+	RunningOn            any
+	Status               any
+	StoppedOn            any
+	Trigger              any
+}
+
+type Latest_Result struct {
+	Builds any
+}
+
+type Latest_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type LatestConfig struct {
 	// Account identifier.
 	AccountId any
@@ -13,14 +96,19 @@ type LatestConfig struct {
 type LatestAttrs struct {
 	// Account identifier.
 	AccountId any
+	Errors    any
 	// Comma-separated list of system-generated worker script tags (max 20).
 	ExternalScriptIds any
+	Messages          any
+	Result            any
+	ResultInfo        any
+	Success           any
 }
 
 var Latest = ubx.DataSourceBinding{
 	WireType: "cloudflare_latest",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"ExternalScriptIds": ubx.FieldSpec{WireName: "external_script_ids"},
 	},
 }

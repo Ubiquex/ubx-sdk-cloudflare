@@ -7,11 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseStatus2_Result:
+    # Defines the last modification date (ISO 8601) of the Content Scanning status.
+    modified: Any = None
+    # Defines the status of Content Scanning.
+    value: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseStatus2Config:
     pass
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseStatus2Attrs:
+    # Defines the status for Content Scanning.
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

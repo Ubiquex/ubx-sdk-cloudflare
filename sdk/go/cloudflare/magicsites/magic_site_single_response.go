@@ -10,10 +10,26 @@ type MagicSiteSingleResponse_Location struct {
 	Lon any
 }
 
+type MagicSiteSingleResponse_Result struct {
+	// Magic Connector identifier tag.
+	ConnectorId any
+	Description any
+	// Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
+	HaMode any
+	// Identifier
+	Id any
+	// Location of site in latitude and longitude.
+	Location any
+	// The name of the site.
+	Name any
+	// Magic Connector identifier tag. Used when high availability mode is on.
+	SecondaryConnectorId any
+}
+
 var MagicSiteSingleResponse_LocationFields = ubx.FieldMap{
-		"Lat": ubx.FieldSpec{WireName: "lat"},
-		"Lon": ubx.FieldSpec{WireName: "lon"},
-	}
+	"Lat": ubx.FieldSpec{WireName: "lat"},
+	"Lon": ubx.FieldSpec{WireName: "lon"},
+}
 
 type MagicSiteSingleResponseConfig struct {
 	// Magic Connector identifier tag.
@@ -42,7 +58,8 @@ type MagicSiteSingleResponseAttrs struct {
 	// Location of site in latitude and longitude.
 	Location any
 	// The name of the site.
-	Name any
+	Name   any
+	Result any
 	// Magic Connector identifier tag. Used when high availability mode is on.
 	SecondaryConnectorId any
 	// path parameter, not part of the API's own resource representation
@@ -56,15 +73,15 @@ var MagicSiteSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"HaMode": ubx.FieldSpec{WireName: "ha_mode"},
+		"HaMode":      ubx.FieldSpec{WireName: "ha_mode"},
 		"Location": ubx.FieldSpec{
 			WireName: "location",
-			Kind: "object",
-			Fields: MagicSiteSingleResponse_LocationFields,
+			Kind:     "object",
+			Fields:   MagicSiteSingleResponse_LocationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"SecondaryConnectorId": ubx.FieldSpec{WireName: "secondary_connector_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"SiteId":               ubx.FieldSpec{WireName: "site_id"},
 	},
 }

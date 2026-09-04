@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection15_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessResponseCollection15_Result:
+    app_count: Any = None
+    created_at: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection15Config:
     # Identifier.
     account_id: Any = None
@@ -23,6 +34,7 @@ class AccessResponseCollection15Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
 
 AccessResponseCollection15 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_collection_15",

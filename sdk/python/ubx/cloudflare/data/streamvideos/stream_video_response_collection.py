@@ -7,6 +7,85 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamVideoResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result_Input:
+    height: Any = None
+    width: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result_Playback:
+    dash: Any = None
+    hls: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result_PublicDetails:
+    channel_link: Any = None
+    logo: Any = None
+    media_id: Any = None
+    share_link: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result_Status:
+    error_reason_code: Any = None
+    error_reason_text: Any = None
+    pct_complete: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result_Watermark:
+    created: Any = None
+    downloaded_from: Any = None
+    height: Any = None
+    name: Any = None
+    opacity: Any = None
+    padding: Any = None
+    position: Any = None
+    scale: Any = None
+    size: Any = None
+    uid: Any = None
+    width: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseCollection_Result:
+    allowed_origins: Any = None
+    clipped_from: Any = None
+    created: Any = None
+    creator: Any = None
+    duration: Any = None
+    input: Any = None
+    live_input: Any = None
+    max_duration_seconds: Any = None
+    max_size_bytes: Any = None
+    meta: Any = None
+    modified: Any = None
+    playback: Any = None
+    preview: Any = None
+    public_details: Any = None
+    ready_to_stream: Any = None
+    ready_to_stream_at: Any = None
+    require_signed_urls: Any = None
+    scheduled_deletion: Any = None
+    size: Any = None
+    status: Any = None
+    thumbnail: Any = None
+    thumbnail_timestamp_pct: Any = None
+    uid: Any = None
+    upload_expiry: Any = None
+    uploaded: Any = None
+    watermark: Any = None
+
+@dataclasses.dataclass
 class StreamVideoResponseCollectionConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -47,18 +126,27 @@ class StreamVideoResponseCollectionAttrs:
     creator: Any = None
     # Lists videos created before the specified date.
     end: Any = None
+    errors: Any = None
     id: Any = None
     # Includes the total number of videos associated with the submitted query parameters.
     include_counts: Any = None
     limit: Any = None
     live_input_id: Any = None
+    messages: Any = None
     name: Any = None
+    # The total number of remaining videos based on cursor position.
+    range: Any = None
+    result: Any = None
     # Provides a partial word match of the `name` key in the `meta` field. Slow for medium to large video libraries. May be unavailable for very large libraries.
     search: Any = None
     # Lists videos created after the specified date.
     start: Any = None
     # Specifies the processing status for all quality levels for a video.
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
+    # The total number of videos that match the provided filters.
+    total: Any = None
     # Specifies whether the video is `vod` or `live`.
     type: Any = None
     # Provides a fast, exact string match on the `name` key in the `meta` field.

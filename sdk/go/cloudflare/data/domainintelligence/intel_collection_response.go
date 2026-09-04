@@ -3,25 +3,54 @@ package domainintelligence
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelCollectionResponse_Result_AdditionalInformation struct {
+	SuspectedMalwareFamily any
+}
+
+type IntelCollectionResponse_Result_Application struct {
+	Id   any
+	Name any
+}
+
+type IntelCollectionResponse_Result_ContentCategories struct {
+	Id              any
+	Name            any
+	SuperCategoryId any
+}
+
+type IntelCollectionResponse_Result struct {
+	AdditionalInformation      any
+	Application                any
+	ContentCategories          any
+	Domain                     any
+	InheritedContentCategories any
+	InheritedFrom              any
+	InheritedRiskTypes         any
+	PopularityRank             any
+	RiskScore                  any
+	RiskTypes                  any
+}
+
 type IntelCollectionResponseConfig struct {
-	Domain any
+	Domain         any
 	IncludeRanking any
-	SkipRanking any
+	SkipRanking    any
 }
 
 type IntelCollectionResponseAttrs struct {
 	// Identifier.
-	AccountId any
-	Domain any
+	AccountId      any
+	Domain         any
 	IncludeRanking any
-	SkipRanking any
+	Result         any
+	SkipRanking    any
 }
 
 var IntelCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_intel_collection_response",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Domain":         ubx.FieldSpec{WireName: "domain"},
 		"IncludeRanking": ubx.FieldSpec{WireName: "include_ranking"},
-		"SkipRanking": ubx.FieldSpec{WireName: "skip_ranking"},
+		"SkipRanking":    ubx.FieldSpec{WireName: "skip_ranking"},
 	},
 }

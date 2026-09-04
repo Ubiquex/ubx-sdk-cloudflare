@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse5_Result:
+    # The Application Audience (AUD) tag. Identifies the application associated with the CA.
+    aud: Any = None
+    # The ID of the CA.
+    id: Any = None
+    # The public key to add to your SSH server configuration.
+    public_key: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse5Config:
     # Identifier.
     account_id: Any = None
@@ -19,6 +28,7 @@ class AccessSingleResponse5Attrs:
     account_id: Any = None
     # UUID.
     app_id: Any = None
+    result: Any = None
 
 AccessSingleResponse5 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_single_response_5",

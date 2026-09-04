@@ -4,39 +4,39 @@ package logexplorerdatasets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LexDatasetSummaryListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type LexDatasetSummaryListResponse_Result struct {
-	CreatedAt any
-	Dataset any
-	DatasetId any
+	CreatedAt          any
+	Dataset            any
+	DatasetId          any
 	DeletionProtection any
-	Enabled any
-	ObjectId any
-	ObjectType any
-	UpdatedAt any
+	Enabled            any
+	ObjectId           any
+	ObjectType         any
+	UpdatedAt          any
 }
 
 type LexDatasetSummaryListResponseConfig struct {
-	AccountId any
+	AccountId    any
 	IncludeZones any
 }
 
 type LexDatasetSummaryListResponseAttrs struct {
-	AccountId any
-	Errors any
+	AccountId    any
+	Errors       any
 	IncludeZones any
-	Messages any
-	Result any
-	Success any
+	Messages     any
+	Result       any
+	Success      any
 }
 
 var LexDatasetSummaryListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_lex_dataset_summary_list_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"IncludeZones": ubx.FieldSpec{WireName: "include_zones"},
 	},
 }

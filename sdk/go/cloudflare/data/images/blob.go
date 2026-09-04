@@ -21,6 +21,6 @@ var Blob = ubx.DataSourceBinding{
 	WireType: "cloudflare_blob",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"ImageId":   ubx.FieldSpec{WireName: "image_id"},
 	},
 }

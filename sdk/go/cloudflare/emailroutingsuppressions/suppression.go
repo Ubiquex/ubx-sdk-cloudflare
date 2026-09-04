@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Suppression_Result struct {
 	CreatedAt any
-	Email any
+	Email     any
 	ExpiresAt any
-	Id any
-	Reason any
-	Zones any
+	Id        any
+	Reason    any
+	Zones     any
 }
 
 type SuppressionConfig struct {
-	Email any
+	Email     any
 	ExpiresAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -22,9 +22,9 @@ type SuppressionConfig struct {
 }
 
 type SuppressionAttrs struct {
-	Email any
+	Email     any
 	ExpiresAt any
-	Result any
+	Result    any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -34,9 +34,9 @@ type SuppressionAttrs struct {
 var Suppression = ubx.ResourceBinding{
 	WireType: "cloudflare_suppression",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Email":         ubx.FieldSpec{WireName: "email"},
+		"ExpiresAt":     ubx.FieldSpec{WireName: "expires_at"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"SuppressionId": ubx.FieldSpec{WireName: "suppression_id"},
 	},
 }

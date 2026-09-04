@@ -9,37 +9,37 @@ type Outage_Result_Annotations_AsnsDetails_Locations struct {
 }
 
 type Outage_Result_Annotations_AsnsDetails struct {
-	Asn any
+	Asn       any
 	Locations any
-	Name any
+	Name      any
 }
 
 type Outage_Result_Annotations_OriginsDetails struct {
-	Name any
+	Name   any
 	Origin any
 }
 
 type Outage_Result_Annotations_Outage struct {
 	OutageCause any
-	OutageType any
+	OutageType  any
 }
 
 type Outage_Result_Annotations struct {
-	Asns any
-	AsnsDetails any
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
-	Id any
-	LinkedUrl any
-	Locations any
+	Asns             any
+	AsnsDetails      any
+	DataSource       any
+	Description      any
+	EndDate          any
+	EventType        any
+	Id               any
+	LinkedUrl        any
+	Locations        any
 	LocationsDetails any
-	Origins any
-	OriginsDetails any
-	Outage any
-	Scope any
-	StartDate any
+	Origins          any
+	OriginsDetails   any
+	Outage           any
+	Scope            any
+	StartDate        any
 }
 
 type Outage_Result struct {
@@ -85,22 +85,22 @@ type OutageAttrs struct {
 	// Skips the specified number of objects before fetching the results.
 	Offset any
 	// Filters results by origin.
-	Origin any
-	Result any
+	Origin  any
+	Result  any
 	Success any
 }
 
 var Outage = ubx.DataSourceBinding{
 	WireType: "cloudflare_outage",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
+		"Asn":       ubx.FieldSpec{WireName: "asn"},
+		"DateEnd":   ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Location":  ubx.FieldSpec{WireName: "location"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
+		"Origin":    ubx.FieldSpec{WireName: "origin"},
 	},
 }

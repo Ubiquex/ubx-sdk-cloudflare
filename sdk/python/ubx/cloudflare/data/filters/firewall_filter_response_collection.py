@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallFilterResponseCollection_Result:
+    description: Any = None
+    expression: Any = None
+    id: Any = None
+    paused: Any = None
+    ref: Any = None
+
+@dataclasses.dataclass
 class FirewallFilterResponseCollectionConfig:
     # A case-insensitive string to find in the description.
     description: Any = None
@@ -35,6 +43,7 @@ class FirewallFilterResponseCollectionAttrs:
     per_page: Any = None
     # The filter ref (a short reference tag) to search for. Must be an exact match.
     ref: Any = None
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

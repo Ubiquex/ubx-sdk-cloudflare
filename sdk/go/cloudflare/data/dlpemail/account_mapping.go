@@ -3,12 +3,23 @@ package dlpemail
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccountMapping_Result_AuthRequirements struct {
+	AllowedMicrosoftOrganizations any
+	Type                          any
+}
+
+type AccountMapping_Result struct {
+	AddinIdentifierToken any
+	AuthRequirements     any
+}
+
 type AccountMappingConfig struct {
 	AccountId any
 }
 
 type AccountMappingAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var AccountMapping = ubx.DataSourceBinding{

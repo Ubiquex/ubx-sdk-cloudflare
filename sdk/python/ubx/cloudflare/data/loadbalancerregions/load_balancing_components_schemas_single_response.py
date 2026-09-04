@@ -17,6 +17,8 @@ class LoadBalancingComponentsSchemasSingleResponseAttrs:
     account_id: Any = None
     # A list of Cloudflare regions. WNAM: Western North America, ENAM: Eastern North America, WEU: Western Europe, EEU: Eastern Europe, NSAM: Northern South America, SSAM: Southern South America, OC: Oceania, ME: Middle East, NAF: North Africa, SAF: South Africa, SAS: Southern Asia, SEAS: South East Asia, NEAS: North East Asia).
     region_id: Any = None
+    # A list of countries and subdivisions mapped to a region.
+    result: Any = None
 
 LoadBalancingComponentsSchemasSingleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_components_schemas_single_response",

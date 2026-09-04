@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Metric_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Metric_Result:
+    # The size in bytes of unacknowledged messages in the queue.
+    backlog_bytes: Any = None
+    # The number of unacknowledged messages in the queue.
+    backlog_count: Any = None
+    # Unix timestamp in milliseconds of the oldest unacknowledged message in the queue. Returns 0 if unknown.
+    oldest_message_timestamp_ms: Any = None
+
+@dataclasses.dataclass
 class MetricConfig:
     pass
 
@@ -14,8 +28,14 @@ class MetricConfig:
 class MetricAttrs:
     # A Resource identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # A Resource identifier.
     queue_id: Any = None
+    # Best-effort metrics for the queue. Values may be approximate due to the distributed nature of queues.
+    result: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
 
 Metric = ubx.DataSourceBinding(
     wire_type="cloudflare_metric",

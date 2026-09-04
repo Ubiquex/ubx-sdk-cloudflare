@@ -7,6 +7,82 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_DcvDelegationRecords:
+    cname: Any = None
+    cname_target: Any = None
+    emails: Any = None
+    http_body: Any = None
+    http_url: Any = None
+    status: Any = None
+    txt_name: Any = None
+    txt_value: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_Settings:
+    ciphers: Any = None
+    early_hints: Any = None
+    http2: Any = None
+    min_tls_version: Any = None
+    tls_1_3: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_ValidationErrors:
+    message: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl:
+    bundle_method: Any = None
+    certificate_authority: Any = None
+    custom_certificate: Any = None
+    custom_csr_id: Any = None
+    custom_key: Any = None
+    dcv_delegation_records: Any = None
+    expires_on: Any = None
+    hosts: Any = None
+    id: Any = None
+    issuer: Any = None
+    method: Any = None
+    serial_number: Any = None
+    settings: Any = None
+    signature: Any = None
+    status: Any = None
+    type: Any = None
+    uploaded_on: Any = None
+    validation_errors: Any = None
+    validation_records: Any = None
+    wildcard: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result:
+    hostname: Any = None
+    id: Any = None
+    ssl: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseCollection_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+    # The number of total pages in the entire result set.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomHostnameResponseCollectionConfig:
     # Filter by the certificate authority that issued the SSL certificate.
     certificate_authority: Any = None
@@ -49,6 +125,7 @@ class TlsCertificatesAndHostnamesCustomHostnameResponseCollectionAttrs:
     custom_origin_server: Any = None
     # Direction to order hostnames.
     direction: Any = None
+    errors: Any = None
     # Fully qualified domain name to match against. This parameter cannot be used with the 'id', 'hostname.exact', 'hostname.contain', or 'hostname.startsWith' parameters.
     hostname: Any = None
     # Filters hostnames by a substring match on the hostname value. This parameter cannot be used with the 'id', 'hostname', 'hostname.exact', or 'hostname.startsWith' parameters.
@@ -61,16 +138,22 @@ class TlsCertificatesAndHostnamesCustomHostnameResponseCollectionAttrs:
     hostname_status: Any = None
     # Hostname ID to match against. This ID was generated and returned during the initial custom_hostname creation. This parameter cannot be used with the 'hostname', 'hostname.exact', 'hostname.contain', or 'hostname.startsWith' parameters.
     id: Any = None
+    # Informational messages returned by the custom hostname API.
+    messages: Any = None
     # Field to order hostnames by.
     order: Any = None
     # Page number of paginated results.
     page: Any = None
     # Number of hostnames per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # Whether to filter hostnames based on if they have SSL enabled.
     ssl: Any = None
     # Filter by SSL certificate status.
     ssl_status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Filter by whether the custom hostname is a wildcard hostname.
     wildcard: Any = None
     # Identifier.

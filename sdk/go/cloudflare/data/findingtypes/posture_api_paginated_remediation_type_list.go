@@ -3,32 +3,76 @@ package findingtypes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PostureApiPaginatedRemediationTypeListConfig struct {
-	AccountId any
+type PostureApiPaginatedRemediationTypeList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedRemediationTypeList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedRemediationTypeList_Result struct {
+	Description     any
+	DisplayName     any
+	FindingTypeId   any
+	Id              any
+	RemediationType any
+}
+
+type PostureApiPaginatedRemediationTypeList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
 	Cursor any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
+type PostureApiPaginatedRemediationTypeListConfig struct {
+	AccountId     any
+	Cursor        any
 	FindingTypeId any
 	IntegrationId any
-	Page any
-	PerPage any
+	Page          any
+	PerPage       any
 }
 
 type PostureApiPaginatedRemediationTypeListAttrs struct {
-	AccountId any
-	Cursor any
+	AccountId     any
+	Cursor        any
+	Errors        any
 	FindingTypeId any
 	IntegrationId any
-	Page any
-	PerPage any
+	Messages      any
+	Page          any
+	PerPage       any
+	// Array of remediation type objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PostureApiPaginatedRemediationTypeList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_remediation_type_list",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":        ubx.FieldSpec{WireName: "cursor"},
 		"FindingTypeId": ubx.FieldSpec{WireName: "finding_type_id"},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -4,14 +4,14 @@ package radarrobotstxt
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainCategory_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type DomainCategory_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type DomainCategory_Result_Meta_ConfidenceInfo struct {
 }
 
 type DomainCategory_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type DomainCategory_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DomainCategory_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -42,7 +42,7 @@ type DomainCategory_Result_Meta struct {
 }
 
 type DomainCategory_Result_Top0 struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -73,8 +73,8 @@ type DomainCategoryAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 	// Filters results by user agent category.
 	UserAgentCategory any
@@ -83,10 +83,10 @@ type DomainCategoryAttrs struct {
 var DomainCategory = ubx.DataSourceBinding{
 	WireType: "cloudflare_domain_category",
 	Fields: ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Date":              ubx.FieldSpec{WireName: "date"},
+		"Format":            ubx.FieldSpec{WireName: "format"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"UserAgentCategory": ubx.FieldSpec{WireName: "user_agent_category"},
 	},
 }

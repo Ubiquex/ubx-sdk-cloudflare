@@ -10,6 +10,46 @@ import ubx_sdk as ubx
 class IamCollectionTokensResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result_Condition_RequestIp:
+    in_: Any = None
+    not_in: Any = None
+
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result_Condition:
+    request_ip: Any = None
+
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result_Policies_PermissionGroups_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result_Policies_PermissionGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result_Policies:
+    effect: Any = None
+    id: Any = None
+    permission_groups: Any = None
+    resources: Any = None
+
+@dataclasses.dataclass
+class IamCollectionTokensResponse_Result:
+    condition: Any = None
+    expires_on: Any = None
+    id: Any = None
+    issued_on: Any = None
+    last_used_on: Any = None
+    modified_on: Any = None
+    name: Any = None
+    not_before: Any = None
+    policies: Any = None
+    status: Any = None
+
 _IamCollectionTokensResponse_AccountIdFields = {
 }
 
@@ -36,6 +76,7 @@ class IamCollectionTokensResponseAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
 
 IamCollectionTokensResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_collection_tokens_response",

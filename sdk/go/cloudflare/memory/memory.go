@@ -8,10 +8,10 @@ type Memory_Errors_Source struct {
 }
 
 type Memory_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Memory_Result struct {
@@ -50,7 +50,7 @@ type MemoryAttrs struct {
 	// Informational, non-error messages, if any.
 	Messages any
 	// Namespace name.
-	Name any
+	Name   any
 	Result any
 	// Always true for a successful response.
 	Success any
@@ -67,10 +67,10 @@ type MemoryAttrs struct {
 var Memory = ubx.ResourceBinding{
 	WireType: "cloudflare_memory",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
-		"MemoryId": ubx.FieldSpec{WireName: "memory_id"},
+		"ProfileName":   ubx.FieldSpec{WireName: "profile_name"},
+		"MemoryId":      ubx.FieldSpec{WireName: "memory_id"},
 	},
 }

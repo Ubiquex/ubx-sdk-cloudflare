@@ -7,6 +7,65 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_Bgp:
+    customer_asn: Any = None
+    export_filter_id: Any = None
+    extra_prefixes: Any = None
+    import_filter_id: Any = None
+    md5_key: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_BgpStatus:
+    bgp_state: Any = None
+    cf_speaker_ip: Any = None
+    cf_speaker_port: Any = None
+    customer_speaker_ip: Any = None
+    customer_speaker_port: Any = None
+    state: Any = None
+    tcp_established: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_CustomRemoteIdentities:
+    fqdn_id: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_HealthCheck:
+    direction: Any = None
+    enabled: Any = None
+    rate: Any = None
+    target: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_PskMetadata:
+    last_generated_on: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels:
+    allow_null_cipher: Any = None
+    automatic_return_routing: Any = None
+    bgp: Any = None
+    bgp_status: Any = None
+    cloudflare_endpoint: Any = None
+    created_on: Any = None
+    custom_remote_identities: Any = None
+    customer_endpoint: Any = None
+    description: Any = None
+    health_check: Any = None
+    id: Any = None
+    interface_address: Any = None
+    interface_address6: Any = None
+    modified_on: Any = None
+    name: Any = None
+    psk_metadata: Any = None
+    replay_protection: Any = None
+
+@dataclasses.dataclass
+class MagicSchemasTunnelsCollectionResponse_Result:
+    ipsec_tunnels: Any = None
+
+@dataclasses.dataclass
 class MagicSchemasTunnelsCollectionResponseConfig:
     pass
 
@@ -14,6 +73,7 @@ class MagicSchemasTunnelsCollectionResponseConfig:
 class MagicSchemasTunnelsCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 MagicSchemasTunnelsCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_schemas_tunnels_collection_response",

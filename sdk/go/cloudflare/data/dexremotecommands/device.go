@@ -3,25 +3,44 @@ package dexremotecommands
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Device_Result_Devices struct {
+	DeviceId         any
+	DeviceName       any
+	Eligible         any
+	IneligibleReason any
+	PersonEmail      any
+	Platform         any
+	RegistrationId   any
+	Status           any
+	Timestamp        any
+	Version          any
+}
+
+type Device_Result struct {
+	// List of eligible devices
+	Devices any
+}
+
 type DeviceConfig struct {
-	Page any
+	Page    any
 	PerPage any
-	Search any
+	Search  any
 }
 
 type DeviceAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	Page any
-	PerPage any
-	Search any
+	Page      any
+	PerPage   any
+	Result    any
+	Search    any
 }
 
 var Device = ubx.DataSourceBinding{
 	WireType: "cloudflare_device",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":  ubx.FieldSpec{WireName: "search"},
 	},
 }

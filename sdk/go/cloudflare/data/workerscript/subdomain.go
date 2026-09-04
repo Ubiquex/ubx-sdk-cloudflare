@@ -3,6 +3,24 @@ package workerscript
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Subdomain_Errors_Source struct {
+	Pointer any
+}
+
+type Subdomain_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Subdomain_Result struct {
+	// Whether the Worker is available on the workers.dev subdomain.
+	Enabled any
+	// Whether the Worker's Preview URLs are available on the workers.dev subdomain.
+	PreviewsEnabled any
+}
+
 type SubdomainConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +31,19 @@ type SubdomainConfig struct {
 type SubdomainAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Subdomain = ubx.DataSourceBinding{
 	WireType: "cloudflare_subdomain",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

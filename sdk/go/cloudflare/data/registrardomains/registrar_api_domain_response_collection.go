@@ -3,16 +3,43 @@ package registrardomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegistrarApiDomainResponseCollection_Result_RegistrantContact struct {
+}
+
+type RegistrarApiDomainResponseCollection_Result_TransferIn struct {
+	AcceptFoa         any
+	ApproveTransfer   any
+	CanCancelTransfer any
+	DisablePrivacy    any
+	EnterAuthCode     any
+	UnlockDomain      any
+}
+
+type RegistrarApiDomainResponseCollection_Result struct {
+	Available         any
+	CanRegister       any
+	CreatedAt         any
+	CurrentRegistrar  any
+	ExpiresAt         any
+	Id                any
+	Locked            any
+	RegistrantContact any
+	RegistryStatuses  any
+	SupportedTld      any
+	TransferIn        any
+	UpdatedAt         any
+}
+
 type RegistrarApiDomainResponseCollectionConfig struct {
 }
 
 type RegistrarApiDomainResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var RegistrarApiDomainResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_registrar_api_domain_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -13,6 +13,7 @@ class BotManagementBotManagementResponseBodyConfig:
 
 @dataclasses.dataclass
 class BotManagementBotManagementResponseBodyAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

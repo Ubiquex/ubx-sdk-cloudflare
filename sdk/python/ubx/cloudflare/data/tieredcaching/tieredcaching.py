@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Tieredcaching_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class TieredcachingConfig:
     pass
 
 @dataclasses.dataclass
 class TieredcachingAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

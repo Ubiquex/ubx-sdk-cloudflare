@@ -7,6 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResponseCollection_Result_HttpConfig:
+    allow_insecure: Any = None
+    expected_body: Any = None
+    expected_codes: Any = None
+    follow_redirects: Any = None
+    header: Any = None
+    method: Any = None
+    path: Any = None
+    port: Any = None
+
+@dataclasses.dataclass
+class ResponseCollection_Result_TcpConfig:
+    method: Any = None
+    port: Any = None
+
+@dataclasses.dataclass
+class ResponseCollection_Result:
+    address: Any = None
+    check_regions: Any = None
+    consecutive_fails: Any = None
+    consecutive_successes: Any = None
+    created_on: Any = None
+    description: Any = None
+    failure_reason: Any = None
+    http_config: Any = None
+    id: Any = None
+    interval: Any = None
+    modified_on: Any = None
+    name: Any = None
+    retries: Any = None
+    status: Any = None
+    suspended: Any = None
+    tcp_config: Any = None
+    timeout: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class ResponseCollectionConfig:
     page: Any = None
     per_page: Any = None
@@ -15,6 +52,7 @@ class ResponseCollectionConfig:
 class ResponseCollectionAttrs:
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

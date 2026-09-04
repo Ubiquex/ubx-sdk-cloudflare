@@ -22,28 +22,65 @@ type SingleResponse_HttpConfig struct {
 	Port any
 }
 
-type SingleResponse_TcpConfig struct {
+type SingleResponse_Result_TcpConfig struct {
 	// The TCP connection method to use for the health check.
 	Method any
 	// Port number to connect to for the health check. Defaults to 80.
 	Port any
 }
 
-var SingleResponse_HttpConfigFields = ubx.FieldMap{
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"ExpectedBody": ubx.FieldSpec{WireName: "expected_body"},
-		"ExpectedCodes": ubx.FieldSpec{WireName: "expected_codes"},
-		"FollowRedirects": ubx.FieldSpec{WireName: "follow_redirects"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+type SingleResponse_Result struct {
+	// The hostname or IP address of the origin server to run health checks on.
+	Address any
+	// A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
+	CheckRegions any
+	// The number of consecutive fails required from a health check before changing the health to unhealthy.
+	ConsecutiveFails any
+	// The number of consecutive successes required from a health check before changing the health to healthy.
+	ConsecutiveSuccesses any
+	CreatedOn            any
+	// A human-readable description of the health check.
+	Description any
+	// The current failure reason if status is unhealthy.
+	FailureReason any
+	// Parameters specific to an HTTP or HTTPS health check.
+	HttpConfig any
+	// Identifier
+	Id any
+	// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
+	Interval   any
+	ModifiedOn any
+	// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
+	Name any
+	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
+	Retries any
+	// The current status of the origin server according to the health check.
+	Status any
+	// If suspended, no health checks are sent to the origin.
+	Suspended any
+	// Parameters specific to TCP health check.
+	TcpConfig any
+	// The timeout (in seconds) before marking the health check as failed.
+	Timeout any
+	// The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'.
+	Type any
+}
 
-var SingleResponse_TcpConfigFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+var SingleResponse_HttpConfigFields = ubx.FieldMap{
+	"AllowInsecure":   ubx.FieldSpec{WireName: "allow_insecure"},
+	"ExpectedBody":    ubx.FieldSpec{WireName: "expected_body"},
+	"ExpectedCodes":   ubx.FieldSpec{WireName: "expected_codes"},
+	"FollowRedirects": ubx.FieldSpec{WireName: "follow_redirects"},
+	"Header":          ubx.FieldSpec{WireName: "header"},
+	"Method":          ubx.FieldSpec{WireName: "method"},
+	"Path":            ubx.FieldSpec{WireName: "path"},
+	"Port":            ubx.FieldSpec{WireName: "port"},
+}
+
+var SingleResponse_Result_TcpConfigFields = ubx.FieldMap{
+	"Method": ubx.FieldSpec{WireName: "method"},
+	"Port":   ubx.FieldSpec{WireName: "port"},
+}
 
 type SingleResponseConfig struct {
 	// The hostname or IP address of the origin server to run health checks on.
@@ -94,7 +131,8 @@ type SingleResponseAttrs struct {
 	// The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
 	Interval any
 	// A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
-	Name any
+	Name   any
+	Result any
 	// The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
 	Retries any
 	// If suspended, no health checks are sent to the origin.
@@ -114,28 +152,28 @@ type SingleResponseAttrs struct {
 var SingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_healthchecks_single_response",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"CheckRegions": ubx.FieldSpec{WireName: "check_regions"},
-		"ConsecutiveFails": ubx.FieldSpec{WireName: "consecutive_fails"},
+		"Address":              ubx.FieldSpec{WireName: "address"},
+		"CheckRegions":         ubx.FieldSpec{WireName: "check_regions"},
+		"ConsecutiveFails":     ubx.FieldSpec{WireName: "consecutive_fails"},
 		"ConsecutiveSuccesses": ubx.FieldSpec{WireName: "consecutive_successes"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"HttpConfig": ubx.FieldSpec{
 			WireName: "http_config",
-			Kind: "object",
-			Fields: SingleResponse_HttpConfigFields,
+			Kind:     "object",
+			Fields:   SingleResponse_HttpConfigFields,
 		},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Retries": ubx.FieldSpec{WireName: "retries"},
+		"Interval":  ubx.FieldSpec{WireName: "interval"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Retries":   ubx.FieldSpec{WireName: "retries"},
 		"Suspended": ubx.FieldSpec{WireName: "suspended"},
 		"TcpConfig": ubx.FieldSpec{
 			WireName: "tcp_config",
-			Kind: "object",
-			Fields: SingleResponse_TcpConfigFields,
+			Kind:     "object",
+			Fields:   SingleResponse_Result_TcpConfigFields,
 		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Timeout":       ubx.FieldSpec{WireName: "timeout"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
+		"ZoneId":        ubx.FieldSpec{WireName: "zone_id"},
 		"HealthcheckId": ubx.FieldSpec{WireName: "healthcheck_id"},
 	},
 }

@@ -3,25 +3,60 @@ package domaindiscovery
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegistrarApiDomainSearchResponse_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiDomainSearchResponse_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiDomainSearchResponse_Result_Domains_Pricing struct {
+	Currency         any
+	RegistrationCost any
+	RenewalCost      any
+}
+
+type RegistrarApiDomainSearchResponse_Result_Domains struct {
+	Name        any
+	Pricing     any
+	Reason      any
+	Registrable any
+	Tier        any
+}
+
+type RegistrarApiDomainSearchResponse_Result struct {
+	// Lists domain suggestions in relevance order. An empty array indicates that the search criteria matched zero domains.
+	Domains any
+}
+
 type RegistrarApiDomainSearchResponseConfig struct {
 	Extensions any
-	Limit any
-	Q any
+	Limit      any
+	Q          any
 }
 
 type RegistrarApiDomainSearchResponseAttrs struct {
 	// Identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
 	Extensions any
-	Limit any
-	Q any
+	Limit      any
+	Messages   any
+	Q          any
+	// Contains the search results.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiDomainSearchResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_registrar_api_domain_search_response",
 	Fields: ubx.FieldMap{
 		"Extensions": ubx.FieldSpec{WireName: "extensions"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Q": ubx.FieldSpec{WireName: "q"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Q":          ubx.FieldSpec{WireName: "q"},
 	},
 }

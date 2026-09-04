@@ -3,14 +3,39 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerConnectorsListResponse_Result_Device struct {
+	Id           any
+	SerialNumber any
+	Type         any
+}
+
+type MconnCustomerConnectorsListResponse_Result struct {
+	Activated                    any
+	Device                       any
+	Id                           any
+	InterruptWindowDaysOfWeek    any
+	InterruptWindowDurationHours any
+	InterruptWindowEmbargoDates  any
+	InterruptWindowHourOfDay     any
+	LastHeartbeat                any
+	LastSeenVersion              any
+	LastUpdated                  any
+	LicenseKey                   any
+	Notes                        any
+	Primary                      any
+	SiteId                       any
+	Timezone                     any
+}
+
 type MconnCustomerConnectorsListResponseConfig struct {
 	DeviceType any
 }
 
 type MconnCustomerConnectorsListResponseAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId  any
 	DeviceType any
+	Result     any
 }
 
 var MconnCustomerConnectorsListResponse = ubx.DataSourceBinding{

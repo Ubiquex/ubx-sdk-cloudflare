@@ -3,16 +3,38 @@ package vectorizebetadeprecated
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Index_Errors struct {
+	Code    any
+	Message any
+}
+
+type Index_Result_Config struct {
+	Dimensions any
+	Metric     any
+}
+
+type Index_Result struct {
+	Config      any
+	CreatedOn   any
+	Description any
+	ModifiedOn  any
+	Name        any
+}
+
 type IndexConfig struct {
 }
 
 type IndexAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var Index = ubx.DataSourceBinding{
 	WireType: "cloudflare_index",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelCollectionResponse_Result_AdditionalInformation:
+    suspected_malware_family: Any = None
+
+@dataclasses.dataclass
+class IntelCollectionResponse_Result_Application:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IntelCollectionResponse_Result_ContentCategories:
+    id: Any = None
+    name: Any = None
+    super_category_id: Any = None
+
+@dataclasses.dataclass
+class IntelCollectionResponse_Result:
+    additional_information: Any = None
+    application: Any = None
+    content_categories: Any = None
+    domain: Any = None
+    inherited_content_categories: Any = None
+    inherited_from: Any = None
+    inherited_risk_types: Any = None
+    popularity_rank: Any = None
+    risk_score: Any = None
+    risk_types: Any = None
+
+@dataclasses.dataclass
 class IntelCollectionResponseConfig:
     domain: Any = None
     include_ranking: Any = None
@@ -18,6 +46,7 @@ class IntelCollectionResponseAttrs:
     account_id: Any = None
     domain: Any = None
     include_ranking: Any = None
+    result: Any = None
     skip_ranking: Any = None
 
 IntelCollectionResponse = ubx.DataSourceBinding(

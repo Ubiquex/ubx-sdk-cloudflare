@@ -3,14 +3,42 @@ package accounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamResponseSingleAccount_Result_ManagedBy struct {
+	// ID of the parent Organization, if one exists
+	ParentOrgId any
+	// Name of the parent Organization, if one exists
+	ParentOrgName any
+}
+
+type IamResponseSingleAccount_Result_Settings struct {
+	// Sets an abuse contact email to notify for abuse reports.
+	AbuseContactEmail any
+	// Indicates whether membership in this account requires that Two-Factor Authentication is enabled
+	EnforceTwofactor any
+}
+
+type IamResponseSingleAccount_Result struct {
+	// Timestamp for the creation of the account
+	CreatedOn any
+	// Identifier
+	Id any
+	// Parent container details
+	ManagedBy any
+	// Account name
+	Name any
+	// Account settings
+	Settings any
+	Type     any
+}
+
 type IamResponseSingleAccount_Unit struct {
 	// Tenant unit ID
 	Id any
 }
 
 var IamResponseSingleAccount_UnitFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 type IamResponseSingleAccountConfig struct {
 	// Account name
@@ -24,8 +52,9 @@ type IamResponseSingleAccountConfig struct {
 
 type IamResponseSingleAccountAttrs struct {
 	// Account name
-	Name any
-	Type any
+	Name   any
+	Result any
+	Type   any
 	// information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
 	Unit any
 	// path parameter, not part of the API's own resource representation
@@ -39,8 +68,8 @@ var IamResponseSingleAccount = ubx.ResourceBinding{
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Unit": ubx.FieldSpec{
 			WireName: "unit",
-			Kind: "object",
-			Fields: IamResponseSingleAccount_UnitFields,
+			Kind:     "object",
+			Fields:   IamResponseSingleAccount_UnitFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

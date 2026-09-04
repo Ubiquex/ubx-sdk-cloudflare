@@ -9,6 +9,7 @@ export interface IntelAsnComponentsSchemasResponseAttrs {
   /** Identifier. */
   accountId: string;
   asn: number;
+  result: number;
 }
 
 export const IntelAsnComponentsSchemasResponse: DataSourceBinding<IntelAsnComponentsSchemasResponseConfig, IntelAsnComponentsSchemasResponseAttrs> = {

@@ -7,6 +7,116 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamVideoResponseSingle_Result_Input:
+    # The video height in pixels. A value of `-1` means the height is unknown. The value becomes available after the upload and before the video is ready.
+    height: Any = None
+    # The video width in pixels. A value of `-1` means the width is unknown. The value becomes available after the upload and before the video is ready.
+    width: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseSingle_Result_Playback:
+    # DASH Media Presentation Description for the video.
+    dash: Any = None
+    # The HLS manifest for the video.
+    hls: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseSingle_Result_PublicDetails:
+    channel_link: Any = None
+    logo: Any = None
+    media_id: Any = None
+    share_link: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseSingle_Result_Status:
+    # Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.
+    error_reason_code: Any = None
+    # Specifies why the video failed to encode using a human readable error message in English. This field is empty if the video is not in an `error` state.
+    error_reason_text: Any = None
+    # Indicates the progress as a percentage between 0 and 100.
+    pct_complete: Any = None
+    # Specifies the processing status for all quality levels for a video.
+    state: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseSingle_Result_Watermark:
+    # The date and a time a watermark profile was created.
+    created: Any = None
+    # The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
+    downloaded_from: Any = None
+    # The height of the image in pixels.
+    height: Any = None
+    # A short description of the watermark profile.
+    name: Any = None
+    # The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.
+    opacity: Any = None
+    # The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.
+    padding: Any = None
+    # The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
+    position: Any = None
+    # The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
+    scale: Any = None
+    # The size of the image in bytes.
+    size: Any = None
+    # The unique identifier for a watermark profile.
+    uid: Any = None
+    # The width of the image in pixels.
+    width: Any = None
+
+@dataclasses.dataclass
+class StreamVideoResponseSingle_Result:
+    # Lists the origins allowed to display the video. Enter allowed origin domains in an array and use `*` for wildcard subdomains. Empty arrays allow the video to be viewed on any origin.
+    allowed_origins: Any = None
+    # The unique identifier of the source video this video was clipped from.
+    clipped_from: Any = None
+    # The date and time the media item was created.
+    created: Any = None
+    # A user-defined identifier for the media creator.
+    creator: Any = None
+    # The duration of the video in seconds. A value of `-1` means the duration is unknown. The duration becomes available after the upload and before the video is ready.
+    duration: Any = None
+    input: Any = None
+    # The live input ID used to upload a video with Stream Live.
+    live_input: Any = None
+    # The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.
+    max_duration_seconds: Any = None
+    # The maximum size in bytes for the video upload.
+    max_size_bytes: Any = None
+    # A user modifiable key-value store used to reference other systems of record for managing videos.
+    meta: Any = None
+    # The date and time the media item was last modified.
+    modified: Any = None
+    playback: Any = None
+    # The video's preview page URI. This field is omitted until encoding is complete.
+    preview: Any = None
+    # Public details for the video including title, share link, channel link, and logo.
+    public_details: Any = None
+    # Indicates whether the video is playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+    ready_to_stream: Any = None
+    # Indicates the time at which the video became playable. The field is empty if the video is not ready for viewing or the live stream is still in progress.
+    ready_to_stream_at: Any = None
+    # Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
+    require_signed_urls: Any = None
+    # Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
+    scheduled_deletion: Any = None
+    # The size of the media item in bytes.
+    size: Any = None
+    # Specifies a detailed status for a video. If the `state` is `inprogress` or `error`, the `step` field returns `encoding` or `manifest`. If the `state` is `inprogress`, `pctComplete` returns a number between 0 and 100 to indicate the approximate percent of completion. If the `state` is `error`, `errorReasonCode` and `errorReasonText` provide additional details.
+    status: Any = None
+    # The media item's thumbnail URI. This field is omitted until encoding is complete.
+    thumbnail: Any = None
+    # The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video. If this value is not set, the default thumbnail image is taken from 0s of the video.
+    thumbnail_timestamp_pct: Any = None
+    # A Cloudflare-generated unique identifier for a media item.
+    uid: Any = None
+    # The date and time when the video upload URL is no longer valid for direct user uploads.
+    upload_expiry: Any = None
+    # The date and time the media item was uploaded.
+    uploaded: Any = None
+    watermark: Any = None
+
+@dataclasses.dataclass
 class StreamVideoResponseSingle_Watermark:
     # The unique identifier for the watermark profile.
     uid: Any = None
@@ -55,6 +165,7 @@ class StreamVideoResponseSingleAttrs:
     name: Any = None
     # Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.
     require_signed_urls: Any = None
+    result: Any = None
     # Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.
     scheduled_deletion: Any = None
     # The timestamp for a thumbnail image calculated as a percentage value of the video's duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video. If this value is not set, the default thumbnail image is taken from 0s of the video.

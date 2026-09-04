@@ -7,28 +7,27 @@ type IamScimResourceType_AccountId struct {
 }
 
 type IamScimResourceType_Resources_Meta struct {
-	Location any
+	Location     any
 	ResourceType any
 }
 
 type IamScimResourceType_Resources_SchemaExtensions struct {
 	Required any
-	Schema any
+	Schema   any
 }
 
 type IamScimResourceType_Resources struct {
-	Description any
-	Endpoint any
-	Id any
-	Meta any
-	Name any
-	Schema any
+	Description      any
+	Endpoint         any
+	Id               any
+	Meta             any
+	Name             any
+	Schema           any
 	SchemaExtensions any
-	Schemas any
+	Schemas          any
 }
 
-var IamScimResourceType_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimResourceType_AccountIdFields = ubx.FieldMap{}
 
 type IamScimResourceTypeConfig struct {
 	// Account identifier tag.
@@ -37,11 +36,11 @@ type IamScimResourceTypeConfig struct {
 
 type IamScimResourceTypeAttrs struct {
 	// Account identifier tag.
-	AccountId any
+	AccountId    any
 	ItemsPerPage any
-	Resources any
-	Schemas any
-	StartIndex any
+	Resources    any
+	Schemas      any
+	StartIndex   any
 	TotalResults any
 }
 
@@ -50,8 +49,8 @@ var IamScimResourceType = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimResourceType_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimResourceType_AccountIdFields,
 		},
 	},
 }

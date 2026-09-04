@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DeployHook_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class DeployHook_Result:
+    # Git branch name.
+    branch: Any = None
+    created_on: Any = None
+    # Deploy hook name (1-58 characters).
+    deploy_hook_name: Any = None
+    # Deploy hook UUID.
+    deploy_hook_uuid: Any = None
+    # System-generated worker script tag.
+    external_script_id: Any = None
+    modified_on: Any = None
+
+@dataclasses.dataclass
+class DeployHook_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class DeployHookConfig:
     # Git branch name.
     branch: Any = None
@@ -25,6 +51,11 @@ class DeployHookAttrs:
     branch: Any = None
     # Deploy hook name (1-58 characters).
     deploy_hook_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

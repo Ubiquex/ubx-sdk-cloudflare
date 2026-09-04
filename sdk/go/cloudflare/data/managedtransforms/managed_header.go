@@ -3,12 +3,45 @@ package managedtransforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ManagedHeader_Messages_Source struct {
+	Pointer any
+}
+
+type ManagedHeader_Messages struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type ManagedHeader_Result_ManagedRequestHeaders_ConflictsWith struct {
+}
+
+type ManagedHeader_Result_ManagedRequestHeaders struct {
+	ConflictsWith any
+	Enabled       any
+	HasConflict   any
+	Id            any
+}
+
+type ManagedHeader_Result struct {
+	// The list of Managed Request Transforms.
+	ManagedRequestHeaders any
+	// The list of Managed Response Transforms.
+	ManagedResponseHeaders any
+}
+
 type ManagedHeaderConfig struct {
 	// The unique ID of the zone.
 	ZoneId any
 }
 
 type ManagedHeaderAttrs struct {
+	Errors any
+	// A list of warning messages.
+	Messages any
+	// A Managed Transforms object.
+	Result  any
+	Success any
 	// The unique ID of the zone.
 	ZoneId any
 }

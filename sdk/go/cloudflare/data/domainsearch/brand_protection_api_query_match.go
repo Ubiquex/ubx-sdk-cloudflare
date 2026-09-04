@@ -4,30 +4,30 @@ package domainsearch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrandProtectionApiQueryMatchConfig struct {
-	Id any
+	Id               any
 	IncludeDismissed any
-	IncludeDomainId any
-	Limit any
-	Offset any
+	IncludeDomainId  any
+	Limit            any
+	Offset           any
 }
 
 type BrandProtectionApiQueryMatchAttrs struct {
-	Id any
+	Id               any
 	IncludeDismissed any
-	IncludeDomainId any
-	Limit any
-	Matches any
-	Offset any
-	Total any
+	IncludeDomainId  any
+	Limit            any
+	Matches          any
+	Offset           any
+	Total            any
 }
 
 var BrandProtectionApiQueryMatch = ubx.DataSourceBinding{
 	WireType: "cloudflare_brand_protection_api_query_match",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
 		"IncludeDismissed": ubx.FieldSpec{WireName: "include_dismissed"},
-		"IncludeDomainId": ubx.FieldSpec{WireName: "include_domain_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"IncludeDomainId":  ubx.FieldSpec{WireName: "include_domain_id"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"Offset":           ubx.FieldSpec{WireName: "offset"},
 	},
 }

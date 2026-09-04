@@ -4,6 +4,36 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamSingleRoleResponse_AccountId {
 }
 
+export interface IamSingleRoleResponse_Result_Permissions_Analytics {
+  read?: boolean | Computed<boolean>;
+  write?: boolean | Computed<boolean>;
+}
+
+export interface IamSingleRoleResponse_Result_Permissions {
+  analytics?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  billing?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  cachePurge?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  dns?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  dnsRecords?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  lb?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  logs?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  organization?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  ssl?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  waf?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  zoneSettings?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+  zones?: IamSingleRoleResponse_Result_Permissions_Analytics | Computed<IamSingleRoleResponse_Result_Permissions_Analytics>;
+}
+
+export interface IamSingleRoleResponse_Result {
+  /** Description of role's permissions. */
+  description?: string | Computed<string>;
+  /** Role identifier tag. */
+  id: string | Computed<string>;
+  /** Role name. */
+  name?: string | Computed<string>;
+  permissions: IamSingleRoleResponse_Result_Permissions | Computed<IamSingleRoleResponse_Result_Permissions>;
+}
+
 const IamSingleRoleResponse_AccountIdFields: FieldMap = {
 };
 
@@ -17,6 +47,7 @@ export interface IamSingleRoleResponseConfig {
 export interface IamSingleRoleResponseAttrs {
   /** Account identifier tag. */
   accountId: IamSingleRoleResponse_AccountId;
+  result: IamSingleRoleResponse_Result;
   /** Role identifier tag. */
   roleId: string;
 }

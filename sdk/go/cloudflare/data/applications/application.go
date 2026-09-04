@@ -3,6 +3,17 @@ package applications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Application_Errors_Source struct {
+	Pointer any
+}
+
+type Application_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type ApplicationConfig struct {
 	// Image url.
 	Image any
@@ -11,16 +22,22 @@ type ApplicationConfig struct {
 }
 
 type ApplicationAttrs struct {
+	Errors any
 	// Image url.
-	Image any
+	Image    any
+	Messages any
 	// The application name.
 	Name any
+	// The public Containers API returns a list of applications.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Application = ubx.DataSourceBinding{
 	WireType: "cloudflare_application",
 	Fields: ubx.FieldMap{
 		"Image": ubx.FieldSpec{WireName: "image"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -3,17 +3,24 @@ package spectrumapplications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SpectrumConfigProtocolCollection_Result struct {
+	Description any
+	Name        any
+	Ports       any
+	Transport   any
+}
+
 type SpectrumConfigProtocolCollection_ZoneId struct {
 }
 
-var SpectrumConfigProtocolCollection_ZoneIdFields = ubx.FieldMap{
-	}
+var SpectrumConfigProtocolCollection_ZoneIdFields = ubx.FieldMap{}
 
 type SpectrumConfigProtocolCollectionConfig struct {
 	ZoneId any
 }
 
 type SpectrumConfigProtocolCollectionAttrs struct {
+	Result any
 	ZoneId any
 }
 
@@ -22,8 +29,8 @@ var SpectrumConfigProtocolCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"ZoneId": ubx.FieldSpec{
 			WireName: "zone_id",
-			Kind: "object",
-			Fields: SpectrumConfigProtocolCollection_ZoneIdFields,
+			Kind:     "object",
+			Fields:   SpectrumConfigProtocolCollection_ZoneIdFields,
 		},
 	},
 }

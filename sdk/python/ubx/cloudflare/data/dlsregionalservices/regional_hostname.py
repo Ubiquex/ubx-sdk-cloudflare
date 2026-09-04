@@ -7,12 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegionalHostname_Result_CreatedOn:
+    pass
+
+@dataclasses.dataclass
+class RegionalHostname_Result:
+    created_on: Any = None
+    hostname: Any = None
+    region_key: Any = None
+    routing: Any = None
+
+@dataclasses.dataclass
 class RegionalHostnameConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class RegionalHostnameAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -7,12 +7,113 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_ActivityLog:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Antivirus_NotificationSettings:
+    enabled: Any = None
+    include_context: Any = None
+    msg: Any = None
+    support_url: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Antivirus:
+    enabled_download_phase: Any = None
+    enabled_upload_phase: Any = None
+    fail_closed: Any = None
+    notification_settings: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BlockPage:
+    background_color: Any = None
+    enabled: Any = None
+    footer_text: Any = None
+    header_text: Any = None
+    include_context: Any = None
+    logo_path: Any = None
+    mailto_address: Any = None
+    mailto_subject: Any = None
+    mode: Any = None
+    name: Any = None
+    read_only: Any = None
+    source_account: Any = None
+    suppress_footer: Any = None
+    target_uri: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BodyScanning:
+    inspection_mode: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BrowserIsolation:
+    non_identity_enabled: Any = None
+    url_browser_isolation_enabled: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Certificate:
+    id: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_CustomCertificate:
+    binding_status: Any = None
+    enabled: Any = None
+    id: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_ExtendedEmailMatching:
+    enabled: Any = None
+    read_only: Any = None
+    source_account: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Fips:
+    tls: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Inspection:
+    mode: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Sandbox:
+    enabled: Any = None
+    fallback_action: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result_Settings:
+    activity_log: Any = None
+    antivirus: Any = None
+    block_page: Any = None
+    body_scanning: Any = None
+    browser_isolation: Any = None
+    certificate: Any = None
+    custom_certificate: Any = None
+    extended_email_matching: Any = None
+    fips: Any = None
+    host_selector: Any = None
+    inspection: Any = None
+    max_ttl_secs: Any = None
+    protocol_detection: Any = None
+    sandbox: Any = None
+    tls_decrypt: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountConfig_Result:
+    created_at: Any = None
+    settings: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountConfigConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountConfigAttrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayGatewayAccountConfig = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_gateway_account_config",

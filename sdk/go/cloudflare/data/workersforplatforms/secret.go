@@ -3,6 +3,28 @@ package workersforplatforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Secret_Errors_Source struct {
+	Pointer any
+}
+
+type Secret_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Secret_Result struct {
+	Algorithm any
+	Format    any
+	KeyBase64 any
+	KeyJwk    any
+	Name      any
+	Text      any
+	Type      any
+	Usages    any
+}
+
 type SecretConfig struct {
 	// Identifier.
 	AccountId any
@@ -17,15 +39,20 @@ type SecretAttrs struct {
 	AccountId any
 	// Name of the Workers for Platforms dispatch namespace.
 	DispatchNamespace any
+	Errors            any
+	Messages          any
+	Result            any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Secret = ubx.DataSourceBinding{
 	WireType: "cloudflare_secret",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+		"ScriptName":        ubx.FieldSpec{WireName: "script_name"},
 	},
 }

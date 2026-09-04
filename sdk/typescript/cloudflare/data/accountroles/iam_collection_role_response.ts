@@ -4,6 +4,33 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamCollectionRoleResponse_AccountId {
 }
 
+export interface IamCollectionRoleResponse_Result_Permissions_Analytics {
+  read?: boolean | Computed<boolean>;
+  write?: boolean | Computed<boolean>;
+}
+
+export interface IamCollectionRoleResponse_Result_Permissions {
+  analytics?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  billing?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  cachePurge?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  dns?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  dnsRecords?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  lb?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  logs?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  organization?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  ssl?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  waf?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  zoneSettings?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+  zones?: IamCollectionRoleResponse_Result_Permissions_Analytics | Computed<IamCollectionRoleResponse_Result_Permissions_Analytics>;
+}
+
+export interface IamCollectionRoleResponse_Result {
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+  permissions?: IamCollectionRoleResponse_Result_Permissions | Computed<IamCollectionRoleResponse_Result_Permissions>;
+}
+
 const IamCollectionRoleResponse_AccountIdFields: FieldMap = {
 };
 
@@ -23,6 +50,7 @@ export interface IamCollectionRoleResponseAttrs {
   page: number;
   /** Number of roles per page. */
   perPage: number;
+  result: IamCollectionRoleResponse_Result[];
 }
 
 export const IamCollectionRoleResponse: DataSourceBinding<IamCollectionRoleResponseConfig, IamCollectionRoleResponseAttrs> = {

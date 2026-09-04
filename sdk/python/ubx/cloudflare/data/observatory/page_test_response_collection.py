@@ -10,6 +10,49 @@ import ubx_sdk as ubx
 class PageTestResponseCollection_Region:
     pass
 
+@dataclasses.dataclass
+class PageTestResponseCollection_Result_DesktopReport_Error:
+    code: Any = None
+    detail: Any = None
+    final_displayed_url: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseCollection_Result_DesktopReport:
+    cls: Any = None
+    device_type: Any = None
+    error: Any = None
+    fcp: Any = None
+    json_report_url: Any = None
+    lcp: Any = None
+    performance_score: Any = None
+    si: Any = None
+    state: Any = None
+    tbt: Any = None
+    ttfb: Any = None
+    tti: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseCollection_Result_Region:
+    label: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseCollection_Result:
+    date: Any = None
+    desktop_report: Any = None
+    id: Any = None
+    mobile_report: Any = None
+    region: Any = None
+    schedule_frequency: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class PageTestResponseCollection_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+
 _PageTestResponseCollection_RegionFields = {
 }
 
@@ -28,6 +71,8 @@ class PageTestResponseCollectionAttrs:
     page: Any = None
     per_page: Any = None
     region: Any = None
+    result: Any = None
+    result_info: Any = None
     # A URL.
     url: Any = None
     # Identifier.

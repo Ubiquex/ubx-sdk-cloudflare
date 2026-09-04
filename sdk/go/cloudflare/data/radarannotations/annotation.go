@@ -9,37 +9,37 @@ type Annotation_Result_Annotations_AsnsDetails_Locations struct {
 }
 
 type Annotation_Result_Annotations_AsnsDetails struct {
-	Asn any
+	Asn       any
 	Locations any
-	Name any
+	Name      any
 }
 
 type Annotation_Result_Annotations_OriginsDetails struct {
-	Name any
+	Name   any
 	Origin any
 }
 
 type Annotation_Result_Annotations_Outage struct {
 	OutageCause any
-	OutageType any
+	OutageType  any
 }
 
 type Annotation_Result_Annotations struct {
-	Asns any
-	AsnsDetails any
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
-	Id any
-	LinkedUrl any
-	Locations any
+	Asns             any
+	AsnsDetails      any
+	DataSource       any
+	Description      any
+	EndDate          any
+	EventType        any
+	Id               any
+	LinkedUrl        any
+	Locations        any
 	LocationsDetails any
-	Origins any
-	OriginsDetails any
-	Outage any
-	Scope any
-	StartDate any
+	Origins          any
+	OriginsDetails   any
+	Outage           any
+	Scope            any
+	StartDate        any
 }
 
 type Annotation_Result struct {
@@ -93,24 +93,24 @@ type AnnotationAttrs struct {
 	// Skips the specified number of objects before fetching the results.
 	Offset any
 	// Filters results by origin.
-	Origin any
-	Result any
+	Origin  any
+	Result  any
 	Success any
 }
 
 var Annotation = ubx.DataSourceBinding{
 	WireType: "cloudflare_annotation",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"Asn":        ubx.FieldSpec{WireName: "asn"},
 		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"DateEnd":    ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":  ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":  ubx.FieldSpec{WireName: "date_start"},
+		"EventType":  ubx.FieldSpec{WireName: "event_type"},
+		"Format":     ubx.FieldSpec{WireName: "format"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Location":   ubx.FieldSpec{WireName: "location"},
+		"Offset":     ubx.FieldSpec{WireName: "offset"},
+		"Origin":     ubx.FieldSpec{WireName: "origin"},
 	},
 }

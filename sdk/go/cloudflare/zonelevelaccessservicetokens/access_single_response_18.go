@@ -3,6 +3,25 @@ package zonelevelaccessservicetokens
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse18_Result_Id struct {
+}
+
+type AccessSingleResponse18_Result struct {
+	// The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header.
+	ClientId  any
+	CreatedAt any
+	// The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`, or the special value `forever` for non-expiring tokens. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
+	Duration any
+	// Whether the service token is enabled. A disabled service token cannot be used to authenticate; both its current and previous `client_secret` stop being accepted, but the token itself is preserved and can be re-enabled at any time. Defaults to enabled when omitted on create.
+	Enabled    any
+	ExpiresAt  any
+	Id         any
+	LastSeenAt any
+	// The name of the service token.
+	Name      any
+	UpdatedAt any
+}
+
 type AccessSingleResponse18Config struct {
 	// A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.
 	ClientSecretVersion any
@@ -31,6 +50,7 @@ type AccessSingleResponse18Attrs struct {
 	Name any
 	// The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
 	PreviousClientSecretExpiresAt any
+	Result                        any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +60,12 @@ type AccessSingleResponse18Attrs struct {
 var AccessSingleResponse18 = ubx.ResourceBinding{
 	WireType: "cloudflare_access_single_response_18",
 	Fields: ubx.FieldMap{
-		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ClientSecretVersion":           ubx.FieldSpec{WireName: "client_secret_version"},
+		"Duration":                      ubx.FieldSpec{WireName: "duration"},
+		"Enabled":                       ubx.FieldSpec{WireName: "enabled"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"PreviousClientSecretExpiresAt": ubx.FieldSpec{WireName: "previous_client_secret_expires_at"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"ServiceTokenId": ubx.FieldSpec{WireName: "service_token_id"},
+		"ZoneId":                        ubx.FieldSpec{WireName: "zone_id"},
+		"ServiceTokenId":                ubx.FieldSpec{WireName: "service_token_id"},
 	},
 }

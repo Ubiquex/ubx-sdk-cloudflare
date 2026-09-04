@@ -3,25 +3,65 @@ package waitingroom
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResponseCollection_Result_AdditionalRoutes struct {
+	Host any
+	Path any
+}
+
+type ResponseCollection_Result_CookieAttributes struct {
+	Samesite any
+	Secure   any
+}
+
+type ResponseCollection_Result struct {
+	AdditionalRoutes           any
+	CookieAttributes           any
+	CookieSuffix               any
+	CreatedOn                  any
+	CustomPageHtml             any
+	DefaultTemplateLanguage    any
+	Description                any
+	DisableSessionRenewal      any
+	EnabledOriginCommands      any
+	Host                       any
+	Id                         any
+	JsonResponseEnabled        any
+	ModifiedOn                 any
+	Name                       any
+	NewUsersPerMinute          any
+	NextEventPrequeueStartTime any
+	NextEventStartTime         any
+	Path                       any
+	QueueAll                   any
+	QueueingMethod             any
+	QueueingStatusCode         any
+	SessionDuration            any
+	Suspended                  any
+	TotalActiveUsers           any
+	TurnstileAction            any
+	TurnstileMode              any
+}
+
 type ResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 }
 
 type ResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var ResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_waitingroom_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

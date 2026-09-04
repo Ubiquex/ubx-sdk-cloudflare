@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Timesery_Result_Series struct {
 	Count any
-	Day any
+	Day   any
 }
 
 type Timesery_Result struct {
-	Aggregate any
-	End any
+	Aggregate   any
+	End         any
 	Granularity any
-	Series any
-	Start any
-	Total any
-	Tz any
+	Series      any
+	Start       any
+	Total       any
+	Tz          any
 }
 
 type TimeseryConfig struct {
 	AccountId any
 	Aggregate any
 	// Daily trailing-window size; defaults to 7 and is ignored for monthly
-	Days any
+	Days        any
 	Granularity any
-	PortalId any
-	Tz any
+	PortalId    any
+	Tz          any
 }
 
 type TimeseryAttrs struct {
 	AccountId any
 	Aggregate any
 	// Daily trailing-window size; defaults to 7 and is ignored for monthly
-	Days any
+	Days        any
 	Granularity any
-	PortalId any
-	Result any
-	Success any
-	Tz any
+	PortalId    any
+	Result      any
+	Success     any
+	Tz          any
 }
 
 var Timesery = ubx.DataSourceBinding{
 	WireType: "cloudflare_timesery",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Aggregate": ubx.FieldSpec{WireName: "aggregate"},
-		"Days": ubx.FieldSpec{WireName: "days"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"Aggregate":   ubx.FieldSpec{WireName: "aggregate"},
+		"Days":        ubx.FieldSpec{WireName: "days"},
 		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
-		"Tz": ubx.FieldSpec{WireName: "tz"},
+		"PortalId":    ubx.FieldSpec{WireName: "portal_id"},
+		"Tz":          ubx.FieldSpec{WireName: "tz"},
 	},
 }

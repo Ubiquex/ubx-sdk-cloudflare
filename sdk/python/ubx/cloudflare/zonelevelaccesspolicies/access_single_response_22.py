@@ -133,6 +133,35 @@ class AccessSingleResponse22_Exclude:
     service_token: Any = None
     user_risk_score: Any = None
 
+@dataclasses.dataclass
+class AccessSingleResponse22_Result:
+    # Administrators who can approve a temporary authentication request.
+    approval_groups: Any = None
+    # Requires the user to request access from an administrator at the start of each session.
+    approval_required: Any = None
+    created_at: Any = None
+    # The action Access will take if a user matches this policy.
+    decision: Any = None
+    # Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+    exclude: Any = None
+    # UUID.
+    id: Any = None
+    # Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+    include: Any = None
+    # Require this application to be served in an isolated browser for users matching this policy.
+    isolation_required: Any = None
+    # The name of the Access policy.
+    name: Any = None
+    # The order of execution for this policy. Must be unique for each policy.
+    precedence: Any = None
+    # A custom message that will appear on the purpose justification screen.
+    purpose_justification_prompt: Any = None
+    # Require users to enter a justification when they log in to the application.
+    purpose_justification_required: Any = None
+    # Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+    require: Any = None
+    updated_at: Any = None
+
 _AccessSingleResponse22_ApprovalGroupsFields = {
     "approvals_needed": ubx.FieldSpec(wire_name="approvals_needed"),
     "email_addresses": ubx.FieldSpec(wire_name="email_addresses"),
@@ -407,6 +436,7 @@ class AccessSingleResponse22Attrs:
     purpose_justification_required: Any = None
     # Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
     require: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

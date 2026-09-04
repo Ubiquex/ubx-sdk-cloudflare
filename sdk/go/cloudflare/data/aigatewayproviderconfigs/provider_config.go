@@ -4,34 +4,34 @@ package aigatewayproviderconfigs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProviderConfig_Result struct {
-	Alias any
-	DefaultConfig any
-	GatewayId any
-	Id any
-	ModifiedAt any
-	ProviderSlug any
-	RateLimit any
+	Alias           any
+	DefaultConfig   any
+	GatewayId       any
+	Id              any
+	ModifiedAt      any
+	ProviderSlug    any
+	RateLimit       any
 	RateLimitPeriod any
-	SecretId any
-	SecretPreview any
+	SecretId        any
+	SecretPreview   any
 }
 
 type ProviderConfigConfig struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 }
 
 type ProviderConfigAttrs struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Page any
-	PerPage any
-	Result any
-	Success any
+	Page      any
+	PerPage   any
+	Result    any
+	Success   any
 }
 
 var ProviderConfig = ubx.DataSourceBinding{
@@ -39,7 +39,7 @@ var ProviderConfig = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

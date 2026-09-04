@@ -3,6 +3,69 @@ package certificatepacks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_Certificates_GeoRestrictions struct {
+	Label any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_Certificates struct {
+	BundleMethod    any
+	ExpiresOn       any
+	GeoRestrictions any
+	Hosts           any
+	Id              any
+	Issuer          any
+	ModifiedOn      any
+	Priority        any
+	Signature       any
+	Status          any
+	UploadedOn      any
+	ZoneId          any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_DcvDelegationRecords struct {
+	Cname       any
+	CnameTarget any
+	Emails      any
+	HttpBody    any
+	HttpUrl     any
+	Status      any
+	TxtName     any
+	TxtValue    any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result_ValidationErrors struct {
+	Message any
+}
+
+type TlsCertificatesAndHostnamesCertificatePackResponseSingle_Result struct {
+	// Certificate Authority selected for the order. For information on any certificate authority specific details or restrictions [see this page for more details](https://developers.cloudflare.com/ssl/reference/certificate-authorities).
+	CertificateAuthority any
+	// Array of certificates in this pack.
+	Certificates any
+	// Whether or not to add Cloudflare Branding for the order. This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.
+	CloudflareBranding any
+	// DCV Delegation records for domain validation.
+	DcvDelegationRecords any
+	// Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.
+	Hosts any
+	// Identifier.
+	Id any
+	// Identifier of the primary certificate in a pack.
+	PrimaryCertificate any
+	// Status of certificate pack.
+	Status any
+	// Type of certificate pack.
+	Type any
+	// Domain validation errors that have been received by the certificate authority (CA).
+	ValidationErrors any
+	// Validation Method selected for the order.
+	ValidationMethod any
+	// Certificates' validation records.
+	ValidationRecords any
+	// Validity Days selected for the order.
+	ValidityDays any
+}
+
 type TlsCertificatesAndHostnamesCertificatePackResponseSingleConfig struct {
 	// Identifier.
 	CertificatePackId any
@@ -13,6 +76,8 @@ type TlsCertificatesAndHostnamesCertificatePackResponseSingleConfig struct {
 type TlsCertificatesAndHostnamesCertificatePackResponseSingleAttrs struct {
 	// Identifier.
 	CertificatePackId any
+	// A certificate pack with all its properties.
+	Result any
 	// Identifier.
 	ZoneId any
 }
@@ -21,6 +86,6 @@ var TlsCertificatesAndHostnamesCertificatePackResponseSingle = ubx.DataSourceBin
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_pack_response_single",
 	Fields: ubx.FieldMap{
 		"CertificatePackId": ubx.FieldSpec{WireName: "certificate_pack_id"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":            ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

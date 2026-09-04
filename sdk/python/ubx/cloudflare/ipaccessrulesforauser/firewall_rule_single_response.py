@@ -11,6 +11,23 @@ class FirewallRuleSingleResponse_Configuration:
     target: Any = None
     value: Any = None
 
+@dataclasses.dataclass
+class FirewallRuleSingleResponse_Result:
+    # The available actions that a rule can apply to a matched request.
+    allowed_modes: Any = None
+    # The rule configuration.
+    configuration: Any = None
+    # The timestamp of when the rule was created.
+    created_on: Any = None
+    # The unique identifier of the IP Access rule.
+    id: Any = None
+    # The action to apply to a matched request.
+    mode: Any = None
+    # The timestamp of when the rule was last modified.
+    modified_on: Any = None
+    # An informative summary of the rule, typically used as a reminder or explanation.
+    notes: Any = None
+
 _FirewallRuleSingleResponse_ConfigurationFields = {
     "target": ubx.FieldSpec(wire_name="target"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -33,6 +50,7 @@ class FirewallRuleSingleResponseAttrs:
     # The action to apply to a matched request.
     mode: Any = None
     notes: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     rule_id: Any = None
 

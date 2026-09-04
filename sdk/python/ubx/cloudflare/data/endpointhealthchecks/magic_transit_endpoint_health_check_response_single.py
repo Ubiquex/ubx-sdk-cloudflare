@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Result:
+    check_type: Any = None
+    endpoint: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class MagicTransitEndpointHealthCheckResponseSingleConfig:
     pass
 
@@ -14,6 +32,11 @@ class MagicTransitEndpointHealthCheckResponseSingleConfig:
 class MagicTransitEndpointHealthCheckResponseSingleAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 MagicTransitEndpointHealthCheckResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_transit_endpoint_health_check_response_single",

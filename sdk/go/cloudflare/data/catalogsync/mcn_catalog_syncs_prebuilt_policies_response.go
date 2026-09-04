@@ -3,20 +3,28 @@ package catalogsync
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnCatalogSyncsPrebuiltPoliciesResponse_Result struct {
+	ApplicableDestinations any
+	PolicyDescription      any
+	PolicyName             any
+	PolicyString           any
+}
+
 type McnCatalogSyncsPrebuiltPoliciesResponseConfig struct {
-	AccountId any
+	AccountId       any
 	DestinationType any
 }
 
 type McnCatalogSyncsPrebuiltPoliciesResponseAttrs struct {
-	AccountId any
+	AccountId       any
 	DestinationType any
+	Result          any
 }
 
 var McnCatalogSyncsPrebuiltPoliciesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_catalog_syncs_prebuilt_policies_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"DestinationType": ubx.FieldSpec{WireName: "destination_type"},
 	},
 }

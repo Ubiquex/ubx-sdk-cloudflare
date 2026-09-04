@@ -16,8 +16,29 @@ class DigitalExperienceMonitoringDexSingleResponse_Data:
     method: Any = None
 
 @dataclasses.dataclass
-class DigitalExperienceMonitoringDexSingleResponse_TargetPolicies:
+class DigitalExperienceMonitoringDexSingleResponse_Result_TargetPolicies:
     pass
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringDexSingleResponse_Result:
+    # Date the test was created, in RFC 3339 format.
+    created: Any = None
+    # The configuration object which contains the details for the WARP client to conduct the test.
+    data: Any = None
+    # Additional details about the test.
+    description: Any = None
+    # Determines whether or not the test is active.
+    enabled: Any = None
+    # How often the test will run.
+    interval: Any = None
+    # The name of the DEX test. Must be unique.
+    name: Any = None
+    target_policies: Any = None
+    targeted: Any = None
+    # The unique identifier for the test.
+    test_id: Any = None
+    # Date the test was last updated, in RFC 3339 format.
+    updated: Any = None
 
 _DigitalExperienceMonitoringDexSingleResponse_DataFields = {
     "host": ubx.FieldSpec(wire_name="host"),
@@ -25,7 +46,7 @@ _DigitalExperienceMonitoringDexSingleResponse_DataFields = {
     "method": ubx.FieldSpec(wire_name="method"),
 }
 
-_DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields = {
+_DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields = {
 }
 
 @dataclasses.dataclass
@@ -61,6 +82,7 @@ class DigitalExperienceMonitoringDexSingleResponseAttrs:
     interval: Any = None
     # The name of the DEX test. Must be unique.
     name: Any = None
+    result: Any = None
     target_policies: Any = None
     targeted: Any = None
     # The unique identifier for the test.
@@ -87,7 +109,7 @@ DigitalExperienceMonitoringDexSingleResponse = ubx.ResourceBinding(
         "target_policies": ubx.FieldSpec(
             wire_name="target_policies",
             kind="object",
-            fields=_DigitalExperienceMonitoringDexSingleResponse_TargetPoliciesFields,
+            fields=_DigitalExperienceMonitoringDexSingleResponse_Result_TargetPoliciesFields,
         ),
         "targeted": ubx.FieldSpec(wire_name="targeted"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),

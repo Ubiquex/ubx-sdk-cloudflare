@@ -25,12 +25,146 @@ class AccessSingleResponse10_ConnectionRules:
     rdp: Any = None
 
 @dataclasses.dataclass
+class AccessSingleResponse10_Exclude_AuthContext:
+    ac_id: Any = None
+    id: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_AuthMethod:
+    auth_method: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_AzureAd:
+    id: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_CloudflareAccountMember:
+    account_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_CommonName:
+    common_name: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_DevicePosture:
+    integration_uid: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Email:
+    email: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_EmailDomain:
+    domain: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_EmailList:
+    id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_ExternalEvaluation:
+    evaluate_url: Any = None
+    keys_url: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Geo:
+    country_code: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_GithubOrganization:
+    identity_provider_id: Any = None
+    name: Any = None
+    team: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Gsuite:
+    email: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Ip:
+    ip: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_LinkedAppToken:
+    app_uid: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Oidc:
+    claim_name: Any = None
+    claim_value: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Okta:
+    identity_provider_id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_Saml:
+    attribute_name: Any = None
+    attribute_value: Any = None
+    identity_provider_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_ServiceToken:
+    token_id: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude_UserRiskScore:
+    user_risk_score: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Exclude:
+    any_valid_service_token: Any = None
+    auth_context: Any = None
+    auth_method: Any = None
+    azure_ad: Any = None
+    certificate: Any = None
+    cloudflare_account_member: Any = None
+    common_name: Any = None
+    device_posture: Any = None
+    email: Any = None
+    email_domain: Any = None
+    email_list: Any = None
+    everyone: Any = None
+    external_evaluation: Any = None
+    geo: Any = None
+    github_organization: Any = None
+    group: Any = None
+    gsuite: Any = None
+    ip: Any = None
+    ip_list: Any = None
+    linked_app_token: Any = None
+    login_method: Any = None
+    oidc: Any = None
+    okta: Any = None
+    saml: Any = None
+    service_token: Any = None
+    user_risk_score: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse10_MfaConfig:
     # Lists the MFA methods that users can authenticate with.
     allowed_authenticators: Any = None
     # Indicates whether to disable MFA for this resource. This option is available at the application and policy level.
     mfa_disabled: Any = None
     # Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.
+    session_duration: Any = None
+
+@dataclasses.dataclass
+class AccessSingleResponse10_Result:
+    app_count: Any = None
+    approval_groups: Any = None
+    approval_required: Any = None
+    connection_rules: Any = None
+    isolation_required: Any = None
+    mfa_config: Any = None
+    purpose_justification_prompt: Any = None
+    purpose_justification_required: Any = None
+    reusable: Any = None
     session_duration: Any = None
 
 _AccessSingleResponse10_ApprovalGroupsFields = {
@@ -52,6 +186,219 @@ _AccessSingleResponse10_ConnectionRulesFields = {
     ),
 }
 
+_AccessSingleResponse10_Exclude_AuthContextFields = {
+    "ac_id": ubx.FieldSpec(wire_name="ac_id"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+}
+
+_AccessSingleResponse10_Exclude_AuthMethodFields = {
+    "auth_method": ubx.FieldSpec(wire_name="auth_method"),
+}
+
+_AccessSingleResponse10_Exclude_AzureAdFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+}
+
+_AccessSingleResponse10_Exclude_CloudflareAccountMemberFields = {
+    "account_id": ubx.FieldSpec(wire_name="account_id"),
+}
+
+_AccessSingleResponse10_Exclude_CommonNameFields = {
+    "common_name": ubx.FieldSpec(wire_name="common_name"),
+}
+
+_AccessSingleResponse10_Exclude_DevicePostureFields = {
+    "integration_uid": ubx.FieldSpec(wire_name="integration_uid"),
+}
+
+_AccessSingleResponse10_Exclude_EmailFields = {
+    "email": ubx.FieldSpec(wire_name="email"),
+}
+
+_AccessSingleResponse10_Exclude_EmailDomainFields = {
+    "domain": ubx.FieldSpec(wire_name="domain"),
+}
+
+_AccessSingleResponse10_Exclude_EmailListFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+}
+
+_AccessSingleResponse10_Exclude_ExternalEvaluationFields = {
+    "evaluate_url": ubx.FieldSpec(wire_name="evaluate_url"),
+    "keys_url": ubx.FieldSpec(wire_name="keys_url"),
+}
+
+_AccessSingleResponse10_Exclude_GeoFields = {
+    "country_code": ubx.FieldSpec(wire_name="country_code"),
+}
+
+_AccessSingleResponse10_Exclude_GithubOrganizationFields = {
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "team": ubx.FieldSpec(wire_name="team"),
+}
+
+_AccessSingleResponse10_Exclude_GsuiteFields = {
+    "email": ubx.FieldSpec(wire_name="email"),
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+}
+
+_AccessSingleResponse10_Exclude_IpFields = {
+    "ip": ubx.FieldSpec(wire_name="ip"),
+}
+
+_AccessSingleResponse10_Exclude_LinkedAppTokenFields = {
+    "app_uid": ubx.FieldSpec(wire_name="app_uid"),
+}
+
+_AccessSingleResponse10_Exclude_OidcFields = {
+    "claim_name": ubx.FieldSpec(wire_name="claim_name"),
+    "claim_value": ubx.FieldSpec(wire_name="claim_value"),
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+}
+
+_AccessSingleResponse10_Exclude_OktaFields = {
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_AccessSingleResponse10_Exclude_SamlFields = {
+    "attribute_name": ubx.FieldSpec(wire_name="attribute_name"),
+    "attribute_value": ubx.FieldSpec(wire_name="attribute_value"),
+    "identity_provider_id": ubx.FieldSpec(wire_name="identity_provider_id"),
+}
+
+_AccessSingleResponse10_Exclude_ServiceTokenFields = {
+    "token_id": ubx.FieldSpec(wire_name="token_id"),
+}
+
+_AccessSingleResponse10_Exclude_UserRiskScoreFields = {
+    "user_risk_score": ubx.FieldSpec(wire_name="user_risk_score"),
+}
+
+_AccessSingleResponse10_ExcludeFields = {
+    "any_valid_service_token": ubx.FieldSpec(wire_name="any_valid_service_token"),
+    "auth_context": ubx.FieldSpec(
+        wire_name="auth_context",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_AuthContextFields,
+    ),
+    "auth_method": ubx.FieldSpec(
+        wire_name="auth_method",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_AuthMethodFields,
+    ),
+    "azure_ad": ubx.FieldSpec(
+        wire_name="azure_ad",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_AzureAdFields,
+    ),
+    "certificate": ubx.FieldSpec(wire_name="certificate"),
+    "cloudflare_account_member": ubx.FieldSpec(
+        wire_name="cloudflare_account_member",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_CloudflareAccountMemberFields,
+    ),
+    "common_name": ubx.FieldSpec(
+        wire_name="common_name",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_CommonNameFields,
+    ),
+    "device_posture": ubx.FieldSpec(
+        wire_name="device_posture",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_DevicePostureFields,
+    ),
+    "email": ubx.FieldSpec(
+        wire_name="email",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailFields,
+    ),
+    "email_domain": ubx.FieldSpec(
+        wire_name="email_domain",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailDomainFields,
+    ),
+    "email_list": ubx.FieldSpec(
+        wire_name="email_list",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailListFields,
+    ),
+    "everyone": ubx.FieldSpec(wire_name="everyone"),
+    "external_evaluation": ubx.FieldSpec(
+        wire_name="external_evaluation",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_ExternalEvaluationFields,
+    ),
+    "geo": ubx.FieldSpec(
+        wire_name="geo",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_GeoFields,
+    ),
+    "github_organization": ubx.FieldSpec(
+        wire_name="github_organization",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_GithubOrganizationFields,
+    ),
+    "group": ubx.FieldSpec(
+        wire_name="group",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailListFields,
+    ),
+    "gsuite": ubx.FieldSpec(
+        wire_name="gsuite",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_GsuiteFields,
+    ),
+    "ip": ubx.FieldSpec(
+        wire_name="ip",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_IpFields,
+    ),
+    "ip_list": ubx.FieldSpec(
+        wire_name="ip_list",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailListFields,
+    ),
+    "linked_app_token": ubx.FieldSpec(
+        wire_name="linked_app_token",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_LinkedAppTokenFields,
+    ),
+    "login_method": ubx.FieldSpec(
+        wire_name="login_method",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_EmailListFields,
+    ),
+    "oidc": ubx.FieldSpec(
+        wire_name="oidc",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_OidcFields,
+    ),
+    "okta": ubx.FieldSpec(
+        wire_name="okta",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_OktaFields,
+    ),
+    "saml": ubx.FieldSpec(
+        wire_name="saml",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_SamlFields,
+    ),
+    "service_token": ubx.FieldSpec(
+        wire_name="service_token",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_ServiceTokenFields,
+    ),
+    "user_risk_score": ubx.FieldSpec(
+        wire_name="user_risk_score",
+        kind="object",
+        fields=_AccessSingleResponse10_Exclude_UserRiskScoreFields,
+    ),
+}
+
 _AccessSingleResponse10_MfaConfigFields = {
     "allowed_authenticators": ubx.FieldSpec(wire_name="allowed_authenticators"),
     "mfa_disabled": ubx.FieldSpec(wire_name="mfa_disabled"),
@@ -66,14 +413,24 @@ class AccessSingleResponse10Config:
     approval_required: Any = None
     # The rules that define how users may connect to targets secured by your application.
     connection_rules: Any = None
+    # The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
+    decision: Any = None
+    # Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+    exclude: Any = None
+    # Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+    include: Any = None
     # Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
     isolation_required: Any = None
     # Configures multi-factor authentication (MFA) settings.
     mfa_config: Any = None
+    # The name of the Access policy.
+    name: Any = None
     # A custom message that will appear on the purpose justification screen.
     purpose_justification_prompt: Any = None
     # Require users to enter a justification when they log in to the application.
     purpose_justification_required: Any = None
+    # Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+    require: Any = None
     # The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
     session_duration: Any = None
     # path parameter, not part of the API's own resource representation
@@ -89,14 +446,25 @@ class AccessSingleResponse10Attrs:
     approval_required: Any = None
     # The rules that define how users may connect to targets secured by your application.
     connection_rules: Any = None
+    # The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
+    decision: Any = None
+    # Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+    exclude: Any = None
+    # Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+    include: Any = None
     # Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
     isolation_required: Any = None
     # Configures multi-factor authentication (MFA) settings.
     mfa_config: Any = None
+    # The name of the Access policy.
+    name: Any = None
     # A custom message that will appear on the purpose justification screen.
     purpose_justification_prompt: Any = None
     # Require users to enter a justification when they log in to the application.
     purpose_justification_required: Any = None
+    # Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+    require: Any = None
+    result: Any = None
     # The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
     session_duration: Any = None
     # path parameter, not part of the API's own resource representation
@@ -118,14 +486,31 @@ AccessSingleResponse10 = ubx.ResourceBinding(
             kind="object",
             fields=_AccessSingleResponse10_ConnectionRulesFields,
         ),
+        "decision": ubx.FieldSpec(wire_name="decision"),
+        "exclude": ubx.FieldSpec(
+            wire_name="exclude",
+            kind="list",
+            fields=_AccessSingleResponse10_ExcludeFields,
+        ),
+        "include": ubx.FieldSpec(
+            wire_name="include",
+            kind="list",
+            fields=_AccessSingleResponse10_ExcludeFields,
+        ),
         "isolation_required": ubx.FieldSpec(wire_name="isolation_required"),
         "mfa_config": ubx.FieldSpec(
             wire_name="mfa_config",
             kind="object",
             fields=_AccessSingleResponse10_MfaConfigFields,
         ),
+        "name": ubx.FieldSpec(wire_name="name"),
         "purpose_justification_prompt": ubx.FieldSpec(wire_name="purpose_justification_prompt"),
         "purpose_justification_required": ubx.FieldSpec(wire_name="purpose_justification_required"),
+        "require": ubx.FieldSpec(
+            wire_name="require",
+            kind="list",
+            fields=_AccessSingleResponse10_ExcludeFields,
+        ),
         "session_duration": ubx.FieldSpec(wire_name="session_duration"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "policy_id": ubx.FieldSpec(wire_name="policy_id"),

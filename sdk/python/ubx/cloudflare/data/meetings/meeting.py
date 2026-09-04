@@ -7,6 +7,85 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Meeting_Data_RecordingConfig_AudioConfig:
+    channel: Any = None
+    codec: Any = None
+    export_file: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_LiveStreamingConfig:
+    rtmp_url: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_RealtimekitBucketConfig:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_StorageConfig:
+    access_key: Any = None
+    auth_method: Any = None
+    bucket: Any = None
+    host: Any = None
+    password: Any = None
+    path: Any = None
+    port: Any = None
+    private_key: Any = None
+    region: Any = None
+    secret: Any = None
+    type: Any = None
+    username: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_VideoConfig_Watermark_Size:
+    height: Any = None
+    width: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_VideoConfig_Watermark:
+    position: Any = None
+    size: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig_VideoConfig:
+    codec: Any = None
+    export_file: Any = None
+    height: Any = None
+    watermark: Any = None
+    width: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data_RecordingConfig:
+    audio_config: Any = None
+    file_name_prefix: Any = None
+    live_streaming_config: Any = None
+    max_seconds: Any = None
+    realtimekit_bucket_config: Any = None
+    storage_config: Any = None
+    video_config: Any = None
+
+@dataclasses.dataclass
+class Meeting_Data:
+    created_at: Any = None
+    id: Any = None
+    live_stream_on_start: Any = None
+    persist_chat: Any = None
+    record_on_start: Any = None
+    recording_config: Any = None
+    session_keep_alive_time_in_secs: Any = None
+    status: Any = None
+    summarize_on_end: Any = None
+    title: Any = None
+    transcribe_on_end: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Meeting_Paging:
+    end_offset: Any = None
+    start_offset: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class MeetingConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -25,12 +104,15 @@ class MeetingAttrs:
     account_id: Any = None
     # The app identifier tag.
     app_id: Any = None
+    data: Any = None
     end_time: Any = None
     page_no: Any = None
+    paging: Any = None
     per_page: Any = None
     search: Any = None
     start_time: Any = None
     status: Any = None
+    success: Any = None
 
 Meeting = ubx.DataSourceBinding(
     wire_type="cloudflare_meeting",

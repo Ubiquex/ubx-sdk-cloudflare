@@ -4,7 +4,7 @@ package argosmartrouting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArgoConfigApiResponseSingle_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -23,9 +23,9 @@ type ArgoConfigApiResponseSingleConfig struct {
 }
 
 type ArgoConfigApiResponseSingleAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
+	Result   any
 	// Describes a successful API response.
 	Success any
 	// Specifies the zone associated with the API call.
@@ -34,6 +34,5 @@ type ArgoConfigApiResponseSingleAttrs struct {
 
 var ArgoConfigApiResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_argo_config_api_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

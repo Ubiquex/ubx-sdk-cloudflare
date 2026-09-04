@@ -7,11 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesDevicesPolicyCertificatesSingle_Result:
+    # The current status of the device policy certificate provisioning feature for WARP clients.
+    enabled: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesDevicesPolicyCertificatesSingleConfig:
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesDevicesPolicyCertificatesSingleAttrs:
+    result: Any = None
     zone_id: Any = None
 
 TeamsDevicesDevicesPolicyCertificatesSingle = ubx.DataSourceBinding(
