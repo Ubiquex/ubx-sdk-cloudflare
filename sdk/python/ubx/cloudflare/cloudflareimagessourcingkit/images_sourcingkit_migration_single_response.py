@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesSourcingkitMigrationSingleResponse_Result:
+    # How to handle objects that already exist at the destination.
+    conflict_behaviour: Any = None
+    created_at: Any = None
+    ended_at: Any = None
+    # Content types to skip during migration.
+    excluded_content_types: Any = None
+    # Migration unique identifier.
+    id: Any = None
+    # Alias for pathPrefix (deprecated).
+    images_path_prefix: Any = None
+    # Whether logging was stopped due to excessive log volume.
+    log_stopped: Any = None
+    # Prefix to prepend to image custom IDs.
+    path_prefix: Any = None
+    # Only import objects under this prefix in the source bucket.
+    root_directory: Any = None
+    # The source this migration imports from.
+    source_id: Any = None
+    started_at: Any = None
+    # Current status of the migration.
+    status: Any = None
+
+@dataclasses.dataclass
 class ImagesSourcingkitMigrationSingleResponseConfig:
     # How to handle objects that already exist at the destination.
     conflict_behaviour: Any = None
@@ -31,6 +55,7 @@ class ImagesSourcingkitMigrationSingleResponseAttrs:
     excluded_content_types: Any = None
     # Prefix to prepend to image custom IDs.
     path_prefix: Any = None
+    result: Any = None
     # Only import objects under this prefix in the source bucket.
     root_directory: Any = None
     # The identifier of the source to migrate from.

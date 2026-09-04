@@ -14,6 +14,71 @@ export interface StreamLiveInputResponseSingle_Recording {
   timeoutSeconds?: number | Computed<number>;
 }
 
+export interface StreamLiveInputResponseSingle_Result_Playback {
+  /** The DASH manifest URL used to play live video, referencing the live input ID. */
+  dash: string | Computed<string>;
+  /** The HLS manifest URL used to play live video, referencing the live input ID. */
+  hls: string | Computed<string>;
+}
+
+export interface StreamLiveInputResponseSingle_Result_Rtmps {
+  /** The secret key to use when streaming via RTMPS to a live input. */
+  streamKey?: string | Computed<string>;
+  /** The RTMPS URL you provide to the broadcaster, which they stream live video to. */
+  url?: string | Computed<string>;
+}
+
+export interface StreamLiveInputResponseSingle_Result_Srt {
+  /** The secret key to use when streaming via SRT to a live input. */
+  passphrase?: string | Computed<string>;
+  /** The identifier of the live input to use when streaming via SRT. */
+  streamId?: string | Computed<string>;
+  /** The SRT URL you provide to the broadcaster, which they stream live video to. */
+  url?: string | Computed<string>;
+}
+
+export interface StreamLiveInputResponseSingle_Result_WebRtc {
+  /** The WebRTC URL you provide to the broadcaster, which they stream live video to. */
+  url?: string | Computed<string>;
+}
+
+export interface StreamLiveInputResponseSingle_Result {
+  /** The date and time the live input was created. */
+  created?: string | Computed<string>;
+  /** Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. */
+  deleteRecordingAfterDays?: number | Computed<number>;
+  /** Indicates whether the live input is enabled and can accept streams. */
+  enabled?: boolean | Computed<boolean>;
+  /** The date and time the live input keys were last rotated. Omitted for live inputs that have never had their keys rotated. */
+  keysRotatedAt?: string | Computed<string>;
+  /** A user modifiable key-value store used to reference other systems of record for managing live inputs. */
+  meta?: unknown | Computed<unknown>;
+  /** The date and time the live input was last modified. */
+  modified?: string | Computed<string>;
+  /** Details for playing a live input's broadcast using the HLS or DASH manifests. URLs reference the live input ID. */
+  playback?: StreamLiveInputResponseSingle_Result_Playback | Computed<StreamLiveInputResponseSingle_Result_Playback>;
+  /** When enabled, the live stream is delivered using Low-Latency HLS (LL-HLS), reducing glass-to-glass latency for viewers at the cost of reduced player compatibility. */
+  preferLowLatency?: boolean | Computed<boolean>;
+  /** Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied. */
+  recording?: StreamLiveInputResponseSingle_Recording | Computed<StreamLiveInputResponseSingle_Recording>;
+  /** Details for streaming to an live input using RTMPS. */
+  rtmps?: StreamLiveInputResponseSingle_Result_Rtmps | Computed<StreamLiveInputResponseSingle_Result_Rtmps>;
+  /** Details for playback from an live input using RTMPS. */
+  rtmpsPlayback?: StreamLiveInputResponseSingle_Result_Rtmps | Computed<StreamLiveInputResponseSingle_Result_Rtmps>;
+  /** Details for streaming to a live input using SRT. */
+  srt?: StreamLiveInputResponseSingle_Result_Srt | Computed<StreamLiveInputResponseSingle_Result_Srt>;
+  /** Details for playback from an live input using SRT. */
+  srtPlayback?: StreamLiveInputResponseSingle_Result_Srt | Computed<StreamLiveInputResponseSingle_Result_Srt>;
+  /** The connection status of a live input. */
+  status?: string | Computed<string>;
+  /** A unique identifier for a live input. */
+  uid?: string | Computed<string>;
+  /** Details for streaming to a live input using WebRTC. */
+  webRtc?: StreamLiveInputResponseSingle_Result_WebRtc | Computed<StreamLiveInputResponseSingle_Result_WebRtc>;
+  /** Details for playback from a live input using WebRTC. */
+  webRtcplayback?: StreamLiveInputResponseSingle_Result_WebRtc | Computed<StreamLiveInputResponseSingle_Result_WebRtc>;
+}
+
 const StreamLiveInputResponseSingle_RecordingFields: FieldMap = {
   allowedOrigins: "allowed_origins",
   hideLiveViewerCount: "hide_live_viewer_count",
@@ -54,6 +119,8 @@ export interface StreamLiveInputResponseSingleAttrs {
   preferLowLatency: boolean;
   /** Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied. */
   recording: StreamLiveInputResponseSingle_Recording;
+  /** Details about a live input. */
+  result: StreamLiveInputResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

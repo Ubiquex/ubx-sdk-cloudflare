@@ -6,13 +6,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PageTestResponseCollection_Region struct {
 }
 
-var PageTestResponseCollection_RegionFields = ubx.FieldMap{
-	}
+type PageTestResponseCollection_Result_DesktopReport_Error struct {
+	Code              any
+	Detail            any
+	FinalDisplayedUrl any
+}
+
+type PageTestResponseCollection_Result_DesktopReport struct {
+	Cls              any
+	DeviceType       any
+	Error            any
+	Fcp              any
+	JsonReportUrl    any
+	Lcp              any
+	PerformanceScore any
+	Si               any
+	State            any
+	Tbt              any
+	Ttfb             any
+	Tti              any
+}
+
+type PageTestResponseCollection_Result_Region struct {
+	Label any
+	Value any
+}
+
+type PageTestResponseCollection_Result struct {
+	Date              any
+	DesktopReport     any
+	Id                any
+	MobileReport      any
+	Region            any
+	ScheduleFrequency any
+	Url               any
+}
+
+type PageTestResponseCollection_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+}
+
+var PageTestResponseCollection_RegionFields = ubx.FieldMap{}
 
 type PageTestResponseCollectionConfig struct {
-	Page any
+	Page    any
 	PerPage any
-	Region any
+	Region  any
 	// A URL.
 	Url any
 	// Identifier.
@@ -20,9 +62,11 @@ type PageTestResponseCollectionConfig struct {
 }
 
 type PageTestResponseCollectionAttrs struct {
-	Page any
-	PerPage any
-	Region any
+	Page       any
+	PerPage    any
+	Region     any
+	Result     any
+	ResultInfo any
 	// A URL.
 	Url any
 	// Identifier.
@@ -32,14 +76,14 @@ type PageTestResponseCollectionAttrs struct {
 var PageTestResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_observatory_page_test_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 		"Region": ubx.FieldSpec{
 			WireName: "region",
-			Kind: "object",
-			Fields: PageTestResponseCollection_RegionFields,
+			Kind:     "object",
+			Fields:   PageTestResponseCollection_RegionFields,
 		},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":    ubx.FieldSpec{WireName: "url"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

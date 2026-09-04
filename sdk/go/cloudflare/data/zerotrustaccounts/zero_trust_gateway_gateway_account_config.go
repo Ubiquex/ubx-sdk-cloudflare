@@ -3,12 +3,113 @@ package zerotrustaccounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_ActivityLog struct {
+	Enabled any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Antivirus_NotificationSettings struct {
+	Enabled        any
+	IncludeContext any
+	Msg            any
+	SupportUrl     any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Antivirus struct {
+	EnabledDownloadPhase any
+	EnabledUploadPhase   any
+	FailClosed           any
+	NotificationSettings any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BlockPage struct {
+	BackgroundColor any
+	Enabled         any
+	FooterText      any
+	HeaderText      any
+	IncludeContext  any
+	LogoPath        any
+	MailtoAddress   any
+	MailtoSubject   any
+	Mode            any
+	Name            any
+	ReadOnly        any
+	SourceAccount   any
+	SuppressFooter  any
+	TargetUri       any
+	Version         any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BodyScanning struct {
+	InspectionMode any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_BrowserIsolation struct {
+	NonIdentityEnabled         any
+	UrlBrowserIsolationEnabled any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Certificate struct {
+	Id any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_CustomCertificate struct {
+	BindingStatus any
+	Enabled       any
+	Id            any
+	UpdatedAt     any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_ExtendedEmailMatching struct {
+	Enabled       any
+	ReadOnly      any
+	SourceAccount any
+	Version       any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Fips struct {
+	Tls any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Inspection struct {
+	Mode any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings_Sandbox struct {
+	Enabled        any
+	FallbackAction any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result_Settings struct {
+	ActivityLog           any
+	Antivirus             any
+	BlockPage             any
+	BodyScanning          any
+	BrowserIsolation      any
+	Certificate           any
+	CustomCertificate     any
+	ExtendedEmailMatching any
+	Fips                  any
+	HostSelector          any
+	Inspection            any
+	MaxTtlSecs            any
+	ProtocolDetection     any
+	Sandbox               any
+	TlsDecrypt            any
+}
+
+type ZeroTrustGatewayGatewayAccountConfig_Result struct {
+	CreatedAt any
+	Settings  any
+	UpdatedAt any
+}
+
 type ZeroTrustGatewayGatewayAccountConfigConfig struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayGatewayAccountConfigAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayGatewayAccountConfig = ubx.DataSourceBinding{

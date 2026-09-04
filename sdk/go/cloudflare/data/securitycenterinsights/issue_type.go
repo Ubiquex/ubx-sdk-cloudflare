@@ -3,6 +3,17 @@ package securitycenterinsights
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IssueType_Errors_Source struct {
+	Pointer any
+}
+
+type IssueType_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type IssueTypeConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +22,11 @@ type IssueTypeConfig struct {
 type IssueTypeAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var IssueType = ubx.DataSourceBinding{

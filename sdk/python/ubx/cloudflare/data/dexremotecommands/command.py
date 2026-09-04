@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Command_Result_Commands:
+    completed_date: Any = None
+    created_date: Any = None
+    device_id: Any = None
+    filename: Any = None
+    id: Any = None
+    registration_id: Any = None
+    status: Any = None
+    type: Any = None
+    user_email: Any = None
+
+@dataclasses.dataclass
+class Command_Result:
+    commands: Any = None
+
+@dataclasses.dataclass
 class CommandConfig:
     command_type: Any = None
     device_id: Any = None
@@ -26,6 +42,7 @@ class CommandAttrs:
     from_: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     status: Any = None
     to: Any = None
     user_email: Any = None

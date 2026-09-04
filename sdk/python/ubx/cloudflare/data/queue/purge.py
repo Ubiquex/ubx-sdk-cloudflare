@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Purge_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Purge_Result:
+    # Indicates if the last purge operation completed successfully.
+    completed: Any = None
+    # Timestamp when the last purge operation started.
+    started_at: Any = None
+
+@dataclasses.dataclass
 class PurgeConfig:
     pass
 
@@ -14,8 +26,13 @@ class PurgeConfig:
 class PurgeAttrs:
     # A Resource identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # A Resource identifier.
     queue_id: Any = None
+    result: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
 
 Purge = ubx.DataSourceBinding(
     wire_type="cloudflare_purge",

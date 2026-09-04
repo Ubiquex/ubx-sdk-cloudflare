@@ -3,6 +3,14 @@ package dnsinternalviewsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsSettingsDnsViewResponseCollection_Result struct {
+	CreatedTime  any
+	Id           any
+	ModifiedTime any
+	Name         any
+	Zones        any
+}
+
 type DnsSettingsDnsViewResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -55,6 +63,7 @@ type DnsSettingsDnsViewResponseCollectionAttrs struct {
 	Page any
 	// Number of DNS views per page.
 	PerPage any
+	Result  any
 	// A zone ID that exists in the zones list for the view.
 	ZoneId any
 	// A zone name that exists in the zones list for the view.
@@ -64,18 +73,18 @@ type DnsSettingsDnsViewResponseCollectionAttrs struct {
 var DnsSettingsDnsViewResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_dns_settings_dns_view_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NameEndswith": ubx.FieldSpec{WireName: "name_endswith"},
-		"NameExact": ubx.FieldSpec{WireName: "name_exact"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Direction":      ubx.FieldSpec{WireName: "direction"},
+		"Match":          ubx.FieldSpec{WireName: "match"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"NameContains":   ubx.FieldSpec{WireName: "name_contains"},
+		"NameEndswith":   ubx.FieldSpec{WireName: "name_endswith"},
+		"NameExact":      ubx.FieldSpec{WireName: "name_exact"},
 		"NameStartswith": ubx.FieldSpec{WireName: "name_startswith"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"ZoneName": ubx.FieldSpec{WireName: "zone_name"},
+		"Order":          ubx.FieldSpec{WireName: "order"},
+		"Page":           ubx.FieldSpec{WireName: "page"},
+		"PerPage":        ubx.FieldSpec{WireName: "per_page"},
+		"ZoneId":         ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneName":       ubx.FieldSpec{WireName: "zone_name"},
 	},
 }

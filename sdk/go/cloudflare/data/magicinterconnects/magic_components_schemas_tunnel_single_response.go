@@ -3,6 +3,74 @@ package magicinterconnects
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_Bgp struct {
+	// Deprecated. Use customer_asn.
+	AsNo any
+	// Read-only for v1.5; derived from interface_address.
+	CloudflareEndpoint any
+	// ASN used on the customer end of the BGP session.
+	CustomerAsn any
+	// Read-only for v1.5; derived from interface_address.
+	CustomerEndpoint any
+	// ID of the BGP filter profile applied to routes advertised to the customer.
+	ExportFilterId any
+	// Prefixes in this list will be advertised to the customer device, in addition to the routes in the Magic routing table.
+	ExtraPrefixes any
+	// ID of the BGP filter profile applied to routes received from the customer.
+	ImportFilterId any
+	// MD5 key to use for session authentication. Note that *this is not a security measure*. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is *only* supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: `[a-zA-Z0-9]` * Special characters in the set `'!@#$%^&*()+[]{}<>/.,;:_-~`= \|` In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (`"`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.
+	Md5Key any
+}
+
+type MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_Gre struct {
+	CloudflareEndpoint any
+}
+
+type MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_HealthCheck struct {
+	Direction any
+	Enabled   any
+	Rate      any
+	Source    any
+	Target    any
+	Type      any
+}
+
+type MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_VirtualPortReservationId struct {
+}
+
+type MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect struct {
+	// True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.
+	AutomaticReturnRouting any
+	Bgp                    any
+	// The name of the interconnect. The name cannot share a name with other tunnels.
+	ColoName any
+	// The date and time the tunnel was created.
+	CreatedOn any
+	// An optional description of the interconnect.
+	Description any
+	Gre         any
+	HealthCheck any
+	// Identifier
+	Id any
+	// The IPv4 interface address for the interconnect. For MPLS Interconnects, use a /30 or /31 prefix. For GRE Interconnects, a /30 or /31 prefix may be used. Version 1.5 interconnects require a /31 prefix and may also use a prefix from the account's authorized prefixes; otherwise, select the subnet from RFC 1918 or the approved link-local ranges.
+	InterfaceAddress any
+	// A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
+	InterfaceAddress6 any
+	// The date and time the tunnel was last modified.
+	ModifiedOn any
+	// The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.
+	Mtu any
+	// The name of the interconnect. The name cannot share a name with other tunnels.
+	Name any
+	// Immutable interconnect version configured at creation time. One of: - "1" - "1.5" - "2"
+	Version                  any
+	VirtualPortReservationId any
+}
+
+type MagicComponentsSchemasTunnelSingleResponse_Result struct {
+	Interconnect any
+}
+
 type MagicComponentsSchemasTunnelSingleResponseConfig struct {
 }
 
@@ -11,10 +79,10 @@ type MagicComponentsSchemasTunnelSingleResponseAttrs struct {
 	AccountId any
 	// Identifier
 	CfInterconnectId any
+	Result           any
 }
 
 var MagicComponentsSchemasTunnelSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_components_schemas_tunnel_single_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

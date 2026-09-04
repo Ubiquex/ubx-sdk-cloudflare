@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IssueType_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class IssueType_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class IssueTypeConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +26,11 @@ class IssueTypeConfig:
 class IssueTypeAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 IssueType = ubx.DataSourceBinding(
     wire_type="cloudflare_issue_type",

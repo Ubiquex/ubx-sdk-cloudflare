@@ -4,13 +4,13 @@ package deploymentgroups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentGroup_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type DeploymentGroup_Result_VersionConfig struct {
 	TargetEnvironment any
-	Version any
+	Version           any
 }
 
 type DeploymentGroup_Result struct {
@@ -29,9 +29,9 @@ type DeploymentGroup_Result struct {
 }
 
 var DeploymentGroup_Result_VersionConfigFields = ubx.FieldMap{
-		"TargetEnvironment": ubx.FieldSpec{WireName: "target_environment"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"TargetEnvironment": ubx.FieldSpec{WireName: "target_environment"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 type DeploymentGroupConfig struct {
 	// A user-friendly name for the deployment group.
@@ -47,13 +47,13 @@ type DeploymentGroupConfig struct {
 }
 
 type DeploymentGroupAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
 	// A user-friendly name for the deployment group.
 	Name any
 	// Contains an optional list of policy IDs assigned to a group.
 	PolicyIds any
-	Result any
+	Result    any
 	// Indicates whether the API call was successful.
 	Success any
 	// Contains at least one version configuration.
@@ -67,14 +67,14 @@ type DeploymentGroupAttrs struct {
 var DeploymentGroup = ubx.ResourceBinding{
 	WireType: "cloudflare_deployment_group",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"PolicyIds": ubx.FieldSpec{WireName: "policy_ids"},
 		"VersionConfig": ubx.FieldSpec{
 			WireName: "version_config",
-			Kind: "list",
-			Fields: DeploymentGroup_Result_VersionConfigFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_Result_VersionConfigFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"GroupId":   ubx.FieldSpec{WireName: "group_id"},
 	},
 }

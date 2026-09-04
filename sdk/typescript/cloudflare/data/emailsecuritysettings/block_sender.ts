@@ -4,6 +4,17 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface BlockSender_PatternType {
 }
 
+export interface BlockSender_Result {
+  comments?: string | Computed<string>;
+  createdAt?: BlockSender_PatternType | Computed<BlockSender_PatternType>;
+  id?: BlockSender_PatternType | Computed<BlockSender_PatternType>;
+  isRegex?: boolean | Computed<boolean>;
+  lastModified?: BlockSender_PatternType | Computed<BlockSender_PatternType>;
+  modifiedAt?: BlockSender_PatternType | Computed<BlockSender_PatternType>;
+  pattern?: string | Computed<string>;
+  patternType?: string | Computed<string>;
+}
+
 const BlockSender_PatternTypeFields: FieldMap = {
 };
 
@@ -24,6 +35,7 @@ export interface BlockSenderAttrs {
   pattern: string;
   patternType: BlockSender_PatternType;
   perPage: number;
+  result: BlockSender_Result[];
   search: string;
 }
 

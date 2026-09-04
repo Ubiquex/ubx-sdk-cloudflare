@@ -7,6 +7,122 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedFindingList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Finding_Category:
+    observation: Any = None
+    product: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Finding_Remediation:
+    frameworks: Any = None
+    guide: Any = None
+    id: Any = None
+    impact: Any = None
+    locale: Any = None
+    threat: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Finding:
+    category: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    remediation: Any = None
+    severity: Any = None
+    vendor: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Integration_Policy:
+    client_id: Any = None
+    compliance_level: Any = None
+    dlp_enabled: Any = None
+    id: Any = None
+    link: Any = None
+    name: Any = None
+    permissions: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Integration_Vendor:
+    description: Any = None
+    display_name: Any = None
+    id: Any = None
+    logo: Any = None
+    name: Any = None
+    policies: Any = None
+    static_logo: Any = None
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Integration_ZtEnrollments:
+    description: Any = None
+    display_name: Any = None
+    enabled: Any = None
+    id: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_Integration:
+    created: Any = None
+    credential_health_status: Any = None
+    credentials_expiry: Any = None
+    id: Any = None
+    is_paused: Any = None
+    last_hydrated: Any = None
+    name: Any = None
+    permissions: Any = None
+    policy: Any = None
+    status: Any = None
+    updated: Any = None
+    upgradable: Any = None
+    upgrade_dismissed: Any = None
+    vendor: Any = None
+    zt_enrollments: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result_SeverityOverride:
+    created_by: Any = None
+    severity: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_Result:
+    active_count: Any = None
+    archived_count: Any = None
+    finding: Any = None
+    id: Any = None
+    ignored: Any = None
+    instance_count: Any = None
+    integration: Any = None
+    latest_affliction_date: Any = None
+    severity_override: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedFindingListConfig:
     account_id: Any = None
     cursor: Any = None
@@ -32,18 +148,26 @@ class PostureApiPaginatedFindingListAttrs:
     account_id: Any = None
     cursor: Any = None
     direction: Any = None
+    errors: Any = None
     finding_type_ids: Any = None
     ignored: Any = None
     integration_id: Any = None
     max_affliction_date: Any = None
+    messages: Any = None
     min_affliction_date: Any = None
     observation: Any = None
     order: Any = None
     page: Any = None
     per_page: Any = None
     product: Any = None
+    # Array of finding objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
     search: Any = None
     severity: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     type: Any = None
     # Supported vendor types for integrations.
     vendor: Any = None

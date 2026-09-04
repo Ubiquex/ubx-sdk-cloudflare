@@ -16,6 +16,50 @@ class Recording_AudioConfig:
     export_file: Any = None
 
 @dataclasses.dataclass
+class Recording_Data_StartReason_Caller:
+    name: Any = None
+    type: Any = None
+    user_id: Any = None
+
+@dataclasses.dataclass
+class Recording_Data_StartReason:
+    caller: Any = None
+    reason: Any = None
+
+@dataclasses.dataclass
+class Recording_Data_StorageConfig:
+    access_key: Any = None
+    auth_method: Any = None
+    bucket: Any = None
+    host: Any = None
+    password: Any = None
+    path: Any = None
+    port: Any = None
+    private_key: Any = None
+    region: Any = None
+    secret: Any = None
+    type: Any = None
+    username: Any = None
+
+@dataclasses.dataclass
+class Recording_Data:
+    audio_download_url: Any = None
+    download_url: Any = None
+    download_url_expiry: Any = None
+    file_size: Any = None
+    id: Any = None
+    invoked_time: Any = None
+    output_file_name: Any = None
+    recording_duration: Any = None
+    session_id: Any = None
+    start_reason: Any = None
+    started_time: Any = None
+    status: Any = None
+    stop_reason: Any = None
+    stopped_time: Any = None
+    storage_config: Any = None
+
+@dataclasses.dataclass
 class Recording_InteractiveConfig:
     # The metadata is presented in the form of ID3 tags.
     type: Any = None
@@ -29,33 +73,6 @@ class Recording_RealtimekitBucketConfig:
 class Recording_RtmpOutConfig:
     # RTMP URL to stream to
     rtmp_url: Any = None
-
-@dataclasses.dataclass
-class Recording_StorageConfig:
-    # Access key of the storage medium. Access key is not required for the `gcs` storage media type. Note that this field is not readable by clients, only writeable.
-    access_key: Any = None
-    # Authentication method used for "sftp" type storage medium
-    auth_method: Any = None
-    # Name of the storage medium's bucket.
-    bucket: Any = None
-    # SSH destination server host for SFTP type storage medium
-    host: Any = None
-    # SSH destination server password for SFTP type storage medium when auth_method is "PASSWORD". If auth_method is "KEY", this specifies the password for the ssh private key.
-    password: Any = None
-    # Path relative to the bucket root at which the recording will be placed.
-    path: Any = None
-    # SSH destination server port for SFTP type storage medium
-    port: Any = None
-    # Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is "KEY"
-    private_key: Any = None
-    # Region of the storage medium.
-    region: Any = None
-    # Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.
-    secret: Any = None
-    # Type of storage media.
-    type: Any = None
-    # SSH destination server username for SFTP type storage medium
-    username: Any = None
 
 @dataclasses.dataclass
 class Recording_VideoConfig_Watermark_Size:
@@ -104,7 +121,7 @@ _Recording_RtmpOutConfigFields = {
     "rtmp_url": ubx.FieldSpec(wire_name="rtmp_url"),
 }
 
-_Recording_StorageConfigFields = {
+_Recording_Data_StorageConfigFields = {
     "access_key": ubx.FieldSpec(wire_name="access_key"),
     "auth_method": ubx.FieldSpec(wire_name="auth_method"),
     "bucket": ubx.FieldSpec(wire_name="bucket"),
@@ -179,6 +196,7 @@ class RecordingAttrs:
     allow_multiple_recordings: Any = None
     # Object containing configuration regarding the audio that is being recorded.
     audio_config: Any = None
+    data: Any = None
     # Update the recording file name.
     file_name_prefix: Any = None
     # Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.
@@ -190,6 +208,8 @@ class RecordingAttrs:
     realtimekit_bucket_config: Any = None
     rtmp_out_config: Any = None
     storage_config: Any = None
+    # Success status of the operation
+    success: Any = None
     # Pass a custom url to record arbitary screen
     url: Any = None
     video_config: Any = None
@@ -230,7 +250,7 @@ Recording = ubx.ResourceBinding(
         "storage_config": ubx.FieldSpec(
             wire_name="storage_config",
             kind="object",
-            fields=_Recording_StorageConfigFields,
+            fields=_Recording_Data_StorageConfigFields,
         ),
         "url": ubx.FieldSpec(wire_name="url"),
         "video_config": ubx.FieldSpec(

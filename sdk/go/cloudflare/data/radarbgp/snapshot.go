@@ -8,7 +8,7 @@ type Snapshot_Result_AsnInfo struct {
 
 type Snapshot_Result_AspaObjects struct {
 	CustomerAsn any
-	Providers any
+	Providers   any
 }
 
 type Snapshot_Result_Meta struct {
@@ -21,9 +21,9 @@ type Snapshot_Result_Meta struct {
 }
 
 type Snapshot_Result struct {
-	AsnInfo any
+	AsnInfo     any
 	AspaObjects any
-	Meta any
+	Meta        any
 }
 
 type SnapshotConfig struct {
@@ -50,17 +50,17 @@ type SnapshotAttrs struct {
 	IncludeAsnInfo any
 	// Filter by provider ASN (an authorized upstream provider in ASPA objects).
 	ProviderAsn any
-	Result any
-	Success any
+	Result      any
+	Success     any
 }
 
 var Snapshot = ubx.DataSourceBinding{
 	WireType: "cloudflare_snapshot",
 	Fields: ubx.FieldMap{
-		"CustomerAsn": ubx.FieldSpec{WireName: "customer_asn"},
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"CustomerAsn":    ubx.FieldSpec{WireName: "customer_asn"},
+		"Date":           ubx.FieldSpec{WireName: "date"},
+		"Format":         ubx.FieldSpec{WireName: "format"},
 		"IncludeAsnInfo": ubx.FieldSpec{WireName: "include_asn_info"},
-		"ProviderAsn": ubx.FieldSpec{WireName: "provider_asn"},
+		"ProviderAsn":    ubx.FieldSpec{WireName: "provider_asn"},
 	},
 }

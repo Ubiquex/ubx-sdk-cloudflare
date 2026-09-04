@@ -3,56 +3,81 @@ package emailsecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Submission_Result_EscalatedAs struct {
+}
+
+type Submission_Result struct {
+	CustomerStatus        any
+	EscalatedAs           any
+	EscalatedAt           any
+	EscalatedBy           any
+	EscalatedSubmissionId any
+	OriginalDisposition   any
+	OriginalEdfHash       any
+	OriginalPostfixId     any
+	Outcome               any
+	OutcomeDisposition    any
+	RequestedAt           any
+	RequestedBy           any
+	RequestedDisposition  any
+	RequestedTs           any
+	Status                any
+	Subject               any
+	SubmissionId          any
+	Type                  any
+}
+
 type SubmissionConfig struct {
-	Direction any
-	End any
-	EscalatedFromUser any
-	Order any
-	OriginalDisposition any
-	OutcomeDisposition any
-	Page any
-	PerPage any
-	Query any
+	Direction            any
+	End                  any
+	EscalatedFromUser    any
+	Order                any
+	OriginalDisposition  any
+	OutcomeDisposition   any
+	Page                 any
+	PerPage              any
+	Query                any
 	RequestedDisposition any
-	Start any
-	Status any
-	SubmissionId any
-	Type any
+	Start                any
+	Status               any
+	SubmissionId         any
+	Type                 any
 }
 
 type SubmissionAttrs struct {
-	Direction any
-	End any
-	EscalatedFromUser any
-	Order any
-	OriginalDisposition any
-	OutcomeDisposition any
-	Page any
-	PerPage any
-	Query any
+	Direction            any
+	End                  any
+	EscalatedFromUser    any
+	Order                any
+	OriginalDisposition  any
+	OutcomeDisposition   any
+	Page                 any
+	PerPage              any
+	Query                any
 	RequestedDisposition any
-	Start any
-	Status any
-	SubmissionId any
-	Type any
+	Result               any
+	Start                any
+	Status               any
+	SubmissionId         any
+	Type                 any
 }
 
 var Submission = ubx.DataSourceBinding{
 	WireType: "cloudflare_submission",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"EscalatedFromUser": ubx.FieldSpec{WireName: "escalated_from_user"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"OriginalDisposition": ubx.FieldSpec{WireName: "original_disposition"},
-		"OutcomeDisposition": ubx.FieldSpec{WireName: "outcome_disposition"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Direction":            ubx.FieldSpec{WireName: "direction"},
+		"End":                  ubx.FieldSpec{WireName: "end"},
+		"EscalatedFromUser":    ubx.FieldSpec{WireName: "escalated_from_user"},
+		"Order":                ubx.FieldSpec{WireName: "order"},
+		"OriginalDisposition":  ubx.FieldSpec{WireName: "original_disposition"},
+		"OutcomeDisposition":   ubx.FieldSpec{WireName: "outcome_disposition"},
+		"Page":                 ubx.FieldSpec{WireName: "page"},
+		"PerPage":              ubx.FieldSpec{WireName: "per_page"},
+		"Query":                ubx.FieldSpec{WireName: "query"},
 		"RequestedDisposition": ubx.FieldSpec{WireName: "requested_disposition"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"SubmissionId": ubx.FieldSpec{WireName: "submission_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Start":                ubx.FieldSpec{WireName: "start"},
+		"Status":               ubx.FieldSpec{WireName: "status"},
+		"SubmissionId":         ubx.FieldSpec{WireName: "submission_id"},
+		"Type":                 ubx.FieldSpec{WireName: "type"},
 	},
 }

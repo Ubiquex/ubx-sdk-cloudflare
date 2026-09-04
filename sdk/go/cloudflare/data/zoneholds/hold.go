@@ -3,12 +3,19 @@ package zoneholds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Hold_Result struct {
+	Hold              any
+	HoldAfter         any
+	IncludeSubdomains any
+}
+
 type HoldConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type HoldAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

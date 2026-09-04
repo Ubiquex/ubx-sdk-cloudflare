@@ -3,12 +3,36 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TransformationsConfig_Errors struct {
+	Code    any
+	Message any
+}
+
+type TransformationsConfig_Result_Value struct {
+	AllowedOrigins  any
+	C2pa            any
+	Transformations any
+}
+
+type TransformationsConfig_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type TransformationsConfigConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TransformationsConfigAttrs struct {
+	Errors   any
+	Messages any
+	// Combined view of Transformations, Allowed Origins, and C2PA settings for a zone.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -8,18 +8,18 @@ type Memory_Errors_Source struct {
 }
 
 type Memory_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Memory_Result struct {
 	CreatedAt any
-	Id any
+	Id        any
 	SessionId any
-	Summary any
-	Type any
+	Summary   any
+	Type      any
 	UpdatedAt any
 }
 
@@ -60,8 +60,8 @@ type MemoryAttrs struct {
 	PerPage any
 	// Profile name.
 	ProfileName any
-	Result any
-	ResultInfo any
+	Result      any
+	ResultInfo  any
 	// Session identifier for filtering.
 	SessionId any
 	// Always true for a successful response.
@@ -73,11 +73,11 @@ type MemoryAttrs struct {
 var Memory = ubx.DataSourceBinding{
 	WireType: "cloudflare_memory",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":        ubx.FieldSpec{WireName: "cursor"},
 		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ProfileName": ubx.FieldSpec{WireName: "profile_name"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
+		"ProfileName":   ubx.FieldSpec{WireName: "profile_name"},
+		"SessionId":     ubx.FieldSpec{WireName: "session_id"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
 	},
 }

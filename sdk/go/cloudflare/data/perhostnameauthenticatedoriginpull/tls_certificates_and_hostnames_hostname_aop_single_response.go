@@ -3,6 +3,37 @@ package perhostnameauthenticatedoriginpull
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesHostnameAopSingleResponse_Result struct {
+	// Identifier.
+	CertId any
+	// Status of the certificate or the association.
+	CertStatus any
+	// The time when the certificate was updated.
+	CertUpdatedAt any
+	// The time when the certificate was uploaded.
+	CertUploadedOn any
+	// The hostname certificate.
+	Certificate any
+	// The time when the certificate was created.
+	CreatedAt any
+	// Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
+	Enabled any
+	// The date when the certificate expires.
+	ExpiresOn any
+	// The hostname on the origin for which the client certificate uploaded will be used.
+	Hostname any
+	// The certificate authority that issued the certificate.
+	Issuer any
+	// The serial number on the uploaded certificate.
+	SerialNumber any
+	// The type of hash used for the certificate.
+	Signature any
+	// Status of the certificate or the association.
+	Status any
+	// The time when the certificate was updated.
+	UpdatedAt any
+}
+
 type TlsCertificatesAndHostnamesHostnameAopSingleResponseConfig struct {
 	// The hostname on the origin for which the client certificate uploaded will be used.
 	Hostname any
@@ -13,6 +44,7 @@ type TlsCertificatesAndHostnamesHostnameAopSingleResponseConfig struct {
 type TlsCertificatesAndHostnamesHostnameAopSingleResponseAttrs struct {
 	// The hostname on the origin for which the client certificate uploaded will be used.
 	Hostname any
+	Result   any
 	// Identifier.
 	ZoneId any
 }
@@ -21,6 +53,6 @@ var TlsCertificatesAndHostnamesHostnameAopSingleResponse = ubx.DataSourceBinding
 	WireType: "cloudflare_tls_certificates_and_hostnames_hostname_aop_single_response",
 	Fields: ubx.FieldMap{
 		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":   ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

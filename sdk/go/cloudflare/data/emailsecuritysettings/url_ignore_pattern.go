@@ -3,20 +3,33 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UrlIgnorePattern_Result_Id struct {
+}
+
+type UrlIgnorePattern_Result struct {
+	Comments     any
+	CreatedAt    any
+	Id           any
+	LastModified any
+	ModifiedAt   any
+	Pattern      any
+}
+
 type UrlIgnorePatternConfig struct {
-	Page any
+	Page    any
 	PerPage any
 }
 
 type UrlIgnorePatternAttrs struct {
-	Page any
+	Page    any
 	PerPage any
+	Result  any
 }
 
 var UrlIgnorePattern = ubx.DataSourceBinding{
 	WireType: "cloudflare_url_ignore_pattern",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

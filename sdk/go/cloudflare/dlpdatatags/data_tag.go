@@ -3,9 +3,17 @@ package dlpdatatags
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DataTag_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
 type DataTagConfig struct {
 	Description any
-	Name any
+	Name        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -16,7 +24,8 @@ type DataTagConfig struct {
 
 type DataTagAttrs struct {
 	Description any
-	Name any
+	Name        any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -29,9 +38,9 @@ var DataTag = ubx.ResourceBinding{
 	WireType: "cloudflare_data_tag",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
-		"TagId": ubx.FieldSpec{WireName: "tag_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"CategoryId":  ubx.FieldSpec{WireName: "category_id"},
+		"TagId":       ubx.FieldSpec{WireName: "tag_id"},
 	},
 }

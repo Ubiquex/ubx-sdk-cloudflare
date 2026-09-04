@@ -3,6 +3,22 @@ package emailroutingdestinationaddresses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailDestinationAddressesResponseCollection_Result struct {
+	Created  any
+	Email    any
+	Id       any
+	Modified any
+	Tag      any
+	Verified any
+}
+
+type EmailDestinationAddressesResponseCollection_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+}
+
 type EmailDestinationAddressesResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -24,7 +40,9 @@ type EmailDestinationAddressesResponseCollectionAttrs struct {
 	// Page number of paginated results.
 	Page any
 	// Maximum number of results per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// Filter by verified destination addresses.
 	Verified any
 }
@@ -34,8 +52,8 @@ var EmailDestinationAddressesResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Verified": ubx.FieldSpec{WireName: "verified"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Verified":  ubx.FieldSpec{WireName: "verified"},
 	},
 }

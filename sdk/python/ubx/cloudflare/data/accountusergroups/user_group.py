@@ -10,6 +10,48 @@ import ubx_sdk as ubx
 class UserGroup_AccountId:
     pass
 
+@dataclasses.dataclass
+class UserGroup_Result_Policies_PermissionGroups_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_PermissionGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups_Scope_Objects:
+    key: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups_Scope:
+    key: Any = None
+    objects: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies:
+    access: Any = None
+    id: Any = None
+    permission_groups: Any = None
+    resource_groups: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result:
+    created_on: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    policies: Any = None
+
 _UserGroup_AccountIdFields = {
 }
 
@@ -46,6 +88,8 @@ class UserGroupAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    # A list of user groups for the account.
+    result: Any = None
 
 UserGroup = ubx.DataSourceBinding(
     wire_type="cloudflare_user_group",

@@ -4,43 +4,43 @@ package registrations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Registration_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Registration_Result_Device struct {
 	ClientVersion any
-	Id any
-	Name any
+	Id            any
+	Name          any
 }
 
 type Registration_Result_Policy struct {
-	Default any
-	Deleted any
-	Id any
-	Name any
+	Default   any
+	Deleted   any
+	Id        any
+	Name      any
 	UpdatedAt any
 }
 
 type Registration_Result_User struct {
 	Email any
-	Id any
-	Name any
+	Id    any
+	Name  any
 }
 
 type Registration_Result struct {
-	CreatedAt any
-	DeletedAt any
-	Device any
-	Id any
-	Key any
-	KeyType any
-	LastSeenAt any
-	Policy any
-	RevokedAt any
-	TunnelType any
-	UpdatedAt any
-	User any
+	CreatedAt   any
+	DeletedAt   any
+	Device      any
+	Id          any
+	Key         any
+	KeyType     any
+	LastSeenAt  any
+	Policy      any
+	RevokedAt   any
+	TunnelType  any
+	UpdatedAt   any
+	User        any
 	VirtualIpv4 any
 	VirtualIpv6 any
 }
@@ -58,63 +58,63 @@ type Registration_ResultInfo struct {
 
 type RegistrationConfig struct {
 	AccountId any
-	Cursor any
-	DeviceId any
-	Id any
-	Include any
-	PerPage any
+	Cursor    any
+	DeviceId  any
+	Id        any
+	Include   any
+	PerPage   any
 	// The ID of the device settings profile.
-	PolicyId any
-	Search any
-	SeenAfter any
+	PolicyId   any
+	Search     any
+	SeenAfter  any
 	SeenBefore any
-	SortBy any
-	SortOrder any
-	Status any
-	UserId any
+	SortBy     any
+	SortOrder  any
+	Status     any
+	UserId     any
 }
 
 type RegistrationAttrs struct {
 	AccountId any
-	Cursor any
-	DeviceId any
-	Errors any
-	Id any
-	Include any
-	Messages any
-	PerPage any
+	Cursor    any
+	DeviceId  any
+	Errors    any
+	Id        any
+	Include   any
+	Messages  any
+	PerPage   any
 	// The ID of the device settings profile.
 	PolicyId any
-	Result any
+	Result   any
 	// V4 public API Pagination/Cursor info.
 	ResultInfo any
-	Search any
-	SeenAfter any
+	Search     any
+	SeenAfter  any
 	SeenBefore any
-	SortBy any
-	SortOrder any
-	Status any
+	SortBy     any
+	SortOrder  any
+	Status     any
 	// Whether the API call was successful.
 	Success any
-	UserId any
+	UserId  any
 }
 
 var Registration = ubx.DataSourceBinding{
 	WireType: "cloudflare_registration",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"SeenAfter": ubx.FieldSpec{WireName: "seen_after"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":     ubx.FieldSpec{WireName: "cursor"},
+		"DeviceId":   ubx.FieldSpec{WireName: "device_id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
+		"Include":    ubx.FieldSpec{WireName: "include"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
+		"PolicyId":   ubx.FieldSpec{WireName: "policy_id"},
+		"Search":     ubx.FieldSpec{WireName: "search"},
+		"SeenAfter":  ubx.FieldSpec{WireName: "seen_after"},
 		"SeenBefore": ubx.FieldSpec{WireName: "seen_before"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"SortBy":     ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
+		"UserId":     ubx.FieldSpec{WireName: "user_id"},
 	},
 }

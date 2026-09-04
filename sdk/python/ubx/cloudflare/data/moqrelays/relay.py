@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Relay_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Relay_Result:
+    created: Any = None
+    modified: Any = None
+    name: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
+class Relay_ResultInfo:
+    count: Any = None
+    total: Any = None
+
+@dataclasses.dataclass
 class RelayConfig:
     # Cloudflare account identifier.
     account_id: Any = None
@@ -22,7 +39,12 @@ class RelayAttrs:
     asc: Any = None
     created_after: Any = None
     created_before: Any = None
+    errors: Any = None
+    messages: Any = None
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
+    success: Any = None
 
 Relay = ubx.DataSourceBinding(
     wire_type="cloudflare_relay",

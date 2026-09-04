@@ -3,22 +3,57 @@ package accessapplications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessPolicyCheckResponse_Result_AppState struct {
+	// UUID.
+	AppUid   any
+	Aud      any
+	Hostname any
+	Name     any
+	Policies any
+	Status   any
+}
+
+type AccessPolicyCheckResponse_Result_UserIdentity_Geo struct {
+	Country any
+}
+
+type AccessPolicyCheckResponse_Result_UserIdentity struct {
+	AccountId      any
+	DeviceSessions any
+	Email          any
+	Geo            any
+	Iat            any
+	Id             any
+	IsGateway      any
+	IsWarp         any
+	Name           any
+	// UUID.
+	UserUuid any
+	Version  any
+}
+
+type AccessPolicyCheckResponse_Result struct {
+	AppState     any
+	UserIdentity any
+}
+
 type AccessPolicyCheckResponseConfig struct {
 	// Identifier.
 	AccountId any
-	AppId any
+	AppId     any
 }
 
 type AccessPolicyCheckResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	AppId any
+	AppId     any
+	Result    any
 }
 
 var AccessPolicyCheckResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_policy_check_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTunnelResponseCollection_Result_Connections_OriginIp:
+    pass
+
+@dataclasses.dataclass
+class TunnelTunnelResponseCollection_Result_Connections:
+    client_id: Any = None
+    client_version: Any = None
+    colo_name: Any = None
+    id: Any = None
+    is_pending_reconnect: Any = None
+    opened_at: Any = None
+    origin_ip: Any = None
+    uuid: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelResponseCollection_Result:
+    account_tag: Any = None
+    config_src: Any = None
+    connections: Any = None
+    conns_active_at: Any = None
+    conns_inactive_at: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    id: Any = None
+    metadata: Any = None
+    name: Any = None
+    remote_config: Any = None
+    status: Any = None
+    tun_type: Any = None
+
+@dataclasses.dataclass
 class TunnelTunnelResponseCollectionConfig:
     exclude_prefix: Any = None
     # If provided, include only resources that were created (and not deleted) before this time. URL encoded.
@@ -43,6 +74,7 @@ class TunnelTunnelResponseCollectionAttrs:
     page: Any = None
     # Number of results to display.
     per_page: Any = None
+    result: Any = None
     # The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
     status: Any = None
     # The types of tunnels to filter by, separated by commas.

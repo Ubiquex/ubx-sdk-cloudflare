@@ -3,6 +3,16 @@ package d1
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bookmark_Errors struct {
+	Code    any
+	Message any
+}
+
+type Bookmark_Result struct {
+	// A bookmark representing a specific state of the database at a specific point in time.
+	Bookmark any
+}
+
 type BookmarkConfig struct {
 	// An ISO 8601 timestamp used for time travel operations. The database will be restored to the nearest available bookmark at or before this timestamp.
 	Timestamp any
@@ -13,6 +23,11 @@ type BookmarkAttrs struct {
 	AccountId any
 	// D1 database identifier (UUID).
 	DatabaseId any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful
+	Success any
 	// An ISO 8601 timestamp used for time travel operations. The database will be restored to the nearest available bookmark at or before this timestamp.
 	Timestamp any
 }

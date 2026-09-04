@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiAccountCreditsResponse_Result:
+    # The confirmed credit balance in cents.
+    confirmed_balance_cents: Any = None
+    # Currency of the credit balance.
+    currency: Any = None
+    # Days remaining until the credits expire.
+    days_remaining: Any = None
+    # Whether the account is eligible to receive credits.
+    eligible: Any = None
+    # Whether a credit record exists for the account.
+    has_record: Any = None
+    # The original credit amount in cents.
+    original_amount_cents: Any = None
+    # Percentage of the original credit amount consumed.
+    percent_consumed: Any = None
+    # Projected date when the credits will be depleted.
+    projected_depletion_date: Any = None
+    # When the credits become valid.
+    valid_from: Any = None
+    # When the credits expire.
+    valid_to: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiAccountCreditsResponseConfig:
     pass
 
@@ -14,6 +37,7 @@ class BillSubsApiAccountCreditsResponseConfig:
 class BillSubsApiAccountCreditsResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 BillSubsApiAccountCreditsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_account_credits_response",

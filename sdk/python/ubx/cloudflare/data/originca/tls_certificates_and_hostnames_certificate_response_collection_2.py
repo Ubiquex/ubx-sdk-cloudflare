@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection2_Result:
+    certificate: Any = None
+    csr: Any = None
+    expires_on: Any = None
+    hostnames: Any = None
+    id: Any = None
+    request_type: Any = None
+    requested_validity: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseCollection2Config:
     # Limit to the number of records returned.
     limit: Any = None
@@ -29,6 +39,7 @@ class TlsCertificatesAndHostnamesCertificateResponseCollection2Attrs:
     page: Any = None
     # Number of records per page.
     per_page: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

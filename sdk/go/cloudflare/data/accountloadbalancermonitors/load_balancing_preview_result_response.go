@@ -3,6 +3,18 @@ package accountloadbalancermonitors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingPreviewResultResponse_Result_Origins struct {
+	FailureReason any
+	Healthy       any
+	ResponseCode  any
+	Rtt           any
+}
+
+type LoadBalancingPreviewResultResponse_Result struct {
+	Healthy any
+	Origins any
+}
+
 type LoadBalancingPreviewResultResponseConfig struct {
 	PreviewId any
 }
@@ -11,6 +23,8 @@ type LoadBalancingPreviewResultResponseAttrs struct {
 	// Identifier.
 	AccountId any
 	PreviewId any
+	// Resulting health data from a preview operation.
+	Result any
 }
 
 var LoadBalancingPreviewResultResponse = ubx.DataSourceBinding{

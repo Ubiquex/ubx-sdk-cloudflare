@@ -3,16 +3,20 @@ package origintls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ComplianceMode_Result struct {
+	Value any
+}
+
 type ComplianceModeConfig struct {
 }
 
 type ComplianceModeAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var ComplianceMode = ubx.DataSourceBinding{
 	WireType: "cloudflare_origin_tls_compliance_mode",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

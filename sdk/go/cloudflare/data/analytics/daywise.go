@@ -4,9 +4,9 @@ package analytics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Daywise_Data_RecordingStats_DayStats struct {
-	Day any
+	Day                   any
 	TotalRecordingMinutes any
-	TotalRecordings any
+	TotalRecordings       any
 }
 
 type Daywise_Data_RecordingStats struct {
@@ -19,9 +19,9 @@ type Daywise_Data_RecordingStats struct {
 }
 
 type Daywise_Data_SessionStats_DayStats struct {
-	Day any
+	Day                 any
 	TotalSessionMinutes any
-	TotalSessions any
+	TotalSessions       any
 }
 
 type Daywise_Data_SessionStats struct {
@@ -44,8 +44,8 @@ type DaywiseConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	EndDate any
+	AppId     any
+	EndDate   any
 	StartDate any
 }
 
@@ -53,19 +53,19 @@ type DaywiseAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
-	EndDate any
+	AppId     any
+	Data      any
+	EndDate   any
 	StartDate any
-	Success any
+	Success   any
 }
 
 var Daywise = ubx.DataSourceBinding{
 	WireType: "cloudflare_daywise",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"EndDate":   ubx.FieldSpec{WireName: "end_date"},
 		"StartDate": ubx.FieldSpec{WireName: "start_date"},
 	},
 }

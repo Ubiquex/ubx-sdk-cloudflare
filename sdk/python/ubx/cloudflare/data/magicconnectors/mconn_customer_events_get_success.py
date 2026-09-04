@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerEventsGetSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsGetSuccess_Result_E:
+    # Event kind
+    k: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsGetSuccess_Result:
+    # Event kind plus event-specific payload fields. Event kinds: - `Init`: Initialized process - `Leave`: Stopped process - `StartAttestation`: Started attestation - `FinishAttestationSuccess`: Finished attestation - `FinishAttestationFailure`: Failed attestation - `StartRotateCryptKey`: Started crypt key rotation - `FinishRotateCryptKeySuccess`: Finished crypt key rotation - `FinishRotateCryptKeyFailure`: Failed crypt key rotation - `StartRotatePki`: Started PKI rotation - `FinishRotatePkiSuccess`: Finished PKI rotation - `FinishRotatePkiFailure`: Failed PKI rotation - `StartUpgrade`: Started upgrade - `FinishUpgradeSuccess`: Finished upgrade - `FinishUpgradeFailure`: Failed upgrade - `Reconcile`: Reconciled - `ConfigureCloudflaredTunnel`: Configured Cloudflared tunnel - `RekeyInstallBoth`: Installed initial inbound and outbound keys - `RekeyStart`: Installed new inbound key, kept old outbound - `RekeyRestart`: Restarted in-progress rekey with newer key material - `RekeyAdvance`: Confirmed traffic on new inbound key, swapped outbound to new - `RekeyComplete`: Deleted old keys - `RekeyReset`: Deleted all keys after receiving an unexpected key - `HaTransition`: Completed HA state transition - `HaError`: Received unexpected HA error - `HaInit`: Initialized HA subsystem - `HaLeave`: Stopped HA subsystem
+    e: Any = None
+    # Sequence number, used to order events with the same timestamp
+    n: Any = None
+    # Time the Event was recorded (seconds since the Unix epoch)
+    t: Any = None
+    # Version
+    v: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerEventsGetSuccessConfig:
     connector_id: Any = None
     event_n: Any = None
@@ -17,8 +38,13 @@ class MconnCustomerEventsGetSuccessAttrs:
     # Account identifier
     account_id: Any = None
     connector_id: Any = None
+    errors: Any = None
     event_n: Any = None
     event_t: Any = None
+    messages: Any = None
+    # Recorded Event
+    result: Any = None
+    success: Any = None
 
 MconnCustomerEventsGetSuccess = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_customer_events_get_success",

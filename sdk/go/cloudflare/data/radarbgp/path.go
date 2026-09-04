@@ -4,32 +4,32 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Path_Result_AsnInfo struct {
-	Asn any
+	Asn     any
 	Country any
-	Name any
+	Name    any
 }
 
 type Path_Result_Meta struct {
 	// Timestamp of the underlying RIB data.
-	DataTime any
+	DataTime           any
 	EffectiveCollector any
 	// Timestamp when the query was executed.
 	QueryTime any
-	Stale any
+	Stale     any
 }
 
 type Path_Result_Paths struct {
 	Collectors any
 	PathsCount any
 	PeersCount any
-	Segment any
+	Segment    any
 }
 
 type Path_Result struct {
-	AsnInfo any
+	AsnInfo    any
 	Collectors any
-	Meta any
-	Paths any
+	Meta       any
+	Paths      any
 }
 
 type PathConfig struct {
@@ -52,16 +52,16 @@ type PathAttrs struct {
 	Format any
 	// Address family of the observed paths. Defaults to IPv4.
 	IpVersion any
-	Result any
-	Success any
+	Result    any
+	Success   any
 }
 
 var Path = ubx.DataSourceBinding{
 	WireType: "cloudflare_path",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"Asn":       ubx.FieldSpec{WireName: "asn"},
 		"Collector": ubx.FieldSpec{WireName: "collector"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
 		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
 	},
 }

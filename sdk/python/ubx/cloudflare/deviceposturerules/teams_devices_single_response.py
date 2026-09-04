@@ -61,6 +61,27 @@ class TeamsDevicesSingleResponse_Input:
 class TeamsDevicesSingleResponse_Match:
     platform: Any = None
 
+@dataclasses.dataclass
+class TeamsDevicesSingleResponse_Result:
+    # The description of the device posture rule.
+    description: Any = None
+    # Whether the rule is enabled. This is a computed, read-only value. It is false for deprecated Kolide posture rules that still use the issue_count input, and true otherwise.
+    enabled: Any = None
+    # Sets the expiration time for a posture check result. If empty, the result remains valid until it is overwritten by new data from the WARP client.
+    expiration: Any = None
+    # API UUID.
+    id: Any = None
+    # The value to be checked against.
+    input: Any = None
+    # The conditions that the client must match to run the rule.
+    match: Any = None
+    # The name of the device posture rule.
+    name: Any = None
+    # Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.
+    schedule: Any = None
+    # The type of device posture rule.
+    type: Any = None
+
 _TeamsDevicesSingleResponse_Input_LocationsFields = {
     "paths": ubx.FieldSpec(wire_name="paths"),
     "trust_stores": ubx.FieldSpec(wire_name="trust_stores"),
@@ -153,6 +174,7 @@ class TeamsDevicesSingleResponseAttrs:
     match: Any = None
     # The name of the device posture rule.
     name: Any = None
+    result: Any = None
     # Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.
     schedule: Any = None
     # The type of device posture rule.

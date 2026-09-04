@@ -7,6 +7,38 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosSynProtectionRuleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosSynProtectionRuleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosSynProtectionRuleResponse_Result:
+    # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+    burst_sensitivity: Any = None
+    # The creation timestamp of the SYN Protection rule.
+    created_on: Any = None
+    # The unique ID of the SYN Protection rule.
+    id: Any = None
+    # The type of mitigation for SYN Protection. Must be one of 'challenge' or 'retransmit'.
+    mitigation_type: Any = None
+    # The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+    mode: Any = None
+    # The last modification timestamp of the SYN Protection rule.
+    modified_on: Any = None
+    # The name of the SYN Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+    name: Any = None
+    # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+    rate_sensitivity: Any = None
+    # The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosSynProtectionRuleResponseConfig:
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
@@ -29,6 +61,8 @@ class DosSynProtectionRuleResponseConfig:
 class DosSynProtectionRuleResponseAttrs:
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
+    errors: Any = None
+    messages: Any = None
     # The type of mitigation. Must be one of 'challenge' or 'retransmit'. Optional. Defaults to 'challenge'.
     mitigation_type: Any = None
     # The mode for SYN Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
@@ -37,8 +71,11 @@ class DosSynProtectionRuleResponseAttrs:
     name: Any = None
     # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
     rate_sensitivity: Any = None
+    result: Any = None
     # The scope for the SYN Protection rule. Must be one of 'global', 'region', or 'datacenter'.
     scope: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

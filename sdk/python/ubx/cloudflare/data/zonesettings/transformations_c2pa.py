@@ -7,12 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TransformationsC2pa_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TransformationsC2pa_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class TransformationsC2paConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TransformationsC2paAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Controls C2PA signing for images processed through Cloudflare Image Transformations.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

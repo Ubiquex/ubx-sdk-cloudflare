@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class State_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class State_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class State_Result:
+    # Whether the account was recently reactivated from a dormant state (used to show the reactivation banner).
+    recent_dormant_reactivation: Any = None
+    # Whether on-demand and scheduled scans are enabled for the account.
+    scans_enabled: Any = None
+
+@dataclasses.dataclass
 class StateConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +33,11 @@ class StateConfig:
 class StateAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 State = ubx.DataSourceBinding(
     wire_type="cloudflare_state",

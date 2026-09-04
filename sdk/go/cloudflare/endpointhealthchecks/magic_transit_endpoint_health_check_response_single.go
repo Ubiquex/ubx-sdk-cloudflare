@@ -3,6 +3,24 @@ package endpointhealthchecks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicTransitEndpointHealthCheckResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type MagicTransitEndpointHealthCheckResponseSingle_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type MagicTransitEndpointHealthCheckResponseSingle_Result struct {
+	CheckType any
+	Endpoint  any
+	Id        any
+	Name      any
+}
+
 type MagicTransitEndpointHealthCheckResponseSingleConfig struct {
 	// type of check to perform
 	CheckType any
@@ -21,8 +39,13 @@ type MagicTransitEndpointHealthCheckResponseSingleAttrs struct {
 	CheckType any
 	// the IP address of the host to perform checks against
 	Endpoint any
+	Errors   any
+	Messages any
 	// Optional name associated with this check
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -33,9 +56,9 @@ var MagicTransitEndpointHealthCheckResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_transit_endpoint_health_check_response_single",
 	Fields: ubx.FieldMap{
 		"CheckType": ubx.FieldSpec{WireName: "check_type"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Endpoint":  ubx.FieldSpec{WireName: "endpoint"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

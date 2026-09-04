@@ -3,6 +3,45 @@ package emailauth
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Inspect_Result_Components_Nested_Components struct {
+}
+
+type Inspect_Result_Components_Nested_Errors struct {
+	Code    any
+	Details any
+	Domain  any
+	Message any
+}
+
+type Inspect_Result_Components_Nested struct {
+	Components   any
+	Domain       any
+	Errors       any
+	Record       any
+	TotalLookups any
+}
+
+type Inspect_Result_Components struct {
+	LookupCount any
+	Nested      any
+	Result      any
+	Type        any
+	Value       any
+}
+
+type Inspect_Result struct {
+	// Parsed SPF components (mechanisms)
+	Components any
+	// Domain being inspected
+	Domain any
+	// All errors encountered during inspection, collected from the entire tree. This includes errors from nested includes at any depth, providing a quick overview of all issues without needing to traverse the nested structure. Each error includes a `domain` field to identify where it occurred. Empty array if no errors (omitted from JSON when empty).
+	Errors any
+	// Raw SPF record content
+	Record any
+	// Total number of DNS lookups performed across all includes
+	TotalLookups any
+}
+
 type InspectConfig struct {
 	Id any
 	// Identifier.
@@ -11,6 +50,8 @@ type InspectConfig struct {
 
 type InspectAttrs struct {
 	Id any
+	// Recursive SPF inspection tree
+	Result any
 	// Identifier.
 	ZoneId any
 }
@@ -18,7 +59,7 @@ type InspectAttrs struct {
 var Inspect = ubx.DataSourceBinding{
 	WireType: "cloudflare_inspect",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":     ubx.FieldSpec{WireName: "id"},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

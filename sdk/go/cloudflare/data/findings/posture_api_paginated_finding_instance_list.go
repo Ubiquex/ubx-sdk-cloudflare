@@ -3,56 +3,149 @@ package findings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PostureApiPaginatedFindingInstanceListConfig struct {
-	AccountId any
-	Archived any
-	AssetIds any
+type PostureApiPaginatedFindingInstanceList_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiPaginatedFindingInstanceList_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_Asset_Category struct {
+	Id      any
+	Service any
+	Type    any
+	Vendor  any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_Asset_Fields struct {
+	Link  any
+	Name  any
+	Value any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_Asset struct {
+	Category   any
+	ExternalId any
+	Fields     any
+	Id         any
+	Link       any
+	Name       any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_DlpContexts struct {
+	Created               any
+	Deleted               any
+	EntryIds              any
+	Id                    any
+	MatchContextMaxExtent any
+	MatchContextMinExtent any
+	MatchContextPayload   any
+	ProfileId             any
+	Updated               any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_Remediations struct {
+	CreatedAt any
+	Id        any
+	Stale     any
+	Status    any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result_Webhooks struct {
+	LatestJob    any
+	WebhookId    any
+	WebhookLabel any
+}
+
+type PostureApiPaginatedFindingInstanceList_Result struct {
+	AfflictionDate any
+	Asset          any
+	DlpContexts    any
+	Id             any
+	IsArchived     any
+	Remediations   any
+	Webhooks       any
+}
+
+type PostureApiPaginatedFindingInstanceList_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Cursor for cursor-based pagination.
 	Cursor any
-	Direction any
-	FindingId any
-	FindingInstanceIds any
-	MaxAfflictionDate any
-	MinAfflictionDate any
-	Order any
+	// URL to the next page of results.
+	Next any
+	// Current page within paginated list of results.
 	Page any
+	// Number of results per page of results.
 	PerPage any
+	// URL to the previous page of results.
+	Previous any
+	// Total results available without any search parameters.
+	TotalCount any
+}
+
+type PostureApiPaginatedFindingInstanceListConfig struct {
+	AccountId           any
+	Archived            any
+	AssetIds            any
+	Cursor              any
+	Direction           any
+	FindingId           any
+	FindingInstanceIds  any
+	MaxAfflictionDate   any
+	MinAfflictionDate   any
+	Order               any
+	Page                any
+	PerPage             any
 	RemediationStatuses any
-	Search any
+	Search              any
 }
 
 type PostureApiPaginatedFindingInstanceListAttrs struct {
-	AccountId any
-	Archived any
-	AssetIds any
-	Cursor any
-	Direction any
-	FindingId any
-	FindingInstanceIds any
-	MaxAfflictionDate any
-	MinAfflictionDate any
-	Order any
-	Page any
-	PerPage any
+	AccountId           any
+	Archived            any
+	AssetIds            any
+	Cursor              any
+	Direction           any
+	Errors              any
+	FindingId           any
+	FindingInstanceIds  any
+	MaxAfflictionDate   any
+	Messages            any
+	MinAfflictionDate   any
+	Order               any
+	Page                any
+	PerPage             any
 	RemediationStatuses any
-	Search any
+	// Array of finding instance objects.
+	Result any
+	// Pagination and result information.
+	ResultInfo any
+	Search     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var PostureApiPaginatedFindingInstanceList = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_paginated_finding_instance_list",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Archived": ubx.FieldSpec{WireName: "archived"},
-		"AssetIds": ubx.FieldSpec{WireName: "asset_ids"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
-		"FindingInstanceIds": ubx.FieldSpec{WireName: "finding_instance_ids"},
-		"MaxAfflictionDate": ubx.FieldSpec{WireName: "max_affliction_date"},
-		"MinAfflictionDate": ubx.FieldSpec{WireName: "min_affliction_date"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
+		"Archived":            ubx.FieldSpec{WireName: "archived"},
+		"AssetIds":            ubx.FieldSpec{WireName: "asset_ids"},
+		"Cursor":              ubx.FieldSpec{WireName: "cursor"},
+		"Direction":           ubx.FieldSpec{WireName: "direction"},
+		"FindingId":           ubx.FieldSpec{WireName: "finding_id"},
+		"FindingInstanceIds":  ubx.FieldSpec{WireName: "finding_instance_ids"},
+		"MaxAfflictionDate":   ubx.FieldSpec{WireName: "max_affliction_date"},
+		"MinAfflictionDate":   ubx.FieldSpec{WireName: "min_affliction_date"},
+		"Order":               ubx.FieldSpec{WireName: "order"},
+		"Page":                ubx.FieldSpec{WireName: "page"},
+		"PerPage":             ubx.FieldSpec{WireName: "per_page"},
 		"RemediationStatuses": ubx.FieldSpec{WireName: "remediation_statuses"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":              ubx.FieldSpec{WireName: "search"},
 	},
 }

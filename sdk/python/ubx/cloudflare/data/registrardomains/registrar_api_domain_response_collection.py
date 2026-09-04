@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiDomainResponseCollection_Result_RegistrantContact:
+    pass
+
+@dataclasses.dataclass
+class RegistrarApiDomainResponseCollection_Result_TransferIn:
+    accept_foa: Any = None
+    approve_transfer: Any = None
+    can_cancel_transfer: Any = None
+    disable_privacy: Any = None
+    enter_auth_code: Any = None
+    unlock_domain: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiDomainResponseCollection_Result:
+    available: Any = None
+    can_register: Any = None
+    created_at: Any = None
+    current_registrar: Any = None
+    expires_at: Any = None
+    id: Any = None
+    locked: Any = None
+    registrant_contact: Any = None
+    registry_statuses: Any = None
+    supported_tld: Any = None
+    transfer_in: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiDomainResponseCollectionConfig:
     pass
 
@@ -14,6 +42,7 @@ class RegistrarApiDomainResponseCollectionConfig:
 class RegistrarApiDomainResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 RegistrarApiDomainResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_domain_response_collection",

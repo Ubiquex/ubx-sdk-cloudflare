@@ -7,6 +7,119 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_AdaptiveRouting:
+    failover_across_pools: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_LocationStrategy:
+    mode: Any = None
+    prefer_ecs: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_FixedResponse:
+    content_type: Any = None
+    location: Any = None
+    message_body: Any = None
+    status_code: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Match_Topology:
+    countries: Any = None
+    pops: Any = None
+    regions: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Match:
+    default: Any = None
+    topology: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets_Overrides:
+    fallback_pool: Any = None
+    pool_default_weight: Any = None
+    pool_weights: Any = None
+    pools: Any = None
+    steering_policy: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_PoolSets:
+    disabled: Any = None
+    fixed_response: Any = None
+    match: Any = None
+    name: Any = None
+    overrides: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_RandomSteering:
+    default_weight: Any = None
+    pool_weights: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules_Overrides_SessionAffinityAttributes:
+    drain_duration: Any = None
+    headers: Any = None
+    require_all_headers: Any = None
+    samesite: Any = None
+    secure: Any = None
+    zero_downtime_failover: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules_Overrides:
+    adaptive_routing: Any = None
+    country_pools: Any = None
+    default_pools: Any = None
+    fallback_pool: Any = None
+    location_strategy: Any = None
+    pool_default_weight: Any = None
+    pool_weights: Any = None
+    pools: Any = None
+    pop_pools: Any = None
+    random_steering: Any = None
+    region_pools: Any = None
+    session_affinity: Any = None
+    session_affinity_attributes: Any = None
+    session_affinity_ttl: Any = None
+    steering_policy: Any = None
+    ttl: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result_Rules:
+    condition: Any = None
+    disabled: Any = None
+    fixed_response: Any = None
+    name: Any = None
+    overrides: Any = None
+    priority: Any = None
+    terminates: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingLoadBalancerComponentsSchemasResponseCollection_Result:
+    adaptive_routing: Any = None
+    country_pools: Any = None
+    created_on: Any = None
+    default_pools: Any = None
+    description: Any = None
+    enabled: Any = None
+    fallback_pool: Any = None
+    id: Any = None
+    location_strategy: Any = None
+    modified_on: Any = None
+    name: Any = None
+    networks: Any = None
+    pool_sets: Any = None
+    pop_pools: Any = None
+    proxied: Any = None
+    random_steering: Any = None
+    region_pools: Any = None
+    rules: Any = None
+    session_affinity: Any = None
+    session_affinity_attributes: Any = None
+    session_affinity_ttl: Any = None
+    steering_policy: Any = None
+    ttl: Any = None
+    zone_name: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingLoadBalancerComponentsSchemasResponseCollectionConfig:
     pass
 
@@ -14,6 +127,7 @@ class LoadBalancingLoadBalancerComponentsSchemasResponseCollectionConfig:
 class LoadBalancingLoadBalancerComponentsSchemasResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 LoadBalancingLoadBalancerComponentsSchemasResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_load_balancer_components_schemas_response_collection",

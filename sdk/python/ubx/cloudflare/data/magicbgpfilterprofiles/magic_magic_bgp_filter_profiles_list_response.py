@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicMagicBgpFilterProfilesListResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MagicMagicBgpFilterProfilesListResponse_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    match_action: Any = None
+    modified_on: Any = None
+    name: Any = None
+    targets: Any = None
+
+@dataclasses.dataclass
 class MagicMagicBgpFilterProfilesListResponseConfig:
     pass
 
@@ -14,6 +29,11 @@ class MagicMagicBgpFilterProfilesListResponseConfig:
 class MagicMagicBgpFilterProfilesListResponseAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 MagicMagicBgpFilterProfilesListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_magic_bgp_filter_profiles_list_response",

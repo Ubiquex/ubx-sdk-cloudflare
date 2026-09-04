@@ -3,6 +3,21 @@ package accessservicetokens
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection3_Result_CreatedAt struct {
+}
+
+type AccessResponseCollection3_Result struct {
+	ClientId   any
+	CreatedAt  any
+	Duration   any
+	Enabled    any
+	ExpiresAt  any
+	Id         any
+	LastSeenAt any
+	Name       any
+	UpdatedAt  any
+}
+
 type AccessResponseCollection3Config struct {
 	// Identifier.
 	AccountId any
@@ -25,6 +40,7 @@ type AccessResponseCollection3Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 	// Search for service tokens by other listed query parameters.
 	Search any
 }
@@ -33,9 +49,9 @@ var AccessResponseCollection3 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_3",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

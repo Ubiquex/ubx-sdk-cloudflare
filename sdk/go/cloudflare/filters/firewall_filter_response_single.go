@@ -3,6 +3,19 @@ package filters
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallFilterResponseSingle_Result struct {
+	// An informative summary of the filter.
+	Description any
+	// The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).
+	Expression any
+	// The unique identifier of the filter.
+	Id any
+	// When true, indicates that the filter is currently paused.
+	Paused any
+	// A short reference tag. Allows you to select related filters.
+	Ref any
+}
+
 type FirewallFilterResponseSingleConfig struct {
 	// An informative summary of the filter.
 	Description any
@@ -28,7 +41,8 @@ type FirewallFilterResponseSingleAttrs struct {
 	// When true, indicates that the filter is currently paused.
 	Paused any
 	// A short reference tag. Allows you to select related filters.
-	Ref any
+	Ref    any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -39,10 +53,10 @@ var FirewallFilterResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_firewall_filter_response_single",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
+		"Expression":  ubx.FieldSpec{WireName: "expression"},
+		"Paused":      ubx.FieldSpec{WireName: "paused"},
+		"Ref":         ubx.FieldSpec{WireName: "ref"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
+		"FilterId":    ubx.FieldSpec{WireName: "filter_id"},
 	},
 }

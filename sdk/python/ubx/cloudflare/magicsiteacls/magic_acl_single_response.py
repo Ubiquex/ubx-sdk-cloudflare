@@ -19,6 +19,22 @@ class MagicAclSingleResponse_Lan1:
     # Array of subnet IPs within the LAN that will be included in the ACL. If no subnets are provided, communication on any subnets on this LAN are allowed.
     subnets: Any = None
 
+@dataclasses.dataclass
+class MagicAclSingleResponse_Result:
+    # Description for the ACL.
+    description: Any = None
+    # The desired forwarding action for this ACL policy. If set to "false", the policy will forward traffic to Cloudflare. If set to "true", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
+    forward_locally: Any = None
+    # Identifier
+    id: Any = None
+    lan_1: Any = None
+    lan_2: Any = None
+    # The name of the ACL.
+    name: Any = None
+    protocols: Any = None
+    # The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
+    unidirectional: Any = None
+
 _MagicAclSingleResponse_Lan1Fields = {
     "lan_id": ubx.FieldSpec(wire_name="lan_id"),
     "lan_name": ubx.FieldSpec(wire_name="lan_name"),
@@ -58,6 +74,8 @@ class MagicAclSingleResponseAttrs:
     # The name of the ACL.
     name: Any = None
     protocols: Any = None
+    # Bidirectional ACL policy for network traffic within a site.
+    result: Any = None
     # The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
     unidirectional: Any = None
     # path parameter, not part of the API's own resource representation

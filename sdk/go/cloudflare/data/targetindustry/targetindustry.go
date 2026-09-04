@@ -19,8 +19,8 @@ type TargetindustryAttrs struct {
 	AccountId any
 	// Dataset UUID.
 	DatasetId any
-	Items any
-	Type any
+	Items     any
+	Type      any
 }
 
 var Targetindustry = ubx.DataSourceBinding{

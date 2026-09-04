@@ -3,6 +3,21 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UrlIgnorePattern_Result_Id struct {
+}
+
+type UrlIgnorePattern_Result struct {
+	// Optional note describing the reason for the ignore pattern.
+	Comments  any
+	CreatedAt any
+	Id        any
+	// Deprecated, use `modified_at` instead. End of life: November 1, 2026.
+	LastModified any
+	ModifiedAt   any
+	// Regular expression identifying URLs to exempt from rewriting.
+	Pattern any
+}
+
 type UrlIgnorePatternConfig struct {
 	// Optional note describing the reason for the ignore pattern.
 	Comments any
@@ -19,6 +34,8 @@ type UrlIgnorePatternAttrs struct {
 	Comments any
 	// Regular expression identifying URLs to exempt from rewriting.
 	Pattern any
+	// A URL ignore pattern that exempts matching URLs from Email Security's URL rewriting.
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,8 +45,8 @@ type UrlIgnorePatternAttrs struct {
 var UrlIgnorePattern = ubx.ResourceBinding{
 	WireType: "cloudflare_url_ignore_pattern",
 	Fields: ubx.FieldMap{
-		"Comments": ubx.FieldSpec{WireName: "comments"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Comments":  ubx.FieldSpec{WireName: "comments"},
+		"Pattern":   ubx.FieldSpec{WireName: "pattern"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"PatternId": ubx.FieldSpec{WireName: "pattern_id"},
 	},

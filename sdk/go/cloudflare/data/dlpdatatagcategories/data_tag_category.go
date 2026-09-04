@@ -3,12 +3,31 @@ package dlpdatatagcategories
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DataTagCategory_Result_Tags struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
+type DataTagCategory_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	Tags        any
+	TemplateId  any
+	UpdatedAt   any
+}
+
 type DataTagCategoryConfig struct {
 	AccountId any
 }
 
 type DataTagCategoryAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var DataTagCategory = ubx.DataSourceBinding{

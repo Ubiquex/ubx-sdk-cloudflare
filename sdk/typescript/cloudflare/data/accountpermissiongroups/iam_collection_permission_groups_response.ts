@@ -4,6 +4,17 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamCollectionPermissionGroupsResponse_AccountId {
 }
 
+export interface IamCollectionPermissionGroupsResponse_Result_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface IamCollectionPermissionGroupsResponse_Result {
+  id?: string | Computed<string>;
+  meta?: IamCollectionPermissionGroupsResponse_Result_Meta | Computed<IamCollectionPermissionGroupsResponse_Result_Meta>;
+  name?: string | Computed<string>;
+}
+
 const IamCollectionPermissionGroupsResponse_AccountIdFields: FieldMap = {
 };
 
@@ -35,6 +46,8 @@ export interface IamCollectionPermissionGroupsResponseAttrs {
   page: number;
   /** Maximum number of results per page. */
   perPage: number;
+  /** A set of permission groups that are specified to the policy. */
+  result: IamCollectionPermissionGroupsResponse_Result[];
 }
 
 export const IamCollectionPermissionGroupsResponse: DataSourceBinding<IamCollectionPermissionGroupsResponseConfig, IamCollectionPermissionGroupsResponseAttrs> = {

@@ -3,6 +3,15 @@ package emailroutingdestinationaddresses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailDestinationAddressResponseSingle_Result struct {
+	Created  any
+	Email    any
+	Id       any
+	Modified any
+	Tag      any
+	Verified any
+}
+
 type EmailDestinationAddressResponseSingleConfig struct {
 	// The contact email address of the user.
 	Email any
@@ -14,7 +23,8 @@ type EmailDestinationAddressResponseSingleConfig struct {
 
 type EmailDestinationAddressResponseSingleAttrs struct {
 	// The contact email address of the user.
-	Email any
+	Email  any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +34,8 @@ type EmailDestinationAddressResponseSingleAttrs struct {
 var EmailDestinationAddressResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_email_destination_address_response_single",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Email":                        ubx.FieldSpec{WireName: "email"},
+		"AccountId":                    ubx.FieldSpec{WireName: "account_id"},
 		"DestinationAddressIdentifier": ubx.FieldSpec{WireName: "destination_address_identifier"},
 	},
 }

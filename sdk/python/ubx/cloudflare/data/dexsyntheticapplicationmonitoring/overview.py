@@ -7,6 +7,91 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Overview_Result_OverviewMetrics:
+    # percentage availability for all HTTP test results in response.
+    avg_http_availability_pct: Any = None
+    # percentage availability for all traceroutes results in response.
+    avg_traceroute_availability_pct: Any = None
+    # number of tests.
+    tests_total: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults_ResourceFetchTime_History_TimePeriod:
+    units: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults_ResourceFetchTime_History:
+    avg_ms: Any = None
+    delta_pct: Any = None
+    time_period: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults_ResourceFetchTime_OverTime_Values:
+    avg_ms: Any = None
+    timestamp: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults_ResourceFetchTime_OverTime:
+    time_period: Any = None
+    values: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults_ResourceFetchTime:
+    avg_ms: Any = None
+    history: Any = None
+    over_time: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResults:
+    resource_fetch_time: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_HttpResultsByColo:
+    colo: Any = None
+    resource_fetch_time: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_TargetPolicies:
+    default: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_TracerouteResults:
+    round_trip_time: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests_TracerouteResultsByColo:
+    colo: Any = None
+    round_trip_time: Any = None
+
+@dataclasses.dataclass
+class Overview_Result_Tests:
+    created: Any = None
+    description: Any = None
+    enabled: Any = None
+    host: Any = None
+    http_results: Any = None
+    http_results_by_colo: Any = None
+    id: Any = None
+    interval: Any = None
+    kind: Any = None
+    method: Any = None
+    name: Any = None
+    target_policies: Any = None
+    targeted: Any = None
+    traceroute_results: Any = None
+    traceroute_results_by_colo: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
+class Overview_Result:
+    overview_metrics: Any = None
+    # array of test results objects.
+    tests: Any = None
+
+@dataclasses.dataclass
 class OverviewConfig:
     # Cloudflare colo airport code.
     colo: Any = None
@@ -30,6 +115,7 @@ class OverviewAttrs:
     per_page: Any = None
     # Unique identifier for the device registration (UUID). On multi-user devices, this uniquely identifies a user's registration on the device.
     registration_id: Any = None
+    result: Any = None
     test_name: Any = None
 
 Overview = ubx.DataSourceBinding(

@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamStorageUseResponse_Result:
+    # A user-defined identifier for the media creator.
+    creator: Any = None
+    # The total minutes of video content stored in the account. May contain decimal values.
+    total_storage_minutes: Any = None
+    # The storage capacity alloted for the account.
+    total_storage_minutes_limit: Any = None
+    # The total count of videos associated with the account.
+    video_count: Any = None
+
+@dataclasses.dataclass
 class StreamStorageUseResponseConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -19,6 +30,7 @@ class StreamStorageUseResponseAttrs:
     account_id: Any = None
     # A user-defined identifier for the media creator.
     creator: Any = None
+    result: Any = None
 
 StreamStorageUseResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_storage_use_response",

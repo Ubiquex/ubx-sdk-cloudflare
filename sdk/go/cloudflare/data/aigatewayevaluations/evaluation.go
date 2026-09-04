@@ -4,54 +4,54 @@ package aigatewayevaluations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Evaluation_Result_Datasets_Filters struct {
-	Key any
+	Key      any
 	Operator any
-	Value any
+	Value    any
 }
 
 type Evaluation_Result_Datasets struct {
-	AccountId any
+	AccountId  any
 	AccountTag any
-	CreatedAt any
-	Enable any
-	Filters any
-	GatewayId any
-	Id any
+	CreatedAt  any
+	Enable     any
+	Filters    any
+	GatewayId  any
+	Id         any
 	ModifiedAt any
-	Name any
+	Name       any
 }
 
 type Evaluation_Result_Results struct {
-	CreatedAt any
-	EvaluationId any
-	EvaluationTypeId any
-	Id any
-	ModifiedAt any
-	Result any
-	Status any
+	CreatedAt         any
+	EvaluationId      any
+	EvaluationTypeId  any
+	Id                any
+	ModifiedAt        any
+	Result            any
+	Status            any
 	StatusDescription any
-	TotalLogs any
+	TotalLogs         any
 }
 
 type Evaluation_Result struct {
-	CreatedAt any
-	Datasets any
-	GatewayId any
-	Id any
+	CreatedAt  any
+	Datasets   any
+	GatewayId  any
+	Id         any
 	ModifiedAt any
-	Name any
-	Processed any
-	Results any
-	TotalLogs any
+	Name       any
+	Processed  any
+	Results    any
+	TotalLogs  any
 }
 
 type EvaluationConfig struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 	Processed any
 	// Search by id, name
 	Search any
@@ -61,13 +61,13 @@ type EvaluationAttrs struct {
 	AccountId any
 	// gateway id
 	GatewayId any
-	Name any
-	Page any
-	PerPage any
+	Name      any
+	Page      any
+	PerPage   any
 	Processed any
-	Result any
+	Result    any
 	// Search by id, name
-	Search any
+	Search  any
 	Success any
 }
 
@@ -76,10 +76,10 @@ var Evaluation = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"Processed": ubx.FieldSpec{WireName: "processed"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

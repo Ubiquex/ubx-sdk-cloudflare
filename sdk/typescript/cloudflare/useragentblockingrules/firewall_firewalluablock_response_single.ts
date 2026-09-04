@@ -8,6 +8,19 @@ export interface FirewallFirewalluablockResponseSingle_Configuration {
   value?: string | Computed<string>;
 }
 
+export interface FirewallFirewalluablockResponseSingle_Result {
+  /** The configuration object for the current rule. */
+  configuration?: FirewallFirewalluablockResponseSingle_Configuration | Computed<FirewallFirewalluablockResponseSingle_Configuration>;
+  /** An informative summary of the rule. */
+  description?: string | Computed<string>;
+  /** The unique identifier of the User Agent Blocking rule. */
+  id?: string | Computed<string>;
+  /** The action to apply to a matched request. */
+  mode?: unknown | Computed<unknown>;
+  /** When true, indicates that the rule is currently paused. */
+  paused?: boolean | Computed<boolean>;
+}
+
 const FirewallFirewalluablockResponseSingle_ConfigurationFields: FieldMap = {
   target: "target",
   value: "value",
@@ -35,6 +48,7 @@ export interface FirewallFirewalluablockResponseSingleAttrs {
   mode: string;
   /** When true, indicates that the rule is currently paused. */
   paused: boolean;
+  result: FirewallFirewalluablockResponseSingle_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */

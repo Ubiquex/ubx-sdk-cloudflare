@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersNamespaceSingleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceSingleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceSingleResponse_Result:
+    # Identifier.
+    created_by: Any = None
+    # When the script was created.
+    created_on: Any = None
+    # Identifier.
+    modified_by: Any = None
+    # When the script was last modified.
+    modified_on: Any = None
+    # API Resource UUID tag.
+    namespace_id: Any = None
+    # Name of the Workers for Platforms dispatch namespace.
+    namespace_name: Any = None
+    # The current number of scripts in this Dispatch Namespace.
+    script_count: Any = None
+    # Whether the Workers in the namespace are executed in a "trusted" manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are "untrusted".
+    trusted_workers: Any = None
+
+@dataclasses.dataclass
 class WorkersNamespaceSingleResponseConfig:
     # The name of the dispatch namespace.
     name: Any = None
@@ -17,8 +47,13 @@ class WorkersNamespaceSingleResponseConfig:
 
 @dataclasses.dataclass
 class WorkersNamespaceSingleResponseAttrs:
+    errors: Any = None
+    messages: Any = None
     # The name of the dispatch namespace.
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

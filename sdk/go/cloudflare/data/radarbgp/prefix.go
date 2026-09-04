@@ -4,15 +4,15 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Prefix_Result_Asns struct {
-	Asn any
-	Country any
-	Name any
+	Asn       any
+	Country   any
+	Name      any
 	PfxsCount any
 }
 
 type Prefix_Result_Meta struct {
-	DataTime any
-	QueryTime any
+	DataTime   any
+	QueryTime  any
 	TotalPeers any
 }
 
@@ -36,8 +36,8 @@ type PrefixAttrs struct {
 	// Format in which results will be returned.
 	Format any
 	// Maximum number of ASes to return.
-	Limit any
-	Result any
+	Limit   any
+	Result  any
 	Success any
 }
 
@@ -45,7 +45,7 @@ var Prefix = ubx.DataSourceBinding{
 	WireType: "cloudflare_prefix",
 	Fields: ubx.FieldMap{
 		"Country": ubx.FieldSpec{WireName: "country"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Format":  ubx.FieldSpec{WireName: "format"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
 	},
 }

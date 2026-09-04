@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicNetflowConfigSingleResponse_Result:
+    # Timeout in seconds for active flows (defaults to 30).
+    active_timeout: Any = None
+    # IPv4 address of the NetFlow collector.
+    collector_ip: Any = None
+    # UDP port of the NetFlow collector (defaults to 2055).
+    collector_port: Any = None
+    # Timeout in seconds for inactive flows (defaults to 15).
+    inactive_timeout: Any = None
+    # Sampling rate for NetFlow records (1 = every packet, 1000 = 1 in 1000 packets). Defaults to 1.
+    sampling_rate: Any = None
+
+@dataclasses.dataclass
 class MagicNetflowConfigSingleResponseConfig:
     pass
 
@@ -14,6 +27,8 @@ class MagicNetflowConfigSingleResponseConfig:
 class MagicNetflowConfigSingleResponseAttrs:
     # Identifier
     account_id: Any = None
+    # NetFlow configuration for a site.
+    result: Any = None
     # Identifier
     site_id: Any = None
 

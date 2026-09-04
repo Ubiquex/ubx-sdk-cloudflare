@@ -3,6 +3,27 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection24_Result struct {
+	AccessSeat          any
+	ActiveDeviceCount   any
+	CreatedAt           any
+	Email               any
+	GatewaySeat         any
+	Id                  any
+	LastSuccessfulLogin any
+	Name                any
+	SeatUid             any
+	Uid                 any
+	UpdatedAt           any
+}
+
+type AccessResponseCollection24_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+}
+
 type AccessResponseCollection24Config struct {
 	// Identifier.
 	AccountId any
@@ -28,7 +49,9 @@ type AccessResponseCollection24Attrs struct {
 	// Page number of results.
 	Page any
 	// Number of results per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// Search for users by other listed query parameters.
 	Search any
 }
@@ -37,10 +60,10 @@ var AccessResponseCollection24 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_24",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Email":     ubx.FieldSpec{WireName: "email"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

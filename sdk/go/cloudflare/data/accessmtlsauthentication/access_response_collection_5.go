@@ -3,6 +3,19 @@ package accessmtlsauthentication
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection5_Result_CreatedAt struct {
+}
+
+type AccessResponseCollection5_Result struct {
+	AssociatedHostnames any
+	CreatedAt           any
+	ExpiresOn           any
+	Fingerprint         any
+	Id                  any
+	Name                any
+	UpdatedAt           any
+}
+
 type AccessResponseCollection5Config struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +32,14 @@ type AccessResponseCollection5Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 }
 
 var AccessResponseCollection5 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_5",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

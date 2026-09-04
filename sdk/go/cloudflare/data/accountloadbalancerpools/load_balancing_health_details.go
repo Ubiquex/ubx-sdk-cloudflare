@@ -3,6 +3,30 @@ package accountloadbalancerpools
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingHealthDetails_Result_PopHealth_Origins_Ip struct {
+	FailureReason any
+	Healthy       any
+	ResponseCode  any
+	Rtt           any
+}
+
+type LoadBalancingHealthDetails_Result_PopHealth_Origins struct {
+	Ip any
+}
+
+type LoadBalancingHealthDetails_Result_PopHealth struct {
+	// Whether health check in region is healthy.
+	Healthy any
+	Origins any
+}
+
+type LoadBalancingHealthDetails_Result struct {
+	// Pool ID.
+	PoolId any
+	// List of regions and associated health status.
+	PopHealth any
+}
+
 type LoadBalancingHealthDetailsConfig struct {
 	PoolId any
 }
@@ -10,7 +34,9 @@ type LoadBalancingHealthDetailsConfig struct {
 type LoadBalancingHealthDetailsAttrs struct {
 	// Identifier.
 	AccountId any
-	PoolId any
+	PoolId    any
+	// A list of regions from which to run health checks. Null means every Cloudflare data center.
+	Result any
 }
 
 var LoadBalancingHealthDetails = ubx.DataSourceBinding{

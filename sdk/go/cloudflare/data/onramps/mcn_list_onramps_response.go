@@ -3,29 +3,199 @@ package onramps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnListOnrampsResponse_Result_PlannedMonthlyCostEstimate struct {
+	Currency            any
+	CurrentMonthlyCost  any
+	Diff                any
+	ProposedMonthlyCost any
+}
+
+type McnListOnrampsResponse_Result_PlannedResources_Diff struct {
+	Diff             any
+	LeftDescription  any
+	LeftYaml         any
+	RightDescription any
+	RightYaml        any
+}
+
+type McnListOnrampsResponse_Result_PlannedResources_Resource struct {
+	CloudType    any
+	Detail       any
+	Id           any
+	Name         any
+	ResourceType any
+	Title        any
+}
+
+type McnListOnrampsResponse_Result_PlannedResources struct {
+	Diff                    any
+	KeysRequireReplace      any
+	MonthlyCostEstimateDiff any
+	PlannedAction           any
+	Resource                any
+}
+
+type McnListOnrampsResponse_Result_PostApplyMonthlyCostEstimate struct {
+	Currency    any
+	MonthlyCost any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_ManagedBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_Observations struct {
+	FirstObservedAt any
+	LastObservedAt  any
+	ProviderId      any
+	ResourceId      any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_Sections_HiddenItems_Value_List struct {
+	ItemType        any
+	ResourcePreview any
+	String          any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_Sections_HiddenItems_Value struct {
+	ItemType        any
+	List            any
+	ResourcePreview any
+	String          any
+	Yaml            any
+	YamlDiff        any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_Sections_HiddenItems struct {
+	HelpText any
+	Name     any
+	Value    any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources_Sections struct {
+	HelpText     any
+	HiddenItems  any
+	Name         any
+	VisibleItems any
+}
+
+type McnListOnrampsResponse_Result_PostApplyResources struct {
+	AccountId           any
+	CloudType           any
+	Config              any
+	DeploymentProvider  any
+	Id                  any
+	Managed             any
+	ManagedBy           any
+	MonthlyCostEstimate any
+	Name                any
+	NativeId            any
+	Observations        any
+	ProviderIds         any
+	ProviderNamesById   any
+	Region              any
+	ResourceGroup       any
+	ResourceType        any
+	Sections            any
+	State               any
+	Tags                any
+	UpdatedAt           any
+	Url                 any
+}
+
+type McnListOnrampsResponse_Result_Status_ApplyProgress struct {
+	Done  any
+	Total any
+}
+
+type McnListOnrampsResponse_Result_Status_LifecycleErrors_Meta struct {
+	L10nKey       any
+	LoggableError any
+	TemplateData  any
+	TraceId       any
+}
+
+type McnListOnrampsResponse_Result_Status_LifecycleErrors_Source struct {
+	Parameter           any
+	ParameterValueIndex any
+	Pointer             any
+}
+
+type McnListOnrampsResponse_Result_Status_LifecycleErrors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Meta             any
+	Source           any
+}
+
+type McnListOnrampsResponse_Result_Status struct {
+	ApplyProgress   any
+	LifecycleErrors any
+	LifecycleState  any
+	PlanProgress    any
+	Routes          any
+	Tunnels         any
+}
+
+type McnListOnrampsResponse_Result struct {
+	AttachedHubs                  any
+	AttachedVpcs                  any
+	CloudAsn                      any
+	CloudType                     any
+	Description                   any
+	DynamicRouting                any
+	Hub                           any
+	Id                            any
+	InstallRoutesInCloud          any
+	InstallRoutesInMagicWan       any
+	LastAppliedAt                 any
+	LastExportedAt                any
+	LastPlannedAt                 any
+	ManageHubToHubAttachments     any
+	ManageVpcToHubAttachments     any
+	Name                          any
+	PlannedMonthlyCostEstimate    any
+	PlannedResources              any
+	PlannedResourcesUnavailable   any
+	PostApplyMonthlyCostEstimate  any
+	PostApplyResources            any
+	PostApplyResourcesUnavailable any
+	Region                        any
+	Status                        any
+	Type                          any
+	UpdatedAt                     any
+	Vpc                           any
+	VpcsById                      any
+	VpcsByIdUnavailable           any
+}
+
 type McnListOnrampsResponseConfig struct {
 	AccountId any
-	Desc any
-	OrderBy any
-	Status any
-	Vpcs any
+	Desc      any
+	OrderBy   any
+	Status    any
+	Vpcs      any
 }
 
 type McnListOnrampsResponseAttrs struct {
 	AccountId any
-	Desc any
-	OrderBy any
-	Status any
-	Vpcs any
+	Desc      any
+	OrderBy   any
+	Result    any
+	Status    any
+	Vpcs      any
 }
 
 var McnListOnrampsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_list_onramps_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Desc": ubx.FieldSpec{WireName: "desc"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Vpcs": ubx.FieldSpec{WireName: "vpcs"},
+		"Desc":      ubx.FieldSpec{WireName: "desc"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
+		"Vpcs":      ubx.FieldSpec{WireName: "vpcs"},
 	},
 }

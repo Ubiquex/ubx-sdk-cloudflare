@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse18_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class AccessSingleResponse18_Result:
+    # The Client ID for the service token. Access will check for this value in the `CF-Access-Client-ID` request header.
+    client_id: Any = None
+    created_at: Any = None
+    # The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`, or the special value `forever` for non-expiring tokens. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).
+    duration: Any = None
+    # Whether the service token is enabled. A disabled service token cannot be used to authenticate; both its current and previous `client_secret` stop being accepted, but the token itself is preserved and can be re-enabled at any time. Defaults to enabled when omitted on create.
+    enabled: Any = None
+    expires_at: Any = None
+    id: Any = None
+    last_seen_at: Any = None
+    # The name of the service token.
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse18Config:
     # A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.
     client_secret_version: Any = None
@@ -35,6 +55,7 @@ class AccessSingleResponse18Attrs:
     name: Any = None
     # The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.
     previous_client_secret_expires_at: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

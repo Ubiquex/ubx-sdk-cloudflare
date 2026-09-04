@@ -3,6 +3,30 @@ package d1
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Database_Errors struct {
+	Code    any
+	Message any
+}
+
+type Database_Result struct {
+	CreatedAt    any
+	Jurisdiction any
+	Name         any
+	Uuid         any
+	Version      any
+}
+
+type Database_ResultInfo struct {
+	// Total number of results for the requested service
+	Count any
+	// Current page within paginated list of results
+	Page any
+	// Number of results per page of results
+	PerPage any
+	// Total results available without any search parameters
+	TotalCount any
+}
+
 type DatabaseConfig struct {
 	// a database name to search for.
 	Name any
@@ -15,19 +39,25 @@ type DatabaseConfig struct {
 type DatabaseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
 	// a database name to search for.
 	Name any
 	// Page number of paginated results.
 	Page any
 	// Number of items per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful
+	Success any
 }
 
 var Database = ubx.DataSourceBinding{
 	WireType: "cloudflare_database",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

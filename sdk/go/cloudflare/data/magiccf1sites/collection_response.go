@@ -3,16 +3,34 @@ package magiccf1sites
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CollectionResponse_Result_Id struct {
+}
+
+type CollectionResponse_Result_Location struct {
+	Lat  any
+	Long any
+	Name any
+}
+
+type CollectionResponse_Result struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	Location    any
+	ModifiedOn  any
+	Name        any
+}
+
 type CollectionResponseConfig struct {
 }
 
 type CollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var CollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_cf1_sites_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

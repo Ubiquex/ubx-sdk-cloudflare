@@ -3,6 +3,20 @@ package zonelevelaccessmtlsauthentication
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse20_Result struct {
+	// The hostnames of the applications that will use this certificate.
+	AssociatedHostnames any
+	CreatedAt           any
+	ExpiresOn           any
+	// The MD5 fingerprint of the certificate.
+	Fingerprint any
+	// The ID of the application that will use this certificate.
+	Id any
+	// The name of the certificate.
+	Name      any
+	UpdatedAt any
+}
+
 type AccessSingleResponse20Config struct {
 	// The hostnames of the applications that will use this certificate.
 	AssociatedHostnames any
@@ -22,7 +36,8 @@ type AccessSingleResponse20Attrs struct {
 	// The certificate content.
 	Certificate any
 	// The name of the certificate.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -33,9 +48,9 @@ var AccessSingleResponse20 = ubx.ResourceBinding{
 	WireType: "cloudflare_access_single_response_20",
 	Fields: ubx.FieldMap{
 		"AssociatedHostnames": ubx.FieldSpec{WireName: "associated_hostnames"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"Certificate":         ubx.FieldSpec{WireName: "certificate"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"ZoneId":              ubx.FieldSpec{WireName: "zone_id"},
+		"CertificateId":       ubx.FieldSpec{WireName: "certificate_id"},
 	},
 }

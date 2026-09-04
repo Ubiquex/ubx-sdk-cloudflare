@@ -3,16 +3,34 @@ package magicredundancygroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CollectionResponse_Result_RedundancyGroups_MemberData struct {
+	Data any
+	Type any
+}
+
+type CollectionResponse_Result_RedundancyGroups struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	MemberData  any
+	ModifiedOn  any
+	Name        any
+}
+
+type CollectionResponse_Result struct {
+	RedundancyGroups any
+}
+
 type CollectionResponseConfig struct {
 }
 
 type CollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var CollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_redundancy_groups_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

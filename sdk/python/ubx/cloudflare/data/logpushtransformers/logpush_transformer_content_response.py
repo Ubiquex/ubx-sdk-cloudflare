@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushTransformerContentResponse_Result:
+    # The SQL query content.
+    content: Any = None
+
+@dataclasses.dataclass
 class LogpushTransformerContentResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -18,6 +23,7 @@ class LogpushTransformerContentResponseConfig:
 class LogpushTransformerContentResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     # The transformer ID.
     transformer_id: Any = None
     version_id: Any = None

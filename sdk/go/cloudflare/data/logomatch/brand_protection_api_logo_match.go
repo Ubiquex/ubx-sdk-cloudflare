@@ -4,23 +4,23 @@ package logomatch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrandProtectionApiLogoMatchConfig struct {
-	Limit any
+	Limit  any
 	LogoId any
 	Offset any
 }
 
 type BrandProtectionApiLogoMatchAttrs struct {
-	Limit any
-	LogoId any
+	Limit   any
+	LogoId  any
 	Matches any
-	Offset any
-	Total any
+	Offset  any
+	Total   any
 }
 
 var BrandProtectionApiLogoMatch = ubx.DataSourceBinding{
 	WireType: "cloudflare_brand_protection_api_logo_match",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"LogoId": ubx.FieldSpec{WireName: "logo_id"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},

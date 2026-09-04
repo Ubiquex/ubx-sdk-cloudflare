@@ -5,46 +5,46 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudforceOneEventsFieldDefinition_Schema_Annotations struct {
 	Confidence any
-	Tlp any
+	Tlp        any
 }
 
 type CloudforceOneEventsFieldDefinition_Schema_Element_NumberConstraint struct {
 	Integer any
-	Max any
-	Min any
+	Max     any
+	Min     any
 }
 
 type CloudforceOneEventsFieldDefinition_Schema_Element_Properties struct {
 }
 
 type CloudforceOneEventsFieldDefinition_Schema_Element struct {
-	AllowedValues any
-	Annotations any
-	Element any
-	Enforcement any
-	Format any
-	Key any
-	Kind any
-	Label any
-	MaxLength any
+	AllowedValues    any
+	Annotations      any
+	Element          any
+	Enforcement      any
+	Format           any
+	Key              any
+	Kind             any
+	Label            any
+	MaxLength        any
 	NumberConstraint any
-	Properties any
-	Required any
+	Properties       any
+	Required         any
 }
 
 type CloudforceOneEventsFieldDefinition_Schema struct {
-	AllowedValues any
-	Annotations any
-	Element any
-	Enforcement any
-	Format any
-	Key any
-	Kind any
-	Label any
-	MaxLength any
+	AllowedValues    any
+	Annotations      any
+	Element          any
+	Enforcement      any
+	Format           any
+	Key              any
+	Kind             any
+	Label            any
+	MaxLength        any
 	NumberConstraint any
-	Properties any
-	Required any
+	Properties       any
+	Required         any
 }
 
 type CloudforceOneEventsFieldDefinitionConfig struct {
@@ -59,19 +59,19 @@ type CloudforceOneEventsFieldDefinitionAttrs struct {
 	AccountId any
 	// Tag Category UUID.
 	CategoryUuid any
-	CreatedAt any
-	Description any
-	Name any
+	CreatedAt    any
+	Description  any
+	Name         any
 	// Parsed FieldDefinition[] defining custom fields for this category, or null if none.
-	Schema any
+	Schema    any
 	UpdatedAt any
-	Uuid any
+	Uuid      any
 }
 
 var CloudforceOneEventsFieldDefinition = ubx.DataSourceBinding{
 	WireType: "cloudflare_cloudforce_one_events_field_definition",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"CategoryUuid": ubx.FieldSpec{WireName: "category_uuid"},
 	},
 }

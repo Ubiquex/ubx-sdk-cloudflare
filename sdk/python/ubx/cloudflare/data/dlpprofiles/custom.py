@@ -7,12 +7,49 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Custom_Result_ConfidenceThreshold:
+    pass
+
+@dataclasses.dataclass
+class Custom_Result_ContextAwareness_Skip:
+    files: Any = None
+
+@dataclasses.dataclass
+class Custom_Result_ContextAwareness:
+    enabled: Any = None
+    skip: Any = None
+
+@dataclasses.dataclass
+class Custom_Result_SensitivityLevels:
+    group_id: Any = None
+    level_id: Any = None
+
+@dataclasses.dataclass
+class Custom_Result:
+    ai_context_enabled: Any = None
+    allowed_match_count: Any = None
+    confidence_threshold: Any = None
+    context_awareness: Any = None
+    created_at: Any = None
+    data_classes: Any = None
+    data_tags: Any = None
+    description: Any = None
+    entries: Any = None
+    id: Any = None
+    name: Any = None
+    ocr_enabled: Any = None
+    sensitivity_levels: Any = None
+    shared_entries: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class CustomConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class CustomAttrs:
     account_id: Any = None
+    result: Any = None
 
 Custom = ubx.DataSourceBinding(
     wire_type="cloudflare_custom",

@@ -7,6 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiBillingResponseSingle_Result:
+    account_type: Any = None
+    address: Any = None
+    address2: Any = None
+    balance: Any = None
+    card_expiry_month: Any = None
+    card_expiry_year: Any = None
+    card_number: Any = None
+    city: Any = None
+    company: Any = None
+    country: Any = None
+    created_on: Any = None
+    device_data: Any = None
+    edited_on: Any = None
+    enterprise_billing_email: Any = None
+    enterprise_primary_email: Any = None
+    first_name: Any = None
+    # Billing item identifier tag.
+    id: Any = None
+    is_partner: Any = None
+    last_name: Any = None
+    next_bill_date: Any = None
+    payment_address: Any = None
+    payment_address2: Any = None
+    payment_city: Any = None
+    payment_country: Any = None
+    payment_email: Any = None
+    payment_first_name: Any = None
+    payment_gateway: Any = None
+    payment_last_name: Any = None
+    payment_nonce: Any = None
+    payment_state: Any = None
+    payment_zipcode: Any = None
+    primary_email: Any = None
+    state: Any = None
+    tax_id_type: Any = None
+    telephone: Any = None
+    validation_code: Any = None
+    vat: Any = None
+    zipcode: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiBillingResponseSingleConfig:
     pass
 
@@ -14,6 +56,7 @@ class BillSubsApiBillingResponseSingleConfig:
 class BillSubsApiBillingResponseSingleAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 BillSubsApiBillingResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_billing_response_single",

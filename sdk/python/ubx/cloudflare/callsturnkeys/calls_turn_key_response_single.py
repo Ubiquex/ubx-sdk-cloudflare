@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CallsTurnKeyResponseSingle_Result:
+    # The date and time the item was created.
+    created: Any = None
+    # The date and time the item was last modified.
+    modified: Any = None
+    # A short description of Calls app, not shown to end users.
+    name: Any = None
+    # A Cloudflare-generated unique identifier for a item.
+    uid: Any = None
+
+@dataclasses.dataclass
 class CallsTurnKeyResponseSingleConfig:
     # A short description of a TURN key, not shown to end users.
     name: Any = None
@@ -19,6 +30,7 @@ class CallsTurnKeyResponseSingleConfig:
 class CallsTurnKeyResponseSingleAttrs:
     # A short description of a TURN key, not shown to end users.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

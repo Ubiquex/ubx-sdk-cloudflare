@@ -11,6 +11,31 @@ class AddressingFullResponse_Memberships:
     identifier: Any = None
     kind: Any = None
 
+@dataclasses.dataclass
+class AddressingFullResponse_Result_Ips:
+    created_at: Any = None
+    ip: Any = None
+
+@dataclasses.dataclass
+class AddressingFullResponse_Result_Memberships:
+    can_delete: Any = None
+    created_at: Any = None
+    identifier: Any = None
+    kind: Any = None
+
+@dataclasses.dataclass
+class AddressingFullResponse_Result:
+    can_delete: Any = None
+    can_modify_ips: Any = None
+    created_at: Any = None
+    default_sni: Any = None
+    description: Any = None
+    enabled: Any = None
+    id: Any = None
+    ips: Any = None
+    memberships: Any = None
+    modified_at: Any = None
+
 _AddressingFullResponse_MembershipsFields = {
     "identifier": ubx.FieldSpec(wire_name="identifier"),
     "kind": ubx.FieldSpec(wire_name="kind"),
@@ -39,6 +64,7 @@ class AddressingFullResponseAttrs:
     ips: Any = None
     # Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
     memberships: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -4,6 +4,17 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamTokenVerifyResponseSingleSegment_AccountId {
 }
 
+export interface IamTokenVerifyResponseSingleSegment_Result {
+  /** The expiration time on or after which the JWT MUST NOT be accepted for processing. */
+  expiresOn?: string | Computed<string>;
+  /** Token identifier tag. */
+  id?: string | Computed<string>;
+  /** The time before which the token MUST NOT be accepted for processing. */
+  notBefore?: string | Computed<string>;
+  /** Status of the token. */
+  status: string | Computed<string>;
+}
+
 const IamTokenVerifyResponseSingleSegment_AccountIdFields: FieldMap = {
 };
 
@@ -15,6 +26,7 @@ export interface IamTokenVerifyResponseSingleSegmentConfig {
 export interface IamTokenVerifyResponseSingleSegmentAttrs {
   /** Account identifier tag. */
   accountId: IamTokenVerifyResponseSingleSegment_AccountId;
+  result: IamTokenVerifyResponseSingleSegment_Result;
 }
 
 export const IamTokenVerifyResponseSingleSegment: DataSourceBinding<IamTokenVerifyResponseSingleSegmentConfig, IamTokenVerifyResponseSingleSegmentAttrs> = {

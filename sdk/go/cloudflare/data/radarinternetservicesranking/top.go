@@ -4,14 +4,14 @@ package radarinternetservicesranking
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Top_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Top_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Top_Result_Meta_ConfidenceInfo struct {
 }
 
 type Top_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Top_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Top_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -42,7 +42,7 @@ type Top_Result_Meta struct {
 }
 
 type Top_Result_Top0 struct {
-	Rank any
+	Rank    any
 	Service any
 }
 
@@ -72,20 +72,20 @@ type TopAttrs struct {
 	// Limits the number of objects returned in the response.
 	Limit any
 	// Array of names used to label the series in the response.
-	Name any
+	Name   any
 	Result any
 	// Filters results by Internet service category.
 	ServiceCategory any
-	Success any
+	Success         any
 }
 
 var Top = ubx.DataSourceBinding{
 	WireType: "cloudflare_top",
 	Fields: ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Date":            ubx.FieldSpec{WireName: "date"},
+		"Format":          ubx.FieldSpec{WireName: "format"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ServiceCategory": ubx.FieldSpec{WireName: "service_category"},
 	},
 }

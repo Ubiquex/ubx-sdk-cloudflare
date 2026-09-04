@@ -3,16 +3,32 @@ package notificationalerttypes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaAlertsResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaAlertsResponseCollection_Result struct {
+	Description   any
+	DisplayName   any
+	FilterOptions any
+	Type          any
+}
+
 type AaaAlertsResponseCollectionConfig struct {
 }
 
 type AaaAlertsResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaAlertsResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_alerts_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -20,6 +20,53 @@ class UserGroup_Policies:
     permission_groups: Any = None
     resource_groups: Any = None
 
+@dataclasses.dataclass
+class UserGroup_Result_Policies_PermissionGroups_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_PermissionGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups_Scope_Objects:
+    key: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups_Scope:
+    key: Any = None
+    objects: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies_ResourceGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result_Policies:
+    access: Any = None
+    id: Any = None
+    permission_groups: Any = None
+    resource_groups: Any = None
+
+@dataclasses.dataclass
+class UserGroup_Result:
+    # Timestamp for the creation of the user group
+    created_on: Any = None
+    # User Group identifier tag.
+    id: Any = None
+    # Last time the user group was modified.
+    modified_on: Any = None
+    # Name of the user group.
+    name: Any = None
+    # Policies attached to the User group
+    policies: Any = None
+
 _UserGroup_Policies_PermissionGroups_IdFields = {
 }
 
@@ -62,6 +109,8 @@ class UserGroupAttrs:
     name: Any = None
     # Policies attached to the User group
     policies: Any = None
+    # A group of policies resources.
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

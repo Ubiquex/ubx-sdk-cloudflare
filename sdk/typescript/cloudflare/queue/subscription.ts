@@ -6,7 +6,12 @@ export interface Subscription_Destination {
   type?: string | Computed<string>;
 }
 
-export interface Subscription_Source {
+export interface Subscription_Errors {
+  code?: number | Computed<number>;
+  message?: string | Computed<string>;
+}
+
+export interface Subscription_Result_Source {
   modelName?: string | Computed<string>;
   scriptTag?: string | Computed<string>;
   type?: string | Computed<string>;
@@ -14,12 +19,31 @@ export interface Subscription_Source {
   workflowName?: string | Computed<string>;
 }
 
+export interface Subscription_Result {
+  /** When the subscription was created */
+  createdAt: string | Computed<string>;
+  /** Destination configuration for the subscription */
+  destination: Subscription_Destination | Computed<Subscription_Destination>;
+  /** Whether the subscription is active */
+  enabled: boolean | Computed<boolean>;
+  /** List of event types this subscription handles */
+  events: string[] | Computed<string[]>;
+  /** Unique identifier for the subscription */
+  id: string | Computed<string>;
+  /** When the subscription was last modified */
+  modifiedAt: string | Computed<string>;
+  /** Name of the subscription */
+  name: string | Computed<string>;
+  /** Source configuration for the subscription */
+  source: Subscription_Result_Source | Computed<Subscription_Result_Source>;
+}
+
 const Subscription_DestinationFields: FieldMap = {
   queueId: "queue_id",
   type: "type",
 };
 
-const Subscription_SourceFields: FieldMap = {
+const Subscription_Result_SourceFields: FieldMap = {
   modelName: "model_name",
   scriptTag: "script_tag",
   type: "type",
@@ -37,7 +61,7 @@ export interface SubscriptionConfig {
   /** Name of the subscription */
   name?: string | Computed<string>;
   /** Source configuration for the subscription */
-  source?: Subscription_Source | Computed<Subscription_Source>;
+  source?: Subscription_Result_Source | Computed<Subscription_Result_Source>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -49,12 +73,17 @@ export interface SubscriptionAttrs {
   destination: Subscription_Destination;
   /** Whether the subscription is active */
   enabled: boolean;
+  errors: Subscription_Errors[];
   /** List of event types this subscription handles */
   events: string[];
+  messages: string[];
   /** Name of the subscription */
   name: string;
+  result: Subscription_Result;
   /** Source configuration for the subscription */
-  source: Subscription_Source;
+  source: Subscription_Result_Source;
+  /** Indicates if the API call was successful or not. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -75,7 +104,7 @@ export const Subscription: ResourceBinding<SubscriptionConfig, SubscriptionAttrs
     source: {
       wireName: "source",
       kind: "object",
-      fields: Subscription_SourceFields,
+      fields: Subscription_Result_SourceFields,
     },
     accountId: "account_id",
     subscriptionId: "subscription_id",

@@ -3,6 +3,20 @@ package cloudflareimages
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImagesListResponseV2_Result_Images struct {
+	Creator           any
+	Filename          any
+	Id                any
+	Meta              any
+	RequireSignedUrls any
+	Uploaded          any
+	Variants          any
+}
+
+type ImagesImagesListResponseV2_Result struct {
+	Images any
+}
+
 type ImagesImagesListResponseV2Config struct {
 	// Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
 	Creator any
@@ -21,6 +35,7 @@ type ImagesImagesListResponseV2Attrs struct {
 	Creator any
 	// Number of items per page
 	PerPage any
+	Result  any
 	// Sorting order by upload time
 	SortOrder any
 }
@@ -28,8 +43,8 @@ type ImagesImagesListResponseV2Attrs struct {
 var ImagesImagesListResponseV2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_images_list_response_v2",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Creator":   ubx.FieldSpec{WireName: "creator"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

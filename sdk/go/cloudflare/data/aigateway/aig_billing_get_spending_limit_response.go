@@ -4,25 +4,25 @@ package aigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AigBillingGetSpendingLimitResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type AigBillingGetSpendingLimitResponse_Result_Config struct {
-	Amount any
+	Amount   any
 	Duration any
 	Strategy any
 }
 
 type AigBillingGetSpendingLimitResponse_Result struct {
-	Config any
+	Config  any
 	Enabled any
 }
 
 type AigBillingGetSpendingLimitResponse_ResultInfo struct {
-	HasMore any
-	Page any
-	PerPage any
+	HasMore    any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -31,12 +31,12 @@ type AigBillingGetSpendingLimitResponseConfig struct {
 }
 
 type AigBillingGetSpendingLimitResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AigBillingGetSpendingLimitResponse = ubx.DataSourceBinding{

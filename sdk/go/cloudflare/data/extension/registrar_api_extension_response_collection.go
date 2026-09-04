@@ -3,31 +3,67 @@ package extension
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegistrarApiExtensionResponseCollectionConfig struct {
-	Cursor any
-	Direction any
+type RegistrarApiExtensionResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiExtensionResponseCollection_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiExtensionResponseCollection_Result_Metadata struct {
 	Name any
+	Tld  any
+}
+
+type RegistrarApiExtensionResponseCollection_Result struct {
+	Metadata           any
+	RegistrationSchema any
+}
+
+type RegistrarApiExtensionResponseCollection_ResultInfo struct {
+	// Number of items in the current result set.
+	Count any
+	// Opaque token for the next page. Empty string when no more pages.
+	Cursor any
+	// Number of items per page.
 	PerPage any
-	SortBy any
+}
+
+type RegistrarApiExtensionResponseCollectionConfig struct {
+	Cursor    any
+	Direction any
+	Name      any
+	PerPage   any
+	SortBy    any
 }
 
 type RegistrarApiExtensionResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Cursor any
+	Cursor    any
 	Direction any
-	Name any
-	PerPage any
-	SortBy any
+	Errors    any
+	Messages  any
+	Name      any
+	PerPage   any
+	Result    any
+	// Cursor-based pagination metadata.
+	ResultInfo any
+	SortBy     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiExtensionResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_registrar_api_extension_response_collection",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

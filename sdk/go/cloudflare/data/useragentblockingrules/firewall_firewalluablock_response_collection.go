@@ -6,8 +6,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FirewallFirewalluablockResponseCollection_Description struct {
 }
 
-var FirewallFirewalluablockResponseCollection_DescriptionFields = ubx.FieldMap{
-	}
+type FirewallFirewalluablockResponseCollection_Result_Configuration struct {
+	Target any
+	Value  any
+}
+
+type FirewallFirewalluablockResponseCollection_Result struct {
+	Configuration any
+	Description   any
+	Id            any
+	Mode          any
+	Paused        any
+}
+
+var FirewallFirewalluablockResponseCollection_DescriptionFields = ubx.FieldMap{}
 
 type FirewallFirewalluablockResponseCollectionConfig struct {
 	Description any
@@ -29,6 +41,7 @@ type FirewallFirewalluablockResponseCollectionAttrs struct {
 	Paused any
 	// The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
 	PerPage any
+	Result  any
 	// A string to search for in the user agent values of existing rules.
 	UserAgent any
 	// Defines an identifier.
@@ -40,12 +53,12 @@ var FirewallFirewalluablockResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{
 			WireName: "description",
-			Kind: "object",
-			Fields: FirewallFirewalluablockResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallFirewalluablockResponseCollection_DescriptionFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"Paused":    ubx.FieldSpec{WireName: "paused"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
 	},
 }

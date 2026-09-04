@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersNamespaceListResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceListResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceListResponse_Result:
+    created_by: Any = None
+    created_on: Any = None
+    modified_by: Any = None
+    modified_on: Any = None
+    namespace_id: Any = None
+    namespace_name: Any = None
+    script_count: Any = None
+    trusted_workers: Any = None
+
+@dataclasses.dataclass
 class WorkersNamespaceListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +37,11 @@ class WorkersNamespaceListResponseConfig:
 class WorkersNamespaceListResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 WorkersNamespaceListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_workers_namespace_list_response",

@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosInfraPrefixResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosInfraPrefixResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosInfraPrefixResponse_Result:
+    # An optional comment describing the allowlist prefix.
+    comment: Any = None
+    # The creation timestamp of the allowlist prefix.
+    created_on: Any = None
+    # Whether to enable the allowlist prefix into effect. Defaults to false.
+    enabled: Any = None
+    # The unique ID of the allowlist prefix.
+    id: Any = None
+    # The last modification timestamp of the allowlist prefix.
+    modified_on: Any = None
+    # The allowlist prefix in CIDR format.
+    prefix: Any = None
+
+@dataclasses.dataclass
 class DosInfraPrefixResponseConfig:
     # An comment describing the allowlist prefix.
     comment: Any = None
@@ -25,8 +51,13 @@ class DosInfraPrefixResponseAttrs:
     comment: Any = None
     # Whether to enable the allowlist prefix into effect.
     enabled: Any = None
+    errors: Any = None
+    messages: Any = None
     # The allowlist prefix to add in CIDR format.
     prefix: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

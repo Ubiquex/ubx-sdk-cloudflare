@@ -3,16 +3,24 @@ package contentscanning
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseStatus2_Result struct {
+	// Defines the last modification date (ISO 8601) of the Content Scanning status.
+	Modified any
+	// Defines the status of Content Scanning.
+	Value any
+}
+
 type WafProductApiBundleResponseStatus2Config struct {
 }
 
 type WafProductApiBundleResponseStatus2Attrs struct {
+	// Defines the status for Content Scanning.
+	Result any
 	// Defines an identifier.
 	ZoneId any
 }
 
 var WafProductApiBundleResponseStatus2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_product_api_bundle_response_status_2",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

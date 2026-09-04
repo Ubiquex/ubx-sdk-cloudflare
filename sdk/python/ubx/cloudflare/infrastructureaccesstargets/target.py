@@ -20,6 +20,19 @@ class Target_Ip:
     # The target's IPv6 address
     ipv6: Any = None
 
+@dataclasses.dataclass
+class Target_Result:
+    # Date and time at which the target was created
+    created_at: Any = None
+    # A non-unique field that refers to a target
+    hostname: Any = None
+    # Target identifier
+    id: Any = None
+    # The IPv4/IPv6 address that identifies where to reach a target
+    ip: Any = None
+    # Date and time at which the target was modified
+    modified_at: Any = None
+
 _Target_Ip_Ipv4Fields = {
     "ip_addr": ubx.FieldSpec(wire_name="ip_addr"),
     "virtual_network_id": ubx.FieldSpec(wire_name="virtual_network_id"),
@@ -55,6 +68,7 @@ class TargetAttrs:
     hostname: Any = None
     # The IPv4/IPv6 address that identifies where to reach a target
     ip: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

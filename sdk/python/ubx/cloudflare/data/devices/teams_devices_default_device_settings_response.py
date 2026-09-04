@@ -7,12 +7,100 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_DnsSearchSuffixes:
+    description: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_Exclude:
+    address: Any = None
+    description: Any = None
+    host: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_FallbackDomains:
+    description: Any = None
+    dns_server: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_GlobalAcceleration:
+    # IP:port entries for the API endpoints.
+    api_endpoints: Any = None
+    # Global acceleration settings are used only when "enabled".
+    enabled: Any = None
+    # IP:port entries for the MASQUE tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.
+    masque_endpoints: Any = None
+    # IP:port entries for the WireGuard tunnel endpoints. Either wireguard_endpoints or masque_endpoints must be provided.
+    wireguard_endpoints: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_ServiceModeV2:
+    # The mode to run the WARP client under.
+    mode: Any = None
+    # The port number when used with proxy mode.
+    port: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result_VirtualNetworks:
+    # List of virtual network IDs the device is allowed to access. When virtual_networks is set, at least one entry is required.
+    allowed: Any = None
+    # The default virtual network ID. Must be included in the `allowed` list.
+    default: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDefaultDeviceSettingsResponse_Result:
+    # Whether to allow the user to switch WARP between modes.
+    allow_mode_switch: Any = None
+    # Whether to receive update notifications when a new version of the client is available.
+    allow_updates: Any = None
+    # Whether to allow devices to leave the organization.
+    allowed_to_leave: Any = None
+    # The amount of time in seconds to reconnect after having been disabled.
+    auto_connect: Any = None
+    # Turn on the captive portal after the specified amount of time.
+    captive_portal: Any = None
+    # Whether the policy will be applied to matching devices.
+    default: Any = None
+    # If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
+    disable_auto_fallback: Any = None
+    # List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
+    dns_search_suffixes: Any = None
+    # Whether the policy will be applied to matching devices.
+    enabled: Any = None
+    # List of routes excluded in the WARP client's tunnel.
+    exclude: Any = None
+    # Whether to add Microsoft IPs to Split Tunnel exclusions.
+    exclude_office_ips: Any = None
+    fallback_domains: Any = None
+    gateway_unique_id: Any = None
+    # Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.
+    global_acceleration: Any = None
+    # List of routes included in the WARP client's tunnel.
+    include: Any = None
+    policy_id: Any = None
+    # Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
+    register_interface_ip_with_dns: Any = None
+    # Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
+    sccm_vpn_boundary_support: Any = None
+    service_mode_v2: Any = None
+    # The URL to launch when the Send Feedback button is clicked.
+    support_url: Any = None
+    # Whether to allow the user to turn off the WARP switch and disconnect the client.
+    switch_locked: Any = None
+    # Determines which tunnel protocol to use.
+    tunnel_protocol: Any = None
+    # Virtual network access settings for the device.
+    virtual_networks: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesDefaultDeviceSettingsResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesDefaultDeviceSettingsResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesDefaultDeviceSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_default_device_settings_response",

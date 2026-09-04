@@ -5,6 +5,8 @@ export interface SecondaryDnsEnableTransferResponseConfig {
 }
 
 export interface SecondaryDnsEnableTransferResponseAttrs {
+  /** The zone transfer status of a primary zone. */
+  result: string;
   zoneId: string;
 }
 

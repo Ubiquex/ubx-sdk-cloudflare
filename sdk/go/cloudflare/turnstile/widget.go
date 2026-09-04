@@ -3,12 +3,43 @@ package turnstile
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Widget_Errors struct {
+	Code    any
+	Message any
+}
+
+type Widget_Result struct {
+	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only).
+	BotFightMode any
+	// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
+	ClearanceLevel any
+	// When the widget was created.
+	CreatedOn any
+	Domains   any
+	// Return the Ephemeral ID in /siteverify (ENT only).
+	EphemeralId any
+	// Widget Mode
+	Mode any
+	// When the widget was modified.
+	ModifiedOn any
+	// Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used.
+	Name any
+	// Do not show any Cloudflare branding on the widget (ENT only).
+	Offlabel any
+	// Region where this widget can be used. This cannot be changed after creation.
+	Region any
+	// Secret key for this widget.
+	Secret any
+	// Widget item identifier tag.
+	Sitekey any
+}
+
 type WidgetConfig struct {
 	// If bot_fight_mode is set to `true`, Cloudflare issues computationally expensive challenges in response to malicious bots (ENT only).
 	BotFightMode any
 	// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel any
-	Domains any
+	Domains        any
 	// Return the Ephemeral ID in /siteverify (ENT only).
 	EphemeralId any
 	// Widget Mode
@@ -30,9 +61,11 @@ type WidgetAttrs struct {
 	BotFightMode any
 	// If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance, this setting can determine the clearance level to be set
 	ClearanceLevel any
-	Domains any
+	Domains        any
 	// Return the Ephemeral ID in /siteverify (ENT only).
 	EphemeralId any
+	Errors      any
+	Messages    any
 	// Widget Mode
 	Mode any
 	// Human readable widget name. Not unique. Cloudflare suggests that you set this to a meaningful string to make it easier to identify your widget, and where it is used.
@@ -41,6 +74,10 @@ type WidgetAttrs struct {
 	Offlabel any
 	// Region where this widget can be used. This cannot be changed after creation.
 	Region any
+	// A Turnstile widget's detailed configuration
+	Result any
+	// Whether the API call was successful
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -50,15 +87,15 @@ type WidgetAttrs struct {
 var Widget = ubx.ResourceBinding{
 	WireType: "cloudflare_widget",
 	Fields: ubx.FieldMap{
-		"BotFightMode": ubx.FieldSpec{WireName: "bot_fight_mode"},
+		"BotFightMode":   ubx.FieldSpec{WireName: "bot_fight_mode"},
 		"ClearanceLevel": ubx.FieldSpec{WireName: "clearance_level"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"EphemeralId": ubx.FieldSpec{WireName: "ephemeral_id"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offlabel": ubx.FieldSpec{WireName: "offlabel"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Sitekey": ubx.FieldSpec{WireName: "sitekey"},
+		"Domains":        ubx.FieldSpec{WireName: "domains"},
+		"EphemeralId":    ubx.FieldSpec{WireName: "ephemeral_id"},
+		"Mode":           ubx.FieldSpec{WireName: "mode"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Offlabel":       ubx.FieldSpec{WireName: "offlabel"},
+		"Region":         ubx.FieldSpec{WireName: "region"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Sitekey":        ubx.FieldSpec{WireName: "sitekey"},
 	},
 }

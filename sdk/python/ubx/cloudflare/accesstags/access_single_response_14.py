@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse14_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessSingleResponse14_Result:
+    # The number of applications that have this tag
+    app_count: Any = None
+    created_at: Any = None
+    # The name of the tag
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse14Config:
     # The name of the tag
     name: Any = None
@@ -19,6 +32,8 @@ class AccessSingleResponse14Config:
 class AccessSingleResponse14Attrs:
     # The name of the tag
     name: Any = None
+    # A tag
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

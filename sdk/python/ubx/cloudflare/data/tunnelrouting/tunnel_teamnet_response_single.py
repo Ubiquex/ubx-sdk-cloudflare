@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTeamnetResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelTeamnetResponseSingle_Result:
+    # Optional remark describing the route.
+    comment: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+    deleted_at: Any = None
+    # UUID of the route.
+    id: Any = None
+    # The private IPv4 or IPv6 range connected by the route, in CIDR notation.
+    network: Any = None
+    # The type of tunnel.
+    tun_type: Any = None
+    # UUID of the tunnel.
+    tunnel_id: Any = None
+    # A user-friendly name for a tunnel.
+    tunnel_name: Any = None
+    # UUID of the virtual network.
+    virtual_network_id: Any = None
+    # A user-friendly name for the virtual network.
+    virtual_network_name: Any = None
+
+@dataclasses.dataclass
 class TunnelTeamnetResponseSingleConfig:
     default_virtual_network_fallback: Any = None
     ip: Any = None
@@ -18,7 +46,12 @@ class TunnelTeamnetResponseSingleAttrs:
     # Cloudflare account ID
     account_id: Any = None
     default_virtual_network_fallback: Any = None
+    errors: Any = None
     ip: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the virtual network.
     virtual_network_id: Any = None
 

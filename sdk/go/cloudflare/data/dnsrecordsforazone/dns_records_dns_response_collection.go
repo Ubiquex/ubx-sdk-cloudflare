@@ -3,6 +3,23 @@ package dnsrecordsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsRecordsDnsResponseCollection_Result_Meta struct {
+	DeadGlue             any
+	IsGlue               any
+	ShadowedBy           any
+	ShadowedRecordsCount any
+}
+
+type DnsRecordsDnsResponseCollection_Result struct {
+	CommentModifiedOn any
+	CreatedOn         any
+	Id                any
+	Meta              any
+	ModifiedOn        any
+	Proxiable         any
+	TagsModifiedOn    any
+}
+
 type DnsRecordsDnsResponseCollectionConfig struct {
 	// Exact value of the DNS record comment. This is a convenience alias for `comment.exact`.
 	Comment any
@@ -129,6 +146,7 @@ type DnsRecordsDnsResponseCollectionAttrs struct {
 	PerPage any
 	// Whether the record is receiving the performance and security benefits of Cloudflare.
 	Proxied any
+	Result  any
 	// Allows searching in multiple properties of a DNS record simultaneously. This parameter is intended for human users, not automation. Its exact behavior is intentionally left unspecified and is subject to change in the future. This parameter works independently of the `match` setting. For automated searches, please use the other available parameters.
 	Search any
 	// Filters to records at or below the given NS delegation name, excluding the NS records that form the delegation itself. The value must be a subdomain of the zone; the zone apex is not accepted. Requires `include_shadow_metadata=true`. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).
@@ -160,42 +178,42 @@ type DnsRecordsDnsResponseCollectionAttrs struct {
 var DnsRecordsDnsResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_dns_records_dns_response_collection",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"CommentAbsent": ubx.FieldSpec{WireName: "comment_absent"},
-		"CommentContains": ubx.FieldSpec{WireName: "comment_contains"},
-		"CommentEndswith": ubx.FieldSpec{WireName: "comment_endswith"},
-		"CommentExact": ubx.FieldSpec{WireName: "comment_exact"},
-		"CommentPresent": ubx.FieldSpec{WireName: "comment_present"},
-		"CommentStartswith": ubx.FieldSpec{WireName: "comment_startswith"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentContains": ubx.FieldSpec{WireName: "content_contains"},
-		"ContentEndswith": ubx.FieldSpec{WireName: "content_endswith"},
-		"ContentExact": ubx.FieldSpec{WireName: "content_exact"},
-		"ContentStartswith": ubx.FieldSpec{WireName: "content_startswith"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Comment":               ubx.FieldSpec{WireName: "comment"},
+		"CommentAbsent":         ubx.FieldSpec{WireName: "comment_absent"},
+		"CommentContains":       ubx.FieldSpec{WireName: "comment_contains"},
+		"CommentEndswith":       ubx.FieldSpec{WireName: "comment_endswith"},
+		"CommentExact":          ubx.FieldSpec{WireName: "comment_exact"},
+		"CommentPresent":        ubx.FieldSpec{WireName: "comment_present"},
+		"CommentStartswith":     ubx.FieldSpec{WireName: "comment_startswith"},
+		"Content":               ubx.FieldSpec{WireName: "content"},
+		"ContentContains":       ubx.FieldSpec{WireName: "content_contains"},
+		"ContentEndswith":       ubx.FieldSpec{WireName: "content_endswith"},
+		"ContentExact":          ubx.FieldSpec{WireName: "content_exact"},
+		"ContentStartswith":     ubx.FieldSpec{WireName: "content_startswith"},
+		"Direction":             ubx.FieldSpec{WireName: "direction"},
 		"IncludeShadowMetadata": ubx.FieldSpec{WireName: "include_shadow_metadata"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NameEndswith": ubx.FieldSpec{WireName: "name_endswith"},
-		"NameExact": ubx.FieldSpec{WireName: "name_exact"},
-		"NameStartswith": ubx.FieldSpec{WireName: "name_startswith"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Proxied": ubx.FieldSpec{WireName: "proxied"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"ShadowedByName": ubx.FieldSpec{WireName: "shadowed_by_name"},
-		"ShadowingName": ubx.FieldSpec{WireName: "shadowing_name"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"TagAbsent": ubx.FieldSpec{WireName: "tag_absent"},
-		"TagContains": ubx.FieldSpec{WireName: "tag_contains"},
-		"TagEndswith": ubx.FieldSpec{WireName: "tag_endswith"},
-		"TagExact": ubx.FieldSpec{WireName: "tag_exact"},
-		"TagMatch": ubx.FieldSpec{WireName: "tag_match"},
-		"TagPresent": ubx.FieldSpec{WireName: "tag_present"},
-		"TagStartswith": ubx.FieldSpec{WireName: "tag_startswith"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Match":                 ubx.FieldSpec{WireName: "match"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"NameContains":          ubx.FieldSpec{WireName: "name_contains"},
+		"NameEndswith":          ubx.FieldSpec{WireName: "name_endswith"},
+		"NameExact":             ubx.FieldSpec{WireName: "name_exact"},
+		"NameStartswith":        ubx.FieldSpec{WireName: "name_startswith"},
+		"Order":                 ubx.FieldSpec{WireName: "order"},
+		"Page":                  ubx.FieldSpec{WireName: "page"},
+		"PerPage":               ubx.FieldSpec{WireName: "per_page"},
+		"Proxied":               ubx.FieldSpec{WireName: "proxied"},
+		"Search":                ubx.FieldSpec{WireName: "search"},
+		"ShadowedByName":        ubx.FieldSpec{WireName: "shadowed_by_name"},
+		"ShadowingName":         ubx.FieldSpec{WireName: "shadowing_name"},
+		"Tag":                   ubx.FieldSpec{WireName: "tag"},
+		"TagAbsent":             ubx.FieldSpec{WireName: "tag_absent"},
+		"TagContains":           ubx.FieldSpec{WireName: "tag_contains"},
+		"TagEndswith":           ubx.FieldSpec{WireName: "tag_endswith"},
+		"TagExact":              ubx.FieldSpec{WireName: "tag_exact"},
+		"TagMatch":              ubx.FieldSpec{WireName: "tag_match"},
+		"TagPresent":            ubx.FieldSpec{WireName: "tag_present"},
+		"TagStartswith":         ubx.FieldSpec{WireName: "tag_startswith"},
+		"Type":                  ubx.FieldSpec{WireName: "type"},
+		"ZoneId":                ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

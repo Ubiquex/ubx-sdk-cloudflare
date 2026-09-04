@@ -3,18 +3,42 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelTunnelConnectionsResponse_Result_Conns_OriginIp struct {
+}
+
+type TunnelTunnelConnectionsResponse_Result_Conns struct {
+	ClientId           any
+	ClientVersion      any
+	ColoName           any
+	Id                 any
+	IsPendingReconnect any
+	OpenedAt           any
+	OriginIp           any
+	Uuid               any
+}
+
+type TunnelTunnelConnectionsResponse_Result struct {
+	Arch          any
+	ConfigVersion any
+	Conns         any
+	Features      any
+	Id            any
+	RunAt         any
+	Version       any
+}
+
 type TunnelTunnelConnectionsResponseConfig struct {
 }
 
 type TunnelTunnelConnectionsResponseAttrs struct {
 	// Cloudflare account ID
 	AccountId any
+	Result    any
 	// UUID of the tunnel.
 	TunnelId any
 }
 
 var TunnelTunnelConnectionsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_tunnel_connections_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

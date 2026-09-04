@@ -3,6 +3,36 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosTcpFlowProtectionRuleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosTcpFlowProtectionRuleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosTcpFlowProtectionRuleResponse_Result struct {
+	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+	BurstSensitivity any
+	// The creation timestamp of the TCP Flow Protection rule.
+	CreatedOn any
+	// The unique ID of the TCP Flow Protection rule.
+	Id any
+	// The mode for TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+	Mode any
+	// The last modification timestamp of the TCP Flow Protection rule.
+	ModifiedOn any
+	// The name of the TCP Flow Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+	Name any
+	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+	RateSensitivity any
+	// The scope for the TCP Flow Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+	Scope any
+}
+
 type DosTcpFlowProtectionRuleResponseConfig struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
@@ -23,14 +53,19 @@ type DosTcpFlowProtectionRuleResponseConfig struct {
 type DosTcpFlowProtectionRuleResponseAttrs struct {
 	// The burst sensitivity. Must be one of 'low', 'medium', 'high'.
 	BurstSensitivity any
+	Errors           any
+	Messages         any
 	// The mode for the TCP Flow Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
 	Mode any
 	// The name of the TCP Flow Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
 	Name any
 	// The rate sensitivity. Must be one of 'low', 'medium', 'high'.
 	RateSensitivity any
+	Result          any
 	// The scope for the TCP Flow Protection rule.
 	Scope any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -41,11 +76,11 @@ var DosTcpFlowProtectionRuleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_tcp_flow_protection_rule_response",
 	Fields: ubx.FieldMap{
 		"BurstSensitivity": ubx.FieldSpec{WireName: "burst_sensitivity"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RateSensitivity": ubx.FieldSpec{WireName: "rate_sensitivity"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"Mode":             ubx.FieldSpec{WireName: "mode"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"RateSensitivity":  ubx.FieldSpec{WireName: "rate_sensitivity"},
+		"Scope":            ubx.FieldSpec{WireName: "scope"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"RuleId":           ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection11_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection11_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection11_Result:
+    action: Any = None
+    allowed: Any = None
+    app_domain: Any = None
+    app_uid: Any = None
+    connection: Any = None
+    created_at: Any = None
+    ip_address: Any = None
+    ray_id: Any = None
+    user_email: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection11Config:
     # Identifier.
     account_id: Any = None
@@ -47,16 +70,21 @@ class AccessResponseCollection11Attrs:
     email: Any = None
     email_exact: Any = None
     email_op: Any = None
+    errors: Any = None
     fields: Any = None
     idp_op: Any = None
     limit: Any = None
+    messages: Any = None
     non_identity_op: Any = None
     # Page number of results.
     page: Any = None
     # Number of results per page.
     per_page: Any = None
     ray_id_op: Any = None
+    result: Any = None
     since: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     until: Any = None
     # The UUID of the authenticating user.
     user_id: Any = None

@@ -6,19 +6,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type NscStatusInfoConfig struct {
 	// Customer account tag
 	AccountId any
-	Icon any
+	Icon      any
 }
 
 type NscStatusInfoAttrs struct {
 	// Customer account tag
 	AccountId any
-	Icon any
+	Icon      any
 }
 
 var NscStatusInfo = ubx.DataSourceBinding{
 	WireType: "cloudflare_nsc_status_info",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
+		"Icon":      ubx.FieldSpec{WireName: "icon"},
 	},
 }

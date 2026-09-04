@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class Index_Config:
     pass
 
+@dataclasses.dataclass
+class Index_Result_Config:
+    # Specifies the number of dimensions for the index
+    dimensions: Any = None
+    # Specifies the type of metric to use calculating distance.
+    metric: Any = None
+
+@dataclasses.dataclass
+class Index_Result:
+    config: Any = None
+    # Specifies the timestamp the resource was created as an ISO8601 string.
+    created_on: Any = None
+    # Specifies the description of the index.
+    description: Any = None
+    # Specifies the timestamp the resource was modified as an ISO8601 string.
+    modified_on: Any = None
+    name: Any = None
+
 _Index_ConfigFields = {
 }
 
@@ -30,6 +48,7 @@ class IndexAttrs:
     # Specifies the description of the index.
     description: Any = None
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

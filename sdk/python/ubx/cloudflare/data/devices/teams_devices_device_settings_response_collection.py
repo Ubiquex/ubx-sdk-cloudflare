@@ -7,12 +7,85 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_DnsSearchSuffixes:
+    description: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_Exclude:
+    address: Any = None
+    description: Any = None
+    host: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_FallbackDomains:
+    description: Any = None
+    dns_server: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_GlobalAcceleration:
+    api_endpoints: Any = None
+    enabled: Any = None
+    masque_endpoints: Any = None
+    wireguard_endpoints: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_ServiceModeV2:
+    mode: Any = None
+    port: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_TargetTests:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result_VirtualNetworks:
+    allowed: Any = None
+    default: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceSettingsResponseCollection_Result:
+    allow_mode_switch: Any = None
+    allow_updates: Any = None
+    allowed_to_leave: Any = None
+    auto_connect: Any = None
+    captive_portal: Any = None
+    default: Any = None
+    description: Any = None
+    disable_auto_fallback: Any = None
+    dns_search_suffixes: Any = None
+    enabled: Any = None
+    exclude: Any = None
+    exclude_office_ips: Any = None
+    fallback_domains: Any = None
+    gateway_unique_id: Any = None
+    global_acceleration: Any = None
+    include: Any = None
+    lan_allow_minutes: Any = None
+    lan_allow_subnet_size: Any = None
+    match: Any = None
+    name: Any = None
+    policy_id: Any = None
+    precedence: Any = None
+    register_interface_ip_with_dns: Any = None
+    sccm_vpn_boundary_support: Any = None
+    service_mode_v2: Any = None
+    support_url: Any = None
+    switch_locked: Any = None
+    target_tests: Any = None
+    tunnel_protocol: Any = None
+    virtual_networks: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesDeviceSettingsResponseCollectionConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesDeviceSettingsResponseCollectionAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesDeviceSettingsResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_device_settings_response_collection",

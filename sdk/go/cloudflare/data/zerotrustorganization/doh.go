@@ -3,6 +3,11 @@ package zerotrustorganization
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Doh_Result struct {
+	// The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. Note that the maximum duration for this setting is the same as the key rotation period on the account.
+	DohJwtDuration any
+}
+
 type DohConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +16,7 @@ type DohConfig struct {
 type DohAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var Doh = ubx.DataSourceBinding{

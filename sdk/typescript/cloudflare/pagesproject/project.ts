@@ -100,39 +100,109 @@ export interface Project_DeploymentConfigs {
   production?: Project_DeploymentConfigs_Preview | Computed<Project_DeploymentConfigs_Preview>;
 }
 
-export interface Project_Source_Config {
-  /** Whether to enable automatic deployments when pushing to the source repository. When disabled, no deployments (production or preview) will be triggered automatically. */
+export interface Project_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface Project_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: Project_Errors_Source | Computed<Project_Errors_Source>;
+}
+
+export interface Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata {
+  branch?: string | Computed<string>;
+  commitDirty?: boolean | Computed<boolean>;
+  commitHash?: string | Computed<string>;
+  commitMessage?: string | Computed<string>;
+}
+
+export interface Project_Result_CanonicalDeployment_DeploymentTrigger {
+  metadata?: Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata | Computed<Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata>;
+  type?: string | Computed<string>;
+}
+
+export interface Project_Result_CanonicalDeployment_LatestStage {
+  endedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+  startedOn?: string | Computed<string>;
+  status?: string | Computed<string>;
+}
+
+export interface Project_Result_CanonicalDeployment_Source_Config {
   deploymentsEnabled?: boolean | Computed<boolean>;
-  /** The owner of the repository. */
   owner?: string | Computed<string>;
-  /** The owner ID of the repository. */
   ownerId?: string | Computed<string>;
-  /** A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported. */
   pathExcludes?: string[] | Computed<string[]>;
-  /** A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported. */
   pathIncludes?: string[] | Computed<string[]>;
-  /** Whether to enable PR comments. */
   prCommentsEnabled?: boolean | Computed<boolean>;
-  /** A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`. */
   previewBranchExcludes?: string[] | Computed<string[]>;
-  /** A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`. */
   previewBranchIncludes?: string[] | Computed<string[]>;
-  /** Controls whether commits to preview branches trigger a preview deployment. */
   previewDeploymentSetting?: string | Computed<string>;
-  /** The production branch of the repository. */
   productionBranch?: string | Computed<string>;
-  /** Whether to trigger a production deployment on commits to the production branch. */
   productionDeploymentsEnabled?: boolean | Computed<boolean>;
-  /** The ID of the repository. */
   repoId?: string | Computed<string>;
-  /** The name of the repository. */
   repoName?: string | Computed<string>;
 }
 
-export interface Project_Source {
-  config: Project_Source_Config | Computed<Project_Source_Config>;
-  /** The source control management provider. */
-  type: string | Computed<string>;
+export interface Project_Result_CanonicalDeployment_Source {
+  config?: Project_Result_CanonicalDeployment_Source_Config | Computed<Project_Result_CanonicalDeployment_Source_Config>;
+  type?: string | Computed<string>;
+}
+
+export interface Project_Result_CanonicalDeployment {
+  aliases?: string[] | Computed<string[]>;
+  buildConfig?: Project_BuildConfig | Computed<Project_BuildConfig>;
+  createdOn?: string | Computed<string>;
+  deploymentTrigger?: Project_Result_CanonicalDeployment_DeploymentTrigger | Computed<Project_Result_CanonicalDeployment_DeploymentTrigger>;
+  envVars?: Record<string, Project_DeploymentConfigs_Preview_EnvVars> | Computed<Record<string, Project_DeploymentConfigs_Preview_EnvVars>>;
+  environment?: string | Computed<string>;
+  id?: string | Computed<string>;
+  isSkipped?: boolean | Computed<boolean>;
+  latestStage?: Project_Result_CanonicalDeployment_LatestStage | Computed<Project_Result_CanonicalDeployment_LatestStage>;
+  modifiedOn?: string | Computed<string>;
+  projectId?: string | Computed<string>;
+  projectName?: string | Computed<string>;
+  shortId?: string | Computed<string>;
+  skipReason?: string | Computed<string>;
+  source?: Project_Result_CanonicalDeployment_Source | Computed<Project_Result_CanonicalDeployment_Source>;
+  stages?: Project_Result_CanonicalDeployment_LatestStage[] | Computed<Project_Result_CanonicalDeployment_LatestStage[]>;
+  url?: string | Computed<string>;
+  usesFunctions?: boolean | Computed<boolean>;
+}
+
+export interface Project_Result {
+  /** Configs for the project build process. */
+  buildConfig?: Project_BuildConfig | Computed<Project_BuildConfig>;
+  canonicalDeployment: Project_Result_CanonicalDeployment | Computed<Project_Result_CanonicalDeployment>;
+  /** When the project was created. */
+  createdOn?: string | Computed<string>;
+  /** Configs for deployments in a project. */
+  deploymentConfigs: Project_DeploymentConfigs | Computed<Project_DeploymentConfigs>;
+  /** A list of associated custom domains for the project. */
+  domains?: string[] | Computed<string[]>;
+  /** Framework the project is using. */
+  framework?: string | Computed<string>;
+  /** Version of the framework the project is using. */
+  frameworkVersion?: string | Computed<string>;
+  /** ID of the project. */
+  id?: string | Computed<string>;
+  latestDeployment: Project_Result_CanonicalDeployment | Computed<Project_Result_CanonicalDeployment>;
+  /** Name of the project. */
+  name: string | Computed<string>;
+  /** Name of the preview script. */
+  previewScriptName?: string | Computed<string>;
+  /** Production branch of the project. Used to identify production deployments. */
+  productionBranch: string | Computed<string>;
+  /** Name of the production script. */
+  productionScriptName?: string | Computed<string>;
+  /** Configs for the project source control. */
+  source?: Project_Result_CanonicalDeployment_Source | Computed<Project_Result_CanonicalDeployment_Source>;
+  /** The Cloudflare subdomain associated with the project. */
+  subdomain?: string | Computed<string>;
+  /** Whether the project uses functions. */
+  usesFunctions?: boolean | Computed<boolean>;
 }
 
 const Project_BuildConfigFields: FieldMap = {
@@ -290,7 +360,7 @@ const Project_DeploymentConfigsFields: FieldMap = {
   },
 };
 
-const Project_Source_ConfigFields: FieldMap = {
+const Project_Result_CanonicalDeployment_Source_ConfigFields: FieldMap = {
   deploymentsEnabled: "deployments_enabled",
   owner: "owner",
   ownerId: "owner_id",
@@ -306,11 +376,11 @@ const Project_Source_ConfigFields: FieldMap = {
   repoName: "repo_name",
 };
 
-const Project_SourceFields: FieldMap = {
+const Project_Result_CanonicalDeployment_SourceFields: FieldMap = {
   config: {
     wireName: "config",
     kind: "object",
-    fields: Project_Source_ConfigFields,
+    fields: Project_Result_CanonicalDeployment_Source_ConfigFields,
   },
   type: "type",
 };
@@ -325,7 +395,7 @@ export interface ProjectConfig {
   /** Production branch of the project. Used to identify production deployments. */
   productionBranch: string | Computed<string>;
   /** Configs for the project source control. */
-  source?: Project_Source | Computed<Project_Source>;
+  source?: Project_Result_CanonicalDeployment_Source | Computed<Project_Result_CanonicalDeployment_Source>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -337,12 +407,17 @@ export interface ProjectAttrs {
   buildConfig: Project_BuildConfig;
   /** Configs for deployments in a project. */
   deploymentConfigs: Project_DeploymentConfigs;
+  errors: Project_Errors[];
+  messages: Project_Errors[];
   /** Name of the project. */
   name: string;
   /** Production branch of the project. Used to identify production deployments. */
   productionBranch: string;
+  result: Project_Result;
   /** Configs for the project source control. */
-  source: Project_Source;
+  source: Project_Result_CanonicalDeployment_Source;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -367,7 +442,7 @@ export const Project: ResourceBinding<ProjectConfig, ProjectAttrs> = {
     source: {
       wireName: "source",
       kind: "object",
-      fields: Project_SourceFields,
+      fields: Project_Result_CanonicalDeployment_SourceFields,
     },
     accountId: "account_id",
     projectName: "project_name",

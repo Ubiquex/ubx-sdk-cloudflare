@@ -3,16 +3,65 @@ package magicinterconnects
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_Bgp struct {
+	AsNo               any
+	CloudflareEndpoint any
+	CustomerAsn        any
+	CustomerEndpoint   any
+	ExportFilterId     any
+	ExtraPrefixes      any
+	ImportFilterId     any
+	Md5Key             any
+}
+
+type MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_Gre struct {
+	CloudflareEndpoint any
+}
+
+type MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_HealthCheck struct {
+	Direction any
+	Enabled   any
+	Rate      any
+	Source    any
+	Target    any
+	Type      any
+}
+
+type MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects_VirtualPortReservationId struct {
+}
+
+type MagicComponentsSchemasTunnelsCollectionResponse_Result_Interconnects struct {
+	AutomaticReturnRouting   any
+	Bgp                      any
+	ColoName                 any
+	CreatedOn                any
+	Description              any
+	Gre                      any
+	HealthCheck              any
+	Id                       any
+	InterfaceAddress         any
+	InterfaceAddress6        any
+	ModifiedOn               any
+	Mtu                      any
+	Name                     any
+	Version                  any
+	VirtualPortReservationId any
+}
+
+type MagicComponentsSchemasTunnelsCollectionResponse_Result struct {
+	Interconnects any
+}
+
 type MagicComponentsSchemasTunnelsCollectionResponseConfig struct {
 }
 
 type MagicComponentsSchemasTunnelsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var MagicComponentsSchemasTunnelsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_components_schemas_tunnels_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

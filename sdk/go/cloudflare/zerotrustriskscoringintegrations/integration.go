@@ -3,6 +3,24 @@ package zerotrustriskscoringintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Integration_Result struct {
+	// The Cloudflare account tag.
+	AccountTag any
+	// Whether this integration is enabled and should export changes in risk score.
+	Active any
+	// When the integration was created in RFC3339 format.
+	CreatedAt any
+	// The id of the integration, a UUIDv4.
+	Id              any
+	IntegrationType any
+	// A reference ID defined by the client. Should be set to the Access-Okta IDP integration ID. Useful when the risk-score integration needs to be associated with a secondary asset and recalled using that ID.
+	ReferenceId any
+	// The base URL for the tenant. E.g. "https://tenant.okta.com".
+	TenantUrl any
+	// The URL for the Shared Signals Framework configuration, e.g. "/.well-known/sse-configuration/{integration_uuid}/". https://openid.net/specs/openid-sse-framework-1_0.html#rfc.section.6.2.1.
+	WellKnownUrl any
+}
+
 type IntegrationConfig struct {
 	IntegrationType any
 	// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
@@ -19,6 +37,7 @@ type IntegrationAttrs struct {
 	IntegrationType any
 	// A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4). https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider
 	ReferenceId any
+	Result      any
 	// The base url of the tenant, e.g. "https://tenant.okta.com".
 	TenantUrl any
 	// path parameter, not part of the API's own resource representation
@@ -31,9 +50,9 @@ var Integration = ubx.ResourceBinding{
 	WireType: "cloudflare_integration",
 	Fields: ubx.FieldMap{
 		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
-		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
-		"TenantUrl": ubx.FieldSpec{WireName: "tenant_url"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+		"ReferenceId":     ubx.FieldSpec{WireName: "reference_id"},
+		"TenantUrl":       ubx.FieldSpec{WireName: "tenant_url"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"IntegrationId":   ubx.FieldSpec{WireName: "integration_id"},
 	},
 }

@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelMeshConfigurationResponseSingle_Result_Config_Vips:
+    address: Any = None
+
+@dataclasses.dataclass
+class TunnelMeshConfigurationResponseSingle_Result_Config:
+    fnr_id: Any = None
+    vips: Any = None
+    vips_previous: Any = None
+
+@dataclasses.dataclass
+class TunnelMeshConfigurationResponseSingle_Result:
+    # Provider-specific configuration. Present for `aws` and `local` modes.
+    config: Any = None
+    # Monotonically increasing configuration version, incremented on each PUT.
+    configuration_version: Any = None
+    # Timestamp of when the resource was created.
+    created_at: Any = None
+    # High-availability mode for the WARP Connector tunnel. `none` means HA is enabled but no provider is configured yet (newly created tunnels default to this). `disabled` means HA is explicitly turned off. `aws` uses AWS ENI move for failover. `local` uses virtual IPs (VIPs) on the local interface.
+    ha_mode: Any = None
+    # UUID of the tunnel.
+    tunnel_id: Any = None
+    # Timestamp of the last update. Null if never updated.
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class TunnelMeshConfigurationResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +40,7 @@ class TunnelMeshConfigurationResponseSingleConfig:
 class TunnelMeshConfigurationResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

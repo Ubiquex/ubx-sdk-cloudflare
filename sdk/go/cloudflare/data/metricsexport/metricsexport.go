@@ -8,25 +8,24 @@ type Metricsexport_Errors struct {
 }
 
 type Metricsexport_Result struct {
-	CreatedAt any
+	CreatedAt    any
 	Destinations any
-	ResourceId any
+	ResourceId   any
 	ResourceType any
-	UpdatedAt any
+	UpdatedAt    any
 }
 
 type MetricsexportConfig struct {
 }
 
 type MetricsexportAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var Metricsexport = ubx.DataSourceBinding{
 	WireType: "cloudflare_metricsexport",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

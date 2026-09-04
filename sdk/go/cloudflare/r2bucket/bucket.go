@@ -3,6 +3,24 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bucket_Errors struct {
+	Code    any
+	Message any
+}
+
+type Bucket_Result struct {
+	// Creation timestamp.
+	CreationDate any
+	// Jurisdiction where objects in this bucket are guaranteed to be stored.
+	Jurisdiction any
+	// Location of the bucket.
+	Location any
+	// Name of the bucket.
+	Name any
+	// Storage class for newly uploaded objects, unless specified otherwise.
+	StorageClass any
+}
+
 type BucketConfig struct {
 	// Location of the bucket.
 	LocationHint any
@@ -17,12 +35,18 @@ type BucketConfig struct {
 }
 
 type BucketAttrs struct {
+	Errors any
 	// Location of the bucket.
 	LocationHint any
+	Messages     any
 	// Name of the bucket.
 	Name any
+	// A single R2 bucket.
+	Result any
 	// Storage class for newly uploaded objects, unless specified otherwise.
 	StorageClass any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -33,9 +57,9 @@ var Bucket = ubx.ResourceBinding{
 	WireType: "cloudflare_bucket",
 	Fields: ubx.FieldMap{
 		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

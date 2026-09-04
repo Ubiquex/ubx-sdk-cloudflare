@@ -7,11 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PageShield_Result:
+    # When true, indicates that Client-Side Security is enabled.
+    enabled: Any = None
+    # The timestamp of when Client-Side Security was last updated.
+    updated_at: Any = None
+    # When true, CSP reports will be sent to https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report
+    use_cloudflare_reporting_endpoint: Any = None
+    # When true, the paths associated with connections URLs will also be analyzed.
+    use_connection_url_path: Any = None
+
+@dataclasses.dataclass
 class PageShieldConfig:
     pass
 
 @dataclasses.dataclass
 class PageShieldAttrs:
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

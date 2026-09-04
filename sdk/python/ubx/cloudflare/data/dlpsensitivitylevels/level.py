@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Level_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class LevelConfig:
     account_id: Any = None
     sensitivity_group_id: Any = None
@@ -14,6 +22,7 @@ class LevelConfig:
 @dataclasses.dataclass
 class LevelAttrs:
     account_id: Any = None
+    result: Any = None
     sensitivity_group_id: Any = None
 
 Level = ubx.DataSourceBinding(

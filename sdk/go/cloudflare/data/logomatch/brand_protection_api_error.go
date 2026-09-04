@@ -19,6 +19,5 @@ type BrandProtectionApiErrorAttrs struct {
 
 var BrandProtectionApiError = ubx.DataSourceBinding{
 	WireType: "cloudflare_brand_protection_api_error",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

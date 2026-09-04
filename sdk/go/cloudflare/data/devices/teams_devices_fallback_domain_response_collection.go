@@ -3,12 +3,19 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesFallbackDomainResponseCollection_Result struct {
+	Description any
+	DnsServer   any
+	Suffix      any
+}
+
 type TeamsDevicesFallbackDomainResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesFallbackDomainResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesFallbackDomainResponseCollection = ubx.DataSourceBinding{

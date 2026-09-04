@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsSingleResponse_Result:
+    # TSIG algorithm.
+    algo: Any = None
+    id: Any = None
+    # TSIG key name.
+    name: Any = None
+    # TSIG secret.
+    secret: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsSingleResponseConfig:
     # TSIG algorithm.
     algo: Any = None
@@ -26,6 +36,7 @@ class SecondaryDnsSingleResponseAttrs:
     id: Any = None
     # TSIG key name.
     name: Any = None
+    result: Any = None
     # TSIG secret.
     secret: Any = None
     # path parameter, not part of the API's own resource representation

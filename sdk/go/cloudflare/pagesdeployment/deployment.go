@@ -3,6 +3,140 @@ package pagesdeployment
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Deployment_Errors_Source struct {
+	Pointer any
+}
+
+type Deployment_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Deployment_Result_BuildConfig struct {
+	// Enable build caching for the project.
+	BuildCaching any
+	// Command used to build project.
+	BuildCommand any
+	// Assets output directory of the build.
+	DestinationDir any
+	// Directory to run the command.
+	RootDir any
+	// The classifying tag for analytics.
+	WebAnalyticsTag any
+	// The auth token for analytics.
+	WebAnalyticsToken any
+}
+
+type Deployment_Result_DeploymentTrigger_Metadata struct {
+	// Where the trigger happened.
+	Branch any
+	// Whether the deployment trigger commit was dirty.
+	CommitDirty any
+	// Hash of the deployment trigger commit.
+	CommitHash any
+	// Message of the deployment trigger commit.
+	CommitMessage any
+}
+
+type Deployment_Result_DeploymentTrigger struct {
+	// Additional info about the trigger.
+	Metadata any
+	// What caused the deployment.
+	Type any
+}
+
+type Deployment_Result_EnvVars struct {
+	Type  any
+	Value any
+}
+
+type Deployment_Result_LatestStage struct {
+	// When the stage ended.
+	EndedOn any
+	// The current build stage.
+	Name any
+	// When the stage started.
+	StartedOn any
+	// State of the current stage.
+	Status any
+}
+
+type Deployment_Result_Source_Config struct {
+	// Whether to enable automatic deployments when pushing to the source repository. When disabled, no deployments (production or preview) will be triggered automatically.
+	DeploymentsEnabled any
+	// The owner of the repository.
+	Owner any
+	// The owner ID of the repository.
+	OwnerId any
+	// A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+	PathExcludes any
+	// A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+	PathIncludes any
+	// Whether to enable PR comments.
+	PrCommentsEnabled any
+	// A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+	PreviewBranchExcludes any
+	// A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+	PreviewBranchIncludes any
+	// Controls whether commits to preview branches trigger a preview deployment.
+	PreviewDeploymentSetting any
+	// The production branch of the repository.
+	ProductionBranch any
+	// Whether to trigger a production deployment on commits to the production branch.
+	ProductionDeploymentsEnabled any
+	// The ID of the repository.
+	RepoId any
+	// The name of the repository.
+	RepoName any
+}
+
+type Deployment_Result_Source struct {
+	Config any
+	// The source control management provider.
+	Type any
+}
+
+type Deployment_Result struct {
+	// A list of alias URLs pointing to this deployment.
+	Aliases any
+	// Configs for the project build process.
+	BuildConfig any
+	// When the deployment was created.
+	CreatedOn any
+	// Info about what caused the deployment.
+	DeploymentTrigger any
+	// Environment variables used for builds and Pages Functions.
+	EnvVars any
+	// Type of deploy.
+	Environment any
+	// Id of the deployment.
+	Id any
+	// If the deployment has been skipped.
+	IsSkipped any
+	// The status of the deployment.
+	LatestStage any
+	// When the deployment was last modified.
+	ModifiedOn any
+	// Id of the project.
+	ProjectId any
+	// Name of the project.
+	ProjectName any
+	// Short Id (8 character) of the deployment.
+	ShortId any
+	// Why the deployment was skipped.
+	SkipReason any
+	// Configs for the project source control.
+	Source any
+	// List of past stages.
+	Stages any
+	// The live URL to view this deployment.
+	Url any
+	// Whether the deployment uses functions.
+	UsesFunctions any
+}
+
 type DeploymentConfig struct {
 	// Headers configuration file for the deployment.
 	Headers any
@@ -57,12 +191,17 @@ type DeploymentAttrs struct {
 	CommitHash any
 	// Git commit message associated with this deployment.
 	CommitMessage any
+	Errors        any
 	// Functions routing configuration file.
 	FunctionsFilepathRoutingConfigJson any
 	// JSON string containing a manifest of files to deploy. Maps file paths to their content hashes. Required for direct upload deployments. Maximum 20,000 entries.
 	Manifest any
+	Messages any
 	// The build output directory path.
 	PagesBuildOutputDir any
+	Result              any
+	// Whether the API call was successful.
+	Success any
 	// Hash of the Wrangler configuration file used for this deployment.
 	WranglerConfigHash any
 	// path parameter, not part of the API's own resource representation
@@ -76,21 +215,21 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "cloudflare_deployment",
 	Fields: ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "_headers"},
-		"Redirects": ubx.FieldSpec{WireName: "_redirects"},
-		"RoutesJson": ubx.FieldSpec{WireName: "_routes_json"},
-		"WorkerBundle": ubx.FieldSpec{WireName: "_worker_bundle"},
-		"WorkerJs": ubx.FieldSpec{WireName: "_worker_js"},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"CommitDirty": ubx.FieldSpec{WireName: "commit_dirty"},
-		"CommitHash": ubx.FieldSpec{WireName: "commit_hash"},
-		"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
+		"Headers":                            ubx.FieldSpec{WireName: "_headers"},
+		"Redirects":                          ubx.FieldSpec{WireName: "_redirects"},
+		"RoutesJson":                         ubx.FieldSpec{WireName: "_routes_json"},
+		"WorkerBundle":                       ubx.FieldSpec{WireName: "_worker_bundle"},
+		"WorkerJs":                           ubx.FieldSpec{WireName: "_worker_js"},
+		"Branch":                             ubx.FieldSpec{WireName: "branch"},
+		"CommitDirty":                        ubx.FieldSpec{WireName: "commit_dirty"},
+		"CommitHash":                         ubx.FieldSpec{WireName: "commit_hash"},
+		"CommitMessage":                      ubx.FieldSpec{WireName: "commit_message"},
 		"FunctionsFilepathRoutingConfigJson": ubx.FieldSpec{WireName: "functions_filepath_routing_config_json"},
-		"Manifest": ubx.FieldSpec{WireName: "manifest"},
-		"PagesBuildOutputDir": ubx.FieldSpec{WireName: "pages_build_output_dir"},
-		"WranglerConfigHash": ubx.FieldSpec{WireName: "wrangler_config_hash"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
+		"Manifest":                           ubx.FieldSpec{WireName: "manifest"},
+		"PagesBuildOutputDir":                ubx.FieldSpec{WireName: "pages_build_output_dir"},
+		"WranglerConfigHash":                 ubx.FieldSpec{WireName: "wrangler_config_hash"},
+		"AccountId":                          ubx.FieldSpec{WireName: "account_id"},
+		"ProjectName":                        ubx.FieldSpec{WireName: "project_name"},
+		"DeploymentId":                       ubx.FieldSpec{WireName: "deployment_id"},
 	},
 }

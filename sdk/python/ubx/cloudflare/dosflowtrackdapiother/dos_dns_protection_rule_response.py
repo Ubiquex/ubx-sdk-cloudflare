@@ -7,6 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosDnsProtectionRuleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class DosDnsProtectionRuleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class DosDnsProtectionRuleResponse_Result:
+    # Whether to block DNS ANY queries. Defaults to true.
+    block_any_queries: Any = None
+    # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
+    burst_sensitivity: Any = None
+    # The creation timestamp of the DNS Protection rule.
+    created_on: Any = None
+    # The unique ID of the DNS Protection rule.
+    id: Any = None
+    # The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
+    mode: Any = None
+    # The last modification timestamp of the DNS Protection rule.
+    modified_on: Any = None
+    # The name of the DNS Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
+    name: Any = None
+    # The profile sensitivity. Recommended setting is 'low'. Must be one of 'low', 'medium', 'high', or 'very_high'.
+    profile_sensitivity: Any = None
+    # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
+    rate_sensitivity: Any = None
+    # The scope for the DNS Protection rule. Must be one of 'global', 'region', or 'datacenter'.
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosDnsProtectionRuleResponseConfig:
     # Whether to block DNS ANY queries. Optional. Defaults to true.
     block_any_queries: Any = None
@@ -33,6 +67,8 @@ class DosDnsProtectionRuleResponseAttrs:
     block_any_queries: Any = None
     # The burst sensitivity. Must be one of 'low', 'medium', 'high'.
     burst_sensitivity: Any = None
+    errors: Any = None
+    messages: Any = None
     # The mode for DNS Protection. Must be one of 'enabled', 'disabled', 'monitoring'.
     mode: Any = None
     # The name of the DNS Protection rule. Value is relative to the 'scope' setting. For 'global' scope, name should be 'global'. For either the 'region' or 'datacenter' scope, name should be the actual name of the region or datacenter, e.g., 'wnam' or 'lax'.
@@ -41,8 +77,11 @@ class DosDnsProtectionRuleResponseAttrs:
     profile_sensitivity: Any = None
     # The rate sensitivity. Must be one of 'low', 'medium', 'high'.
     rate_sensitivity: Any = None
+    result: Any = None
     # The scope for the DNS Protection rule. Must be one of 'global', 'region', or 'datacenter'.
     scope: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

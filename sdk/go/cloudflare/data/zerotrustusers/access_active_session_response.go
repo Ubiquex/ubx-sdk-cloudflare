@@ -3,10 +3,70 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessActiveSessionResponse_Result_DevicePosture_Check struct {
+	Exists any
+	Path   any
+}
+
+type AccessActiveSessionResponse_Result_DevicePosture struct {
+	Check       any
+	Data        any
+	Description any
+	Error       any
+	Id          any
+	RuleName    any
+	Success     any
+	Timestamp   any
+	Type        any
+}
+
+type AccessActiveSessionResponse_Result_DeviceSessions struct {
+	LastAuthenticated any
+}
+
+type AccessActiveSessionResponse_Result_Geo struct {
+	Country any
+}
+
+type AccessActiveSessionResponse_Result_Idp struct {
+	Id   any
+	Type any
+}
+
+type AccessActiveSessionResponse_Result_MtlsAuth struct {
+	AuthStatus    any
+	CertIssuerDn  any
+	CertIssuerSki any
+	CertPresented any
+	CertSerial    any
+}
+
+type AccessActiveSessionResponse_Result struct {
+	AccountId          any
+	AuthStatus         any
+	CommonName         any
+	DeviceId           any
+	DevicePosture      any
+	DeviceSessions     any
+	Email              any
+	Geo                any
+	Iat                any
+	Idp                any
+	Ip                 any
+	IsActive           any
+	IsGateway          any
+	IsWarp             any
+	MtlsAuth           any
+	ServiceTokenId     any
+	ServiceTokenStatus any
+	UserUuid           any
+	Version            any
+}
+
 type AccessActiveSessionResponseConfig struct {
 	// Identifier.
 	AccountId any
-	Nonce any
+	Nonce     any
 	// UUID.
 	UserId any
 }
@@ -14,7 +74,8 @@ type AccessActiveSessionResponseConfig struct {
 type AccessActiveSessionResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Nonce any
+	Nonce     any
+	Result    any
 	// UUID.
 	UserId any
 }
@@ -23,7 +84,7 @@ var AccessActiveSessionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_active_session_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Nonce": ubx.FieldSpec{WireName: "nonce"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"Nonce":     ubx.FieldSpec{WireName: "nonce"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

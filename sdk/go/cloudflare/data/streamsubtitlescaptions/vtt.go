@@ -24,8 +24,8 @@ type VttAttrs struct {
 var Vtt = ubx.DataSourceBinding{
 	WireType: "cloudflare_vtt",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":   ubx.FieldSpec{WireName: "language"},
 	},
 }

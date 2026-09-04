@@ -40,6 +40,36 @@ export interface ZeroTrustGatewaySingleResponse3_MaxTtl {
   ttlSecs?: number | Computed<number>;
 }
 
+export interface ZeroTrustGatewaySingleResponse3_Result {
+  /** Indicate whether this location is the default location. */
+  clientDefault?: boolean | Computed<boolean>;
+  createdAt?: string | Computed<string>;
+  /** Indicate the identifier of the pair of IPv4 addresses assigned to this location. */
+  dnsDestinationIpsId?: string | Computed<string>;
+  /** Specify the UUID of the IPv6 block brought to the gateway so that this location's IPv6 address is allocated from the Bring Your Own IPv6 (BYOIPv6) block rather than the standard Cloudflare IPv6 block. */
+  dnsDestinationIpv6BlockId?: string | Computed<string>;
+  /** Specify the DNS over HTTPS domain that receives DNS requests. Gateway automatically generates this value. */
+  dohSubdomain?: string | Computed<string>;
+  /** Indicate whether the location must resolve EDNS queries. */
+  ecsSupport?: boolean | Computed<boolean>;
+  /** Configure the destination endpoints for this location. */
+  endpoints?: ZeroTrustGatewaySingleResponse3_Endpoints | Computed<ZeroTrustGatewaySingleResponse3_Endpoints>;
+  id?: string | Computed<string>;
+  /** Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location. */
+  ip?: string | Computed<string>;
+  /** Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only. */
+  ipv4Destination?: string | Computed<string>;
+  /** Show the backup destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only. */
+  ipv4DestinationBackup?: string | Computed<string>;
+  /** Controls how DNS response TTLs are capped for this location relative to the account `max_ttl_secs` setting. Omitting `max_ttl` on update resets it to `inherit`. */
+  maxTtl?: ZeroTrustGatewaySingleResponse3_MaxTtl | Computed<ZeroTrustGatewaySingleResponse3_MaxTtl>;
+  /** Specify the location name. */
+  name?: string | Computed<string>;
+  /** Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location. */
+  networks?: ZeroTrustGatewaySingleResponse3_Endpoints_Doh_Networks[] | Computed<ZeroTrustGatewaySingleResponse3_Endpoints_Doh_Networks[]>;
+  updatedAt?: string | Computed<string>;
+}
+
 const ZeroTrustGatewaySingleResponse3_Endpoints_Doh_NetworksFields: FieldMap = {
   network: "network",
 };
@@ -131,6 +161,7 @@ export interface ZeroTrustGatewaySingleResponse3Attrs {
   name: string;
   /** Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location. */
   networks: ZeroTrustGatewaySingleResponse3_Endpoints_Doh_Networks[];
+  result: ZeroTrustGatewaySingleResponse3_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

@@ -3,6 +3,20 @@ package customcsrsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomCsrResponseCollection_Result struct {
+	CommonName         any
+	Country            any
+	CreatedAt          any
+	Csr                any
+	Id                 any
+	KeyType            any
+	Locality           any
+	Organization       any
+	OrganizationalUnit any
+	Sans               any
+	State              any
+}
+
 type TlsCertificatesAndHostnamesCustomCsrResponseCollectionConfig struct {
 	// Page number of paginated results.
 	Page any
@@ -17,6 +31,7 @@ type TlsCertificatesAndHostnamesCustomCsrResponseCollectionAttrs struct {
 	Page any
 	// Number of custom CSRs per page.
 	PerPage any
+	Result  any
 	// Identifier.
 	ZoneId any
 }
@@ -24,8 +39,8 @@ type TlsCertificatesAndHostnamesCustomCsrResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesCustomCsrResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_csr_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

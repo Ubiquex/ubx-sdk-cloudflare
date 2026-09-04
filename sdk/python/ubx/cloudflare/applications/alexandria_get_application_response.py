@@ -7,6 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AlexandriaGetApplicationResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class AlexandriaGetApplicationResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class AlexandriaGetApplicationResponse_Result:
+    # Confidence score for the application. Returns -1 when no score is available.
+    application_confidence_score: Any = None
+    # Returns the score composition breakdown for the application.
+    application_score_composition: Any = None
+    # Returns the application source.
+    application_source: Any = None
+    # Returns the application type.
+    application_type: Any = None
+    # Returns the application type description.
+    application_type_description: Any = None
+    # Returns the category ID.
+    category_id: Any = None
+    # Returns the application creation time.
+    created_at: Any = None
+    # GenAI score for the application. Returns -1 when no score is available.
+    gen_ai_score: Any = None
+    # Hostnames matched by the application.
+    hostnames: Any = None
+    # Returns the human readable ID.
+    human_id: Any = None
+    # Returns the application ID.
+    id: Any = None
+    # IP subnets matched by the application.
+    ip_subnets: Any = None
+    # Returns the application name.
+    name: Any = None
+    # Port and protocol pairs matched by the application.
+    port_protocols: Any = None
+    # Support domains matched by the application.
+    support_domains: Any = None
+    # Cloudflare products that support this application.
+    supported: Any = None
+    # Returns the application update time.
+    updated_at: Any = None
+    # Returns the application version.
+    version: Any = None
+
+@dataclasses.dataclass
 class AlexandriaGetApplicationResponseConfig:
     # Returns the category ID.
     category_id: Any = None
@@ -31,16 +81,21 @@ class AlexandriaGetApplicationResponseConfig:
 class AlexandriaGetApplicationResponseAttrs:
     # Returns the category ID.
     category_id: Any = None
+    errors: Any = None
     # Hostnames matched by the application.
     hostnames: Any = None
     # Returns the human readable ID.
     human_id: Any = None
     # IP subnets matched by the application.
     ip_subnets: Any = None
+    messages: Any = None
     # Returns the application name.
     name: Any = None
     # Port and protocol pairs matched by the application.
     port_protocols: Any = None
+    result: Any = None
+    # Indicates whether the API call was successful.
+    success: Any = None
     # Support domains matched by the application.
     support_domains: Any = None
     # path parameter, not part of the API's own resource representation

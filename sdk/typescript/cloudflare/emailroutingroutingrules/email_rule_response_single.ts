@@ -12,6 +12,17 @@ export interface EmailRuleResponseSingle_Matchers {
   value?: string | Computed<string>;
 }
 
+export interface EmailRuleResponseSingle_Result {
+  actions?: EmailRuleResponseSingle_Actions[] | Computed<EmailRuleResponseSingle_Actions[]>;
+  enabled?: boolean | Computed<boolean>;
+  id?: string | Computed<string>;
+  matchers?: EmailRuleResponseSingle_Matchers[] | Computed<EmailRuleResponseSingle_Matchers[]>;
+  name?: string | Computed<string>;
+  priority?: number | Computed<number>;
+  source?: string | Computed<string>;
+  tag?: string | Computed<string>;
+}
+
 const EmailRuleResponseSingle_ActionsFields: FieldMap = {
   type: "type",
   value: "value",
@@ -57,6 +68,7 @@ export interface EmailRuleResponseSingleAttrs {
   ownerWorkerTag: string;
   /** Priority of the routing rule. */
   priority: number;
+  result: EmailRuleResponseSingle_Result;
   /** Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write. */
   source: string;
   /** path parameter, not part of the API's own resource representation */

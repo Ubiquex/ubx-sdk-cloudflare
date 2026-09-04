@@ -3,16 +3,75 @@ package magicipsectunnels
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_Bgp struct {
+	CustomerAsn    any
+	ExportFilterId any
+	ExtraPrefixes  any
+	ImportFilterId any
+	Md5Key         any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_BgpStatus struct {
+	BgpState            any
+	CfSpeakerIp         any
+	CfSpeakerPort       any
+	CustomerSpeakerIp   any
+	CustomerSpeakerPort any
+	State               any
+	TcpEstablished      any
+	UpdatedAt           any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_CustomRemoteIdentities struct {
+	FqdnId any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_HealthCheck struct {
+	Direction any
+	Enabled   any
+	Rate      any
+	Target    any
+	Type      any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels_PskMetadata struct {
+	LastGeneratedOn any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result_IpsecTunnels struct {
+	AllowNullCipher        any
+	AutomaticReturnRouting any
+	Bgp                    any
+	BgpStatus              any
+	CloudflareEndpoint     any
+	CreatedOn              any
+	CustomRemoteIdentities any
+	CustomerEndpoint       any
+	Description            any
+	HealthCheck            any
+	Id                     any
+	InterfaceAddress       any
+	InterfaceAddress6      any
+	ModifiedOn             any
+	Name                   any
+	PskMetadata            any
+	ReplayProtection       any
+}
+
+type MagicSchemasTunnelsCollectionResponse_Result struct {
+	IpsecTunnels any
+}
+
 type MagicSchemasTunnelsCollectionResponseConfig struct {
 }
 
 type MagicSchemasTunnelsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var MagicSchemasTunnelsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_schemas_tunnels_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

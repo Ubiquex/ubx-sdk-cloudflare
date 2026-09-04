@@ -3,6 +3,17 @@ package custompagesforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPagesCustomPageResultList_Result struct {
+	CreatedOn      any
+	Description    any
+	Id             any
+	ModifiedOn     any
+	PreviewTarget  any
+	RequiredTokens any
+	State          any
+	Url            any
+}
+
 type CustomPagesCustomPageResultListConfig struct {
 	// Identifier.
 	AccountIdentifier any
@@ -11,6 +22,7 @@ type CustomPagesCustomPageResultListConfig struct {
 type CustomPagesCustomPageResultListAttrs struct {
 	// Identifier.
 	AccountIdentifier any
+	Result            any
 }
 
 var CustomPagesCustomPageResultList = ubx.DataSourceBinding{

@@ -7,12 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesDevicesResponse_Result_User:
+    email: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDevicesResponse_Result:
+    created: Any = None
+    deleted: Any = None
+    device_type: Any = None
+    id: Any = None
+    ip: Any = None
+    key: Any = None
+    last_seen: Any = None
+    mac_address: Any = None
+    manufacturer: Any = None
+    model: Any = None
+    name: Any = None
+    os_distro_name: Any = None
+    os_distro_revision: Any = None
+    os_version: Any = None
+    os_version_extra: Any = None
+    revoked_at: Any = None
+    serial_number: Any = None
+    updated: Any = None
+    user: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesDevicesResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesDevicesResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesDevicesResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_devices_response",

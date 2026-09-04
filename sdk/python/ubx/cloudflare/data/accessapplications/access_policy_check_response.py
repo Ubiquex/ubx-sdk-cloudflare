@@ -7,6 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessPolicyCheckResponse_Result_AppState:
+    # UUID.
+    app_uid: Any = None
+    aud: Any = None
+    hostname: Any = None
+    name: Any = None
+    policies: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class AccessPolicyCheckResponse_Result_UserIdentity_Geo:
+    country: Any = None
+
+@dataclasses.dataclass
+class AccessPolicyCheckResponse_Result_UserIdentity:
+    account_id: Any = None
+    device_sessions: Any = None
+    email: Any = None
+    geo: Any = None
+    iat: Any = None
+    id: Any = None
+    is_gateway: Any = None
+    is_warp: Any = None
+    name: Any = None
+    # UUID.
+    user_uuid: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class AccessPolicyCheckResponse_Result:
+    app_state: Any = None
+    user_identity: Any = None
+
+@dataclasses.dataclass
 class AccessPolicyCheckResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +51,7 @@ class AccessPolicyCheckResponseAttrs:
     # Identifier.
     account_id: Any = None
     app_id: Any = None
+    result: Any = None
 
 AccessPolicyCheckResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_access_policy_check_response",

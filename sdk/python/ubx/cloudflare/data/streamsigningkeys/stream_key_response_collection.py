@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamKeyResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class StreamKeyResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class StreamKeyResponseCollection_Result:
+    created: Any = None
+    id: Any = None
+    key_id: Any = None
+
+@dataclasses.dataclass
 class StreamKeyResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +32,11 @@ class StreamKeyResponseCollectionConfig:
 class StreamKeyResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 StreamKeyResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_key_response_collection",

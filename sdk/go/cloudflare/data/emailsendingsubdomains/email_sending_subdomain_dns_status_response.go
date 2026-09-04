@@ -3,12 +3,38 @@ package emailsendingsubdomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailSendingSubdomainDnsStatusResponse_Result_Errors_Existing struct {
+	Content  any
+	Name     any
+	Priority any
+	Ttl      any
+	Type     any
+}
+
+type EmailSendingSubdomainDnsStatusResponse_Result_Errors struct {
+	Code                 any
+	ConflictingSubdomain any
+	Existing             any
+	Missing              any
+	Multiple             any
+}
+
+type EmailSendingSubdomainDnsStatusResponse_Result struct {
+	// DNS issues detected against the current zone state.
+	Errors any
+	// Desired DNS records for the subdomain.
+	Records any
+	// Aggregated DNS state for the subdomain. `unlocked` means desired records exist with correct content but at least one has had its email_routing/read_only lock cleared.
+	Status any
+}
+
 type EmailSendingSubdomainDnsStatusResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type EmailSendingSubdomainDnsStatusResponseAttrs struct {
+	Result any
 	// Sending subdomain identifier.
 	SubdomainId any
 	// Identifier.

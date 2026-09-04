@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessIdpFederationGrantListResponse_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessIdpFederationGrantListResponse_Result:
+    created_at: Any = None
+    id: Any = None
+    idp_id: Any = None
+
+@dataclasses.dataclass
 class AccessIdpFederationGrantListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +25,7 @@ class AccessIdpFederationGrantListResponseConfig:
 class AccessIdpFederationGrantListResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 AccessIdpFederationGrantListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_access_idp_federation_grant_list_response",

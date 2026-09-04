@@ -9,12 +9,12 @@ type BillSubsApiAccountSubscriptionResponseSingle_App struct {
 }
 
 type BillSubsApiAccountSubscriptionResponseSingle_ComponentValues struct {
-	Default any
+	Default     any
 	DisplayName any
-	Kind any
-	Name any
-	Price any
-	Value any
+	Kind        any
+	Name        any
+	Price       any
+	Value       any
 }
 
 type BillSubsApiAccountSubscriptionResponseSingle_RatePlan struct {
@@ -34,40 +34,52 @@ type BillSubsApiAccountSubscriptionResponseSingle_RatePlan struct {
 	Sets any
 }
 
-type BillSubsApiAccountSubscriptionResponseSingle_Zone struct {
-	// Identifier
-	Id any
-	// The domain name
+type BillSubsApiAccountSubscriptionResponseSingle_Result_Zone struct {
+	Id   any
 	Name any
 }
 
+type BillSubsApiAccountSubscriptionResponseSingle_Result struct {
+	App                any
+	ComponentValues    any
+	Currency           any
+	CurrentPeriodEnd   any
+	CurrentPeriodStart any
+	Frequency          any
+	Id                 any
+	Price              any
+	RatePlan           any
+	State              any
+	Zone               any
+}
+
 var BillSubsApiAccountSubscriptionResponseSingle_AppFields = ubx.FieldMap{
-		"InstallId": ubx.FieldSpec{WireName: "install_id"},
-	}
+	"InstallId": ubx.FieldSpec{WireName: "install_id"},
+}
 
 var BillSubsApiAccountSubscriptionResponseSingle_ComponentValuesFields = ubx.FieldMap{
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Price": ubx.FieldSpec{WireName: "price"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Default":     ubx.FieldSpec{WireName: "default"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Price":       ubx.FieldSpec{WireName: "price"},
+	"Value":       ubx.FieldSpec{WireName: "value"},
+}
 
 var BillSubsApiAccountSubscriptionResponseSingle_RatePlanFields = ubx.FieldMap{
-		"Currency": ubx.FieldSpec{WireName: "currency"},
-		"ExternallyManaged": ubx.FieldSpec{WireName: "externally_managed"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsContract": ubx.FieldSpec{WireName: "is_contract"},
-		"PublicName": ubx.FieldSpec{WireName: "public_name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Sets": ubx.FieldSpec{WireName: "sets"},
-	}
+	"Currency":          ubx.FieldSpec{WireName: "currency"},
+	"ExternallyManaged": ubx.FieldSpec{WireName: "externally_managed"},
+	"Id":                ubx.FieldSpec{WireName: "id"},
+	"IsContract":        ubx.FieldSpec{WireName: "is_contract"},
+	"PublicName":        ubx.FieldSpec{WireName: "public_name"},
+	"Scope":             ubx.FieldSpec{WireName: "scope"},
+	"Sets":              ubx.FieldSpec{WireName: "sets"},
+}
 
-var BillSubsApiAccountSubscriptionResponseSingle_ZoneFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+var BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type BillSubsApiAccountSubscriptionResponseSingleConfig struct {
 	// Cloudflare Apps Marketplace is sunset. This field is retained for legacy grandfathered app subscriptions only.
@@ -105,6 +117,7 @@ type BillSubsApiAccountSubscriptionResponseSingleAttrs struct {
 	Price any
 	// The rate plan applied to the subscription.
 	RatePlan any
+	Result   any
 	// The state that the subscription is in.
 	State any
 	// A simple zone object. May have null properties if not a zone subscription.
@@ -120,26 +133,26 @@ var BillSubsApiAccountSubscriptionResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"App": ubx.FieldSpec{
 			WireName: "app",
-			Kind: "object",
-			Fields: BillSubsApiAccountSubscriptionResponseSingle_AppFields,
+			Kind:     "object",
+			Fields:   BillSubsApiAccountSubscriptionResponseSingle_AppFields,
 		},
 		"ComponentValues": ubx.FieldSpec{
 			WireName: "component_values",
-			Kind: "list",
-			Fields: BillSubsApiAccountSubscriptionResponseSingle_ComponentValuesFields,
+			Kind:     "list",
+			Fields:   BillSubsApiAccountSubscriptionResponseSingle_ComponentValuesFields,
 		},
 		"Frequency": ubx.FieldSpec{WireName: "frequency"},
 		"RatePlan": ubx.FieldSpec{
 			WireName: "rate_plan",
-			Kind: "object",
-			Fields: BillSubsApiAccountSubscriptionResponseSingle_RatePlanFields,
+			Kind:     "object",
+			Fields:   BillSubsApiAccountSubscriptionResponseSingle_RatePlanFields,
 		},
 		"Zone": ubx.FieldSpec{
 			WireName: "zone",
-			Kind: "object",
-			Fields: BillSubsApiAccountSubscriptionResponseSingle_ZoneFields,
+			Kind:     "object",
+			Fields:   BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":              ubx.FieldSpec{WireName: "account_id"},
 		"SubscriptionIdentifier": ubx.FieldSpec{WireName: "subscription_identifier"},
 	},
 }

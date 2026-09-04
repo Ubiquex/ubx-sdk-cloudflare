@@ -33,6 +33,33 @@ export interface RegistrarApiRegistrationResponseSingle_Contacts {
   technical?: RegistrarApiRegistrationResponseSingle_Contacts_Administrator | Computed<RegistrarApiRegistrationResponseSingle_Contacts_Administrator>;
 }
 
+export interface RegistrarApiRegistrationResponseSingle_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface RegistrarApiRegistrationResponseSingle_Errors {
+  code?: number | Computed<number>;
+  message?: string | Computed<string>;
+  source?: RegistrarApiRegistrationResponseSingle_Errors_Source | Computed<RegistrarApiRegistrationResponseSingle_Errors_Source>;
+}
+
+export interface RegistrarApiRegistrationResponseSingle_Result {
+  /** Whether automatic renewal occurs before expiration. */
+  autoRenew: boolean | Computed<boolean>;
+  /** When the domain was registered. Present when the registration resource exists. */
+  createdAt: string | Computed<string>;
+  /** Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests. */
+  domainName: string | Computed<string>;
+  /** When the domain registration expires. Ready registrations include this value; only `registration_pending` may return null. */
+  expiresAt: string | Computed<string>;
+  /** Whether the domain is locked for transfer. */
+  locked: boolean | Computed<boolean>;
+  /** Current WHOIS privacy mode for the registration. */
+  privacyMode: string | Computed<string>;
+  /** Current registration status. - `active`: The domain operates with an active registration. - `registration_pending`: Registration remains in progress. - `expired`: The domain registration expired. - `suspended`: The registry suspended the domain. - `redemption_period`: The domain entered the redemption grace period. - `pending_delete`: The registry scheduled the domain for deletion. */
+  status: string | Computed<string>;
+}
+
 const RegistrarApiRegistrationResponseSingle_Contacts_Administrator_PostalInfo_AddressFields: FieldMap = {
   city: "city",
   countryCode: "country_code",
@@ -115,8 +142,14 @@ export interface RegistrarApiRegistrationResponseSingleAttrs {
   contacts: RegistrarApiRegistrationResponseSingle_Contacts;
   /** Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests. */
   domainName: string;
+  errors: RegistrarApiRegistrationResponseSingle_Errors[];
+  messages: RegistrarApiRegistrationResponseSingle_Errors[];
   /** Sets the WHOIS privacy mode for the registration. Defaults to `redaction`. - `off`: Disables WHOIS privacy. - `redaction`: Requests WHOIS redaction where the extension supports it. Some extensions exclude privacy and redaction. */
   privacyMode: string;
+  /** A domain registration resource representing the current state of a registered domain. */
+  result: RegistrarApiRegistrationResponseSingle_Result;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** Sets the registration term from 1 to 10 years. When omitted, this field defaults to the registry's minimum registration period for the extension. Most extensions require 1 year, while some require longer minimum terms (e.g., `.ai` requires 2 years). Each registry may also enforce its own maximum registration term. A request above that maximum fails. When uncertain, omit this field to use the default. */
   years: number;
   /** path parameter, not part of the API's own resource representation */

@@ -3,16 +3,58 @@ package accountbillingprofile
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiBillingResponseSingle_Result struct {
+	AccountType            any
+	Address                any
+	Address2               any
+	Balance                any
+	CardExpiryMonth        any
+	CardExpiryYear         any
+	CardNumber             any
+	City                   any
+	Company                any
+	Country                any
+	CreatedOn              any
+	DeviceData             any
+	EditedOn               any
+	EnterpriseBillingEmail any
+	EnterprisePrimaryEmail any
+	FirstName              any
+	// Billing item identifier tag.
+	Id               any
+	IsPartner        any
+	LastName         any
+	NextBillDate     any
+	PaymentAddress   any
+	PaymentAddress2  any
+	PaymentCity      any
+	PaymentCountry   any
+	PaymentEmail     any
+	PaymentFirstName any
+	PaymentGateway   any
+	PaymentLastName  any
+	PaymentNonce     any
+	PaymentState     any
+	PaymentZipcode   any
+	PrimaryEmail     any
+	State            any
+	TaxIdType        any
+	Telephone        any
+	ValidationCode   any
+	Vat              any
+	Zipcode          any
+}
+
 type BillSubsApiBillingResponseSingleConfig struct {
 }
 
 type BillSubsApiBillingResponseSingleAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var BillSubsApiBillingResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_billing_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -3,16 +3,20 @@ package zonecachesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegionalTieredCache_Result struct {
+	Value any
+}
+
 type RegionalTieredCacheConfig struct {
 }
 
 type RegionalTieredCacheAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var RegionalTieredCache = ubx.DataSourceBinding{
 	WireType: "cloudflare_regional_tiered_cache",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

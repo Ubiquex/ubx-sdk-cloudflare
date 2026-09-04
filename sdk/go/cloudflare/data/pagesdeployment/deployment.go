@@ -4,31 +4,31 @@ package pagesdeployment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_Data_Deployments struct {
-	CreatedAt any
+	CreatedAt    any
 	DeploymentId any
-	VersionId any
+	VersionId    any
 }
 
 type Deployment_Data struct {
-	Deployments any
-	OrderBy any
+	Deployments      any
+	OrderBy          any
 	OrderByDirection any
-	Page any
-	PerPage any
+	Page             any
+	PerPage          any
 }
 
 type DeploymentConfig struct {
 	AccountId any
 	GatewayId any
-	Id any
+	Id        any
 }
 
 type DeploymentAttrs struct {
 	AccountId any
-	Data any
+	Data      any
 	GatewayId any
-	Id any
-	Success any
+	Id        any
+	Success   any
 }
 
 var Deployment = ubx.DataSourceBinding{
@@ -36,6 +36,6 @@ var Deployment = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

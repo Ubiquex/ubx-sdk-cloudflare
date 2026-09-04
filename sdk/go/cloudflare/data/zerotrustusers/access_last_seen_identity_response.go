@@ -3,6 +3,65 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessLastSeenIdentityResponse_Result_DevicePosture_Check struct {
+	Exists any
+	Path   any
+}
+
+type AccessLastSeenIdentityResponse_Result_DevicePosture struct {
+	Check       any
+	Data        any
+	Description any
+	Error       any
+	Id          any
+	RuleName    any
+	Success     any
+	Timestamp   any
+	Type        any
+}
+
+type AccessLastSeenIdentityResponse_Result_DeviceSessions struct {
+	LastAuthenticated any
+}
+
+type AccessLastSeenIdentityResponse_Result_Geo struct {
+	Country any
+}
+
+type AccessLastSeenIdentityResponse_Result_Idp struct {
+	Id   any
+	Type any
+}
+
+type AccessLastSeenIdentityResponse_Result_MtlsAuth struct {
+	AuthStatus    any
+	CertIssuerDn  any
+	CertIssuerSki any
+	CertPresented any
+	CertSerial    any
+}
+
+type AccessLastSeenIdentityResponse_Result struct {
+	AccountId          any
+	AuthStatus         any
+	CommonName         any
+	DeviceId           any
+	DevicePosture      any
+	DeviceSessions     any
+	Email              any
+	Geo                any
+	Iat                any
+	Idp                any
+	Ip                 any
+	IsGateway          any
+	IsWarp             any
+	MtlsAuth           any
+	ServiceTokenId     any
+	ServiceTokenStatus any
+	UserUuid           any
+	Version            any
+}
+
 type AccessLastSeenIdentityResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,6 +72,7 @@ type AccessLastSeenIdentityResponseConfig struct {
 type AccessLastSeenIdentityResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 	// UUID.
 	UserId any
 }
@@ -21,6 +81,6 @@ var AccessLastSeenIdentityResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_last_seen_identity_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

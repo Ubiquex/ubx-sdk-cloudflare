@@ -7,6 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingMonitorGroupResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingMonitorGroupResponseCollection_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class LoadBalancingMonitorGroupResponseCollection_Result_Members:
+    created_at: Any = None
+    enabled: Any = None
+    monitor_id: Any = None
+    monitoring_only: Any = None
+    must_be_healthy: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingMonitorGroupResponseCollection_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    members: Any = None
+    modified_on: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingMonitorGroupResponseCollection_ResultInfo:
+    # Total number of results on the current page.
+    count: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page.
+    per_page: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+    # Total number of pages available.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingMonitorGroupResponseCollectionConfig:
     pass
 
@@ -14,6 +53,12 @@ class LoadBalancingMonitorGroupResponseCollectionConfig:
 class LoadBalancingMonitorGroupResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LoadBalancingMonitorGroupResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_monitor_group_response_collection",

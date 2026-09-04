@@ -3,6 +3,32 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosPrefixResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosPrefixResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosPrefixResponse_Result struct {
+	// A comment describing the prefix.
+	Comment any
+	// The creation timestamp of the prefix.
+	CreatedOn any
+	// Whether to exclude the prefix from protection.
+	Excluded any
+	// The unique ID of the prefix.
+	Id any
+	// The last modification timestamp of the prefix.
+	ModifiedOn any
+	// The prefix in CIDR format.
+	Prefix any
+}
+
 type DosPrefixResponseConfig struct {
 	// A comment describing the prefix.
 	Comment any
@@ -19,10 +45,15 @@ type DosPrefixResponseConfig struct {
 type DosPrefixResponseAttrs struct {
 	// A comment describing the prefix.
 	Comment any
+	Errors  any
 	// Whether to exclude the prefix from protection.
 	Excluded any
+	Messages any
 	// The prefix to add in CIDR format.
 	Prefix any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +63,10 @@ type DosPrefixResponseAttrs struct {
 var DosPrefixResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_prefix_response",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Excluded": ubx.FieldSpec{WireName: "excluded"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Comment":   ubx.FieldSpec{WireName: "comment"},
+		"Excluded":  ubx.FieldSpec{WireName: "excluded"},
+		"Prefix":    ubx.FieldSpec{WireName: "prefix"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

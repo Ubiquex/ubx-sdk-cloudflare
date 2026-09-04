@@ -3,12 +3,28 @@ package zerotrustcertificates
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection_Result struct {
+	BindingStatus any
+	Certificate   any
+	CreatedAt     any
+	ExpiresOn     any
+	Fingerprint   any
+	Id            any
+	InUse         any
+	IssuerOrg     any
+	IssuerRaw     any
+	Type          any
+	UpdatedAt     any
+	UploadedOn    any
+}
+
 type ZeroTrustGatewayResponseCollectionConfig struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection = ubx.DataSourceBinding{

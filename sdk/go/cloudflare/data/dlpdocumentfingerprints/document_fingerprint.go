@@ -3,12 +3,26 @@ package dlpdocumentfingerprints
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DocumentFingerprint_Result struct {
+	CreatedAt    any
+	Description  any
+	EntryId      any
+	FileName     any
+	Id           any
+	MatchPercent any
+	Name         any
+	Status       any
+	UpdatedAt    any
+	Version      any
+}
+
 type DocumentFingerprintConfig struct {
 	AccountId any
 }
 
 type DocumentFingerprintAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var DocumentFingerprint = ubx.DataSourceBinding{

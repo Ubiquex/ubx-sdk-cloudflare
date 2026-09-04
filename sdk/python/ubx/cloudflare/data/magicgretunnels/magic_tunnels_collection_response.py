@@ -7,6 +7,55 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicTunnelsCollectionResponse_Result_GreTunnels_Bgp:
+    customer_asn: Any = None
+    export_filter_id: Any = None
+    extra_prefixes: Any = None
+    import_filter_id: Any = None
+    md5_key: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelsCollectionResponse_Result_GreTunnels_BgpStatus:
+    bgp_state: Any = None
+    cf_speaker_ip: Any = None
+    cf_speaker_port: Any = None
+    customer_speaker_ip: Any = None
+    customer_speaker_port: Any = None
+    state: Any = None
+    tcp_established: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelsCollectionResponse_Result_GreTunnels_HealthCheck:
+    direction: Any = None
+    enabled: Any = None
+    rate: Any = None
+    target: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelsCollectionResponse_Result_GreTunnels:
+    automatic_return_routing: Any = None
+    bgp: Any = None
+    bgp_status: Any = None
+    cloudflare_gre_endpoint: Any = None
+    created_on: Any = None
+    customer_gre_endpoint: Any = None
+    description: Any = None
+    health_check: Any = None
+    id: Any = None
+    interface_address: Any = None
+    interface_address6: Any = None
+    modified_on: Any = None
+    mtu: Any = None
+    name: Any = None
+    ttl: Any = None
+
+@dataclasses.dataclass
+class MagicTunnelsCollectionResponse_Result:
+    gre_tunnels: Any = None
+
+@dataclasses.dataclass
 class MagicTunnelsCollectionResponseConfig:
     pass
 
@@ -14,6 +63,7 @@ class MagicTunnelsCollectionResponseConfig:
 class MagicTunnelsCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 MagicTunnelsCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_tunnels_collection_response",

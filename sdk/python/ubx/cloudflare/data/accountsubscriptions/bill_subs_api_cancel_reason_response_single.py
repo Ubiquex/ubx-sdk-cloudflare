@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiCancelReasonResponseSingle_Result:
+    # The cancel reason identifier.
+    id: Any = None
+    # Additional cancellation details.
+    other: Any = None
+    # The cancellation reason codes.
+    reason_code: Any = None
+    # When the cancel reason was submitted.
+    submitted: Any = None
+    # The subscription identifier.
+    subscription_id: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiCancelReasonResponseSingleConfig:
     pass
 
@@ -14,6 +27,7 @@ class BillSubsApiCancelReasonResponseSingleConfig:
 class BillSubsApiCancelReasonResponseSingleAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
     # Subscription identifier tag.
     subscription_identifier: Any = None
 

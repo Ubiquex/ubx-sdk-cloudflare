@@ -3,14 +3,39 @@ package sinkholeconfig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSinkholesIngressCollectionResponse_Errors_Source struct {
+	Pointer any
+}
+
+type IntelSinkholesIngressCollectionResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type IntelSinkholesIngressCollectionResponse_Result struct {
+	Cidr       any
+	CreatedOn  any
+	Id         any
+	ModifiedOn any
+	SinkholeId any
+	ZoneTag    any
+}
+
 type IntelSinkholesIngressCollectionResponseConfig struct {
 	SinkholeId any
 }
 
 type IntelSinkholesIngressCollectionResponseAttrs struct {
 	// An identifier for the resource.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	SinkholeId any
+	// Whether the API call was successful.
+	Success any
 }
 
 var IntelSinkholesIngressCollectionResponse = ubx.DataSourceBinding{

@@ -4,5 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .consumer import Consumer, ConsumerConfig
 from .queue import Queue, QueueConfig
 from .subscription import Subscription, SubscriptionConfig

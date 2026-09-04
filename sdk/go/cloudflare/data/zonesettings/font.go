@@ -3,12 +3,30 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Font_Errors struct {
+	Code    any
+	Message any
+}
+
+type Font_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type FontConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type FontAttrs struct {
+	Errors   any
+	Messages any
+	// Enhance your website's font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain, boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

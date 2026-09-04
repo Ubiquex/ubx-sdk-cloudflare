@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Priority_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Priority_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Priority_Result:
+    completed: Any = None
+    content: Any = None
+    created: Any = None
+    id: Any = None
+    message_tokens: Any = None
+    priority: Any = None
+    readable_id: Any = None
+    request: Any = None
+    status: Any = None
+    summary: Any = None
+    tlp: Any = None
+    tokens: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
 class PriorityConfig:
     # Page number of results.
     page: Any = None
@@ -19,10 +46,15 @@ class PriorityConfig:
 
 @dataclasses.dataclass
 class PriorityAttrs:
+    errors: Any = None
+    messages: Any = None
     # Page number of results.
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

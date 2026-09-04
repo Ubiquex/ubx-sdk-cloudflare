@@ -4,7 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .action_log import ActionLog, ActionLogConfig
 from .bulk import Bulk, BulkConfig
+from .detection import Detection, DetectionConfig
 from .investigate import Investigate, InvestigateConfig
 from .message import Message, MessageConfig
+from .preview import Preview, PreviewConfig
 from .submission import Submission, SubmissionConfig
+from .trace import Trace, TraceConfig

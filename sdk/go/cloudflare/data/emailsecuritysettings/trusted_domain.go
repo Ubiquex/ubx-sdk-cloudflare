@@ -3,38 +3,54 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TrustedDomainConfig struct {
-	Direction any
-	IsRecent any
+type TrustedDomain_Result_CreatedAt struct {
+}
+
+type TrustedDomain_Result struct {
+	Comments     any
+	CreatedAt    any
+	Id           any
+	IsRecent     any
+	IsRegex      any
 	IsSimilarity any
-	Order any
-	Page any
-	Pattern any
-	PerPage any
-	Search any
+	LastModified any
+	ModifiedAt   any
+	Pattern      any
+}
+
+type TrustedDomainConfig struct {
+	Direction    any
+	IsRecent     any
+	IsSimilarity any
+	Order        any
+	Page         any
+	Pattern      any
+	PerPage      any
+	Search       any
 }
 
 type TrustedDomainAttrs struct {
-	Direction any
-	IsRecent any
+	Direction    any
+	IsRecent     any
 	IsSimilarity any
-	Order any
-	Page any
-	Pattern any
-	PerPage any
-	Search any
+	Order        any
+	Page         any
+	Pattern      any
+	PerPage      any
+	Result       any
+	Search       any
 }
 
 var TrustedDomain = ubx.DataSourceBinding{
 	WireType: "cloudflare_trusted_domain",
 	Fields: ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"IsRecent": ubx.FieldSpec{WireName: "is_recent"},
+		"Direction":    ubx.FieldSpec{WireName: "direction"},
+		"IsRecent":     ubx.FieldSpec{WireName: "is_recent"},
 		"IsSimilarity": ubx.FieldSpec{WireName: "is_similarity"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Order":        ubx.FieldSpec{WireName: "order"},
+		"Page":         ubx.FieldSpec{WireName: "page"},
+		"Pattern":      ubx.FieldSpec{WireName: "pattern"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
+		"Search":       ubx.FieldSpec{WireName: "search"},
 	},
 }

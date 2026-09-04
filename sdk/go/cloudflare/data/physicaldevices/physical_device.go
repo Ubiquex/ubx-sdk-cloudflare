@@ -4,15 +4,15 @@ package physicaldevices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PhysicalDevice_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type PhysicalDevice_Result_LastSeenRegistration_Policy struct {
-	Default any
-	Deleted any
-	Id any
-	Name any
+	Default   any
+	Deleted   any
+	Id        any
+	Name      any
 	UpdatedAt any
 }
 
@@ -22,30 +22,30 @@ type PhysicalDevice_Result_LastSeenRegistration struct {
 
 type PhysicalDevice_Result_LastSeenUser struct {
 	Email any
-	Id any
-	Name any
+	Id    any
+	Name  any
 }
 
 type PhysicalDevice_Result struct {
-	ActiveRegistrations any
-	ClientVersion any
-	CreatedAt any
-	DeletedAt any
-	DeviceType any
-	HardwareId any
-	Id any
-	LastSeenAt any
+	ActiveRegistrations  any
+	ClientVersion        any
+	CreatedAt            any
+	DeletedAt            any
+	DeviceType           any
+	HardwareId           any
+	Id                   any
+	LastSeenAt           any
 	LastSeenRegistration any
-	LastSeenUser any
-	MacAddress any
-	Manufacturer any
-	Model any
-	Name any
-	OsVersion any
-	OsVersionExtra any
-	PublicIp any
-	SerialNumber any
-	UpdatedAt any
+	LastSeenUser         any
+	MacAddress           any
+	Manufacturer         any
+	Model                any
+	Name                 any
+	OsVersion            any
+	OsVersionExtra       any
+	PublicIp             any
+	SerialNumber         any
+	UpdatedAt            any
 }
 
 type PhysicalDevice_ResultInfo struct {
@@ -60,42 +60,42 @@ type PhysicalDevice_ResultInfo struct {
 }
 
 type PhysicalDeviceConfig struct {
-	AccountId any
+	AccountId           any
 	ActiveRegistrations any
-	Cursor any
-	Id any
-	Include any
+	Cursor              any
+	Id                  any
+	Include             any
 	// The ID of the device settings profile.
 	LastSeenRegistrationPolicyId any
-	LastSeenUserEmail any
-	PerPage any
-	Search any
-	SeenAfter any
-	SeenBefore any
-	SortBy any
-	SortOrder any
+	LastSeenUserEmail            any
+	PerPage                      any
+	Search                       any
+	SeenAfter                    any
+	SeenBefore                   any
+	SortBy                       any
+	SortOrder                    any
 }
 
 type PhysicalDeviceAttrs struct {
-	AccountId any
+	AccountId           any
 	ActiveRegistrations any
-	Cursor any
-	Errors any
-	Id any
-	Include any
+	Cursor              any
+	Errors              any
+	Id                  any
+	Include             any
 	// The ID of the device settings profile.
 	LastSeenRegistrationPolicyId any
-	LastSeenUserEmail any
-	Messages any
-	PerPage any
-	Result any
+	LastSeenUserEmail            any
+	Messages                     any
+	PerPage                      any
+	Result                       any
 	// V4 public API Pagination/Cursor info.
 	ResultInfo any
-	Search any
-	SeenAfter any
+	Search     any
+	SeenAfter  any
 	SeenBefore any
-	SortBy any
-	SortOrder any
+	SortBy     any
+	SortOrder  any
 	// Whether the API call was successful.
 	Success any
 }
@@ -103,18 +103,18 @@ type PhysicalDeviceAttrs struct {
 var PhysicalDevice = ubx.DataSourceBinding{
 	WireType: "cloudflare_physical_device",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ActiveRegistrations": ubx.FieldSpec{WireName: "active_registrations"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"AccountId":                    ubx.FieldSpec{WireName: "account_id"},
+		"ActiveRegistrations":          ubx.FieldSpec{WireName: "active_registrations"},
+		"Cursor":                       ubx.FieldSpec{WireName: "cursor"},
+		"Id":                           ubx.FieldSpec{WireName: "id"},
+		"Include":                      ubx.FieldSpec{WireName: "include"},
 		"LastSeenRegistrationPolicyId": ubx.FieldSpec{WireName: "last_seen_registration_policy_id"},
-		"LastSeenUserEmail": ubx.FieldSpec{WireName: "last_seen_user_email"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"SeenAfter": ubx.FieldSpec{WireName: "seen_after"},
-		"SeenBefore": ubx.FieldSpec{WireName: "seen_before"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"LastSeenUserEmail":            ubx.FieldSpec{WireName: "last_seen_user_email"},
+		"PerPage":                      ubx.FieldSpec{WireName: "per_page"},
+		"Search":                       ubx.FieldSpec{WireName: "search"},
+		"SeenAfter":                    ubx.FieldSpec{WireName: "seen_after"},
+		"SeenBefore":                   ubx.FieldSpec{WireName: "seen_before"},
+		"SortBy":                       ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":                    ubx.FieldSpec{WireName: "sort_order"},
 	},
 }

@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Collection_Pagination struct {
 	Limit any
-	Page any
+	Page  any
 	Total any
 }
 
 type Collection_Result struct {
 	CreatedAt any
 	CreatedBy any
-	Id any
+	Id        any
 	ItemCount any
-	Metadata any
-	Name any
-	Status any
+	Metadata  any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
@@ -35,17 +35,17 @@ type CollectionAttrs struct {
 	// Items per page
 	Limit any
 	// Page number
-	Page any
+	Page       any
 	Pagination any
-	Result any
-	Success any
+	Result     any
+	Success    any
 }
 
 var Collection = ubx.DataSourceBinding{
 	WireType: "cloudflare_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
 	},
 }

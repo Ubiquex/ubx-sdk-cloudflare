@@ -7,18 +7,18 @@ type PayPerCrawlGetTermsSignatureLinkResponse_Errors_ErrorChain struct {
 }
 
 type PayPerCrawlGetTermsSignatureLinkResponse_Errors_Source struct {
-	Parameter any
+	Parameter           any
 	ParameterValueIndex any
-	Pointer any
+	Pointer             any
 }
 
 type PayPerCrawlGetTermsSignatureLinkResponse_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	ErrorChain any
-	Message any
-	Meta any
-	Source any
+	ErrorChain       any
+	Message          any
+	Meta             any
+	Source           any
 }
 
 type PayPerCrawlGetTermsSignatureLinkResponse_Result struct {
@@ -26,9 +26,9 @@ type PayPerCrawlGetTermsSignatureLinkResponse_Result struct {
 }
 
 type PayPerCrawlGetTermsSignatureLinkResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	// TotalPages is a pointer so that if TotalPages == 0 we return that there are indeed 0 pages. omitempty would have removed the field otherwise. This is important as a customer may be relying on always reading this property and it should not be absent just because it is 0, only absent if a value is never provided.
 	TotalPages any
@@ -39,12 +39,12 @@ type PayPerCrawlGetTermsSignatureLinkResponseConfig struct {
 }
 
 type PayPerCrawlGetTermsSignatureLinkResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var PayPerCrawlGetTermsSignatureLinkResponse = ubx.DataSourceBinding{

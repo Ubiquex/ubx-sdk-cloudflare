@@ -7,12 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailEmailSettingsResponseSingle_Result:
+    created: Any = None
+    enabled: Any = None
+    id: Any = None
+    modified: Any = None
+    name: Any = None
+    skip_wizard: Any = None
+    status: Any = None
+    support_subaddress: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
 class EmailEmailSettingsResponseSingleConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class EmailEmailSettingsResponseSingleAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

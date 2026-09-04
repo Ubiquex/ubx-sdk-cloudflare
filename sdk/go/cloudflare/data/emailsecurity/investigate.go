@@ -3,70 +3,183 @@ package emailsecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Investigate_Errors_Source struct {
+	Pointer any
+}
+
+type Investigate_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Investigate_Result_ActionLog_Properties struct {
+	Folder      any
+	RequestedBy any
+}
+
+type Investigate_Result_ActionLog struct {
+	CompletedAt        any
+	CompletedTimestamp any
+	Operation          any
+	Properties         any
+	Status             any
+}
+
+type Investigate_Result_Findings struct {
+	Attachment any
+	Detail     any
+	Detection  any
+	Field      any
+	Name       any
+	Portion    any
+	Reason     any
+	Score      any
+	Value      any
+}
+
+type Investigate_Result_Id struct {
+}
+
+type Investigate_Result_Properties struct {
+	AllowlistedPattern     any
+	AllowlistedPatternType any
+	BlocklistedMessage     any
+	BlocklistedPattern     any
+	WhitelistedPatternType any
+}
+
+type Investigate_Result_Validation struct {
+	Comment any
+	Dkim    any
+	Dmarc   any
+	Spf     any
+}
+
+type Investigate_Result struct {
+	ActionLog              any
+	AlertId                any
+	ClientRecipients       any
+	DeliveryMode           any
+	DeliveryStatus         any
+	DetectionReasons       any
+	EdfHash                any
+	EnvelopeFrom           any
+	EnvelopeTo             any
+	FinalDisposition       any
+	Findings               any
+	From                   any
+	FromName               any
+	HtmltextStructureHash  any
+	Id                     any
+	IsPhishSubmission      any
+	IsQuarantined          any
+	MessageId              any
+	PostDeliveryOperations any
+	PostfixId              any
+	PostfixIdOutbound      any
+	Properties             any
+	Replyto                any
+	ScannedAt              any
+	SentAt                 any
+	SentDate               any
+	SmtpHeloServerIp       any
+	SmtpPreviousHopIp      any
+	Subject                any
+	ThreatCategories       any
+	To                     any
+	ToName                 any
+	Ts                     any
+	Validation             any
+	XOriginatingIp         any
+}
+
+type Investigate_ResultInfo struct {
+	// Number of items in current page.
+	Count any
+	// Cursor for next page.
+	Next any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
+	Page any
+	// Number of items per page.
+	PerPage any
+	// Cursor for previous page.
+	Previous any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
+	TotalCount any
+}
+
 type InvestigateConfig struct {
 	AlertId any
-	Cursor any
+	Cursor  any
 	// Delivery status of the message.
-	DeliveryStatus any
-	DetectionsOnly any
-	Domain any
-	End any
+	DeliveryStatus   any
+	DetectionsOnly   any
+	Domain           any
+	End              any
 	FinalDisposition any
-	MessageAction any
-	MessageId any
-	Metric any
-	Page any
-	PerPage any
-	Query any
-	Recipient any
-	Sender any
-	SmtpHeloIp any
-	Start any
-	Subject any
+	MessageAction    any
+	MessageId        any
+	Metric           any
+	Page             any
+	PerPage          any
+	Query            any
+	Recipient        any
+	Sender           any
+	SmtpHeloIp       any
+	Start            any
+	Subject          any
 }
 
 type InvestigateAttrs struct {
 	AlertId any
-	Cursor any
+	Cursor  any
 	// Delivery status of the message.
-	DeliveryStatus any
-	DetectionsOnly any
-	Domain any
-	End any
+	DeliveryStatus   any
+	DetectionsOnly   any
+	Domain           any
+	End              any
+	Errors           any
 	FinalDisposition any
-	MessageAction any
-	MessageId any
-	Metric any
-	Page any
-	PerPage any
-	Query any
-	Recipient any
-	Sender any
-	SmtpHeloIp any
-	Start any
-	Subject any
+	MessageAction    any
+	MessageId        any
+	Messages         any
+	Metric           any
+	Page             any
+	PerPage          any
+	Query            any
+	Recipient        any
+	Result           any
+	ResultInfo       any
+	Sender           any
+	SmtpHeloIp       any
+	Start            any
+	Subject          any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Investigate = ubx.DataSourceBinding{
 	WireType: "cloudflare_investigate",
 	Fields: ubx.FieldMap{
-		"AlertId": ubx.FieldSpec{WireName: "alert_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"DeliveryStatus": ubx.FieldSpec{WireName: "delivery_status"},
-		"DetectionsOnly": ubx.FieldSpec{WireName: "detections_only"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"End": ubx.FieldSpec{WireName: "end"},
+		"AlertId":          ubx.FieldSpec{WireName: "alert_id"},
+		"Cursor":           ubx.FieldSpec{WireName: "cursor"},
+		"DeliveryStatus":   ubx.FieldSpec{WireName: "delivery_status"},
+		"DetectionsOnly":   ubx.FieldSpec{WireName: "detections_only"},
+		"Domain":           ubx.FieldSpec{WireName: "domain"},
+		"End":              ubx.FieldSpec{WireName: "end"},
 		"FinalDisposition": ubx.FieldSpec{WireName: "final_disposition"},
-		"MessageAction": ubx.FieldSpec{WireName: "message_action"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Recipient": ubx.FieldSpec{WireName: "recipient"},
-		"Sender": ubx.FieldSpec{WireName: "sender"},
-		"SmtpHeloIp": ubx.FieldSpec{WireName: "smtp_helo_ip"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
+		"MessageAction":    ubx.FieldSpec{WireName: "message_action"},
+		"MessageId":        ubx.FieldSpec{WireName: "message_id"},
+		"Metric":           ubx.FieldSpec{WireName: "metric"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"Query":            ubx.FieldSpec{WireName: "query"},
+		"Recipient":        ubx.FieldSpec{WireName: "recipient"},
+		"Sender":           ubx.FieldSpec{WireName: "sender"},
+		"SmtpHeloIp":       ubx.FieldSpec{WireName: "smtp_helo_ip"},
+		"Start":            ubx.FieldSpec{WireName: "start"},
+		"Subject":          ubx.FieldSpec{WireName: "subject"},
 	},
 }

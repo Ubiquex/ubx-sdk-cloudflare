@@ -7,6 +7,95 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Account_ManagedBy:
+    parent_org_id: Any = None
+    parent_org_name: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Account_Settings:
+    abuse_contact_email: Any = None
+    enforce_twofactor: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Account:
+    created_on: Any = None
+    id: Any = None
+    managed_by: Any = None
+    name: Any = None
+    settings: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Permissions_Analytics:
+    read: Any = None
+    write: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Permissions:
+    analytics: Any = None
+    billing: Any = None
+    cache_purge: Any = None
+    dns: Any = None
+    dns_records: Any = None
+    lb: Any = None
+    logs: Any = None
+    organization: Any = None
+    ssl: Any = None
+    waf: Any = None
+    zone_settings: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies_PermissionGroups_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies_PermissionGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups_Scope_Objects:
+    key: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups_Scope:
+    key: Any = None
+    objects: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies_ResourceGroups:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result_Policies:
+    access: Any = None
+    id: Any = None
+    permission_groups: Any = None
+    resource_groups: Any = None
+
+@dataclasses.dataclass
+class IamSingleMembershipResponseWithPolicies_Result:
+    account: Any = None
+    # Enterprise only. Indicates whether or not API access is enabled specifically for this user on a given account.
+    api_access_enabled: Any = None
+    # Membership identifier tag.
+    id: Any = None
+    # All access permissions for the user at the account.
+    permissions: Any = None
+    # Access policy for the membership
+    policies: Any = None
+    # List of role names the membership has for this account.
+    roles: Any = None
+    # Status of this membership.
+    status: Any = None
+
+@dataclasses.dataclass
 class IamSingleMembershipResponseWithPoliciesConfig:
     pass
 
@@ -14,6 +103,7 @@ class IamSingleMembershipResponseWithPoliciesConfig:
 class IamSingleMembershipResponseWithPoliciesAttrs:
     # Membership identifier tag.
     membership_id: Any = None
+    result: Any = None
 
 IamSingleMembershipResponseWithPolicies = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_single_membership_response_with_policies",

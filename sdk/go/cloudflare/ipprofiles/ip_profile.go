@@ -4,7 +4,7 @@ package ipprofiles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpProfile_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -53,15 +53,15 @@ type IpProfileAttrs struct {
 	Description any
 	// Whether the Device IP profile will be applied to matching devices.
 	Enabled any
-	Errors any
+	Errors  any
 	// The wirefilter expression to match registrations. Available values: "identity.name", "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.saml_attributes".
-	Match any
+	Match    any
 	Messages any
 	// A user-friendly name for the Device IP profile.
 	Name any
 	// The precedence of the Device IP profile. Lower values indicate higher precedence. Device IP profile will be evaluated in ascending order of this field.
 	Precedence any
-	Result any
+	Result     any
 	// The ID of the Subnet.
 	SubnetId any
 	// Whether the API call was successful.
@@ -76,12 +76,12 @@ var IpProfile = ubx.ResourceBinding{
 	WireType: "cloudflare_ip_profile",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Precedence": ubx.FieldSpec{WireName: "precedence"},
-		"SubnetId": ubx.FieldSpec{WireName: "subnet_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Match":       ubx.FieldSpec{WireName: "match"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Precedence":  ubx.FieldSpec{WireName: "precedence"},
+		"SubnetId":    ubx.FieldSpec{WireName: "subnet_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"ProfileId":   ubx.FieldSpec{WireName: "profile_id"},
 	},
 }

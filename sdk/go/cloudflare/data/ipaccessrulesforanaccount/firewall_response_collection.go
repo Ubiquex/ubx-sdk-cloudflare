@@ -3,6 +3,28 @@ package ipaccessrulesforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallResponseCollection_Result_Configuration struct {
+	Target any
+	Value  any
+}
+
+type FirewallResponseCollection_Result_Scope struct {
+	Email any
+	Id    any
+	Type  any
+}
+
+type FirewallResponseCollection_Result struct {
+	AllowedModes  any
+	Configuration any
+	CreatedOn     any
+	Id            any
+	Mode          any
+	ModifiedOn    any
+	Notes         any
+	Scope         any
+}
+
 type FirewallResponseCollectionConfig struct {
 	// Defines an account identifier.
 	AccountId any
@@ -47,20 +69,21 @@ type FirewallResponseCollectionAttrs struct {
 	Page any
 	// Defines the maximum number of results requested.
 	PerPage any
+	Result  any
 }
 
 var FirewallResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
 		"ConfigurationTarget": ubx.FieldSpec{WireName: "configuration_target"},
-		"ConfigurationValue": ubx.FieldSpec{WireName: "configuration_value"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Notes": ubx.FieldSpec{WireName: "notes"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"ConfigurationValue":  ubx.FieldSpec{WireName: "configuration_value"},
+		"Direction":           ubx.FieldSpec{WireName: "direction"},
+		"Match":               ubx.FieldSpec{WireName: "match"},
+		"Mode":                ubx.FieldSpec{WireName: "mode"},
+		"Notes":               ubx.FieldSpec{WireName: "notes"},
+		"Order":               ubx.FieldSpec{WireName: "order"},
+		"Page":                ubx.FieldSpec{WireName: "page"},
+		"PerPage":             ubx.FieldSpec{WireName: "per_page"},
 	},
 }

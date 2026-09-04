@@ -7,7 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Bulk_SearchParams:
+class Bulk_Result_ActionParams:
+    destination: Any = None
+    expected_disposition: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Bulk_Result_SearchParams:
     # Deprecated, use `GET /investigate/{investigate_id}/action_log` instead. End of life: November 1, 2026.
     action_log: Any = None
     alert_id: Any = None
@@ -32,7 +38,24 @@ class Bulk_SearchParams:
     subject: Any = None
     submissions: Any = None
 
-_Bulk_SearchParamsFields = {
+@dataclasses.dataclass
+class Bulk_Result:
+    action_params: Any = None
+    action_type: Any = None
+    comment: Any = None
+    completed_at: Any = None
+    created_at: Any = None
+    job_id: Any = None
+    messages_failed: Any = None
+    messages_pending: Any = None
+    messages_successful: Any = None
+    search_params: Any = None
+    started_at: Any = None
+    status: Any = None
+    status_message: Any = None
+    total_messages_discovered: Any = None
+
+_Bulk_Result_SearchParamsFields = {
     "action_log": ubx.FieldSpec(wire_name="action_log"),
     "alert_id": ubx.FieldSpec(wire_name="alert_id"),
     "delivery_status": ubx.FieldSpec(wire_name="delivery_status"),
@@ -71,6 +94,7 @@ class BulkAttrs:
     comment: Any = None
     destination: Any = None
     expected_disposition: Any = None
+    result: Any = None
     search_params: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -87,7 +111,7 @@ Bulk = ubx.ResourceBinding(
         "search_params": ubx.FieldSpec(
             wire_name="search_params",
             kind="object",
-            fields=_Bulk_SearchParamsFields,
+            fields=_Bulk_Result_SearchParamsFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "job_id": ubx.FieldSpec(wire_name="job_id"),

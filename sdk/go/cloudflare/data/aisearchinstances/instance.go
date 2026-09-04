@@ -4,13 +4,13 @@ package aisearchinstances
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_Result_CustomMetadata struct {
-	DataType any
+	DataType  any
 	FieldName any
 }
 
 type Instance_Result_IndexMethod struct {
 	Keyword any
-	Vector any
+	Vector  any
 }
 
 type Instance_Result_IndexingOptions struct {
@@ -19,7 +19,7 @@ type Instance_Result_IndexingOptions struct {
 
 type Instance_Result_Metadata struct {
 	CreatedFromAisearchWizard any
-	WorkerDomain any
+	WorkerDomain              any
 }
 
 type Instance_Result_PublicEndpointParams_ChatCompletionsEndpoint struct {
@@ -28,125 +28,125 @@ type Instance_Result_PublicEndpointParams_ChatCompletionsEndpoint struct {
 
 type Instance_Result_PublicEndpointParams_Mcp struct {
 	Description any
-	Disabled any
+	Disabled    any
 }
 
 type Instance_Result_PublicEndpointParams_RateLimit struct {
-	PeriodMs any
-	Requests any
+	PeriodMs  any
+	Requests  any
 	Technique any
 }
 
 type Instance_Result_PublicEndpointParams struct {
-	AuthorizedHosts any
+	AuthorizedHosts         any
 	ChatCompletionsEndpoint any
-	CustomDomains any
-	DefaultDomainEnabled any
-	Enabled any
-	Mcp any
-	RateLimit any
-	SearchEndpoint any
+	CustomDomains           any
+	DefaultDomainEnabled    any
+	Enabled                 any
+	Mcp                     any
+	RateLimit               any
+	SearchEndpoint          any
 }
 
 type Instance_Result_RetrievalOptions_BoostBy struct {
-	DataType any
+	DataType  any
 	Direction any
-	Field any
+	Field     any
 }
 
 type Instance_Result_RetrievalOptions struct {
-	BoostBy any
+	BoostBy          any
 	KeywordMatchMode any
 }
 
 type Instance_Result_SourceParams_WebCrawler_DiscoverOptions struct {
-	Depth any
+	Depth                any
 	IncludeExternalLinks any
-	IncludeSubdomains any
-	Limit any
-	MaxAge any
-	Source any
+	IncludeSubdomains    any
+	Limit                any
+	MaxAge               any
+	Source               any
 }
 
 type Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelector struct {
-	Path any
+	Path     any
 	Selector any
 }
 
 type Instance_Result_SourceParams_WebCrawler_ParseOptions struct {
-	ContentSelector any
-	IncludeHeaders any
-	IncludeImages any
-	SpecificSitemaps any
+	ContentSelector     any
+	IncludeHeaders      any
+	IncludeImages       any
+	SpecificSitemaps    any
 	UseBrowserRendering any
 }
 
 type Instance_Result_SourceParams_WebCrawler struct {
 	DiscoverOptions any
-	ParseOptions any
-	ParseType any
+	ParseOptions    any
+	ParseType       any
 }
 
 type Instance_Result_SourceParams struct {
-	ExcludeItems any
-	IncludeItems any
-	Prefix any
+	ExcludeItems   any
+	IncludeItems   any
+	Prefix         any
 	R2Jurisdiction any
-	WebCrawler any
+	WebCrawler     any
 }
 
 type Instance_Result struct {
-	AiGatewayId any
-	AiSearchModel any
-	Cache any
-	CacheThreshold any
-	CacheTtl any
-	Chunk any
-	ChunkOverlap any
-	ChunkSize any
-	CreatedAt any
-	CreatedBy any
-	CustomMetadata any
-	EmbeddingModel any
-	Enable any
-	EngineVersion any
-	FusionMethod any
-	HybridSearchEnabled any
-	Id any
-	IndexMethod any
-	IndexingOptions any
-	LastActivity any
-	MaxNumResults any
-	Metadata any
-	ModifiedAt any
-	ModifiedBy any
-	Namespace any
-	Paused any
-	PublicEndpointId any
-	PublicEndpointParams any
-	Reranking any
-	RerankingModel any
-	RetrievalOptions any
-	RewriteModel any
-	RewriteQuery any
-	ScoreThreshold any
-	Source any
-	SourceParams any
-	Status any
-	Summarization any
-	SummarizationModel any
-	SyncInterval any
-	SystemPromptAiSearch any
+	AiGatewayId                    any
+	AiSearchModel                  any
+	Cache                          any
+	CacheThreshold                 any
+	CacheTtl                       any
+	Chunk                          any
+	ChunkOverlap                   any
+	ChunkSize                      any
+	CreatedAt                      any
+	CreatedBy                      any
+	CustomMetadata                 any
+	EmbeddingModel                 any
+	Enable                         any
+	EngineVersion                  any
+	FusionMethod                   any
+	HybridSearchEnabled            any
+	Id                             any
+	IndexMethod                    any
+	IndexingOptions                any
+	LastActivity                   any
+	MaxNumResults                  any
+	Metadata                       any
+	ModifiedAt                     any
+	ModifiedBy                     any
+	Namespace                      any
+	Paused                         any
+	PublicEndpointId               any
+	PublicEndpointParams           any
+	Reranking                      any
+	RerankingModel                 any
+	RetrievalOptions               any
+	RewriteModel                   any
+	RewriteQuery                   any
+	ScoreThreshold                 any
+	Source                         any
+	SourceParams                   any
+	Status                         any
+	Summarization                  any
+	SummarizationModel             any
+	SyncInterval                   any
+	SystemPromptAiSearch           any
 	SystemPromptIndexSummarization any
-	SystemPromptRewriteQuery any
-	TokenId any
-	Type any
+	SystemPromptRewriteQuery       any
+	TokenId                        any
+	Type                           any
 }
 
 type Instance_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -177,23 +177,23 @@ type InstanceAttrs struct {
 	// Page number (1-indexed).
 	Page any
 	// Number of results per page.
-	PerPage any
-	Result any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Filter instances whose id contains this string (case-insensitive).
-	Search any
+	Search  any
 	Success any
 }
 
 var Instance = ubx.DataSourceBinding{
 	WireType: "cloudflare_instance",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"Namespace":        ubx.FieldSpec{WireName: "namespace"},
+		"OrderBy":          ubx.FieldSpec{WireName: "order_by"},
 		"OrderByDirection": ubx.FieldSpec{WireName: "order_by_direction"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"Search":           ubx.FieldSpec{WireName: "search"},
 	},
 }

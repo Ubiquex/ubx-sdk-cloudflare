@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Metadata_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Metadata_Result:
+    pass
+
+@dataclasses.dataclass
 class MetadataConfig:
     # A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
     key_name: Any = None
@@ -15,10 +24,15 @@ class MetadataConfig:
 class MetadataAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     # A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
     key_name: Any = None
+    messages: Any = None
     # Namespace identifier tag.
     namespace_id: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Metadata = ubx.DataSourceBinding(
     wire_type="cloudflare_metadata",

@@ -3,6 +3,18 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bucket_Result_Buckets struct {
+	CreationDate any
+	Jurisdiction any
+	Location     any
+	Name         any
+	StorageClass any
+}
+
+type Bucket_Result struct {
+	Buckets any
+}
+
 type BucketConfig struct {
 	// Account ID.
 	AccountId any
@@ -33,6 +45,7 @@ type BucketAttrs struct {
 	Order any
 	// Maximum number of buckets to return in a single call.
 	PerPage any
+	Result  any
 	// Bucket name to start searching after. Buckets are ordered lexicographically.
 	StartAfter any
 }
@@ -40,12 +53,12 @@ type BucketAttrs struct {
 var Bucket = ubx.DataSourceBinding{
 	WireType: "cloudflare_bucket",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":       ubx.FieldSpec{WireName: "cursor"},
+		"Direction":    ubx.FieldSpec{WireName: "direction"},
 		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"StartAfter": ubx.FieldSpec{WireName: "start_after"},
+		"Order":        ubx.FieldSpec{WireName: "order"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
+		"StartAfter":   ubx.FieldSpec{WireName: "start_after"},
 	},
 }

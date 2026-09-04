@@ -3,6 +3,25 @@ package perhostnameauthenticatedoriginpull
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseSingle4_Result struct {
+	// The hostname certificate.
+	Certificate any
+	// The date when the certificate expires.
+	ExpiresOn any
+	// Identifier.
+	Id any
+	// The certificate authority that issued the certificate.
+	Issuer any
+	// The serial number on the uploaded certificate.
+	SerialNumber any
+	// The type of hash used for the certificate.
+	Signature any
+	// Status of the certificate or the association.
+	Status any
+	// The time when the certificate was uploaded.
+	UploadedOn any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseSingle4Config struct {
 	// The hostname certificate.
 	Certificate any
@@ -19,6 +38,7 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle4Attrs struct {
 	Certificate any
 	// The hostname certificate's private key.
 	PrivateKey any
+	Result     any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +48,9 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle4Attrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseSingle4 = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_single_4",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Certificate":   ubx.FieldSpec{WireName: "certificate"},
+		"PrivateKey":    ubx.FieldSpec{WireName: "private_key"},
+		"ZoneId":        ubx.FieldSpec{WireName: "zone_id"},
 		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
 	},
 }

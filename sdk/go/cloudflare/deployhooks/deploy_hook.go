@@ -3,6 +3,32 @@ package deployhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DeployHook_Errors struct {
+	Code    any
+	Message any
+}
+
+type DeployHook_Result struct {
+	// Git branch name.
+	Branch    any
+	CreatedOn any
+	// Deploy hook name (1-58 characters).
+	DeployHookName any
+	// Deploy hook UUID.
+	DeployHookUuid any
+	// System-generated worker script tag.
+	ExternalScriptId any
+	ModifiedOn       any
+}
+
+type DeployHook_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type DeployHookConfig struct {
 	// Git branch name.
 	Branch any
@@ -21,6 +47,11 @@ type DeployHookAttrs struct {
 	Branch any
 	// Deploy hook name (1-58 characters).
 	DeployHookName any
+	Errors         any
+	Messages       any
+	Result         any
+	ResultInfo     any
+	Success        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +63,10 @@ type DeployHookAttrs struct {
 var DeployHook = ubx.ResourceBinding{
 	WireType: "cloudflare_deploy_hook",
 	Fields: ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
+		"Branch":         ubx.FieldSpec{WireName: "branch"},
 		"DeployHookName": ubx.FieldSpec{WireName: "deploy_hook_name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"ScriptName":     ubx.FieldSpec{WireName: "script_name"},
 		"DeployHookUuid": ubx.FieldSpec{WireName: "deploy_hook_uuid"},
 	},
 }

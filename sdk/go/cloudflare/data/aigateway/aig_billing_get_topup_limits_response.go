@@ -4,7 +4,7 @@ package aigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AigBillingGetTopupLimitsResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -17,9 +17,9 @@ type AigBillingGetTopupLimitsResponse_Result struct {
 }
 
 type AigBillingGetTopupLimitsResponse_ResultInfo struct {
-	HasMore any
-	Page any
-	PerPage any
+	HasMore    any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -28,12 +28,12 @@ type AigBillingGetTopupLimitsResponseConfig struct {
 }
 
 type AigBillingGetTopupLimitsResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AigBillingGetTopupLimitsResponse = ubx.DataSourceBinding{

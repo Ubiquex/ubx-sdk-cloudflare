@@ -3,6 +3,26 @@ package urlintelligence
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelUrlIntelligenceSingleResponse_Result_ContentCategories struct {
+	Id              any
+	Name            any
+	SourceId        any
+	SuperCategoryId any
+}
+
+type IntelUrlIntelligenceSingleResponse_Result struct {
+	// Content categories associated with this URL.
+	ContentCategories any
+	// The full URL that was looked up.
+	FullUrl any
+	// The hostname of the URL.
+	Hostname any
+	// Security risk types associated with this URL.
+	RiskType any
+	// The path component of the URL.
+	UrlPath any
+}
+
 type IntelUrlIntelligenceSingleResponseConfig struct {
 	Url any
 }
@@ -10,7 +30,8 @@ type IntelUrlIntelligenceSingleResponseConfig struct {
 type IntelUrlIntelligenceSingleResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Url any
+	Result    any
+	Url       any
 }
 
 var IntelUrlIntelligenceSingleResponse = ubx.DataSourceBinding{

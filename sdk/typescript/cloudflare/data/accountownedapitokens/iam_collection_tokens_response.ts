@@ -4,6 +4,46 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamCollectionTokensResponse_AccountId {
 }
 
+export interface IamCollectionTokensResponse_Result_Condition_RequestIp {
+  in?: string[] | Computed<string[]>;
+  notIn?: string[] | Computed<string[]>;
+}
+
+export interface IamCollectionTokensResponse_Result_Condition {
+  requestIp?: IamCollectionTokensResponse_Result_Condition_RequestIp | Computed<IamCollectionTokensResponse_Result_Condition_RequestIp>;
+}
+
+export interface IamCollectionTokensResponse_Result_Policies_PermissionGroups_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface IamCollectionTokensResponse_Result_Policies_PermissionGroups {
+  id?: string | Computed<string>;
+  meta?: IamCollectionTokensResponse_Result_Policies_PermissionGroups_Meta | Computed<IamCollectionTokensResponse_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+}
+
+export interface IamCollectionTokensResponse_Result_Policies {
+  effect?: string | Computed<string>;
+  id?: string | Computed<string>;
+  permissionGroups?: IamCollectionTokensResponse_Result_Policies_PermissionGroups[] | Computed<IamCollectionTokensResponse_Result_Policies_PermissionGroups[]>;
+  resources?: IamCollectionTokensResponse_AccountId | Computed<IamCollectionTokensResponse_AccountId>;
+}
+
+export interface IamCollectionTokensResponse_Result {
+  condition?: IamCollectionTokensResponse_Result_Condition | Computed<IamCollectionTokensResponse_Result_Condition>;
+  expiresOn?: string | Computed<string>;
+  id?: string | Computed<string>;
+  issuedOn?: string | Computed<string>;
+  lastUsedOn?: string | Computed<string>;
+  modifiedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+  notBefore?: string | Computed<string>;
+  policies?: IamCollectionTokensResponse_Result_Policies[] | Computed<IamCollectionTokensResponse_Result_Policies[]>;
+  status?: string | Computed<string>;
+}
+
 const IamCollectionTokensResponse_AccountIdFields: FieldMap = {
 };
 
@@ -29,6 +69,7 @@ export interface IamCollectionTokensResponseAttrs {
   page: number;
   /** Maximum number of results per page. */
   perPage: number;
+  result: IamCollectionTokensResponse_Result[];
 }
 
 export const IamCollectionTokensResponse: DataSourceBinding<IamCollectionTokensResponseConfig, IamCollectionTokensResponseAttrs> = {

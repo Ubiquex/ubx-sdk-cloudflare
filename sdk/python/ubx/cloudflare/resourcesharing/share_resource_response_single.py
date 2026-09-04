@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareResourceResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ShareResourceResponseSingle_Result:
+    # When the share was created.
+    created: Any = None
+    # Share Resource identifier.
+    id: Any = None
+    # Resource Metadata.
+    meta: Any = None
+    # When the share was modified.
+    modified: Any = None
+    # Account identifier.
+    resource_account_id: Any = None
+    # Share Resource identifier.
+    resource_id: Any = None
+    # Resource Type.
+    resource_type: Any = None
+    # Resource Version.
+    resource_version: Any = None
+    # Resource Status.
+    status: Any = None
+
+@dataclasses.dataclass
 class ShareResourceResponseSingleConfig:
     # Resource Metadata.
     meta: Any = None
@@ -25,6 +51,7 @@ class ShareResourceResponseSingleConfig:
 
 @dataclasses.dataclass
 class ShareResourceResponseSingleAttrs:
+    errors: Any = None
     # Resource Metadata.
     meta: Any = None
     # Account identifier.
@@ -33,6 +60,9 @@ class ShareResourceResponseSingleAttrs:
     resource_id: Any = None
     # Resource Type.
     resource_type: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

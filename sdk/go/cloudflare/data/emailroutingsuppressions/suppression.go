@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Suppression_Result struct {
 	CreatedAt any
-	Email any
+	Email     any
 	ExpiresAt any
-	Id any
-	Reason any
-	Zones any
+	Id        any
+	Reason    any
+	Zones     any
 }
 
 type SuppressionConfig struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type SuppressionAttrs struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
-	Result any
-	Total any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
+	Total     any
 }
 
 var Suppression = ubx.DataSourceBinding{
@@ -35,8 +35,8 @@ var Suppression = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

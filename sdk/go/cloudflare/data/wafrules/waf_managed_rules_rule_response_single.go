@@ -9,6 +9,7 @@ type WafManagedRulesRuleResponseSingleConfig struct {
 type WafManagedRulesRuleResponseSingleAttrs struct {
 	// Defines the unique identifier of a WAF package.
 	PackageId any
+	Result    any
 	// Defines the unique identifier of a WAF package.
 	RuleId any
 	// Defines an identifier of a schema.
@@ -17,6 +18,5 @@ type WafManagedRulesRuleResponseSingleAttrs struct {
 
 var WafManagedRulesRuleResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_managed_rules_rule_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

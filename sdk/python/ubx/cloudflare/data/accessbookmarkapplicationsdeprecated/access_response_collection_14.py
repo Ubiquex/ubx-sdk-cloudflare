@@ -7,12 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection14_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessResponseCollection14_Result:
+    app_launcher_visible: Any = None
+    created_at: Any = None
+    domain: Any = None
+    id: Any = None
+    logo_url: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection14Config:
     account_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollection14Attrs:
     account_id: Any = None
+    result: Any = None
 
 AccessResponseCollection14 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_collection_14",

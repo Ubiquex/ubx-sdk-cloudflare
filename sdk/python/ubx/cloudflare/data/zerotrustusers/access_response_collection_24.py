@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection24_Result:
+    access_seat: Any = None
+    active_device_count: Any = None
+    created_at: Any = None
+    email: Any = None
+    gateway_seat: Any = None
+    id: Any = None
+    last_successful_login: Any = None
+    name: Any = None
+    seat_uid: Any = None
+    uid: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection24_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection24Config:
     # Identifier.
     account_id: Any = None
@@ -33,6 +54,8 @@ class AccessResponseCollection24Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # Search for users by other listed query parameters.
     search: Any = None
 

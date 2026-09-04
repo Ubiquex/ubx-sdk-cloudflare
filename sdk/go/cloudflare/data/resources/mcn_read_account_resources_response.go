@@ -3,56 +3,158 @@ package resources
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type McnReadAccountResourcesResponseConfig struct {
-	AccountId any
-	Cloudflare any
-	Desc any
-	Managed any
-	OrderBy any
-	Page any
-	PerPage any
-	ProviderId any
-	Region any
-	ResourceGroup any
-	ResourceId any
+type McnReadAccountResourcesResponse_Result_ManagedBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnReadAccountResourcesResponse_Result_MonthlyCostEstimate struct {
+	Currency    any
+	MonthlyCost any
+}
+
+type McnReadAccountResourcesResponse_Result_Observations struct {
+	FirstObservedAt any
+	LastObservedAt  any
+	ProviderId      any
+	ResourceId      any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_List_ResourcePreview struct {
+	CloudType    any
+	Detail       any
+	Id           any
+	Name         any
 	ResourceType any
-	Search any
-	V2 any
+	Title        any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_List struct {
+	ItemType        any
+	ResourcePreview any
+	String          any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_YamlDiff struct {
+	Diff             any
+	LeftDescription  any
+	LeftYaml         any
+	RightDescription any
+	RightYaml        any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value struct {
+	ItemType        any
+	List            any
+	ResourcePreview any
+	String          any
+	Yaml            any
+	YamlDiff        any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections_HiddenItems struct {
+	HelpText any
+	Name     any
+	Value    any
+}
+
+type McnReadAccountResourcesResponse_Result_Sections struct {
+	HelpText     any
+	HiddenItems  any
+	Name         any
+	VisibleItems any
+}
+
+type McnReadAccountResourcesResponse_Result struct {
+	AccountId           any
+	CloudType           any
+	Config              any
+	DeploymentProvider  any
+	Id                  any
+	Managed             any
+	ManagedBy           any
+	MonthlyCostEstimate any
+	Name                any
+	NativeId            any
+	Observations        any
+	ProviderIds         any
+	ProviderNamesById   any
+	Region              any
+	ResourceGroup       any
+	ResourceType        any
+	Sections            any
+	State               any
+	Tags                any
+	UpdatedAt           any
+	Url                 any
+}
+
+type McnReadAccountResourcesResponse_ResultInfo struct {
+	// The number of items in the current result set.
+	Count any
+	// The current page (starts from zero).
+	Page any
+	// The maximum number of items per page.
+	PerPage any
+	// The total number of items in the entire result set.
+	TotalCount any
+	// The number of total pages in the entire result set.
+	TotalPages any
+}
+
+type McnReadAccountResourcesResponseConfig struct {
+	AccountId     any
+	Cloudflare    any
+	Desc          any
+	Managed       any
+	OrderBy       any
+	Page          any
+	PerPage       any
+	ProviderId    any
+	Region        any
+	ResourceGroup any
+	ResourceId    any
+	ResourceType  any
+	Search        any
+	V2            any
 }
 
 type McnReadAccountResourcesResponseAttrs struct {
-	AccountId any
-	Cloudflare any
-	Desc any
-	Managed any
-	OrderBy any
-	Page any
-	PerPage any
-	ProviderId any
-	Region any
+	AccountId     any
+	Cloudflare    any
+	Desc          any
+	Managed       any
+	OrderBy       any
+	Page          any
+	PerPage       any
+	ProviderId    any
+	Region        any
 	ResourceGroup any
-	ResourceId any
-	ResourceType any
-	Search any
-	V2 any
+	ResourceId    any
+	ResourceType  any
+	Result        any
+	ResultInfo    any
+	Search        any
+	V2            any
 }
 
 var McnReadAccountResourcesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_read_account_resources_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cloudflare": ubx.FieldSpec{WireName: "cloudflare"},
-		"Desc": ubx.FieldSpec{WireName: "desc"},
-		"Managed": ubx.FieldSpec{WireName: "managed"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Cloudflare":    ubx.FieldSpec{WireName: "cloudflare"},
+		"Desc":          ubx.FieldSpec{WireName: "desc"},
+		"Managed":       ubx.FieldSpec{WireName: "managed"},
+		"OrderBy":       ubx.FieldSpec{WireName: "order_by"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
+		"ProviderId":    ubx.FieldSpec{WireName: "provider_id"},
+		"Region":        ubx.FieldSpec{WireName: "region"},
 		"ResourceGroup": ubx.FieldSpec{WireName: "resource_group"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"V2": ubx.FieldSpec{WireName: "v2"},
+		"ResourceId":    ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType":  ubx.FieldSpec{WireName: "resource_type"},
+		"Search":        ubx.FieldSpec{WireName: "search"},
+		"V2":            ubx.FieldSpec{WireName: "v2"},
 	},
 }

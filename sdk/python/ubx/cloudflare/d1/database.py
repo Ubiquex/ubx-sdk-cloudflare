@@ -7,9 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Database_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class Database_ReadReplication:
     # The read replication mode for the database. Use 'auto' to create replicas and allow D1 automatically place them around the world, or 'disabled' to not use any database replicas (it can take a few hours for all replicas to be deleted).
     mode: Any = None
+
+@dataclasses.dataclass
+class Database_Result:
+    # Specifies the timestamp the resource was created as an ISO8601 string.
+    created_at: Any = None
+    # The D1 database's size, in bytes.
+    file_size: Any = None
+    # Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
+    jurisdiction: Any = None
+    # D1 database name.
+    name: Any = None
+    num_tables: Any = None
+    # Configuration for D1 read replication.
+    read_replication: Any = None
+    # D1 database identifier (UUID).
+    uuid: Any = None
+    version: Any = None
 
 _Database_ReadReplicationFields = {
     "mode": ubx.FieldSpec(wire_name="mode"),
@@ -32,14 +54,20 @@ class DatabaseConfig:
 
 @dataclasses.dataclass
 class DatabaseAttrs:
+    errors: Any = None
     # Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
     jurisdiction: Any = None
+    messages: Any = None
     # D1 database name.
     name: Any = None
     # Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
     primary_location_hint: Any = None
     # Configuration for D1 read replication.
     read_replication: Any = None
+    # The details of the D1 database.
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Rule_Result_Rules_Id:
+    pass
+
+@dataclasses.dataclass
+class Rule_Result_Rules_TargetedTests_Data:
+    host: Any = None
+    kind: Any = None
+    method: Any = None
+
+@dataclasses.dataclass
+class Rule_Result_Rules_TargetedTests:
+    data: Any = None
+    enabled: Any = None
+    name: Any = None
+    test_id: Any = None
+
+@dataclasses.dataclass
+class Rule_Result_Rules:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    match: Any = None
+    name: Any = None
+    targeted_tests: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Rule_Result:
+    rules: Any = None
+
+@dataclasses.dataclass
 class RuleConfig:
     name: Any = None
     page: Any = None
@@ -21,6 +52,7 @@ class RuleAttrs:
     name: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     sort_by: Any = None
     sort_order: Any = None
 

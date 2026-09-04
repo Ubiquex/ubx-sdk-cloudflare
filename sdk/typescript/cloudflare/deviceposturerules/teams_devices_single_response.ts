@@ -56,6 +56,27 @@ export interface TeamsDevicesSingleResponse_Match {
   platform?: string | Computed<string>;
 }
 
+export interface TeamsDevicesSingleResponse_Result {
+  /** The description of the device posture rule. */
+  description?: string | Computed<string>;
+  /** Whether the rule is enabled. This is a computed, read-only value. It is false for deprecated Kolide posture rules that still use the issue_count input, and true otherwise. */
+  enabled?: boolean | Computed<boolean>;
+  /** Sets the expiration time for a posture check result. If empty, the result remains valid until it is overwritten by new data from the WARP client. */
+  expiration?: string | Computed<string>;
+  /** API UUID. */
+  id?: string | Computed<string>;
+  /** The value to be checked against. */
+  input?: TeamsDevicesSingleResponse_Input | Computed<TeamsDevicesSingleResponse_Input>;
+  /** The conditions that the client must match to run the rule. */
+  match?: TeamsDevicesSingleResponse_Match[] | Computed<TeamsDevicesSingleResponse_Match[]>;
+  /** The name of the device posture rule. */
+  name?: string | Computed<string>;
+  /** Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`. */
+  schedule?: string | Computed<string>;
+  /** The type of device posture rule. */
+  type?: string | Computed<string>;
+}
+
 const TeamsDevicesSingleResponse_Input_LocationsFields: FieldMap = {
   paths: "paths",
   trustStores: "trust_stores",
@@ -147,6 +168,7 @@ export interface TeamsDevicesSingleResponseAttrs {
   match: TeamsDevicesSingleResponse_Match[];
   /** The name of the device posture rule. */
   name: string;
+  result: TeamsDevicesSingleResponse_Result;
   /** Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`. */
   schedule: string;
   /** The type of device posture rule. */

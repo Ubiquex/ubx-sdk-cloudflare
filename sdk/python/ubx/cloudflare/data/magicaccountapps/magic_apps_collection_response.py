@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicAppsCollectionResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MagicAppsCollectionResponse_Result_IpSubnets:
+    pass
+
+@dataclasses.dataclass
+class MagicAppsCollectionResponse_Result:
+    account_app_id: Any = None
+    hostnames: Any = None
+    ip_subnets: Any = None
+    managed_app_id: Any = None
+    name: Any = None
+    source_subnets: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class MagicAppsCollectionResponseConfig:
     pass
 
@@ -14,6 +33,11 @@ class MagicAppsCollectionResponseConfig:
 class MagicAppsCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 MagicAppsCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_apps_collection_response",

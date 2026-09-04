@@ -3,6 +3,14 @@ package perhostnametlssettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesPerHostnameSettingsResponse_Result struct {
+	CreatedAt any
+	Hostname  any
+	Status    any
+	UpdatedAt any
+	Value     any
+}
+
 type TlsCertificatesAndHostnamesPerHostnameSettingsResponseConfig struct {
 	// The TLS setting value. The type depends on the `setting_id` used in the request path: - `ciphers`: an array of allowed cipher suite strings in BoringSSL format (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: a string indicating the minimum TLS version — one of `"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"` (e.g., `"1.2"`). - `http2`: a string indicating whether HTTP/2 is enabled — `"on"` or `"off"` (e.g., `"on"`).
 	Value any
@@ -15,6 +23,7 @@ type TlsCertificatesAndHostnamesPerHostnameSettingsResponseConfig struct {
 }
 
 type TlsCertificatesAndHostnamesPerHostnameSettingsResponseAttrs struct {
+	Result any
 	// The TLS setting value. The type depends on the `setting_id` used in the request path: - `ciphers`: an array of allowed cipher suite strings in BoringSSL format (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: a string indicating the minimum TLS version — one of `"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"` (e.g., `"1.2"`). - `http2`: a string indicating whether HTTP/2 is enabled — `"on"` or `"off"` (e.g., `"on"`).
 	Value any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +37,9 @@ type TlsCertificatesAndHostnamesPerHostnameSettingsResponseAttrs struct {
 var TlsCertificatesAndHostnamesPerHostnameSettingsResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_per_hostname_settings_response",
 	Fields: ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Value":     ubx.FieldSpec{WireName: "value"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 		"SettingId": ubx.FieldSpec{WireName: "setting_id"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Hostname":  ubx.FieldSpec{WireName: "hostname"},
 	},
 }

@@ -10,6 +10,38 @@ import ubx_sdk as ubx
 class ResourceGroup_AccountId:
     pass
 
+@dataclasses.dataclass
+class ResourceGroup_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Result_Meta:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Result_Scope_Objects:
+    key: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Result_Scope:
+    key: Any = None
+    objects: Any = None
+
+@dataclasses.dataclass
+class ResourceGroup_Result:
+    id: Any = None
+    meta: Any = None
+    name: Any = None
+    scope: Any = None
+
 _ResourceGroup_AccountIdFields = {
 }
 
@@ -26,10 +58,15 @@ class ResourceGroupConfig:
 class ResourceGroupAttrs:
     # Account identifier tag.
     account_id: Any = None
+    errors: Any = None
     # ID of the resource group to be fetched.
     id: Any = None
+    messages: Any = None
     # Name of the resource group to be fetched.
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 ResourceGroup = ubx.DataSourceBinding(
     wire_type="cloudflare_resource_group",

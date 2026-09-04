@@ -4,14 +4,28 @@ package magicredundancygroups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MagicRedundancyGroupWithMembersResponse_Members struct {
-	Id any
+	Id   any
 	Type any
 }
 
+type MagicRedundancyGroupWithMembersResponse_Result_MemberData struct {
+	Data any
+	Type any
+}
+
+type MagicRedundancyGroupWithMembersResponse_Result struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	MemberData  any
+	ModifiedOn  any
+	Name        any
+}
+
 var MagicRedundancyGroupWithMembersResponse_MembersFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MagicRedundancyGroupWithMembersResponseConfig struct {
 	// Optional description
@@ -32,7 +46,8 @@ type MagicRedundancyGroupWithMembersResponseAttrs struct {
 	// Tunnels to add to the group
 	Members any
 	// Human-readable name for the redundancy group
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,11 +60,11 @@ var MagicRedundancyGroupWithMembersResponse = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Members": ubx.FieldSpec{
 			WireName: "members",
-			Kind: "list",
-			Fields: MagicRedundancyGroupWithMembersResponse_MembersFields,
+			Kind:     "list",
+			Fields:   MagicRedundancyGroupWithMembersResponse_MembersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"RedundancyGroupId": ubx.FieldSpec{WireName: "redundancy_group_id"},
 	},
 }

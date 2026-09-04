@@ -3,6 +3,30 @@ package ipaddressmanagementbgpprefixes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingResponseCollectionBgp_Result_BgpSignalOpts struct {
+	Enabled    any
+	ModifiedAt any
+}
+
+type AddressingResponseCollectionBgp_Result_OnDemand struct {
+	Advertised           any
+	AdvertisedModifiedAt any
+	OnDemandEnabled      any
+	OnDemandLocked       any
+}
+
+type AddressingResponseCollectionBgp_Result struct {
+	Asn                   any
+	AsnPrependCount       any
+	AutoAdvertiseWithdraw any
+	BgpSignalOpts         any
+	Cidr                  any
+	CreatedAt             any
+	Id                    any
+	ModifiedAt            any
+	OnDemand              any
+}
+
 type AddressingResponseCollectionBgpConfig struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -15,12 +39,13 @@ type AddressingResponseCollectionBgpAttrs struct {
 	AccountId any
 	// Identifier of an IP Prefix.
 	PrefixId any
+	Result   any
 }
 
 var AddressingResponseCollectionBgp = ubx.DataSourceBinding{
 	WireType: "cloudflare_addressing_response_collection_bgp",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

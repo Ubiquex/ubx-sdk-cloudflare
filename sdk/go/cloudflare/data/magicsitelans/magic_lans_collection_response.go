@@ -3,18 +3,70 @@ package magicsitelans
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicLansCollectionResponse_Result_Nat struct {
+	StaticPrefix any
+}
+
+type MagicLansCollectionResponse_Result_RoutedSubnets struct {
+	Nat     any
+	NextHop any
+	Prefix  any
+}
+
+type MagicLansCollectionResponse_Result_StaticAddressing_DhcpRelay struct {
+	ServerAddresses any
+}
+
+type MagicLansCollectionResponse_Result_StaticAddressing_DhcpServer_DhcpOptions struct {
+	Code  any
+	Type  any
+	Value any
+}
+
+type MagicLansCollectionResponse_Result_StaticAddressing_DhcpServer struct {
+	DhcpOptions   any
+	DhcpPoolEnd   any
+	DhcpPoolStart any
+	DnsServer     any
+	DnsServers    any
+	Reservations  any
+}
+
+type MagicLansCollectionResponse_Result_StaticAddressing struct {
+	Address          any
+	DhcpRelay        any
+	DhcpServer       any
+	SecondaryAddress any
+	VirtualAddress   any
+}
+
+type MagicLansCollectionResponse_Result struct {
+	BondId           any
+	HaLink           any
+	Id               any
+	IsBreakout       any
+	IsPrioritized    any
+	Name             any
+	Nat              any
+	Physport         any
+	RoutedSubnets    any
+	SiteId           any
+	StaticAddressing any
+	VlanTag          any
+}
+
 type MagicLansCollectionResponseConfig struct {
 }
 
 type MagicLansCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 	// Identifier
 	SiteId any
 }
 
 var MagicLansCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_lans_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

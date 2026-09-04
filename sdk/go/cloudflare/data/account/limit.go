@@ -3,6 +3,26 @@ package account
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Limit_Errors struct {
+	Code    any
+	Message any
+}
+
+type Limit_Result struct {
+	// When build minutes will refresh (only for non-paid plans)
+	BuildMinutesRefreshOn any
+	// Whether build minutes limit has been reached (only for non-paid plans)
+	HasReachedBuildMinutesLimit any
+}
+
+type Limit_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type LimitConfig struct {
 	// Account identifier.
 	AccountId any
@@ -10,7 +30,12 @@ type LimitConfig struct {
 
 type LimitAttrs struct {
 	// Account identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
+	ResultInfo any
+	Success    any
 }
 
 var Limit = ubx.DataSourceBinding{

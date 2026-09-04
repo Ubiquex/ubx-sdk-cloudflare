@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImageResponseSingle_Result:
+    # Can set the creator field with an internal user ID.
+    creator: Any = None
+    # Image file name.
+    filename: Any = None
+    # Image unique identifier.
+    id: Any = None
+    # User modifiable key-value store. Can be used for keeping references to another system of record for managing images. Metadata must not exceed 1024 bytes.
+    meta: Any = None
+    # Indicates whether the image can be a accessed only using it's UID. If set to true, a signed token needs to be generated with a signing key to view the image.
+    require_signed_urls: Any = None
+    # When the media item was uploaded.
+    uploaded: Any = None
+    # Object specifying available variants for an image.
+    variants: Any = None
+
+@dataclasses.dataclass
 class ImagesImageResponseSingleConfig:
     # Can set the creator field with an internal user ID.
     creator: Any = None
@@ -37,6 +54,7 @@ class ImagesImageResponseSingleAttrs:
     metadata: Any = None
     # Indicates whether the image requires a signature token for the access.
     require_signed_urls: Any = None
+    result: Any = None
     # A URL to fetch an image from origin. Only needed when type is uploading from a URL.
     url: Any = None
     # path parameter, not part of the API's own resource representation

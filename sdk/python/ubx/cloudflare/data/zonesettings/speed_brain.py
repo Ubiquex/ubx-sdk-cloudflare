@@ -7,12 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SpeedBrain_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class SpeedBrain_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class SpeedBrainConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class SpeedBrainAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

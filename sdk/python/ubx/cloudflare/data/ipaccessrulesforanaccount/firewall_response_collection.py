@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallResponseCollection_Result_Configuration:
+    target: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallResponseCollection_Result_Scope:
+    email: Any = None
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class FirewallResponseCollection_Result:
+    allowed_modes: Any = None
+    configuration: Any = None
+    created_on: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    notes: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
 class FirewallResponseCollectionConfig:
     # Defines an account identifier.
     account_id: Any = None
@@ -51,6 +73,7 @@ class FirewallResponseCollectionAttrs:
     page: Any = None
     # Defines the maximum number of results requested.
     per_page: Any = None
+    result: Any = None
 
 FirewallResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_firewall_response_collection",

@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ApiShieldPublicSchemaSuccessResult_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ApiShieldPublicSchemaSuccessResult_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ApiShieldPublicSchemaSuccessResult_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class ApiShieldPublicSchemaSuccessResult_Result:
+    created_at: Any = None
+    # The kind of the schema
+    kind: Any = None
+    # A human-readable name for the schema
+    name: Any = None
+    schema_id: Any = None
+    # The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
+    source: Any = None
+    # An indicator if this schema is enabled
+    validation_enabled: Any = None
+
+@dataclasses.dataclass
 class ApiShieldPublicSchemaSuccessResultConfig:
     # The kind of the schema
     kind: Any = None
@@ -23,12 +51,18 @@ class ApiShieldPublicSchemaSuccessResultConfig:
 
 @dataclasses.dataclass
 class ApiShieldPublicSchemaSuccessResultAttrs:
+    errors: Any = None
     # The kind of the schema
     kind: Any = None
+    messages: Any = None
     # A human-readable name for the schema
     name: Any = None
+    # A schema used in schema validation
+    result: Any = None
     # The raw schema, e.g., the OpenAPI schema, either as JSON or YAML
     source: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # An indicator if this schema is enabled
     validation_enabled: Any = None
     # path parameter, not part of the API's own resource representation

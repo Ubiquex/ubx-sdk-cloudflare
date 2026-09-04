@@ -19,12 +19,12 @@ class ZeroTrustGatewaySingleResponse4_Expiration:
     expires_at: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSsh:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSsh:
     # Enable SSH command logging.
     command_logging: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControls:
     # Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
     copy: Any = None
     # Set to false to enable copy-pasting. Only applies when `version == "v1"`.
@@ -53,33 +53,33 @@ class ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControls:
     wm_id: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPage:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPage:
     # Specify whether to pass the context information as query parameters.
     include_context: Any = None
     # Specify the URI to which the user is redirected.
     target_uri: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSession:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSession:
     # Sets the required session freshness threshold. The API returns a normalized version of this value.
     duration: Any = None
     # Enable session enforcement.
     enforce: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4:
     ip: Any = None
     port: Any = None
     route_through_private_network: Any = None
     vnet_id: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers:
     ipv4: Any = None
     ipv6: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_Egress:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Egress:
     # Specify the IPv4 address to use for egress.
     ipv4: Any = None
     # Specify the fallback IPv4 address to use for egress when the primary IPv4 fails. Set '0.0.0.0' to indicate local egress via WARP IPs.
@@ -88,19 +88,19 @@ class ZeroTrustGatewaySingleResponse4_RuleSettings_Egress:
     ipv6: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopy:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopy:
     # Enable sending the copy to storage.
     enabled: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_L4override:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4override:
     # Defines the IPv4 or IPv6 address.
     ip: Any = None
     # Defines a port number to use for TCP/UDP overrides.
     port: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettings:
     # Enable notification.
     enabled: Any = None
     # Indicates whether to pass the context information as query parameters.
@@ -111,12 +111,12 @@ class ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettings:
     support_url: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_Quarantine:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Quarantine:
     # Specify the types of files to sandbox.
     file_types: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_Redirect:
     # Specify whether to pass the context information as query parameters.
     include_context: Any = None
     # Specify whether to append the path and query parameters from the original request to target_uri.
@@ -125,19 +125,19 @@ class ZeroTrustGatewaySingleResponse4_RuleSettings_Redirect:
     target_uri: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternally:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternally:
     # Specify the fallback behavior to apply when the internal DNS response code differs from 'NOERROR' or when the response data contains only CNAME records for 'A' or 'AAAA' queries.
     fallback: Any = None
     # Specify the internal DNS view identifier to pass to the internal DNS service.
     view_id: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCert:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCert:
     # Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
     action: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_RuleSettings:
+class ZeroTrustGatewaySingleResponse4_Result_RuleSettings:
     # Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values. Header values may contain `@{selector.name}` variable references that are interpolated at the edge. Use `@@{` to escape a literal `@{`. A maximum of 20 header operations (add + set + delete) is allowed per policy. Each header name may not exceed 256 bytes and each header value may not exceed 4 KB. Settable only for `http` rules with the action set to `allow`.
     add_headers: Any = None
     # Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule. Settable for all types of rules.
@@ -196,7 +196,7 @@ class ZeroTrustGatewaySingleResponse4_RuleSettings:
     untrusted_cert: Any = None
 
 @dataclasses.dataclass
-class ZeroTrustGatewaySingleResponse4_Schedule:
+class ZeroTrustGatewaySingleResponse4_Result_Schedule:
     # Specify the time intervals when the rule is active on Fridays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Fridays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
     fri: Any = None
     # Specify the time intervals when the rule is active on Mondays, in the increasing order from 00:00-24:00(capped at maximum of 6 time splits). If this parameter omitted, the rule is deactivated on Mondays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
@@ -214,6 +214,49 @@ class ZeroTrustGatewaySingleResponse4_Schedule:
     # Specify the time intervals when the rule is active on Wednesdays, in the increasing order from 00:00-24:00. If this parameter omitted, the rule is deactivated on Wednesdays. API returns a formatted version of this string, which may cause Terraform drift if a unformatted value is used.
     wed: Any = None
 
+@dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse4_Result:
+    # Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.
+    action: Any = None
+    created_at: Any = None
+    # Indicate the date of deletion, if any.
+    deleted_at: Any = None
+    # Specify the rule description.
+    description: Any = None
+    # Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+    device_posture: Any = None
+    # Specify whether the rule is enabled.
+    enabled: Any = None
+    # Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy's `schedule` configuration, if any. This does not apply to HTTP or network policies. Settable only for `dns` rules.
+    expiration: Any = None
+    # Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions. Can only contain a single value.
+    filters: Any = None
+    # Identify the API resource with a UUID.
+    id: Any = None
+    # Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+    identity: Any = None
+    # Specify the rule name.
+    name: Any = None
+    # Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
+    precedence: Any = None
+    # Indicate that this rule is shared via the Orgs API and read only.
+    read_only: Any = None
+    # Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
+    rule_settings: Any = None
+    # Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
+    schedule: Any = None
+    # Indicate that this rule is sharable via the Orgs API.
+    sharable: Any = None
+    # Provide the account tag of the account that created the rule.
+    source_account: Any = None
+    # Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.
+    traffic: Any = None
+    updated_at: Any = None
+    # Indicate the version number of the rule(read-only).
+    version: Any = None
+    # Indicate a warning for a misconfigured rule, if any.
+    warning_status: Any = None
+
 _ZeroTrustGatewaySingleResponse4_Expiration_ExpiresAtFields = {
 }
 
@@ -227,11 +270,11 @@ _ZeroTrustGatewaySingleResponse4_ExpirationFields = {
     ),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields = {
     "command_logging": ubx.FieldSpec(wire_name="command_logging"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields = {
     "copy": ubx.FieldSpec(wire_name="copy"),
     "dcp": ubx.FieldSpec(wire_name="dcp"),
     "dd": ubx.FieldSpec(wire_name="dd"),
@@ -247,94 +290,94 @@ _ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields = {
     "wm_id": ubx.FieldSpec(wire_name="wm_id"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields = {
     "include_context": ubx.FieldSpec(wire_name="include_context"),
     "target_uri": ubx.FieldSpec(wire_name="target_uri"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields = {
     "duration": ubx.FieldSpec(wire_name="duration"),
     "enforce": ubx.FieldSpec(wire_name="enforce"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields = {
     "ip": ubx.FieldSpec(wire_name="ip"),
     "port": ubx.FieldSpec(wire_name="port"),
     "route_through_private_network": ubx.FieldSpec(wire_name="route_through_private_network"),
     "vnet_id": ubx.FieldSpec(wire_name="vnet_id"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields = {
     "ipv4": ubx.FieldSpec(
         wire_name="ipv4",
         kind="list",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
     ),
     "ipv6": ubx.FieldSpec(
         wire_name="ipv6",
         kind="list",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolvers_Ipv4Fields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolvers_Ipv4Fields,
     ),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields = {
     "ipv4": ubx.FieldSpec(wire_name="ipv4"),
     "ipv4_fallback": ubx.FieldSpec(wire_name="ipv4_fallback"),
     "ipv6": ubx.FieldSpec(wire_name="ipv6"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields = {
     "ip": ubx.FieldSpec(wire_name="ip"),
     "port": ubx.FieldSpec(wire_name="port"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "include_context": ubx.FieldSpec(wire_name="include_context"),
     "msg": ubx.FieldSpec(wire_name="msg"),
     "support_url": ubx.FieldSpec(wire_name="support_url"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields = {
     "file_types": ubx.FieldSpec(wire_name="file_types"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields = {
     "include_context": ubx.FieldSpec(wire_name="include_context"),
     "preserve_path_and_query": ubx.FieldSpec(wire_name="preserve_path_and_query"),
     "target_uri": ubx.FieldSpec(wire_name="target_uri"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields = {
     "fallback": ubx.FieldSpec(wire_name="fallback"),
     "view_id": ubx.FieldSpec(wire_name="view_id"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields = {
     "action": ubx.FieldSpec(wire_name="action"),
 }
 
-_ZeroTrustGatewaySingleResponse4_RuleSettingsFields = {
+_ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields = {
     "add_headers": ubx.FieldSpec(wire_name="add_headers"),
     "allow_child_bypass": ubx.FieldSpec(wire_name="allow_child_bypass"),
     "audit_ssh": ubx.FieldSpec(
         wire_name="audit_ssh",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_AuditSshFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_AuditSshFields,
     ),
     "biso_admin_controls": ubx.FieldSpec(
         wire_name="biso_admin_controls",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_BisoAdminControlsFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BisoAdminControlsFields,
     ),
     "block_page": ubx.FieldSpec(
         wire_name="block_page",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_BlockPageFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_BlockPageFields,
     ),
     "block_page_enabled": ubx.FieldSpec(wire_name="block_page_enabled"),
     "block_reason": ubx.FieldSpec(wire_name="block_reason"),
@@ -342,23 +385,23 @@ _ZeroTrustGatewaySingleResponse4_RuleSettingsFields = {
     "check_session": ubx.FieldSpec(
         wire_name="check_session",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_CheckSessionFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_CheckSessionFields,
     ),
     "delete_headers": ubx.FieldSpec(wire_name="delete_headers"),
     "dns_resolvers": ubx.FieldSpec(
         wire_name="dns_resolvers",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_DnsResolversFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_DnsResolversFields,
     ),
     "egress": ubx.FieldSpec(
         wire_name="egress",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_EgressFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_EgressFields,
     ),
     "forensic_copy": ubx.FieldSpec(
         wire_name="forensic_copy",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
     ),
     "ignore_cname_category_matches": ubx.FieldSpec(wire_name="ignore_cname_category_matches"),
     "insecure_disable_dnssec_validation": ubx.FieldSpec(wire_name="insecure_disable_dnssec_validation"),
@@ -367,45 +410,45 @@ _ZeroTrustGatewaySingleResponse4_RuleSettingsFields = {
     "l4override": ubx.FieldSpec(
         wire_name="l4override",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_L4overrideFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_L4overrideFields,
     ),
     "notification_settings": ubx.FieldSpec(
         wire_name="notification_settings",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_NotificationSettingsFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_NotificationSettingsFields,
     ),
     "override_host": ubx.FieldSpec(wire_name="override_host"),
     "override_ips": ubx.FieldSpec(wire_name="override_ips"),
     "payload_log": ubx.FieldSpec(
         wire_name="payload_log",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_ForensicCopyFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ForensicCopyFields,
     ),
     "quarantine": ubx.FieldSpec(
         wire_name="quarantine",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_QuarantineFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_QuarantineFields,
     ),
     "redirect": ubx.FieldSpec(
         wire_name="redirect",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_RedirectFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_RedirectFields,
     ),
     "resolve_dns_internally": ubx.FieldSpec(
         wire_name="resolve_dns_internally",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_ResolveDnsInternallyFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_ResolveDnsInternallyFields,
     ),
     "resolve_dns_through_cloudflare": ubx.FieldSpec(wire_name="resolve_dns_through_cloudflare"),
     "set_headers": ubx.FieldSpec(wire_name="set_headers"),
     "untrusted_cert": ubx.FieldSpec(
         wire_name="untrusted_cert",
         kind="object",
-        fields=_ZeroTrustGatewaySingleResponse4_RuleSettings_UntrustedCertFields,
+        fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettings_UntrustedCertFields,
     ),
 }
 
-_ZeroTrustGatewaySingleResponse4_ScheduleFields = {
+_ZeroTrustGatewaySingleResponse4_Result_ScheduleFields = {
     "fri": ubx.FieldSpec(wire_name="fri"),
     "mon": ubx.FieldSpec(wire_name="mon"),
     "sat": ubx.FieldSpec(wire_name="sat"),
@@ -467,6 +510,7 @@ class ZeroTrustGatewaySingleResponse4Attrs:
     name: Any = None
     # Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.
     precedence: Any = None
+    result: Any = None
     # Defines settings for this rule. Settings apply only to specific rule types and must use compatible selectors. If Terraform detects drift, confirm the setting supports your rule type and check whether the API modifies the value. Use API-returned values in your configuration to prevent drift.
     rule_settings: Any = None
     # Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
@@ -497,12 +541,12 @@ ZeroTrustGatewaySingleResponse4 = ubx.ResourceBinding(
         "rule_settings": ubx.FieldSpec(
             wire_name="rule_settings",
             kind="object",
-            fields=_ZeroTrustGatewaySingleResponse4_RuleSettingsFields,
+            fields=_ZeroTrustGatewaySingleResponse4_Result_RuleSettingsFields,
         ),
         "schedule": ubx.FieldSpec(
             wire_name="schedule",
             kind="object",
-            fields=_ZeroTrustGatewaySingleResponse4_ScheduleFields,
+            fields=_ZeroTrustGatewaySingleResponse4_Result_ScheduleFields,
         ),
         "traffic": ubx.FieldSpec(wire_name="traffic"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),

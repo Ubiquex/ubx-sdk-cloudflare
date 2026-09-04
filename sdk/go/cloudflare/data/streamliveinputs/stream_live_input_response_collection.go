@@ -3,6 +3,34 @@ package streamliveinputs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamLiveInputResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamLiveInputResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamLiveInputResponseCollection_Result_LiveInputs struct {
+	Created                  any
+	DeleteRecordingAfterDays any
+	Enabled                  any
+	Meta                     any
+	Modified                 any
+	Uid                      any
+}
+
+type StreamLiveInputResponseCollection_Result struct {
+	LiveInputs any
+	// The total number of remaining live inputs based on cursor position.
+	Range any
+	// The total number of live inputs that match the provided filters.
+	Total any
+}
+
 type StreamLiveInputResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +41,19 @@ type StreamLiveInputResponseCollectionConfig struct {
 type StreamLiveInputResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
 	// Includes the total number of videos associated with the submitted query parameters.
 	IncludeCounts any
+	Messages      any
+	Result        any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamLiveInputResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_live_input_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"IncludeCounts": ubx.FieldSpec{WireName: "include_counts"},
 	},
 }

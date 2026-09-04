@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomPromptTopic_Result:
+    created_at: Any = None
+    description: Any = None
+    enabled: Any = None
+    id: Any = None
+    name: Any = None
+    profile_id: Any = None
+    topic: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class CustomPromptTopicConfig:
     description: Any = None
     enabled: Any = None
@@ -24,6 +35,7 @@ class CustomPromptTopicAttrs:
     enabled: Any = None
     name: Any = None
     profile_id: Any = None
+    result: Any = None
     topic: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

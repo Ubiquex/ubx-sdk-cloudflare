@@ -7,12 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result_SettingsByRuleType_Dns:
+    log_all: Any = None
+    log_blocks: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result_SettingsByRuleType:
+    # Configure logging settings for DNS firewall.
+    dns: Any = None
+    # Configure logging settings for HTTP/HTTPS firewall.
+    http: Any = None
+    # Configure logging settings for Network firewall.
+    l4: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result:
+    # Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).
+    redact_pii: Any = None
+    # Configure logging settings for each rule type.
+    settings_by_rule_type: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountLoggingSettingsResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayGatewayAccountLoggingSettingsResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayGatewayAccountLoggingSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_gateway_account_logging_settings_response",

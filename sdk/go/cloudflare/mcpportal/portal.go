@@ -5,77 +5,77 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Portal_Result_Servers_AuthConfigSummary_Config struct {
 	AuthorizationEndpoint any
-	Issuer any
-	Resource any
-	RevocationEndpoint any
-	TokenEndpoint any
+	Issuer                any
+	Resource              any
+	RevocationEndpoint    any
+	TokenEndpoint         any
 }
 
 type Portal_Result_Servers_AuthConfigSummary_RegistrationInfo struct {
-	ClientId any
-	RedirectUris any
-	Scope any
+	ClientId                any
+	RedirectUris            any
+	Scope                   any
 	TokenEndpointAuthMethod any
 }
 
 type Portal_Result_Servers_AuthConfigSummary struct {
-	AuthMode any
+	AuthMode            any
 	ClientSecretVersion any
-	Config any
-	HasClientSecret any
-	RegistrationInfo any
+	Config              any
+	HasClientSecret     any
+	RegistrationInfo    any
 }
 
 type Portal_Result_Servers_ErrorDetails struct {
-	Cause any
+	Cause      any
 	IsUpstream any
-	McpCode any
-	Retryable any
+	McpCode    any
+	Retryable  any
 	StatusCode any
 }
 
 type Portal_Result_Servers_UpdatedPrompts struct {
-	Enabled any
-	Name any
-	PortalAlias any
+	Enabled           any
+	Name              any
+	PortalAlias       any
 	PortalDescription any
-	ServerAlias any
+	ServerAlias       any
 	ServerDescription any
 }
 
 type Portal_Result_Servers struct {
-	AuthConfigSummary any
-	AuthType any
-	AuthenticationStatus any
-	CreatedAt any
-	CreatedBy any
-	DefaultDisabled any
-	Description any
-	Error any
-	ErrorDetails any
-	Hostname any
-	Id any
+	AuthConfigSummary            any
+	AuthType                     any
+	AuthenticationStatus         any
+	CreatedAt                    any
+	CreatedBy                    any
+	DefaultDisabled              any
+	Description                  any
+	Error                        any
+	ErrorDetails                 any
+	Hostname                     any
+	Id                           any
 	IsSharedOauthCallbackEnabled any
-	LastSuccessfulSync any
-	LastSynced any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	OnBehalf any
-	Prompts any
-	SecureWebGateway any
-	ServerId any
-	Status any
-	Tools any
-	UpdatedPrompts any
-	UpdatedTools any
+	LastSuccessfulSync           any
+	LastSynced                   any
+	ModifiedAt                   any
+	ModifiedBy                   any
+	Name                         any
+	OnBehalf                     any
+	Prompts                      any
+	SecureWebGateway             any
+	ServerId                     any
+	Status                       any
+	Tools                        any
+	UpdatedPrompts               any
+	UpdatedTools                 any
 }
 
 type Portal_Result struct {
 	// Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
 	AllowCodeMode any
 	// Code Mode policy for this portal. `off`: Code Mode is unavailable; query parameters are ignored. `opt_in`: Code Mode is off by default; clients turn it on with `?codemode=search_and_execute`. `default_on`: Code Mode is on by default; clients can opt out with `?codemode=off`. `enforced`: Code Mode is always on; query parameters are ignored. Defaults to `opt_in` when omitted on create. If both `code_mode` and `allow_code_mode` are sent, they must be consistent or the request returns a 400.
-	CodeMode any
+	CodeMode  any
 	CreatedAt any
 	CreatedBy any
 	// Optional description of the MCP portal.
@@ -83,53 +83,53 @@ type Portal_Result struct {
 	// Hostname where the MCP portal is available.
 	Hostname any
 	// Unique identifier for the MCP portal.
-	Id any
+	Id         any
 	ModifiedAt any
 	ModifiedBy any
 	// Display name for the MCP portal.
 	Name any
 	// Route outbound MCP traffic through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
-	Servers any
+	Servers          any
 }
 
 type Portal_Servers_UpdatedPrompts struct {
-	Alias any
+	Alias       any
 	Description any
-	Enabled any
-	Name any
+	Enabled     any
+	Name        any
 }
 
 type Portal_Servers struct {
 	DefaultDisabled any
-	OnBehalf any
-	ServerId any
-	UpdatedPrompts any
-	UpdatedTools any
+	OnBehalf        any
+	ServerId        any
+	UpdatedPrompts  any
+	UpdatedTools    any
 }
 
 var Portal_Servers_UpdatedPromptsFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Alias":       ubx.FieldSpec{WireName: "alias"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Portal_ServersFields = ubx.FieldMap{
-		"DefaultDisabled": ubx.FieldSpec{WireName: "default_disabled"},
-		"OnBehalf": ubx.FieldSpec{WireName: "on_behalf"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
-		"UpdatedPrompts": ubx.FieldSpec{
-			WireName: "updated_prompts",
-			Kind: "list",
-			Fields: Portal_Servers_UpdatedPromptsFields,
-		},
-		"UpdatedTools": ubx.FieldSpec{
-			WireName: "updated_tools",
-			Kind: "list",
-			Fields: Portal_Servers_UpdatedPromptsFields,
-		},
-	}
+	"DefaultDisabled": ubx.FieldSpec{WireName: "default_disabled"},
+	"OnBehalf":        ubx.FieldSpec{WireName: "on_behalf"},
+	"ServerId":        ubx.FieldSpec{WireName: "server_id"},
+	"UpdatedPrompts": ubx.FieldSpec{
+		WireName: "updated_prompts",
+		Kind:     "list",
+		Fields:   Portal_Servers_UpdatedPromptsFields,
+	},
+	"UpdatedTools": ubx.FieldSpec{
+		WireName: "updated_tools",
+		Kind:     "list",
+		Fields:   Portal_Servers_UpdatedPromptsFields,
+	},
+}
 
 type PortalConfig struct {
 	// Deprecated: use `code_mode` for new integrations. `true` maps to any non-off Code Mode policy; `false` maps to `code_mode: off`. If both fields are sent, they must be consistent or the request returns a 400.
@@ -164,7 +164,7 @@ type PortalAttrs struct {
 	// Unique identifier for the MCP portal.
 	Id any
 	// Display name for the MCP portal.
-	Name any
+	Name   any
 	Result any
 	// Route outbound MCP traffic through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
@@ -178,17 +178,17 @@ type PortalAttrs struct {
 var Portal = ubx.ResourceBinding{
 	WireType: "cloudflare_portal",
 	Fields: ubx.FieldMap{
-		"AllowCodeMode": ubx.FieldSpec{WireName: "allow_code_mode"},
-		"CodeMode": ubx.FieldSpec{WireName: "code_mode"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AllowCodeMode":    ubx.FieldSpec{WireName: "allow_code_mode"},
+		"CodeMode":         ubx.FieldSpec{WireName: "code_mode"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Hostname":         ubx.FieldSpec{WireName: "hostname"},
+		"Id":               ubx.FieldSpec{WireName: "id"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"SecureWebGateway": ubx.FieldSpec{WireName: "secure_web_gateway"},
 		"Servers": ubx.FieldSpec{
 			WireName: "servers",
-			Kind: "list",
-			Fields: Portal_ServersFields,
+			Kind:     "list",
+			Fields:   Portal_ServersFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

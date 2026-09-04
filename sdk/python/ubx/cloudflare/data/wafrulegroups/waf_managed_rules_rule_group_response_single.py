@@ -16,6 +16,7 @@ class WafManagedRulesRuleGroupResponseSingleAttrs:
     group_id: Any = None
     # Defines the unique identifier of a WAF package.
     package_id: Any = None
+    result: Any = None
     # Defines an identifier of a schema.
     zone_id: Any = None
 

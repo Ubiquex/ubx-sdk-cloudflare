@@ -7,6 +7,47 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelSingleResponse_Result_AdditionalInformation:
+    # Suspected DGA malware family.
+    suspected_malware_family: Any = None
+
+@dataclasses.dataclass
+class IntelSingleResponse_Result_Application:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IntelSingleResponse_Result_ContentCategories:
+    id: Any = None
+    name: Any = None
+    super_category_id: Any = None
+
+@dataclasses.dataclass
+class IntelSingleResponse_Result_ResolvesToRefs:
+    id: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class IntelSingleResponse_Result:
+    # Additional information related to the host name.
+    additional_information: Any = None
+    # Application that the hostname belongs to.
+    application: Any = None
+    content_categories: Any = None
+    domain: Any = None
+    inherited_content_categories: Any = None
+    # Domain from which `inherited_content_categories` and `inherited_risk_types` are inherited, if applicable.
+    inherited_from: Any = None
+    inherited_risk_types: Any = None
+    # Global Cloudflare 100k ranking for the last 30 days, if available for the hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.
+    popularity_rank: Any = None
+    # Specifies a list of references to one or more IP addresses or domain names that the domain name currently resolves to.
+    resolves_to_refs: Any = None
+    # Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest risk).
+    risk_score: Any = None
+    risk_types: Any = None
+
+@dataclasses.dataclass
 class IntelSingleResponseConfig:
     domain: Any = None
     skip_dns: Any = None
@@ -17,6 +58,7 @@ class IntelSingleResponseAttrs:
     # Identifier.
     account_id: Any = None
     domain: Any = None
+    result: Any = None
     skip_dns: Any = None
     skip_ranking: Any = None
 

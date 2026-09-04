@@ -3,10 +3,38 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelWarpConnectorResponseCollection_Result_Connections_OriginIp struct {
+}
+
+type TunnelWarpConnectorResponseCollection_Result_Connections struct {
+	ClientId           any
+	ClientVersion      any
+	ColoName           any
+	Id                 any
+	IsPendingReconnect any
+	OpenedAt           any
+	OriginIp           any
+	Uuid               any
+}
+
+type TunnelWarpConnectorResponseCollection_Result struct {
+	AccountTag      any
+	Connections     any
+	ConnsActiveAt   any
+	ConnsInactiveAt any
+	CreatedAt       any
+	DeletedAt       any
+	Id              any
+	Metadata        any
+	Name            any
+	Status          any
+	TunType         any
+}
+
 type TunnelWarpConnectorResponseCollectionConfig struct {
 	ExcludePrefix any
 	// If provided, include only resources that were created (and not deleted) before this time. URL encoded.
-	ExistedAt any
+	ExistedAt     any
 	IncludePrefix any
 	// If `true`, only include deleted tunnels. If `false`, exclude deleted tunnels. If empty, all tunnels will be included.
 	IsDeleted any
@@ -17,17 +45,17 @@ type TunnelWarpConnectorResponseCollectionConfig struct {
 	// Number of results to display.
 	PerPage any
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
-	Status any
-	WasActiveAt any
+	Status        any
+	WasActiveAt   any
 	WasInactiveAt any
 }
 
 type TunnelWarpConnectorResponseCollectionAttrs struct {
 	// Cloudflare account ID
-	AccountId any
+	AccountId     any
 	ExcludePrefix any
 	// If provided, include only resources that were created (and not deleted) before this time. URL encoded.
-	ExistedAt any
+	ExistedAt     any
 	IncludePrefix any
 	// If `true`, only include deleted tunnels. If `false`, exclude deleted tunnels. If empty, all tunnels will be included.
 	IsDeleted any
@@ -37,11 +65,12 @@ type TunnelWarpConnectorResponseCollectionAttrs struct {
 	Page any
 	// Number of results to display.
 	PerPage any
+	Result  any
 	// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
 	Status any
 	// UUID of the tunnel.
-	Uuid any
-	WasActiveAt any
+	Uuid          any
+	WasActiveAt   any
 	WasInactiveAt any
 }
 
@@ -49,14 +78,14 @@ var TunnelWarpConnectorResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_warp_connector_response_collection",
 	Fields: ubx.FieldMap{
 		"ExcludePrefix": ubx.FieldSpec{WireName: "exclude_prefix"},
-		"ExistedAt": ubx.FieldSpec{WireName: "existed_at"},
+		"ExistedAt":     ubx.FieldSpec{WireName: "existed_at"},
 		"IncludePrefix": ubx.FieldSpec{WireName: "include_prefix"},
-		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"WasActiveAt": ubx.FieldSpec{WireName: "was_active_at"},
+		"IsDeleted":     ubx.FieldSpec{WireName: "is_deleted"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
+		"WasActiveAt":   ubx.FieldSpec{WireName: "was_active_at"},
 		"WasInactiveAt": ubx.FieldSpec{WireName: "was_inactive_at"},
 	},
 }

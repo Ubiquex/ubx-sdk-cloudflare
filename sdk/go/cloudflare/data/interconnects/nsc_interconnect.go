@@ -9,30 +9,30 @@ type NscInterconnect_Items struct {
 type NscInterconnectConfig struct {
 	// Customer account tag
 	AccountId any
-	Cursor any
-	Limit any
-	Site any
-	Type any
+	Cursor    any
+	Limit     any
+	Site      any
+	Type      any
 }
 
 type NscInterconnectAttrs struct {
 	// Customer account tag
 	AccountId any
-	Cursor any
-	Items any
-	Limit any
-	Next any
-	Site any
-	Type any
+	Cursor    any
+	Items     any
+	Limit     any
+	Next      any
+	Site      any
+	Type      any
 }
 
 var NscInterconnect = ubx.DataSourceBinding{
 	WireType: "cloudflare_nsc_interconnect",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Site": ubx.FieldSpec{WireName: "site"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Site":      ubx.FieldSpec{WireName: "site"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

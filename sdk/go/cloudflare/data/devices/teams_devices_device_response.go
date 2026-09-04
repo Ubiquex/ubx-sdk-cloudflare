@@ -3,6 +3,59 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesDeviceResponse_Result_Account struct {
+	AccountType any
+	Id          any
+	// The name of the enrolled account.
+	Name any
+}
+
+type TeamsDevicesDeviceResponse_Result_User struct {
+	// The contact email address of the user.
+	Email any
+	// UUID.
+	Id any
+	// The enrolled device user's name.
+	Name any
+}
+
+type TeamsDevicesDeviceResponse_Result struct {
+	Account any
+	// When the device was created.
+	Created any
+	// True if the device was deleted.
+	Deleted         any
+	DeviceType      any
+	GatewayDeviceId any
+	// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
+	Id any
+	// IPv4 or IPv6 address.
+	Ip any
+	// The device's public key.
+	Key any
+	// Type of the key.
+	KeyType any
+	// When the device last connected to Cloudflare services.
+	LastSeen any
+	// The device mac address.
+	MacAddress any
+	// The device model name.
+	Model any
+	// The device name.
+	Name any
+	// The operating system version.
+	OsVersion any
+	// The device serial number.
+	SerialNumber any
+	// Type of the tunnel connection used.
+	TunnelType any
+	// When the device was updated.
+	Updated any
+	User    any
+	// The WARP client version.
+	Version any
+}
+
 type TeamsDevicesDeviceResponseConfig struct {
 	AccountId any
 	// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
@@ -13,12 +66,13 @@ type TeamsDevicesDeviceResponseAttrs struct {
 	AccountId any
 	// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
 	DeviceId any
+	Result   any
 }
 
 var TeamsDevicesDeviceResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_teams_devices_device_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":  ubx.FieldSpec{WireName: "device_id"},
 	},
 }

@@ -7,6 +7,176 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnGetOnrampResponse_Result_PlannedMonthlyCostEstimate:
+    currency: Any = None
+    current_monthly_cost: Any = None
+    diff: Any = None
+    proposed_monthly_cost: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PlannedResources_Diff:
+    diff: Any = None
+    left_description: Any = None
+    left_yaml: Any = None
+    right_description: Any = None
+    right_yaml: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PlannedResources_Resource:
+    cloud_type: Any = None
+    detail: Any = None
+    id: Any = None
+    name: Any = None
+    resource_type: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PlannedResources:
+    diff: Any = None
+    keys_require_replace: Any = None
+    monthly_cost_estimate_diff: Any = None
+    planned_action: Any = None
+    resource: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyMonthlyCostEstimate:
+    currency: Any = None
+    monthly_cost: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_ManagedBy:
+    client_type: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_Observations:
+    first_observed_at: Any = None
+    last_observed_at: Any = None
+    provider_id: Any = None
+    resource_id: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems_Value_List:
+    item_type: Any = None
+    resource_preview: Any = None
+    string: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems_Value:
+    item_type: Any = None
+    list: Any = None
+    resource_preview: Any = None
+    string: Any = None
+    yaml: Any = None
+    yaml_diff: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_Sections_HiddenItems:
+    help_text: Any = None
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources_Sections:
+    help_text: Any = None
+    hidden_items: Any = None
+    name: Any = None
+    visible_items: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_PostApplyResources:
+    account_id: Any = None
+    cloud_type: Any = None
+    config: Any = None
+    deployment_provider: Any = None
+    id: Any = None
+    managed: Any = None
+    managed_by: Any = None
+    monthly_cost_estimate: Any = None
+    name: Any = None
+    native_id: Any = None
+    observations: Any = None
+    provider_ids: Any = None
+    provider_names_by_id: Any = None
+    region: Any = None
+    resource_group: Any = None
+    resource_type: Any = None
+    sections: Any = None
+    state: Any = None
+    tags: Any = None
+    updated_at: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_Status_ApplyProgress:
+    done: Any = None
+    total: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_Status_LifecycleErrors_Meta:
+    l10n_key: Any = None
+    loggable_error: Any = None
+    template_data: Any = None
+    trace_id: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_Status_LifecycleErrors_Source:
+    parameter: Any = None
+    parameter_value_index: Any = None
+    pointer: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_Status_LifecycleErrors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    meta: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result_Status:
+    apply_progress: Any = None
+    lifecycle_errors: Any = None
+    lifecycle_state: Any = None
+    plan_progress: Any = None
+    routes: Any = None
+    tunnels: Any = None
+
+@dataclasses.dataclass
+class McnGetOnrampResponse_Result:
+    attached_hubs: Any = None
+    attached_vpcs: Any = None
+    cloud_asn: Any = None
+    cloud_type: Any = None
+    description: Any = None
+    dynamic_routing: Any = None
+    hub: Any = None
+    id: Any = None
+    install_routes_in_cloud: Any = None
+    install_routes_in_magic_wan: Any = None
+    last_applied_at: Any = None
+    last_exported_at: Any = None
+    last_planned_at: Any = None
+    manage_hub_to_hub_attachments: Any = None
+    manage_vpc_to_hub_attachments: Any = None
+    name: Any = None
+    planned_monthly_cost_estimate: Any = None
+    planned_resources: Any = None
+    planned_resources_unavailable: Any = None
+    post_apply_monthly_cost_estimate: Any = None
+    post_apply_resources: Any = None
+    post_apply_resources_unavailable: Any = None
+    region: Any = None
+    status: Any = None
+    type: Any = None
+    updated_at: Any = None
+    vpc: Any = None
+    vpcs_by_id: Any = None
+    # The list of vpc IDs for which resource details failed to generate.
+    vpcs_by_id_unavailable: Any = None
+
+@dataclasses.dataclass
 class McnGetOnrampResponseConfig:
     adopted_hub_id: Any = None
     attached_hubs: Any = None
@@ -49,6 +219,7 @@ class McnGetOnrampResponseAttrs:
     manage_vpc_to_hub_attachments: Any = None
     name: Any = None
     region: Any = None
+    result: Any = None
     type: Any = None
     vpc: Any = None
     # path parameter, not part of the API's own resource representation

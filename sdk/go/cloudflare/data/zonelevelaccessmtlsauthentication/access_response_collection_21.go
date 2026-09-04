@@ -3,12 +3,23 @@ package zonelevelaccessmtlsauthentication
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection21_Result struct {
+	AssociatedHostnames any
+	CreatedAt           any
+	ExpiresOn           any
+	Fingerprint         any
+	Id                  any
+	Name                any
+	UpdatedAt           any
+}
+
 type AccessResponseCollection21Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollection21Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

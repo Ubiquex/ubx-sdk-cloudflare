@@ -4,7 +4,7 @@ package nelsettings
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NelConfigNelSettingResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -28,7 +28,7 @@ type NelConfigNelSettingResponseConfig struct {
 }
 
 type NelConfigNelSettingResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
 	// A zone-scoped NEL configuration setting.
 	Result any
@@ -40,6 +40,5 @@ type NelConfigNelSettingResponseAttrs struct {
 
 var NelConfigNelSettingResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_nel_config_nel_setting_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

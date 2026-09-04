@@ -4,14 +4,14 @@ package prefixbindings
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DlsPrefixBindingPaginatedListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type DlsPrefixBindingPaginatedListResponse_Result struct {
-	Cidr any
-	Id any
-	PrefixId any
+	Cidr      any
+	Id        any
+	PrefixId  any
 	RegionKey any
 }
 
@@ -27,27 +27,27 @@ type DlsPrefixBindingPaginatedListResponse_ResultInfo struct {
 type DlsPrefixBindingPaginatedListResponseConfig struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
-	Cursor any
-	PerPage any
+	Cursor    any
+	PerPage   any
 }
 
 type DlsPrefixBindingPaginatedListResponseAttrs struct {
 	// Identifier of a Cloudflare account.
-	AccountId any
-	Cursor any
-	Errors any
-	Messages any
-	PerPage any
-	Result any
+	AccountId  any
+	Cursor     any
+	Errors     any
+	Messages   any
+	PerPage    any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var DlsPrefixBindingPaginatedListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_dls_prefix_binding_paginated_list_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

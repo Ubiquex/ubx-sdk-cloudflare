@@ -3,6 +3,28 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Queue_Errors struct {
+	Code    any
+	Message any
+}
+
+type Queue_Result_Rules struct {
+	Actions     any
+	CreatedAt   any
+	Description any
+	Prefix      any
+	RuleId      any
+	Suffix      any
+}
+
+type Queue_Result struct {
+	// Queue ID.
+	QueueId any
+	// Name of the queue.
+	QueueName any
+	Rules     any
+}
+
 type QueueConfig struct {
 	// Account ID.
 	AccountId any
@@ -17,15 +39,20 @@ type QueueAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
 	// Queue ID.
 	QueueId any
+	Result  any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Queue = ubx.DataSourceBinding{
 	WireType: "cloudflare_queue",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"QueueId":    ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

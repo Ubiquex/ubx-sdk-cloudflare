@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Encryption_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class EncryptionConfig:
     pass
 
 @dataclasses.dataclass
 class EncryptionAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

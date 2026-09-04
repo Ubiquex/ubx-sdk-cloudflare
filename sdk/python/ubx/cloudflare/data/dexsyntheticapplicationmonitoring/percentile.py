@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Percentile_Result_DnsResponseTimeMs:
+    # p50 observed in the time period.
+    p50: Any = None
+    # p90 observed in the time period.
+    p90: Any = None
+    # p95 observed in the time period.
+    p95: Any = None
+    # p99 observed in the time period.
+    p99: Any = None
+
+@dataclasses.dataclass
+class Percentile_Result:
+    dns_response_time_ms: Any = None
+    resource_fetch_time_ms: Any = None
+    server_response_time_ms: Any = None
+
+@dataclasses.dataclass
 class PercentileConfig:
     # Cloudflare colo airport code.
     colo: Any = None
@@ -24,6 +41,7 @@ class PercentileAttrs:
     colo: Any = None
     device_id: Any = None
     from_: Any = None
+    result: Any = None
     # API Resource UUID tag.
     test_id: Any = None
     to: Any = None

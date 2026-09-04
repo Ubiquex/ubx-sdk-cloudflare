@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingResponseCollectionBgp_Result_BgpSignalOpts:
+    enabled: Any = None
+    modified_at: Any = None
+
+@dataclasses.dataclass
+class AddressingResponseCollectionBgp_Result_OnDemand:
+    advertised: Any = None
+    advertised_modified_at: Any = None
+    on_demand_enabled: Any = None
+    on_demand_locked: Any = None
+
+@dataclasses.dataclass
+class AddressingResponseCollectionBgp_Result:
+    asn: Any = None
+    asn_prepend_count: Any = None
+    auto_advertise_withdraw: Any = None
+    bgp_signal_opts: Any = None
+    cidr: Any = None
+    created_at: Any = None
+    id: Any = None
+    modified_at: Any = None
+    on_demand: Any = None
+
+@dataclasses.dataclass
 class AddressingResponseCollectionBgpConfig:
     # Identifier of a Cloudflare account.
     account_id: Any = None
@@ -19,6 +43,7 @@ class AddressingResponseCollectionBgpAttrs:
     account_id: Any = None
     # Identifier of an IP Prefix.
     prefix_id: Any = None
+    result: Any = None
 
 AddressingResponseCollectionBgp = ubx.DataSourceBinding(
     wire_type="cloudflare_addressing_response_collection_bgp",

@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ListsResponseCollection_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    kind: Any = None
+    modified_on: Any = None
+    name: Any = None
+    num_items: Any = None
+    num_referencing_filters: Any = None
+
+@dataclasses.dataclass
 class ListsResponseCollectionConfig:
     pass
 
@@ -14,6 +25,7 @@ class ListsResponseCollectionConfig:
 class ListsResponseCollectionAttrs:
     # The Account ID for this resource.
     account_id: Any = None
+    result: Any = None
 
 ListsResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_lists_lists_response_collection",

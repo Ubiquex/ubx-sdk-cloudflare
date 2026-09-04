@@ -3,18 +3,35 @@ package magicsitewans
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicWansCollectionResponse_Result_StaticAddressing struct {
+	Address          any
+	GatewayAddress   any
+	SecondaryAddress any
+}
+
+type MagicWansCollectionResponse_Result struct {
+	HealthCheckRate  any
+	Id               any
+	Name             any
+	Physport         any
+	Priority         any
+	SiteId           any
+	StaticAddressing any
+	VlanTag          any
+}
+
 type MagicWansCollectionResponseConfig struct {
 }
 
 type MagicWansCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 	// Identifier
 	SiteId any
 }
 
 var MagicWansCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_wans_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

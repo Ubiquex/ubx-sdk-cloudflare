@@ -3,6 +3,89 @@ package builds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Build_Errors struct {
+	Code    any
+	Message any
+}
+
+type Build_Result_Builds_BuildTriggerMetadata struct {
+	Author               any
+	Branch               any
+	BuildCommand         any
+	BuildTokenName       any
+	BuildTokenUuid       any
+	BuildTriggerSource   any
+	CommitHash           any
+	CommitMessage        any
+	DeployCommand        any
+	EnvironmentVariables any
+	ProviderAccountName  any
+	ProviderType         any
+	RepoName             any
+	RootDirectory        any
+}
+
+type Build_Result_Builds_PullRequest struct {
+	CreatedOn      any
+	PullRequestUrl any
+}
+
+type Build_Result_Builds_Trigger_RepoConnection struct {
+	CreatedOn           any
+	DeletedOn           any
+	ModifiedOn          any
+	ProviderAccountId   any
+	ProviderAccountName any
+	ProviderType        any
+	RepoConnectionUuid  any
+	RepoId              any
+	RepoName            any
+}
+
+type Build_Result_Builds_Trigger struct {
+	BranchExcludes      any
+	BranchIncludes      any
+	BuildCachingEnabled any
+	BuildCommand        any
+	CreatedOn           any
+	DeletedOn           any
+	DeployCommand       any
+	ExternalScriptId    any
+	ModifiedOn          any
+	PathExcludes        any
+	PathIncludes        any
+	RepoConnection      any
+	RootDirectory       any
+	TriggerName         any
+	TriggerUuid         any
+}
+
+type Build_Result_Builds struct {
+	BuildOutcome         any
+	BuildTriggerMetadata any
+	BuildUuid            any
+	CreatedOn            any
+	InitializingOn       any
+	ModifiedOn           any
+	PullRequest          any
+	RunningOn            any
+	Status               any
+	StoppedOn            any
+	Trigger              any
+}
+
+type Build_Result struct {
+	Builds any
+}
+
+type Build_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type BuildConfig struct {
 	// Account identifier.
 	AccountId any
@@ -12,7 +95,12 @@ type BuildConfig struct {
 
 type BuildAttrs struct {
 	// Account identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
+	ResultInfo any
+	Success    any
 	// Comma-separated list of version UUIDs (max 20).
 	VersionIds any
 }
@@ -20,7 +108,7 @@ type BuildAttrs struct {
 var Build = ubx.DataSourceBinding{
 	WireType: "cloudflare_build",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"VersionIds": ubx.FieldSpec{WireName: "version_ids"},
 	},
 }

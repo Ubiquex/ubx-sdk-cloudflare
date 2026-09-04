@@ -7,6 +7,64 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Errors:
+    message: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result_Action:
+    description: Any = None
+    result: Any = None
+    time: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result_Actor:
+    context: Any = None
+    email: Any = None
+    id: Any = None
+    ip_address: Any = None
+    token_id: Any = None
+    token_name: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result_Organization:
+    id: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result_Raw:
+    cf_ray_id: Any = None
+    method: Any = None
+    status_code: Any = None
+    uri: Any = None
+    user_agent: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result_Resource:
+    id: Any = None
+    product: Any = None
+    request: Any = None
+    response: Any = None
+    scope: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_Result:
+    action: Any = None
+    actor: Any = None
+    id: Any = None
+    organization: Any = None
+    raw: Any = None
+    resource: Any = None
+
+@dataclasses.dataclass
+class AaaAuditLogsV2OrgResponseCollection_ResultInfo:
+    # The number of records returned in the response.
+    count: Any = None
+    # The cursor token used for pagination.
+    cursor: Any = None
+
+@dataclasses.dataclass
 class AaaAuditLogsV2OrgResponseCollectionConfig:
     # Filters by whether the action was successful or not.
     action_result: Any = None
@@ -134,6 +192,7 @@ class AaaAuditLogsV2OrgResponseCollectionAttrs:
     cursor: Any = None
     # Sets sorting order.
     direction: Any = None
+    errors: Any = None
     # Finds a specific log by its ID.
     id: Any = None
     # Filters out audit logs by their IDs.
@@ -174,7 +233,12 @@ class AaaAuditLogsV2OrgResponseCollectionAttrs:
     resource_type: Any = None
     # Filters out audit logs based on the unique type of resource changed by the action.
     resource_type_not: Any = None
+    result: Any = None
+    # Provides information about the result of the request, including count and cursor.
+    result_info: Any = None
     since: Any = None
+    # Indicates whether the API call was successful
+    success: Any = None
 
 AaaAuditLogsV2OrgResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_aaa_audit_logs_v2_org_response_collection",

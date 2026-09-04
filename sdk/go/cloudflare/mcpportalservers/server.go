@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Server_Result_AuthConfigSummary_Config struct {
 	AuthorizationEndpoint any
-	Issuer any
-	Resource any
-	RevocationEndpoint any
-	TokenEndpoint any
+	Issuer                any
+	Resource              any
+	RevocationEndpoint    any
+	TokenEndpoint         any
 }
 
 type Server_Result_AuthConfigSummary_RegistrationInfo struct {
-	ClientId any
-	RedirectUris any
-	Scope any
+	ClientId                any
+	RedirectUris            any
+	Scope                   any
 	TokenEndpointAuthMethod any
 }
 
 type Server_Result_AuthConfigSummary struct {
-	AuthMode any
+	AuthMode            any
 	ClientSecretVersion any
-	Config any
-	HasClientSecret any
-	RegistrationInfo any
+	Config              any
+	HasClientSecret     any
+	RegistrationInfo    any
 }
 
 type Server_Result_ErrorDetails struct {
@@ -40,10 +40,10 @@ type Server_Result_ErrorDetails struct {
 }
 
 type Server_Result_UpdatedPrompts struct {
-	Alias any
+	Alias       any
 	Description any
-	Enabled any
-	Name any
+	Enabled     any
+	Name        any
 }
 
 type Server_Result struct {
@@ -53,11 +53,11 @@ type Server_Result struct {
 	AuthType any
 	// Whether administrative authentication is required before capabilities can be synced. Manual OAuth is user-managed and has no administrative authentication flow.
 	AuthenticationStatus any
-	CreatedAt any
-	CreatedBy any
+	CreatedAt            any
+	CreatedBy            any
 	// Optional description of the MCP server.
-	Description any
-	Error any
+	Description  any
+	Error        any
 	ErrorDetails any
 	// URL of the upstream MCP endpoint.
 	Hostname any
@@ -65,18 +65,18 @@ type Server_Result struct {
 	Id any
 	// When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
 	IsSharedOauthCallbackEnabled any
-	LastSuccessfulSync any
-	LastSynced any
-	ModifiedAt any
-	ModifiedBy any
+	LastSuccessfulSync           any
+	LastSynced                   any
+	ModifiedAt                   any
+	ModifiedBy                   any
 	// Display name for the MCP server.
-	Name any
+	Name    any
 	Prompts any
 	// Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
 	// Current sync state of the server
 	Status any
-	Tools any
+	Tools  any
 	// Server-wide prompt capability overrides.
 	UpdatedPrompts any
 	// Server-wide tool capability overrides.
@@ -84,11 +84,11 @@ type Server_Result struct {
 }
 
 var Server_Result_UpdatedPromptsFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Alias":       ubx.FieldSpec{WireName: "alias"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 type ServerConfig struct {
 	// Static credential for the upstream MCP server. For auth_type "bearer", either a raw token string (e.g. "sk-abc123"), which is wrapped server-side as `Authorization: Bearer <token>`, or a JSON-encoded object of the form `{"headers":{"Header-Name":"value",...}}` for custom or multiple static headers (e.g. Cloudflare Access service tokens: `{"headers":{"cf-access-client-id":"...","cf-access-client-secret":"..."}}`).
@@ -133,11 +133,11 @@ type ServerAttrs struct {
 	// When true, the gateway worker uses the shared Cloudflare-owned OAuth callback endpoint as the redirect_uri for upstream on-behalf OAuth, instead of the customer portal hostname. Defaults to false (off); opt in per server by setting true.
 	IsSharedOauthCallbackEnabled any
 	// Display name for the MCP server.
-	Name any
+	Name   any
 	Result any
 	// Route outbound traffic to this MCP server through Zero Trust Secure Web Gateway.
 	SecureWebGateway any
-	Success any
+	Success          any
 	// Server-wide prompt capability overrides.
 	UpdatedPrompts any
 	// Server-wide tool capability overrides.
@@ -149,24 +149,24 @@ type ServerAttrs struct {
 var Server = ubx.ResourceBinding{
 	WireType: "cloudflare_server",
 	Fields: ubx.FieldMap{
-		"AuthCredentials": ubx.FieldSpec{WireName: "auth_credentials"},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"AuthCredentials":              ubx.FieldSpec{WireName: "auth_credentials"},
+		"AuthType":                     ubx.FieldSpec{WireName: "auth_type"},
+		"ClientSecret":                 ubx.FieldSpec{WireName: "client_secret"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"Hostname":                     ubx.FieldSpec{WireName: "hostname"},
+		"Id":                           ubx.FieldSpec{WireName: "id"},
 		"IsSharedOauthCallbackEnabled": ubx.FieldSpec{WireName: "is_shared_oauth_callback_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecureWebGateway": ubx.FieldSpec{WireName: "secure_web_gateway"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"SecureWebGateway":             ubx.FieldSpec{WireName: "secure_web_gateway"},
 		"UpdatedPrompts": ubx.FieldSpec{
 			WireName: "updated_prompts",
-			Kind: "list",
-			Fields: Server_Result_UpdatedPromptsFields,
+			Kind:     "list",
+			Fields:   Server_Result_UpdatedPromptsFields,
 		},
 		"UpdatedTools": ubx.FieldSpec{
 			WireName: "updated_tools",
-			Kind: "list",
-			Fields: Server_Result_UpdatedPromptsFields,
+			Kind:     "list",
+			Fields:   Server_Result_UpdatedPromptsFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

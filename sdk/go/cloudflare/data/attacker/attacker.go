@@ -19,14 +19,14 @@ type AttackerAttrs struct {
 	AccountId any
 	// Array of dataset IDs to query attackers from. If not provided, uses the default dataset.
 	DatasetIds any
-	Items any
-	Type any
+	Items      any
+	Type       any
 }
 
 var Attacker = ubx.DataSourceBinding{
 	WireType: "cloudflare_attacker",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"DatasetIds": ubx.FieldSpec{WireName: "dataset_ids"},
 	},
 }

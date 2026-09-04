@@ -7,6 +7,12 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollectionHostnames_Result:
+    china_network: Any = None
+    client_certificate_forwarding: Any = None
+    hostname: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollectionHostnamesConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +21,7 @@ class AccessResponseCollectionHostnamesConfig:
 class AccessResponseCollectionHostnamesAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 AccessResponseCollectionHostnames = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_collection_hostnames",

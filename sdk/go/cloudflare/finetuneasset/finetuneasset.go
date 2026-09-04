@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Finetuneasset_Result struct {
 	FileName any
-	FileUrl any
+	FileUrl  any
 }
 
 type FinetuneassetConfig struct {
 	Description any
-	Model any
-	Name any
-	Public any
+	Model       any
+	Name        any
+	Public      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -23,11 +23,11 @@ type FinetuneassetConfig struct {
 
 type FinetuneassetAttrs struct {
 	Description any
-	Model any
-	Name any
-	Public any
-	Result any
-	Success any
+	Model       any
+	Name        any
+	Public      any
+	Result      any
+	Success     any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -40,11 +40,11 @@ var Finetuneasset = ubx.ResourceBinding{
 	WireType: "cloudflare_finetune_asset",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Public": ubx.FieldSpec{WireName: "public"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"FinetuneId": ubx.FieldSpec{WireName: "finetune_id"},
-		"FileName": ubx.FieldSpec{WireName: "file_name"},
+		"Model":       ubx.FieldSpec{WireName: "model"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Public":      ubx.FieldSpec{WireName: "public"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"FinetuneId":  ubx.FieldSpec{WireName: "finetune_id"},
+		"FileName":    ubx.FieldSpec{WireName: "file_name"},
 	},
 }

@@ -4,6 +4,42 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface Request_CompletedAfter {
 }
 
+export interface Request_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface Request_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: Request_Errors_Source | Computed<Request_Errors_Source>;
+}
+
+export interface Request_Result {
+  completed?: string | Computed<string>;
+  /** Request content. */
+  content: string | Computed<string>;
+  created: string | Computed<string>;
+  /** UUID. */
+  id: string | Computed<string>;
+  /** Tokens for the request messages. */
+  messageTokens?: number | Computed<number>;
+  priority: string | Computed<string>;
+  /** Readable Request ID. */
+  readableId?: string | Computed<string>;
+  /** Requested information from request. */
+  request: string | Computed<string>;
+  /** Request Status. */
+  status?: string | Computed<string>;
+  /** Brief description of the request. */
+  summary: string | Computed<string>;
+  /** The CISA defined Traffic Light Protocol (TLP). */
+  tlp: string | Computed<string>;
+  /** Tokens for the request. */
+  tokens?: number | Computed<number>;
+  updated: string | Computed<string>;
+}
+
 const Request_CompletedAfterFields: FieldMap = {
 };
 
@@ -43,18 +79,23 @@ export interface RequestAttrs {
   createdAfter: Request_CompletedAfter;
   /** Retrieve requests created before this time. */
   createdBefore: Request_CompletedAfter;
+  errors: Request_Errors[];
+  messages: Request_Errors[];
   /** Page number of results. */
   page: number;
   /** Number of results per page. */
   perPage: number;
   /** Requested information from request. */
   requestType: string;
+  result: Request_Result;
   /** Field to sort results by. */
   sortBy: string;
   /** Sort order (asc or desc). */
   sortOrder: string;
   /** Request Status. */
   status: string;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

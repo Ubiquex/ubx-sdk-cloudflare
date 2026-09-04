@@ -3,6 +3,30 @@ package accountrulesets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ByTag_Messages_Source struct {
+	Pointer any
+}
+
+type ByTag_Messages struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type ByTag_Result_Id struct {
+}
+
+type ByTag_Result struct {
+	Description any
+	Id          any
+	Kind        any
+	LastUpdated any
+	Name        any
+	Phase       any
+	Rules       any
+	Version     any
+}
+
 type ByTagConfig struct {
 	// The unique ID of the account.
 	AccountId any
@@ -17,20 +41,25 @@ type ByTagConfig struct {
 type ByTagAttrs struct {
 	// The unique ID of the account.
 	AccountId any
+	Errors    any
+	// A list of warning messages.
+	Messages any
+	Result   any
 	// The category of a rule.
 	RuleTag any
 	// The unique ID of the ruleset.
 	RulesetId any
 	// The version of the ruleset.
 	RulesetVersion any
+	Success        any
 }
 
 var ByTag = ubx.DataSourceBinding{
 	WireType: "cloudflare_by_tag",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RuleTag": ubx.FieldSpec{WireName: "rule_tag"},
-		"RulesetId": ubx.FieldSpec{WireName: "ruleset_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"RuleTag":        ubx.FieldSpec{WireName: "rule_tag"},
+		"RulesetId":      ubx.FieldSpec{WireName: "ruleset_id"},
 		"RulesetVersion": ubx.FieldSpec{WireName: "ruleset_version"},
 	},
 }

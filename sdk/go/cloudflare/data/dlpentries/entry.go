@@ -3,12 +3,20 @@ package dlpentries
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Entry_Result_UploadStatus struct {
+}
+
+type Entry_Result struct {
+	UploadStatus any
+}
+
 type EntryConfig struct {
 	AccountId any
 }
 
 type EntryAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var Entry = ubx.DataSourceBinding{

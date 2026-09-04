@@ -7,6 +7,39 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Ruleset_Messages_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Ruleset_Messages:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Ruleset_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class Ruleset_Result:
+    description: Any = None
+    id: Any = None
+    kind: Any = None
+    last_updated: Any = None
+    name: Any = None
+    phase: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class Ruleset_ResultInfo_Cursors:
+    after: Any = None
+
+@dataclasses.dataclass
+class Ruleset_ResultInfo:
+    # The set of cursors.
+    cursors: Any = None
+
+@dataclasses.dataclass
 class RulesetConfig:
     # The unique ID of the account.
     account_id: Any = None
@@ -21,8 +54,16 @@ class RulesetAttrs:
     account_id: Any = None
     # The cursor to use for the next page.
     cursor: Any = None
+    errors: Any = None
+    # A list of warning messages.
+    messages: Any = None
     # The number of rulesets to return per page.
     per_page: Any = None
+    # A list of rulesets. The returned information will not include the rules in each ruleset.
+    result: Any = None
+    # Information to navigate the results.
+    result_info: Any = None
+    success: Any = None
 
 Ruleset = ubx.DataSourceBinding(
     wire_type="cloudflare_ruleset",

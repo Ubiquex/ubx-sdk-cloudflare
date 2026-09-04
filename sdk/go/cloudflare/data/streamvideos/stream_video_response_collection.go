@@ -3,23 +3,102 @@ package streamvideos
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamVideoResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamVideoResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamVideoResponseCollection_Result_Input struct {
+	Height any
+	Width  any
+}
+
+type StreamVideoResponseCollection_Result_Playback struct {
+	Dash any
+	Hls  any
+}
+
+type StreamVideoResponseCollection_Result_PublicDetails struct {
+	ChannelLink any
+	Logo        any
+	MediaId     any
+	ShareLink   any
+	Title       any
+}
+
+type StreamVideoResponseCollection_Result_Status struct {
+	ErrorReasonCode any
+	ErrorReasonText any
+	PctComplete     any
+	State           any
+}
+
+type StreamVideoResponseCollection_Result_Watermark struct {
+	Created        any
+	DownloadedFrom any
+	Height         any
+	Name           any
+	Opacity        any
+	Padding        any
+	Position       any
+	Scale          any
+	Size           any
+	Uid            any
+	Width          any
+}
+
+type StreamVideoResponseCollection_Result struct {
+	AllowedOrigins        any
+	ClippedFrom           any
+	Created               any
+	Creator               any
+	Duration              any
+	Input                 any
+	LiveInput             any
+	MaxDurationSeconds    any
+	MaxSizeBytes          any
+	Meta                  any
+	Modified              any
+	Playback              any
+	Preview               any
+	PublicDetails         any
+	ReadyToStream         any
+	ReadyToStreamAt       any
+	RequireSignedUrls     any
+	ScheduledDeletion     any
+	Size                  any
+	Status                any
+	Thumbnail             any
+	ThumbnailTimestampPct any
+	Uid                   any
+	UploadExpiry          any
+	Uploaded              any
+	Watermark             any
+}
+
 type StreamVideoResponseCollectionConfig struct {
 	// The account identifier tag.
 	AccountId any
-	After any
+	After     any
 	// Lists videos in ascending order of creation.
-	Asc any
+	Asc    any
 	Before any
 	// A user-defined identifier for the media creator.
 	Creator any
 	// Lists videos created before the specified date.
 	End any
-	Id any
+	Id  any
 	// Includes the total number of videos associated with the submitted query parameters.
 	IncludeCounts any
-	Limit any
-	LiveInputId any
-	Name any
+	Limit         any
+	LiveInputId   any
+	Name          any
 	// Provides a partial word match of the `name` key in the `meta` field. Slow for medium to large video libraries. May be unavailable for very large libraries.
 	Search any
 	// Lists videos created after the specified date.
@@ -35,26 +114,35 @@ type StreamVideoResponseCollectionConfig struct {
 type StreamVideoResponseCollectionAttrs struct {
 	// The account identifier tag.
 	AccountId any
-	After any
+	After     any
 	// Lists videos in ascending order of creation.
-	Asc any
+	Asc    any
 	Before any
 	// A user-defined identifier for the media creator.
 	Creator any
 	// Lists videos created before the specified date.
-	End any
-	Id any
+	End    any
+	Errors any
+	Id     any
 	// Includes the total number of videos associated with the submitted query parameters.
 	IncludeCounts any
-	Limit any
-	LiveInputId any
-	Name any
+	Limit         any
+	LiveInputId   any
+	Messages      any
+	Name          any
+	// The total number of remaining videos based on cursor position.
+	Range  any
+	Result any
 	// Provides a partial word match of the `name` key in the `meta` field. Slow for medium to large video libraries. May be unavailable for very large libraries.
 	Search any
 	// Lists videos created after the specified date.
 	Start any
 	// Specifies the processing status for all quality levels for a video.
 	Status any
+	// Whether the API call was successful.
+	Success any
+	// The total number of videos that match the provided filters.
+	Total any
 	// Specifies whether the video is `vod` or `live`.
 	Type any
 	// Provides a fast, exact string match on the `name` key in the `meta` field.
@@ -64,21 +152,21 @@ type StreamVideoResponseCollectionAttrs struct {
 var StreamVideoResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_video_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"After": ubx.FieldSpec{WireName: "after"},
-		"Asc": ubx.FieldSpec{WireName: "asc"},
-		"Before": ubx.FieldSpec{WireName: "before"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"After":         ubx.FieldSpec{WireName: "after"},
+		"Asc":           ubx.FieldSpec{WireName: "asc"},
+		"Before":        ubx.FieldSpec{WireName: "before"},
+		"Creator":       ubx.FieldSpec{WireName: "creator"},
+		"End":           ubx.FieldSpec{WireName: "end"},
+		"Id":            ubx.FieldSpec{WireName: "id"},
 		"IncludeCounts": ubx.FieldSpec{WireName: "include_counts"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LiveInputId": ubx.FieldSpec{WireName: "live_input_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VideoName": ubx.FieldSpec{WireName: "video_name"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"LiveInputId":   ubx.FieldSpec{WireName: "live_input_id"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Search":        ubx.FieldSpec{WireName: "search"},
+		"Start":         ubx.FieldSpec{WireName: "start"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
+		"VideoName":     ubx.FieldSpec{WireName: "video_name"},
 	},
 }

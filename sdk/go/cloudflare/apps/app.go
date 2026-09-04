@@ -9,8 +9,8 @@ type App_Errors struct {
 
 type App_Result struct {
 	CreatedAt any
-	Id any
-	Name any
+	Id        any
+	Name      any
 	UpdatedAt any
 	// Email of the actor who last modified the app, or `unknown` when unavailable.
 	UpdatedBy any
@@ -25,11 +25,11 @@ type AppConfig struct {
 }
 
 type AppAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Name any
-	Result any
-	Success any
+	Name     any
+	Result   any
+	Success  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -39,8 +39,8 @@ type AppAttrs struct {
 var App = ubx.ResourceBinding{
 	WireType: "cloudflare_app",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

@@ -7,12 +7,12 @@ type IamScimAuthenticationScheme_AccountId struct {
 }
 
 type IamScimAuthenticationScheme_AuthenticationSchemes struct {
-	Description any
+	Description      any
 	DocumentationUri any
-	Name any
-	Primary any
-	SpecUri any
-	Type any
+	Name             any
+	Primary          any
+	SpecUri          any
+	Type             any
 }
 
 type IamScimAuthenticationScheme_Bulk struct {
@@ -36,8 +36,7 @@ type IamScimAuthenticationScheme_Filter struct {
 	Supported any
 }
 
-var IamScimAuthenticationScheme_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimAuthenticationScheme_AccountIdFields = ubx.FieldMap{}
 
 type IamScimAuthenticationSchemeConfig struct {
 	// Account identifier tag.
@@ -46,7 +45,7 @@ type IamScimAuthenticationSchemeConfig struct {
 
 type IamScimAuthenticationSchemeAttrs struct {
 	// Account identifier tag.
-	AccountId any
+	AccountId             any
 	AuthenticationSchemes any
 	// Configuration for SCIM bulk operations.
 	Bulk any
@@ -59,7 +58,7 @@ type IamScimAuthenticationSchemeAttrs struct {
 	// Configuration for SCIM filtering operations.
 	Filter any
 	// Represents a simple supported/unsupported SCIM feature.
-	Patch any
+	Patch   any
 	Schemas any
 	// Represents a simple supported/unsupported SCIM feature.
 	Sort any
@@ -70,8 +69,8 @@ var IamScimAuthenticationScheme = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimAuthenticationScheme_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimAuthenticationScheme_AccountIdFields,
 		},
 	},
 }

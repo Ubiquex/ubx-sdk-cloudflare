@@ -3,16 +3,32 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CacheRulesOriginH2MaxStreamsResponseValue_Errors struct {
+	Code    any
+	Message any
+}
+
+type CacheRulesOriginH2MaxStreamsResponseValue_Result struct {
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type CacheRulesOriginH2MaxStreamsResponseValueConfig struct {
 }
 
 type CacheRulesOriginH2MaxStreamsResponseValueAttrs struct {
+	Errors   any
+	Messages any
+	// Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }
 
 var CacheRulesOriginH2MaxStreamsResponseValue = ubx.DataSourceBinding{
 	WireType: "cloudflare_cache_rules_origin_h2_max_streams_response_value",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

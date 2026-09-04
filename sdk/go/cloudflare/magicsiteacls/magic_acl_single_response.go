@@ -16,23 +16,39 @@ type MagicAclSingleResponse_Lan1 struct {
 	Subnets any
 }
 
+type MagicAclSingleResponse_Result struct {
+	// Description for the ACL.
+	Description any
+	// The desired forwarding action for this ACL policy. If set to "false", the policy will forward traffic to Cloudflare. If set to "true", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
+	ForwardLocally any
+	// Identifier
+	Id   any
+	Lan1 any
+	Lan2 any
+	// The name of the ACL.
+	Name      any
+	Protocols any
+	// The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
+	Unidirectional any
+}
+
 var MagicAclSingleResponse_Lan1Fields = ubx.FieldMap{
-		"LanId": ubx.FieldSpec{WireName: "lan_id"},
-		"LanName": ubx.FieldSpec{WireName: "lan_name"},
-		"PortRanges": ubx.FieldSpec{WireName: "port_ranges"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-		"Subnets": ubx.FieldSpec{WireName: "subnets"},
-	}
+	"LanId":      ubx.FieldSpec{WireName: "lan_id"},
+	"LanName":    ubx.FieldSpec{WireName: "lan_name"},
+	"PortRanges": ubx.FieldSpec{WireName: "port_ranges"},
+	"Ports":      ubx.FieldSpec{WireName: "ports"},
+	"Subnets":    ubx.FieldSpec{WireName: "subnets"},
+}
 
 type MagicAclSingleResponseConfig struct {
 	// Description for the ACL.
 	Description any
 	// The desired forwarding action for this ACL policy. If set to "false", the policy will forward traffic to Cloudflare. If set to "true", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
 	ForwardLocally any
-	Lan1 any
-	Lan2 any
+	Lan1           any
+	Lan2           any
 	// The name of the ACL.
-	Name any
+	Name      any
 	Protocols any
 	// The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
 	Unidirectional any
@@ -49,11 +65,13 @@ type MagicAclSingleResponseAttrs struct {
 	Description any
 	// The desired forwarding action for this ACL policy. If set to "false", the policy will forward traffic to Cloudflare. If set to "true", the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.
 	ForwardLocally any
-	Lan1 any
-	Lan2 any
+	Lan1           any
+	Lan2           any
 	// The name of the ACL.
-	Name any
+	Name      any
 	Protocols any
+	// Bidirectional ACL policy for network traffic within a site.
+	Result any
 	// The desired traffic direction for this ACL policy. If set to "false", the policy will allow bidirectional traffic. If set to "true", the policy will only allow traffic in one direction. If not included in request, will default to false.
 	Unidirectional any
 	// path parameter, not part of the API's own resource representation
@@ -67,23 +85,23 @@ type MagicAclSingleResponseAttrs struct {
 var MagicAclSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_acl_single_response",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"ForwardLocally": ubx.FieldSpec{WireName: "forward_locally"},
 		"Lan1": ubx.FieldSpec{
 			WireName: "lan_1",
-			Kind: "object",
-			Fields: MagicAclSingleResponse_Lan1Fields,
+			Kind:     "object",
+			Fields:   MagicAclSingleResponse_Lan1Fields,
 		},
 		"Lan2": ubx.FieldSpec{
 			WireName: "lan_2",
-			Kind: "object",
-			Fields: MagicAclSingleResponse_Lan1Fields,
+			Kind:     "object",
+			Fields:   MagicAclSingleResponse_Lan1Fields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Protocols":      ubx.FieldSpec{WireName: "protocols"},
 		"Unidirectional": ubx.FieldSpec{WireName: "unidirectional"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
-		"AclId": ubx.FieldSpec{WireName: "acl_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"SiteId":         ubx.FieldSpec{WireName: "site_id"},
+		"AclId":          ubx.FieldSpec{WireName: "acl_id"},
 	},
 }

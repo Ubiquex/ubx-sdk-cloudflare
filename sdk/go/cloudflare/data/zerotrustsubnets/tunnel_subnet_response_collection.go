@@ -6,8 +6,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TunnelSubnetResponseCollection_Network struct {
 }
 
-var TunnelSubnetResponseCollection_NetworkFields = ubx.FieldMap{
-	}
+type TunnelSubnetResponseCollection_Result_Capacity struct {
+	Total any
+	Used  any
+}
+
+type TunnelSubnetResponseCollection_Result struct {
+	Capacity         any
+	Comment          any
+	CreatedAt        any
+	DeletedAt        any
+	Id               any
+	IsDefaultNetwork any
+	Name             any
+	Network          any
+	SubnetType       any
+}
+
+var TunnelSubnetResponseCollection_NetworkFields = ubx.FieldMap{}
 
 type TunnelSubnetResponseCollectionConfig struct {
 	// IP address family, either `v4` (IPv4) or `v6` (IPv6)
@@ -55,6 +71,7 @@ type TunnelSubnetResponseCollectionAttrs struct {
 	Page any
 	// Number of results to display.
 	PerPage any
+	Result  any
 	// Sort order of the results. `asc` means oldest to newest, `desc` means newest to oldest. If not set, they will not be in any particular order.
 	SortOrder any
 	// If set, the types of subnets to include, separated by comma.
@@ -64,20 +81,20 @@ type TunnelSubnetResponseCollectionAttrs struct {
 var TunnelSubnetResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_subnet_response_collection",
 	Fields: ubx.FieldMap{
-		"AddressFamily": ubx.FieldSpec{WireName: "address_family"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"ExistedAt": ubx.FieldSpec{WireName: "existed_at"},
+		"AddressFamily":    ubx.FieldSpec{WireName: "address_family"},
+		"Comment":          ubx.FieldSpec{WireName: "comment"},
+		"ExistedAt":        ubx.FieldSpec{WireName: "existed_at"},
 		"IsDefaultNetwork": ubx.FieldSpec{WireName: "is_default_network"},
-		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IsDeleted":        ubx.FieldSpec{WireName: "is_deleted"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{
 			WireName: "network",
-			Kind: "object",
-			Fields: TunnelSubnetResponseCollection_NetworkFields,
+			Kind:     "object",
+			Fields:   TunnelSubnetResponseCollection_NetworkFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
+		"SortOrder":   ubx.FieldSpec{WireName: "sort_order"},
 		"SubnetTypes": ubx.FieldSpec{WireName: "subnet_types"},
 	},
 }

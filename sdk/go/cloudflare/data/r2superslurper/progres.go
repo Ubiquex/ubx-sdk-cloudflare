@@ -3,20 +3,40 @@ package r2superslurper
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Progres_Errors struct {
+	Code    any
+	Message any
+}
+
+type Progres_Result struct {
+	CreatedAt          any
+	FailedObjects      any
+	Id                 any
+	Objects            any
+	SkippedObjects     any
+	Status             any
+	TransferredObjects any
+}
+
 type ProgresConfig struct {
 	AccountId any
-	JobId any
+	JobId     any
 }
 
 type ProgresAttrs struct {
 	AccountId any
-	JobId any
+	Errors    any
+	JobId     any
+	Messages  any
+	Result    any
+	// Indicates if the API call was successful or not.
+	Success any
 }
 
 var Progres = ubx.DataSourceBinding{
 	WireType: "cloudflare_progres",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
 	},
 }

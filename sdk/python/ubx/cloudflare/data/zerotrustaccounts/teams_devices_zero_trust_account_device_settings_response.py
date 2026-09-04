@@ -7,12 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesZeroTrustAccountDeviceSettingsResponse_Result:
+    # Sets the time limit, in seconds, that a user can use an override code to bypass WARP.
+    disable_for_time: Any = None
+    # Controls whether the external emergency disconnect feature is enabled.
+    external_emergency_signal_enabled: Any = None
+    # The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server's identity. The device will ignore any response if the server's certificate fingerprint does not exactly match this value.
+    external_emergency_signal_fingerprint: Any = None
+    # The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., "5m", "2m30s", "1h"). Minimum 30 seconds.
+    external_emergency_signal_interval: Any = None
+    # The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.
+    external_emergency_signal_url: Any = None
+    # Enable gateway proxy filtering on TCP.
+    gateway_proxy_enabled: Any = None
+    # Enable gateway proxy filtering on UDP.
+    gateway_udp_proxy_enabled: Any = None
+    # Enable installation of cloudflare managed root certificate.
+    root_certificate_installation_enabled: Any = None
+    # Enable using CGNAT virtual IPv4.
+    use_zt_virtual_ip: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesZeroTrustAccountDeviceSettingsResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesZeroTrustAccountDeviceSettingsResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesZeroTrustAccountDeviceSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_zero_trust_account_device_settings_response",

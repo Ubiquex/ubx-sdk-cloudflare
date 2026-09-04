@@ -3,24 +3,33 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosExpressionFilterListResponse_Result struct {
+	CreatedOn  any
+	Expression any
+	Id         any
+	Mode       any
+	ModifiedOn any
+}
+
 type DosExpressionFilterListResponseConfig struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Mode any
-	Order any
-	Page any
-	PerPage any
+	Mode      any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type DosExpressionFilterListResponseAttrs struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Mode any
-	Order any
-	Page any
-	PerPage any
+	Mode      any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var DosExpressionFilterListResponse = ubx.DataSourceBinding{
@@ -28,9 +37,9 @@ var DosExpressionFilterListResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Mode":      ubx.FieldSpec{WireName: "mode"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

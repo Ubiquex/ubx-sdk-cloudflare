@@ -4,23 +4,23 @@ package zoneenvironments
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KaminoEnvironmentsResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type KaminoEnvironmentsResponse_Result_Environments_Position struct {
-	After any
+	After  any
 	Before any
 }
 
 type KaminoEnvironmentsResponse_Result_Environments struct {
-	Expression any
-	HttpApplicationId any
+	Expression         any
+	HttpApplicationId  any
 	LockedOnDeployment any
-	Name any
-	Position any
-	Ref any
-	Version any
+	Name               any
+	Position           any
+	Ref                any
+	Version            any
 }
 
 type KaminoEnvironmentsResponse_Result struct {
@@ -31,14 +31,13 @@ type KaminoEnvironmentsResponseConfig struct {
 }
 
 type KaminoEnvironmentsResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var KaminoEnvironmentsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_kamino_environments_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

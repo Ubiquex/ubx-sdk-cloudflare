@@ -4,13 +4,13 @@ package workflows
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Step_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Step_Result_Error struct {
 	Message any
-	Name any
+	Name    any
 }
 
 type Step_Result struct {
@@ -24,45 +24,45 @@ type Step_Result struct {
 }
 
 type Step_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type StepConfig struct {
-	AccountId any
-	Attempt any
-	InstanceId any
-	Name any
-	Type any
+	AccountId    any
+	Attempt      any
+	InstanceId   any
+	Name         any
+	Type         any
 	WorkflowName any
 }
 
 type StepAttrs struct {
-	AccountId any
-	Attempt any
-	Errors any
-	InstanceId any
-	Messages any
-	Name any
-	Result any
-	ResultInfo any
-	Success any
-	Type any
+	AccountId    any
+	Attempt      any
+	Errors       any
+	InstanceId   any
+	Messages     any
+	Name         any
+	Result       any
+	ResultInfo   any
+	Success      any
+	Type         any
 	WorkflowName any
 }
 
 var Step = ubx.DataSourceBinding{
 	WireType: "cloudflare_step",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Attempt": ubx.FieldSpec{WireName: "attempt"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"Attempt":      ubx.FieldSpec{WireName: "attempt"},
+		"InstanceId":   ubx.FieldSpec{WireName: "instance_id"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

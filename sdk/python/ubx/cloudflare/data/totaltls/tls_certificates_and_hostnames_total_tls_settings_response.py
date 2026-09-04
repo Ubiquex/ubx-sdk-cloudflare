@@ -7,12 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesTotalTlsSettingsResponse_Result:
+    # The Certificate Authority that Total TLS certificates will be issued through.
+    certificate_authority: Any = None
+    # If enabled, Total TLS will order a hostname specific TLS certificate for any proxied A, AAAA, or CNAME record in your zone.
+    enabled: Any = None
+    # The validity period in days for the certificates ordered via Total TLS.
+    validity_period: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesTotalTlsSettingsResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesTotalTlsSettingsResponseAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

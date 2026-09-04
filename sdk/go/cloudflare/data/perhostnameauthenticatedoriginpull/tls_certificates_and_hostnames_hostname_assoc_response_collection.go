@@ -3,6 +3,28 @@ package perhostnameauthenticatedoriginpull
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesHostnameAssocResponseCollection_Result struct {
+	CertId    any
+	CreatedAt any
+	Enabled   any
+	Hostname  any
+	Status    any
+	UpdatedAt any
+}
+
+type TlsCertificatesAndHostnamesHostnameAssocResponseCollection_ResultInfo struct {
+	// Total results returned based on your search parameters.
+	Count any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// Total results available without any search parameters.
+	TotalCount any
+	// Total pages available of results.
+	TotalPages any
+}
+
 type TlsCertificatesAndHostnamesHostnameAssocResponseCollectionConfig struct {
 	// Page number of paginated results.
 	Page any
@@ -18,7 +40,9 @@ type TlsCertificatesAndHostnamesHostnameAssocResponseCollectionAttrs struct {
 	// Page number of paginated results.
 	Page any
 	// Number of associations per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// Filter associations by status. Use comma-separated values to filter by multiple statuses, or "all" to include every status. Defaults to "active" if not provided.
 	Status any
 	// Identifier.
@@ -28,9 +52,9 @@ type TlsCertificatesAndHostnamesHostnameAssocResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesHostnameAssocResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_hostname_assoc_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Status":  ubx.FieldSpec{WireName: "status"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

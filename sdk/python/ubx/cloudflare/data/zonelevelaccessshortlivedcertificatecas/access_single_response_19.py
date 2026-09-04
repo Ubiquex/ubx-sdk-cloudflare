@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse19_Result:
+    # The Application Audience (AUD) tag. Identifies the application associated with the CA.
+    aud: Any = None
+    # The ID of the CA.
+    id: Any = None
+    # The public key to add to your SSH server configuration.
+    public_key: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse19Config:
     # UUID.
     app_id: Any = None
@@ -17,6 +26,7 @@ class AccessSingleResponse19Config:
 class AccessSingleResponse19Attrs:
     # UUID.
     app_id: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

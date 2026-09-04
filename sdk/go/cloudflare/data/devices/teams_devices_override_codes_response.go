@@ -3,6 +3,13 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesOverrideCodesResponse_Result_DisableForTime struct {
+}
+
+type TeamsDevicesOverrideCodesResponse_Result struct {
+	DisableForTime any
+}
+
 type TeamsDevicesOverrideCodesResponseConfig struct {
 	AccountId any
 	// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
@@ -13,12 +20,13 @@ type TeamsDevicesOverrideCodesResponseAttrs struct {
 	AccountId any
 	// Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
 	DeviceId any
+	Result   any
 }
 
 var TeamsDevicesOverrideCodesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_teams_devices_override_codes_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":  ubx.FieldSpec{WireName: "device_id"},
 	},
 }

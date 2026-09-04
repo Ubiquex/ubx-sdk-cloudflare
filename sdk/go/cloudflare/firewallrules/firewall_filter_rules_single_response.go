@@ -4,14 +4,14 @@ package firewallrules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallFilterRulesSingleResponse_Action_Response struct {
-	Body any
+	Body        any
 	ContentType any
 }
 
 type FirewallFilterRulesSingleResponse_Action struct {
-	Mode any
+	Mode     any
 	Response any
-	Timeout any
+	Timeout  any
 }
 
 type FirewallFilterRulesSingleResponse_Filter struct {
@@ -27,28 +27,48 @@ type FirewallFilterRulesSingleResponse_Filter struct {
 	Ref any
 }
 
+type FirewallFilterRulesSingleResponse_Result_Filter struct {
+	Deleted     any
+	Description any
+	Expression  any
+	Id          any
+	Paused      any
+	Ref         any
+}
+
+type FirewallFilterRulesSingleResponse_Result struct {
+	Action      any
+	Description any
+	Filter      any
+	Id          any
+	Paused      any
+	Priority    any
+	Products    any
+	Ref         any
+}
+
 var FirewallFilterRulesSingleResponse_Action_ResponseFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-	}
+	"Body":        ubx.FieldSpec{WireName: "body"},
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+}
 
 var FirewallFilterRulesSingleResponse_ActionFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: FirewallFilterRulesSingleResponse_Action_ResponseFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   FirewallFilterRulesSingleResponse_Action_ResponseFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var FirewallFilterRulesSingleResponse_FilterFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Paused":      ubx.FieldSpec{WireName: "paused"},
+	"Ref":         ubx.FieldSpec{WireName: "ref"},
+}
 
 type FirewallFilterRulesSingleResponseConfig struct {
 	// The action to perform when the threshold of matched traffic within the configured period is exceeded.
@@ -65,7 +85,8 @@ type FirewallFilterRulesSingleResponseAttrs struct {
 	Action any
 	Filter any
 	// The unique identifier of the resource.
-	Id any
+	Id     any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -77,13 +98,13 @@ var FirewallFilterRulesSingleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: FirewallFilterRulesSingleResponse_ActionFields,
+			Kind:     "object",
+			Fields:   FirewallFilterRulesSingleResponse_ActionFields,
 		},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: FirewallFilterRulesSingleResponse_FilterFields,
+			Kind:     "object",
+			Fields:   FirewallFilterRulesSingleResponse_FilterFields,
 		},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},

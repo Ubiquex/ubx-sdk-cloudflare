@@ -3,33 +3,49 @@ package presets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Preset_Data struct {
+	CreatedAt any
+	Id        any
+	Name      any
+	UpdatedAt any
+}
+
+type Preset_Paging struct {
+	EndOffset   any
+	StartOffset any
+	TotalCount  any
+}
+
 type PresetConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	PageNo any
+	AppId   any
+	PageNo  any
 	PerPage any
-	Search any
+	Search  any
 }
 
 type PresetAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	PageNo any
+	AppId   any
+	Data    any
+	PageNo  any
+	Paging  any
 	PerPage any
-	Search any
+	Search  any
+	Success any
 }
 
 var Preset = ubx.DataSourceBinding{
 	WireType: "cloudflare_preset",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"PageNo":    ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

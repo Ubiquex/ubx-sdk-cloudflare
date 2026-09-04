@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecurityCenterValueCountsResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class SecurityCenterValueCountsResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class SecurityCenterValueCountsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -22,11 +33,16 @@ class SecurityCenterValueCountsResponseAttrs:
     # Identifier.
     account_id: Any = None
     dismissed: Any = None
+    errors: Any = None
     issue_class: Any = None
     issue_type: Any = None
+    messages: Any = None
     product: Any = None
+    result: Any = None
     severity: Any = None
     subject: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 SecurityCenterValueCountsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_security_center_value_counts_response",

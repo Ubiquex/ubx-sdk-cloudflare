@@ -4,7 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Organization_Messages struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -12,42 +12,42 @@ type Organization_Result_Id struct {
 }
 
 type Organization_Result_Meta_TenantFlags struct {
-	AccountCreation any
+	AccountCreation                      any
 	AccountCreationAppliesTenantDefaults any
-	AccountDeletion any
-	AccountMigration any
-	AccountMobility any
-	EnterpriseCapability any
-	MemberManagement any
-	SubOrgCreation any
+	AccountDeletion                      any
+	AccountMigration                     any
+	AccountMobility                      any
+	EnterpriseCapability                 any
+	MemberManagement                     any
+	SubOrgCreation                       any
 }
 
 type Organization_Result_Meta struct {
 	HierarchyTags any
-	ManagedBy any
-	TenantFlags any
+	ManagedBy     any
+	TenantFlags   any
 }
 
 type Organization_Result_Parent struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type Organization_Result_Profile struct {
-	BusinessAddress any
-	BusinessEmail any
-	BusinessName any
-	BusinessPhone any
+	BusinessAddress  any
+	BusinessEmail    any
+	BusinessName     any
+	BusinessPhone    any
 	ExternalMetadata any
 }
 
 type Organization_Result struct {
 	CreateTime any
-	Id any
-	Meta any
-	Name any
-	Parent any
-	Profile any
+	Id         any
+	Meta       any
+	Name       any
+	Parent     any
+	Profile    any
 }
 
 type OrganizationConfig struct {
@@ -56,10 +56,10 @@ type OrganizationConfig struct {
 
 type OrganizationAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var Organization = ubx.DataSourceBinding{

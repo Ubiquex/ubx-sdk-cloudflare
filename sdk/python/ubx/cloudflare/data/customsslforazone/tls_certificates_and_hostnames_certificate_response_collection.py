@@ -7,6 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection_Result_GeoRestrictions:
+    label: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection_Result_KeylessServer_Tunnel:
+    private_ip: Any = None
+    vnet_id: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection_Result_KeylessServer:
+    created_on: Any = None
+    enabled: Any = None
+    host: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    permissions: Any = None
+    port: Any = None
+    status: Any = None
+    tunnel: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection_Result:
+    bundle_method: Any = None
+    custom_csr_id: Any = None
+    expires_on: Any = None
+    geo_restrictions: Any = None
+    hosts: Any = None
+    id: Any = None
+    issuer: Any = None
+    keyless_server: Any = None
+    modified_on: Any = None
+    policy_restrictions: Any = None
+    priority: Any = None
+    signature: Any = None
+    status: Any = None
+    uploaded_on: Any = None
+    zone_id: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseCollectionConfig:
     # Whether to match all search requirements or at least one (any).
     match: Any = None
@@ -25,6 +65,7 @@ class TlsCertificatesAndHostnamesCertificateResponseCollectionAttrs:
     page: Any = None
     # Number of zones per page.
     per_page: Any = None
+    result: Any = None
     # Status of the zone's custom SSL.
     status: Any = None
     # Identifier.

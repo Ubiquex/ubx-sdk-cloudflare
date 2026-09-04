@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersVersionsSingleResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
 class WorkersVersionsSingleResponse_Metadata_Annotations:
     pass
 
@@ -111,6 +122,53 @@ class WorkersVersionsSingleResponse_Metadata:
     package_dependencies: Any = None
     # Usage model for the Worker invocations.
     usage_model: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Metadata:
+    author_email: Any = None
+    author_id: Any = None
+    created_on: Any = None
+    has_preview: Any = None
+    modified_on: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Resources_Script_NamedHandlers:
+    handlers: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Resources_Script:
+    etag: Any = None
+    handlers: Any = None
+    last_deployed_from: Any = None
+    named_handlers: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Resources_ScriptRuntime_Limits:
+    cpu_ms: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Resources_ScriptRuntime:
+    compatibility_date: Any = None
+    compatibility_flags: Any = None
+    exports: Any = None
+    limits: Any = None
+    migration_tag: Any = None
+    usage_model: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result_Resources:
+    bindings: Any = None
+    script: Any = None
+    script_runtime: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsSingleResponse_Result:
+    id: Any = None
+    metadata: Any = None
+    number: Any = None
+    resources: Any = None
 
 _WorkersVersionsSingleResponse_Metadata_AnnotationsFields = {
 }
@@ -261,10 +319,15 @@ class WorkersVersionsSingleResponseConfig:
 
 @dataclasses.dataclass
 class WorkersVersionsSingleResponseAttrs:
+    errors: Any = None
     # An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.<br/>Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
     files: Any = None
+    messages: Any = None
     # JSON-encoded metadata about the uploaded parts and Worker configuration.
     metadata: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

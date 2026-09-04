@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerConnectorsListResponse_Result_Device:
+    id: Any = None
+    serial_number: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerConnectorsListResponse_Result:
+    activated: Any = None
+    device: Any = None
+    id: Any = None
+    interrupt_window_days_of_week: Any = None
+    interrupt_window_duration_hours: Any = None
+    interrupt_window_embargo_dates: Any = None
+    interrupt_window_hour_of_day: Any = None
+    last_heartbeat: Any = None
+    last_seen_version: Any = None
+    last_updated: Any = None
+    license_key: Any = None
+    notes: Any = None
+    primary: Any = None
+    site_id: Any = None
+    timezone: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerConnectorsListResponseConfig:
     device_type: Any = None
 
@@ -15,6 +39,7 @@ class MconnCustomerConnectorsListResponseAttrs:
     # Account identifier
     account_id: Any = None
     device_type: Any = None
+    result: Any = None
 
 MconnCustomerConnectorsListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_customer_connectors_list_response",

@@ -7,11 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class DataClass_SensitivityLevels:
+class DataClass_Result_SensitivityLevels:
     group_id: Any = None
     level_id: Any = None
 
-_DataClass_SensitivityLevelsFields = {
+@dataclasses.dataclass
+class DataClass_Result:
+    created_at: Any = None
+    data_tags: Any = None
+    description: Any = None
+    expression: Any = None
+    id: Any = None
+    name: Any = None
+    sensitivity_levels: Any = None
+    updated_at: Any = None
+
+_DataClass_Result_SensitivityLevelsFields = {
     "group_id": ubx.FieldSpec(wire_name="group_id"),
     "level_id": ubx.FieldSpec(wire_name="level_id"),
 }
@@ -34,6 +45,7 @@ class DataClassAttrs:
     description: Any = None
     expression: Any = None
     name: Any = None
+    result: Any = None
     sensitivity_levels: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
@@ -50,7 +62,7 @@ DataClass = ubx.ResourceBinding(
         "sensitivity_levels": ubx.FieldSpec(
             wire_name="sensitivity_levels",
             kind="list",
-            fields=_DataClass_SensitivityLevelsFields,
+            fields=_DataClass_Result_SensitivityLevelsFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "data_class_id": ubx.FieldSpec(wire_name="data_class_id"),

@@ -4,25 +4,25 @@ package aisearchinstancesitems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Item_Result struct {
-	Checksum any
+	Checksum    any
 	ChunksCount any
-	CreatedAt any
-	Error any
-	FileSize any
-	Id any
-	Key any
-	LastSeenAt any
-	Metadata any
-	Namespace any
-	NextAction any
-	SourceId any
-	Status any
+	CreatedAt   any
+	Error       any
+	FileSize    any
+	Id          any
+	Key         any
+	LastSeenAt  any
+	Metadata    any
+	Namespace   any
+	NextAction  any
+	SourceId    any
+	Status      any
 }
 
 type Item_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -36,10 +36,10 @@ type ItemConfig struct {
 	Key any
 	// JSON-encoded metadata filter using Vectorize filter syntax. Examples: {"folder":"reports/"}, {"timestamp":{"$gte":1700000000000}}, {"folder":{"$in":["docs/","reports/"]}}
 	MetadataFilter any
-	Name any
-	Page any
-	PerPage any
-	Search any
+	Name           any
+	Page           any
+	PerPage        any
+	Search         any
 	// Sort order for items. "status" (default) sorts by status priority then last_seen_at. "modified_at" sorts by file modification time (most recent first), falling back to created_at.
 	SortBy any
 	// Filter items by source_id. Use "builtin" for uploaded files, or a source identifier like "web-crawler:https://example.com".
@@ -57,34 +57,34 @@ type ItemAttrs struct {
 	Key any
 	// JSON-encoded metadata filter using Vectorize filter syntax. Examples: {"folder":"reports/"}, {"timestamp":{"$gte":1700000000000}}, {"folder":{"$in":["docs/","reports/"]}}
 	MetadataFilter any
-	Name any
-	Page any
-	PerPage any
-	Result any
-	ResultInfo any
-	Search any
+	Name           any
+	Page           any
+	PerPage        any
+	Result         any
+	ResultInfo     any
+	Search         any
 	// Sort order for items. "status" (default) sorts by status priority then last_seen_at. "modified_at" sorts by file modification time (most recent first), falling back to created_at.
 	SortBy any
 	// Filter items by source_id. Use "builtin" for uploaded files, or a source identifier like "web-crawler:https://example.com".
-	Source any
-	Status any
+	Source  any
+	Status  any
 	Success any
 }
 
 var Item = ubx.DataSourceBinding{
 	WireType: "cloudflare_item",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ItemId": ubx.FieldSpec{WireName: "item_id"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"ItemId":         ubx.FieldSpec{WireName: "item_id"},
+		"Key":            ubx.FieldSpec{WireName: "key"},
 		"MetadataFilter": ubx.FieldSpec{WireName: "metadata_filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Page":           ubx.FieldSpec{WireName: "page"},
+		"PerPage":        ubx.FieldSpec{WireName: "per_page"},
+		"Search":         ubx.FieldSpec{WireName: "search"},
+		"SortBy":         ubx.FieldSpec{WireName: "sort_by"},
+		"Source":         ubx.FieldSpec{WireName: "source"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 	},
 }

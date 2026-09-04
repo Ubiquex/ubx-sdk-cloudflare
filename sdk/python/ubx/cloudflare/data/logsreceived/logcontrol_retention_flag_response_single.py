@@ -7,12 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogcontrolRetentionFlagResponseSingle_Result:
+    # The log retention flag for Logpull API.
+    flag: Any = None
+
+@dataclasses.dataclass
 class LogcontrolRetentionFlagResponseSingleConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class LogcontrolRetentionFlagResponseSingleAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

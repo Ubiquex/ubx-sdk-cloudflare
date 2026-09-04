@@ -3,12 +3,25 @@ package emailsendingsubdomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResponseCollection_Result struct {
+	Created                  any
+	DkimSelector             any
+	DropSuppressedRecipients any
+	Enabled                  any
+	Modified                 any
+	Name                     any
+	PreviewEnabled           any
+	ReturnPathDomain         any
+	Tag                      any
+}
+
 type ResponseCollectionConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type ResponseCollectionAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

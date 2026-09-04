@@ -3,6 +3,50 @@ package apishieldclientcertificatesforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesClientCertificateResponseSingle_Result_CertificateAuthority struct {
+	Id   any
+	Name any
+}
+
+type TlsCertificatesAndHostnamesClientCertificateResponseSingle_Result struct {
+	// The Client Certificate PEM.
+	Certificate any
+	// Certificate Authority used to issue the Client Certificate.
+	CertificateAuthority any
+	// Common Name of the Client Certificate.
+	CommonName any
+	// Country, provided by the CSR.
+	Country any
+	// The Certificate Signing Request (CSR). Must be newline-encoded.
+	Csr any
+	// Date that the Client Certificate expires.
+	ExpiresOn any
+	// Unique identifier of the Client Certificate.
+	FingerprintSha256 any
+	// Identifier.
+	Id any
+	// Date that the Client Certificate was issued by the Certificate Authority.
+	IssuedOn any
+	// Location, provided by the CSR.
+	Location any
+	// Organization, provided by the CSR.
+	Organization any
+	// Organizational Unit, provided by the CSR.
+	OrganizationalUnit any
+	// The serial number on the created Client Certificate.
+	SerialNumber any
+	// The type of hash used for the Client Certificate..
+	Signature any
+	// Subject Key Identifier.
+	Ski any
+	// State, provided by the CSR.
+	State any
+	// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions.
+	Status any
+	// The number of days the Client Certificate will be valid after the issued_on date.
+	ValidityDays any
+}
+
 type TlsCertificatesAndHostnamesClientCertificateResponseSingleConfig struct {
 	// The Certificate Signing Request (CSR). Must be newline-encoded.
 	Csr any
@@ -16,7 +60,8 @@ type TlsCertificatesAndHostnamesClientCertificateResponseSingleConfig struct {
 
 type TlsCertificatesAndHostnamesClientCertificateResponseSingleAttrs struct {
 	// The Certificate Signing Request (CSR). Must be newline-encoded.
-	Csr any
+	Csr    any
+	Result any
 	// The number of days the Client Certificate will be valid after the issued_on date.
 	ValidityDays any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +73,9 @@ type TlsCertificatesAndHostnamesClientCertificateResponseSingleAttrs struct {
 var TlsCertificatesAndHostnamesClientCertificateResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_client_certificate_response_single",
 	Fields: ubx.FieldMap{
-		"Csr": ubx.FieldSpec{WireName: "csr"},
-		"ValidityDays": ubx.FieldSpec{WireName: "validity_days"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Csr":                 ubx.FieldSpec{WireName: "csr"},
+		"ValidityDays":        ubx.FieldSpec{WireName: "validity_days"},
+		"ZoneId":              ubx.FieldSpec{WireName: "zone_id"},
 		"ClientCertificateId": ubx.FieldSpec{WireName: "client_certificate_id"},
 	},
 }

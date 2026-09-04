@@ -3,6 +3,56 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Queue_Errors struct {
+	Code    any
+	Message any
+}
+
+type Queue_Result_Consumers_Settings struct {
+	BatchSize      any
+	MaxConcurrency any
+	MaxRetries     any
+	MaxWaitTimeMs  any
+	RetryDelay     any
+}
+
+type Queue_Result_Consumers struct {
+	ConsumerId      any
+	CreatedOn       any
+	DeadLetterQueue any
+	QueueName       any
+	ScriptName      any
+	Settings        any
+	Type            any
+}
+
+type Queue_Result_Producers struct {
+	BucketName any
+	Script     any
+	Type       any
+}
+
+type Queue_Result_Settings struct {
+	// Number of seconds to delay delivery of all messages to consumers.
+	DeliveryDelay any
+	// Indicates if message delivery to consumers is currently paused.
+	DeliveryPaused any
+	// Number of seconds after which an unconsumed message will be delayed.
+	MessageRetentionPeriod any
+}
+
+type Queue_Result struct {
+	Consumers           any
+	ConsumersTotalCount any
+	CreatedOn           any
+	ModifiedOn          any
+	Producers           any
+	ProducersTotalCount any
+	QueueId             any
+	QueueName           any
+	Settings            any
+}
+
 type QueueConfig struct {
 	QueueName any
 	// path parameter, not part of the API's own resource representation
@@ -12,7 +62,12 @@ type QueueConfig struct {
 }
 
 type QueueAttrs struct {
+	Errors    any
+	Messages  any
 	QueueName any
+	Result    any
+	// Indicates if the API call was successful or not.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,6 +79,6 @@ var Queue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"QueueId":   ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

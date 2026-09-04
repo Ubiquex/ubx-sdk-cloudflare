@@ -19,6 +19,71 @@ class StreamLiveInputResponseSingle_Recording:
     # Determines the amount of time a live input configured in `automatic` mode should wait before a recording transitions from live to on-demand. `0` is recommended for most use cases and indicates the platform default should be used.
     timeout_seconds: Any = None
 
+@dataclasses.dataclass
+class StreamLiveInputResponseSingle_Result_Playback:
+    # The DASH manifest URL used to play live video, referencing the live input ID.
+    dash: Any = None
+    # The HLS manifest URL used to play live video, referencing the live input ID.
+    hls: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseSingle_Result_Rtmps:
+    # The secret key to use when streaming via RTMPS to a live input.
+    stream_key: Any = None
+    # The RTMPS URL you provide to the broadcaster, which they stream live video to.
+    url: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseSingle_Result_Srt:
+    # The secret key to use when streaming via SRT to a live input.
+    passphrase: Any = None
+    # The identifier of the live input to use when streaming via SRT.
+    stream_id: Any = None
+    # The SRT URL you provide to the broadcaster, which they stream live video to.
+    url: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseSingle_Result_WebRtc:
+    # The WebRTC URL you provide to the broadcaster, which they stream live video to.
+    url: Any = None
+
+@dataclasses.dataclass
+class StreamLiveInputResponseSingle_Result:
+    # The date and time the live input was created.
+    created: Any = None
+    # Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion.
+    delete_recording_after_days: Any = None
+    # Indicates whether the live input is enabled and can accept streams.
+    enabled: Any = None
+    # The date and time the live input keys were last rotated. Omitted for live inputs that have never had their keys rotated.
+    keys_rotated_at: Any = None
+    # A user modifiable key-value store used to reference other systems of record for managing live inputs.
+    meta: Any = None
+    # The date and time the live input was last modified.
+    modified: Any = None
+    # Details for playing a live input's broadcast using the HLS or DASH manifests. URLs reference the live input ID.
+    playback: Any = None
+    # When enabled, the live stream is delivered using Low-Latency HLS (LL-HLS), reducing glass-to-glass latency for viewers at the cost of reduced player compatibility.
+    prefer_low_latency: Any = None
+    # Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
+    recording: Any = None
+    # Details for streaming to an live input using RTMPS.
+    rtmps: Any = None
+    # Details for playback from an live input using RTMPS.
+    rtmps_playback: Any = None
+    # Details for streaming to a live input using SRT.
+    srt: Any = None
+    # Details for playback from an live input using SRT.
+    srt_playback: Any = None
+    # The connection status of a live input.
+    status: Any = None
+    # A unique identifier for a live input.
+    uid: Any = None
+    # Details for streaming to a live input using WebRTC.
+    web_rtc: Any = None
+    # Details for playback from a live input using WebRTC.
+    web_rtcplayback: Any = None
+
 _StreamLiveInputResponseSingle_RecordingFields = {
     "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
     "hide_live_viewer_count": ubx.FieldSpec(wire_name="hide_live_viewer_count"),
@@ -60,6 +125,8 @@ class StreamLiveInputResponseSingleAttrs:
     prefer_low_latency: Any = None
     # Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
     recording: Any = None
+    # Details about a live input.
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

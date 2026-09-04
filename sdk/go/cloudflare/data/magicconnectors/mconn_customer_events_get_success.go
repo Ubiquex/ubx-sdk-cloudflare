@@ -3,25 +3,51 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerEventsGetSuccess_Errors struct {
+	Code    any
+	Message any
+}
+
+type MconnCustomerEventsGetSuccess_Result_E struct {
+	// Event kind
+	K any
+}
+
+type MconnCustomerEventsGetSuccess_Result struct {
+	// Event kind plus event-specific payload fields. Event kinds: - `Init`: Initialized process - `Leave`: Stopped process - `StartAttestation`: Started attestation - `FinishAttestationSuccess`: Finished attestation - `FinishAttestationFailure`: Failed attestation - `StartRotateCryptKey`: Started crypt key rotation - `FinishRotateCryptKeySuccess`: Finished crypt key rotation - `FinishRotateCryptKeyFailure`: Failed crypt key rotation - `StartRotatePki`: Started PKI rotation - `FinishRotatePkiSuccess`: Finished PKI rotation - `FinishRotatePkiFailure`: Failed PKI rotation - `StartUpgrade`: Started upgrade - `FinishUpgradeSuccess`: Finished upgrade - `FinishUpgradeFailure`: Failed upgrade - `Reconcile`: Reconciled - `ConfigureCloudflaredTunnel`: Configured Cloudflared tunnel - `RekeyInstallBoth`: Installed initial inbound and outbound keys - `RekeyStart`: Installed new inbound key, kept old outbound - `RekeyRestart`: Restarted in-progress rekey with newer key material - `RekeyAdvance`: Confirmed traffic on new inbound key, swapped outbound to new - `RekeyComplete`: Deleted old keys - `RekeyReset`: Deleted all keys after receiving an unexpected key - `HaTransition`: Completed HA state transition - `HaError`: Received unexpected HA error - `HaInit`: Initialized HA subsystem - `HaLeave`: Stopped HA subsystem
+	E any
+	// Sequence number, used to order events with the same timestamp
+	N any
+	// Time the Event was recorded (seconds since the Unix epoch)
+	T any
+	// Version
+	V any
+}
+
 type MconnCustomerEventsGetSuccessConfig struct {
 	ConnectorId any
-	EventN any
-	EventT any
+	EventN      any
+	EventT      any
 }
 
 type MconnCustomerEventsGetSuccessAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
-	EventN any
-	EventT any
+	Errors      any
+	EventN      any
+	EventT      any
+	Messages    any
+	// Recorded Event
+	Result  any
+	Success any
 }
 
 var MconnCustomerEventsGetSuccess = ubx.DataSourceBinding{
 	WireType: "cloudflare_mconn_customer_events_get_success",
 	Fields: ubx.FieldMap{
 		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-		"EventN": ubx.FieldSpec{WireName: "event_n"},
-		"EventT": ubx.FieldSpec{WireName: "event_t"},
+		"EventN":      ubx.FieldSpec{WireName: "event_n"},
+		"EventT":      ubx.FieldSpec{WireName: "event_t"},
 	},
 }

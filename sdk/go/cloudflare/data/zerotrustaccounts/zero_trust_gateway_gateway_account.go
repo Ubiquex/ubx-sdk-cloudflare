@@ -3,12 +3,22 @@ package zerotrustaccounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayGatewayAccount_Result struct {
+	// Specify the gateway internal ID.
+	GatewayTag any
+	// Specify the Cloudflare account ID.
+	Id any
+	// Specify the provider name (usually Cloudflare).
+	ProviderName any
+}
+
 type ZeroTrustGatewayGatewayAccountConfig_ struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayGatewayAccountAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayGatewayAccount = ubx.DataSourceBinding{

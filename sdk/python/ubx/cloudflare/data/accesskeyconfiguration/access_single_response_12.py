@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse12_Result:
+    # The number of days until the next key rotation.
+    days_until_next_rotation: Any = None
+    # The number of days between key rotations.
+    key_rotation_interval_days: Any = None
+    # The timestamp of the previous key rotation.
+    last_key_rotation_at: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse12Config:
     # Identifier.
     account_id: Any = None
@@ -15,6 +24,7 @@ class AccessSingleResponse12Config:
 class AccessSingleResponse12Attrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 AccessSingleResponse12 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_single_response_12",

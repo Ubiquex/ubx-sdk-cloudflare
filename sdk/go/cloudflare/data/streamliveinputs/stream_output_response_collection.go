@@ -3,6 +3,24 @@ package streamliveinputs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamOutputResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamOutputResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamOutputResponseCollection_Result struct {
+	Enabled   any
+	StreamKey any
+	Uid       any
+	Url       any
+}
+
 type StreamOutputResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +31,19 @@ type StreamOutputResponseCollectionConfig struct {
 type StreamOutputResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
 	// A unique identifier for a live input.
 	LiveInputIdentifier any
+	Messages            any
+	Result              any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamOutputResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_output_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
 		"LiveInputIdentifier": ubx.FieldSpec{WireName: "live_input_identifier"},
 	},
 }

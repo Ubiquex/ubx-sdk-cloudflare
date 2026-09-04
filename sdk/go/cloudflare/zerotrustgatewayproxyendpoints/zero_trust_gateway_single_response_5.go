@@ -3,6 +3,16 @@ package zerotrustgatewayproxyendpoints
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewaySingleResponse5_Result struct {
+	CreatedAt any
+	Id        any
+	Ips       any
+	Kind      any
+	Name      any
+	Subdomain any
+	UpdatedAt any
+}
+
 type ZeroTrustGatewaySingleResponse5Config struct {
 	// The proxy endpoint kind.
 	Kind any
@@ -14,7 +24,8 @@ type ZeroTrustGatewaySingleResponse5Config struct {
 
 type ZeroTrustGatewaySingleResponse5Attrs struct {
 	// The proxy endpoint kind.
-	Kind any
+	Kind   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +35,8 @@ type ZeroTrustGatewaySingleResponse5Attrs struct {
 var ZeroTrustGatewaySingleResponse5 = ubx.ResourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_single_response_5",
 	Fields: ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Kind":            ubx.FieldSpec{WireName: "kind"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"ProxyEndpointId": ubx.FieldSpec{WireName: "proxy_endpoint_id"},
 	},
 }

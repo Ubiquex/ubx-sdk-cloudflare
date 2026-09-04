@@ -21,6 +21,6 @@ var Dn = ubx.DataSourceBinding{
 	WireType: "cloudflare_dn",
 	Fields: ubx.FieldMap{
 		"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

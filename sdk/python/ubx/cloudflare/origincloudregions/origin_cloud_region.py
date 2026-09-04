@@ -7,6 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class OriginCloudRegion_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class OriginCloudRegion_Result_Value:
+    # Time this mapping was last modified.
+    modified_on: Any = None
+    # The origin IP address (IPv4 or IPv6, canonicalized).
+    origin_ip: Any = None
+    # Cloud vendor region identifier.
+    region: Any = None
+    # Cloud vendor hosting the origin.
+    vendor: Any = None
+
+@dataclasses.dataclass
+class OriginCloudRegion_Result:
+    # Whether the setting can be modified by the current user.
+    editable: Any = None
+    id: Any = None
+    # Time the mapping was last modified.
+    modified_on: Any = None
+    # A single origin IP-to-cloud-region mapping.
+    value: Any = None
+
+@dataclasses.dataclass
 class OriginCloudRegionConfig:
     # Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
     ip: Any = None
@@ -21,10 +47,16 @@ class OriginCloudRegionConfig:
 
 @dataclasses.dataclass
 class OriginCloudRegionAttrs:
+    errors: Any = None
     # Origin IP address (IPv4 or IPv6). Normalized to canonical form before storage (RFC 5952 for IPv6).
     ip: Any = None
+    messages: Any = None
     # Cloud vendor region identifier. Must be a valid region for the specified vendor as returned by the supported_regions endpoint.
     region: Any = None
+    # Response result for a single origin cloud region mapping.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Cloud vendor hosting the origin. Must be one of the supported vendors.
     vendor: Any = None
     # path parameter, not part of the API's own resource representation

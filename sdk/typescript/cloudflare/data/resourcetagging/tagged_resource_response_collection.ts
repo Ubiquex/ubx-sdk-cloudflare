@@ -4,6 +4,24 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TaggedResourceResponseCollection_AccountId {
 }
 
+export interface TaggedResourceResponseCollection_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface TaggedResourceResponseCollection_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: TaggedResourceResponseCollection_Errors_Source | Computed<TaggedResourceResponseCollection_Errors_Source>;
+}
+
+export interface TaggedResourceResponseCollection_ResultInfo {
+  /** Indicates the number of results returned in the current page. */
+  count?: number | Computed<number>;
+  /** Provides a cursor for the next page of results. Include this value in the next request to continue pagination. */
+  cursor?: string | Computed<string>;
+}
+
 const TaggedResourceResponseCollection_AccountIdFields: FieldMap = {
 };
 
@@ -21,8 +39,14 @@ export interface TaggedResourceResponseCollectionAttrs {
   accountId: TaggedResourceResponseCollection_AccountId;
   caseInsensitive: boolean;
   cursor: string;
+  errors: TaggedResourceResponseCollection_Errors[];
   id: string[];
+  messages: TaggedResourceResponseCollection_Errors[];
   name: string;
+  result: unknown[];
+  resultInfo: TaggedResourceResponseCollection_ResultInfo;
+  /** Whether the API call was successful. */
+  success: boolean;
   tag: string[];
   type: string[];
 }

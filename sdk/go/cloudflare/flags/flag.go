@@ -8,69 +8,69 @@ type Flag_Errors struct {
 }
 
 type Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Conditions_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Conditions_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Conditions struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type Flag_Result_Rules_Rollout struct {
-	Attribute any
+	Attribute  any
 	Percentage any
 }
 
 type Flag_Result_Rules struct {
-	Conditions any
-	Priority any
-	Rollout any
+	Conditions     any
+	Priority       any
+	Rollout        any
 	ServeVariation any
 }
 
 type Flag_Result struct {
 	// Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
 	DefaultVariation any
-	Description any
+	Description      any
 	// When false, the flag bypasses all rules and always serves `default_variation`.
 	Enabled any
 	// Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
@@ -78,7 +78,7 @@ type Flag_Result struct {
 	// Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
 	Rules any
 	// Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
-	Type any
+	Type      any
 	UpdatedAt any
 	UpdatedBy any
 	// Map of variation name to value. All values share the same type (boolean, string, number, or JSON object/array), and each serialized value stays within 10KB.
@@ -86,97 +86,97 @@ type Flag_Result struct {
 }
 
 var Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{WireName: "clauses"},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute":       ubx.FieldSpec{WireName: "attribute"},
+	"Clauses":         ubx.FieldSpec{WireName: "clauses"},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{
-			WireName: "clauses",
-			Kind: "list",
-			Fields: Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Clauses": ubx.FieldSpec{
+		WireName: "clauses",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_ClausesFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{
-			WireName: "clauses",
-			Kind: "list",
-			Fields: Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Clauses": ubx.FieldSpec{
+		WireName: "clauses",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_Conditions_Clauses_Clauses_Clauses_ClausesFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_Conditions_Clauses_ClausesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{
-			WireName: "clauses",
-			Kind: "list",
-			Fields: Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Clauses": ubx.FieldSpec{
+		WireName: "clauses",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_Conditions_Clauses_Clauses_ClausesFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_Conditions_ClausesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{
-			WireName: "clauses",
-			Kind: "list",
-			Fields: Flag_Result_Rules_Conditions_Clauses_ClausesFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Clauses": ubx.FieldSpec{
+		WireName: "clauses",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_Conditions_Clauses_ClausesFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_ConditionsFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Clauses": ubx.FieldSpec{
-			WireName: "clauses",
-			Kind: "list",
-			Fields: Flag_Result_Rules_Conditions_ClausesFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Clauses": ubx.FieldSpec{
+		WireName: "clauses",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_Conditions_ClausesFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	"Operator":        ubx.FieldSpec{WireName: "operator"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Flag_Result_Rules_RolloutFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"Attribute":  ubx.FieldSpec{WireName: "attribute"},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var Flag_Result_RulesFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Flag_Result_Rules_ConditionsFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Rollout": ubx.FieldSpec{
-			WireName: "rollout",
-			Kind: "object",
-			Fields: Flag_Result_Rules_RolloutFields,
-		},
-		"ServeVariation": ubx.FieldSpec{WireName: "serve_variation"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Flag_Result_Rules_ConditionsFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"Rollout": ubx.FieldSpec{
+		WireName: "rollout",
+		Kind:     "object",
+		Fields:   Flag_Result_Rules_RolloutFields,
+	},
+	"ServeVariation": ubx.FieldSpec{WireName: "serve_variation"},
+}
 
 type FlagConfig struct {
 	// Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
 	DefaultVariation any
-	Description any
+	Description      any
 	// When false, the flag bypasses all rules and always serves `default_variation`.
 	Enabled any
 	// Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
@@ -198,16 +198,16 @@ type FlagConfig struct {
 type FlagAttrs struct {
 	// Variation the API serves when the flag is off, or when it's on but no rule matches the context. Must be a key in `variations`.
 	DefaultVariation any
-	Description any
+	Description      any
 	// When false, the flag bypasses all rules and always serves `default_variation`.
 	Enabled any
-	Errors any
+	Errors  any
 	// Unique identifier for the flag within an app. Used in all evaluation and SDK calls.
-	Key any
+	Key      any
 	Messages any
-	Result any
+	Result   any
 	// Targeting rules evaluated in ascending `priority`; the first matching rule wins. An empty array means the flag always serves `default_variation`.
-	Rules any
+	Rules   any
 	Success any
 	// Value type of the flag's variations. The API infers this from the variation values on write, so you can omit it in requests.
 	Type any
@@ -225,18 +225,18 @@ var Flag = ubx.ResourceBinding{
 	WireType: "cloudflare_flag",
 	Fields: ubx.FieldMap{
 		"DefaultVariation": ubx.FieldSpec{WireName: "default_variation"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+		"Key":              ubx.FieldSpec{WireName: "key"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: Flag_Result_RulesFields,
+			Kind:     "list",
+			Fields:   Flag_Result_RulesFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 		"Variations": ubx.FieldSpec{WireName: "variations"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"FlagKey": ubx.FieldSpec{WireName: "flag_key"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
+		"FlagKey":    ubx.FieldSpec{WireName: "flag_key"},
 	},
 }

@@ -4,14 +4,14 @@ package radarlayer3attacks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Origin_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Origin_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Origin_Result_Meta_ConfidenceInfo struct {
 }
 
 type Origin_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Origin_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Origin_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -43,9 +43,9 @@ type Origin_Result_Meta struct {
 
 type Origin_Result_Top0 struct {
 	OriginCountryAlpha2 any
-	OriginCountryName any
-	Rank any
-	Value any
+	OriginCountryName   any
+	Rank                any
+	Value               any
 }
 
 type Origin_Result struct {
@@ -98,22 +98,22 @@ type OriginAttrs struct {
 	Name any
 	// Filters the results by layer 3/4 protocol.
 	Protocol any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var Origin = ubx.DataSourceBinding{
 	WireType: "cloudflare_origin",
 	Fields: ubx.FieldMap{
 		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
+		"DateEnd":   ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
 		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Location":  ubx.FieldSpec{WireName: "location"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Protocol":  ubx.FieldSpec{WireName: "protocol"},
 	},
 }

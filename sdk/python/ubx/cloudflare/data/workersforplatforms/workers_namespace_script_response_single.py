@@ -7,6 +7,140 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_CacheOptions:
+    # Whether cached responses are shared across Worker version uploads. This is independent of `enabled`. It can stay true while caching is off, so the preference survives turning caching off and back on.
+    cross_version_cache: Any = None
+    # Whether caching is enabled for this Worker.
+    enabled: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_Exports:
+    pass
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_NamedHandlers:
+    handlers: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_Observability_Logs:
+    # A list of destinations where logs will be exported to.
+    destinations: Any = None
+    # Whether logs are enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+    invocation_logs: Any = None
+    # Whether log persistence is enabled for the Worker.
+    persist: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_Observability_Traces:
+    # A list of destinations where traces will be exported to.
+    destinations: Any = None
+    # Whether traces are enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for traces. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Whether trace persistence is enabled for the Worker.
+    persist: Any = None
+    # Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. "authenticated" honors inbound trace context only when accompanied by a valid trace auth token. "accept" unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.
+    propagation_policy: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_Observability:
+    # Whether observability is enabled for the Worker.
+    enabled: Any = None
+    # The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+    head_sampling_rate: Any = None
+    # Log settings for the Worker.
+    logs: Any = None
+    # Whether query strings are removed from request URLs in logs and traces.
+    redact_query_string: Any = None
+    # Trace settings for the Worker.
+    traces: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_Placement:
+    last_analyzed_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script_TailConsumers:
+    environment: Any = None
+    namespace: Any = None
+    service: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result_Script:
+    # Global CacheW configuration for the Worker. When caching is on, the platform provisions a `cloudflare.app` zone for the Worker. A `type: worker` entry in the `exports` map can override this value for a single entrypoint.
+    cache_options: Any = None
+    # Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.
+    compatibility_date: Any = None
+    # Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.
+    compatibility_flags: Any = None
+    # When the script was created.
+    created_on: Any = None
+    # Hashed script content, can be used in a If-None-Match header when updating.
+    etag: Any = None
+    # Declarative exports for the Worker's most recent version, including Durable Object classes (with their `storage` backend) and named Worker entrypoints. Tombstoned lifecycle entries are omitted, so only live exports (`created` and `expecting-transfer`) are returned.
+    exports: Any = None
+    # The names of handlers exported as part of the default export.
+    handlers: Any = None
+    # Whether a Worker contains assets.
+    has_assets: Any = None
+    # Whether a Worker contains modules.
+    has_modules: Any = None
+    # The name used to identify the script.
+    id: Any = None
+    # The client most recently used to deploy this Worker.
+    last_deployed_from: Any = None
+    # Whether Logpush is turned on for the Worker.
+    logpush: Any = None
+    # The tag of the Durable Object migration that was most recently applied for this Worker.
+    migration_tag: Any = None
+    # When the script was last modified.
+    modified_on: Any = None
+    # Named exports, such as Durable Object class implementations and named entrypoints.
+    named_handlers: Any = None
+    # Observability settings for the Worker.
+    observability: Any = None
+    # Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode='smart' for Smart Placement, or one of region/hostname/host.
+    placement: Any = None
+    placement_mode: Any = None
+    placement_status: Any = None
+    # The immutable ID of the script.
+    tag: Any = None
+    # Tags associated with the Worker.
+    tags: Any = None
+    # List of Workers that will consume logs from the attached Worker.
+    tail_consumers: Any = None
+    # Usage model for the Worker invocations.
+    usage_model: Any = None
+
+@dataclasses.dataclass
+class WorkersNamespaceScriptResponseSingle_Result:
+    # When the script was created.
+    created_on: Any = None
+    # Name of the Workers for Platforms dispatch namespace.
+    dispatch_namespace: Any = None
+    # When the script was last modified.
+    modified_on: Any = None
+    script: Any = None
+
+@dataclasses.dataclass
 class WorkersNamespaceScriptResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -21,8 +155,14 @@ class WorkersNamespaceScriptResponseSingleAttrs:
     account_id: Any = None
     # Name of the Workers for Platforms dispatch namespace.
     dispatch_namespace: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Details about a worker uploaded to a Workers for Platforms namespace.
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 WorkersNamespaceScriptResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_workers_namespace_script_response_single",

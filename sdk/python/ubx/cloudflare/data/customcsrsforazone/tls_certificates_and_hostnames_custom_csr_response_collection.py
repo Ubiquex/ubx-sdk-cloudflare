@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomCsrResponseCollection_Result:
+    common_name: Any = None
+    country: Any = None
+    created_at: Any = None
+    csr: Any = None
+    id: Any = None
+    key_type: Any = None
+    locality: Any = None
+    organization: Any = None
+    organizational_unit: Any = None
+    sans: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomCsrResponseCollectionConfig:
     # Page number of paginated results.
     page: Any = None
@@ -21,6 +35,7 @@ class TlsCertificatesAndHostnamesCustomCsrResponseCollectionAttrs:
     page: Any = None
     # Number of custom CSRs per page.
     per_page: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

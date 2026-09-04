@@ -7,12 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesDcvDelegationResponse_Result:
+    uuid: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesDcvDelegationResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesDcvDelegationResponseAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

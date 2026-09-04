@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ListResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class ListResponseCollectionConfig:
     # An informative summary of the list.
     description: Any = None
@@ -23,10 +28,15 @@ class ListResponseCollectionConfig:
 class ListResponseCollectionAttrs:
     # An informative summary of the list.
     description: Any = None
+    errors: Any = None
     # The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
     kind: Any = None
+    messages: Any = None
     # An informative name for the list. Use this name in filter and rule expressions.
     name: Any = None
+    result: Any = None
+    # Defines whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,12 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesSplitTunnelIncludeResponseCollection_Result:
+    address: Any = None
+    description: Any = None
+    host: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesSplitTunnelIncludeResponseCollectionConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesSplitTunnelIncludeResponseCollectionAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesSplitTunnelIncludeResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_split_tunnel_include_response_collection",

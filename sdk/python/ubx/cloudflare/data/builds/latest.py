@@ -7,6 +7,89 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Latest_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Latest_Result_Builds_BuildTriggerMetadata:
+    author: Any = None
+    branch: Any = None
+    build_command: Any = None
+    build_token_name: Any = None
+    build_token_uuid: Any = None
+    build_trigger_source: Any = None
+    commit_hash: Any = None
+    commit_message: Any = None
+    deploy_command: Any = None
+    environment_variables: Any = None
+    provider_account_name: Any = None
+    provider_type: Any = None
+    repo_name: Any = None
+    root_directory: Any = None
+
+@dataclasses.dataclass
+class Latest_Result_Builds_PullRequest:
+    created_on: Any = None
+    pull_request_url: Any = None
+
+@dataclasses.dataclass
+class Latest_Result_Builds_Trigger_RepoConnection:
+    created_on: Any = None
+    deleted_on: Any = None
+    modified_on: Any = None
+    provider_account_id: Any = None
+    provider_account_name: Any = None
+    provider_type: Any = None
+    repo_connection_uuid: Any = None
+    repo_id: Any = None
+    repo_name: Any = None
+
+@dataclasses.dataclass
+class Latest_Result_Builds_Trigger:
+    branch_excludes: Any = None
+    branch_includes: Any = None
+    build_caching_enabled: Any = None
+    build_command: Any = None
+    created_on: Any = None
+    deleted_on: Any = None
+    deploy_command: Any = None
+    external_script_id: Any = None
+    modified_on: Any = None
+    path_excludes: Any = None
+    path_includes: Any = None
+    repo_connection: Any = None
+    root_directory: Any = None
+    trigger_name: Any = None
+    trigger_uuid: Any = None
+
+@dataclasses.dataclass
+class Latest_Result_Builds:
+    build_outcome: Any = None
+    build_trigger_metadata: Any = None
+    build_uuid: Any = None
+    created_on: Any = None
+    initializing_on: Any = None
+    modified_on: Any = None
+    pull_request: Any = None
+    running_on: Any = None
+    status: Any = None
+    stopped_on: Any = None
+    trigger: Any = None
+
+@dataclasses.dataclass
+class Latest_Result:
+    builds: Any = None
+
+@dataclasses.dataclass
+class Latest_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class LatestConfig:
     # Account identifier.
     account_id: Any = None
@@ -17,8 +100,13 @@ class LatestConfig:
 class LatestAttrs:
     # Account identifier.
     account_id: Any = None
+    errors: Any = None
     # Comma-separated list of system-generated worker script tags (max 20).
     external_script_ids: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    success: Any = None
 
 Latest = ubx.DataSourceBinding(
     wire_type="cloudflare_latest",

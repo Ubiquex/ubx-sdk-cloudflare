@@ -6,6 +6,20 @@ export interface MagicRedundancyGroupWithMembersResponse_Members {
   type?: string | Computed<string>;
 }
 
+export interface MagicRedundancyGroupWithMembersResponse_Result_MemberData {
+  data?: unknown | Computed<unknown>;
+  type?: string | Computed<string>;
+}
+
+export interface MagicRedundancyGroupWithMembersResponse_Result {
+  createdOn?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  memberData?: MagicRedundancyGroupWithMembersResponse_Result_MemberData[] | Computed<MagicRedundancyGroupWithMembersResponse_Result_MemberData[]>;
+  modifiedOn?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
 const MagicRedundancyGroupWithMembersResponse_MembersFields: FieldMap = {
   id: "id",
   type: "type",
@@ -31,6 +45,7 @@ export interface MagicRedundancyGroupWithMembersResponseAttrs {
   members: MagicRedundancyGroupWithMembersResponse_Members[];
   /** Human-readable name for the redundancy group */
   name: string;
+  result: MagicRedundancyGroupWithMembersResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

@@ -12,12 +12,12 @@ type ActiveLivestream_Data struct {
 	Id any
 	// The server URL to which the RTMP encoder sends the video and audio data.
 	IngestServer any
-	MeetingId any
+	MeetingId    any
 	// Name of the livestream.
 	Name any
 	// The web address that viewers can use to watch the livestream.
 	PlaybackUrl any
-	Status any
+	Status      any
 	// Unique key for accessing each livestream.
 	StreamKey any
 	// Timestamp the object was updated at. The time is returned in ISO format.
@@ -29,9 +29,9 @@ type ActiveLivestreamConfig struct {
 }
 
 type ActiveLivestreamAttrs struct {
-	Data any
+	Data      any
 	MeetingId any
-	Success any
+	Success   any
 }
 
 var ActiveLivestream = ubx.DataSourceBinding{

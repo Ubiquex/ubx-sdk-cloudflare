@@ -3,12 +3,19 @@ package devices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesSplitTunnelIncludeResponseCollection_Result struct {
+	Address     any
+	Description any
+	Host        any
+}
+
 type TeamsDevicesSplitTunnelIncludeResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesSplitTunnelIncludeResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesSplitTunnelIncludeResponseCollection = ubx.DataSourceBinding{

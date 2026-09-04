@@ -3,20 +3,29 @@ package dlpsensitivitylevels
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Level_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
 type LevelConfig struct {
-	AccountId any
+	AccountId          any
 	SensitivityGroupId any
 }
 
 type LevelAttrs struct {
-	AccountId any
+	AccountId          any
+	Result             any
 	SensitivityGroupId any
 }
 
 var Level = ubx.DataSourceBinding{
 	WireType: "cloudflare_level",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
 		"SensitivityGroupId": ubx.FieldSpec{WireName: "sensitivity_group_id"},
 	},
 }

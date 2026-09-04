@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Credential_Result:
+    credential_set_id: Any = None
+    id: Any = None
+    location: Any = None
+    location_name: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class CredentialConfig:
     page: Any = None
     per_page: Any = None
@@ -15,6 +23,7 @@ class CredentialConfig:
 class CredentialAttrs:
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 Credential = ubx.DataSourceBinding(
     wire_type="cloudflare_credential",

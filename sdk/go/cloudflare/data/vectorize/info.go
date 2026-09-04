@@ -3,6 +3,17 @@ package vectorize
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Info_Result struct {
+	// Specifies the number of dimensions for the index
+	Dimensions any
+	// Specifies the timestamp the last mutation batch was processed as an ISO8601 string.
+	ProcessedUpToDatetime any
+	// The unique identifier for the async mutation operation containing the changeset.
+	ProcessedUpToMutation any
+	// Specifies the number of vectors present in the index
+	VectorCount any
+}
+
 type InfoConfig struct {
 	IndexName any
 }
@@ -11,6 +22,7 @@ type InfoAttrs struct {
 	// Identifier
 	AccountId any
 	IndexName any
+	Result    any
 }
 
 var Info = ubx.DataSourceBinding{

@@ -12,6 +12,18 @@ export interface ImagesImageVariantSimpleResponse_Options {
   width: number | Computed<number>;
 }
 
+export interface ImagesImageVariantSimpleResponse_Result_Variant {
+  id: string | Computed<string>;
+  /** Indicates whether the variant can access an image without a signature, regardless of image access control. */
+  neverRequireSignedUrls?: boolean | Computed<boolean>;
+  /** Allows you to define image resizing sizes for different use cases. */
+  options: ImagesImageVariantSimpleResponse_Options | Computed<ImagesImageVariantSimpleResponse_Options>;
+}
+
+export interface ImagesImageVariantSimpleResponse_Result {
+  variant?: ImagesImageVariantSimpleResponse_Result_Variant | Computed<ImagesImageVariantSimpleResponse_Result_Variant>;
+}
+
 const ImagesImageVariantSimpleResponse_OptionsFields: FieldMap = {
   fit: "fit",
   height: "height",
@@ -37,6 +49,7 @@ export interface ImagesImageVariantSimpleResponseAttrs {
   neverRequireSignedUrls: boolean;
   /** Allows you to define image resizing sizes for different use cases. */
   options: ImagesImageVariantSimpleResponse_Options;
+  result: ImagesImageVariantSimpleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

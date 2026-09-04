@@ -28,6 +28,7 @@ export interface SpectrumConfigAppConfigCollectionAttrs {
   page: number;
   /** Sets the maximum number of results per page. */
   perPage: number;
+  result: unknown;
   zoneId: SpectrumConfigAppConfigCollection_ZoneId;
 }
 

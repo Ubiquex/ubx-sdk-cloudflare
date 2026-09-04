@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle_Result:
+    # The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
+    certificate: Any = None
+    # When the certificate expires.
+    expires_on: Any = None
+    # Identifier.
+    id: Any = None
+    # The certificate authority that issued the certificate.
+    issuer: Any = None
+    # The type of hash used for the certificate.
+    signature: Any = None
+    # Status of the zone's custom SSL.
+    status: Any = None
+    # When the certificate was last modified.
+    updated_at: Any = None
+    # When the certificate was uploaded to Cloudflare.
+    uploaded_on: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleConfig:
     # The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
     certificate: Any = None
@@ -19,6 +38,7 @@ class TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleConfig:
 class TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleAttrs:
     # The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
     certificate: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

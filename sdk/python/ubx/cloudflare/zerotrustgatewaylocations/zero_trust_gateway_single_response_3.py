@@ -45,6 +45,36 @@ class ZeroTrustGatewaySingleResponse3_MaxTtl:
     # Location-specific cap on DNS response TTLs, in seconds. Required when `mode` is `override`. Must be omitted when `mode` is `inherit` or `disabled`.
     ttl_secs: Any = None
 
+@dataclasses.dataclass
+class ZeroTrustGatewaySingleResponse3_Result:
+    # Indicate whether this location is the default location.
+    client_default: Any = None
+    created_at: Any = None
+    # Indicate the identifier of the pair of IPv4 addresses assigned to this location.
+    dns_destination_ips_id: Any = None
+    # Specify the UUID of the IPv6 block brought to the gateway so that this location's IPv6 address is allocated from the Bring Your Own IPv6 (BYOIPv6) block rather than the standard Cloudflare IPv6 block.
+    dns_destination_ipv6_block_id: Any = None
+    # Specify the DNS over HTTPS domain that receives DNS requests. Gateway automatically generates this value.
+    doh_subdomain: Any = None
+    # Indicate whether the location must resolve EDNS queries.
+    ecs_support: Any = None
+    # Configure the destination endpoints for this location.
+    endpoints: Any = None
+    id: Any = None
+    # Defines the automatically generated IPv6 destination IP assigned to this location. Gateway counts all DNS requests sent to this IP as requests under this location.
+    ip: Any = None
+    # Show the primary destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+    ipv4_destination: Any = None
+    # Show the backup destination IPv4 address from the pair identified dns_destination_ips_id. This field read-only.
+    ipv4_destination_backup: Any = None
+    # Controls how DNS response TTLs are capped for this location relative to the account `max_ttl_secs` setting. Omitting `max_ttl` on update resets it to `inherit`.
+    max_ttl: Any = None
+    # Specify the location name.
+    name: Any = None
+    # Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
+    networks: Any = None
+    updated_at: Any = None
+
 _ZeroTrustGatewaySingleResponse3_Endpoints_Doh_NetworksFields = {
     "network": ubx.FieldSpec(wire_name="network"),
 }
@@ -137,6 +167,7 @@ class ZeroTrustGatewaySingleResponse3Attrs:
     name: Any = None
     # Specify the list of network ranges from which requests at this location originate. The list takes effect only if it is non-empty and the IPv4 endpoint is enabled for this location.
     networks: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

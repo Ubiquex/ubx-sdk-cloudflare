@@ -16,6 +16,62 @@ export interface Policy_Actions {
   webhookConfigs?: Policy_Actions_WebhookConfigs[] | Computed<Policy_Actions_WebhookConfigs[]>;
 }
 
+export interface Policy_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface Policy_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: Policy_Errors_Source | Computed<Policy_Errors_Source>;
+}
+
+export interface Policy_Result_Actions_RemediationTypes {
+  displayName?: string | Computed<string>;
+  remediationType?: string | Computed<string>;
+  remediationTypeId?: string | Computed<string>;
+}
+
+export interface Policy_Result_Actions_WebhookConfigs {
+  displayName?: string | Computed<string>;
+  webhookConfigId?: string | Computed<string>;
+}
+
+export interface Policy_Result_Actions {
+  /** List of remediation types that will be executed. */
+  remediationTypes: Policy_Result_Actions_RemediationTypes[] | Computed<Policy_Result_Actions_RemediationTypes[]>;
+  /** List of webhook configurations that will be triggered. */
+  webhookConfigs: Policy_Result_Actions_WebhookConfigs[] | Computed<Policy_Result_Actions_WebhookConfigs[]>;
+}
+
+export interface Policy_Result {
+  /** The actions configured for this policy. */
+  actions: Policy_Result_Actions | Computed<Policy_Result_Actions>;
+  /** When true, the policy applies to all integrations for the account. When false, it applies only to the specified integration_ids. */
+  appliesToAllIntegrations: boolean | Computed<boolean>;
+  /** Timestamp when the policy was created. */
+  createdAt?: string | Computed<string>;
+  /** User-set description of what this policy does. Limited to 1000 characters. */
+  description: string | Computed<string>;
+  /** Timestamp when the policy was disabled. Omitted from the response when the policy is enabled. */
+  disabledAt?: string | Computed<string>;
+  /** Display name for the policy configuration. Limited to 255 characters. */
+  displayName: string | Computed<string>;
+  /** Whether the policy is enabled. Derived from disabled_at (enabled when disabled_at is unset). */
+  enabled: boolean | Computed<boolean>;
+  /** The finding type this policy is associated with. Immutable after creation; changing it replaces the policy. */
+  findingTypeId: string | Computed<string>;
+  /** Unique identifier for the policy configuration. */
+  id?: string | Computed<string>;
+  /** The integrations this policy applies to. */
+  integrationIds: string[] | Computed<string[]>;
+  /** Timestamp of the most recent successful policy invocation. Omitted from the response when the policy has never been successfully triggered. Only populated on GET responses; absent on responses from create/update endpoints. */
+  lastTriggeredAt?: string | Computed<string>;
+  /** Timestamp when the policy was last updated. */
+  updatedAt?: string | Computed<string>;
+}
+
 const Policy_Actions_RemediationTypesFields: FieldMap = {
   remediationTypeId: "remediation_type_id",
 };
@@ -69,10 +125,16 @@ export interface PolicyAttrs {
   displayName: string;
   /** Boolean specifying if the policy is enabled or disabled. */
   enabled: boolean;
+  errors: Policy_Errors[];
   /** The finding type this policy is associated with. All remediation actions must match this finding type. */
   findingTypeId: string;
   /** The integrations this policy applies to. Required when applies_to_all_integrations is false. */
   integrationIds: string[];
+  messages: Policy_Errors[];
+  /** Response body for a policy configuration. */
+  result: Policy_Result;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

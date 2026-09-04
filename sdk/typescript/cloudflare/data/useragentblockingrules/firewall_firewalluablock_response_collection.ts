@@ -4,6 +4,19 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface FirewallFirewalluablockResponseCollection_Description {
 }
 
+export interface FirewallFirewalluablockResponseCollection_Result_Configuration {
+  target?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface FirewallFirewalluablockResponseCollection_Result {
+  configuration?: FirewallFirewalluablockResponseCollection_Result_Configuration | Computed<FirewallFirewalluablockResponseCollection_Result_Configuration>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  mode?: unknown | Computed<unknown>;
+  paused?: boolean | Computed<boolean>;
+}
+
 const FirewallFirewalluablockResponseCollection_DescriptionFields: FieldMap = {
 };
 
@@ -27,6 +40,7 @@ export interface FirewallFirewalluablockResponseCollectionAttrs {
   paused: boolean;
   /** The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`. */
   perPage: number;
+  result: FirewallFirewalluablockResponseCollection_Result[];
   /** A string to search for in the user agent values of existing rules. */
   userAgent: string;
   /** Defines an identifier. */

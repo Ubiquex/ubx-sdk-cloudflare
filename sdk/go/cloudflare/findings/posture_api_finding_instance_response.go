@@ -3,6 +3,91 @@ package findings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PostureApiFindingInstanceResponse_Errors_Source struct {
+	Pointer any
+}
+
+type PostureApiFindingInstanceResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type PostureApiFindingInstanceResponse_Result_Asset_Category struct {
+	// Unique identifier for the asset category.
+	Id any
+	// The specific service within the vendor the asset is part of (often none). Example - AWS is the vendor, S3 is the service.
+	Service any
+	// The type of asset.
+	Type any
+	// The vendor the asset is part of.
+	Vendor any
+}
+
+type PostureApiFindingInstanceResponse_Result_Asset_Fields struct {
+	Link  any
+	Name  any
+	Value any
+}
+
+type PostureApiFindingInstanceResponse_Result_Asset struct {
+	// Category information for an asset.
+	Category any
+	// External identifier from the source system.
+	ExternalId any
+	// The fields associated with the asset.
+	Fields any
+	// Unique identifier for the asset.
+	Id any
+	// Direct link to the asset.
+	Link any
+	// Human-readable name of the asset.
+	Name any
+}
+
+type PostureApiFindingInstanceResponse_Result_DlpContexts struct {
+	Created               any
+	Deleted               any
+	EntryIds              any
+	Id                    any
+	MatchContextMaxExtent any
+	MatchContextMinExtent any
+	MatchContextPayload   any
+	ProfileId             any
+	Updated               any
+}
+
+type PostureApiFindingInstanceResponse_Result_Remediations struct {
+	CreatedAt any
+	Id        any
+	Stale     any
+	Status    any
+}
+
+type PostureApiFindingInstanceResponse_Result_Webhooks struct {
+	LatestJob    any
+	WebhookId    any
+	WebhookLabel any
+}
+
+type PostureApiFindingInstanceResponse_Result struct {
+	// When this specific instance was identified.
+	AfflictionDate any
+	// Asset information including metadata and categorization.
+	Asset any
+	// DLP context information if this is a content finding.
+	DlpContexts any
+	// Unique identifier for the finding instance.
+	Id any
+	// Whether this finding instance has been archived.
+	IsArchived any
+	// A list of the 10 most recent remediation jobs for this finding instance, ordered by creation time (most recent first). The 'stale' field indicates whether the remediation job was created before the finding instance's affliction_date (true) or after it (false). If there has never been a remediation job for this finding instance, this field will be an empty array.
+	Remediations any
+	// The most recent webhook job invocation for each webhook configuration associated with this finding instance. Each entry represents the latest job (any status) per webhook config. The 'stale' field indicates whether the job was invoked before the finding instance's current affliction_date. If no webhook jobs have been created, this field will be an empty array.
+	Webhooks any
+}
+
 type PostureApiFindingInstanceResponseConfig struct {
 	// A list of finding instance IDs to pass along.
 	CheckInstances any
@@ -17,6 +102,12 @@ type PostureApiFindingInstanceResponseConfig struct {
 type PostureApiFindingInstanceResponseAttrs struct {
 	// A list of finding instance IDs to pass along.
 	CheckInstances any
+	Errors         any
+	Messages       any
+	// A specific instance of a security finding. In the API interface, we refer to the 'finding' table in our DB as finding instances, optimized for the p99 use case.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -29,8 +120,8 @@ var PostureApiFindingInstanceResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_posture_api_finding_instance_response",
 	Fields: ubx.FieldMap{
 		"CheckInstances": ubx.FieldSpec{WireName: "check_instances"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"FindingId":      ubx.FieldSpec{WireName: "finding_id"},
+		"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
 	},
 }

@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UpdateFeedResponse_Result:
+    # Feed id
+    file_id: Any = None
+    # Name of the file unified in our system
+    filename: Any = None
+    # Account-relative polling path. Prepend `/accounts/{account_id}` using the same account identifier and API host as the upload request. The path omits the account segment because the service does not have your account identifier in this context.
+    poll_url: Any = None
+    # Current status of the upload at the moment the request returned. This is NOT a terminal state: the file is unified inline, but the durable loader has only accepted it, so the upload is still `Unifying`. Poll `poll_url` until the status reaches a terminal value (`Unified` or `Error`).
+    status: Any = None
+    # Identifier of the upload row, for polling this upload to a terminal state via `poll_url`.
+    upload_id: Any = None
+
+@dataclasses.dataclass
 class UpdateFeedResponseConfig:
     # Indicator feed ID
     feed_id: Any = None
@@ -17,6 +30,7 @@ class UpdateFeedResponseAttrs:
     account_id: Any = None
     # Indicator feed ID
     feed_id: Any = None
+    result: Any = None
 
 UpdateFeedResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_custom_indicator_feeds_update_feed_response",

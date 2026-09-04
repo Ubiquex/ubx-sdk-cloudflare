@@ -7,12 +7,47 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CsamConfigServiceCsamScannerSingleResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class CsamConfigServiceCsamScannerSingleResponse_Result_Value:
+    # Notification email address for CSAM scan results. Masked in responses unless explicitly unmasked via admin endpoint.
+    email: Any = None
+    # Current verification state of the notification email.
+    email_state: Any = None
+    # Whether CSAM scanning is enabled for this zone.
+    enabled: Any = None
+    # Map of scanning sources and their enabled state.
+    sources: Any = None
+    # The zone's plan level.
+    zone_plan: Any = None
+
+@dataclasses.dataclass
+class CsamConfigServiceCsamScannerSingleResponse_Result:
+    # Whether the feature state can be changed. When false, the zone or account may be locked by Trust & Safety.
+    editable: Any = None
+    # The feature identifier.
+    id: Any = None
+    # When the setting was last modified. Currently always null as the server does not populate this field.
+    modified_on: Any = None
+    # The CSAM Scanner feature configuration values. Contains the notification email and scanning enablement settings.
+    value: Any = None
+
+@dataclasses.dataclass
 class CsamConfigServiceCsamScannerSingleResponseConfig:
     # Identifier for the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class CsamConfigServiceCsamScannerSingleResponseAttrs:
+    errors: Any = None
+    messages: Any = None
+    # CSAM Scanner configuration for a zone.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier for the zone.
     zone_id: Any = None
 

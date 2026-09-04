@@ -3,12 +3,57 @@ package observatory
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AvailabilitiesResponse_Result_Quota_QuotasPerPlan_Value struct {
+	Business   any
+	Enterprise any
+	Free       any
+	Pro        any
+}
+
+type AvailabilitiesResponse_Result_Quota_QuotasPerPlan struct {
+	// Counts per account plan.
+	Value any
+}
+
+type AvailabilitiesResponse_Result_Quota struct {
+	// Cloudflare plan.
+	Plan any
+	// The number of tests available per plan.
+	QuotasPerPlan any
+	// The number of remaining schedules available.
+	RemainingSchedules any
+	// The number of remaining tests available.
+	RemainingTests any
+	// The number of schedules available per plan.
+	ScheduleQuotasPerPlan any
+}
+
+type AvailabilitiesResponse_Result_Regions struct {
+	Label any
+	Value any
+}
+
+type AvailabilitiesResponse_Result_RegionsPerPlan struct {
+	Business   any
+	Enterprise any
+	Free       any
+	Pro        any
+}
+
+type AvailabilitiesResponse_Result struct {
+	Quota   any
+	Regions any
+	// Available regions.
+	RegionsPerPlan any
+}
+
 type AvailabilitiesResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AvailabilitiesResponseAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

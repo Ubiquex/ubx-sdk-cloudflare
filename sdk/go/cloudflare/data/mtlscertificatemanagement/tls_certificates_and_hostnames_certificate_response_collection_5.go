@@ -3,22 +3,46 @@ package mtlscertificatemanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseCollection5_Result struct {
+	Ca           any
+	Certificates any
+	ExpiresOn    any
+	Id           any
+	Issuer       any
+	Name         any
+	SerialNumber any
+	Signature    any
+	Type         any
+	UploadedOn   any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseCollection5_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	// Total pages available of results.
+	TotalPages any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseCollection5Config struct {
 	// Identifier.
 	AccountId any
-	Type any
+	Type      any
 }
 
 type TlsCertificatesAndHostnamesCertificateResponseCollection5Attrs struct {
 	// Identifier.
-	AccountId any
-	Type any
+	AccountId  any
+	Result     any
+	ResultInfo any
+	Type       any
 }
 
 var TlsCertificatesAndHostnamesCertificateResponseCollection5 = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_5",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 	},
 }

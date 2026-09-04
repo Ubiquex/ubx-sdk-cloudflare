@@ -3,6 +3,56 @@ package applications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AlexandriaGetApplicationResponse_Errors_Source struct {
+	Pointer any
+}
+
+type AlexandriaGetApplicationResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type AlexandriaGetApplicationResponse_Result struct {
+	// Confidence score for the application. Returns -1 when no score is available.
+	ApplicationConfidenceScore any
+	// Returns the score composition breakdown for the application.
+	ApplicationScoreComposition any
+	// Returns the application source.
+	ApplicationSource any
+	// Returns the application type.
+	ApplicationType any
+	// Returns the application type description.
+	ApplicationTypeDescription any
+	// Returns the category ID.
+	CategoryId any
+	// Returns the application creation time.
+	CreatedAt any
+	// GenAI score for the application. Returns -1 when no score is available.
+	GenAiScore any
+	// Hostnames matched by the application.
+	Hostnames any
+	// Returns the human readable ID.
+	HumanId any
+	// Returns the application ID.
+	Id any
+	// IP subnets matched by the application.
+	IpSubnets any
+	// Returns the application name.
+	Name any
+	// Port and protocol pairs matched by the application.
+	PortProtocols any
+	// Support domains matched by the application.
+	SupportDomains any
+	// Cloudflare products that support this application.
+	Supported any
+	// Returns the application update time.
+	UpdatedAt any
+	// Returns the application version.
+	Version any
+}
+
 type AlexandriaGetApplicationResponseConfig struct {
 	// Returns the category ID.
 	CategoryId any
@@ -27,16 +77,21 @@ type AlexandriaGetApplicationResponseConfig struct {
 type AlexandriaGetApplicationResponseAttrs struct {
 	// Returns the category ID.
 	CategoryId any
+	Errors     any
 	// Hostnames matched by the application.
 	Hostnames any
 	// Returns the human readable ID.
 	HumanId any
 	// IP subnets matched by the application.
 	IpSubnets any
+	Messages  any
 	// Returns the application name.
 	Name any
 	// Port and protocol pairs matched by the application.
 	PortProtocols any
+	Result        any
+	// Indicates whether the API call was successful.
+	Success any
 	// Support domains matched by the application.
 	SupportDomains any
 	// path parameter, not part of the API's own resource representation
@@ -48,14 +103,14 @@ type AlexandriaGetApplicationResponseAttrs struct {
 var AlexandriaGetApplicationResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_alexandria_get_application_response",
 	Fields: ubx.FieldMap{
-		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
-		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"HumanId": ubx.FieldSpec{WireName: "human_id"},
-		"IpSubnets": ubx.FieldSpec{WireName: "ip_subnets"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PortProtocols": ubx.FieldSpec{WireName: "port_protocols"},
+		"CategoryId":     ubx.FieldSpec{WireName: "category_id"},
+		"Hostnames":      ubx.FieldSpec{WireName: "hostnames"},
+		"HumanId":        ubx.FieldSpec{WireName: "human_id"},
+		"IpSubnets":      ubx.FieldSpec{WireName: "ip_subnets"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"PortProtocols":  ubx.FieldSpec{WireName: "port_protocols"},
 		"SupportDomains": ubx.FieldSpec{WireName: "support_domains"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
 	},
 }

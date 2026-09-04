@@ -7,6 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedExportJobList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedExportJobList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedExportJobList_Result:
+    download_url: Any = None
+    errors: Any = None
+    file_name: Any = None
+    file_path: Any = None
+    id: Any = None
+    status: Any = None
+    type: Any = None
+    user_id: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedExportJobList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedExportJobListConfig:
     account_id: Any = None
     page: Any = None
@@ -17,10 +56,18 @@ class PostureApiPaginatedExportJobListConfig:
 @dataclasses.dataclass
 class PostureApiPaginatedExportJobListAttrs:
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    # Array of export job objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
     # Status of an export job.
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PostureApiPaginatedExportJobList = ubx.DataSourceBinding(
     wire_type="cloudflare_posture_api_paginated_export_job_list",

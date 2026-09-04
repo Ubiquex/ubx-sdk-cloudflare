@@ -3,6 +3,11 @@ package gatewayca
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection6_Result struct {
+	Id        any
+	PublicKey any
+}
+
 type AccessResponseCollection6Config struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +16,7 @@ type AccessResponseCollection6Config struct {
 type AccessResponseCollection6Attrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessResponseCollection6 = ubx.DataSourceBinding{

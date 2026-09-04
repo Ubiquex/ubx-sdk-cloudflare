@@ -7,6 +7,7 @@ export interface WafManagedRulesRuleResponseSingleConfig {
 export interface WafManagedRulesRuleResponseSingleAttrs {
   /** Defines the unique identifier of a WAF package. */
   packageId: string;
+  result: unknown;
   /** Defines the unique identifier of a WAF package. */
   ruleId: string;
   /** Defines an identifier of a schema. */

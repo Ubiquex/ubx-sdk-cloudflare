@@ -5,20 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AddressingFullResponse_Memberships struct {
 	Identifier any
-	Kind any
+	Kind       any
+}
+
+type AddressingFullResponse_Result_Ips struct {
+	CreatedAt any
+	Ip        any
+}
+
+type AddressingFullResponse_Result_Memberships struct {
+	CanDelete  any
+	CreatedAt  any
+	Identifier any
+	Kind       any
+}
+
+type AddressingFullResponse_Result struct {
+	CanDelete    any
+	CanModifyIps any
+	CreatedAt    any
+	DefaultSni   any
+	Description  any
+	Enabled      any
+	Id           any
+	Ips          any
+	Memberships  any
+	ModifiedAt   any
 }
 
 var AddressingFullResponse_MembershipsFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+}
 
 type AddressingFullResponseConfig struct {
 	// An optional description field which may be used to describe the types of IPs or zones on the map.
 	Description any
 	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 	Enabled any
-	Ips any
+	Ips     any
 	// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 	Memberships any
 	// path parameter, not part of the API's own resource representation
@@ -32,9 +57,10 @@ type AddressingFullResponseAttrs struct {
 	Description any
 	// Whether the Address Map is enabled or not. Cloudflare's DNS will not respond with IP addresses on an Address Map until the map is enabled.
 	Enabled any
-	Ips any
+	Ips     any
 	// Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.
 	Memberships any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,14 +71,14 @@ var AddressingFullResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_addressing_full_response",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Ips": ubx.FieldSpec{WireName: "ips"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Ips":         ubx.FieldSpec{WireName: "ips"},
 		"Memberships": ubx.FieldSpec{
 			WireName: "memberships",
-			Kind: "list",
-			Fields: AddressingFullResponse_MembershipsFields,
+			Kind:     "list",
+			Fields:   AddressingFullResponse_MembershipsFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"AddressMapId": ubx.FieldSpec{WireName: "address_map_id"},
 	},
 }

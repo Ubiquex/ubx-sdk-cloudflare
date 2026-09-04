@@ -7,6 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTunnelClientResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelClientResponse_Result_Conns_OriginIp:
+    pass
+
+@dataclasses.dataclass
+class TunnelTunnelClientResponse_Result_Conns:
+    client_id: Any = None
+    client_version: Any = None
+    colo_name: Any = None
+    id: Any = None
+    is_pending_reconnect: Any = None
+    opened_at: Any = None
+    origin_ip: Any = None
+    uuid: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelClientResponse_Result:
+    # The cloudflared OS architecture used to establish this connection.
+    arch: Any = None
+    # The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.
+    config_version: Any = None
+    # The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+    conns: Any = None
+    # Features enabled for the Cloudflare Tunnel.
+    features: Any = None
+    # UUID of the Cloudflare Tunnel connection.
+    id: Any = None
+    # Timestamp of when the tunnel connection was started.
+    run_at: Any = None
+    # The cloudflared version used to establish this connection.
+    version: Any = None
+
+@dataclasses.dataclass
 class TunnelTunnelClientResponseConfig:
     pass
 
@@ -16,6 +53,12 @@ class TunnelTunnelClientResponseAttrs:
     account_id: Any = None
     # UUID of the Cloudflare Tunnel connector.
     connector_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # A client (typically cloudflared) that maintains connections to a Cloudflare data center.
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

@@ -3,6 +3,29 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleUserResponse_Result struct {
+	// True if the user has authenticated with Cloudflare Access.
+	AccessSeat any
+	// The number of active devices registered to the user.
+	ActiveDeviceCount any
+	CreatedAt         any
+	// The email of the user.
+	Email any
+	// True if the user has logged into the WARP client.
+	GatewaySeat any
+	// UUID.
+	Id any
+	// The time at which the user last successfully logged in.
+	LastSuccessfulLogin any
+	// The name of the user.
+	Name any
+	// The unique API identifier for the Zero Trust seat.
+	SeatUid any
+	// The unique API identifier for the user.
+	Uid       any
+	UpdatedAt any
+}
+
 type AccessSingleUserResponseConfig struct {
 	// The email of the user.
 	Email any
@@ -18,7 +41,8 @@ type AccessSingleUserResponseAttrs struct {
 	// The email of the user.
 	Email any
 	// The name of the user.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +52,9 @@ type AccessSingleUserResponseAttrs struct {
 var AccessSingleUserResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_access_single_user_response",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Email":     ubx.FieldSpec{WireName: "email"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

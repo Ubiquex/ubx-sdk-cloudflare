@@ -4,9 +4,9 @@ package workerspipelinesother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sink_Result_Config_FileNaming struct {
-	Prefix any
+	Prefix   any
 	Strategy any
-	Suffix any
+	Suffix   any
 }
 
 type Sink_Result_Config_Partitioning struct {
@@ -14,44 +14,44 @@ type Sink_Result_Config_Partitioning struct {
 }
 
 type Sink_Result_Config_RollingPolicy struct {
-	FileSizeBytes any
+	FileSizeBytes     any
 	InactivitySeconds any
-	IntervalSeconds any
+	IntervalSeconds   any
 }
 
 type Sink_Result_Config struct {
-	AccountId any
-	Bucket any
-	FileNaming any
-	Jurisdiction any
-	Namespace any
-	Partitioning any
-	Path any
+	AccountId     any
+	Bucket        any
+	FileNaming    any
+	Jurisdiction  any
+	Namespace     any
+	Partitioning  any
+	Path          any
 	RollingPolicy any
-	TableName any
+	TableName     any
 }
 
 type Sink_Result_Schema_Fields struct {
 	MetadataKey any
-	Name any
-	Required any
-	SqlName any
+	Name        any
+	Required    any
+	SqlName     any
 }
 
 type Sink_Result_Schema struct {
-	Fields any
+	Fields   any
 	Inferred any
 }
 
 type Sink_Result struct {
-	Config any
-	CreatedAt any
-	Format any
-	Id any
+	Config     any
+	CreatedAt  any
+	Format     any
+	Id         any
 	ModifiedAt any
-	Name any
-	Schema any
-	Type any
+	Name       any
+	Schema     any
+	Type       any
 }
 
 type Sink_ResultInfo struct {
@@ -67,21 +67,21 @@ type Sink_ResultInfo struct {
 
 type SinkConfig struct {
 	// Specifies the public ID of the account.
-	AccountId any
-	Name any
-	Page any
-	PerPage any
+	AccountId  any
+	Name       any
+	Page       any
+	PerPage    any
 	PipelineId any
 }
 
 type SinkAttrs struct {
 	// Specifies the public ID of the account.
-	AccountId any
-	Name any
-	Page any
-	PerPage any
+	AccountId  any
+	Name       any
+	Page       any
+	PerPage    any
 	PipelineId any
-	Result any
+	Result     any
 	ResultInfo any
 	// Indicates whether the API call was successful.
 	Success any
@@ -90,10 +90,10 @@ type SinkAttrs struct {
 var Sink = ubx.DataSourceBinding{
 	WireType: "cloudflare_sink",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
 	},
 }

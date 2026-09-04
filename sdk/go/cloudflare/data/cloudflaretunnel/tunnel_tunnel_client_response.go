@@ -3,6 +3,42 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelTunnelClientResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelTunnelClientResponse_Result_Conns_OriginIp struct {
+}
+
+type TunnelTunnelClientResponse_Result_Conns struct {
+	ClientId           any
+	ClientVersion      any
+	ColoName           any
+	Id                 any
+	IsPendingReconnect any
+	OpenedAt           any
+	OriginIp           any
+	Uuid               any
+}
+
+type TunnelTunnelClientResponse_Result struct {
+	// The cloudflared OS architecture used to establish this connection.
+	Arch any
+	// The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.
+	ConfigVersion any
+	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	Conns any
+	// Features enabled for the Cloudflare Tunnel.
+	Features any
+	// UUID of the Cloudflare Tunnel connection.
+	Id any
+	// Timestamp of when the tunnel connection was started.
+	RunAt any
+	// The cloudflared version used to establish this connection.
+	Version any
+}
+
 type TunnelTunnelClientResponseConfig struct {
 }
 
@@ -11,12 +47,17 @@ type TunnelTunnelClientResponseAttrs struct {
 	AccountId any
 	// UUID of the Cloudflare Tunnel connector.
 	ConnectorId any
+	Errors      any
+	Messages    any
+	// A client (typically cloudflared) that maintains connections to a Cloudflare data center.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// UUID of the tunnel.
 	TunnelId any
 }
 
 var TunnelTunnelClientResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_tunnel_client_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

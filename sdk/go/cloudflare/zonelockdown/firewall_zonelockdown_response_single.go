@@ -5,13 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallZonelockdownResponseSingle_Configurations struct {
 	Target any
-	Value any
+	Value  any
+}
+
+type FirewallZonelockdownResponseSingle_Result struct {
+	// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
+	Configurations any
+	// The timestamp of when the rule was created.
+	CreatedOn any
+	// An informative summary of the rule.
+	Description any
+	// The unique identifier of the Zone Lockdown rule.
+	Id any
+	// The timestamp of when the rule was last modified.
+	ModifiedOn any
+	// When true, indicates that the rule is currently paused.
+	Paused any
+	// The URLs to include in the rule definition. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
+	Urls any
 }
 
 var FirewallZonelockdownResponseSingle_ConfigurationsFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Target": ubx.FieldSpec{WireName: "target"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type FirewallZonelockdownResponseSingleConfig struct {
 	// A list of IP addresses or CIDR ranges that will be allowed to access the URLs specified in the Zone Lockdown rule. You can include any number of `ip` or `ip_range` configurations.
@@ -39,6 +56,7 @@ type FirewallZonelockdownResponseSingleAttrs struct {
 	Paused any
 	// The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.
 	Priority any
+	Result   any
 	// The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
 	Urls any
 	// path parameter, not part of the API's own resource representation
@@ -52,14 +70,14 @@ var FirewallZonelockdownResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configurations": ubx.FieldSpec{
 			WireName: "configurations",
-			Kind: "list",
-			Fields: FirewallZonelockdownResponseSingle_ConfigurationsFields,
+			Kind:     "list",
+			Fields:   FirewallZonelockdownResponseSingle_ConfigurationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Urls": ubx.FieldSpec{WireName: "urls"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Paused":      ubx.FieldSpec{WireName: "paused"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Urls":        ubx.FieldSpec{WireName: "urls"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"LockDownsId": ubx.FieldSpec{WireName: "lock_downs_id"},
 	},
 }

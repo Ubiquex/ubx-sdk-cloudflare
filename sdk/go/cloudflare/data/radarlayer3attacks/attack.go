@@ -4,14 +4,14 @@ package radarlayer3attacks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attack_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Attack_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Attack_Result_Meta_ConfidenceInfo struct {
 }
 
 type Attack_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Attack_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Attack_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -43,8 +43,8 @@ type Attack_Result_Meta struct {
 
 type Attack_Result_Top0 struct {
 	OriginCountryAlpha2 any
-	OriginCountryName any
-	Value any
+	OriginCountryName   any
+	Value               any
 }
 
 type Attack_Result struct {
@@ -113,26 +113,26 @@ type AttackAttrs struct {
 	Normalization any
 	// Filters the results by layer 3/4 protocol.
 	Protocol any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var Attack = ubx.DataSourceBinding{
 	WireType: "cloudflare_attack",
 	Fields: ubx.FieldMap{
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitDirection": ubx.FieldSpec{WireName: "limit_direction"},
+		"Continent":        ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":          ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":        ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":        ubx.FieldSpec{WireName: "date_start"},
+		"Format":           ubx.FieldSpec{WireName: "format"},
+		"IpVersion":        ubx.FieldSpec{WireName: "ip_version"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"LimitDirection":   ubx.FieldSpec{WireName: "limit_direction"},
 		"LimitPerLocation": ubx.FieldSpec{WireName: "limit_per_location"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Magnitude": ubx.FieldSpec{WireName: "magnitude"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Normalization": ubx.FieldSpec{WireName: "normalization"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Location":         ubx.FieldSpec{WireName: "location"},
+		"Magnitude":        ubx.FieldSpec{WireName: "magnitude"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Normalization":    ubx.FieldSpec{WireName: "normalization"},
+		"Protocol":         ubx.FieldSpec{WireName: "protocol"},
 	},
 }

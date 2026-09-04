@@ -6,8 +6,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamTokenVerifyResponseSingleSegment_AccountId struct {
 }
 
-var IamTokenVerifyResponseSingleSegment_AccountIdFields = ubx.FieldMap{
-	}
+type IamTokenVerifyResponseSingleSegment_Result struct {
+	// The expiration time on or after which the JWT MUST NOT be accepted for processing.
+	ExpiresOn any
+	// Token identifier tag.
+	Id any
+	// The time before which the token MUST NOT be accepted for processing.
+	NotBefore any
+	// Status of the token.
+	Status any
+}
+
+var IamTokenVerifyResponseSingleSegment_AccountIdFields = ubx.FieldMap{}
 
 type IamTokenVerifyResponseSingleSegmentConfig struct {
 	// Account identifier tag.
@@ -17,6 +27,7 @@ type IamTokenVerifyResponseSingleSegmentConfig struct {
 type IamTokenVerifyResponseSingleSegmentAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var IamTokenVerifyResponseSingleSegment = ubx.DataSourceBinding{
@@ -24,8 +35,8 @@ var IamTokenVerifyResponseSingleSegment = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamTokenVerifyResponseSingleSegment_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamTokenVerifyResponseSingleSegment_AccountIdFields,
 		},
 	},
 }

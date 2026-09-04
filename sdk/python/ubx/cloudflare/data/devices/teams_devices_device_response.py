@@ -7,6 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesDeviceResponse_Result_Account:
+    account_type: Any = None
+    id: Any = None
+    # The name of the enrolled account.
+    name: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceResponse_Result_User:
+    # The contact email address of the user.
+    email: Any = None
+    # UUID.
+    id: Any = None
+    # The enrolled device user's name.
+    name: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesDeviceResponse_Result:
+    account: Any = None
+    # When the device was created.
+    created: Any = None
+    # True if the device was deleted.
+    deleted: Any = None
+    device_type: Any = None
+    gateway_device_id: Any = None
+    # Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
+    id: Any = None
+    # IPv4 or IPv6 address.
+    ip: Any = None
+    # The device's public key.
+    key: Any = None
+    # Type of the key.
+    key_type: Any = None
+    # When the device last connected to Cloudflare services.
+    last_seen: Any = None
+    # The device mac address.
+    mac_address: Any = None
+    # The device model name.
+    model: Any = None
+    # The device name.
+    name: Any = None
+    # The operating system version.
+    os_version: Any = None
+    # The device serial number.
+    serial_number: Any = None
+    # Type of the tunnel connection used.
+    tunnel_type: Any = None
+    # When the device was updated.
+    updated: Any = None
+    user: Any = None
+    # The WARP client version.
+    version: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesDeviceResponseConfig:
     account_id: Any = None
     # Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
@@ -17,6 +70,7 @@ class TeamsDevicesDeviceResponseAttrs:
     account_id: Any = None
     # Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).
     device_id: Any = None
+    result: Any = None
 
 TeamsDevicesDeviceResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_device_response",

@@ -3,6 +3,15 @@ package streamwebhook
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ResponseSingle_Result struct {
+	// The date and time the webhook was last modified.
+	Modified any
+	// The URL where webhooks will be sent.
+	NotificationUrl any
+	// The secret used to verify webhook signatures.
+	Secret any
+}
+
 type ResponseSingleConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -11,6 +20,7 @@ type ResponseSingleConfig struct {
 type ResponseSingleAttrs struct {
 	// The account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var ResponseSingle = ubx.DataSourceBinding{

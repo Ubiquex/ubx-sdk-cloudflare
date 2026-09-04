@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamResponseCollectionAccounts_Result_ManagedBy:
+    parent_org_id: Any = None
+    parent_org_name: Any = None
+
+@dataclasses.dataclass
+class IamResponseCollectionAccounts_Result_Settings:
+    abuse_contact_email: Any = None
+    enforce_twofactor: Any = None
+
+@dataclasses.dataclass
+class IamResponseCollectionAccounts_Result:
+    created_on: Any = None
+    id: Any = None
+    managed_by: Any = None
+    name: Any = None
+    settings: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class IamResponseCollectionAccountsConfig:
     # Direction to order results.
     direction: Any = None
@@ -25,6 +44,7 @@ class IamResponseCollectionAccountsAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
 
 IamResponseCollectionAccounts = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_response_collection_accounts",

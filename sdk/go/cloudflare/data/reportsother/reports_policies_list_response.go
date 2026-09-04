@@ -4,19 +4,19 @@ package reportsother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportsPoliciesListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type ReportsPoliciesListResponse_Result struct {
-	Enabled any
+	Enabled           any
 	PolicyDescription any
-	PolicyId any
-	PolicyName any
-	PolicySchedule any
-	ValidFrom any
-	ValidTo any
-	Version any
+	PolicyId          any
+	PolicyName        any
+	PolicySchedule    any
+	ValidFrom         any
+	ValidTo           any
+	Version           any
 }
 
 type ReportsPoliciesListResponseConfig struct {
@@ -27,10 +27,10 @@ type ReportsPoliciesListResponseConfig struct {
 type ReportsPoliciesListResponseAttrs struct {
 	// Cloudflare public account ID (32-character hexadecimal string)
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var ReportsPoliciesListResponse = ubx.DataSourceBinding{

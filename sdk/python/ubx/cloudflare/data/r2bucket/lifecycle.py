@@ -7,6 +7,52 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Lifecycle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_AbortMultipartUploadsTransition_Condition:
+    max_age: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_AbortMultipartUploadsTransition:
+    condition: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_Conditions:
+    prefix: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_DeleteObjectsTransition_Condition:
+    date: Any = None
+    max_age: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_DeleteObjectsTransition:
+    condition: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules_StorageClassTransitions:
+    condition: Any = None
+    storage_class: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result_Rules:
+    abort_multipart_uploads_transition: Any = None
+    conditions: Any = None
+    delete_objects_transition: Any = None
+    enabled: Any = None
+    id: Any = None
+    storage_class_transitions: Any = None
+
+@dataclasses.dataclass
+class Lifecycle_Result:
+    rules: Any = None
+
+@dataclasses.dataclass
 class LifecycleConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +65,11 @@ class LifecycleAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Lifecycle = ubx.DataSourceBinding(
     wire_type="cloudflare_lifecycle",

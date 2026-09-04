@@ -3,12 +3,35 @@ package urlnormalization
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Urlnormalization_Messages_Source struct {
+	Pointer any
+}
+
+type Urlnormalization_Messages struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type Urlnormalization_Result struct {
+	// The scope of the URL normalization.
+	Scope any
+	// The type of URL normalization performed by Cloudflare.
+	Type any
+}
+
 type UrlnormalizationConfig struct {
 	// The unique ID of the zone.
 	ZoneId any
 }
 
 type UrlnormalizationAttrs struct {
+	Errors any
+	// A list of warning messages.
+	Messages any
+	// A URL Normalization object.
+	Result  any
+	Success any
 	// The unique ID of the zone.
 	ZoneId any
 }

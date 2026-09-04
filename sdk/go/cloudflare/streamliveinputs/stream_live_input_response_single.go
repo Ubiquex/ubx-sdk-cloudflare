@@ -16,13 +16,78 @@ type StreamLiveInputResponseSingle_Recording struct {
 	TimeoutSeconds any
 }
 
+type StreamLiveInputResponseSingle_Result_Playback struct {
+	// The DASH manifest URL used to play live video, referencing the live input ID.
+	Dash any
+	// The HLS manifest URL used to play live video, referencing the live input ID.
+	Hls any
+}
+
+type StreamLiveInputResponseSingle_Result_Rtmps struct {
+	// The secret key to use when streaming via RTMPS to a live input.
+	StreamKey any
+	// The RTMPS URL you provide to the broadcaster, which they stream live video to.
+	Url any
+}
+
+type StreamLiveInputResponseSingle_Result_Srt struct {
+	// The secret key to use when streaming via SRT to a live input.
+	Passphrase any
+	// The identifier of the live input to use when streaming via SRT.
+	StreamId any
+	// The SRT URL you provide to the broadcaster, which they stream live video to.
+	Url any
+}
+
+type StreamLiveInputResponseSingle_Result_WebRtc struct {
+	// The WebRTC URL you provide to the broadcaster, which they stream live video to.
+	Url any
+}
+
+type StreamLiveInputResponseSingle_Result struct {
+	// The date and time the live input was created.
+	Created any
+	// Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion.
+	DeleteRecordingAfterDays any
+	// Indicates whether the live input is enabled and can accept streams.
+	Enabled any
+	// The date and time the live input keys were last rotated. Omitted for live inputs that have never had their keys rotated.
+	KeysRotatedAt any
+	// A user modifiable key-value store used to reference other systems of record for managing live inputs.
+	Meta any
+	// The date and time the live input was last modified.
+	Modified any
+	// Details for playing a live input's broadcast using the HLS or DASH manifests. URLs reference the live input ID.
+	Playback any
+	// When enabled, the live stream is delivered using Low-Latency HLS (LL-HLS), reducing glass-to-glass latency for viewers at the cost of reduced player compatibility.
+	PreferLowLatency any
+	// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
+	Recording any
+	// Details for streaming to an live input using RTMPS.
+	Rtmps any
+	// Details for playback from an live input using RTMPS.
+	RtmpsPlayback any
+	// Details for streaming to a live input using SRT.
+	Srt any
+	// Details for playback from an live input using SRT.
+	SrtPlayback any
+	// The connection status of a live input.
+	Status any
+	// A unique identifier for a live input.
+	Uid any
+	// Details for streaming to a live input using WebRTC.
+	WebRtc any
+	// Details for playback from a live input using WebRTC.
+	WebRtcplayback any
+}
+
 var StreamLiveInputResponseSingle_RecordingFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"HideLiveViewerCount": ubx.FieldSpec{WireName: "hide_live_viewer_count"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"AllowedOrigins":      ubx.FieldSpec{WireName: "allowed_origins"},
+	"HideLiveViewerCount": ubx.FieldSpec{WireName: "hide_live_viewer_count"},
+	"Mode":                ubx.FieldSpec{WireName: "mode"},
+	"RequireSignedUrls":   ubx.FieldSpec{WireName: "require_signed_urls"},
+	"TimeoutSeconds":      ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 type StreamLiveInputResponseSingleConfig struct {
 	// Sets the creator ID asssociated with this live input.
@@ -56,6 +121,8 @@ type StreamLiveInputResponseSingleAttrs struct {
 	PreferLowLatency any
 	// Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.
 	Recording any
+	// Details about a live input.
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -65,17 +132,17 @@ type StreamLiveInputResponseSingleAttrs struct {
 var StreamLiveInputResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_stream_live_input_response_single",
 	Fields: ubx.FieldMap{
-		"DefaultCreator": ubx.FieldSpec{WireName: "default_creator"},
+		"DefaultCreator":           ubx.FieldSpec{WireName: "default_creator"},
 		"DeleteRecordingAfterDays": ubx.FieldSpec{WireName: "delete_recording_after_days"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Meta": ubx.FieldSpec{WireName: "meta"},
-		"PreferLowLatency": ubx.FieldSpec{WireName: "prefer_low_latency"},
+		"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+		"Meta":                     ubx.FieldSpec{WireName: "meta"},
+		"PreferLowLatency":         ubx.FieldSpec{WireName: "prefer_low_latency"},
 		"Recording": ubx.FieldSpec{
 			WireName: "recording",
-			Kind: "object",
-			Fields: StreamLiveInputResponseSingle_RecordingFields,
+			Kind:     "object",
+			Fields:   StreamLiveInputResponseSingle_RecordingFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":           ubx.FieldSpec{WireName: "account_id"},
 		"LiveInputIdentifier": ubx.FieldSpec{WireName: "live_input_identifier"},
 	},
 }

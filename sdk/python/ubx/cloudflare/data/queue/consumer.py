@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Consumer_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Consumer_Result_Settings:
+    batch_size: Any = None
+    max_concurrency: Any = None
+    max_retries: Any = None
+    max_wait_time_ms: Any = None
+    retry_delay: Any = None
+
+@dataclasses.dataclass
+class Consumer_Result:
+    consumer_id: Any = None
+    created_on: Any = None
+    dead_letter_queue: Any = None
+    queue_name: Any = None
+    script_name: Any = None
+    settings: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class ConsumerConfig:
     pass
 
@@ -14,8 +37,13 @@ class ConsumerConfig:
 class ConsumerAttrs:
     # A Resource identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # A Resource identifier.
     queue_id: Any = None
+    result: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
 
 Consumer = ubx.DataSourceBinding(
     wire_type="cloudflare_consumer",

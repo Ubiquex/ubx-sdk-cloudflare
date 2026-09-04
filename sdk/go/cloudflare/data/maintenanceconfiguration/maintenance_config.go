@@ -3,6 +3,41 @@ package maintenanceconfiguration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MaintenanceConfig_Errors struct {
+	Code    any
+	Message any
+}
+
+type MaintenanceConfig_Result_MaintenanceConfig_Compaction struct {
+	// Specifies the state of maintenance operations.
+	State any
+	// Sets the target file size for compaction in megabytes. Defaults to "128".
+	TargetSizeMb any
+}
+
+type MaintenanceConfig_Result_MaintenanceConfig_SnapshotExpiration struct {
+	// Specifies the maximum age for snapshots. The system deletes snapshots older than this age. Format: <number><unit> where unit is d (days), h (hours), m (minutes), or s (seconds). Examples: "7d" (7 days), "48h" (48 hours), "2880m" (2,880 minutes). Defaults to "7d".
+	MaxSnapshotAge any
+	// Specifies the minimum number of snapshots to retain. Defaults to 100.
+	MinSnapshotsToKeep any
+	// Specifies the state of maintenance operations.
+	State any
+}
+
+type MaintenanceConfig_Result_MaintenanceConfig struct {
+	// Configures compaction for catalog maintenance.
+	Compaction any
+	// Configures snapshot expiration settings.
+	SnapshotExpiration any
+}
+
+type MaintenanceConfig_Result struct {
+	// Shows the credential configuration status.
+	CredentialStatus any
+	// Configures maintenance for the catalog.
+	MaintenanceConfig any
+}
+
 type MaintenanceConfigConfig struct {
 	// Use this to identify the account.
 	AccountId any
@@ -15,12 +50,20 @@ type MaintenanceConfigAttrs struct {
 	AccountId any
 	// Specifies the R2 bucket name.
 	BucketName any
+	// Contains errors if the API call was unsuccessful.
+	Errors any
+	// Contains informational messages.
+	Messages any
+	// Contains maintenance configuration and credential status.
+	Result any
+	// Indicates whether the API call was successful.
+	Success any
 }
 
 var MaintenanceConfig = ubx.DataSourceBinding{
 	WireType: "cloudflare_maintenance_config",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

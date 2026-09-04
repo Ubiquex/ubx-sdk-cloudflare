@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsCustomNameserversAcnsResponseCollection_Result_DnsRecords:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class DnsCustomNameserversAcnsResponseCollection_Result:
+    dns_records: Any = None
+    ns_name: Any = None
+    ns_set: Any = None
+    status: Any = None
+    zone_tag: Any = None
+
+@dataclasses.dataclass
 class DnsCustomNameserversAcnsResponseCollectionConfig:
     pass
 
@@ -14,6 +27,7 @@ class DnsCustomNameserversAcnsResponseCollectionConfig:
 class DnsCustomNameserversAcnsResponseCollectionAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 DnsCustomNameserversAcnsResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_dns_custom_nameservers_acns_response_collection",

@@ -7,12 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesFallbackOriginResponse_Result:
+    # This is the time the fallback origin was created.
+    created_at: Any = None
+    # These are errors that were encountered while trying to activate a fallback origin.
+    errors: Any = None
+    # Your origin hostname that requests to your custom hostnames will be sent to.
+    origin: Any = None
+    # Status of the fallback origin's activation.
+    status: Any = None
+    # This is the time the fallback origin was updated.
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesFallbackOriginResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesFallbackOriginResponseAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

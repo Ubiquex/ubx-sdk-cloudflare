@@ -3,16 +3,22 @@ package leakedcredentialchecks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseStatus_Result struct {
+	// Determines whether or not Leaked Credential Checks are enabled.
+	Enabled any
+}
+
 type WafProductApiBundleResponseStatusConfig struct {
 }
 
 type WafProductApiBundleResponseStatusAttrs struct {
+	// Defines the overall status for Leaked Credential Checks.
+	Result any
 	// Defines an identifier.
 	ZoneId any
 }
 
 var WafProductApiBundleResponseStatus = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_product_api_bundle_response_status",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

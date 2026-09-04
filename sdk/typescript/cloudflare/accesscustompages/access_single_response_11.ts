@@ -4,6 +4,23 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface AccessSingleResponse11_CreatedAt {
 }
 
+export interface AccessSingleResponse11_Result {
+  /** Number of apps the custom page is assigned to. */
+  appCount?: number | Computed<number>;
+  /** Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim. */
+  contractVersion?: number | Computed<number>;
+  createdAt?: AccessSingleResponse11_CreatedAt | Computed<AccessSingleResponse11_CreatedAt>;
+  /** Custom page HTML. */
+  customHtml: string | Computed<string>;
+  /** Custom page name. */
+  name: string | Computed<string>;
+  /** Custom page type. */
+  type: string | Computed<string>;
+  /** UUID. */
+  uid?: string | Computed<string>;
+  updatedAt?: AccessSingleResponse11_CreatedAt | Computed<AccessSingleResponse11_CreatedAt>;
+}
+
 const AccessSingleResponse11_CreatedAtFields: FieldMap = {
 };
 
@@ -38,6 +55,7 @@ export interface AccessSingleResponse11Attrs {
   customHtml: string;
   /** Custom page name. */
   name: string;
+  result: AccessSingleResponse11_Result;
   /** Custom page type. */
   type: string;
   /** UUID. */

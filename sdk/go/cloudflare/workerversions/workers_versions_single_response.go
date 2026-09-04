@@ -3,6 +3,17 @@ package workerversions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersVersionsSingleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersVersionsSingleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type WorkersVersionsSingleResponse_Metadata_Annotations struct {
 }
 
@@ -11,9 +22,9 @@ type WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_Params struct {
 }
 
 type WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_Worker struct {
-	Entrypoint any
+	Entrypoint  any
 	Environment any
-	Service any
+	Service     any
 }
 
 type WorkersVersionsSingleResponse_Metadata_Bindings_Outbound struct {
@@ -22,55 +33,55 @@ type WorkersVersionsSingleResponse_Metadata_Bindings_Outbound struct {
 }
 
 type WorkersVersionsSingleResponse_Metadata_Bindings_Simple struct {
-	Limit any
+	Limit             any
 	MitigationTimeout any
-	Period any
+	Period            any
 }
 
 type WorkersVersionsSingleResponse_Metadata_Bindings struct {
-	Algorithm any
+	Algorithm                   any
 	AllowedDestinationAddresses any
-	AllowedSenderAddresses any
-	AppId any
-	BucketName any
-	CertificateId any
-	ClassName any
-	DatabaseId any
-	Dataset any
-	DestinationAddress any
-	DispatchNamespace any
-	Entrypoint any
-	Environment any
-	Format any
-	Id any
-	Identity any
-	IndexName any
-	InstanceName any
-	Json any
-	Jurisdiction any
-	KeyBase64 any
-	KeyJwk any
-	Name any
-	Namespace any
-	NamespaceId any
-	NetworkId any
-	OldName any
-	Outbound any
-	Part any
-	Pipeline any
-	QueueName any
-	ScriptName any
-	SecretName any
-	Service any
-	ServiceId any
-	Simple any
-	StoreId any
-	Text any
-	TunnelId any
-	Type any
-	Usages any
-	VersionId any
-	WorkflowName any
+	AllowedSenderAddresses      any
+	AppId                       any
+	BucketName                  any
+	CertificateId               any
+	ClassName                   any
+	DatabaseId                  any
+	Dataset                     any
+	DestinationAddress          any
+	DispatchNamespace           any
+	Entrypoint                  any
+	Environment                 any
+	Format                      any
+	Id                          any
+	Identity                    any
+	IndexName                   any
+	InstanceName                any
+	Json                        any
+	Jurisdiction                any
+	KeyBase64                   any
+	KeyJwk                      any
+	Name                        any
+	Namespace                   any
+	NamespaceId                 any
+	NetworkId                   any
+	OldName                     any
+	Outbound                    any
+	Part                        any
+	Pipeline                    any
+	QueueName                   any
+	ScriptName                  any
+	SecretName                  any
+	Service                     any
+	ServiceId                   any
+	Simple                      any
+	StoreId                     any
+	Text                        any
+	TunnelId                    any
+	Type                        any
+	Usages                      any
+	VersionId                   any
+	WorkflowName                any
 }
 
 type WorkersVersionsSingleResponse_Metadata_CacheOptions struct {
@@ -81,8 +92,8 @@ type WorkersVersionsSingleResponse_Metadata_CacheOptions struct {
 }
 
 type WorkersVersionsSingleResponse_Metadata_PackageDependencies struct {
-	InstalledVersion any
-	Name any
+	InstalledVersion   any
+	Name               any
 	PackageJsonVersion any
 }
 
@@ -108,139 +119,185 @@ type WorkersVersionsSingleResponse_Metadata struct {
 	UsageModel any
 }
 
-var WorkersVersionsSingleResponse_Metadata_AnnotationsFields = ubx.FieldMap{
-	}
+type WorkersVersionsSingleResponse_Result_Metadata struct {
+	AuthorEmail any
+	AuthorId    any
+	CreatedOn   any
+	HasPreview  any
+	ModifiedOn  any
+	Source      any
+}
+
+type WorkersVersionsSingleResponse_Result_Resources_Script_NamedHandlers struct {
+	Handlers any
+	Name     any
+}
+
+type WorkersVersionsSingleResponse_Result_Resources_Script struct {
+	Etag             any
+	Handlers         any
+	LastDeployedFrom any
+	NamedHandlers    any
+}
+
+type WorkersVersionsSingleResponse_Result_Resources_ScriptRuntime_Limits struct {
+	CpuMs any
+}
+
+type WorkersVersionsSingleResponse_Result_Resources_ScriptRuntime struct {
+	CompatibilityDate  any
+	CompatibilityFlags any
+	Exports            any
+	Limits             any
+	MigrationTag       any
+	UsageModel         any
+}
+
+type WorkersVersionsSingleResponse_Result_Resources struct {
+	Bindings      any
+	Script        any
+	ScriptRuntime any
+}
+
+type WorkersVersionsSingleResponse_Result struct {
+	Id        any
+	Metadata  any
+	Number    any
+	Resources any
+}
+
+var WorkersVersionsSingleResponse_Metadata_AnnotationsFields = ubx.FieldMap{}
 
 var WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_ParamsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_WorkerFields = ubx.FieldMap{
-		"Entrypoint": ubx.FieldSpec{WireName: "entrypoint"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Entrypoint":  ubx.FieldSpec{WireName: "entrypoint"},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Service":     ubx.FieldSpec{WireName: "service"},
+}
 
 var WorkersVersionsSingleResponse_Metadata_Bindings_OutboundFields = ubx.FieldMap{
-		"Params": ubx.FieldSpec{
-			WireName: "params",
-			Kind: "list",
-			Fields: WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_ParamsFields,
-		},
-		"Worker": ubx.FieldSpec{
-			WireName: "worker",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_WorkerFields,
-		},
-	}
+	"Params": ubx.FieldSpec{
+		WireName: "params",
+		Kind:     "list",
+		Fields:   WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_ParamsFields,
+	},
+	"Worker": ubx.FieldSpec{
+		WireName: "worker",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_Bindings_Outbound_WorkerFields,
+	},
+}
 
 var WorkersVersionsSingleResponse_Metadata_Bindings_SimpleFields = ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"MitigationTimeout": ubx.FieldSpec{WireName: "mitigation_timeout"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-	}
+	"Limit":             ubx.FieldSpec{WireName: "limit"},
+	"MitigationTimeout": ubx.FieldSpec{WireName: "mitigation_timeout"},
+	"Period":            ubx.FieldSpec{WireName: "period"},
+}
 
 var WorkersVersionsSingleResponse_Metadata_BindingsFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"AllowedDestinationAddresses": ubx.FieldSpec{WireName: "allowed_destination_addresses"},
-		"AllowedSenderAddresses": ubx.FieldSpec{WireName: "allowed_sender_addresses"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"ClassName": ubx.FieldSpec{WireName: "class_name"},
-		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
-		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
-		"Entrypoint": ubx.FieldSpec{WireName: "entrypoint"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"Json": ubx.FieldSpec{WireName: "json"},
-		"Jurisdiction": ubx.FieldSpec{WireName: "jurisdiction"},
-		"KeyBase64": ubx.FieldSpec{WireName: "key_base64"},
-		"KeyJwk": ubx.FieldSpec{WireName: "key_jwk"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"NamespaceId": ubx.FieldSpec{
-			WireName: "namespace_id",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
-		},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"OldName": ubx.FieldSpec{WireName: "old_name"},
-		"Outbound": ubx.FieldSpec{
-			WireName: "outbound",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_Bindings_OutboundFields,
-		},
-		"Part": ubx.FieldSpec{WireName: "part"},
-		"Pipeline": ubx.FieldSpec{WireName: "pipeline"},
-		"QueueName": ubx.FieldSpec{WireName: "queue_name"},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
-		"Simple": ubx.FieldSpec{
-			WireName: "simple",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_Bindings_SimpleFields,
-		},
-		"StoreId": ubx.FieldSpec{WireName: "store_id"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Usages": ubx.FieldSpec{WireName: "usages"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
-	}
+	"Algorithm":                   ubx.FieldSpec{WireName: "algorithm"},
+	"AllowedDestinationAddresses": ubx.FieldSpec{WireName: "allowed_destination_addresses"},
+	"AllowedSenderAddresses":      ubx.FieldSpec{WireName: "allowed_sender_addresses"},
+	"AppId":                       ubx.FieldSpec{WireName: "app_id"},
+	"BucketName":                  ubx.FieldSpec{WireName: "bucket_name"},
+	"CertificateId":               ubx.FieldSpec{WireName: "certificate_id"},
+	"ClassName":                   ubx.FieldSpec{WireName: "class_name"},
+	"DatabaseId":                  ubx.FieldSpec{WireName: "database_id"},
+	"Dataset":                     ubx.FieldSpec{WireName: "dataset"},
+	"DestinationAddress":          ubx.FieldSpec{WireName: "destination_address"},
+	"DispatchNamespace":           ubx.FieldSpec{WireName: "dispatch_namespace"},
+	"Entrypoint":                  ubx.FieldSpec{WireName: "entrypoint"},
+	"Environment":                 ubx.FieldSpec{WireName: "environment"},
+	"Format":                      ubx.FieldSpec{WireName: "format"},
+	"Id":                          ubx.FieldSpec{WireName: "id"},
+	"Identity":                    ubx.FieldSpec{WireName: "identity"},
+	"IndexName":                   ubx.FieldSpec{WireName: "index_name"},
+	"InstanceName":                ubx.FieldSpec{WireName: "instance_name"},
+	"Json":                        ubx.FieldSpec{WireName: "json"},
+	"Jurisdiction":                ubx.FieldSpec{WireName: "jurisdiction"},
+	"KeyBase64":                   ubx.FieldSpec{WireName: "key_base64"},
+	"KeyJwk":                      ubx.FieldSpec{WireName: "key_jwk"},
+	"Name":                        ubx.FieldSpec{WireName: "name"},
+	"Namespace":                   ubx.FieldSpec{WireName: "namespace"},
+	"NamespaceId": ubx.FieldSpec{
+		WireName: "namespace_id",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
+	},
+	"NetworkId": ubx.FieldSpec{WireName: "network_id"},
+	"OldName":   ubx.FieldSpec{WireName: "old_name"},
+	"Outbound": ubx.FieldSpec{
+		WireName: "outbound",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_Bindings_OutboundFields,
+	},
+	"Part":       ubx.FieldSpec{WireName: "part"},
+	"Pipeline":   ubx.FieldSpec{WireName: "pipeline"},
+	"QueueName":  ubx.FieldSpec{WireName: "queue_name"},
+	"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+	"Service":    ubx.FieldSpec{WireName: "service"},
+	"ServiceId":  ubx.FieldSpec{WireName: "service_id"},
+	"Simple": ubx.FieldSpec{
+		WireName: "simple",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_Bindings_SimpleFields,
+	},
+	"StoreId":      ubx.FieldSpec{WireName: "store_id"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"TunnelId":     ubx.FieldSpec{WireName: "tunnel_id"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+	"Usages":       ubx.FieldSpec{WireName: "usages"},
+	"VersionId":    ubx.FieldSpec{WireName: "version_id"},
+	"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
+}
 
 var WorkersVersionsSingleResponse_Metadata_CacheOptionsFields = ubx.FieldMap{
-		"CrossVersionCache": ubx.FieldSpec{WireName: "cross_version_cache"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CrossVersionCache": ubx.FieldSpec{WireName: "cross_version_cache"},
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+}
 
 var WorkersVersionsSingleResponse_Metadata_PackageDependenciesFields = ubx.FieldMap{
-		"InstalledVersion": ubx.FieldSpec{WireName: "installed_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PackageJsonVersion": ubx.FieldSpec{WireName: "package_json_version"},
-	}
+	"InstalledVersion":   ubx.FieldSpec{WireName: "installed_version"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"PackageJsonVersion": ubx.FieldSpec{WireName: "package_json_version"},
+}
 
 var WorkersVersionsSingleResponse_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{
-			WireName: "annotations",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
-		},
-		"Bindings": ubx.FieldSpec{
-			WireName: "bindings",
-			Kind: "list",
-			Fields: WorkersVersionsSingleResponse_Metadata_BindingsFields,
-		},
-		"CacheOptions": ubx.FieldSpec{
-			WireName: "cache_options",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_CacheOptionsFields,
-		},
-		"CompatibilityDate": ubx.FieldSpec{WireName: "compatibility_date"},
-		"CompatibilityFlags": ubx.FieldSpec{WireName: "compatibility_flags"},
-		"Exports": ubx.FieldSpec{
-			WireName: "exports",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
-		},
-		"KeepBindings": ubx.FieldSpec{WireName: "keep_bindings"},
-		"MainModule": ubx.FieldSpec{WireName: "main_module"},
-		"PackageDependencies": ubx.FieldSpec{
-			WireName: "package_dependencies",
-			Kind: "list",
-			Fields: WorkersVersionsSingleResponse_Metadata_PackageDependenciesFields,
-		},
-		"UsageModel": ubx.FieldSpec{WireName: "usage_model"},
-	}
+	"Annotations": ubx.FieldSpec{
+		WireName: "annotations",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
+	},
+	"Bindings": ubx.FieldSpec{
+		WireName: "bindings",
+		Kind:     "list",
+		Fields:   WorkersVersionsSingleResponse_Metadata_BindingsFields,
+	},
+	"CacheOptions": ubx.FieldSpec{
+		WireName: "cache_options",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_CacheOptionsFields,
+	},
+	"CompatibilityDate":  ubx.FieldSpec{WireName: "compatibility_date"},
+	"CompatibilityFlags": ubx.FieldSpec{WireName: "compatibility_flags"},
+	"Exports": ubx.FieldSpec{
+		WireName: "exports",
+		Kind:     "object",
+		Fields:   WorkersVersionsSingleResponse_Metadata_AnnotationsFields,
+	},
+	"KeepBindings": ubx.FieldSpec{WireName: "keep_bindings"},
+	"MainModule":   ubx.FieldSpec{WireName: "main_module"},
+	"PackageDependencies": ubx.FieldSpec{
+		WireName: "package_dependencies",
+		Kind:     "list",
+		Fields:   WorkersVersionsSingleResponse_Metadata_PackageDependenciesFields,
+	},
+	"UsageModel": ubx.FieldSpec{WireName: "usage_model"},
+}
 
 type WorkersVersionsSingleResponseConfig struct {
 	// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.<br/>Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
@@ -256,10 +313,15 @@ type WorkersVersionsSingleResponseConfig struct {
 }
 
 type WorkersVersionsSingleResponseAttrs struct {
+	Errors any
 	// An array of modules (often JavaScript files) comprising a Worker script. At least one module must be present and referenced in the metadata as `main_module` or `body_part` by filename.<br/>Possible Content-Type(s) are: `application/javascript+module`, `text/javascript+module`, `application/javascript`, `text/javascript`, `text/x-python`, `text/x-python-requirement`, `application/wasm`, `text/plain`, `application/octet-stream`, `application/source-map`.
-	Files any
+	Files    any
+	Messages any
 	// JSON-encoded metadata about the uploaded parts and Worker configuration.
 	Metadata any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -274,11 +336,11 @@ var WorkersVersionsSingleResponse = ubx.ResourceBinding{
 		"Files": ubx.FieldSpec{WireName: "files"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: WorkersVersionsSingleResponse_MetadataFields,
+			Kind:     "object",
+			Fields:   WorkersVersionsSingleResponse_MetadataFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+		"VersionId":  ubx.FieldSpec{WireName: "version_id"},
 	},
 }

@@ -35,6 +35,7 @@ class SpectrumConfigAppConfigCollectionAttrs:
     page: Any = None
     # Sets the maximum number of results per page.
     per_page: Any = None
+    result: Any = None
     zone_id: Any = None
 
 SpectrumConfigAppConfigCollection = ubx.DataSourceBinding(

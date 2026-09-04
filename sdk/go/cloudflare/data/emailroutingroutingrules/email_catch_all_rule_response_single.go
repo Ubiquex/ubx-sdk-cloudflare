@@ -3,12 +3,39 @@ package emailroutingroutingrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailCatchAllRuleResponseSingle_Result_Actions struct {
+	Type  any
+	Value any
+}
+
+type EmailCatchAllRuleResponseSingle_Result_Matchers struct {
+	Type any
+}
+
+type EmailCatchAllRuleResponseSingle_Result struct {
+	// List actions for the catch-all routing rule.
+	Actions any
+	// Routing rule status.
+	Enabled any
+	// Routing rule identifier.
+	Id any
+	// List of matchers for the catch-all routing rule.
+	Matchers any
+	// Routing rule name.
+	Name any
+	// Who manages the rule. `api` covers dashboard, generic API, and Terraform; `wrangler` means the rule is managed by a Worker's wrangler.jsonc. Defaults to `api` when omitted on write.
+	Source any
+	// Routing rule tag. (Deprecated, replaced by routing rule identifier)
+	Tag any
+}
+
 type EmailCatchAllRuleResponseSingleConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type EmailCatchAllRuleResponseSingleAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -4,25 +4,25 @@ package artifacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RawConfig struct {
-	Name any
+	Name      any
 	Namespace any
-	Path any
-	Ref any
+	Path      any
+	Ref       any
 }
 
 type RawAttrs struct {
-	Name any
+	Name      any
 	Namespace any
-	Path any
-	Ref any
+	Path      any
+	Ref       any
 }
 
 var Raw = ubx.DataSourceBinding{
 	WireType: "cloudflare_raw",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Path":      ubx.FieldSpec{WireName: "path"},
+		"Ref":       ubx.FieldSpec{WireName: "ref"},
 	},
 }

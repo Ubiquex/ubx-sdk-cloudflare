@@ -4,22 +4,22 @@ package aisearchtokens
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Token_Result struct {
-	CfApiId any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
-	Id any
-	Legacy any
+	CfApiId    any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
+	Id         any
+	Legacy     any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
+	Name       any
 }
 
 type TokenConfig struct {
-	CfApiId any
+	CfApiId  any
 	CfApiKey any
-	Legacy any
-	Name any
+	Legacy   any
+	Name     any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -27,12 +27,12 @@ type TokenConfig struct {
 }
 
 type TokenAttrs struct {
-	CfApiId any
+	CfApiId  any
 	CfApiKey any
-	Legacy any
-	Name any
-	Result any
-	Success any
+	Legacy   any
+	Name     any
+	Result   any
+	Success  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -42,11 +42,11 @@ type TokenAttrs struct {
 var Token = ubx.ResourceBinding{
 	WireType: "cloudflare_token",
 	Fields: ubx.FieldMap{
-		"CfApiId": ubx.FieldSpec{WireName: "cf_api_id"},
-		"CfApiKey": ubx.FieldSpec{WireName: "cf_api_key"},
-		"Legacy": ubx.FieldSpec{WireName: "legacy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CfApiId":   ubx.FieldSpec{WireName: "cf_api_id"},
+		"CfApiKey":  ubx.FieldSpec{WireName: "cf_api_key"},
+		"Legacy":    ubx.FieldSpec{WireName: "legacy"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

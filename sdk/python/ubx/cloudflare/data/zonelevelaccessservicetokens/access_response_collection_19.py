@@ -7,12 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection19_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class AccessResponseCollection19_Result:
+    client_id: Any = None
+    created_at: Any = None
+    duration: Any = None
+    enabled: Any = None
+    expires_at: Any = None
+    id: Any = None
+    last_seen_at: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection19Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollection19Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

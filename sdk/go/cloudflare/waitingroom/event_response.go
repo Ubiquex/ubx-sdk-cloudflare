@@ -3,6 +3,42 @@ package waitingroom
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EventResponse_Result struct {
+	CreatedOn any
+	// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
+	CustomPageHtml any
+	// A note that you can use to add more details about the event.
+	Description any
+	// If set, the event will override the waiting room's `disable_session_renewal` property while it is active. If null, the event will inherit it.
+	DisableSessionRenewal any
+	// An ISO 8601 timestamp that marks the end of the event.
+	EventEndTime any
+	// An ISO 8601 timestamp that marks the start of the event. At this time, queued users will be processed with the event's configuration. The start time must be at least one minute before `event_end_time`.
+	EventStartTime any
+	Id             any
+	ModifiedOn     any
+	// A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.
+	Name any
+	// If set, the event will override the waiting room's `new_users_per_minute` property while it is active. If null, the event will inherit it. This can only be set if the event's `total_active_users` property is also set.
+	NewUsersPerMinute any
+	// An ISO 8601 timestamp that marks when to begin queueing all users before the event starts. The prequeue must start at least five minutes before `event_start_time`.
+	PrequeueStartTime any
+	// If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
+	QueueingMethod any
+	// If set, the event will override the waiting room's `session_duration` property while it is active. If null, the event will inherit it.
+	SessionDuration any
+	// If enabled, users in the prequeue will be shuffled randomly at the `event_start_time`. Requires that `prequeue_start_time` is not null. This is useful for situations when many users will join the event prequeue at the same time and you want to shuffle them to ensure fairness. Naturally, it makes the most sense to enable this feature when the `queueing_method` during the event respects ordering such as **fifo**, or else the shuffling may be unnecessary.
+	ShuffleAtEventStart any
+	// Suspends or allows an event. If set to `true`, the event is ignored and traffic will be handled based on the waiting room configuration.
+	Suspended any
+	// If set, the event will override the waiting room's `total_active_users` property while it is active. If null, the event will inherit it. This can only be set if the event's `new_users_per_minute` property is also set.
+	TotalActiveUsers any
+	// If set, the event will override the waiting room's `turnstile_action` property while it is active. If null, the event will inherit it.
+	TurnstileAction any
+	// If set, the event will override the waiting room's `turnstile_mode` property while it is active. If null, the event will inherit it.
+	TurnstileMode any
+}
+
 type EventResponseConfig struct {
 	// If set, the event will override the waiting room's `custom_page_html` property while it is active. If null, the event will inherit it.
 	CustomPageHtml any
@@ -61,6 +97,7 @@ type EventResponseAttrs struct {
 	PrequeueStartTime any
 	// If set, the event will override the waiting room's `queueing_method` property while it is active. If null, the event will inherit it.
 	QueueingMethod any
+	Result         any
 	// If set, the event will override the waiting room's `session_duration` property while it is active. If null, the event will inherit it.
 	SessionDuration any
 	// If enabled, users in the prequeue will be shuffled randomly at the `event_start_time`. Requires that `prequeue_start_time` is not null. This is useful for situations when many users will join the event prequeue at the same time and you want to shuffle them to ensure fairness. Naturally, it makes the most sense to enable this feature when the `queueing_method` during the event respects ordering such as **fifo**, or else the shuffling may be unnecessary.
@@ -84,23 +121,23 @@ type EventResponseAttrs struct {
 var EventResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_waitingroom_event_response",
 	Fields: ubx.FieldMap{
-		"CustomPageHtml": ubx.FieldSpec{WireName: "custom_page_html"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CustomPageHtml":        ubx.FieldSpec{WireName: "custom_page_html"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"DisableSessionRenewal": ubx.FieldSpec{WireName: "disable_session_renewal"},
-		"EventEndTime": ubx.FieldSpec{WireName: "event_end_time"},
-		"EventStartTime": ubx.FieldSpec{WireName: "event_start_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NewUsersPerMinute": ubx.FieldSpec{WireName: "new_users_per_minute"},
-		"PrequeueStartTime": ubx.FieldSpec{WireName: "prequeue_start_time"},
-		"QueueingMethod": ubx.FieldSpec{WireName: "queueing_method"},
-		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
-		"ShuffleAtEventStart": ubx.FieldSpec{WireName: "shuffle_at_event_start"},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
-		"TotalActiveUsers": ubx.FieldSpec{WireName: "total_active_users"},
-		"TurnstileAction": ubx.FieldSpec{WireName: "turnstile_action"},
-		"TurnstileMode": ubx.FieldSpec{WireName: "turnstile_mode"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"WaitingRoomId": ubx.FieldSpec{WireName: "waiting_room_id"},
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
+		"EventEndTime":          ubx.FieldSpec{WireName: "event_end_time"},
+		"EventStartTime":        ubx.FieldSpec{WireName: "event_start_time"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"NewUsersPerMinute":     ubx.FieldSpec{WireName: "new_users_per_minute"},
+		"PrequeueStartTime":     ubx.FieldSpec{WireName: "prequeue_start_time"},
+		"QueueingMethod":        ubx.FieldSpec{WireName: "queueing_method"},
+		"SessionDuration":       ubx.FieldSpec{WireName: "session_duration"},
+		"ShuffleAtEventStart":   ubx.FieldSpec{WireName: "shuffle_at_event_start"},
+		"Suspended":             ubx.FieldSpec{WireName: "suspended"},
+		"TotalActiveUsers":      ubx.FieldSpec{WireName: "total_active_users"},
+		"TurnstileAction":       ubx.FieldSpec{WireName: "turnstile_action"},
+		"TurnstileMode":         ubx.FieldSpec{WireName: "turnstile_mode"},
+		"ZoneId":                ubx.FieldSpec{WireName: "zone_id"},
+		"WaitingRoomId":         ubx.FieldSpec{WireName: "waiting_room_id"},
+		"EventId":               ubx.FieldSpec{WireName: "event_id"},
 	},
 }

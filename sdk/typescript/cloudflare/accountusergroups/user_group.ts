@@ -14,6 +14,53 @@ export interface UserGroup_Policies {
   resourceGroups?: UserGroup_Policies_PermissionGroups[] | Computed<UserGroup_Policies_PermissionGroups[]>;
 }
 
+export interface UserGroup_Result_Policies_PermissionGroups_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface UserGroup_Result_Policies_PermissionGroups {
+  id?: string | Computed<string>;
+  meta?: UserGroup_Result_Policies_PermissionGroups_Meta | Computed<UserGroup_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups_Scope_Objects {
+  key?: unknown | Computed<unknown>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups_Scope {
+  key?: unknown | Computed<unknown>;
+  objects?: UserGroup_Result_Policies_ResourceGroups_Scope_Objects[] | Computed<UserGroup_Result_Policies_ResourceGroups_Scope_Objects[]>;
+}
+
+export interface UserGroup_Result_Policies_ResourceGroups {
+  id?: string | Computed<string>;
+  meta?: UserGroup_Result_Policies_PermissionGroups_Meta | Computed<UserGroup_Result_Policies_PermissionGroups_Meta>;
+  name?: string | Computed<string>;
+  scope?: UserGroup_Result_Policies_ResourceGroups_Scope | Computed<UserGroup_Result_Policies_ResourceGroups_Scope>;
+}
+
+export interface UserGroup_Result_Policies {
+  access?: string | Computed<string>;
+  id?: string | Computed<string>;
+  permissionGroups?: UserGroup_Result_Policies_PermissionGroups[] | Computed<UserGroup_Result_Policies_PermissionGroups[]>;
+  resourceGroups?: UserGroup_Result_Policies_ResourceGroups[] | Computed<UserGroup_Result_Policies_ResourceGroups[]>;
+}
+
+export interface UserGroup_Result {
+  /** Timestamp for the creation of the user group */
+  createdOn?: string | Computed<string>;
+  /** User Group identifier tag. */
+  id: UserGroup_Policies_PermissionGroups_Id | Computed<UserGroup_Policies_PermissionGroups_Id>;
+  /** Last time the user group was modified. */
+  modifiedOn?: string | Computed<string>;
+  /** Name of the user group. */
+  name?: string | Computed<string>;
+  /** Policies attached to the User group */
+  policies?: UserGroup_Result_Policies[] | Computed<UserGroup_Result_Policies[]>;
+}
+
 const UserGroup_Policies_PermissionGroups_IdFields: FieldMap = {
 };
 
@@ -55,6 +102,8 @@ export interface UserGroupAttrs {
   name: string;
   /** Policies attached to the User group */
   policies: UserGroup_Policies[];
+  /** A group of policies resources. */
+  result: UserGroup_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

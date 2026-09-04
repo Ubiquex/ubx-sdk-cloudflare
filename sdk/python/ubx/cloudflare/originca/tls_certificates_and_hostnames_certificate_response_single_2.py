@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle2_Result:
+    # The Origin CA certificate. Will be newline-encoded.
+    certificate: Any = None
+    # The Certificate Signing Request (CSR). Must be newline-encoded.
+    csr: Any = None
+    # When the certificate will expire.
+    expires_on: Any = None
+    # Array of hostnames or wildcard names bound to the certificate. Hostnames must be fully qualified domain names (FQDNs) belonging to zones on your account (e.g., `example.com` or `sub.example.com`). Wildcards are supported only as a `*.` prefix for a single level (e.g., `*.example.com`). Double wildcards (`*.*.example.com`) and interior wildcards (`foo.*.example.com`) are not allowed. The wildcard suffix must be a multi-label domain (`*.example.com` is valid, but `*.com` is not). Unicode/IDN hostnames are accepted and automatically converted to punycode.
+    hostnames: Any = None
+    # Identifier.
+    id: Any = None
+    # Signature type desired on certificate ("origin-rsa" (rsa), "origin-ecc" (ecdsa), or "keyless-certificate" (for Keyless SSL servers).
+    request_type: Any = None
+    # The number of days for which the certificate should be valid.
+    requested_validity: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseSingle2Config:
     # The Certificate Signing Request (CSR). Must be newline-encoded.
     csr: Any = None
@@ -29,6 +46,7 @@ class TlsCertificatesAndHostnamesCertificateResponseSingle2Attrs:
     request_type: Any = None
     # The number of days for which the certificate should be valid.
     requested_validity: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     certificate_id: Any = None
 

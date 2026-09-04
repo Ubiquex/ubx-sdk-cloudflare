@@ -3,12 +3,47 @@ package csamscannersettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CsamConfigServiceCsamScannerSingleResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type CsamConfigServiceCsamScannerSingleResponse_Result_Value struct {
+	// Notification email address for CSAM scan results. Masked in responses unless explicitly unmasked via admin endpoint.
+	Email any
+	// Current verification state of the notification email.
+	EmailState any
+	// Whether CSAM scanning is enabled for this zone.
+	Enabled any
+	// Map of scanning sources and their enabled state.
+	Sources any
+	// The zone's plan level.
+	ZonePlan any
+}
+
+type CsamConfigServiceCsamScannerSingleResponse_Result struct {
+	// Whether the feature state can be changed. When false, the zone or account may be locked by Trust & Safety.
+	Editable any
+	// The feature identifier.
+	Id any
+	// When the setting was last modified. Currently always null as the server does not populate this field.
+	ModifiedOn any
+	// The CSAM Scanner feature configuration values. Contains the notification email and scanning enablement settings.
+	Value any
+}
+
 type CsamConfigServiceCsamScannerSingleResponseConfig struct {
 	// Identifier for the zone.
 	ZoneId any
 }
 
 type CsamConfigServiceCsamScannerSingleResponseAttrs struct {
+	Errors   any
+	Messages any
+	// CSAM Scanner configuration for a zone.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier for the zone.
 	ZoneId any
 }

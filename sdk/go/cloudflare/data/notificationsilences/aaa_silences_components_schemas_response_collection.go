@@ -3,16 +3,34 @@ package notificationsilences
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaSilencesComponentsSchemasResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type AaaSilencesComponentsSchemasResponseCollection_Result struct {
+	CreatedAt any
+	EndTime   any
+	Id        any
+	PolicyId  any
+	StartTime any
+	UpdatedAt any
+}
+
 type AaaSilencesComponentsSchemasResponseCollectionConfig struct {
 }
 
 type AaaSilencesComponentsSchemasResponseCollectionAttrs struct {
 	// The account id
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var AaaSilencesComponentsSchemasResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_silences_components_schemas_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

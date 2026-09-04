@@ -4,14 +4,14 @@ package radaremailrouting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Encrypted_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Encrypted_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Encrypted_Result_Meta_ConfidenceInfo struct {
 }
 
 type Encrypted_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Encrypted_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Encrypted_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -50,7 +50,7 @@ type Encrypted_Result_Summary0 struct {
 
 type Encrypted_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -95,25 +95,25 @@ type EncryptedAttrs struct {
 	// Filters results by IP version (Ipv4 vs. IPv6).
 	IpVersion any
 	// Array of names used to label the series in the response.
-	Name any
+	Name   any
 	Result any
 	// Filters results by SPF (Sender Policy Framework) validation status.
-	Spf any
+	Spf     any
 	Success any
 }
 
 var Encrypted = ubx.DataSourceBinding{
 	WireType: "cloudflare_encrypted",
 	Fields: ubx.FieldMap{
-		"Arc": ubx.FieldSpec{WireName: "arc"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
+		"Arc":       ubx.FieldSpec{WireName: "arc"},
+		"DateEnd":   ubx.FieldSpec{WireName: "date_end"},
 		"DateRange": ubx.FieldSpec{WireName: "date_range"},
 		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Dkim": ubx.FieldSpec{WireName: "dkim"},
-		"Dmarc": ubx.FieldSpec{WireName: "dmarc"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Dkim":      ubx.FieldSpec{WireName: "dkim"},
+		"Dmarc":     ubx.FieldSpec{WireName: "dmarc"},
+		"Format":    ubx.FieldSpec{WireName: "format"},
 		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Spf": ubx.FieldSpec{WireName: "spf"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Spf":       ubx.FieldSpec{WireName: "spf"},
 	},
 }

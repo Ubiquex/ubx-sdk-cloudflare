@@ -3,16 +3,58 @@ package accountsubscriptions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiAccountSubscriptionResponseCollection_Result_App struct {
+	InstallId any
+}
+
+type BillSubsApiAccountSubscriptionResponseCollection_Result_ComponentValues struct {
+	Default     any
+	DisplayName any
+	Kind        any
+	Name        any
+	Price       any
+	Value       any
+}
+
+type BillSubsApiAccountSubscriptionResponseCollection_Result_RatePlan struct {
+	Currency          any
+	ExternallyManaged any
+	Id                any
+	IsContract        any
+	PublicName        any
+	Scope             any
+	Sets              any
+}
+
+type BillSubsApiAccountSubscriptionResponseCollection_Result_Zone struct {
+	Id   any
+	Name any
+}
+
+type BillSubsApiAccountSubscriptionResponseCollection_Result struct {
+	App                any
+	ComponentValues    any
+	Currency           any
+	CurrentPeriodEnd   any
+	CurrentPeriodStart any
+	Frequency          any
+	Id                 any
+	Price              any
+	RatePlan           any
+	State              any
+	Zone               any
+}
+
 type BillSubsApiAccountSubscriptionResponseCollectionConfig struct {
 }
 
 type BillSubsApiAccountSubscriptionResponseCollectionAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var BillSubsApiAccountSubscriptionResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_account_subscription_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

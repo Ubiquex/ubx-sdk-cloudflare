@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelResponse_Result_Categorizations_Categories:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class IntelResponse_Result_Categorizations:
+    categories: Any = None
+    end: Any = None
+    start: Any = None
+
+@dataclasses.dataclass
+class IntelResponse_Result:
+    categorizations: Any = None
+    domain: Any = None
+
+@dataclasses.dataclass
 class IntelResponseConfig:
     domain: Any = None
 
@@ -15,6 +31,7 @@ class IntelResponseAttrs:
     # Identifier.
     account_id: Any = None
     domain: Any = None
+    result: Any = None
 
 IntelResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_intel_response",

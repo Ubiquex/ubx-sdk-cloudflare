@@ -3,15 +3,34 @@ package observatory
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TrendResponse_Result struct {
+	// Cumulative Layout Shift trend.
+	Cls any
+	// First Contentful Paint trend.
+	Fcp any
+	// Largest Contentful Paint trend.
+	Lcp any
+	// The Lighthouse score trend.
+	PerformanceScore any
+	// Speed Index trend.
+	Si any
+	// Total Blocking Time trend.
+	Tbt any
+	// Time To First Byte trend.
+	Ttfb any
+	// Time To Interactive trend.
+	Tti any
+}
+
 type TrendResponseConfig struct {
 	// The type of device.
 	DeviceType any
-	End any
-	Metrics any
+	End        any
+	Metrics    any
 	// A test region.
 	Region any
-	Start any
-	Tz any
+	Start  any
+	Tz     any
 	// A URL.
 	Url any
 	// Identifier.
@@ -21,12 +40,13 @@ type TrendResponseConfig struct {
 type TrendResponseAttrs struct {
 	// The type of device.
 	DeviceType any
-	End any
-	Metrics any
+	End        any
+	Metrics    any
 	// A test region.
 	Region any
-	Start any
-	Tz any
+	Result any
+	Start  any
+	Tz     any
 	// A URL.
 	Url any
 	// Identifier.
@@ -37,12 +57,12 @@ var TrendResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_observatory_trend_response",
 	Fields: ubx.FieldMap{
 		"DeviceType": ubx.FieldSpec{WireName: "device_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Tz": ubx.FieldSpec{WireName: "tz"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"End":        ubx.FieldSpec{WireName: "end"},
+		"Metrics":    ubx.FieldSpec{WireName: "metrics"},
+		"Region":     ubx.FieldSpec{WireName: "region"},
+		"Start":      ubx.FieldSpec{WireName: "start"},
+		"Tz":         ubx.FieldSpec{WireName: "tz"},
+		"Url":        ubx.FieldSpec{WireName: "url"},
+		"ZoneId":     ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

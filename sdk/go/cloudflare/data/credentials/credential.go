@@ -3,20 +3,29 @@ package credentials
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Credential_Result struct {
+	CredentialSetId any
+	Id              any
+	Location        any
+	LocationName    any
+	Name            any
+}
+
 type CredentialConfig struct {
-	Page any
+	Page    any
 	PerPage any
 }
 
 type CredentialAttrs struct {
-	Page any
+	Page    any
 	PerPage any
+	Result  any
 }
 
 var Credential = ubx.DataSourceBinding{
 	WireType: "cloudflare_credential",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTunnelWarpConnectorClientResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelWarpConnectorClientResponse_Result_Conns_OriginIp:
+    pass
+
+@dataclasses.dataclass
+class TunnelTunnelWarpConnectorClientResponse_Result_Conns:
+    client_id: Any = None
+    client_version: Any = None
+    colo_name: Any = None
+    id: Any = None
+    opened_at: Any = None
+    origin_ip: Any = None
+
+@dataclasses.dataclass
+class TunnelTunnelWarpConnectorClientResponse_Result:
+    # The cloudflared OS architecture used to establish this connection.
+    arch: Any = None
+    # The WARP Connector Tunnel connections between your origin and Cloudflare's edge.
+    conns: Any = None
+    # Features enabled for the Cloudflare Tunnel.
+    features: Any = None
+    # The HA status of a WARP Connector client.
+    ha_status: Any = None
+    # UUID of the Cloudflare Tunnel connector.
+    id: Any = None
+    # Timestamp of when the tunnel connection was started.
+    run_at: Any = None
+    # The cloudflared version used to establish this connection.
+    version: Any = None
+
+@dataclasses.dataclass
 class TunnelTunnelWarpConnectorClientResponseConfig:
     pass
 
@@ -16,6 +51,12 @@ class TunnelTunnelWarpConnectorClientResponseAttrs:
     account_id: Any = None
     # UUID of the Cloudflare Tunnel connector.
     connector_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # A WARP Connector client that maintains a connection to a Cloudflare data center.
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

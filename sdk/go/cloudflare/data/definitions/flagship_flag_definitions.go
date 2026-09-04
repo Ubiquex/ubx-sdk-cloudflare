@@ -4,70 +4,70 @@ package definitions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions_Clauses_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions_Clauses_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions_Clauses_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions_Clauses_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions_Clauses struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Conditions struct {
-	Attribute any
-	Clauses any
+	Attribute       any
+	Clauses         any
 	LogicalOperator any
-	Operator any
-	Value any
+	Operator        any
+	Value           any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules_Rollout struct {
-	Attribute any
+	Attribute  any
 	Percentage any
 }
 
 type FlagshipFlagDefinitions_Flags_Rules struct {
-	Conditions any
-	Rollout any
+	Conditions     any
+	Rollout        any
 	ServeVariation any
 }
 
 type FlagshipFlagDefinitions_Flags struct {
 	DefaultVariation any
-	Enabled any
-	Key any
-	Rules any
-	Variations any
+	Enabled          any
+	Key              any
+	Rules            any
+	Variations       any
 }
 
 type FlagshipFlagDefinitionsConfig struct {
@@ -89,6 +89,6 @@ var FlagshipFlagDefinitions = ubx.DataSourceBinding{
 	WireType: "cloudflare_flagship_flag_definitions",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

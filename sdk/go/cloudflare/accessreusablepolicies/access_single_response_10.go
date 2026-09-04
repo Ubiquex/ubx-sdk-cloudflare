@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessSingleResponse10_ApprovalGroups struct {
 	ApprovalsNeeded any
-	EmailAddresses any
-	EmailListUuid any
+	EmailAddresses  any
+	EmailListUuid   any
 }
 
 type AccessSingleResponse10_ConnectionRules_Rdp struct {
@@ -21,6 +21,127 @@ type AccessSingleResponse10_ConnectionRules struct {
 	Rdp any
 }
 
+type AccessSingleResponse10_Exclude_AuthContext struct {
+	AcId               any
+	Id                 any
+	IdentityProviderId any
+}
+
+type AccessSingleResponse10_Exclude_AuthMethod struct {
+	AuthMethod any
+}
+
+type AccessSingleResponse10_Exclude_AzureAd struct {
+	Id                 any
+	IdentityProviderId any
+}
+
+type AccessSingleResponse10_Exclude_CloudflareAccountMember struct {
+	AccountId any
+}
+
+type AccessSingleResponse10_Exclude_CommonName struct {
+	CommonName any
+}
+
+type AccessSingleResponse10_Exclude_DevicePosture struct {
+	IntegrationUid any
+}
+
+type AccessSingleResponse10_Exclude_Email struct {
+	Email any
+}
+
+type AccessSingleResponse10_Exclude_EmailDomain struct {
+	Domain any
+}
+
+type AccessSingleResponse10_Exclude_EmailList struct {
+	Id any
+}
+
+type AccessSingleResponse10_Exclude_ExternalEvaluation struct {
+	EvaluateUrl any
+	KeysUrl     any
+}
+
+type AccessSingleResponse10_Exclude_Geo struct {
+	CountryCode any
+}
+
+type AccessSingleResponse10_Exclude_GithubOrganization struct {
+	IdentityProviderId any
+	Name               any
+	Team               any
+}
+
+type AccessSingleResponse10_Exclude_Gsuite struct {
+	Email              any
+	IdentityProviderId any
+}
+
+type AccessSingleResponse10_Exclude_Ip struct {
+	Ip any
+}
+
+type AccessSingleResponse10_Exclude_LinkedAppToken struct {
+	AppUid any
+}
+
+type AccessSingleResponse10_Exclude_Oidc struct {
+	ClaimName          any
+	ClaimValue         any
+	IdentityProviderId any
+}
+
+type AccessSingleResponse10_Exclude_Okta struct {
+	IdentityProviderId any
+	Name               any
+}
+
+type AccessSingleResponse10_Exclude_Saml struct {
+	AttributeName      any
+	AttributeValue     any
+	IdentityProviderId any
+}
+
+type AccessSingleResponse10_Exclude_ServiceToken struct {
+	TokenId any
+}
+
+type AccessSingleResponse10_Exclude_UserRiskScore struct {
+	UserRiskScore any
+}
+
+type AccessSingleResponse10_Exclude struct {
+	AnyValidServiceToken    any
+	AuthContext             any
+	AuthMethod              any
+	AzureAd                 any
+	Certificate             any
+	CloudflareAccountMember any
+	CommonName              any
+	DevicePosture           any
+	Email                   any
+	EmailDomain             any
+	EmailList               any
+	Everyone                any
+	ExternalEvaluation      any
+	Geo                     any
+	GithubOrganization      any
+	Group                   any
+	Gsuite                  any
+	Ip                      any
+	IpList                  any
+	LinkedAppToken          any
+	LoginMethod             any
+	Oidc                    any
+	Okta                    any
+	Saml                    any
+	ServiceToken            any
+	UserRiskScore           any
+}
+
 type AccessSingleResponse10_MfaConfig struct {
 	// Lists the MFA methods that users can authenticate with.
 	AllowedAuthenticators any
@@ -30,30 +151,256 @@ type AccessSingleResponse10_MfaConfig struct {
 	SessionDuration any
 }
 
+type AccessSingleResponse10_Result struct {
+	AppCount                     any
+	ApprovalGroups               any
+	ApprovalRequired             any
+	ConnectionRules              any
+	IsolationRequired            any
+	MfaConfig                    any
+	PurposeJustificationPrompt   any
+	PurposeJustificationRequired any
+	Reusable                     any
+	SessionDuration              any
+}
+
 var AccessSingleResponse10_ApprovalGroupsFields = ubx.FieldMap{
-		"ApprovalsNeeded": ubx.FieldSpec{WireName: "approvals_needed"},
-		"EmailAddresses": ubx.FieldSpec{WireName: "email_addresses"},
-		"EmailListUuid": ubx.FieldSpec{WireName: "email_list_uuid"},
-	}
+	"ApprovalsNeeded": ubx.FieldSpec{WireName: "approvals_needed"},
+	"EmailAddresses":  ubx.FieldSpec{WireName: "email_addresses"},
+	"EmailListUuid":   ubx.FieldSpec{WireName: "email_list_uuid"},
+}
 
 var AccessSingleResponse10_ConnectionRules_RdpFields = ubx.FieldMap{
-		"AllowedClipboardLocalToRemoteFormats": ubx.FieldSpec{WireName: "allowed_clipboard_local_to_remote_formats"},
-		"AllowedClipboardRemoteToLocalFormats": ubx.FieldSpec{WireName: "allowed_clipboard_remote_to_local_formats"},
-	}
+	"AllowedClipboardLocalToRemoteFormats": ubx.FieldSpec{WireName: "allowed_clipboard_local_to_remote_formats"},
+	"AllowedClipboardRemoteToLocalFormats": ubx.FieldSpec{WireName: "allowed_clipboard_remote_to_local_formats"},
+}
 
 var AccessSingleResponse10_ConnectionRulesFields = ubx.FieldMap{
-		"Rdp": ubx.FieldSpec{
-			WireName: "rdp",
-			Kind: "object",
-			Fields: AccessSingleResponse10_ConnectionRules_RdpFields,
-		},
-	}
+	"Rdp": ubx.FieldSpec{
+		WireName: "rdp",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_ConnectionRules_RdpFields,
+	},
+}
+
+var AccessSingleResponse10_Exclude_AuthContextFields = ubx.FieldMap{
+	"AcId":               ubx.FieldSpec{WireName: "ac_id"},
+	"Id":                 ubx.FieldSpec{WireName: "id"},
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+}
+
+var AccessSingleResponse10_Exclude_AuthMethodFields = ubx.FieldMap{
+	"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
+}
+
+var AccessSingleResponse10_Exclude_AzureAdFields = ubx.FieldMap{
+	"Id":                 ubx.FieldSpec{WireName: "id"},
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+}
+
+var AccessSingleResponse10_Exclude_CloudflareAccountMemberFields = ubx.FieldMap{
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+}
+
+var AccessSingleResponse10_Exclude_CommonNameFields = ubx.FieldMap{
+	"CommonName": ubx.FieldSpec{WireName: "common_name"},
+}
+
+var AccessSingleResponse10_Exclude_DevicePostureFields = ubx.FieldMap{
+	"IntegrationUid": ubx.FieldSpec{WireName: "integration_uid"},
+}
+
+var AccessSingleResponse10_Exclude_EmailFields = ubx.FieldMap{
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
+
+var AccessSingleResponse10_Exclude_EmailDomainFields = ubx.FieldMap{
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
+
+var AccessSingleResponse10_Exclude_EmailListFields = ubx.FieldMap{
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
+
+var AccessSingleResponse10_Exclude_ExternalEvaluationFields = ubx.FieldMap{
+	"EvaluateUrl": ubx.FieldSpec{WireName: "evaluate_url"},
+	"KeysUrl":     ubx.FieldSpec{WireName: "keys_url"},
+}
+
+var AccessSingleResponse10_Exclude_GeoFields = ubx.FieldMap{
+	"CountryCode": ubx.FieldSpec{WireName: "country_code"},
+}
+
+var AccessSingleResponse10_Exclude_GithubOrganizationFields = ubx.FieldMap{
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Team":               ubx.FieldSpec{WireName: "team"},
+}
+
+var AccessSingleResponse10_Exclude_GsuiteFields = ubx.FieldMap{
+	"Email":              ubx.FieldSpec{WireName: "email"},
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+}
+
+var AccessSingleResponse10_Exclude_IpFields = ubx.FieldMap{
+	"Ip": ubx.FieldSpec{WireName: "ip"},
+}
+
+var AccessSingleResponse10_Exclude_LinkedAppTokenFields = ubx.FieldMap{
+	"AppUid": ubx.FieldSpec{WireName: "app_uid"},
+}
+
+var AccessSingleResponse10_Exclude_OidcFields = ubx.FieldMap{
+	"ClaimName":          ubx.FieldSpec{WireName: "claim_name"},
+	"ClaimValue":         ubx.FieldSpec{WireName: "claim_value"},
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+}
+
+var AccessSingleResponse10_Exclude_OktaFields = ubx.FieldMap{
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+}
+
+var AccessSingleResponse10_Exclude_SamlFields = ubx.FieldMap{
+	"AttributeName":      ubx.FieldSpec{WireName: "attribute_name"},
+	"AttributeValue":     ubx.FieldSpec{WireName: "attribute_value"},
+	"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
+}
+
+var AccessSingleResponse10_Exclude_ServiceTokenFields = ubx.FieldMap{
+	"TokenId": ubx.FieldSpec{WireName: "token_id"},
+}
+
+var AccessSingleResponse10_Exclude_UserRiskScoreFields = ubx.FieldMap{
+	"UserRiskScore": ubx.FieldSpec{WireName: "user_risk_score"},
+}
+
+var AccessSingleResponse10_ExcludeFields = ubx.FieldMap{
+	"AnyValidServiceToken": ubx.FieldSpec{WireName: "any_valid_service_token"},
+	"AuthContext": ubx.FieldSpec{
+		WireName: "auth_context",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_AuthContextFields,
+	},
+	"AuthMethod": ubx.FieldSpec{
+		WireName: "auth_method",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_AuthMethodFields,
+	},
+	"AzureAd": ubx.FieldSpec{
+		WireName: "azure_ad",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_AzureAdFields,
+	},
+	"Certificate": ubx.FieldSpec{WireName: "certificate"},
+	"CloudflareAccountMember": ubx.FieldSpec{
+		WireName: "cloudflare_account_member",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_CloudflareAccountMemberFields,
+	},
+	"CommonName": ubx.FieldSpec{
+		WireName: "common_name",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_CommonNameFields,
+	},
+	"DevicePosture": ubx.FieldSpec{
+		WireName: "device_posture",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_DevicePostureFields,
+	},
+	"Email": ubx.FieldSpec{
+		WireName: "email",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailFields,
+	},
+	"EmailDomain": ubx.FieldSpec{
+		WireName: "email_domain",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailDomainFields,
+	},
+	"EmailList": ubx.FieldSpec{
+		WireName: "email_list",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailListFields,
+	},
+	"Everyone": ubx.FieldSpec{WireName: "everyone"},
+	"ExternalEvaluation": ubx.FieldSpec{
+		WireName: "external_evaluation",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_ExternalEvaluationFields,
+	},
+	"Geo": ubx.FieldSpec{
+		WireName: "geo",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_GeoFields,
+	},
+	"GithubOrganization": ubx.FieldSpec{
+		WireName: "github_organization",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_GithubOrganizationFields,
+	},
+	"Group": ubx.FieldSpec{
+		WireName: "group",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailListFields,
+	},
+	"Gsuite": ubx.FieldSpec{
+		WireName: "gsuite",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_GsuiteFields,
+	},
+	"Ip": ubx.FieldSpec{
+		WireName: "ip",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_IpFields,
+	},
+	"IpList": ubx.FieldSpec{
+		WireName: "ip_list",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailListFields,
+	},
+	"LinkedAppToken": ubx.FieldSpec{
+		WireName: "linked_app_token",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_LinkedAppTokenFields,
+	},
+	"LoginMethod": ubx.FieldSpec{
+		WireName: "login_method",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_EmailListFields,
+	},
+	"Oidc": ubx.FieldSpec{
+		WireName: "oidc",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_OidcFields,
+	},
+	"Okta": ubx.FieldSpec{
+		WireName: "okta",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_OktaFields,
+	},
+	"Saml": ubx.FieldSpec{
+		WireName: "saml",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_SamlFields,
+	},
+	"ServiceToken": ubx.FieldSpec{
+		WireName: "service_token",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_ServiceTokenFields,
+	},
+	"UserRiskScore": ubx.FieldSpec{
+		WireName: "user_risk_score",
+		Kind:     "object",
+		Fields:   AccessSingleResponse10_Exclude_UserRiskScoreFields,
+	},
+}
 
 var AccessSingleResponse10_MfaConfigFields = ubx.FieldMap{
-		"AllowedAuthenticators": ubx.FieldSpec{WireName: "allowed_authenticators"},
-		"MfaDisabled": ubx.FieldSpec{WireName: "mfa_disabled"},
-		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
-	}
+	"AllowedAuthenticators": ubx.FieldSpec{WireName: "allowed_authenticators"},
+	"MfaDisabled":           ubx.FieldSpec{WireName: "mfa_disabled"},
+	"SessionDuration":       ubx.FieldSpec{WireName: "session_duration"},
+}
 
 type AccessSingleResponse10Config struct {
 	// Administrators who can approve a temporary authentication request.
@@ -62,14 +409,24 @@ type AccessSingleResponse10Config struct {
 	ApprovalRequired any
 	// The rules that define how users may connect to targets secured by your application.
 	ConnectionRules any
+	// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
+	Decision any
+	// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+	Exclude any
+	// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+	Include any
 	// Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
 	IsolationRequired any
 	// Configures multi-factor authentication (MFA) settings.
 	MfaConfig any
+	// The name of the Access policy.
+	Name any
 	// A custom message that will appear on the purpose justification screen.
 	PurposeJustificationPrompt any
 	// Require users to enter a justification when they log in to the application.
 	PurposeJustificationRequired any
+	// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+	Require any
 	// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 	SessionDuration any
 	// path parameter, not part of the API's own resource representation
@@ -85,14 +442,25 @@ type AccessSingleResponse10Attrs struct {
 	ApprovalRequired any
 	// The rules that define how users may connect to targets secured by your application.
 	ConnectionRules any
+	// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
+	Decision any
+	// Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.
+	Exclude any
+	// Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+	Include any
 	// Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature.
 	IsolationRequired any
 	// Configures multi-factor authentication (MFA) settings.
 	MfaConfig any
+	// The name of the Access policy.
+	Name any
 	// A custom message that will appear on the purpose justification screen.
 	PurposeJustificationPrompt any
 	// Require users to enter a justification when they log in to the application.
 	PurposeJustificationRequired any
+	// Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.
+	Require any
+	Result  any
 	// The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.
 	SessionDuration any
 	// path parameter, not part of the API's own resource representation
@@ -106,25 +474,42 @@ var AccessSingleResponse10 = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApprovalGroups": ubx.FieldSpec{
 			WireName: "approval_groups",
-			Kind: "list",
-			Fields: AccessSingleResponse10_ApprovalGroupsFields,
+			Kind:     "list",
+			Fields:   AccessSingleResponse10_ApprovalGroupsFields,
 		},
 		"ApprovalRequired": ubx.FieldSpec{WireName: "approval_required"},
 		"ConnectionRules": ubx.FieldSpec{
 			WireName: "connection_rules",
-			Kind: "object",
-			Fields: AccessSingleResponse10_ConnectionRulesFields,
+			Kind:     "object",
+			Fields:   AccessSingleResponse10_ConnectionRulesFields,
+		},
+		"Decision": ubx.FieldSpec{WireName: "decision"},
+		"Exclude": ubx.FieldSpec{
+			WireName: "exclude",
+			Kind:     "list",
+			Fields:   AccessSingleResponse10_ExcludeFields,
+		},
+		"Include": ubx.FieldSpec{
+			WireName: "include",
+			Kind:     "list",
+			Fields:   AccessSingleResponse10_ExcludeFields,
 		},
 		"IsolationRequired": ubx.FieldSpec{WireName: "isolation_required"},
 		"MfaConfig": ubx.FieldSpec{
 			WireName: "mfa_config",
-			Kind: "object",
-			Fields: AccessSingleResponse10_MfaConfigFields,
+			Kind:     "object",
+			Fields:   AccessSingleResponse10_MfaConfigFields,
 		},
-		"PurposeJustificationPrompt": ubx.FieldSpec{WireName: "purpose_justification_prompt"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"PurposeJustificationPrompt":   ubx.FieldSpec{WireName: "purpose_justification_prompt"},
 		"PurposeJustificationRequired": ubx.FieldSpec{WireName: "purpose_justification_required"},
+		"Require": ubx.FieldSpec{
+			WireName: "require",
+			Kind:     "list",
+			Fields:   AccessSingleResponse10_ExcludeFields,
+		},
 		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"PolicyId":        ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

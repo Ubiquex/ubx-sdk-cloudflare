@@ -6,8 +6,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Request_CompletedAfter struct {
 }
 
-var Request_CompletedAfterFields = ubx.FieldMap{
-	}
+type Request_Errors_Source struct {
+	Pointer any
+}
+
+type Request_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Request_Result struct {
+	Completed any
+	// Request content.
+	Content any
+	Created any
+	// UUID.
+	Id any
+	// Tokens for the request messages.
+	MessageTokens any
+	Priority      any
+	// Readable Request ID.
+	ReadableId any
+	// Requested information from request.
+	Request any
+	// Request Status.
+	Status any
+	// Brief description of the request.
+	Summary any
+	// The CISA defined Traffic Light Protocol (TLP).
+	Tlp any
+	// Tokens for the request.
+	Tokens  any
+	Updated any
+}
+
+var Request_CompletedAfterFields = ubx.FieldMap{}
 
 type RequestConfig struct {
 	// Retrieve requests completed after this time.
@@ -45,18 +80,23 @@ type RequestAttrs struct {
 	CreatedAfter any
 	// Retrieve requests created before this time.
 	CreatedBefore any
+	Errors        any
+	Messages      any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
 	// Requested information from request.
 	RequestType any
+	Result      any
 	// Field to sort results by.
 	SortBy any
 	// Sort order (asc or desc).
 	SortOrder any
 	// Request Status.
 	Status any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -68,31 +108,31 @@ var Request = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompletedAfter": ubx.FieldSpec{
 			WireName: "completed_after",
-			Kind: "object",
-			Fields: Request_CompletedAfterFields,
+			Kind:     "object",
+			Fields:   Request_CompletedAfterFields,
 		},
 		"CompletedBefore": ubx.FieldSpec{
 			WireName: "completed_before",
-			Kind: "object",
-			Fields: Request_CompletedAfterFields,
+			Kind:     "object",
+			Fields:   Request_CompletedAfterFields,
 		},
 		"CreatedAfter": ubx.FieldSpec{
 			WireName: "created_after",
-			Kind: "object",
-			Fields: Request_CompletedAfterFields,
+			Kind:     "object",
+			Fields:   Request_CompletedAfterFields,
 		},
 		"CreatedBefore": ubx.FieldSpec{
 			WireName: "created_before",
-			Kind: "object",
-			Fields: Request_CompletedAfterFields,
+			Kind:     "object",
+			Fields:   Request_CompletedAfterFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
 		"RequestType": ubx.FieldSpec{WireName: "request_type"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RequestId": ubx.FieldSpec{WireName: "request_id"},
+		"SortBy":      ubx.FieldSpec{WireName: "sort_by"},
+		"SortOrder":   ubx.FieldSpec{WireName: "sort_order"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"RequestId":   ubx.FieldSpec{WireName: "request_id"},
 	},
 }

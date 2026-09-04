@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImagesImagesStatsResponse_Result_Count:
+    # Cloudflare Images allowed usage.
+    allowed: Any = None
+    # Cloudflare Images current usage.
+    current: Any = None
+
+@dataclasses.dataclass
+class ImagesImagesStatsResponse_Result:
+    count: Any = None
+
+@dataclasses.dataclass
 class ImagesImagesStatsResponseConfig:
     pass
 
@@ -14,6 +25,7 @@ class ImagesImagesStatsResponseConfig:
 class ImagesImagesStatsResponseAttrs:
     # Account identifier tag.
     account_id: Any = None
+    result: Any = None
 
 ImagesImagesStatsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_images_images_stats_response",

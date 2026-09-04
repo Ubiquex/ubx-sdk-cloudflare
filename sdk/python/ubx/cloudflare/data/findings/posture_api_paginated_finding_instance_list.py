@@ -7,6 +7,91 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_Asset_Category:
+    id: Any = None
+    service: Any = None
+    type: Any = None
+    vendor: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_Asset_Fields:
+    link: Any = None
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_Asset:
+    category: Any = None
+    external_id: Any = None
+    fields: Any = None
+    id: Any = None
+    link: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_DlpContexts:
+    created: Any = None
+    deleted: Any = None
+    entry_ids: Any = None
+    id: Any = None
+    match_context_max_extent: Any = None
+    match_context_min_extent: Any = None
+    match_context_payload: Any = None
+    profile_id: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_Remediations:
+    created_at: Any = None
+    id: Any = None
+    stale: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result_Webhooks:
+    latest_job: Any = None
+    webhook_id: Any = None
+    webhook_label: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_Result:
+    affliction_date: Any = None
+    asset: Any = None
+    dlp_contexts: Any = None
+    id: Any = None
+    is_archived: Any = None
+    remediations: Any = None
+    webhooks: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingInstanceList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedFindingInstanceListConfig:
     account_id: Any = None
     archived: Any = None
@@ -30,15 +115,23 @@ class PostureApiPaginatedFindingInstanceListAttrs:
     asset_ids: Any = None
     cursor: Any = None
     direction: Any = None
+    errors: Any = None
     finding_id: Any = None
     finding_instance_ids: Any = None
     max_affliction_date: Any = None
+    messages: Any = None
     min_affliction_date: Any = None
     order: Any = None
     page: Any = None
     per_page: Any = None
     remediation_statuses: Any = None
+    # Array of finding instance objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
     search: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PostureApiPaginatedFindingInstanceList = ubx.DataSourceBinding(
     wire_type="cloudflare_posture_api_paginated_finding_instance_list",

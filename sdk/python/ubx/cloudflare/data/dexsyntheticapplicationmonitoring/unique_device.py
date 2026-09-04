@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UniqueDevice_Result:
+    # total number of unique devices
+    unique_devices_total: Any = None
+
+@dataclasses.dataclass
 class UniqueDeviceConfig:
     device_id: Any = None
     test_name: Any = None
@@ -16,6 +21,7 @@ class UniqueDeviceAttrs:
     # Unique identifier linked to an account.
     account_id: Any = None
     device_id: Any = None
+    result: Any = None
     test_name: Any = None
 
 UniqueDevice = ubx.DataSourceBinding(

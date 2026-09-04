@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection_Result:
+    pass
+
+@dataclasses.dataclass
 class AccessResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -25,6 +29,7 @@ class AccessResponseCollectionAttrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
     # Indicates to Access to only retrieve identity providers that have the System for Cross-Domain Identity Management (SCIM) enabled.
     scim_enabled: Any = None
 

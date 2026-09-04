@@ -17,23 +17,36 @@ type Target_Ip struct {
 	Ipv6 any
 }
 
+type Target_Result struct {
+	// Date and time at which the target was created
+	CreatedAt any
+	// A non-unique field that refers to a target
+	Hostname any
+	// Target identifier
+	Id any
+	// The IPv4/IPv6 address that identifies where to reach a target
+	Ip any
+	// Date and time at which the target was modified
+	ModifiedAt any
+}
+
 var Target_Ip_Ipv4Fields = ubx.FieldMap{
-		"IpAddr": ubx.FieldSpec{WireName: "ip_addr"},
-		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
-	}
+	"IpAddr":           ubx.FieldSpec{WireName: "ip_addr"},
+	"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
+}
 
 var Target_IpFields = ubx.FieldMap{
-		"Ipv4": ubx.FieldSpec{
-			WireName: "ipv4",
-			Kind: "object",
-			Fields: Target_Ip_Ipv4Fields,
-		},
-		"Ipv6": ubx.FieldSpec{
-			WireName: "ipv6",
-			Kind: "object",
-			Fields: Target_Ip_Ipv4Fields,
-		},
-	}
+	"Ipv4": ubx.FieldSpec{
+		WireName: "ipv4",
+		Kind:     "object",
+		Fields:   Target_Ip_Ipv4Fields,
+	},
+	"Ipv6": ubx.FieldSpec{
+		WireName: "ipv6",
+		Kind:     "object",
+		Fields:   Target_Ip_Ipv4Fields,
+	},
+}
 
 type TargetConfig struct {
 	// A non-unique field that refers to a target. Case insensitive, maximum length of 255 characters, supports the use of special characters dash and period, does not support spaces, and must start and end with an alphanumeric character.
@@ -50,7 +63,8 @@ type TargetAttrs struct {
 	// A non-unique field that refers to a target. Case insensitive, maximum length of 255 characters, supports the use of special characters dash and period, does not support spaces, and must start and end with an alphanumeric character.
 	Hostname any
 	// The IPv4/IPv6 address that identifies where to reach a target
-	Ip any
+	Ip     any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -63,10 +77,10 @@ var Target = ubx.ResourceBinding{
 		"Hostname": ubx.FieldSpec{WireName: "hostname"},
 		"Ip": ubx.FieldSpec{
 			WireName: "ip",
-			Kind: "object",
-			Fields: Target_IpFields,
+			Kind:     "object",
+			Fields:   Target_IpFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
+		"TargetId":  ubx.FieldSpec{WireName: "target_id"},
 	},
 }

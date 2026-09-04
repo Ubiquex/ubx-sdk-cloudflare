@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class TaggedResourceResponseCollection_AccountId:
     pass
 
+@dataclasses.dataclass
+class TaggedResourceResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TaggedResourceResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TaggedResourceResponseCollection_ResultInfo:
+    # Indicates the number of results returned in the current page.
+    count: Any = None
+    # Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+    cursor: Any = None
+
 _TaggedResourceResponseCollection_AccountIdFields = {
 }
 
@@ -28,8 +46,14 @@ class TaggedResourceResponseCollectionAttrs:
     account_id: Any = None
     case_insensitive: Any = None
     cursor: Any = None
+    errors: Any = None
     id: Any = None
+    messages: Any = None
     name: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     tag: Any = None
     type: Any = None
 

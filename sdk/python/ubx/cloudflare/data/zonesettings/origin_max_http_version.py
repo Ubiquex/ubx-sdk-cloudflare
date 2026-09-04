@@ -7,11 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class OriginMaxHttpVersion_Result:
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class OriginMaxHttpVersionConfig:
     pass
 
 @dataclasses.dataclass
 class OriginMaxHttpVersionAttrs:
+    # Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

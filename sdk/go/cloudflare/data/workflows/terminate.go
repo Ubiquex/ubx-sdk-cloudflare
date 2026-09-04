@@ -4,7 +4,7 @@ package workflows
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Terminate_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -13,33 +13,33 @@ type Terminate_Result struct {
 }
 
 type Terminate_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type TerminateConfig struct {
-	AccountId any
+	AccountId    any
 	WorkflowName any
 }
 
 type TerminateAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
-	ResultInfo any
-	Success any
+	AccountId    any
+	Errors       any
+	Messages     any
+	Result       any
+	ResultInfo   any
+	Success      any
 	WorkflowName any
 }
 
 var Terminate = ubx.DataSourceBinding{
 	WireType: "cloudflare_terminate",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

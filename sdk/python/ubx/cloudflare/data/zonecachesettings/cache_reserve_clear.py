@@ -7,11 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CacheReserveClear_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class CacheReserveClear_Result:
+    end_ts: Any = None
+    start_ts: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
 class CacheReserveClearConfig:
     pass
 
 @dataclasses.dataclass
 class CacheReserveClearAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

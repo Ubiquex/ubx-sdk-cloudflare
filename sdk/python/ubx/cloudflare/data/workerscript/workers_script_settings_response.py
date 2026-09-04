@@ -7,6 +7,60 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersScriptSettingsResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result_Observability_Logs:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    invocation_logs: Any = None
+    persist: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result_Observability_Traces:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    persist: Any = None
+    propagation_policy: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result_Observability:
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    logs: Any = None
+    redact_query_string: Any = None
+    traces: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result_Tags:
+    pass
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result_TailConsumers:
+    environment: Any = None
+    namespace: Any = None
+    service: Any = None
+
+@dataclasses.dataclass
+class WorkersScriptSettingsResponse_Result:
+    # Whether Logpush is turned on for the Worker.
+    logpush: Any = None
+    observability: Any = None
+    tags: Any = None
+    # List of Workers that will consume logs from the attached Worker.
+    tail_consumers: Any = None
+
+@dataclasses.dataclass
 class WorkersScriptSettingsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +71,13 @@ class WorkersScriptSettingsResponseConfig:
 class WorkersScriptSettingsResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 WorkersScriptSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_workers_script_settings_response",

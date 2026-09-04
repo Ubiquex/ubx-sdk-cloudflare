@@ -7,6 +7,51 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumSitesResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class RumSitesResponseCollection_Result_Rules:
+    created: Any = None
+    host: Any = None
+    id: Any = None
+    inclusive: Any = None
+    is_paused: Any = None
+    paths: Any = None
+    priority: Any = None
+
+@dataclasses.dataclass
+class RumSitesResponseCollection_Result_Ruleset:
+    enabled: Any = None
+    id: Any = None
+    zone_name: Any = None
+    zone_tag: Any = None
+
+@dataclasses.dataclass
+class RumSitesResponseCollection_Result:
+    auto_install: Any = None
+    created: Any = None
+    rules: Any = None
+    ruleset: Any = None
+    site_tag: Any = None
+    site_token: Any = None
+    snippet: Any = None
+
+@dataclasses.dataclass
+class RumSitesResponseCollection_ResultInfo:
+    # The total number of items on the current page.
+    count: Any = None
+    # Current page within the paginated list of results.
+    page: Any = None
+    # The maximum number of items to return per page of results.
+    per_page: Any = None
+    # The total number of items.
+    total_count: Any = None
+    # The total number of pages.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class RumSitesResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -21,12 +66,18 @@ class RumSitesResponseCollectionConfig:
 class RumSitesResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # The property used to sort the list of results.
     order_by: Any = None
     # Current page within the paginated list of results.
     page: Any = None
     # Number of items to return per page of results.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RumSitesResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_rum_sites_response_collection",

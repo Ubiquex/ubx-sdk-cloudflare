@@ -3,6 +3,59 @@ package workerscript
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersScriptSettingsResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersScriptSettingsResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersScriptSettingsResponse_Result_Observability_Logs struct {
+	Destinations     any
+	Enabled          any
+	HeadSamplingRate any
+	InvocationLogs   any
+	Persist          any
+}
+
+type WorkersScriptSettingsResponse_Result_Observability_Traces struct {
+	Destinations      any
+	Enabled           any
+	HeadSamplingRate  any
+	Persist           any
+	PropagationPolicy any
+}
+
+type WorkersScriptSettingsResponse_Result_Observability struct {
+	Enabled           any
+	HeadSamplingRate  any
+	Logs              any
+	RedactQueryString any
+	Traces            any
+}
+
+type WorkersScriptSettingsResponse_Result_Tags struct {
+}
+
+type WorkersScriptSettingsResponse_Result_TailConsumers struct {
+	Environment any
+	Namespace   any
+	Service     any
+}
+
+type WorkersScriptSettingsResponse_Result struct {
+	// Whether Logpush is turned on for the Worker.
+	Logpush       any
+	Observability any
+	Tags          any
+	// List of Workers that will consume logs from the attached Worker.
+	TailConsumers any
+}
+
 type WorkersScriptSettingsResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +66,19 @@ type WorkersScriptSettingsResponseConfig struct {
 type WorkersScriptSettingsResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var WorkersScriptSettingsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_script_settings_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

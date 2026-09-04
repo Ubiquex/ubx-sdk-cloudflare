@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Configuration_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Configuration_Result_Queues_Rules:
+    actions: Any = None
+    created_at: Any = None
+    description: Any = None
+    prefix: Any = None
+    rule_id: Any = None
+    suffix: Any = None
+
+@dataclasses.dataclass
+class Configuration_Result_Queues:
+    queue_id: Any = None
+    queue_name: Any = None
+    rules: Any = None
+
+@dataclasses.dataclass
+class Configuration_Result:
+    # Name of the bucket.
+    bucket_name: Any = None
+    # List of queues associated with the bucket.
+    queues: Any = None
+
+@dataclasses.dataclass
 class ConfigurationConfig:
     # Account ID.
     account_id: Any = None
@@ -19,6 +46,11 @@ class ConfigurationAttrs:
     account_id: Any = None
     # Name of the bucket.
     bucket_name: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Configuration = ubx.DataSourceBinding(
     wire_type="cloudflare_configuration",

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectiveRedirectUri_Result struct {
 	RedirectUri any
-	Source any
+	Source      any
 }
 
 type EffectiveRedirectUriConfig struct {
@@ -20,17 +20,17 @@ type EffectiveRedirectUriAttrs struct {
 	AccountId any
 	// Unique identifier for the MCP portal.
 	PortalId any
-	Result any
+	Result   any
 	// Unique identifier for the MCP server.
 	ServerId any
-	Success any
+	Success  any
 }
 
 var EffectiveRedirectUri = ubx.DataSourceBinding{
 	WireType: "cloudflare_effective_redirect_uri",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PortalId": ubx.FieldSpec{WireName: "portal_id"},
-		"ServerId": ubx.FieldSpec{WireName: "server_id"},
+		"PortalId":  ubx.FieldSpec{WireName: "portal_id"},
+		"ServerId":  ubx.FieldSpec{WireName: "server_id"},
 	},
 }

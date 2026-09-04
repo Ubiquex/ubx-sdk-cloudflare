@@ -3,6 +3,12 @@ package accessmtlsauthentication
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollectionHostnames_Result struct {
+	ChinaNetwork                any
+	ClientCertificateForwarding any
+	Hostname                    any
+}
+
 type AccessResponseCollectionHostnamesConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +17,7 @@ type AccessResponseCollectionHostnamesConfig struct {
 type AccessResponseCollectionHostnamesAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessResponseCollectionHostnames = ubx.DataSourceBinding{

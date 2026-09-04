@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .page_test_response_single import PageTestResponseSingle, PageTestResponseSingleConfig
+from .schedule_response_single import ScheduleResponseSingle, ScheduleResponseSingleConfig

@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Subdomain_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Subdomain_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Subdomain_Result:
+    # Whether the Worker is available on the workers.dev subdomain.
+    enabled: Any = None
+    # Whether the Worker's Preview URLs are available on the workers.dev subdomain.
+    previews_enabled: Any = None
+
+@dataclasses.dataclass
 class SubdomainConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +35,13 @@ class SubdomainConfig:
 class SubdomainAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # Name of the script, used in URLs and route configuration.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Subdomain = ubx.DataSourceBinding(
     wire_type="cloudflare_subdomain",

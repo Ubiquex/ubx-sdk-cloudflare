@@ -3,6 +3,40 @@ package accessreusablepolicies
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection9_Result_ApprovalGroups struct {
+	ApprovalsNeeded any
+	EmailAddresses  any
+	EmailListUuid   any
+}
+
+type AccessResponseCollection9_Result_ConnectionRules_Rdp struct {
+	AllowedClipboardLocalToRemoteFormats any
+	AllowedClipboardRemoteToLocalFormats any
+}
+
+type AccessResponseCollection9_Result_ConnectionRules struct {
+	Rdp any
+}
+
+type AccessResponseCollection9_Result_MfaConfig struct {
+	AllowedAuthenticators any
+	MfaDisabled           any
+	SessionDuration       any
+}
+
+type AccessResponseCollection9_Result struct {
+	AppCount                     any
+	ApprovalGroups               any
+	ApprovalRequired             any
+	ConnectionRules              any
+	IsolationRequired            any
+	MfaConfig                    any
+	PurposeJustificationPrompt   any
+	PurposeJustificationRequired any
+	Reusable                     any
+	SessionDuration              any
+}
+
 type AccessResponseCollection9Config struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +53,14 @@ type AccessResponseCollection9Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 }
 
 var AccessResponseCollection9 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_9",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

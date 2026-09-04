@@ -3,12 +3,22 @@ package dnssettingsforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsSettingsDnsResponseSingle2_Result_Nameservers struct {
+	NsSet any
+	Type  any
+}
+
+type DnsSettingsDnsResponseSingle2_Result struct {
+	Nameservers any
+}
+
 type DnsSettingsDnsResponseSingle2Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type DnsSettingsDnsResponseSingle2Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

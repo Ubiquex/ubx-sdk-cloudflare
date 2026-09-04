@@ -3,12 +3,133 @@ package zaraz
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZarazConfigResponse_Errors_Source struct {
+	Pointer any
+}
+
+type ZarazConfigResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type ZarazConfigResponse_Result_Analytics struct {
+	DefaultPurpose any
+	Enabled        any
+	SessionExpTime any
+}
+
+type ZarazConfigResponse_Result_Consent_ButtonTextTranslations struct {
+	AcceptAll        any
+	ConfirmMyChoices any
+	RejectAll        any
+}
+
+type ZarazConfigResponse_Result_Consent_Purposes struct {
+	Description any
+	Name        any
+}
+
+type ZarazConfigResponse_Result_Consent_PurposesWithTranslations struct {
+	Description any
+	Name        any
+	Order       any
+}
+
+type ZarazConfigResponse_Result_Consent struct {
+	ButtonTextTranslations                any
+	CompanyEmail                          any
+	CompanyName                           any
+	CompanyStreetAddress                  any
+	ConsentModalIntroHtml                 any
+	ConsentModalIntroHtmlwithTranslations any
+	CookieName                            any
+	CustomCss                             any
+	CustomIntroDisclaimerDismissed        any
+	DefaultLanguage                       any
+	Enabled                               any
+	HideModal                             any
+	Purposes                              any
+	PurposesWithTranslations              any
+	TcfCompliant                          any
+}
+
+type ZarazConfigResponse_Result_Settings_ContextEnricher struct {
+	EscapedWorkerName any
+	WorkerTag         any
+}
+
+type ZarazConfigResponse_Result_Settings struct {
+	AutoInjectScript    any
+	ContextEnricher     any
+	CookieDomain        any
+	Ecommerce           any
+	EventsApiPath       any
+	HideExternalReferer any
+	HideIpaddress       any
+	HideQueryParams     any
+	HideUserAgent       any
+	InitPath            any
+	InjectIframes       any
+	McRootPath          any
+	ScriptPath          any
+	TrackPath           any
+}
+
+type ZarazConfigResponse_Result_Triggers_ExcludeRules_Settings struct {
+	Selector    any
+	Type        any
+	WaitForTags any
+}
+
+type ZarazConfigResponse_Result_Triggers_ExcludeRules struct {
+	Action   any
+	Id       any
+	Match    any
+	Op       any
+	Settings any
+	Value    any
+}
+
+type ZarazConfigResponse_Result_Triggers struct {
+	Description  any
+	ExcludeRules any
+	LoadRules    any
+	Name         any
+	System       any
+}
+
+type ZarazConfigResponse_Result_Variables struct {
+	Name  any
+	Type  any
+	Value any
+}
+
+type ZarazConfigResponse_Result struct {
+	Analytics     any
+	Consent       any
+	DataLayer     any
+	DebugKey      any
+	HistoryChange any
+	Settings      any
+	Tools         any
+	Triggers      any
+	Variables     any
+	ZarazVersion  any
+}
+
 type ZarazConfigResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type ZarazConfigResponseAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

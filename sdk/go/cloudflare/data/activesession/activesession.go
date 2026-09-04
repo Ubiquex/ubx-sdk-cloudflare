@@ -8,7 +8,7 @@ type Activesession_Data_BreakoutRooms struct {
 
 type Activesession_Data struct {
 	// ID of the meeting this session is associated with. In the case of V2 meetings, it is always a UUID. In V1 meetings, it is a room name of the form `abcdef-ghijkl`
-	AssociatedId any
+	AssociatedId  any
 	BreakoutRooms any
 	// timestamp when session created
 	CreatedAt any
@@ -41,9 +41,9 @@ type ActivesessionConfig struct {
 }
 
 type ActivesessionAttrs struct {
-	Data any
+	Data      any
 	MeetingId any
-	Success any
+	Success   any
 }
 
 var Activesession = ubx.DataSourceBinding{

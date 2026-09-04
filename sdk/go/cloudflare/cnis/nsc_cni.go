@@ -15,27 +15,27 @@ type NscCni_Bgp struct {
 type NscCni_Magic struct {
 	ConduitName any
 	Description any
-	Mtu any
+	Mtu         any
 }
 
 var NscCni_BgpFields = ubx.FieldMap{
-		"CustomerAsn": ubx.FieldSpec{WireName: "customer_asn"},
-		"ExtraPrefixes": ubx.FieldSpec{WireName: "extra_prefixes"},
-		"Md5Key": ubx.FieldSpec{WireName: "md5_key"},
-	}
+	"CustomerAsn":   ubx.FieldSpec{WireName: "customer_asn"},
+	"ExtraPrefixes": ubx.FieldSpec{WireName: "extra_prefixes"},
+	"Md5Key":        ubx.FieldSpec{WireName: "md5_key"},
+}
 
 var NscCni_MagicFields = ubx.FieldMap{
-		"ConduitName": ubx.FieldSpec{WireName: "conduit_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-	}
+	"ConduitName": ubx.FieldSpec{WireName: "conduit_name"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Mtu":         ubx.FieldSpec{WireName: "mtu"},
+}
 
 type NscCniConfig struct {
 	// Customer account tag
-	Account any
-	Bgp any
+	Account      any
+	Bgp          any
 	Interconnect any
-	Magic any
+	Magic        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,14 +45,14 @@ type NscCniConfig struct {
 type NscCniAttrs struct {
 	// Customer account tag
 	Account any
-	Bgp any
+	Bgp     any
 	// The BGP mode for a CNI. Controls the customer-facing data path: * `DynamicRouteExchange` — Full BGP: routes flow through to conduit via CRE / bgp-bridge / bgp-bridge-receiver. * `AdvertiseOnly` — static advertisement via taserver, no routes exchanged with Conduit
 	BgpMode any
 	// Customer end of the point-to-point link This should always be inside the same prefix as `p2p_ip`.
-	CustIp any
-	Id any
+	CustIp       any
+	Id           any
 	Interconnect any
-	Magic any
+	Magic        any
 	// Cloudflare end of the point-to-point link
 	P2pIp any
 	// path parameter, not part of the API's own resource representation
@@ -67,16 +67,16 @@ var NscCni = ubx.ResourceBinding{
 		"Account": ubx.FieldSpec{WireName: "account"},
 		"Bgp": ubx.FieldSpec{
 			WireName: "bgp",
-			Kind: "object",
-			Fields: NscCni_BgpFields,
+			Kind:     "object",
+			Fields:   NscCni_BgpFields,
 		},
 		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
 		"Magic": ubx.FieldSpec{
 			WireName: "magic",
-			Kind: "object",
-			Fields: NscCni_MagicFields,
+			Kind:     "object",
+			Fields:   NscCni_MagicFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cni": ubx.FieldSpec{WireName: "cni"},
+		"Cni":       ubx.FieldSpec{WireName: "cni"},
 	},
 }

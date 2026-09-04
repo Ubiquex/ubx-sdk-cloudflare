@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesHostnameAopSingleResponse_Result:
+    # Identifier.
+    cert_id: Any = None
+    # Status of the certificate or the association.
+    cert_status: Any = None
+    # The time when the certificate was updated.
+    cert_updated_at: Any = None
+    # The time when the certificate was uploaded.
+    cert_uploaded_on: Any = None
+    # The hostname certificate.
+    certificate: Any = None
+    # The time when the certificate was created.
+    created_at: Any = None
+    # Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.
+    enabled: Any = None
+    # The date when the certificate expires.
+    expires_on: Any = None
+    # The hostname on the origin for which the client certificate uploaded will be used.
+    hostname: Any = None
+    # The certificate authority that issued the certificate.
+    issuer: Any = None
+    # The serial number on the uploaded certificate.
+    serial_number: Any = None
+    # The type of hash used for the certificate.
+    signature: Any = None
+    # Status of the certificate or the association.
+    status: Any = None
+    # The time when the certificate was updated.
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesHostnameAopSingleResponseConfig:
     # The hostname on the origin for which the client certificate uploaded will be used.
     hostname: Any = None
@@ -17,6 +48,7 @@ class TlsCertificatesAndHostnamesHostnameAopSingleResponseConfig:
 class TlsCertificatesAndHostnamesHostnameAopSingleResponseAttrs:
     # The hostname on the origin for which the client certificate uploaded will be used.
     hostname: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

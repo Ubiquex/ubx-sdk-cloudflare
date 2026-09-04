@@ -7,12 +7,38 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailSendingSubdomainDnsStatusResponse_Result_Errors_Existing:
+    content: Any = None
+    name: Any = None
+    priority: Any = None
+    ttl: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class EmailSendingSubdomainDnsStatusResponse_Result_Errors:
+    code: Any = None
+    conflicting_subdomain: Any = None
+    existing: Any = None
+    missing: Any = None
+    multiple: Any = None
+
+@dataclasses.dataclass
+class EmailSendingSubdomainDnsStatusResponse_Result:
+    # DNS issues detected against the current zone state.
+    errors: Any = None
+    # Desired DNS records for the subdomain.
+    records: Any = None
+    # Aggregated DNS state for the subdomain. `unlocked` means desired records exist with correct content but at least one has had its email_routing/read_only lock cleared.
+    status: Any = None
+
+@dataclasses.dataclass
 class EmailSendingSubdomainDnsStatusResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class EmailSendingSubdomainDnsStatusResponseAttrs:
+    result: Any = None
     # Sending subdomain identifier.
     subdomain_id: Any = None
     # Identifier.

@@ -11,6 +11,20 @@ class MagicRedundancyGroupWithMembersResponse_Members:
     id: Any = None
     type: Any = None
 
+@dataclasses.dataclass
+class MagicRedundancyGroupWithMembersResponse_Result_MemberData:
+    data: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MagicRedundancyGroupWithMembersResponse_Result:
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    member_data: Any = None
+    modified_on: Any = None
+    name: Any = None
+
 _MagicRedundancyGroupWithMembersResponse_MembersFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -37,6 +51,7 @@ class MagicRedundancyGroupWithMembersResponseAttrs:
     members: Any = None
     # Human-readable name for the redundancy group
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

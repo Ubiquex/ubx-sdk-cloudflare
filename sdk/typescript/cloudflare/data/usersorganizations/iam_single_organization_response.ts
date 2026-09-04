@@ -9,6 +9,7 @@ export interface IamSingleOrganizationResponseConfig {
 export interface IamSingleOrganizationResponseAttrs {
   /** Identifier */
   organizationId: string;
+  result: unknown;
 }
 
 export const IamSingleOrganizationResponse: DataSourceBinding<IamSingleOrganizationResponseConfig, IamSingleOrganizationResponseAttrs> = {

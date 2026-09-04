@@ -37,9 +37,9 @@ var FirewallPackageResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_package_response_collection",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Match":     ubx.FieldSpec{WireName: "match"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

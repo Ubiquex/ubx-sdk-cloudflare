@@ -15,6 +15,15 @@ class Entry_Pattern:
     regex: Any = None
     validation: Any = None
 
+@dataclasses.dataclass
+class Entry_Result_Profiles:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Entry_Result:
+    profiles: Any = None
+
 _Entry_Pattern_ValidationFields = {
 }
 
@@ -46,6 +55,7 @@ class EntryAttrs:
     name: Any = None
     pattern: Any = None
     profile_id: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

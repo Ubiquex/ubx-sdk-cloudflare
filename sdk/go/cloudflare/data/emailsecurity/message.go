@@ -3,23 +3,77 @@ package emailsecurity
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type MessageConfig struct {
+type Message_Errors_Source struct {
+	Pointer any
+}
+
+type Message_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Message_Result_ActionParams struct {
+	ClientRecipient     any
+	Destination         any
+	ExpectedDisposition any
+	Type                any
+}
+
+type Message_Result struct {
+	ActionParams   any
+	ActionType     any
+	AlertId        any
+	CreatedAt      any
+	EmailMessageId any
+	MessageId      any
+	PostfixId      any
+	ProcessedAt    any
+	RetryAfter     any
+	RetryCount     any
+	Status         any
+	StatusMessage  any
+}
+
+type Message_ResultInfo struct {
+	// Number of items in current page.
+	Count any
+	// Cursor for next page.
+	Next any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
 	Page any
+	// Number of items per page.
 	PerPage any
-	Status any
+	// Cursor for previous page.
+	Previous any
+	// Deprecated: Always returns 0. End of life: November 1, 2026.
+	TotalCount any
+}
+
+type MessageConfig struct {
+	Page    any
+	PerPage any
+	Status  any
 }
 
 type MessageAttrs struct {
-	Page any
-	PerPage any
-	Status any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	Result     any
+	ResultInfo any
+	Status     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Message = ubx.DataSourceBinding{
 	WireType: "cloudflare_message",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":  ubx.FieldSpec{WireName: "status"},
 	},
 }

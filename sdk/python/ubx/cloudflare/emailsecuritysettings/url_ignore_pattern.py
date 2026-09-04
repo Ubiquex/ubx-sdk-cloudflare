@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UrlIgnorePattern_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class UrlIgnorePattern_Result:
+    # Optional note describing the reason for the ignore pattern.
+    comments: Any = None
+    created_at: Any = None
+    id: Any = None
+    # Deprecated, use `modified_at` instead. End of life: November 1, 2026.
+    last_modified: Any = None
+    modified_at: Any = None
+    # Regular expression identifying URLs to exempt from rewriting.
+    pattern: Any = None
+
+@dataclasses.dataclass
 class UrlIgnorePatternConfig:
     # Optional note describing the reason for the ignore pattern.
     comments: Any = None
@@ -23,6 +39,8 @@ class UrlIgnorePatternAttrs:
     comments: Any = None
     # Regular expression identifying URLs to exempt from rewriting.
     pattern: Any = None
+    # A URL ignore pattern that exempts matching URLs from Email Security's URL rewriting.
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

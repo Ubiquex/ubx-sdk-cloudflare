@@ -7,6 +7,58 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicLansCollectionResponse_Result_Nat:
+    static_prefix: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result_RoutedSubnets:
+    nat: Any = None
+    next_hop: Any = None
+    prefix: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result_StaticAddressing_DhcpRelay:
+    server_addresses: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result_StaticAddressing_DhcpServer_DhcpOptions:
+    code: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result_StaticAddressing_DhcpServer:
+    dhcp_options: Any = None
+    dhcp_pool_end: Any = None
+    dhcp_pool_start: Any = None
+    dns_server: Any = None
+    dns_servers: Any = None
+    reservations: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result_StaticAddressing:
+    address: Any = None
+    dhcp_relay: Any = None
+    dhcp_server: Any = None
+    secondary_address: Any = None
+    virtual_address: Any = None
+
+@dataclasses.dataclass
+class MagicLansCollectionResponse_Result:
+    bond_id: Any = None
+    ha_link: Any = None
+    id: Any = None
+    is_breakout: Any = None
+    is_prioritized: Any = None
+    name: Any = None
+    nat: Any = None
+    physport: Any = None
+    routed_subnets: Any = None
+    site_id: Any = None
+    static_addressing: Any = None
+    vlan_tag: Any = None
+
+@dataclasses.dataclass
 class MagicLansCollectionResponseConfig:
     pass
 
@@ -14,6 +66,7 @@ class MagicLansCollectionResponseConfig:
 class MagicLansCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
     # Identifier
     site_id: Any = None
 

@@ -12,6 +12,5 @@ type ApiUrlinfoAttrs struct {
 
 var ApiUrlinfo = ubx.DataSourceBinding{
 	WireType: "cloudflare_brand_protection_api_urlinfo",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

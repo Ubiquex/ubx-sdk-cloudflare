@@ -3,12 +3,20 @@ package zonelevelauthenticatedoriginpulls
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseCollection3_Result struct {
+	Certificate any
+	Enabled     any
+	Id          any
+	PrivateKey  any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseCollection3Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type TlsCertificatesAndHostnamesCertificateResponseCollection3Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -7,12 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Urlnormalization_Messages_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Urlnormalization_Messages:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Urlnormalization_Result:
+    # The scope of the URL normalization.
+    scope: Any = None
+    # The type of URL normalization performed by Cloudflare.
+    type: Any = None
+
+@dataclasses.dataclass
 class UrlnormalizationConfig:
     # The unique ID of the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class UrlnormalizationAttrs:
+    errors: Any = None
+    # A list of warning messages.
+    messages: Any = None
+    # A URL Normalization object.
+    result: Any = None
+    success: Any = None
     # The unique ID of the zone.
     zone_id: Any = None
 

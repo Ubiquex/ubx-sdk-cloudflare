@@ -20,7 +20,7 @@ type PemAttrs struct {
 var Pem = ubx.DataSourceBinding{
 	WireType: "cloudflare_pem",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"SamlCertSetId": ubx.FieldSpec{WireName: "saml_cert_set_id"},
 	},
 }

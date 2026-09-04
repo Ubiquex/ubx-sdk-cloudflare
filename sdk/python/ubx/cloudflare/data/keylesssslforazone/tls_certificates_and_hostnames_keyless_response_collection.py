@@ -7,12 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesKeylessResponseCollection_Result_Tunnel:
+    private_ip: Any = None
+    vnet_id: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesKeylessResponseCollection_Result:
+    created_on: Any = None
+    enabled: Any = None
+    host: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    permissions: Any = None
+    port: Any = None
+    status: Any = None
+    tunnel: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesKeylessResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesKeylessResponseCollectionAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

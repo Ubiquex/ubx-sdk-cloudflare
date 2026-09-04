@@ -3,6 +3,23 @@ package cloudflareimages
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImageResponseSingle_Result struct {
+	// Can set the creator field with an internal user ID.
+	Creator any
+	// Image file name.
+	Filename any
+	// Image unique identifier.
+	Id any
+	// User modifiable key-value store. Can be used for keeping references to another system of record for managing images. Metadata must not exceed 1024 bytes.
+	Meta any
+	// Indicates whether the image can be a accessed only using it's UID. If set to true, a signed token needs to be generated with a signing key to view the image.
+	RequireSignedUrls any
+	// When the media item was uploaded.
+	Uploaded any
+	// Object specifying available variants for an image.
+	Variants any
+}
+
 type ImagesImageResponseSingleConfig struct {
 	// Can set the creator field with an internal user ID.
 	Creator any
@@ -33,6 +50,7 @@ type ImagesImageResponseSingleAttrs struct {
 	Metadata any
 	// Indicates whether the image requires a signature token for the access.
 	RequireSignedUrls any
+	Result            any
 	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
 	Url any
 	// path parameter, not part of the API's own resource representation
@@ -44,13 +62,13 @@ type ImagesImageResponseSingleAttrs struct {
 var ImagesImageResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_images_image_response_single",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Creator":           ubx.FieldSpec{WireName: "creator"},
+		"File":              ubx.FieldSpec{WireName: "file"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ImageId": ubx.FieldSpec{WireName: "image_id"},
+		"Url":               ubx.FieldSpec{WireName: "url"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+		"ImageId":           ubx.FieldSpec{WireName: "image_id"},
 	},
 }

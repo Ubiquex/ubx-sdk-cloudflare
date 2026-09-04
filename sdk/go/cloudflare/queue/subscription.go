@@ -5,29 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Subscription_Destination struct {
 	QueueId any
-	Type any
+	Type    any
 }
 
-type Subscription_Source struct {
-	ModelName any
-	ScriptTag any
-	Type any
-	WorkerName any
+type Subscription_Errors struct {
+	Code    any
+	Message any
+}
+
+type Subscription_Result_Source struct {
+	ModelName    any
+	ScriptTag    any
+	Type         any
+	WorkerName   any
 	WorkflowName any
 }
 
-var Subscription_DestinationFields = ubx.FieldMap{
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+type Subscription_Result struct {
+	// When the subscription was created
+	CreatedAt any
+	// Destination configuration for the subscription
+	Destination any
+	// Whether the subscription is active
+	Enabled any
+	// List of event types this subscription handles
+	Events any
+	// Unique identifier for the subscription
+	Id any
+	// When the subscription was last modified
+	ModifiedAt any
+	// Name of the subscription
+	Name any
+	// Source configuration for the subscription
+	Source any
+}
 
-var Subscription_SourceFields = ubx.FieldMap{
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"ScriptTag": ubx.FieldSpec{WireName: "script_tag"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WorkerName": ubx.FieldSpec{WireName: "worker_name"},
-		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
-	}
+var Subscription_DestinationFields = ubx.FieldMap{
+	"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
+
+var Subscription_Result_SourceFields = ubx.FieldMap{
+	"ModelName":    ubx.FieldSpec{WireName: "model_name"},
+	"ScriptTag":    ubx.FieldSpec{WireName: "script_tag"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+	"WorkerName":   ubx.FieldSpec{WireName: "worker_name"},
+	"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
+}
 
 type SubscriptionConfig struct {
 	// Destination configuration for the subscription
@@ -51,12 +75,17 @@ type SubscriptionAttrs struct {
 	Destination any
 	// Whether the subscription is active
 	Enabled any
+	Errors  any
 	// List of event types this subscription handles
-	Events any
+	Events   any
+	Messages any
 	// Name of the subscription
-	Name any
+	Name   any
+	Result any
 	// Source configuration for the subscription
 	Source any
+	// Indicates if the API call was successful or not.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -68,18 +97,18 @@ var Subscription = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "object",
-			Fields: Subscription_DestinationFields,
+			Kind:     "object",
+			Fields:   Subscription_DestinationFields,
 		},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Events":  ubx.FieldSpec{WireName: "events"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Subscription_SourceFields,
+			Kind:     "object",
+			Fields:   Subscription_Result_SourceFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
 		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
 	},
 }

@@ -3,6 +3,16 @@ package ipaddressmanagementleases
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingResponseCollection4_Result struct {
+	ActiveFrom any
+	Cidrs      any
+	CreatedAt  any
+	Id         any
+	ModifiedAt any
+	OwnerId    any
+	Purpose    any
+}
+
 type AddressingResponseCollection4Config struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -11,6 +21,7 @@ type AddressingResponseCollection4Config struct {
 type AddressingResponseCollection4Attrs struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
+	Result    any
 }
 
 var AddressingResponseCollection4 = ubx.DataSourceBinding{

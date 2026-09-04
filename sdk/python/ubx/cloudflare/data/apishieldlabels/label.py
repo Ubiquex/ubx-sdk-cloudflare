@@ -7,6 +7,10 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Label_Result:
+    mapped_resources: Any = None
+
+@dataclasses.dataclass
 class LabelConfig:
     # Direction to order results.
     direction: Any = None
@@ -28,6 +32,7 @@ class LabelAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # * `user` - label is owned by the user * `managed` - label is owned by cloudflare
     source: Any = None
     with_mapped_resource_counts: Any = None

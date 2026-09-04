@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DataTag_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class DataTagConfig:
     account_id: Any = None
     category_id: Any = None
@@ -15,6 +23,7 @@ class DataTagConfig:
 class DataTagAttrs:
     account_id: Any = None
     category_id: Any = None
+    result: Any = None
 
 DataTag = ubx.DataSourceBinding(
     wire_type="cloudflare_data_tag",

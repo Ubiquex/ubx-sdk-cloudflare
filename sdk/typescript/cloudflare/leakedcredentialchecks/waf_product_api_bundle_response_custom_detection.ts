@@ -4,6 +4,15 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface WafProductApiBundleResponseCustomDetection_Id {
 }
 
+export interface WafProductApiBundleResponseCustomDetection_Result {
+  /** Defines the unique ID for this custom detection. */
+  id?: WafProductApiBundleResponseCustomDetection_Id | Computed<WafProductApiBundleResponseCustomDetection_Id>;
+  /** Defines ehe ruleset expression to use in matching the password in a request. */
+  password?: string | Computed<string>;
+  /** Defines the ruleset expression to use in matching the username in a request. */
+  username?: string | Computed<string>;
+}
+
 const WafProductApiBundleResponseCustomDetection_IdFields: FieldMap = {
 };
 
@@ -25,6 +34,8 @@ export interface WafProductApiBundleResponseCustomDetectionAttrs {
   id: WafProductApiBundleResponseCustomDetection_Id;
   /** Defines ehe ruleset expression to use in matching the password in a request. */
   password: string;
+  /** Defines a custom set of username/password expressions to match Leaked Credential Checks on. */
+  result: WafProductApiBundleResponseCustomDetection_Result;
   /** Defines the ruleset expression to use in matching the username in a request. */
   username: string;
   /** path parameter, not part of the API's own resource representation */

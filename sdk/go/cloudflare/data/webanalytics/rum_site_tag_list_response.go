@@ -3,22 +3,33 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumSiteTagListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
 type RumSiteTagListResponseConfig struct {
 	// Identifier.
 	AccountId any
-	All any
+	All       any
 }
 
 type RumSiteTagListResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	All any
+	All       any
+	Errors    any
+	Messages  any
+	// List of Web Analytics site tag identifiers.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RumSiteTagListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_rum_site_tag_list_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"All": ubx.FieldSpec{WireName: "all"},
+		"All":       ubx.FieldSpec{WireName: "all"},
 	},
 }

@@ -7,12 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesGlobalWarpOverrideResponse_Result:
+    # Disconnects all devices on the account using Global WARP override.
+    disconnect: Any = None
+    # When the Global WARP override state was updated.
+    timestamp: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesGlobalWarpOverrideResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesGlobalWarpOverrideResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesGlobalWarpOverrideResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_global_warp_override_response",

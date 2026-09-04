@@ -19,6 +19,18 @@ class Config_Mtls:
     # Set SSL mode to 'require', 'verify-ca', or 'verify-full' to verify the CA.
     sslmode: Any = None
 
+@dataclasses.dataclass
+class Config_Result:
+    caching: Any = None
+    created_on: Any = None
+    id: Any = None
+    modified_on: Any = None
+    mtls: Any = None
+    name: Any = None
+    origin: Any = None
+    origin_connection_limit: Any = None
+    restarted_on: Any = None
+
 _Config_CachingFields = {
 }
 
@@ -61,6 +73,7 @@ class ConfigAttrs:
     origin_connection_limit: Any = None
     # Defines the last time the Hyperdrive connection pool was explicitly restarted via the restart endpoint. Omitted if the pool has never been explicitly restarted.
     restarted_on: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

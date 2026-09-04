@@ -4,16 +4,16 @@ package groups
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_Members struct {
-	AccountId any
+	AccountId  any
 	AccountTag any
-	CreatedAt any
-	UpdatedAt any
-	Uuid any
+	CreatedAt  any
+	UpdatedAt  any
+	Uuid       any
 }
 
 type GroupConfig struct {
 	Description any
-	Name any
+	Name        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -21,12 +21,12 @@ type GroupConfig struct {
 }
 
 type GroupAttrs struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Members any
-	Name any
-	UpdatedAt any
-	Uuid any
+	Members     any
+	Name        any
+	UpdatedAt   any
+	Uuid        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -37,8 +37,8 @@ var Group = ubx.ResourceBinding{
 	WireType: "cloudflare_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"GroupId":     ubx.FieldSpec{WireName: "group_id"},
 	},
 }

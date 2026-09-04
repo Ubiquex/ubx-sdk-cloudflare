@@ -12,3 +12,4 @@ from .impersonation_registry import ImpersonationRegistry, ImpersonationRegistry
 from .sending_domain_restriction import SendingDomainRestriction, SendingDomainRestrictionConfig
 from .trusted_domain import TrustedDomain, TrustedDomainConfig
 from .url_ignore_pattern import UrlIgnorePattern, UrlIgnorePatternConfig
+from .verification import Verification, VerificationConfig

@@ -3,6 +3,25 @@ package notificationwebhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AaaSchemasSingleResponse_Result struct {
+	// Timestamp of when the webhook destination was created.
+	CreatedAt any
+	// The unique identifier of a webhook
+	Id any
+	// Timestamp of the last time an attempt to dispatch a notification to this webhook failed.
+	LastFailure any
+	// Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.
+	LastSuccess any
+	// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
+	Name any
+	// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
+	Secret any
+	// Type of webhook endpoint.
+	Type any
+	// The POST endpoint to call when dispatching a notification.
+	Url any
+}
+
 type AaaSchemasSingleResponseConfig struct {
 	// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
 	Name any
@@ -18,7 +37,8 @@ type AaaSchemasSingleResponseConfig struct {
 
 type AaaSchemasSingleResponseAttrs struct {
 	// The name of the webhook destination. This will be included in the request body when you receive a webhook notification.
-	Name any
+	Name   any
+	Result any
 	// Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.
 	Secret any
 	// The POST endpoint to call when dispatching a notification.
@@ -32,9 +52,9 @@ type AaaSchemasSingleResponseAttrs struct {
 var AaaSchemasSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_aaa_schemas_single_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Secret":    ubx.FieldSpec{WireName: "secret"},
+		"Url":       ubx.FieldSpec{WireName: "url"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"WebhookId": ubx.FieldSpec{WireName: "webhook_id"},
 	},

@@ -7,6 +7,177 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Project_Result_BuildConfig:
+    build_caching: Any = None
+    build_command: Any = None
+    destination_dir: Any = None
+    root_dir: Any = None
+    web_analytics_tag: Any = None
+    web_analytics_token: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata:
+    branch: Any = None
+    commit_dirty: Any = None
+    commit_hash: Any = None
+    commit_message: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_DeploymentTrigger:
+    metadata: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_EnvVars:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_LatestStage:
+    ended_on: Any = None
+    name: Any = None
+    started_on: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_Source_Config:
+    deployments_enabled: Any = None
+    owner: Any = None
+    owner_id: Any = None
+    path_excludes: Any = None
+    path_includes: Any = None
+    pr_comments_enabled: Any = None
+    preview_branch_excludes: Any = None
+    preview_branch_includes: Any = None
+    preview_deployment_setting: Any = None
+    production_branch: Any = None
+    production_deployments_enabled: Any = None
+    repo_id: Any = None
+    repo_name: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_Source:
+    config: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment:
+    aliases: Any = None
+    build_config: Any = None
+    created_on: Any = None
+    deployment_trigger: Any = None
+    env_vars: Any = None
+    environment: Any = None
+    id: Any = None
+    is_skipped: Any = None
+    latest_stage: Any = None
+    modified_on: Any = None
+    project_id: Any = None
+    project_name: Any = None
+    short_id: Any = None
+    skip_reason: Any = None
+    source: Any = None
+    stages: Any = None
+    url: Any = None
+    uses_functions: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_AiBindings:
+    project_id: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_AnalyticsEngineDatasets:
+    dataset: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_D1Databases:
+    id: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_DurableObjectNamespaces:
+    namespace_id: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_Limits:
+    cpu_ms: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_MtlsCertificates:
+    certificate_id: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_Placement:
+    mode: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_QueueProducers:
+    name: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_R2Buckets:
+    jurisdiction: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_Services:
+    entrypoint: Any = None
+    environment: Any = None
+    service: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview_VectorizeBindings:
+    index_name: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs_Preview:
+    ai_bindings: Any = None
+    always_use_latest_compatibility_date: Any = None
+    analytics_engine_datasets: Any = None
+    browsers: Any = None
+    build_image_major_version: Any = None
+    compatibility_date: Any = None
+    compatibility_flags: Any = None
+    d1_databases: Any = None
+    durable_object_namespaces: Any = None
+    env_vars: Any = None
+    fail_open: Any = None
+    hyperdrive_bindings: Any = None
+    kv_namespaces: Any = None
+    limits: Any = None
+    mtls_certificates: Any = None
+    placement: Any = None
+    queue_producers: Any = None
+    r2_buckets: Any = None
+    services: Any = None
+    usage_model: Any = None
+    vectorize_bindings: Any = None
+    wrangler_config_hash: Any = None
+
+@dataclasses.dataclass
+class Project_Result_DeploymentConfigs:
+    preview: Any = None
+    production: Any = None
+
+@dataclasses.dataclass
+class Project_Result:
+    build_config: Any = None
+    canonical_deployment: Any = None
+    created_on: Any = None
+    deployment_configs: Any = None
+    domains: Any = None
+    framework: Any = None
+    framework_version: Any = None
+    id: Any = None
+    latest_deployment: Any = None
+    name: Any = None
+    preview_script_name: Any = None
+    production_branch: Any = None
+    production_script_name: Any = None
+    source: Any = None
+    subdomain: Any = None
+    uses_functions: Any = None
+
+@dataclasses.dataclass
 class ProjectConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +194,7 @@ class ProjectAttrs:
     page: Any = None
     # How many projects to return per page.
     per_page: Any = None
+    result: Any = None
 
 Project = ubx.DataSourceBinding(
     wire_type="cloudflare_project",

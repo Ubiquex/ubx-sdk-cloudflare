@@ -44,7 +44,7 @@ type RealtimekitWebhookSuccessResponseAttrs struct {
 	// Events that this webhook will get triggered by
 	Events any
 	// Name of the webhook
-	Name any
+	Name    any
 	Success any
 	// URL this webhook will send events to
 	Url any
@@ -59,12 +59,12 @@ type RealtimekitWebhookSuccessResponseAttrs struct {
 var RealtimekitWebhookSuccessResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_realtimekit_webhook_success_response",
 	Fields: ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+		"Events":    ubx.FieldSpec{WireName: "events"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Url":       ubx.FieldSpec{WireName: "url"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 		"WebhookId": ubx.FieldSpec{WireName: "webhook_id"},
 	},
 }

@@ -7,6 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ActiveRecording_Data:
+    # If the audio_config is passed, the URL for downloading the audio recording is returned.
+    audio_download_url: Any = None
+    # URL where the recording can be downloaded.
+    download_url: Any = None
+    # Timestamp when the download URL expires.
+    download_url_expiry: Any = None
+    # File size of the recording, in bytes.
+    file_size: Any = None
+    # ID of the recording
+    id: Any = None
+    # Timestamp when this recording was invoked.
+    invoked_time: Any = None
+    # File name of the recording.
+    output_file_name: Any = None
+    # Total recording time in seconds.
+    recording_duration: Any = None
+    # ID of the meeting session this recording is for.
+    session_id: Any = None
+    # Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.
+    started_time: Any = None
+    # Current status of the recording.
+    status: Any = None
+    # Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
+    stopped_time: Any = None
+
+@dataclasses.dataclass
 class ActiveRecordingConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -20,7 +47,10 @@ class ActiveRecordingAttrs:
     account_id: Any = None
     # The app identifier tag.
     app_id: Any = None
+    data: Any = None
     meeting_id: Any = None
+    # Success status of the operation
+    success: Any = None
 
 ActiveRecording = ubx.DataSourceBinding(
     wire_type="cloudflare_active_recording",

@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollection8_Result_ConnectionRules_Ssh:
+    allow_email_alias: Any = None
+    usernames: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection8_Result_ConnectionRules:
+    ssh: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection8_Result_MfaConfig:
+    allowed_authenticators: Any = None
+    mfa_disabled: Any = None
+    session_duration: Any = None
+
+@dataclasses.dataclass
+class AccessResponseCollection8_Result:
+    connection_rules: Any = None
+    mfa_config: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollection8Config:
     # Identifier.
     account_id: Any = None
@@ -27,6 +47,7 @@ class AccessResponseCollection8Attrs:
     page: Any = None
     # Number of results per page.
     per_page: Any = None
+    result: Any = None
 
 AccessResponseCollection8 = ubx.DataSourceBinding(
     wire_type="cloudflare_access_response_collection_8",

@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UploadToken_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class UploadToken_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class UploadToken_Result:
+    # Short-lived JWT used to authenticate Pages Direct Upload asset operations.
+    jwt: Any = None
+
+@dataclasses.dataclass
 class UploadTokenConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +33,13 @@ class UploadTokenConfig:
 class UploadTokenAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # Name of the project.
     project_name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 UploadToken = ubx.DataSourceBinding(
     wire_type="cloudflare_upload_token",

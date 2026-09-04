@@ -7,12 +7,40 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Securitytxt_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Securitytxt_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Securitytxt_Result:
+    acknowledgments: Any = None
+    canonical: Any = None
+    contact: Any = None
+    enabled: Any = None
+    encryption: Any = None
+    expires: Any = None
+    hiring: Any = None
+    policy: Any = None
+    preferred_languages: Any = None
+
+@dataclasses.dataclass
 class SecuritytxtConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class SecuritytxtAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

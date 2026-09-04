@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosExpressionFilterListResponse_Result:
+    created_on: Any = None
+    expression: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+
+@dataclasses.dataclass
 class DosExpressionFilterListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -25,6 +33,7 @@ class DosExpressionFilterListResponseAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 DosExpressionFilterListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_expression_filter_list_response",

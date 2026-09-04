@@ -47,6 +47,46 @@ export interface LoadBalancingSchemasSingleResponse_Origins {
   weight?: number | Computed<number>;
 }
 
+export interface LoadBalancingSchemasSingleResponse_Result {
+  /** A list of regions from which to run health checks. Null means every Cloudflare data center. */
+  checkRegions?: string[] | Computed<string[]>;
+  createdOn?: string | Computed<string>;
+  /** A human-readable description of the pool. */
+  description?: string | Computed<string>;
+  /** This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at. */
+  disabledAt?: string | Computed<string>;
+  /** Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any). */
+  enabled?: boolean | Computed<boolean>;
+  /** A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array ["regional", "global"]; any other combination is rejected. Null (the default) behaves like ["local", "global"]. ["regional", "global"] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions. */
+  healthSources?: string[] | Computed<string[]>;
+  id?: string | Computed<string>;
+  /** The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set. */
+  latitude?: number | Computed<number>;
+  /** Configures load shedding policies and percentages for the pool. */
+  loadShedding?: LoadBalancingSchemasSingleResponse_LoadShedding | Computed<LoadBalancingSchemasSingleResponse_LoadShedding>;
+  /** The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set. */
+  longitude?: number | Computed<number>;
+  /** The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool. */
+  minimumOrigins?: number | Computed<number>;
+  modifiedOn?: string | Computed<string>;
+  /** The ID of the Monitor to use for checking the health of origins within this pool. */
+  monitor?: string | Computed<string>;
+  /** The ID of the Monitor Group to use for checking the health of origins within this pool. */
+  monitorGroup?: string | Computed<string>;
+  /** A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed. */
+  name?: string | Computed<string>;
+  /** List of networks where Load Balancer or Pool is enabled. */
+  networks?: string[] | Computed<string[]>;
+  /** This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list. */
+  notificationEmail?: string | Computed<string>;
+  /** Filter pool and origin health notifications by resource type or health status. Use null to reset. */
+  notificationFilter?: LoadBalancingSchemasSingleResponse_NotificationFilter | Computed<LoadBalancingSchemasSingleResponse_NotificationFilter>;
+  /** Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity. */
+  originSteering?: LoadBalancingSchemasSingleResponse_OriginSteering | Computed<LoadBalancingSchemasSingleResponse_OriginSteering>;
+  /** The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy. */
+  origins?: LoadBalancingSchemasSingleResponse_Origins[] | Computed<LoadBalancingSchemasSingleResponse_Origins[]>;
+}
+
 const LoadBalancingSchemasSingleResponse_LoadSheddingFields: FieldMap = {
   defaultPercent: "default_percent",
   defaultPolicy: "default_policy",
@@ -168,6 +208,7 @@ export interface LoadBalancingSchemasSingleResponseAttrs {
   originSteering: LoadBalancingSchemasSingleResponse_OriginSteering;
   /** The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy. */
   origins: LoadBalancingSchemasSingleResponse_Origins[];
+  result: LoadBalancingSchemasSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

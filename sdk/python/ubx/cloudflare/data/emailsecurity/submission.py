@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Submission_Result_EscalatedAs:
+    pass
+
+@dataclasses.dataclass
+class Submission_Result:
+    customer_status: Any = None
+    escalated_as: Any = None
+    escalated_at: Any = None
+    escalated_by: Any = None
+    escalated_submission_id: Any = None
+    original_disposition: Any = None
+    original_edf_hash: Any = None
+    original_postfix_id: Any = None
+    outcome: Any = None
+    outcome_disposition: Any = None
+    requested_at: Any = None
+    requested_by: Any = None
+    requested_disposition: Any = None
+    requested_ts: Any = None
+    status: Any = None
+    subject: Any = None
+    submission_id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class SubmissionConfig:
     direction: Any = None
     end: Any = None
@@ -35,6 +60,7 @@ class SubmissionAttrs:
     per_page: Any = None
     query: Any = None
     requested_disposition: Any = None
+    result: Any = None
     start: Any = None
     status: Any = None
     submission_id: Any = None

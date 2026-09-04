@@ -3,16 +3,32 @@ package zerotrustconnectivitysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelZeroTrustConnectivitySettingsResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelZeroTrustConnectivitySettingsResponse_Result struct {
+	// A flag to enable the ICMP proxy for the account network.
+	IcmpProxyEnabled any
+	// A flag to enable WARP to WARP traffic.
+	OfframpWarpEnabled any
+}
+
 type TunnelZeroTrustConnectivitySettingsResponseConfig struct {
 }
 
 type TunnelZeroTrustConnectivitySettingsResponseAttrs struct {
 	// Cloudflare account ID
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var TunnelZeroTrustConnectivitySettingsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_zero_trust_connectivity_settings_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

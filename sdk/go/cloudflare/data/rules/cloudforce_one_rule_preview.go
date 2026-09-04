@@ -4,79 +4,79 @@ package rules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudforceOneRulePreview_Rules_Meta struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type CloudforceOneRulePreview_Rules_PendingChange struct {
-	ApprovalId any
+	ApprovalId  any
 	RequestedAt any
 	RequestedBy any
-	Type any
+	Type        any
 }
 
 type CloudforceOneRulePreview_Rules struct {
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Enabled any
-	Id any
-	IsPublic any
-	Meta any
-	Name any
-	Namespaces any
-	Path any
+	Content           any
+	CreatedAt         any
+	CreatedBy         any
+	Description       any
+	Enabled           any
+	Id                any
+	IsPublic          any
+	Meta              any
+	Name              any
+	Namespaces        any
+	Path              any
 	PendingApprovalId any
-	PendingChange any
-	StructuredSource any
-	UpdatedAt any
-	UpdatedBy any
+	PendingChange     any
+	StructuredSource  any
+	UpdatedAt         any
+	UpdatedBy         any
 }
 
 type CloudforceOneRulePreviewConfig struct {
 	AccountId any
 	// Limits rules to the specified public visibility.
 	IsPublic any
-	Limit any
+	Limit    any
 	// Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&namespace=bar).
 	Namespace any
-	Offset any
+	Offset    any
 	// Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.
 	Path any
 	// For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.
 	Recursive any
-	Search any
+	Search    any
 }
 
 type CloudforceOneRulePreviewAttrs struct {
 	AccountId any
 	// Limits rules to the specified public visibility.
 	IsPublic any
-	Limit any
+	Limit    any
 	// Selects namespaces. Repeat the parameter to select multiple namespaces (for example, namespace=foo&namespace=bar).
 	Namespace any
-	Offset any
+	Offset    any
 	// Selects paths with exact-match semantics. Omit the parameter to return rules from all paths. Pass an empty string (path=) to return only rules with an empty or uncategorized path. Pass a value (for example, path=yara) to match that exact path. Repeat the parameter (for example, path=yara&path=expr) to OR-match multiple paths with SQL `IN (...)` semantics. The `recursive` flag affects only customer-account namespace selection.
 	Path any
 	// For customer accounts, true enables descendant matching for namespaces. Paths always use exact matching.
 	Recursive any
-	Rules any
-	Search any
-	Total any
+	Rules     any
+	Search    any
+	Total     any
 }
 
 var CloudforceOneRulePreview = ubx.DataSourceBinding{
 	WireType: "cloudflare_cloudforce_one_rule_preview",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"IsPublic": ubx.FieldSpec{WireName: "is_public"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"IsPublic":  ubx.FieldSpec{WireName: "is_public"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Path": ubx.FieldSpec{WireName: "path"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
+		"Path":      ubx.FieldSpec{WireName: "path"},
 		"Recursive": ubx.FieldSpec{WireName: "recursive"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

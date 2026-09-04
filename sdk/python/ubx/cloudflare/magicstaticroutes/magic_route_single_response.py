@@ -7,13 +7,38 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class MagicRouteSingleResponse_Scope:
+class MagicRouteSingleResponse_Result_Route_Scope:
     # List of colo names for the ECMP scope.
     colo_names: Any = None
     # List of colo regions for the ECMP scope.
     colo_regions: Any = None
 
-_MagicRouteSingleResponse_ScopeFields = {
+@dataclasses.dataclass
+class MagicRouteSingleResponse_Result_Route:
+    # When the route was created.
+    created_on: Any = None
+    # An optional human provided description of the static route.
+    description: Any = None
+    # Identifier
+    id: Any = None
+    # When the route was last modified.
+    modified_on: Any = None
+    # The next-hop IP Address for the static route.
+    nexthop: Any = None
+    # IP Prefix in Classless Inter-Domain Routing format.
+    prefix: Any = None
+    # Priority of the static route.
+    priority: Any = None
+    # Used only for ECMP routes.
+    scope: Any = None
+    # Optional weight of the ECMP scope - if provided.
+    weight: Any = None
+
+@dataclasses.dataclass
+class MagicRouteSingleResponse_Result:
+    route: Any = None
+
+_MagicRouteSingleResponse_Result_Route_ScopeFields = {
     "colo_names": ubx.FieldSpec(wire_name="colo_names"),
     "colo_regions": ubx.FieldSpec(wire_name="colo_regions"),
 }
@@ -47,6 +72,7 @@ class MagicRouteSingleResponseAttrs:
     prefix: Any = None
     # Priority of the static route.
     priority: Any = None
+    result: Any = None
     # Used only for ECMP routes.
     scope: Any = None
     # Optional weight of the ECMP scope - if provided.
@@ -66,7 +92,7 @@ MagicRouteSingleResponse = ubx.ResourceBinding(
         "scope": ubx.FieldSpec(
             wire_name="scope",
             kind="object",
-            fields=_MagicRouteSingleResponse_ScopeFields,
+            fields=_MagicRouteSingleResponse_Result_Route_ScopeFields,
         ),
         "weight": ubx.FieldSpec(wire_name="weight"),
         "account_id": ubx.FieldSpec(wire_name="account_id"),

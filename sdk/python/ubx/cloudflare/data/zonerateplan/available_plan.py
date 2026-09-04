@@ -7,11 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AvailablePlan_Result:
+    can_subscribe: Any = None
+    currency: Any = None
+    externally_managed: Any = None
+    frequency: Any = None
+    id: Any = None
+    is_subscribed: Any = None
+    legacy_id: Any = None
+    name: Any = None
+    price: Any = None
+
+@dataclasses.dataclass
 class AvailablePlanConfig:
     pass
 
 @dataclasses.dataclass
 class AvailablePlanAttrs:
+    result: Any = None
     # Identifier
     zone_id: Any = None
 

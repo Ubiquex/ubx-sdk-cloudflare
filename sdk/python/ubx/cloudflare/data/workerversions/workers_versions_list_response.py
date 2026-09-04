@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkersVersionsListResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsListResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsListResponse_Result_Items_Metadata:
+    author_email: Any = None
+    author_id: Any = None
+    created_on: Any = None
+    has_preview: Any = None
+    modified_on: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsListResponse_Result_Items:
+    id: Any = None
+    metadata: Any = None
+    number: Any = None
+
+@dataclasses.dataclass
+class WorkersVersionsListResponse_Result:
+    items: Any = None
+
+@dataclasses.dataclass
 class WorkersVersionsListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -21,10 +51,15 @@ class WorkersVersionsListResponseAttrs:
     # Identifier.
     account_id: Any = None
     deployable: Any = None
+    errors: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # Name of the script.
     script_name: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 WorkersVersionsListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_workers_versions_list_response",

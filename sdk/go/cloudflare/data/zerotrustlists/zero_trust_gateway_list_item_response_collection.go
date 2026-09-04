@@ -3,6 +3,23 @@ package zerotrustlists
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayListItemResponseCollection_Result struct {
+	CreatedAt   any
+	Description any
+	Value       any
+}
+
+type ZeroTrustGatewayListItemResponseCollection_ResultInfo struct {
+	// Shows the total results returned based on your search parameters.
+	Count any
+	// Show the current page within paginated list of results.
+	Page any
+	// Show the number of results per page of results.
+	PerPage any
+	// Show the total results available without any search parameters.
+	TotalCount any
+}
+
 type ZeroTrustGatewayListItemResponseCollectionConfig struct {
 	AccountId any
 	// Identify the API resource with a UUID.
@@ -13,12 +30,15 @@ type ZeroTrustGatewayListItemResponseCollectionAttrs struct {
 	AccountId any
 	// Identify the API resource with a UUID.
 	ListId any
+	// Provide the list items.
+	Result     any
+	ResultInfo any
 }
 
 var ZeroTrustGatewayListItemResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_list_item_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ListId": ubx.FieldSpec{WireName: "list_id"},
+		"ListId":    ubx.FieldSpec{WireName: "list_id"},
 	},
 }

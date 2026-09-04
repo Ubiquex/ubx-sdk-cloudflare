@@ -3,14 +3,32 @@ package accountloadbalancermonitorgroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingMonitorGroupReferencesResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type LoadBalancingMonitorGroupReferencesResponse_Result struct {
+	ReferenceType any
+	ResourceId    any
+	ResourceName  any
+	ResourceType  any
+}
+
 type LoadBalancingMonitorGroupReferencesResponseConfig struct {
 	MonitorGroupId any
 }
 
 type LoadBalancingMonitorGroupReferencesResponseAttrs struct {
 	// Identifier.
-	AccountId any
+	AccountId      any
+	Errors         any
+	Messages       any
 	MonitorGroupId any
+	// List of resources that reference a given monitor group.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LoadBalancingMonitorGroupReferencesResponse = ubx.DataSourceBinding{

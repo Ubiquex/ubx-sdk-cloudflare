@@ -3,57 +3,101 @@ package securitycenterinsights
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Insight_Errors_Source struct {
+	Pointer any
+}
+
+type Insight_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type Insight_Page struct {
 }
 
-var Insight_PageFields = ubx.FieldMap{
-	}
+type Insight_Result_Issues_Payload struct {
+	DetectionMethod any
+	ZoneTag         any
+}
+
+type Insight_Result_Issues struct {
+	Dismissed          any
+	HasExtendedContext any
+	Id                 any
+	IssueClass         any
+	IssueType          any
+	Payload            any
+	ResolveLink        any
+	ResolveText        any
+	Severity           any
+	Since              any
+	Status             any
+	Subject            any
+	Timestamp          any
+	UserClassification any
+}
+
+type Insight_Result struct {
+	Count   any
+	Issues  any
+	Page    any
+	PerPage any
+}
+
+var Insight_PageFields = ubx.FieldMap{}
 
 type InsightConfig struct {
 	// Identifier.
-	AccountId any
-	Dismissed any
+	AccountId  any
+	Dismissed  any
 	IssueClass any
-	IssueType any
-	Page any
-	PerPage any
-	Product any
-	Severity any
-	Subject any
+	IssueType  any
+	Page       any
+	PerPage    any
+	Product    any
+	Severity   any
+	Subject    any
 }
 
 type InsightAttrs struct {
 	// Identifier.
-	AccountId any
-	Dismissed any
+	AccountId  any
+	Dismissed  any
+	Errors     any
 	IssueClass any
-	IssueType any
-	Page any
-	PerPage any
-	Product any
-	Severity any
-	Subject any
+	IssueType  any
+	Messages   any
+	Page       any
+	PerPage    any
+	Product    any
+	Result     any
+	Severity   any
+	Subject    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Insight = ubx.DataSourceBinding{
 	WireType: "cloudflare_insight",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Dismissed": ubx.FieldSpec{WireName: "dismissed"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"Dismissed":  ubx.FieldSpec{WireName: "dismissed"},
 		"IssueClass": ubx.FieldSpec{WireName: "issue_class"},
-		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
+		"IssueType":  ubx.FieldSpec{WireName: "issue_type"},
 		"Page": ubx.FieldSpec{
 			WireName: "page",
-			Kind: "object",
-			Fields: Insight_PageFields,
+			Kind:     "object",
+			Fields:   Insight_PageFields,
 		},
 		"PerPage": ubx.FieldSpec{
 			WireName: "per_page",
-			Kind: "object",
-			Fields: Insight_PageFields,
+			Kind:     "object",
+			Fields:   Insight_PageFields,
 		},
-		"Product": ubx.FieldSpec{WireName: "product"},
+		"Product":  ubx.FieldSpec{WireName: "product"},
 		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
+		"Subject":  ubx.FieldSpec{WireName: "subject"},
 	},
 }

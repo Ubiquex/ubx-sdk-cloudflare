@@ -3,12 +3,25 @@ package zerotrustaccounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse_Result_Geolocation struct {
+	City    any
+	Country any
+}
+
+type ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse_Result struct {
+	Geolocation  any
+	Ipv4         any
+	Ipv4ColoName any
+	Ipv6Cidr     any
+}
+
 type ZeroTrustGatewayGatewayAccountEgressCidrPairListResponseConfig struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayGatewayAccountEgressCidrPairListResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayGatewayAccountEgressCidrPairListResponse = ubx.DataSourceBinding{

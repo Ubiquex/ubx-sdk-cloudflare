@@ -9,8 +9,8 @@ type FlagshipApp_Errors struct {
 
 type FlagshipApp_Result struct {
 	CreatedAt any
-	Id any
-	Name any
+	Id        any
+	Name      any
 	UpdatedAt any
 	UpdatedBy any
 }
@@ -23,10 +23,10 @@ type FlagshipAppConfig struct {
 type FlagshipAppAttrs struct {
 	// Cloudflare account ID.
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var FlagshipApp = ubx.DataSourceBinding{

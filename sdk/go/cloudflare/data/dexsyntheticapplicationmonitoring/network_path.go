@@ -3,6 +3,47 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type NetworkPath_Result_ExecutionContext struct {
+}
+
+type NetworkPath_Result_Hops_Location struct {
+	City  any
+	State any
+	Zip   any
+}
+
+type NetworkPath_Result_Hops struct {
+	Asn           any
+	Aso           any
+	IpAddress     any
+	Location      any
+	Mile          any
+	Name          any
+	PacketLossPct any
+	RttMs         any
+	Ttl           any
+}
+
+type NetworkPath_Result struct {
+	// Cloudflare colo airport code.
+	Colo any
+	// Name of the device associated with this network path response.
+	DeviceName any
+	// Whether the test was run inside or outside of the WARP tunnel.
+	ExecutionContext any
+	// An array of the hops taken by the device to reach the end destination.
+	Hops any
+	// API Resource UUID tag.
+	ResultId any
+	// API Resource UUID tag.
+	TestId any
+	// Name of the traceroute test.
+	TestName any
+	// Timestamp indicating when the traceroute test execution began.
+	TimeStart  any
+	TunnelType any
+}
+
 type NetworkPathConfig struct {
 	// API Resource UUID tag.
 	TestResultId any
@@ -11,6 +52,7 @@ type NetworkPathConfig struct {
 type NetworkPathAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
+	Result    any
 	// API Resource UUID tag.
 	TestResultId any
 }

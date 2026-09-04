@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UserSchema_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class UserSchema_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class UserSchema_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class UserSchema_Result:
+    created_at: Any = None
+    # Kind of schema
+    kind: Any = None
+    # Name of the schema
+    name: Any = None
+    schema_id: Any = None
+    # Source of the schema
+    source: Any = None
+    # Flag whether schema is enabled for validation.
+    validation_enabled: Any = None
+
+@dataclasses.dataclass
 class UserSchemaConfig:
     # Schema file bytes
     file: Any = None
@@ -23,12 +51,17 @@ class UserSchemaConfig:
 
 @dataclasses.dataclass
 class UserSchemaAttrs:
+    errors: Any = None
     # Schema file bytes
     file: Any = None
     # Kind of schema
     kind: Any = None
+    messages: Any = None
     # Name of the schema
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Flag whether schema is enabled for validation.
     validation_enabled: Any = None
     # path parameter, not part of the API's own resource representation

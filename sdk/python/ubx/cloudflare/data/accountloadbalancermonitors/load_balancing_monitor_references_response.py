@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingMonitorReferencesResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingMonitorReferencesResponse_Result:
+    reference_type: Any = None
+    resource_id: Any = None
+    resource_name: Any = None
+    resource_type: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingMonitorReferencesResponseConfig:
     monitor_id: Any = None
 
@@ -14,7 +26,13 @@ class LoadBalancingMonitorReferencesResponseConfig:
 class LoadBalancingMonitorReferencesResponseAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     monitor_id: Any = None
+    # List of resources that reference a given monitor.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LoadBalancingMonitorReferencesResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_load_balancing_monitor_references_response",

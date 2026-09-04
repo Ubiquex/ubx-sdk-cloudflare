@@ -6,14 +6,31 @@ export interface Pagerule_Actions {
   value?: string | Computed<string>;
 }
 
-export interface Pagerule_Targets_Constraint {
+export interface Pagerule_Result_Targets_Constraint {
   operator?: unknown | Computed<unknown>;
   value?: string | Computed<string>;
 }
 
-export interface Pagerule_Targets {
-  constraint?: Pagerule_Targets_Constraint | Computed<Pagerule_Targets_Constraint>;
+export interface Pagerule_Result_Targets {
+  constraint?: Pagerule_Result_Targets_Constraint | Computed<Pagerule_Result_Targets_Constraint>;
   target?: unknown | Computed<unknown>;
+}
+
+export interface Pagerule_Result {
+  /** The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both. */
+  actions: Pagerule_Actions[] | Computed<Pagerule_Actions[]>;
+  /** The timestamp of when the Page Rule was created. */
+  createdOn?: string | Computed<string>;
+  /** Identifier. */
+  id: string | Computed<string>;
+  /** The timestamp of when the Page Rule was last modified. */
+  modifiedOn?: string | Computed<string>;
+  /** The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A. */
+  priority: number | Computed<number>;
+  /** The status of the Page Rule. */
+  status: string | Computed<string>;
+  /** The rule targets to evaluate on each request. */
+  targets: Pagerule_Result_Targets[] | Computed<Pagerule_Result_Targets[]>;
 }
 
 const Pagerule_ActionsFields: FieldMap = {
@@ -21,16 +38,16 @@ const Pagerule_ActionsFields: FieldMap = {
   value: "value",
 };
 
-const Pagerule_Targets_ConstraintFields: FieldMap = {
+const Pagerule_Result_Targets_ConstraintFields: FieldMap = {
   operator: "operator",
   value: "value",
 };
 
-const Pagerule_TargetsFields: FieldMap = {
+const Pagerule_Result_TargetsFields: FieldMap = {
   constraint: {
     wireName: "constraint",
     kind: "object",
-    fields: Pagerule_Targets_ConstraintFields,
+    fields: Pagerule_Result_Targets_ConstraintFields,
   },
   target: "target",
 };
@@ -43,7 +60,7 @@ export interface PageruleConfig {
   /** The status of the Page Rule. */
   status?: string | Computed<string>;
   /** The rule targets to evaluate on each request. */
-  targets: Pagerule_Targets[] | Computed<Pagerule_Targets[]>;
+  targets: Pagerule_Result_Targets[] | Computed<Pagerule_Result_Targets[]>;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -55,10 +72,11 @@ export interface PageruleAttrs {
   actions: Pagerule_Actions[];
   /** The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A. */
   priority: number;
+  result: Pagerule_Result;
   /** The status of the Page Rule. */
   status: string;
   /** The rule targets to evaluate on each request. */
-  targets: Pagerule_Targets[];
+  targets: Pagerule_Result_Targets[];
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -78,7 +96,7 @@ export const Pagerule: ResourceBinding<PageruleConfig, PageruleAttrs> = {
     targets: {
       wireName: "targets",
       kind: "list",
-      fields: Pagerule_TargetsFields,
+      fields: Pagerule_Result_TargetsFields,
     },
     zoneId: "zone_id",
     pageruleId: "pagerule_id",

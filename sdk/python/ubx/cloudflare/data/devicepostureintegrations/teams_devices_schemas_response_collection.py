@@ -7,12 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TeamsDevicesSchemasResponseCollection_Result_Config:
+    api_url: Any = None
+    auth_url: Any = None
+    client_id: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesSchemasResponseCollection_Result:
+    config: Any = None
+    id: Any = None
+    interval: Any = None
+    name: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class TeamsDevicesSchemasResponseCollectionConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class TeamsDevicesSchemasResponseCollectionAttrs:
     account_id: Any = None
+    result: Any = None
 
 TeamsDevicesSchemasResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_teams_devices_schemas_response_collection",

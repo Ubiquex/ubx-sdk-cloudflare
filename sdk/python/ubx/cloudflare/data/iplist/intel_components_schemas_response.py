@@ -7,6 +7,12 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelComponentsSchemasResponse_Result:
+    description: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class IntelComponentsSchemasResponseConfig:
     pass
 
@@ -14,6 +20,7 @@ class IntelComponentsSchemasResponseConfig:
 class IntelComponentsSchemasResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 IntelComponentsSchemasResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_intel_components_schemas_response",

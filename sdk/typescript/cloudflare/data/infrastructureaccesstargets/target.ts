@@ -4,6 +4,24 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface Target_Direction {
 }
 
+export interface Target_Result_Ip_Ipv4 {
+  ipAddr?: string | Computed<string>;
+  virtualNetworkId?: string | Computed<string>;
+}
+
+export interface Target_Result_Ip {
+  ipv4?: Target_Result_Ip_Ipv4 | Computed<Target_Result_Ip_Ipv4>;
+  ipv6?: Target_Result_Ip_Ipv4 | Computed<Target_Result_Ip_Ipv4>;
+}
+
+export interface Target_Result {
+  createdAt?: string | Computed<string>;
+  hostname?: string | Computed<string>;
+  id?: string | Computed<string>;
+  ip?: Target_Result_Ip | Computed<Target_Result_Ip>;
+  modifiedAt?: string | Computed<string>;
+}
+
 const Target_DirectionFields: FieldMap = {
 };
 
@@ -53,6 +71,7 @@ export interface TargetAttrs {
   order: string;
   page: number;
   perPage: number;
+  result: Target_Result[];
   targetIds: string[];
   virtualNetworkId: string;
 }

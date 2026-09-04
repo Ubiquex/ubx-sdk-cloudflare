@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegionalHostname_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegionalHostname_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegionalHostname_Result_CreatedOn:
+    pass
+
+@dataclasses.dataclass
+class RegionalHostname_Result:
+    created_on: Any = None
+    # DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
+    hostname: Any = None
+    # Identifying key for the region
+    region_key: Any = None
+    # Configure which routing method to use for the regional hostname
+    routing: Any = None
+
+@dataclasses.dataclass
 class RegionalHostnameConfig:
     # DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
     hostname: Any = None
@@ -19,12 +44,17 @@ class RegionalHostnameConfig:
 
 @dataclasses.dataclass
 class RegionalHostnameAttrs:
+    errors: Any = None
     # DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`
     hostname: Any = None
+    messages: Any = None
     # Identifying key for the region
     region_key: Any = None
+    result: Any = None
     # Configure which routing method to use for the regional hostname
     routing: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
 

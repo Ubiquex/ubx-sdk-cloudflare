@@ -19,12 +19,146 @@ export interface AccessSingleResponse10_ConnectionRules {
   rdp?: AccessSingleResponse10_ConnectionRules_Rdp | Computed<AccessSingleResponse10_ConnectionRules_Rdp>;
 }
 
+export interface AccessSingleResponse10_Exclude_AuthContext {
+  acId?: string | Computed<string>;
+  id?: string | Computed<string>;
+  identityProviderId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_AuthMethod {
+  authMethod?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_AzureAd {
+  id?: string | Computed<string>;
+  identityProviderId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_CloudflareAccountMember {
+  accountId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_CommonName {
+  commonName?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_DevicePosture {
+  integrationUid?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Email {
+  email?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_EmailDomain {
+  domain?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_EmailList {
+  id?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_ExternalEvaluation {
+  evaluateUrl?: string | Computed<string>;
+  keysUrl?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Geo {
+  countryCode?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_GithubOrganization {
+  identityProviderId?: string | Computed<string>;
+  name?: string | Computed<string>;
+  team?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Gsuite {
+  email?: string | Computed<string>;
+  identityProviderId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Ip {
+  ip?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_LinkedAppToken {
+  appUid?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Oidc {
+  claimName?: string | Computed<string>;
+  claimValue?: string | Computed<string>;
+  identityProviderId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Okta {
+  identityProviderId?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_Saml {
+  attributeName?: string | Computed<string>;
+  attributeValue?: string | Computed<string>;
+  identityProviderId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_ServiceToken {
+  tokenId?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Exclude_UserRiskScore {
+  userRiskScore?: string[] | Computed<string[]>;
+}
+
+export interface AccessSingleResponse10_Exclude {
+  anyValidServiceToken?: unknown | Computed<unknown>;
+  authContext?: AccessSingleResponse10_Exclude_AuthContext | Computed<AccessSingleResponse10_Exclude_AuthContext>;
+  authMethod?: AccessSingleResponse10_Exclude_AuthMethod | Computed<AccessSingleResponse10_Exclude_AuthMethod>;
+  azureAd?: AccessSingleResponse10_Exclude_AzureAd | Computed<AccessSingleResponse10_Exclude_AzureAd>;
+  certificate?: unknown | Computed<unknown>;
+  cloudflareAccountMember?: AccessSingleResponse10_Exclude_CloudflareAccountMember | Computed<AccessSingleResponse10_Exclude_CloudflareAccountMember>;
+  commonName?: AccessSingleResponse10_Exclude_CommonName | Computed<AccessSingleResponse10_Exclude_CommonName>;
+  devicePosture?: AccessSingleResponse10_Exclude_DevicePosture | Computed<AccessSingleResponse10_Exclude_DevicePosture>;
+  email?: AccessSingleResponse10_Exclude_Email | Computed<AccessSingleResponse10_Exclude_Email>;
+  emailDomain?: AccessSingleResponse10_Exclude_EmailDomain | Computed<AccessSingleResponse10_Exclude_EmailDomain>;
+  emailList?: AccessSingleResponse10_Exclude_EmailList | Computed<AccessSingleResponse10_Exclude_EmailList>;
+  everyone?: unknown | Computed<unknown>;
+  externalEvaluation?: AccessSingleResponse10_Exclude_ExternalEvaluation | Computed<AccessSingleResponse10_Exclude_ExternalEvaluation>;
+  geo?: AccessSingleResponse10_Exclude_Geo | Computed<AccessSingleResponse10_Exclude_Geo>;
+  githubOrganization?: AccessSingleResponse10_Exclude_GithubOrganization | Computed<AccessSingleResponse10_Exclude_GithubOrganization>;
+  group?: AccessSingleResponse10_Exclude_EmailList | Computed<AccessSingleResponse10_Exclude_EmailList>;
+  gsuite?: AccessSingleResponse10_Exclude_Gsuite | Computed<AccessSingleResponse10_Exclude_Gsuite>;
+  ip?: AccessSingleResponse10_Exclude_Ip | Computed<AccessSingleResponse10_Exclude_Ip>;
+  ipList?: AccessSingleResponse10_Exclude_EmailList | Computed<AccessSingleResponse10_Exclude_EmailList>;
+  linkedAppToken?: AccessSingleResponse10_Exclude_LinkedAppToken | Computed<AccessSingleResponse10_Exclude_LinkedAppToken>;
+  loginMethod?: AccessSingleResponse10_Exclude_EmailList | Computed<AccessSingleResponse10_Exclude_EmailList>;
+  oidc?: AccessSingleResponse10_Exclude_Oidc | Computed<AccessSingleResponse10_Exclude_Oidc>;
+  okta?: AccessSingleResponse10_Exclude_Okta | Computed<AccessSingleResponse10_Exclude_Okta>;
+  saml?: AccessSingleResponse10_Exclude_Saml | Computed<AccessSingleResponse10_Exclude_Saml>;
+  serviceToken?: AccessSingleResponse10_Exclude_ServiceToken | Computed<AccessSingleResponse10_Exclude_ServiceToken>;
+  userRiskScore?: AccessSingleResponse10_Exclude_UserRiskScore | Computed<AccessSingleResponse10_Exclude_UserRiskScore>;
+}
+
 export interface AccessSingleResponse10_MfaConfig {
   /** Lists the MFA methods that users can authenticate with. */
   allowedAuthenticators?: string[] | Computed<string[]>;
   /** Indicates whether to disable MFA for this resource. This option is available at the application and policy level. */
   mfaDisabled?: boolean | Computed<boolean>;
   /** Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`. */
+  sessionDuration?: string | Computed<string>;
+}
+
+export interface AccessSingleResponse10_Result {
+  appCount?: number | Computed<number>;
+  approvalGroups?: AccessSingleResponse10_ApprovalGroups[] | Computed<AccessSingleResponse10_ApprovalGroups[]>;
+  approvalRequired?: boolean | Computed<boolean>;
+  connectionRules?: AccessSingleResponse10_ConnectionRules | Computed<AccessSingleResponse10_ConnectionRules>;
+  isolationRequired?: boolean | Computed<boolean>;
+  mfaConfig?: AccessSingleResponse10_MfaConfig | Computed<AccessSingleResponse10_MfaConfig>;
+  purposeJustificationPrompt?: string | Computed<string>;
+  purposeJustificationRequired?: boolean | Computed<boolean>;
+  reusable?: boolean | Computed<boolean>;
   sessionDuration?: string | Computed<string>;
 }
 
@@ -47,6 +181,219 @@ const AccessSingleResponse10_ConnectionRulesFields: FieldMap = {
   },
 };
 
+const AccessSingleResponse10_Exclude_AuthContextFields: FieldMap = {
+  acId: "ac_id",
+  id: "id",
+  identityProviderId: "identity_provider_id",
+};
+
+const AccessSingleResponse10_Exclude_AuthMethodFields: FieldMap = {
+  authMethod: "auth_method",
+};
+
+const AccessSingleResponse10_Exclude_AzureAdFields: FieldMap = {
+  id: "id",
+  identityProviderId: "identity_provider_id",
+};
+
+const AccessSingleResponse10_Exclude_CloudflareAccountMemberFields: FieldMap = {
+  accountId: "account_id",
+};
+
+const AccessSingleResponse10_Exclude_CommonNameFields: FieldMap = {
+  commonName: "common_name",
+};
+
+const AccessSingleResponse10_Exclude_DevicePostureFields: FieldMap = {
+  integrationUid: "integration_uid",
+};
+
+const AccessSingleResponse10_Exclude_EmailFields: FieldMap = {
+  email: "email",
+};
+
+const AccessSingleResponse10_Exclude_EmailDomainFields: FieldMap = {
+  domain: "domain",
+};
+
+const AccessSingleResponse10_Exclude_EmailListFields: FieldMap = {
+  id: "id",
+};
+
+const AccessSingleResponse10_Exclude_ExternalEvaluationFields: FieldMap = {
+  evaluateUrl: "evaluate_url",
+  keysUrl: "keys_url",
+};
+
+const AccessSingleResponse10_Exclude_GeoFields: FieldMap = {
+  countryCode: "country_code",
+};
+
+const AccessSingleResponse10_Exclude_GithubOrganizationFields: FieldMap = {
+  identityProviderId: "identity_provider_id",
+  name: "name",
+  team: "team",
+};
+
+const AccessSingleResponse10_Exclude_GsuiteFields: FieldMap = {
+  email: "email",
+  identityProviderId: "identity_provider_id",
+};
+
+const AccessSingleResponse10_Exclude_IpFields: FieldMap = {
+  ip: "ip",
+};
+
+const AccessSingleResponse10_Exclude_LinkedAppTokenFields: FieldMap = {
+  appUid: "app_uid",
+};
+
+const AccessSingleResponse10_Exclude_OidcFields: FieldMap = {
+  claimName: "claim_name",
+  claimValue: "claim_value",
+  identityProviderId: "identity_provider_id",
+};
+
+const AccessSingleResponse10_Exclude_OktaFields: FieldMap = {
+  identityProviderId: "identity_provider_id",
+  name: "name",
+};
+
+const AccessSingleResponse10_Exclude_SamlFields: FieldMap = {
+  attributeName: "attribute_name",
+  attributeValue: "attribute_value",
+  identityProviderId: "identity_provider_id",
+};
+
+const AccessSingleResponse10_Exclude_ServiceTokenFields: FieldMap = {
+  tokenId: "token_id",
+};
+
+const AccessSingleResponse10_Exclude_UserRiskScoreFields: FieldMap = {
+  userRiskScore: "user_risk_score",
+};
+
+const AccessSingleResponse10_ExcludeFields: FieldMap = {
+  anyValidServiceToken: "any_valid_service_token",
+  authContext: {
+    wireName: "auth_context",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_AuthContextFields,
+  },
+  authMethod: {
+    wireName: "auth_method",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_AuthMethodFields,
+  },
+  azureAd: {
+    wireName: "azure_ad",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_AzureAdFields,
+  },
+  certificate: "certificate",
+  cloudflareAccountMember: {
+    wireName: "cloudflare_account_member",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_CloudflareAccountMemberFields,
+  },
+  commonName: {
+    wireName: "common_name",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_CommonNameFields,
+  },
+  devicePosture: {
+    wireName: "device_posture",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_DevicePostureFields,
+  },
+  email: {
+    wireName: "email",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailFields,
+  },
+  emailDomain: {
+    wireName: "email_domain",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailDomainFields,
+  },
+  emailList: {
+    wireName: "email_list",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailListFields,
+  },
+  everyone: "everyone",
+  externalEvaluation: {
+    wireName: "external_evaluation",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_ExternalEvaluationFields,
+  },
+  geo: {
+    wireName: "geo",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_GeoFields,
+  },
+  githubOrganization: {
+    wireName: "github_organization",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_GithubOrganizationFields,
+  },
+  group: {
+    wireName: "group",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailListFields,
+  },
+  gsuite: {
+    wireName: "gsuite",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_GsuiteFields,
+  },
+  ip: {
+    wireName: "ip",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_IpFields,
+  },
+  ipList: {
+    wireName: "ip_list",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailListFields,
+  },
+  linkedAppToken: {
+    wireName: "linked_app_token",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_LinkedAppTokenFields,
+  },
+  loginMethod: {
+    wireName: "login_method",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_EmailListFields,
+  },
+  oidc: {
+    wireName: "oidc",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_OidcFields,
+  },
+  okta: {
+    wireName: "okta",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_OktaFields,
+  },
+  saml: {
+    wireName: "saml",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_SamlFields,
+  },
+  serviceToken: {
+    wireName: "service_token",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_ServiceTokenFields,
+  },
+  userRiskScore: {
+    wireName: "user_risk_score",
+    kind: "object",
+    fields: AccessSingleResponse10_Exclude_UserRiskScoreFields,
+  },
+};
+
 const AccessSingleResponse10_MfaConfigFields: FieldMap = {
   allowedAuthenticators: "allowed_authenticators",
   mfaDisabled: "mfa_disabled",
@@ -60,14 +407,24 @@ export interface AccessSingleResponse10Config {
   approvalRequired?: boolean | Computed<boolean>;
   /** The rules that define how users may connect to targets secured by your application. */
   connectionRules?: AccessSingleResponse10_ConnectionRules | Computed<AccessSingleResponse10_ConnectionRules>;
+  /** The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action. */
+  decision: string | Computed<string>;
+  /** Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules. */
+  exclude?: AccessSingleResponse10_Exclude[] | Computed<AccessSingleResponse10_Exclude[]>;
+  /** Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. */
+  include: AccessSingleResponse10_Exclude[] | Computed<AccessSingleResponse10_Exclude[]>;
   /** Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature. */
   isolationRequired?: boolean | Computed<boolean>;
   /** Configures multi-factor authentication (MFA) settings. */
   mfaConfig?: AccessSingleResponse10_MfaConfig | Computed<AccessSingleResponse10_MfaConfig>;
+  /** The name of the Access policy. */
+  name: string | Computed<string>;
   /** A custom message that will appear on the purpose justification screen. */
   purposeJustificationPrompt?: string | Computed<string>;
   /** Require users to enter a justification when they log in to the application. */
   purposeJustificationRequired?: boolean | Computed<boolean>;
+  /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
+  require?: AccessSingleResponse10_Exclude[] | Computed<AccessSingleResponse10_Exclude[]>;
   /** The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. */
   sessionDuration?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -83,14 +440,25 @@ export interface AccessSingleResponse10Attrs {
   approvalRequired: boolean;
   /** The rules that define how users may connect to targets secured by your application. */
   connectionRules: AccessSingleResponse10_ConnectionRules;
+  /** The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action. */
+  decision: string;
+  /** Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules. */
+  exclude: AccessSingleResponse10_Exclude[];
+  /** Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules. */
+  include: AccessSingleResponse10_Exclude[];
   /** Require this application to be served in an isolated browser for users matching this policy. 'Client Web Isolation' must be on for the account in order to use this feature. */
   isolationRequired: boolean;
   /** Configures multi-factor authentication (MFA) settings. */
   mfaConfig: AccessSingleResponse10_MfaConfig;
+  /** The name of the Access policy. */
+  name: string;
   /** A custom message that will appear on the purpose justification screen. */
   purposeJustificationPrompt: string;
   /** Require users to enter a justification when they log in to the application. */
   purposeJustificationRequired: boolean;
+  /** Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules. */
+  require: AccessSingleResponse10_Exclude[];
+  result: AccessSingleResponse10_Result;
   /** The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. */
   sessionDuration: string;
   /** path parameter, not part of the API's own resource representation */
@@ -113,14 +481,31 @@ export const AccessSingleResponse10: ResourceBinding<AccessSingleResponse10Confi
       kind: "object",
       fields: AccessSingleResponse10_ConnectionRulesFields,
     },
+    decision: "decision",
+    exclude: {
+      wireName: "exclude",
+      kind: "list",
+      fields: AccessSingleResponse10_ExcludeFields,
+    },
+    include: {
+      wireName: "include",
+      kind: "list",
+      fields: AccessSingleResponse10_ExcludeFields,
+    },
     isolationRequired: "isolation_required",
     mfaConfig: {
       wireName: "mfa_config",
       kind: "object",
       fields: AccessSingleResponse10_MfaConfigFields,
     },
+    name: "name",
     purposeJustificationPrompt: "purpose_justification_prompt",
     purposeJustificationRequired: "purpose_justification_required",
+    require: {
+      wireName: "require",
+      kind: "list",
+      fields: AccessSingleResponse10_ExcludeFields,
+    },
     sessionDuration: "session_duration",
     accountId: "account_id",
     policyId: "policy_id",

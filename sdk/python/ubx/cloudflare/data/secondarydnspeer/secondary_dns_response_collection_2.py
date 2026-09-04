@@ -7,12 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsResponseCollection2_Result:
+    id: Any = None
+    ip: Any = None
+    ixfr_enable: Any = None
+    name: Any = None
+    port: Any = None
+    tsig_id: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsResponseCollection2Config:
     pass
 
 @dataclasses.dataclass
 class SecondaryDnsResponseCollection2Attrs:
     account_id: Any = None
+    result: Any = None
 
 SecondaryDnsResponseCollection2 = ubx.DataSourceBinding(
     wire_type="cloudflare_secondary_dns_response_collection_2",

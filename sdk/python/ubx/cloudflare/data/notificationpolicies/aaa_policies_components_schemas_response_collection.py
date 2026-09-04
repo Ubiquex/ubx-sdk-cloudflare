@@ -7,6 +7,80 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaPoliciesComponentsSchemasResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class AaaPoliciesComponentsSchemasResponseCollection_Result_Filters:
+    actions: Any = None
+    affected_asns: Any = None
+    affected_components: Any = None
+    affected_locations: Any = None
+    airport_code: Any = None
+    alert_trigger_preferences: Any = None
+    alert_trigger_preferences_value: Any = None
+    enabled: Any = None
+    environment: Any = None
+    event: Any = None
+    event_source: Any = None
+    event_type: Any = None
+    group_by: Any = None
+    health_check_id: Any = None
+    incident_impact: Any = None
+    input_id: Any = None
+    insight_class: Any = None
+    limit: Any = None
+    logo_tag: Any = None
+    megabits_per_second: Any = None
+    new_health: Any = None
+    new_status: Any = None
+    packets_per_second: Any = None
+    pool_id: Any = None
+    pop_names: Any = None
+    product: Any = None
+    project_id: Any = None
+    protocol: Any = None
+    query_tag: Any = None
+    requests_per_second: Any = None
+    selectors: Any = None
+    services: Any = None
+    slo: Any = None
+    status: Any = None
+    target_hostname: Any = None
+    target_ip: Any = None
+    target_zone_name: Any = None
+    traffic_exclusions: Any = None
+    tunnel_id: Any = None
+    tunnel_name: Any = None
+    type: Any = None
+    where: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class AaaPoliciesComponentsSchemasResponseCollection_Result_Mechanisms_Email:
+    id: Any = None
+
+@dataclasses.dataclass
+class AaaPoliciesComponentsSchemasResponseCollection_Result_Mechanisms:
+    email: Any = None
+    pagerduty: Any = None
+    webhooks: Any = None
+
+@dataclasses.dataclass
+class AaaPoliciesComponentsSchemasResponseCollection_Result:
+    alert_interval: Any = None
+    alert_type: Any = None
+    created: Any = None
+    description: Any = None
+    enabled: Any = None
+    filters: Any = None
+    id: Any = None
+    mechanisms: Any = None
+    modified: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class AaaPoliciesComponentsSchemasResponseCollectionConfig:
     pass
 
@@ -14,6 +88,11 @@ class AaaPoliciesComponentsSchemasResponseCollectionConfig:
 class AaaPoliciesComponentsSchemasResponseCollectionAttrs:
     # The account id
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 AaaPoliciesComponentsSchemasResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_aaa_policies_components_schemas_response_collection",

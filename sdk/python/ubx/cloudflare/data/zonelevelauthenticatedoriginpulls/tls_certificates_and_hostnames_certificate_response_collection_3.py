@@ -7,12 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseCollection3_Result:
+    certificate: Any = None
+    enabled: Any = None
+    id: Any = None
+    private_key: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseCollection3Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseCollection3Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -3,6 +3,31 @@ package apishieldendpointmanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ApiShieldSingleOperationResponse_Errors_Source struct {
+	Pointer any
+}
+
+type ApiShieldSingleOperationResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type ApiShieldSingleOperationResponse_Result_Schemas_Learned struct {
+	Parameters  any
+	RequestBody any
+}
+
+type ApiShieldSingleOperationResponse_Result_Schemas struct {
+	Learned  any
+	Uploaded any
+}
+
+type ApiShieldSingleOperationResponse_Result struct {
+	Schemas any
+}
+
 type ApiShieldSingleOperationResponseConfig struct {
 	// The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
 	Endpoint any
@@ -19,10 +44,15 @@ type ApiShieldSingleOperationResponseConfig struct {
 type ApiShieldSingleOperationResponseAttrs struct {
 	// The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.
 	Endpoint any
+	Errors   any
 	// RFC3986-compliant host.
-	Host any
+	Host     any
+	Messages any
 	// The HTTP method used to access the endpoint.
 	Method any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +62,10 @@ type ApiShieldSingleOperationResponseAttrs struct {
 var ApiShieldSingleOperationResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_api_shield_single_operation_response",
 	Fields: ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Endpoint":    ubx.FieldSpec{WireName: "endpoint"},
+		"Host":        ubx.FieldSpec{WireName: "host"},
+		"Method":      ubx.FieldSpec{WireName: "method"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
 	},
 }

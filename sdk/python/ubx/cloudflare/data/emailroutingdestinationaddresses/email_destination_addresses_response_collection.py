@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailDestinationAddressesResponseCollection_Result:
+    created: Any = None
+    email: Any = None
+    id: Any = None
+    modified: Any = None
+    tag: Any = None
+    verified: Any = None
+
+@dataclasses.dataclass
+class EmailDestinationAddressesResponseCollection_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class EmailDestinationAddressesResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -29,6 +45,8 @@ class EmailDestinationAddressesResponseCollectionAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # Filter by verified destination addresses.
     verified: Any = None
 

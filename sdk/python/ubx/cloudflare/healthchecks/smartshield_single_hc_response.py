@@ -26,11 +26,48 @@ class SmartshieldSingleHcResponse_HttpConfig:
     port: Any = None
 
 @dataclasses.dataclass
-class SmartshieldSingleHcResponse_TcpConfig:
+class SmartshieldSingleHcResponse_Result_TcpConfig:
     # The TCP connection method to use for the health check.
     method: Any = None
     # Port number to connect to for the health check. Defaults to 80.
     port: Any = None
+
+@dataclasses.dataclass
+class SmartshieldSingleHcResponse_Result:
+    # The hostname or IP address of the origin server to run health checks on.
+    address: Any = None
+    # A list of regions from which to run health checks. Null means Cloudflare will pick a default region.
+    check_regions: Any = None
+    # The number of consecutive fails required from a health check before changing the health to unhealthy.
+    consecutive_fails: Any = None
+    # The number of consecutive successes required from a health check before changing the health to healthy.
+    consecutive_successes: Any = None
+    created_on: Any = None
+    # A human-readable description of the health check.
+    description: Any = None
+    # The current failure reason if status is unhealthy.
+    failure_reason: Any = None
+    # Parameters specific to an HTTP or HTTPS health check.
+    http_config: Any = None
+    # Identifier.
+    id: Any = None
+    # The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.
+    interval: Any = None
+    modified_on: Any = None
+    # A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
+    name: Any = None
+    # The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
+    retries: Any = None
+    # The current status of the origin server according to the health check.
+    status: Any = None
+    # If suspended, no health checks are sent to the origin.
+    suspended: Any = None
+    # Parameters specific to TCP health check.
+    tcp_config: Any = None
+    # The timeout (in seconds) before marking the health check as failed.
+    timeout: Any = None
+    # The protocol to use for the health check. Currently supported protocols are 'HTTP', 'HTTPS' and 'TCP'.
+    type: Any = None
 
 _SmartshieldSingleHcResponse_HttpConfigFields = {
     "allow_insecure": ubx.FieldSpec(wire_name="allow_insecure"),
@@ -43,7 +80,7 @@ _SmartshieldSingleHcResponse_HttpConfigFields = {
     "port": ubx.FieldSpec(wire_name="port"),
 }
 
-_SmartshieldSingleHcResponse_TcpConfigFields = {
+_SmartshieldSingleHcResponse_Result_TcpConfigFields = {
     "method": ubx.FieldSpec(wire_name="method"),
     "port": ubx.FieldSpec(wire_name="port"),
 }
@@ -99,6 +136,7 @@ class SmartshieldSingleHcResponseAttrs:
     interval: Any = None
     # A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.
     name: Any = None
+    result: Any = None
     # The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.
     retries: Any = None
     # If suspended, no health checks are sent to the origin.
@@ -134,7 +172,7 @@ SmartshieldSingleHcResponse = ubx.ResourceBinding(
         "tcp_config": ubx.FieldSpec(
             wire_name="tcp_config",
             kind="object",
-            fields=_SmartshieldSingleHcResponse_TcpConfigFields,
+            fields=_SmartshieldSingleHcResponse_Result_TcpConfigFields,
         ),
         "timeout": ubx.FieldSpec(wire_name="timeout"),
         "type": ubx.FieldSpec(wire_name="type"),

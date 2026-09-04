@@ -7,6 +7,54 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Message_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Message_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Message_Result_ActionParams:
+    client_recipient: Any = None
+    destination: Any = None
+    expected_disposition: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Message_Result:
+    action_params: Any = None
+    action_type: Any = None
+    alert_id: Any = None
+    created_at: Any = None
+    email_message_id: Any = None
+    message_id: Any = None
+    postfix_id: Any = None
+    processed_at: Any = None
+    retry_after: Any = None
+    retry_count: Any = None
+    status: Any = None
+    status_message: Any = None
+
+@dataclasses.dataclass
+class Message_ResultInfo:
+    # Number of items in current page.
+    count: Any = None
+    # Cursor for next page.
+    next: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    page: Any = None
+    # Number of items per page.
+    per_page: Any = None
+    # Cursor for previous page.
+    previous: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class MessageConfig:
     page: Any = None
     per_page: Any = None
@@ -14,9 +62,15 @@ class MessageConfig:
 
 @dataclasses.dataclass
 class MessageAttrs:
+    errors: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Message = ubx.DataSourceBinding(
     wire_type="cloudflare_message",

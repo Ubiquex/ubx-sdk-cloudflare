@@ -3,17 +3,28 @@ package keylesssslforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TlsCertificatesAndHostnamesKeylessResponseSingle_Tunnel struct {
-	// Private IP of the Key Server Host.
+type TlsCertificatesAndHostnamesKeylessResponseSingle_Result_Tunnel struct {
 	PrivateIp any
-	// Cloudflare Tunnel Virtual Network ID.
-	VnetId any
+	VnetId    any
 }
 
-var TlsCertificatesAndHostnamesKeylessResponseSingle_TunnelFields = ubx.FieldMap{
-		"PrivateIp": ubx.FieldSpec{WireName: "private_ip"},
-		"VnetId": ubx.FieldSpec{WireName: "vnet_id"},
-	}
+type TlsCertificatesAndHostnamesKeylessResponseSingle_Result struct {
+	CreatedOn   any
+	Enabled     any
+	Host        any
+	Id          any
+	ModifiedOn  any
+	Name        any
+	Permissions any
+	Port        any
+	Status      any
+	Tunnel      any
+}
+
+var TlsCertificatesAndHostnamesKeylessResponseSingle_Result_TunnelFields = ubx.FieldMap{
+	"PrivateIp": ubx.FieldSpec{WireName: "private_ip"},
+	"VnetId":    ubx.FieldSpec{WireName: "vnet_id"},
+}
 
 type TlsCertificatesAndHostnamesKeylessResponseSingleConfig struct {
 	// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
@@ -44,7 +55,8 @@ type TlsCertificatesAndHostnamesKeylessResponseSingleAttrs struct {
 	// The keyless SSL name.
 	Name any
 	// The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
-	Port any
+	Port   any
+	Result any
 	// Configuration for using Keyless SSL through a Cloudflare Tunnel.
 	Tunnel any
 	// path parameter, not part of the API's own resource representation
@@ -57,16 +69,16 @@ var TlsCertificatesAndHostnamesKeylessResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_keyless_response_single",
 	Fields: ubx.FieldMap{
 		"BundleMethod": ubx.FieldSpec{WireName: "bundle_method"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
+		"Certificate":  ubx.FieldSpec{WireName: "certificate"},
+		"Host":         ubx.FieldSpec{WireName: "host"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Port":         ubx.FieldSpec{WireName: "port"},
 		"Tunnel": ubx.FieldSpec{
 			WireName: "tunnel",
-			Kind: "object",
-			Fields: TlsCertificatesAndHostnamesKeylessResponseSingle_TunnelFields,
+			Kind:     "object",
+			Fields:   TlsCertificatesAndHostnamesKeylessResponseSingle_Result_TunnelFields,
 		},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":               ubx.FieldSpec{WireName: "zone_id"},
 		"KeylessCertificateId": ubx.FieldSpec{WireName: "keyless_certificate_id"},
 	},
 }

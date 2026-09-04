@@ -7,6 +7,76 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bulk_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Bulk_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Bulk_Result_ActionParams:
+    destination: Any = None
+    expected_disposition: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Bulk_Result_SearchParams:
+    action_log: Any = None
+    alert_id: Any = None
+    delivery_status: Any = None
+    detections_only: Any = None
+    domain: Any = None
+    end: Any = None
+    exact_subject: Any = None
+    final_disposition: Any = None
+    message_action: Any = None
+    message_id: Any = None
+    metric: Any = None
+    query: Any = None
+    recipient: Any = None
+    sender: Any = None
+    smtp_helo_ip: Any = None
+    start: Any = None
+    subject: Any = None
+    submissions: Any = None
+
+@dataclasses.dataclass
+class Bulk_Result:
+    action_params: Any = None
+    action_type: Any = None
+    comment: Any = None
+    completed_at: Any = None
+    created_at: Any = None
+    job_id: Any = None
+    messages_failed: Any = None
+    messages_pending: Any = None
+    messages_successful: Any = None
+    search_params: Any = None
+    started_at: Any = None
+    status: Any = None
+    status_message: Any = None
+    total_messages_discovered: Any = None
+
+@dataclasses.dataclass
+class Bulk_ResultInfo:
+    # Number of items in current page.
+    count: Any = None
+    # Cursor for next page.
+    next: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    page: Any = None
+    # Number of items per page.
+    per_page: Any = None
+    # Cursor for previous page.
+    previous: Any = None
+    # Deprecated: Always returns 0. End of life: November 1, 2026.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class BulkConfig:
     action_type: Any = None
     page: Any = None
@@ -16,9 +86,15 @@ class BulkConfig:
 @dataclasses.dataclass
 class BulkAttrs:
     action_type: Any = None
+    errors: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     status: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Bulk = ubx.DataSourceBinding(
     wire_type="cloudflare_bulk",

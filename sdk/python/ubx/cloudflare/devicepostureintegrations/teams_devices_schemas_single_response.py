@@ -17,6 +17,25 @@ class TeamsDevicesSchemasSingleResponse_Config:
     client_secret: Any = None
     customer_id: Any = None
 
+@dataclasses.dataclass
+class TeamsDevicesSchemasSingleResponse_Result_Config:
+    api_url: Any = None
+    auth_url: Any = None
+    client_id: Any = None
+
+@dataclasses.dataclass
+class TeamsDevicesSchemasSingleResponse_Result:
+    # The configuration object containing third-party integration information.
+    config: Any = None
+    # API UUID.
+    id: Any = None
+    # The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).
+    interval: Any = None
+    # The name of the device posture integration.
+    name: Any = None
+    # The type of device posture integration.
+    type: Any = None
+
 _TeamsDevicesSchemasSingleResponse_ConfigFields = {
     "access_client_id": ubx.FieldSpec(wire_name="access_client_id"),
     "access_client_secret": ubx.FieldSpec(wire_name="access_client_secret"),
@@ -51,6 +70,7 @@ class TeamsDevicesSchemasSingleResponseAttrs:
     interval: Any = None
     # The name of the device posture integration.
     name: Any = None
+    result: Any = None
     # The type of device posture integration.
     type: Any = None
     # path parameter, not part of the API's own resource representation

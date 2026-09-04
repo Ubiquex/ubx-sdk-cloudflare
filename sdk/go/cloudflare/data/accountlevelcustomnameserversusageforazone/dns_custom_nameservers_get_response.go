@@ -9,6 +9,10 @@ type DnsCustomNameserversGetResponseConfig struct {
 }
 
 type DnsCustomNameserversGetResponseAttrs struct {
+	// Whether zone uses account-level custom nameservers.
+	Enabled any
+	// The number of the name server set to assign to the zone.
+	NsSet any
 	// Identifier.
 	ZoneId any
 }

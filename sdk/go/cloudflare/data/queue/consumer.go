@@ -3,18 +3,45 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Consumer_Errors struct {
+	Code    any
+	Message any
+}
+
+type Consumer_Result_Settings struct {
+	BatchSize      any
+	MaxConcurrency any
+	MaxRetries     any
+	MaxWaitTimeMs  any
+	RetryDelay     any
+}
+
+type Consumer_Result struct {
+	ConsumerId      any
+	CreatedOn       any
+	DeadLetterQueue any
+	QueueName       any
+	ScriptName      any
+	Settings        any
+	Type            any
+}
+
 type ConsumerConfig struct {
 }
 
 type ConsumerAttrs struct {
 	// A Resource identifier.
 	AccountId any
+	Errors    any
+	Messages  any
 	// A Resource identifier.
 	QueueId any
+	Result  any
+	// Indicates if the API call was successful or not.
+	Success any
 }
 
 var Consumer = ubx.DataSourceBinding{
 	WireType: "cloudflare_consumer",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

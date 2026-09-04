@@ -3,12 +3,80 @@ package deviceposturerules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesResponseCollection_Result_Input_Locations struct {
+	Paths       any
+	TrustStores any
+}
+
+type TeamsDevicesResponseCollection_Result_Input struct {
+	ActiveThreats           any
+	AuthState               any
+	CertificateId           any
+	CheckDisks              any
+	CheckPrivateKey         any
+	Cn                      any
+	ComplianceStatus        any
+	ConnectionId            any
+	CountOperator           any
+	Domain                  any
+	EidLastSeen             any
+	Enabled                 any
+	Exists                  any
+	ExtendedKeyUsage        any
+	Id                      any
+	Infected                any
+	IsActive                any
+	IssueCount              any
+	LastSeen                any
+	Locations               any
+	NetworkStatus           any
+	OperatingSystem         any
+	OperationalState        any
+	Operator                any
+	Os                      any
+	OsDistroName            any
+	OsDistroRevision        any
+	OsVersionExtra          any
+	Overall                 any
+	Path                    any
+	RequireAll              any
+	RiskLevel               any
+	Score                   any
+	ScoreOperator           any
+	SensorConfig            any
+	Sha256                  any
+	State                   any
+	SubjectAlternativeNames any
+	Thumbprint              any
+	TotalScore              any
+	UpdateWindowDays        any
+	Version                 any
+	VersionOperator         any
+}
+
+type TeamsDevicesResponseCollection_Result_Match struct {
+	Platform any
+}
+
+type TeamsDevicesResponseCollection_Result struct {
+	Description any
+	Enabled     any
+	Expiration  any
+	Id          any
+	Input       any
+	Match       any
+	Name        any
+	Schedule    any
+	Type        any
+}
+
 type TeamsDevicesResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesResponseCollection = ubx.DataSourceBinding{

@@ -3,6 +3,30 @@ package credentials
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Credential_Errors_Source struct {
+	Pointer any
+}
+
+type Credential_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Credential_Result struct {
+	// Parent credential set identifier.
+	CredentialSetId any
+	// Credential identifier.
+	Id any
+	// Where the credential is attached in outgoing requests.
+	Location any
+	// Name of the header or cookie where the credential is attached.
+	LocationName any
+	// Human-readable name.
+	Name any
+}
+
 type CredentialConfig struct {
 	// Where the credential is attached in outgoing requests.
 	Location any
@@ -21,12 +45,19 @@ type CredentialConfig struct {
 }
 
 type CredentialAttrs struct {
+	Errors any
 	// Where the credential is attached in outgoing requests.
 	Location any
 	// Name of the header or cookie where the credential is attached.
 	LocationName any
+	Messages     any
 	// Human-readable name.
 	Name any
+	// A credential attached to API requests during scanning. The credential `value` is write-only and never returned in responses.
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 	// The credential value (e.g. API key, session token). Write-only. Never returned in responses.
 	Value any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +71,12 @@ type CredentialAttrs struct {
 var Credential = ubx.ResourceBinding{
 	WireType: "cloudflare_credential",
 	Fields: ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"LocationName": ubx.FieldSpec{WireName: "location_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Location":        ubx.FieldSpec{WireName: "location"},
+		"LocationName":    ubx.FieldSpec{WireName: "location_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Value":           ubx.FieldSpec{WireName: "value"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"CredentialSetId": ubx.FieldSpec{WireName: "credential_set_id"},
-		"CredentialId": ubx.FieldSpec{WireName: "credential_id"},
+		"CredentialId":    ubx.FieldSpec{WireName: "credential_id"},
 	},
 }

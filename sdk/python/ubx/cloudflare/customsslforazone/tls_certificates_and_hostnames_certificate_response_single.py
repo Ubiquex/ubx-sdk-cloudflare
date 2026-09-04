@@ -10,6 +10,55 @@ import ubx_sdk as ubx
 class TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictions:
     label: Any = None
 
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer_Tunnel:
+    private_ip: Any = None
+    vnet_id: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle_Result_KeylessServer:
+    created_on: Any = None
+    enabled: Any = None
+    host: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    permissions: Any = None
+    port: Any = None
+    status: Any = None
+    tunnel: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle_Result:
+    # A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
+    bundle_method: Any = None
+    # The identifier for the Custom CSR that was used.
+    custom_csr_id: Any = None
+    # When the certificate from the authority expires.
+    expires_on: Any = None
+    # Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.
+    geo_restrictions: Any = None
+    hosts: Any = None
+    # Identifier.
+    id: Any = None
+    # The certificate authority that issued the certificate.
+    issuer: Any = None
+    keyless_server: Any = None
+    # When the certificate was last modified.
+    modified_on: Any = None
+    # The policy restrictions returned by the API. This field is returned in responses when a policy has been set. The API accepts the "policy" field in requests but returns this field as "policy_restrictions" in responses. Specifies the region(s) where your private key can be held locally for optimal TLS performance. Format is a boolean expression, for example: "(country: US) or (region: EU)"
+    policy_restrictions: Any = None
+    # The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping 'legacy_custom' certificates, but 'legacy_custom' certificates will always supercede 'sni_custom' certificates.
+    priority: Any = None
+    # The type of hash used for the certificate.
+    signature: Any = None
+    # Status of the zone's custom SSL.
+    status: Any = None
+    # When the certificate was uploaded to Cloudflare.
+    uploaded_on: Any = None
+    # Identifier.
+    zone_id: Any = None
+
 _TlsCertificatesAndHostnamesCertificateResponseSingle_GeoRestrictionsFields = {
     "label": ubx.FieldSpec(wire_name="label"),
 }
@@ -53,6 +102,7 @@ class TlsCertificatesAndHostnamesCertificateResponseSingleAttrs:
     policy: Any = None
     # The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare.
     private_key: Any = None
+    result: Any = None
     # The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
     type: Any = None
     # path parameter, not part of the API's own resource representation

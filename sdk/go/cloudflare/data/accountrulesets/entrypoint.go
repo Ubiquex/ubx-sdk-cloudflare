@@ -3,6 +3,30 @@ package accountrulesets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Entrypoint_Messages_Source struct {
+	Pointer any
+}
+
+type Entrypoint_Messages struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type Entrypoint_Result_Id struct {
+}
+
+type Entrypoint_Result struct {
+	Description any
+	Id          any
+	Kind        any
+	LastUpdated any
+	Name        any
+	Phase       any
+	Rules       any
+	Version     any
+}
+
 type EntrypointConfig struct {
 	// The unique ID of the account.
 	AccountId any
@@ -13,14 +37,19 @@ type EntrypointConfig struct {
 type EntrypointAttrs struct {
 	// The unique ID of the account.
 	AccountId any
+	Errors    any
+	// A list of warning messages.
+	Messages any
+	Result   any
 	// The phase of the ruleset.
 	RulesetPhase any
+	Success      any
 }
 
 var Entrypoint = ubx.DataSourceBinding{
 	WireType: "cloudflare_entrypoint",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"RulesetPhase": ubx.FieldSpec{WireName: "ruleset_phase"},
 	},
 }

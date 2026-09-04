@@ -3,6 +3,34 @@ package logpushtransformers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushTransformerResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type LogpushTransformerResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type LogpushTransformerResponseCollection_Result_AssociatedJobs struct {
+	Id         any
+	Name       any
+	ObjectTag  any
+	ObjectType any
+}
+
+type LogpushTransformerResponseCollection_Result struct {
+	AssociatedJobs any
+	CreatedAt      any
+	Dataset        any
+	Description    any
+	Id             any
+	Name           any
+	UpdatedAt      any
+}
+
 type LogpushTransformerResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +39,11 @@ type LogpushTransformerResponseCollectionConfig struct {
 type LogpushTransformerResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LogpushTransformerResponseCollection = ubx.DataSourceBinding{

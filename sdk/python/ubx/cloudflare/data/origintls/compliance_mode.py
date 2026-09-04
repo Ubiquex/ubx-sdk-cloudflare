@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ComplianceMode_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class ComplianceModeConfig:
     pass
 
 @dataclasses.dataclass
 class ComplianceModeAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

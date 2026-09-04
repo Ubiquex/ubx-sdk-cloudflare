@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicWansCollectionResponse_Result_StaticAddressing:
+    address: Any = None
+    gateway_address: Any = None
+    secondary_address: Any = None
+
+@dataclasses.dataclass
+class MagicWansCollectionResponse_Result:
+    health_check_rate: Any = None
+    id: Any = None
+    name: Any = None
+    physport: Any = None
+    priority: Any = None
+    site_id: Any = None
+    static_addressing: Any = None
+    vlan_tag: Any = None
+
+@dataclasses.dataclass
 class MagicWansCollectionResponseConfig:
     pass
 
@@ -14,6 +31,7 @@ class MagicWansCollectionResponseConfig:
 class MagicWansCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
     # Identifier
     site_id: Any = None
 

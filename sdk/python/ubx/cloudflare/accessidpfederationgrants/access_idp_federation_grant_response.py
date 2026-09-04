@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessIdpFederationGrantResponse_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessIdpFederationGrantResponse_Result:
+    created_at: Any = None
+    # UID of the IdP federation grant.
+    id: Any = None
+    # UID of the identity provider being federated.
+    idp_id: Any = None
+
+@dataclasses.dataclass
 class AccessIdpFederationGrantResponseConfig:
     # UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
     idp_id: Any = None
@@ -19,6 +31,7 @@ class AccessIdpFederationGrantResponseConfig:
 class AccessIdpFederationGrantResponseAttrs:
     # UID of the identity provider to federate. Must be an existing identity provider in this account. One-time pin and Cloudflare-managed identity providers cannot be federated.
     idp_id: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

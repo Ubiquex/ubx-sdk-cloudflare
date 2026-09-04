@@ -32,11 +32,23 @@ export interface BillSubsApiAccountSubscriptionResponseSingle_RatePlan {
   sets?: string[] | Computed<string[]>;
 }
 
-export interface BillSubsApiAccountSubscriptionResponseSingle_Zone {
-  /** Identifier */
+export interface BillSubsApiAccountSubscriptionResponseSingle_Result_Zone {
   id?: string | Computed<string>;
-  /** The domain name */
   name?: string | Computed<string>;
+}
+
+export interface BillSubsApiAccountSubscriptionResponseSingle_Result {
+  app?: BillSubsApiAccountSubscriptionResponseSingle_App | Computed<BillSubsApiAccountSubscriptionResponseSingle_App>;
+  componentValues?: BillSubsApiAccountSubscriptionResponseSingle_ComponentValues[] | Computed<BillSubsApiAccountSubscriptionResponseSingle_ComponentValues[]>;
+  currency?: string | Computed<string>;
+  currentPeriodEnd?: string | Computed<string>;
+  currentPeriodStart?: string | Computed<string>;
+  frequency?: string | Computed<string>;
+  id?: string | Computed<string>;
+  price?: number | Computed<number>;
+  ratePlan?: BillSubsApiAccountSubscriptionResponseSingle_RatePlan | Computed<BillSubsApiAccountSubscriptionResponseSingle_RatePlan>;
+  state?: string | Computed<string>;
+  zone?: BillSubsApiAccountSubscriptionResponseSingle_Result_Zone | Computed<BillSubsApiAccountSubscriptionResponseSingle_Result_Zone>;
 }
 
 const BillSubsApiAccountSubscriptionResponseSingle_AppFields: FieldMap = {
@@ -62,7 +74,7 @@ const BillSubsApiAccountSubscriptionResponseSingle_RatePlanFields: FieldMap = {
   sets: "sets",
 };
 
-const BillSubsApiAccountSubscriptionResponseSingle_ZoneFields: FieldMap = {
+const BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields: FieldMap = {
   id: "id",
   name: "name",
 };
@@ -77,7 +89,7 @@ export interface BillSubsApiAccountSubscriptionResponseSingleConfig {
   /** The rate plan applied to the subscription. */
   ratePlan?: BillSubsApiAccountSubscriptionResponseSingle_RatePlan | Computed<BillSubsApiAccountSubscriptionResponseSingle_RatePlan>;
   /** A simple zone object. May have null properties if not a zone subscription. */
-  zone?: BillSubsApiAccountSubscriptionResponseSingle_Zone | Computed<BillSubsApiAccountSubscriptionResponseSingle_Zone>;
+  zone?: BillSubsApiAccountSubscriptionResponseSingle_Result_Zone | Computed<BillSubsApiAccountSubscriptionResponseSingle_Result_Zone>;
   /** path parameter, not part of the API's own resource representation */
   accountId: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
@@ -103,10 +115,11 @@ export interface BillSubsApiAccountSubscriptionResponseSingleAttrs {
   price: number;
   /** The rate plan applied to the subscription. */
   ratePlan: BillSubsApiAccountSubscriptionResponseSingle_RatePlan;
+  result: BillSubsApiAccountSubscriptionResponseSingle_Result;
   /** The state that the subscription is in. */
   state: string;
   /** A simple zone object. May have null properties if not a zone subscription. */
-  zone: BillSubsApiAccountSubscriptionResponseSingle_Zone;
+  zone: BillSubsApiAccountSubscriptionResponseSingle_Result_Zone;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */
@@ -135,7 +148,7 @@ export const BillSubsApiAccountSubscriptionResponseSingle: ResourceBinding<BillS
     zone: {
       wireName: "zone",
       kind: "object",
-      fields: BillSubsApiAccountSubscriptionResponseSingle_ZoneFields,
+      fields: BillSubsApiAccountSubscriptionResponseSingle_Result_ZoneFields,
     },
     accountId: "account_id",
     subscriptionIdentifier: "subscription_identifier",

@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogcontrolCmbConfigResponseSingle_Result:
+    # Allow out of region access
+    allow_out_of_region_access: Any = None
+    # Name of the region.
+    regions: Any = None
+
+@dataclasses.dataclass
 class LogcontrolCmbConfigResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +22,7 @@ class LogcontrolCmbConfigResponseSingleConfig:
 class LogcontrolCmbConfigResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 LogcontrolCmbConfigResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_logcontrol_cmb_config_response_single",

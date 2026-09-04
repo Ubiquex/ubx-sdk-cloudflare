@@ -7,6 +7,71 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IndicatorFeedMetadataResponse_Result_LastUploadSummary_Persisted:
+    domains_added: Any = None
+    domains_removed: Any = None
+    ips_added: Any = None
+    ips_removed: Any = None
+    urls_added: Any = None
+    urls_removed: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedMetadataResponse_Result_LastUploadSummary_Skipped:
+    # Domains filtered by the global popularity allowlist at QS provisioning time. Popular domains (bing.com, naver.com, etc.) are protected from custom-threat-feed enforcement.
+    allowlisted_domains: Any = None
+    # Indicators in the upload whose valid_until is already in the past. These are not added to QS; the expiration cron handles cleanup.
+    expired_indicators: Any = None
+    # Reserved for future use. Currently always 0 — the unifier aborts the entire upload on a single bad indicator.
+    invalid_indicators: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedMetadataResponse_Result_LastUploadSummary_Uploaded:
+    # Number of domain indicators in the upload
+    domains: Any = None
+    # Number of IP indicators in the upload
+    ips: Any = None
+    # Number of URL indicators in the upload
+    urls: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedMetadataResponse_Result_LastUploadSummary:
+    # Net delta applied to feed indicators by this upload. Snapshot uploads emit both *_added and *_removed; delta-add emits only *_added; delta-remove emits only *_removed.
+    persisted: Any = None
+    # Counts of indicators that were uploaded but did not reach QuickSilver, broken down by reason.
+    skipped: Any = None
+    # Indicator counts from the unified file the loader received
+    uploaded: Any = None
+
+@dataclasses.dataclass
+class IndicatorFeedMetadataResponse_Result:
+    # The date and time when the data entry was created
+    created_on: Any = None
+    # The description of the example test
+    description: Any = None
+    # The unique identifier for the indicator feed
+    id: Any = None
+    # Whether the indicator feed can be attributed to a provider
+    is_attributable: Any = None
+    # Whether the indicator feed can be downloaded
+    is_downloadable: Any = None
+    # Whether the indicator feed is exposed to customers
+    is_public: Any = None
+    # Summary of indicator counts from the last successful upload to this feed. Populated by the custom-threat-feeds loader at the end of each successful load. Absent (omitted) when no upload has completed successfully or the upload errored before the summary write. Surfaces silent-failure paths so operators can see when their indicators were dropped (popularity allowlist, expired valid_until, etc.) without reading loader logs.
+    last_upload_summary: Any = None
+    # Human-readable error message describing why the latest upload failed. Populated only when `latest_upload_status` is `Error`. Returns one of a small fixed set of category-level messages (invalid domain / IP / URL entries, malformed row or header, invalid valid_until timestamp, etc.) or the generic `Upload failed` for unknown or infrastructure-level errors. Never echoes raw error text from the underlying loader. Intel accounts receive the verbatim loader/API error text (including specific offending values) instead of these category-level messages.
+    latest_upload_error: Any = None
+    # Status of the latest snapshot uploaded
+    latest_upload_status: Any = None
+    # The date and time when the data entry was last modified
+    modified_on: Any = None
+    # The name of the indicator feed
+    name: Any = None
+    # The unique identifier for the provider
+    provider_id: Any = None
+    # The provider of the indicator feed
+    provider_name: Any = None
+
+@dataclasses.dataclass
 class IndicatorFeedMetadataResponseConfig:
     # The description of the example test
     description: Any = None
@@ -23,6 +88,7 @@ class IndicatorFeedMetadataResponseAttrs:
     description: Any = None
     # The name of the indicator feed
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

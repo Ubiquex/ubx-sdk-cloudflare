@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Participant_Data:
+    created_at: Any = None
+    custom_participant_id: Any = None
+    id: Any = None
+    name: Any = None
+    picture: Any = None
+    preset_name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Participant_Paging:
+    end_offset: Any = None
+    start_offset: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class ParticipantConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -22,9 +38,12 @@ class ParticipantAttrs:
     account_id: Any = None
     # The app identifier tag.
     app_id: Any = None
+    data: Any = None
     meeting_id: Any = None
     page_no: Any = None
+    paging: Any = None
     per_page: Any = None
+    success: Any = None
 
 Participant = ubx.DataSourceBinding(
     wire_type="cloudflare_participant",

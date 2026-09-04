@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .binding import Binding, BindingConfig
-from .service import Service, ServiceConfig

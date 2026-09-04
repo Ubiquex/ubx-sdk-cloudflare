@@ -4,6 +4,49 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface PageTestResponseCollection_Region {
 }
 
+export interface PageTestResponseCollection_Result_DesktopReport_Error {
+  code?: string | Computed<string>;
+  detail?: string | Computed<string>;
+  finalDisplayedUrl?: string | Computed<string>;
+}
+
+export interface PageTestResponseCollection_Result_DesktopReport {
+  cls?: number | Computed<number>;
+  deviceType?: string | Computed<string>;
+  error?: PageTestResponseCollection_Result_DesktopReport_Error | Computed<PageTestResponseCollection_Result_DesktopReport_Error>;
+  fcp?: number | Computed<number>;
+  jsonReportUrl?: string | Computed<string>;
+  lcp?: number | Computed<number>;
+  performanceScore?: number | Computed<number>;
+  si?: number | Computed<number>;
+  state?: string | Computed<string>;
+  tbt?: number | Computed<number>;
+  ttfb?: number | Computed<number>;
+  tti?: number | Computed<number>;
+}
+
+export interface PageTestResponseCollection_Result_Region {
+  label?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface PageTestResponseCollection_Result {
+  date?: string | Computed<string>;
+  desktopReport?: PageTestResponseCollection_Result_DesktopReport | Computed<PageTestResponseCollection_Result_DesktopReport>;
+  id?: string | Computed<string>;
+  mobileReport?: PageTestResponseCollection_Result_DesktopReport | Computed<PageTestResponseCollection_Result_DesktopReport>;
+  region?: PageTestResponseCollection_Result_Region | Computed<PageTestResponseCollection_Result_Region>;
+  scheduleFrequency?: string | Computed<string>;
+  url?: string | Computed<string>;
+}
+
+export interface PageTestResponseCollection_ResultInfo {
+  count?: number | Computed<number>;
+  page?: number | Computed<number>;
+  perPage?: number | Computed<number>;
+  totalCount?: number | Computed<number>;
+}
+
 const PageTestResponseCollection_RegionFields: FieldMap = {
 };
 
@@ -21,6 +64,8 @@ export interface PageTestResponseCollectionAttrs {
   page: number;
   perPage: number;
   region: PageTestResponseCollection_Region;
+  result: PageTestResponseCollection_Result[];
+  resultInfo: PageTestResponseCollection_ResultInfo;
   /** A URL. */
   url: string;
   /** Identifier. */

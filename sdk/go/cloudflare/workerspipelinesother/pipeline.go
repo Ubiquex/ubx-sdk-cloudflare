@@ -4,10 +4,10 @@ package workerspipelinesother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_Result_Tables struct {
-	Id any
-	Latest any
-	Name any
-	Type any
+	Id      any
+	Latest  any
+	Name    any
+	Type    any
 	Version any
 }
 
@@ -16,7 +16,7 @@ type Pipeline_Result struct {
 	// Indicates the reason for the failure of the Pipeline.
 	FailureReason any
 	// Indicates a unique identifier for this pipeline.
-	Id any
+	Id         any
 	ModifiedAt any
 	// Indicates the name of the Pipeline.
 	Name any
@@ -41,7 +41,7 @@ type PipelineConfig struct {
 
 type PipelineAttrs struct {
 	// Specifies the name of the Pipeline.
-	Name any
+	Name   any
 	Result any
 	// Specifies SQL for the Pipeline processing flow.
 	Sql any
@@ -56,9 +56,9 @@ type PipelineAttrs struct {
 var Pipeline = ubx.ResourceBinding{
 	WireType: "cloudflare_pipeline",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sql": ubx.FieldSpec{WireName: "sql"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Sql":        ubx.FieldSpec{WireName: "sql"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
 	},
 }

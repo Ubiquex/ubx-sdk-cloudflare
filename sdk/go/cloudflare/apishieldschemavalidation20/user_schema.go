@@ -3,6 +3,33 @@ package apishieldschemavalidation20
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UserSchema_Errors_Source struct {
+	Pointer any
+}
+
+type UserSchema_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type UserSchema_Result_CreatedAt struct {
+}
+
+type UserSchema_Result struct {
+	CreatedAt any
+	// Kind of schema
+	Kind any
+	// Name of the schema
+	Name     any
+	SchemaId any
+	// Source of the schema
+	Source any
+	// Flag whether schema is enabled for validation.
+	ValidationEnabled any
+}
+
 type UserSchemaConfig struct {
 	// Schema file bytes
 	File any
@@ -19,12 +46,17 @@ type UserSchemaConfig struct {
 }
 
 type UserSchemaAttrs struct {
+	Errors any
 	// Schema file bytes
 	File any
 	// Kind of schema
-	Kind any
+	Kind     any
+	Messages any
 	// Name of the schema
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Flag whether schema is enabled for validation.
 	ValidationEnabled any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +68,11 @@ type UserSchemaAttrs struct {
 var UserSchema = ubx.ResourceBinding{
 	WireType: "cloudflare_user_schema",
 	Fields: ubx.FieldMap{
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"File":              ubx.FieldSpec{WireName: "file"},
+		"Kind":              ubx.FieldSpec{WireName: "kind"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ValidationEnabled": ubx.FieldSpec{WireName: "validation_enabled"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
+		"ZoneId":            ubx.FieldSpec{WireName: "zone_id"},
+		"SchemaId":          ubx.FieldSpec{WireName: "schema_id"},
 	},
 }

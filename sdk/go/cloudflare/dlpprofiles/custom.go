@@ -19,16 +19,16 @@ type Custom_Entries_Pattern_Validation struct {
 }
 
 type Custom_Entries_Pattern struct {
-	Regex any
+	Regex      any
 	Validation any
 }
 
 type Custom_Entries struct {
 	Description any
-	Enabled any
-	Name any
-	Pattern any
-	Words any
+	Enabled     any
+	Name        any
+	Pattern     any
+	Words       any
 }
 
 type Custom_SensitivityLevels struct {
@@ -42,56 +42,55 @@ type Custom_SharedEntries struct {
 }
 
 var Custom_ContextAwareness_SkipFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{WireName: "files"},
-	}
+	"Files": ubx.FieldSpec{WireName: "files"},
+}
 
 var Custom_ContextAwarenessFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Skip": ubx.FieldSpec{
-			WireName: "skip",
-			Kind: "object",
-			Fields: Custom_ContextAwareness_SkipFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Skip": ubx.FieldSpec{
+		WireName: "skip",
+		Kind:     "object",
+		Fields:   Custom_ContextAwareness_SkipFields,
+	},
+}
 
-var Custom_Entries_Pattern_ValidationFields = ubx.FieldMap{
-	}
+var Custom_Entries_Pattern_ValidationFields = ubx.FieldMap{}
 
 var Custom_Entries_PatternFields = ubx.FieldMap{
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-		"Validation": ubx.FieldSpec{
-			WireName: "validation",
-			Kind: "object",
-			Fields: Custom_Entries_Pattern_ValidationFields,
-		},
-	}
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+	"Validation": ubx.FieldSpec{
+		WireName: "validation",
+		Kind:     "object",
+		Fields:   Custom_Entries_Pattern_ValidationFields,
+	},
+}
 
 var Custom_EntriesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pattern": ubx.FieldSpec{
-			WireName: "pattern",
-			Kind: "object",
-			Fields: Custom_Entries_PatternFields,
-		},
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Pattern": ubx.FieldSpec{
+		WireName: "pattern",
+		Kind:     "object",
+		Fields:   Custom_Entries_PatternFields,
+	},
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 var Custom_SensitivityLevelsFields = ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"LevelId": ubx.FieldSpec{WireName: "level_id"},
-	}
+	"GroupId": ubx.FieldSpec{WireName: "group_id"},
+	"LevelId": ubx.FieldSpec{WireName: "level_id"},
+}
 
 var Custom_SharedEntriesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"EntryId": ubx.FieldSpec{WireName: "entry_id"},
+}
 
 type CustomConfig struct {
 	AiContextEnabled any
 	// Related DLP policies will trigger when the match count exceeds the number set.
-	AllowedMatchCount any
+	AllowedMatchCount   any
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
@@ -101,9 +100,9 @@ type CustomConfig struct {
 	DataTags any
 	// The description of the profile.
 	Description any
-	Entries any
-	Name any
-	OcrEnabled any
+	Entries     any
+	Name        any
+	OcrEnabled  any
 	// Sensitivity levels to associate with the profile.
 	SensitivityLevels any
 	// Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).
@@ -117,7 +116,7 @@ type CustomConfig struct {
 type CustomAttrs struct {
 	AiContextEnabled any
 	// Related DLP policies will trigger when the match count exceeds the number set.
-	AllowedMatchCount any
+	AllowedMatchCount   any
 	ConfidenceThreshold any
 	// Scan the context of predefined entries to only return matches surrounded by keywords.
 	ContextAwareness any
@@ -127,9 +126,10 @@ type CustomAttrs struct {
 	DataTags any
 	// The description of the profile.
 	Description any
-	Entries any
-	Name any
-	OcrEnabled any
+	Entries     any
+	Name        any
+	OcrEnabled  any
+	Result      any
 	// Sensitivity levels to associate with the profile.
 	SensitivityLevels any
 	// Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).
@@ -143,33 +143,33 @@ type CustomAttrs struct {
 var Custom = ubx.ResourceBinding{
 	WireType: "cloudflare_custom",
 	Fields: ubx.FieldMap{
-		"AiContextEnabled": ubx.FieldSpec{WireName: "ai_context_enabled"},
-		"AllowedMatchCount": ubx.FieldSpec{WireName: "allowed_match_count"},
+		"AiContextEnabled":    ubx.FieldSpec{WireName: "ai_context_enabled"},
+		"AllowedMatchCount":   ubx.FieldSpec{WireName: "allowed_match_count"},
 		"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
 		"ContextAwareness": ubx.FieldSpec{
 			WireName: "context_awareness",
-			Kind: "object",
-			Fields: Custom_ContextAwarenessFields,
+			Kind:     "object",
+			Fields:   Custom_ContextAwarenessFields,
 		},
 		"DataClasses": ubx.FieldSpec{WireName: "data_classes"},
-		"DataTags": ubx.FieldSpec{WireName: "data_tags"},
+		"DataTags":    ubx.FieldSpec{WireName: "data_tags"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Entries": ubx.FieldSpec{
 			WireName: "entries",
-			Kind: "list",
-			Fields: Custom_EntriesFields,
+			Kind:     "list",
+			Fields:   Custom_EntriesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"OcrEnabled": ubx.FieldSpec{WireName: "ocr_enabled"},
 		"SensitivityLevels": ubx.FieldSpec{
 			WireName: "sensitivity_levels",
-			Kind: "list",
-			Fields: Custom_SensitivityLevelsFields,
+			Kind:     "list",
+			Fields:   Custom_SensitivityLevelsFields,
 		},
 		"SharedEntries": ubx.FieldSpec{
 			WireName: "shared_entries",
-			Kind: "list",
-			Fields: Custom_SharedEntriesFields,
+			Kind:     "list",
+			Fields:   Custom_SharedEntriesFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},

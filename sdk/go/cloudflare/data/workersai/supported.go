@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Supported_Result struct {
 	Extension any
-	MimeType any
+	MimeType  any
 }
 
 type SupportedConfig struct {
@@ -14,8 +14,8 @@ type SupportedConfig struct {
 
 type SupportedAttrs struct {
 	AccountId any
-	Result any
-	Success any
+	Result    any
+	Success   any
 }
 
 var Supported = ubx.DataSourceBinding{

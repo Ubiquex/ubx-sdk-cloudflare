@@ -3,44 +3,85 @@ package emailsecuritysettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Domain_Result_Authorization struct {
+	Authorized    any
+	StatusMessage any
+	Timestamp     any
+}
+
+type Domain_Result_CreatedAt struct {
+}
+
+type Domain_Result_EmailsProcessed struct {
+	Timestamp                    any
+	TotalEmailsProcessed         any
+	TotalEmailsProcessedPrevious any
+}
+
+type Domain_Result struct {
+	AllowedDeliveryModes any
+	Authorization        any
+	CreatedAt            any
+	DmarcStatus          any
+	Domain               any
+	DropDispositions     any
+	EmailsProcessed      any
+	Folder               any
+	Id                   any
+	InboxProvider        any
+	IntegrationId        any
+	IpRestrictions       any
+	LastModified         any
+	LookbackHops         any
+	ModifiedAt           any
+	O365TenantId         any
+	Regions              any
+	RequireTlsInbound    any
+	RequireTlsOutbound   any
+	SpfStatus            any
+	Status               any
+	Transport            any
+}
+
 type DomainConfig struct {
-	ActiveDeliveryMode any
+	ActiveDeliveryMode  any
 	AllowedDeliveryMode any
-	Direction any
-	Domain any
-	IntegrationId any
-	Order any
-	Page any
-	PerPage any
-	Search any
-	Status any
+	Direction           any
+	Domain              any
+	IntegrationId       any
+	Order               any
+	Page                any
+	PerPage             any
+	Search              any
+	Status              any
 }
 
 type DomainAttrs struct {
-	ActiveDeliveryMode any
+	ActiveDeliveryMode  any
 	AllowedDeliveryMode any
-	Direction any
-	Domain any
-	IntegrationId any
-	Order any
-	Page any
-	PerPage any
-	Search any
-	Status any
+	Direction           any
+	Domain              any
+	IntegrationId       any
+	Order               any
+	Page                any
+	PerPage             any
+	Result              any
+	Search              any
+	Status              any
 }
 
 var Domain = ubx.DataSourceBinding{
 	WireType: "cloudflare_domain",
 	Fields: ubx.FieldMap{
-		"ActiveDeliveryMode": ubx.FieldSpec{WireName: "active_delivery_mode"},
+		"ActiveDeliveryMode":  ubx.FieldSpec{WireName: "active_delivery_mode"},
 		"AllowedDeliveryMode": ubx.FieldSpec{WireName: "allowed_delivery_mode"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Direction":           ubx.FieldSpec{WireName: "direction"},
+		"Domain":              ubx.FieldSpec{WireName: "domain"},
+		"IntegrationId":       ubx.FieldSpec{WireName: "integration_id"},
+		"Order":               ubx.FieldSpec{WireName: "order"},
+		"Page":                ubx.FieldSpec{WireName: "page"},
+		"PerPage":             ubx.FieldSpec{WireName: "per_page"},
+		"Search":              ubx.FieldSpec{WireName: "search"},
+		"Status":              ubx.FieldSpec{WireName: "status"},
 	},
 }

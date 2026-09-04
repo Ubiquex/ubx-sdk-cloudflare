@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection_Result:
+    created_at: Any = None
+    hostname: Any = None
+    status: Any = None
+    updated_at: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollection_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    # Total pages available of results.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionConfig:
     # The TLS Setting name. The value type depends on the setting: - `ciphers`: value is an array of cipher suite strings (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: value is a TLS version string (`"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"`). - `http2`: value is `"on"` or `"off"`.
     setting_id: Any = None
@@ -15,6 +32,8 @@ class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionConfig:
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesPerHostnameSettingsResponseCollectionAttrs:
+    result: Any = None
+    result_info: Any = None
     # The TLS Setting name. The value type depends on the setting: - `ciphers`: value is an array of cipher suite strings (e.g., `["ECDHE-RSA-AES128-GCM-SHA256", "AES128-GCM-SHA256"]`). - `min_tls_version`: value is a TLS version string (`"1.0"`, `"1.1"`, `"1.2"`, or `"1.3"`). - `http2`: value is `"on"` or `"off"`.
     setting_id: Any = None
     # Identifier.

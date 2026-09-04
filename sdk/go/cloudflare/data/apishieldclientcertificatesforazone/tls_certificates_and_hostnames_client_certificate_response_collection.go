@@ -3,6 +3,32 @@ package apishieldclientcertificatesforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesClientCertificateResponseCollection_Result_CertificateAuthority struct {
+	Id   any
+	Name any
+}
+
+type TlsCertificatesAndHostnamesClientCertificateResponseCollection_Result struct {
+	Certificate          any
+	CertificateAuthority any
+	CommonName           any
+	Country              any
+	Csr                  any
+	ExpiresOn            any
+	FingerprintSha256    any
+	Id                   any
+	IssuedOn             any
+	Location             any
+	Organization         any
+	OrganizationalUnit   any
+	SerialNumber         any
+	Signature            any
+	Ski                  any
+	State                any
+	Status               any
+	ValidityDays         any
+}
+
 type TlsCertificatesAndHostnamesClientCertificateResponseCollectionConfig struct {
 	// Limit to the number of records returned.
 	Limit any
@@ -27,6 +53,7 @@ type TlsCertificatesAndHostnamesClientCertificateResponseCollectionAttrs struct 
 	Page any
 	// Number of records per page.
 	PerPage any
+	Result  any
 	// Client Certitifcate Status to filter results by.
 	Status any
 	// Identifier.
@@ -36,11 +63,11 @@ type TlsCertificatesAndHostnamesClientCertificateResponseCollectionAttrs struct 
 var TlsCertificatesAndHostnamesClientCertificateResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_client_certificate_response_collection",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Offset":  ubx.FieldSpec{WireName: "offset"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Status":  ubx.FieldSpec{WireName: "status"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

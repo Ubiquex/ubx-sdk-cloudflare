@@ -3,6 +3,18 @@ package emailsendingsubdomains
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailSendingSubdomainResponseSingle_Result struct {
+	Created                  any
+	DkimSelector             any
+	DropSuppressedRecipients any
+	Enabled                  any
+	Modified                 any
+	Name                     any
+	PreviewEnabled           any
+	ReturnPathDomain         any
+	Tag                      any
+}
+
 type EmailSendingSubdomainResponseSingleConfig struct {
 	// The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
 	Name any
@@ -14,7 +26,8 @@ type EmailSendingSubdomainResponseSingleConfig struct {
 
 type EmailSendingSubdomainResponseSingleAttrs struct {
 	// The domain name within the zone. A wildcard is allowed only as the complete leftmost label (`*.example.com`) and requires the account wildcard Email Sending entitlement.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +37,8 @@ type EmailSendingSubdomainResponseSingleAttrs struct {
 var EmailSendingSubdomainResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_email_sending_subdomain_response_single",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"SubdomainId": ubx.FieldSpec{WireName: "subdomain_id"},
 	},
 }

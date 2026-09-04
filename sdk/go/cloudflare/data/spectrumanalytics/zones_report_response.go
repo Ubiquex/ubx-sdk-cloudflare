@@ -3,24 +3,45 @@ package spectrumanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ZonesReportResponse_Since struct {
+type ZonesReportResponse_Query_Since struct {
 }
 
-var ZonesReportResponse_SinceFields = ubx.FieldMap{
-	}
+type ZonesReportResponse_Query struct {
+	Since any
+	Until any
+}
+
+type ZonesReportResponse_Result_Totals_Bandwidth struct {
+	All     any
+	Egress  any
+	Ingress any
+}
+
+type ZonesReportResponse_Result_Totals struct {
+	Bandwidth any
+}
+
+type ZonesReportResponse_Result struct {
+	Totals any
+	ZoneId any
+}
+
+var ZonesReportResponse_Query_SinceFields = ubx.FieldMap{}
 
 type ZonesReportResponseConfig struct {
 	// Include CDN traffic in the bandwidth aggregation.
 	CdnTraffic any
-	Since any
-	Until any
+	Since      any
+	Until      any
 }
 
 type ZonesReportResponseAttrs struct {
 	// Include CDN traffic in the bandwidth aggregation.
 	CdnTraffic any
-	Since any
-	Until any
+	Query      any
+	Result     any
+	Since      any
+	Until      any
 }
 
 var ZonesReportResponse = ubx.DataSourceBinding{
@@ -29,13 +50,13 @@ var ZonesReportResponse = ubx.DataSourceBinding{
 		"CdnTraffic": ubx.FieldSpec{WireName: "cdn_traffic"},
 		"Since": ubx.FieldSpec{
 			WireName: "since",
-			Kind: "object",
-			Fields: ZonesReportResponse_SinceFields,
+			Kind:     "object",
+			Fields:   ZonesReportResponse_Query_SinceFields,
 		},
 		"Until": ubx.FieldSpec{
 			WireName: "until",
-			Kind: "object",
-			Fields: ZonesReportResponse_SinceFields,
+			Kind:     "object",
+			Fields:   ZonesReportResponse_Query_SinceFields,
 		},
 	},
 }

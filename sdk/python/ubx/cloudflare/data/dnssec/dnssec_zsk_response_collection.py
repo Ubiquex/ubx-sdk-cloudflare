@@ -7,12 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnssecZskResponseCollection_Result_Dnskey_Hdr:
+    class_: Any = None
+    name: Any = None
+    rdlength: Any = None
+    rrtype: Any = None
+    ttl: Any = None
+
+@dataclasses.dataclass
+class DnssecZskResponseCollection_Result_Dnskey:
+    algorithm: Any = None
+    flags: Any = None
+    hdr: Any = None
+    protocol: Any = None
+    public_key: Any = None
+
+@dataclasses.dataclass
+class DnssecZskResponseCollection_Result_SigningKey:
+    kek: Any = None
+    privkey: Any = None
+    pubkey: Any = None
+
+@dataclasses.dataclass
+class DnssecZskResponseCollection_Result:
+    dnskey: Any = None
+    location: Any = None
+    name: Any = None
+    signing_key: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
 class DnssecZskResponseCollectionConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class DnssecZskResponseCollectionAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

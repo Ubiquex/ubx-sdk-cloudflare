@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ConfigAutofill_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class ConfigAutofill_Result_PackageManager:
+    pass
+
+@dataclasses.dataclass
+class ConfigAutofill_Result:
+    config_file: Any = None
+    default_worker_name: Any = None
+    env_worker_names: Any = None
+    package_manager: Any = None
+    scripts: Any = None
+
+@dataclasses.dataclass
+class ConfigAutofill_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class ConfigAutofillConfig:
     # Account identifier.
     account_id: Any = None
@@ -26,13 +51,18 @@ class ConfigAutofillAttrs:
     account_id: Any = None
     # Git branch name.
     branch: Any = None
+    errors: Any = None
+    messages: Any = None
     # Provider account identifier.
     provider_account_id: Any = None
     provider_type: Any = None
     # Repository identifier.
     repo_id: Any = None
+    result: Any = None
+    result_info: Any = None
     # Root directory path.
     root_directory: Any = None
+    success: Any = None
 
 ConfigAutofill = ubx.DataSourceBinding(
     wire_type="cloudflare_config_autofill",

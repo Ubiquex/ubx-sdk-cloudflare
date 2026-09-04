@@ -41,11 +41,11 @@ var Membership = ubx.DataSourceBinding{
 	WireType: "cloudflare_membership",
 	Fields: ubx.FieldMap{
 		"AccountName": ubx.FieldSpec{WireName: "account_name"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Direction":   ubx.FieldSpec{WireName: "direction"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Order":       ubx.FieldSpec{WireName: "order"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 	},
 }

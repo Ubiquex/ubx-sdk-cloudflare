@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosSynProtectionRuleListResponse_Result:
+    burst_sensitivity: Any = None
+    created_on: Any = None
+    id: Any = None
+    mitigation_type: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    name: Any = None
+    rate_sensitivity: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosSynProtectionRuleListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +35,7 @@ class DosSynProtectionRuleListResponseAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 DosSynProtectionRuleListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_syn_protection_rule_list_response",

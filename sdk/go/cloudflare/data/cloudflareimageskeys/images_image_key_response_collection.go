@@ -3,16 +3,34 @@ package cloudflareimageskeys
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImageKeyResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesImageKeyResponseCollection_Result_Keys struct {
+	Name  any
+	Value any
+}
+
+type ImagesImageKeyResponseCollection_Result struct {
+	Keys any
+}
+
 type ImagesImageKeyResponseCollectionConfig struct {
 }
 
 type ImagesImageKeyResponseCollectionAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesImageKeyResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_image_key_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

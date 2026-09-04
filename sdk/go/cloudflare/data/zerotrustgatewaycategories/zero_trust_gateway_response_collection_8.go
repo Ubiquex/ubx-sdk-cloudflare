@@ -3,6 +3,23 @@ package zerotrustgatewaycategories
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection8_Result_Subcategories struct {
+	Beta        any
+	Class       any
+	Description any
+	Id          any
+	Name        any
+}
+
+type ZeroTrustGatewayResponseCollection8_Result struct {
+	Beta          any
+	Class         any
+	Description   any
+	Id            any
+	Name          any
+	Subcategories any
+}
+
 type ZeroTrustGatewayResponseCollection8Config struct {
 	// Provide the identifier string.
 	AccountId any
@@ -11,6 +28,7 @@ type ZeroTrustGatewayResponseCollection8Config struct {
 type ZeroTrustGatewayResponseCollection8Attrs struct {
 	// Provide the identifier string.
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection8 = ubx.DataSourceBinding{

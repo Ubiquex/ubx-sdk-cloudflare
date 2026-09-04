@@ -7,12 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingle_Result:
+    emails: Any = None
+    enabled: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingleConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesCtAlertingSubscriptionResponseSingleAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

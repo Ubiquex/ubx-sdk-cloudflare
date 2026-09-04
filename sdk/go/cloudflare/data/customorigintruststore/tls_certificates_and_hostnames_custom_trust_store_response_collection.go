@@ -3,6 +3,17 @@ package customorigintruststore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection_Result struct {
+	Certificate any
+	ExpiresOn   any
+	Id          any
+	Issuer      any
+	Signature   any
+	Status      any
+	UpdatedAt   any
+	UploadedOn  any
+}
+
 type TlsCertificatesAndHostnamesCustomTrustStoreResponseCollectionConfig struct {
 	// Limit to the number of records returned.
 	Limit any
@@ -25,6 +36,7 @@ type TlsCertificatesAndHostnamesCustomTrustStoreResponseCollectionAttrs struct {
 	Page any
 	// Number of records per page.
 	PerPage any
+	Result  any
 	// Identifier.
 	ZoneId any
 }
@@ -32,10 +44,10 @@ type TlsCertificatesAndHostnamesCustomTrustStoreResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesCustomTrustStoreResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_trust_store_response_collection",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Offset":  ubx.FieldSpec{WireName: "offset"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

@@ -3,18 +3,37 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Metric_Errors struct {
+	Code    any
+	Message any
+}
+
+type Metric_Result struct {
+	// The size in bytes of unacknowledged messages in the queue.
+	BacklogBytes any
+	// The number of unacknowledged messages in the queue.
+	BacklogCount any
+	// Unix timestamp in milliseconds of the oldest unacknowledged message in the queue. Returns 0 if unknown.
+	OldestMessageTimestampMs any
+}
+
 type MetricConfig struct {
 }
 
 type MetricAttrs struct {
 	// A Resource identifier.
 	AccountId any
+	Errors    any
+	Messages  any
 	// A Resource identifier.
 	QueueId any
+	// Best-effort metrics for the queue. Values may be approximate due to the distributed nature of queues.
+	Result any
+	// Indicates if the API call was successful or not.
+	Success any
 }
 
 var Metric = ubx.DataSourceBinding{
 	WireType: "cloudflare_metric",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

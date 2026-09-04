@@ -127,6 +127,27 @@ class AccessSingleResponse4_Exclude:
     service_token: Any = None
     user_risk_score: Any = None
 
+@dataclasses.dataclass
+class AccessSingleResponse4_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessSingleResponse4_Result:
+    created_at: Any = None
+    # Rules evaluated with a NOT logical operator. To match a policy, a user cannot meet any of the Exclude rules.
+    exclude: Any = None
+    # UUID.
+    id: Any = None
+    # Rules evaluated with an OR logical operator. A user needs to meet only one of the Include rules.
+    include: Any = None
+    # Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
+    is_default: Any = None
+    # The name of the Access group.
+    name: Any = None
+    # Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
+    require: Any = None
+    updated_at: Any = None
+
 _AccessSingleResponse4_Exclude_AuthContextFields = {
     "ac_id": ubx.FieldSpec(wire_name="ac_id"),
     "id": ubx.FieldSpec(wire_name="id"),
@@ -369,6 +390,7 @@ class AccessSingleResponse4Attrs:
     name: Any = None
     # Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.
     require: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

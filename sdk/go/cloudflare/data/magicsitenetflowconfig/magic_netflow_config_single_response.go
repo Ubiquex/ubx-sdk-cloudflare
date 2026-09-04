@@ -3,18 +3,32 @@ package magicsitenetflowconfig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicNetflowConfigSingleResponse_Result struct {
+	// Timeout in seconds for active flows (defaults to 30).
+	ActiveTimeout any
+	// IPv4 address of the NetFlow collector.
+	CollectorIp any
+	// UDP port of the NetFlow collector (defaults to 2055).
+	CollectorPort any
+	// Timeout in seconds for inactive flows (defaults to 15).
+	InactiveTimeout any
+	// Sampling rate for NetFlow records (1 = every packet, 1000 = 1 in 1000 packets). Defaults to 1.
+	SamplingRate any
+}
+
 type MagicNetflowConfigSingleResponseConfig struct {
 }
 
 type MagicNetflowConfigSingleResponseAttrs struct {
 	// Identifier
 	AccountId any
+	// NetFlow configuration for a site.
+	Result any
 	// Identifier
 	SiteId any
 }
 
 var MagicNetflowConfigSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_netflow_config_single_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

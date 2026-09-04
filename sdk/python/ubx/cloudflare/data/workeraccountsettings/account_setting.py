@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccountSetting_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class AccountSetting_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class AccountSetting_Result:
+    default_usage_model: Any = None
+    green_compute: Any = None
+
+@dataclasses.dataclass
 class AccountSettingConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +31,11 @@ class AccountSettingConfig:
 class AccountSettingAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 AccountSetting = ubx.DataSourceBinding(
     wire_type="cloudflare_account_setting",

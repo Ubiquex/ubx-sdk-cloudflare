@@ -3,6 +3,13 @@ package logcontrolcmbconfigforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogcontrolCmbConfigResponseSingle_Result struct {
+	// Allow out of region access
+	AllowOutOfRegionAccess any
+	// Name of the region.
+	Regions any
+}
+
 type LogcontrolCmbConfigResponseSingleConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +18,7 @@ type LogcontrolCmbConfigResponseSingleConfig struct {
 type LogcontrolCmbConfigResponseSingleAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var LogcontrolCmbConfigResponseSingle = ubx.DataSourceBinding{

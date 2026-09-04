@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ImpersonationRegistry_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class ImpersonationRegistry_Result:
+    comments: Any = None
+    created_at: Any = None
+    directory_id: Any = None
+    directory_node_id: Any = None
+    email: Any = None
+    external_directory_node_id: Any = None
+    id: Any = None
+    is_email_regex: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+    name: Any = None
+    provenance: Any = None
+
+@dataclasses.dataclass
 class ImpersonationRegistryConfig:
     direction: Any = None
     order: Any = None
@@ -22,6 +41,7 @@ class ImpersonationRegistryAttrs:
     page: Any = None
     per_page: Any = None
     provenance: Any = None
+    result: Any = None
     search: Any = None
 
 ImpersonationRegistry = ubx.DataSourceBinding(

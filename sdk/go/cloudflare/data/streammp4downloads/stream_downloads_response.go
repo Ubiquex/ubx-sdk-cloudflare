@@ -3,6 +3,19 @@ package streammp4downloads
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamDownloadsResponse_Result_Audio struct {
+	PercentComplete any
+	Status          any
+	Url             any
+}
+
+type StreamDownloadsResponse_Result struct {
+	// The audio-only download. Only present if this download type has been created.
+	Audio any
+	// The default video download. Only present if this download type has been created.
+	Default any
+}
+
 type StreamDownloadsResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -15,12 +28,14 @@ type StreamDownloadsResponseAttrs struct {
 	AccountId any
 	// A Cloudflare-generated unique identifier for a media item.
 	Identifier any
+	// An object with download type keys. Each key is optional and only present if that download type has been created.
+	Result any
 }
 
 var StreamDownloadsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_stream_downloads_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
 	},
 }

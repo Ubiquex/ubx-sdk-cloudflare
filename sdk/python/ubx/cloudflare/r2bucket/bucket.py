@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Bucket_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Bucket_Result:
+    # Creation timestamp.
+    creation_date: Any = None
+    # Jurisdiction where objects in this bucket are guaranteed to be stored.
+    jurisdiction: Any = None
+    # Location of the bucket.
+    location: Any = None
+    # Name of the bucket.
+    name: Any = None
+    # Storage class for newly uploaded objects, unless specified otherwise.
+    storage_class: Any = None
+
+@dataclasses.dataclass
 class BucketConfig:
     # Location of the bucket.
     location_hint: Any = None
@@ -21,12 +39,18 @@ class BucketConfig:
 
 @dataclasses.dataclass
 class BucketAttrs:
+    errors: Any = None
     # Location of the bucket.
     location_hint: Any = None
+    messages: Any = None
     # Name of the bucket.
     name: Any = None
+    # A single R2 bucket.
+    result: Any = None
     # Storage class for newly uploaded objects, unless specified otherwise.
     storage_class: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

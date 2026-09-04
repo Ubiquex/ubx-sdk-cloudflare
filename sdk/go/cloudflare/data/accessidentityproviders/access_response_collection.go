@@ -3,6 +3,9 @@ package accessidentityproviders
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection_Result struct {
+}
+
 type AccessResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -21,6 +24,7 @@ type AccessResponseCollectionAttrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 	// Indicates to Access to only retrieve identity providers that have the System for Cross-Domain Identity Management (SCIM) enabled.
 	ScimEnabled any
 }
@@ -28,9 +32,9 @@ type AccessResponseCollectionAttrs struct {
 var AccessResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PerPage":     ubx.FieldSpec{WireName: "per_page"},
 		"ScimEnabled": ubx.FieldSpec{WireName: "scim_enabled"},
 	},
 }

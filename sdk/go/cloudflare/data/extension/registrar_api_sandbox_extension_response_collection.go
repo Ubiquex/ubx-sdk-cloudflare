@@ -3,31 +3,67 @@ package extension
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RegistrarApiSandboxExtensionResponseCollectionConfig struct {
-	Cursor any
-	Direction any
+type RegistrarApiSandboxExtensionResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiSandboxExtensionResponseCollection_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiSandboxExtensionResponseCollection_Result_Metadata struct {
 	Name any
+	Tld  any
+}
+
+type RegistrarApiSandboxExtensionResponseCollection_Result struct {
+	Metadata           any
+	RegistrationSchema any
+}
+
+type RegistrarApiSandboxExtensionResponseCollection_ResultInfo struct {
+	// Number of items in the current result set.
+	Count any
+	// Opaque token for the next page. Empty string when no more pages.
+	Cursor any
+	// Number of items per page.
 	PerPage any
-	SortBy any
+}
+
+type RegistrarApiSandboxExtensionResponseCollectionConfig struct {
+	Cursor    any
+	Direction any
+	Name      any
+	PerPage   any
+	SortBy    any
 }
 
 type RegistrarApiSandboxExtensionResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Cursor any
+	Cursor    any
 	Direction any
-	Name any
-	PerPage any
-	SortBy any
+	Errors    any
+	Messages  any
+	Name      any
+	PerPage   any
+	Result    any
+	// Cursor-based pagination metadata.
+	ResultInfo any
+	SortBy     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiSandboxExtensionResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_registrar_api_sandbox_extension_response_collection",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"SortBy": ubx.FieldSpec{WireName: "sort_by"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"SortBy":    ubx.FieldSpec{WireName: "sort_by"},
 	},
 }

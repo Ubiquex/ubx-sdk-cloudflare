@@ -7,12 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SnippetRule_Messages:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class SnippetRule_Result:
+    description: Any = None
+    enabled: Any = None
+    expression: Any = None
+    id: Any = None
+    last_updated: Any = None
+    snippet_name: Any = None
+
+@dataclasses.dataclass
 class SnippetRuleConfig:
     # Use this field to specify the unique ID of the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class SnippetRuleAttrs:
+    errors: Any = None
+    # Contain warning messages.
+    messages: Any = None
+    # Lists snippet rules.
+    result: Any = None
+    success: Any = None
     # Use this field to specify the unique ID of the zone.
     zone_id: Any = None
 

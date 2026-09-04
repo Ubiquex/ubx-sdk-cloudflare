@@ -7,12 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Hold_Result:
+    hold: Any = None
+    hold_after: Any = None
+    include_subdomains: Any = None
+
+@dataclasses.dataclass
 class HoldConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class HoldAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

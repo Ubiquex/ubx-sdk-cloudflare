@@ -9,6 +9,15 @@ export interface Entry_Pattern {
   validation?: Entry_Pattern_Validation | Computed<Entry_Pattern_Validation>;
 }
 
+export interface Entry_Result_Profiles {
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
+export interface Entry_Result {
+  profiles?: Entry_Result_Profiles[] | Computed<Entry_Result_Profiles[]>;
+}
+
 const Entry_Pattern_ValidationFields: FieldMap = {
 };
 
@@ -39,6 +48,7 @@ export interface EntryAttrs {
   name: string;
   pattern: Entry_Pattern;
   profileId: string;
+  result: Entry_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

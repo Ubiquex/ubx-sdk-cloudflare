@@ -4,37 +4,37 @@ package indicator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Relationship_Result_Relationships struct {
-	Confidence any
-	CreatedAt any
-	DatasetId any
-	EntityId any
-	EntityType any
-	Metadata any
+	Confidence       any
+	CreatedAt        any
+	DatasetId        any
+	EntityId         any
+	EntityType       any
+	Metadata         any
 	RelationshipUuid any
-	Type any
-	UpdatedAt any
+	Type             any
+	UpdatedAt        any
 }
 
 type Relationship_Result struct {
-	Counts any
-	Cursor any
-	Entities any
-	HasMore any
+	Counts          any
+	Cursor          any
+	Entities        any
+	HasMore         any
 	HydrationErrors any
-	Relationships any
+	Relationships   any
 }
 
 type Relationship_Search struct {
 	Field any
-	Op any
+	Op    any
 	Value any
 }
 
 var Relationship_SearchFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Op": ubx.FieldSpec{WireName: "op"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Op":    ubx.FieldSpec{WireName: "op"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type RelationshipConfig struct {
 	// Account ID.
@@ -66,25 +66,25 @@ type RelationshipAttrs struct {
 	IndicatorId any
 	// Page size (1–100, default 25).
 	PageSize any
-	Result any
+	Result   any
 	// JSON array of {field, op, value} filters, AND-combined. Fields: entityType (other-end type), type (relationship type), confidence (0–100), metadata.<key>. Example: [{"field":"type","op":"equals","value":"appears_in"},{"field":"confidence","op":"gte","value":50}]
-	Search any
+	Search  any
 	Success any
 }
 
 var Relationship = ubx.DataSourceBinding{
 	WireType: "cloudflare_relationship",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"Expand": ubx.FieldSpec{WireName: "expand"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":      ubx.FieldSpec{WireName: "cursor"},
+		"DatasetId":   ubx.FieldSpec{WireName: "dataset_id"},
+		"Expand":      ubx.FieldSpec{WireName: "expand"},
 		"IndicatorId": ubx.FieldSpec{WireName: "indicator_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
 		"Search": ubx.FieldSpec{
 			WireName: "search",
-			Kind: "list",
-			Fields: Relationship_SearchFields,
+			Kind:     "list",
+			Fields:   Relationship_SearchFields,
 		},
 	},
 }

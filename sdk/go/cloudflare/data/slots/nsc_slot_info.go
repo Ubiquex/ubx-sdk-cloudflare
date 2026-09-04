@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NscSlotInfo_Items_Facility struct {
 	Address any
-	Name any
+	Name    any
 }
 
 type NscSlotInfo_Items struct {
-	Account any
+	Account       any
 	CcrDeviceName any
-	Facility any
-	Id any
-	Occupied any
-	Site any
-	Speed any
+	Facility      any
+	Id            any
+	Occupied      any
+	Site          any
+	Speed         any
 }
 
 type NscSlotInfoConfig struct {
 	// Customer account tag
-	AccountId any
+	AccountId       any
 	AddressContains any
-	Cursor any
-	Limit any
-	Occupied any
-	Site any
-	Speed any
+	Cursor          any
+	Limit           any
+	Occupied        any
+	Site            any
+	Speed           any
 }
 
 type NscSlotInfoAttrs struct {
 	// Customer account tag
-	AccountId any
+	AccountId       any
 	AddressContains any
-	Cursor any
-	Items any
-	Limit any
-	Next any
-	Occupied any
-	Site any
-	Speed any
+	Cursor          any
+	Items           any
+	Limit           any
+	Next            any
+	Occupied        any
+	Site            any
+	Speed           any
 }
 
 var NscSlotInfo = ubx.DataSourceBinding{
 	WireType: "cloudflare_nsc_slot_info",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"AddressContains": ubx.FieldSpec{WireName: "address_contains"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Occupied": ubx.FieldSpec{WireName: "occupied"},
-		"Site": ubx.FieldSpec{WireName: "site"},
-		"Speed": ubx.FieldSpec{WireName: "speed"},
+		"Cursor":          ubx.FieldSpec{WireName: "cursor"},
+		"Limit":           ubx.FieldSpec{WireName: "limit"},
+		"Occupied":        ubx.FieldSpec{WireName: "occupied"},
+		"Site":            ubx.FieldSpec{WireName: "site"},
+		"Speed":           ubx.FieldSpec{WireName: "speed"},
 	},
 }

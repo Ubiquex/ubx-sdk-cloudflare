@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiSandboxExtensionResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiSandboxExtensionResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiSandboxExtensionResponseSingle_Result_Metadata:
+    # The full name of the extension. For example, "co.uk", or "uk".
+    name: Any = None
+    # The TLD of the extension. For example, for "co.uk", it is "uk". For "uk", it is "uk".
+    tld: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiSandboxExtensionResponseSingle_Result:
+    # Extension metadata.
+    metadata: Any = None
+    # JSON Schema describing the expected input structure for registration operations on this extension.
+    registration_schema: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiSandboxExtensionResponseSingleConfig:
     extension: Any = None
 
@@ -14,7 +38,13 @@ class RegistrarApiSandboxExtensionResponseSingleConfig:
 class RegistrarApiSandboxExtensionResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
     extension: Any = None
+    messages: Any = None
+    # Extension entry with metadata and JSON Schema documents for the registration operation.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RegistrarApiSandboxExtensionResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_sandbox_extension_response_single",

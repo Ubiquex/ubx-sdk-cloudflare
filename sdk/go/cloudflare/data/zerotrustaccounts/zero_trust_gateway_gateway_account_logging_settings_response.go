@@ -3,12 +3,34 @@ package zerotrustaccounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result_SettingsByRuleType_Dns struct {
+	LogAll    any
+	LogBlocks any
+}
+
+type ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result_SettingsByRuleType struct {
+	// Configure logging settings for DNS firewall.
+	Dns any
+	// Configure logging settings for HTTP/HTTPS firewall.
+	Http any
+	// Configure logging settings for Network firewall.
+	L4 any
+}
+
+type ZeroTrustGatewayGatewayAccountLoggingSettingsResponse_Result struct {
+	// Indicate whether to redact personally identifiable information from activity logging (PII fields include source IP, user email, user ID, device ID, URL, referrer, and user agent).
+	RedactPii any
+	// Configure logging settings for each rule type.
+	SettingsByRuleType any
+}
+
 type ZeroTrustGatewayGatewayAccountLoggingSettingsResponseConfig struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayGatewayAccountLoggingSettingsResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayGatewayAccountLoggingSettingsResponse = ubx.DataSourceBinding{

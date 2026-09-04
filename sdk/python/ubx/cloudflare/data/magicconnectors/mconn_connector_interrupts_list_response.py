@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnConnectorInterruptsListResponse_Result_Reboot:
+    purge: Any = None
+
+@dataclasses.dataclass
+class MconnConnectorInterruptsListResponse_Result:
+    reboot: Any = None
+    restart: Any = None
+    shutdown: Any = None
+    submitted_at: Any = None
+    triggered_at: Any = None
+
+@dataclasses.dataclass
 class MconnConnectorInterruptsListResponseConfig:
     connector_id: Any = None
 
@@ -15,6 +27,7 @@ class MconnConnectorInterruptsListResponseAttrs:
     # Account identifier
     account_id: Any = None
     connector_id: Any = None
+    result: Any = None
 
 MconnConnectorInterruptsListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_connector_interrupts_list_response",

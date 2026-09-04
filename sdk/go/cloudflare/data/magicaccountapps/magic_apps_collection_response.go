@@ -3,16 +3,38 @@ package magicaccountapps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicAppsCollectionResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type MagicAppsCollectionResponse_Result_IpSubnets struct {
+}
+
+type MagicAppsCollectionResponse_Result struct {
+	AccountAppId  any
+	Hostnames     any
+	IpSubnets     any
+	ManagedAppId  any
+	Name          any
+	SourceSubnets any
+	Type          any
+}
+
 type MagicAppsCollectionResponseConfig struct {
 }
 
 type MagicAppsCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var MagicAppsCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_apps_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

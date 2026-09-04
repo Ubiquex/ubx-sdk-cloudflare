@@ -3,6 +3,41 @@ package emailroutingroutingrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type EmailAccountRulesResponseCollection_Result_Actions struct {
+	Type  any
+	Value any
+}
+
+type EmailAccountRulesResponseCollection_Result_Matchers struct {
+	Field any
+	Type  any
+	Value any
+}
+
+type EmailAccountRulesResponseCollection_Result_Zone struct {
+	Name any
+	Tag  any
+}
+
+type EmailAccountRulesResponseCollection_Result struct {
+	Actions  any
+	Enabled  any
+	Id       any
+	Matchers any
+	Name     any
+	Priority any
+	Source   any
+	Tag      any
+	Zone     any
+}
+
+type EmailAccountRulesResponseCollection_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+}
+
 type EmailAccountRulesResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -22,15 +57,17 @@ type EmailAccountRulesResponseCollectionAttrs struct {
 	// Page number of paginated results.
 	Page any
 	// Maximum number of results per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 }
 
 var EmailAccountRulesResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_email_account_rules_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

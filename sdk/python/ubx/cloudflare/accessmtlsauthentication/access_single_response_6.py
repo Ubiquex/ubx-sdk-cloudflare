@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessSingleResponse6_Result_CreatedAt:
+    pass
+
+@dataclasses.dataclass
+class AccessSingleResponse6_Result:
+    # The hostnames of the applications that will use this certificate.
+    associated_hostnames: Any = None
+    created_at: Any = None
+    expires_on: Any = None
+    # The MD5 fingerprint of the certificate.
+    fingerprint: Any = None
+    # The ID of the application that will use this certificate.
+    id: Any = None
+    # The name of the certificate.
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessSingleResponse6Config:
     # The hostnames of the applications that will use this certificate.
     associated_hostnames: Any = None
@@ -27,6 +45,7 @@ class AccessSingleResponse6Attrs:
     certificate: Any = None
     # The name of the certificate.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

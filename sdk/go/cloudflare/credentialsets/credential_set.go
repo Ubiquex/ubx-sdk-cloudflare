@@ -3,6 +3,24 @@ package credentialsets
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CredentialSet_Errors_Source struct {
+	Pointer any
+}
+
+type CredentialSet_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type CredentialSet_Result struct {
+	// Credential set identifier.
+	Id any
+	// Human-readable name.
+	Name any
+}
+
 type CredentialSetConfig struct {
 	// Human-readable name.
 	Name any
@@ -13,8 +31,14 @@ type CredentialSetConfig struct {
 }
 
 type CredentialSetAttrs struct {
+	Errors   any
+	Messages any
 	// Human-readable name.
-	Name any
+	Name       any
+	Result     any
+	ResultInfo any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +48,8 @@ type CredentialSetAttrs struct {
 var CredentialSet = ubx.ResourceBinding{
 	WireType: "cloudflare_credential_set",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"CredentialSetId": ubx.FieldSpec{WireName: "credential_set_id"},
 	},
 }

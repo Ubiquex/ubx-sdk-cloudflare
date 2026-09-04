@@ -4,162 +4,162 @@ package aigatewaylogs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Log_Filters struct {
-	Key any
+	Key      any
 	Operator any
-	Value any
+	Value    any
 }
 
 type Log_Result struct {
-	Cached any
-	Cost any
-	CreatedAt any
-	CustomCost any
-	Duration any
-	Id any
-	Metadata any
-	Model any
-	ModelType any
-	Path any
-	Provider any
-	RequestContentType any
-	RequestType any
+	Cached              any
+	Cost                any
+	CreatedAt           any
+	CustomCost          any
+	Duration            any
+	Id                  any
+	Metadata            any
+	Model               any
+	ModelType           any
+	Path                any
+	Provider            any
+	RequestContentType  any
+	RequestType         any
 	ResponseContentType any
-	StatusCode any
-	Step any
-	Success any
-	TokensIn any
-	TokensOut any
+	StatusCode          any
+	Step                any
+	Success             any
+	TokensIn            any
+	TokensOut           any
 }
 
 type Log_ResultInfo struct {
-	Count any
-	MaxCost any
-	MaxDuration any
-	MaxTokensIn any
-	MaxTokensOut any
+	Count          any
+	MaxCost        any
+	MaxDuration    any
+	MaxTokensIn    any
+	MaxTokensOut   any
 	MaxTotalTokens any
-	MinCost any
-	MinDuration any
-	MinTokensIn any
-	MinTokensOut any
+	MinCost        any
+	MinDuration    any
+	MinTokensIn    any
+	MinTokensOut   any
 	MinTotalTokens any
-	Page any
-	PerPage any
-	TotalCount any
+	Page           any
+	PerPage        any
+	TotalCount     any
 }
 
 var Log_FiltersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type LogConfig struct {
 	AccountId any
-	Cached any
+	Cached    any
 	Direction any
-	EndDate any
-	Feedback any
-	Filters any
+	EndDate   any
+	Feedback  any
+	Filters   any
 	// gateway id
-	GatewayId any
-	MaxCost any
-	MaxDuration any
-	MaxTokensIn any
-	MaxTokensOut any
-	MaxTotalTokens any
-	MetaInfo any
-	MinCost any
-	MinDuration any
-	MinTokensIn any
-	MinTokensOut any
-	MinTotalTokens any
-	Model any
-	ModelType any
-	OrderBy any
-	OrderByDirection any
-	Page any
-	PerPage any
-	Provider any
-	RequestContentType any
+	GatewayId           any
+	MaxCost             any
+	MaxDuration         any
+	MaxTokensIn         any
+	MaxTokensOut        any
+	MaxTotalTokens      any
+	MetaInfo            any
+	MinCost             any
+	MinDuration         any
+	MinTokensIn         any
+	MinTokensOut        any
+	MinTotalTokens      any
+	Model               any
+	ModelType           any
+	OrderBy             any
+	OrderByDirection    any
+	Page                any
+	PerPage             any
+	Provider            any
+	RequestContentType  any
 	ResponseContentType any
-	Search any
-	StartDate any
-	Success any
+	Search              any
+	StartDate           any
+	Success             any
 }
 
 type LogAttrs struct {
 	AccountId any
-	Cached any
+	Cached    any
 	Direction any
-	EndDate any
-	Feedback any
-	Filters any
+	EndDate   any
+	Feedback  any
+	Filters   any
 	// gateway id
-	GatewayId any
-	MaxCost any
-	MaxDuration any
-	MaxTokensIn any
-	MaxTokensOut any
-	MaxTotalTokens any
-	MetaInfo any
-	MinCost any
-	MinDuration any
-	MinTokensIn any
-	MinTokensOut any
-	MinTotalTokens any
-	Model any
-	ModelType any
-	OrderBy any
-	OrderByDirection any
-	Page any
-	PerPage any
-	Provider any
-	RequestContentType any
+	GatewayId           any
+	MaxCost             any
+	MaxDuration         any
+	MaxTokensIn         any
+	MaxTokensOut        any
+	MaxTotalTokens      any
+	MetaInfo            any
+	MinCost             any
+	MinDuration         any
+	MinTokensIn         any
+	MinTokensOut        any
+	MinTotalTokens      any
+	Model               any
+	ModelType           any
+	OrderBy             any
+	OrderByDirection    any
+	Page                any
+	PerPage             any
+	Provider            any
+	RequestContentType  any
 	ResponseContentType any
-	Result any
-	ResultInfo any
-	Search any
-	StartDate any
-	Success any
+	Result              any
+	ResultInfo          any
+	Search              any
+	StartDate           any
+	Success             any
 }
 
 var Log = ubx.DataSourceBinding{
 	WireType: "cloudflare_log",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cached": ubx.FieldSpec{WireName: "cached"},
+		"Cached":    ubx.FieldSpec{WireName: "cached"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"Feedback": ubx.FieldSpec{WireName: "feedback"},
+		"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+		"Feedback":  ubx.FieldSpec{WireName: "feedback"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "list",
-			Fields: Log_FiltersFields,
+			Kind:     "list",
+			Fields:   Log_FiltersFields,
 		},
-		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"MaxCost": ubx.FieldSpec{WireName: "max_cost"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxTokensIn": ubx.FieldSpec{WireName: "max_tokens_in"},
-		"MaxTokensOut": ubx.FieldSpec{WireName: "max_tokens_out"},
-		"MaxTotalTokens": ubx.FieldSpec{WireName: "max_total_tokens"},
-		"MetaInfo": ubx.FieldSpec{WireName: "meta_info"},
-		"MinCost": ubx.FieldSpec{WireName: "min_cost"},
-		"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
-		"MinTokensIn": ubx.FieldSpec{WireName: "min_tokens_in"},
-		"MinTokensOut": ubx.FieldSpec{WireName: "min_tokens_out"},
-		"MinTotalTokens": ubx.FieldSpec{WireName: "min_total_tokens"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"OrderByDirection": ubx.FieldSpec{WireName: "order_by_direction"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"RequestContentType": ubx.FieldSpec{WireName: "request_content_type"},
+		"GatewayId":           ubx.FieldSpec{WireName: "gateway_id"},
+		"MaxCost":             ubx.FieldSpec{WireName: "max_cost"},
+		"MaxDuration":         ubx.FieldSpec{WireName: "max_duration"},
+		"MaxTokensIn":         ubx.FieldSpec{WireName: "max_tokens_in"},
+		"MaxTokensOut":        ubx.FieldSpec{WireName: "max_tokens_out"},
+		"MaxTotalTokens":      ubx.FieldSpec{WireName: "max_total_tokens"},
+		"MetaInfo":            ubx.FieldSpec{WireName: "meta_info"},
+		"MinCost":             ubx.FieldSpec{WireName: "min_cost"},
+		"MinDuration":         ubx.FieldSpec{WireName: "min_duration"},
+		"MinTokensIn":         ubx.FieldSpec{WireName: "min_tokens_in"},
+		"MinTokensOut":        ubx.FieldSpec{WireName: "min_tokens_out"},
+		"MinTotalTokens":      ubx.FieldSpec{WireName: "min_total_tokens"},
+		"Model":               ubx.FieldSpec{WireName: "model"},
+		"ModelType":           ubx.FieldSpec{WireName: "model_type"},
+		"OrderBy":             ubx.FieldSpec{WireName: "order_by"},
+		"OrderByDirection":    ubx.FieldSpec{WireName: "order_by_direction"},
+		"Page":                ubx.FieldSpec{WireName: "page"},
+		"PerPage":             ubx.FieldSpec{WireName: "per_page"},
+		"Provider":            ubx.FieldSpec{WireName: "provider"},
+		"RequestContentType":  ubx.FieldSpec{WireName: "request_content_type"},
 		"ResponseContentType": ubx.FieldSpec{WireName: "response_content_type"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Success": ubx.FieldSpec{WireName: "success"},
+		"Search":              ubx.FieldSpec{WireName: "search"},
+		"StartDate":           ubx.FieldSpec{WireName: "start_date"},
+		"Success":             ubx.FieldSpec{WireName: "success"},
 	},
 }

@@ -7,12 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicVisibilityMnmMnmRulesCollectionResponse_Result:
+    automatic_advertisement: Any = None
+    bandwidth_threshold: Any = None
+    duration: Any = None
+    id: Any = None
+    name: Any = None
+    packet_threshold: Any = None
+    prefix_match: Any = None
+    prefixes: Any = None
+    type: Any = None
+    zscore_sensitivity: Any = None
+    zscore_target: Any = None
+
+@dataclasses.dataclass
 class MagicVisibilityMnmMnmRulesCollectionResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class MagicVisibilityMnmMnmRulesCollectionResponseAttrs:
     account_id: Any = None
+    result: Any = None
 
 MagicVisibilityMnmMnmRulesCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_visibility_mnm_mnm_rules_collection_response",

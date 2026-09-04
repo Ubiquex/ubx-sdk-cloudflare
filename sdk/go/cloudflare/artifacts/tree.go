@@ -8,10 +8,10 @@ type Tree_Errors_Source struct {
 }
 
 type Tree_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Tree_Result struct {
@@ -22,10 +22,10 @@ type Tree_Result struct {
 }
 
 type Tree_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -33,9 +33,9 @@ type Tree_ResultInfo struct {
 type TreeConfig struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Name any
-	ReadOnly any
+	Description   any
+	Name          any
+	ReadOnly      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -47,14 +47,14 @@ type TreeConfig struct {
 type TreeAttrs struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Errors any
-	Messages any
-	Name any
-	ReadOnly any
-	Result any
-	ResultInfo any
-	Success any
+	Description   any
+	Errors        any
+	Messages      any
+	Name          any
+	ReadOnly      any
+	Result        any
+	ResultInfo    any
+	Success       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -67,11 +67,11 @@ var Tree = ubx.ResourceBinding{
 	WireType: "cloudflare_tree",
 	Fields: ubx.FieldMap{
 		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Hash": ubx.FieldSpec{WireName: "hash"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ReadOnly":      ubx.FieldSpec{WireName: "read_only"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Namespace":     ubx.FieldSpec{WireName: "namespace"},
+		"Hash":          ubx.FieldSpec{WireName: "hash"},
 	},
 }

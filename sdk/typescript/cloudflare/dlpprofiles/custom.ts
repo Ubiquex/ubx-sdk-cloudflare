@@ -128,6 +128,7 @@ export interface CustomAttrs {
   entries: Custom_Entries[];
   name: string;
   ocrEnabled: boolean;
+  result: unknown;
   /** Sensitivity levels to associate with the profile. */
   sensitivityLevels: Custom_SensitivityLevels[];
   /** Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles). */

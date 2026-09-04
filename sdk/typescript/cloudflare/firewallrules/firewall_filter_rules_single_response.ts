@@ -25,6 +25,26 @@ export interface FirewallFilterRulesSingleResponse_Filter {
   ref?: string | Computed<string>;
 }
 
+export interface FirewallFilterRulesSingleResponse_Result_Filter {
+  deleted?: boolean | Computed<boolean>;
+  description?: string | Computed<string>;
+  expression?: string | Computed<string>;
+  id?: string | Computed<string>;
+  paused?: boolean | Computed<boolean>;
+  ref?: string | Computed<string>;
+}
+
+export interface FirewallFilterRulesSingleResponse_Result {
+  action?: string | Computed<string>;
+  description?: string | Computed<string>;
+  filter?: FirewallFilterRulesSingleResponse_Result_Filter | Computed<FirewallFilterRulesSingleResponse_Result_Filter>;
+  id?: string | Computed<string>;
+  paused?: boolean | Computed<boolean>;
+  priority?: number | Computed<number>;
+  products?: string[] | Computed<string[]>;
+  ref?: string | Computed<string>;
+}
+
 const FirewallFilterRulesSingleResponse_Action_ResponseFields: FieldMap = {
   body: "body",
   contentType: "content_type",
@@ -64,6 +84,7 @@ export interface FirewallFilterRulesSingleResponseAttrs {
   filter: FirewallFilterRulesSingleResponse_Filter;
   /** The unique identifier of the resource. */
   id: string;
+  result: FirewallFilterRulesSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   zoneId: string;
   /** path parameter, not part of the API's own resource representation */

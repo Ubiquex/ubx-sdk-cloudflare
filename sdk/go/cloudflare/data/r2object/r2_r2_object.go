@@ -4,28 +4,28 @@ package r2object
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type R2R2Object_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type R2R2Object_Result_HttpMetadata struct {
-	CacheControl any
-	CacheExpiry any
+	CacheControl       any
+	CacheExpiry        any
 	ContentDisposition any
-	ContentEncoding any
-	ContentLanguage any
-	ContentType any
+	ContentEncoding    any
+	ContentLanguage    any
+	ContentType        any
 }
 
 type R2R2Object_Result struct {
 	CustomMetadata any
-	Etag any
-	HttpMetadata any
-	Key any
-	LastModified any
-	Size any
-	Ssec any
-	StorageClass any
+	Etag           any
+	HttpMetadata   any
+	Key            any
+	LastModified   any
+	Size           any
+	Ssec           any
+	StorageClass   any
 }
 
 type R2R2Object_ResultInfo struct {
@@ -65,8 +65,8 @@ type R2R2ObjectAttrs struct {
 	Cursor any
 	// A single character used to group keys. All keys that contain the delimiter between the prefix and the first occurrence of the delimiter after the prefix are grouped under a single result element.
 	Delimiter any
-	Errors any
-	Messages any
+	Errors    any
+	Messages  any
 	// Maximum number of objects to return per page.
 	PerPage any
 	// Restricts results to only those objects whose keys begin with the specified prefix.
@@ -83,12 +83,12 @@ type R2R2ObjectAttrs struct {
 var R2R2Object = ubx.DataSourceBinding{
 	WireType: "cloudflare_r2_r2_object",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
+		"Cursor":     ubx.FieldSpec{WireName: "cursor"},
+		"Delimiter":  ubx.FieldSpec{WireName: "delimiter"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
+		"Prefix":     ubx.FieldSpec{WireName: "prefix"},
 		"StartAfter": ubx.FieldSpec{WireName: "start_after"},
 	},
 }

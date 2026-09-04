@@ -3,22 +3,119 @@ package workerscript
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersScriptResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersScriptResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersScriptResponseCollection_Result_CacheOptions struct {
+	CrossVersionCache any
+	Enabled           any
+}
+
+type WorkersScriptResponseCollection_Result_Exports struct {
+}
+
+type WorkersScriptResponseCollection_Result_NamedHandlers struct {
+	Handlers any
+	Name     any
+}
+
+type WorkersScriptResponseCollection_Result_Observability_Logs struct {
+	Destinations     any
+	Enabled          any
+	HeadSamplingRate any
+	InvocationLogs   any
+	Persist          any
+}
+
+type WorkersScriptResponseCollection_Result_Observability_Traces struct {
+	Destinations      any
+	Enabled           any
+	HeadSamplingRate  any
+	Persist           any
+	PropagationPolicy any
+}
+
+type WorkersScriptResponseCollection_Result_Observability struct {
+	Enabled           any
+	HeadSamplingRate  any
+	Logs              any
+	RedactQueryString any
+	Traces            any
+}
+
+type WorkersScriptResponseCollection_Result_Placement struct {
+	LastAnalyzedAt any
+	Status         any
+}
+
+type WorkersScriptResponseCollection_Result_Routes struct {
+	Id      any
+	Pattern any
+	Script  any
+}
+
+type WorkersScriptResponseCollection_Result_TailConsumers struct {
+	Environment any
+	Namespace   any
+	Service     any
+}
+
+type WorkersScriptResponseCollection_Result struct {
+	CacheOptions       any
+	CompatibilityDate  any
+	CompatibilityFlags any
+	CreatedOn          any
+	Etag               any
+	Exports            any
+	Handlers           any
+	HasAssets          any
+	HasModules         any
+	Id                 any
+	LastDeployedFrom   any
+	Logpush            any
+	MigrationTag       any
+	ModifiedOn         any
+	NamedHandlers      any
+	Observability      any
+	Placement          any
+	PlacementMode      any
+	PlacementStatus    any
+	Routes             any
+	Tag                any
+	Tags               any
+	TailConsumers      any
+	UsageModel         any
+}
+
 type WorkersScriptResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
-	Tags any
+	Tags      any
 }
 
 type WorkersScriptResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
-	Tags any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
+	Tags    any
 }
 
 var WorkersScriptResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_script_response_collection",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":      ubx.FieldSpec{WireName: "tags"},
 	},
 }

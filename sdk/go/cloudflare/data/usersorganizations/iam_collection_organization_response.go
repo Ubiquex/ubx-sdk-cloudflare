@@ -3,6 +3,14 @@ package usersorganizations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamCollectionOrganizationResponse_Result struct {
+	Id          any
+	Name        any
+	Permissions any
+	Roles       any
+	Status      any
+}
+
 type IamCollectionOrganizationResponseConfig struct {
 	// Direction to order organizations.
 	Direction any
@@ -33,6 +41,7 @@ type IamCollectionOrganizationResponseAttrs struct {
 	Page any
 	// Number of organizations per page.
 	PerPage any
+	Result  any
 	// Whether the user is a member of the organization or has an inivitation pending.
 	Status any
 }
@@ -41,11 +50,11 @@ var IamCollectionOrganizationResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_iam_collection_organization_response",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Match":     ubx.FieldSpec{WireName: "match"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

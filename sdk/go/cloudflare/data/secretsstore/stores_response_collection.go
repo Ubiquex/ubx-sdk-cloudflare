@@ -3,20 +3,29 @@ package secretsstore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StoresResponseCollection_Result struct {
+	AccountId any
+	Created   any
+	Id        any
+	Modified  any
+	Name      any
+}
+
 type StoresResponseCollectionConfig struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type StoresResponseCollectionAttrs struct {
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var StoresResponseCollection = ubx.DataSourceBinding{
@@ -24,8 +33,8 @@ var StoresResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

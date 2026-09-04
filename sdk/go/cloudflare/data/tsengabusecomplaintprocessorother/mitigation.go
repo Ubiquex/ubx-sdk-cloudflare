@@ -9,11 +9,11 @@ type Mitigation_Errors struct {
 
 type Mitigation_Result_Mitigations struct {
 	EffectiveDate any
-	EntityId any
-	EntityType any
-	Id any
-	Status any
-	Type any
+	EntityId      any
+	EntityType    any
+	Id            any
+	Status        any
+	Type          any
 }
 
 type Mitigation_Result struct {
@@ -21,9 +21,9 @@ type Mitigation_Result struct {
 }
 
 type Mitigation_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -36,10 +36,10 @@ type MitigationConfig struct {
 	EffectiveBefore any
 	// The type of entity targeted by a mitigation.
 	EntityType any
-	Page any
-	PerPage any
-	ReportId any
-	Sort any
+	Page       any
+	PerPage    any
+	ReportId   any
+	Sort       any
 	// The status of a mitigation
 	Status any
 	// The type of mitigation applied to a reported entity.
@@ -54,16 +54,16 @@ type MitigationAttrs struct {
 	EffectiveBefore any
 	// The type of entity targeted by a mitigation.
 	EntityType any
-	Errors any
-	Messages any
-	Page any
-	PerPage any
-	ReportId any
-	Result any
+	Errors     any
+	Messages   any
+	Page       any
+	PerPage    any
+	ReportId   any
+	Result     any
 	ResultInfo any
-	Sort any
+	Sort       any
 	// The status of a mitigation
-	Status any
+	Status  any
 	Success any
 	// The type of mitigation applied to a reported entity.
 	Type any
@@ -72,15 +72,15 @@ type MitigationAttrs struct {
 var Mitigation = ubx.DataSourceBinding{
 	WireType: "cloudflare_mitigation",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"EffectiveAfter": ubx.FieldSpec{WireName: "effective_after"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"EffectiveAfter":  ubx.FieldSpec{WireName: "effective_after"},
 		"EffectiveBefore": ubx.FieldSpec{WireName: "effective_before"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ReportId": ubx.FieldSpec{WireName: "report_id"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"EntityType":      ubx.FieldSpec{WireName: "entity_type"},
+		"Page":            ubx.FieldSpec{WireName: "page"},
+		"PerPage":         ubx.FieldSpec{WireName: "per_page"},
+		"ReportId":        ubx.FieldSpec{WireName: "report_id"},
+		"Sort":            ubx.FieldSpec{WireName: "sort"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

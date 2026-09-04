@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OneIntegrationV2ListItem_Result struct {
 	Application any
-	Created any
-	Id any
-	IsPaused any
-	Name any
-	Status any
-	Updated any
+	Created     any
+	Id          any
+	IsPaused    any
+	Name        any
+	Status      any
+	Updated     any
 }
 
 type OneIntegrationV2ListItem_ResultInfo struct {
@@ -29,53 +29,53 @@ type OneIntegrationV2ListItem_ResultInfo struct {
 }
 
 type OneIntegrationV2ListItemConfig struct {
-	AccountId any
+	AccountId   any
 	Application any
-	Direction any
-	DlpEnabled any
-	Order any
-	Page any
-	PageSize any
-	Search any
-	Status any
-	UseCases any
+	Direction   any
+	DlpEnabled  any
+	Order       any
+	Page        any
+	PageSize    any
+	Search      any
+	Status      any
+	UseCases    any
 }
 
 type OneIntegrationV2ListItemAttrs struct {
-	AccountId any
+	AccountId   any
 	Application any
-	Direction any
-	DlpEnabled any
+	Direction   any
+	DlpEnabled  any
 	// List of errors.
 	Errors any
 	// List of messages.
 	Messages any
-	Order any
-	Page any
+	Order    any
+	Page     any
 	PageSize any
 	// List of items.
 	Result any
 	// Pagination metadata.
 	ResultInfo any
-	Search any
-	Status any
+	Search     any
+	Status     any
 	// Whether the request succeeded.
-	Success any
+	Success  any
 	UseCases any
 }
 
 var OneIntegrationV2ListItem = ubx.DataSourceBinding{
 	WireType: "cloudflare_one_integration_v2_list_item",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"Application": ubx.FieldSpec{WireName: "application"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DlpEnabled": ubx.FieldSpec{WireName: "dlp_enabled"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UseCases": ubx.FieldSpec{WireName: "use_cases"},
+		"Direction":   ubx.FieldSpec{WireName: "direction"},
+		"DlpEnabled":  ubx.FieldSpec{WireName: "dlp_enabled"},
+		"Order":       ubx.FieldSpec{WireName: "order"},
+		"Page":        ubx.FieldSpec{WireName: "page"},
+		"PageSize":    ubx.FieldSpec{WireName: "page_size"},
+		"Search":      ubx.FieldSpec{WireName: "search"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
+		"UseCases":    ubx.FieldSpec{WireName: "use_cases"},
 	},
 }

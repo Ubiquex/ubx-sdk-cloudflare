@@ -3,18 +3,51 @@ package tunnelrouting
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelTeamnetResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelTeamnetResponseSingle_Result struct {
+	// Optional remark describing the route.
+	Comment any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// UUID of the route.
+	Id any
+	// The private IPv4 or IPv6 range connected by the route, in CIDR notation.
+	Network any
+	// The type of tunnel.
+	TunType any
+	// UUID of the tunnel.
+	TunnelId any
+	// A user-friendly name for a tunnel.
+	TunnelName any
+	// UUID of the virtual network.
+	VirtualNetworkId any
+	// A user-friendly name for the virtual network.
+	VirtualNetworkName any
+}
+
 type TunnelTeamnetResponseSingleConfig struct {
 	DefaultVirtualNetworkFallback any
-	Ip any
+	Ip                            any
 	// UUID of the virtual network.
 	VirtualNetworkId any
 }
 
 type TunnelTeamnetResponseSingleAttrs struct {
 	// Cloudflare account ID
-	AccountId any
+	AccountId                     any
 	DefaultVirtualNetworkFallback any
-	Ip any
+	Errors                        any
+	Ip                            any
+	Messages                      any
+	Result                        any
+	// Whether the API call was successful
+	Success any
 	// UUID of the virtual network.
 	VirtualNetworkId any
 }
@@ -23,7 +56,7 @@ var TunnelTeamnetResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_teamnet_response_single",
 	Fields: ubx.FieldMap{
 		"DefaultVirtualNetworkFallback": ubx.FieldSpec{WireName: "default_virtual_network_fallback"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
+		"Ip":                            ubx.FieldSpec{WireName: "ip"},
+		"VirtualNetworkId":              ubx.FieldSpec{WireName: "virtual_network_id"},
 	},
 }

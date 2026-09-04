@@ -3,6 +3,31 @@ package streamwatermarkprofile
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamWatermarkResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamWatermarkResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamWatermarkResponseCollection_Result struct {
+	Created        any
+	DownloadedFrom any
+	Height         any
+	Name           any
+	Opacity        any
+	Padding        any
+	Position       any
+	Scale          any
+	Size           any
+	Uid            any
+	Width          any
+}
+
 type StreamWatermarkResponseCollectionConfig struct {
 	// The account identifier tag.
 	AccountId any
@@ -11,6 +36,11 @@ type StreamWatermarkResponseCollectionConfig struct {
 type StreamWatermarkResponseCollectionAttrs struct {
 	// The account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamWatermarkResponseCollection = ubx.DataSourceBinding{

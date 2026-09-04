@@ -3,6 +3,19 @@ package mtlscertificatemanagement
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseSingle5_Result struct {
+	Ca           any
+	Certificates any
+	ExpiresOn    any
+	Id           any
+	Issuer       any
+	Name         any
+	SerialNumber any
+	Signature    any
+	Type         any
+	UploadedOn   any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseSingle5Config struct {
 	// Indicates whether the certificate is a CA or leaf certificate.
 	Ca any
@@ -27,6 +40,7 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle5Attrs struct {
 	Name any
 	// The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.
 	PrivateKey any
+	Result     any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +50,11 @@ type TlsCertificatesAndHostnamesCertificateResponseSingle5Attrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseSingle5 = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_single_5",
 	Fields: ubx.FieldMap{
-		"Ca": ubx.FieldSpec{WireName: "ca"},
-		"Certificates": ubx.FieldSpec{WireName: "certificates"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Ca":                ubx.FieldSpec{WireName: "ca"},
+		"Certificates":      ubx.FieldSpec{WireName: "certificates"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"PrivateKey":        ubx.FieldSpec{WireName: "private_key"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"MtlsCertificateId": ubx.FieldSpec{WireName: "mtls_certificate_id"},
 	},
 }

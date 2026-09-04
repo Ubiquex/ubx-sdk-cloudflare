@@ -4,20 +4,20 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pfx2a_Result_Meta struct {
-	DataTime any
-	QueryTime any
+	DataTime   any
+	QueryTime  any
 	TotalPeers any
 }
 
 type Pfx2a_Result_PrefixOrigins struct {
-	Origin any
-	PeerCount any
-	Prefix any
+	Origin         any
+	PeerCount      any
+	Prefix         any
 	RpkiValidation any
 }
 
 type Pfx2a_Result struct {
-	Meta any
+	Meta          any
 	PrefixOrigins any
 }
 
@@ -44,16 +44,16 @@ type Pfx2aAttrs struct {
 	Result any
 	// Return only results with matching rpki status: valid, invalid or unknown.
 	RpkiStatus any
-	Success any
+	Success    any
 }
 
 var Pfx2a = ubx.DataSourceBinding{
 	WireType: "cloudflare_pfx2a",
 	Fields: ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":             ubx.FieldSpec{WireName: "format"},
 		"LongestPrefixMatch": ubx.FieldSpec{WireName: "longest_prefix_match"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"RpkiStatus": ubx.FieldSpec{WireName: "rpki_status"},
+		"Origin":             ubx.FieldSpec{WireName: "origin"},
+		"Prefix":             ubx.FieldSpec{WireName: "prefix"},
+		"RpkiStatus":         ubx.FieldSpec{WireName: "rpki_status"},
 	},
 }

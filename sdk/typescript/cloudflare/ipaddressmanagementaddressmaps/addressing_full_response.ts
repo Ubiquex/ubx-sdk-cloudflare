@@ -6,6 +6,31 @@ export interface AddressingFullResponse_Memberships {
   kind?: string | Computed<string>;
 }
 
+export interface AddressingFullResponse_Result_Ips {
+  createdAt?: string | Computed<string>;
+  ip?: string | Computed<string>;
+}
+
+export interface AddressingFullResponse_Result_Memberships {
+  canDelete?: boolean | Computed<boolean>;
+  createdAt?: string | Computed<string>;
+  identifier?: string | Computed<string>;
+  kind?: string | Computed<string>;
+}
+
+export interface AddressingFullResponse_Result {
+  canDelete?: boolean | Computed<boolean>;
+  canModifyIps?: boolean | Computed<boolean>;
+  createdAt?: string | Computed<string>;
+  defaultSni?: string | Computed<string>;
+  description?: string | Computed<string>;
+  enabled?: boolean | Computed<boolean>;
+  id?: string | Computed<string>;
+  ips?: AddressingFullResponse_Result_Ips[] | Computed<AddressingFullResponse_Result_Ips[]>;
+  memberships?: AddressingFullResponse_Result_Memberships[] | Computed<AddressingFullResponse_Result_Memberships[]>;
+  modifiedAt?: string | Computed<string>;
+}
+
 const AddressingFullResponse_MembershipsFields: FieldMap = {
   identifier: "identifier",
   kind: "kind",
@@ -33,6 +58,7 @@ export interface AddressingFullResponseAttrs {
   ips: string[];
   /** Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership. */
   memberships: AddressingFullResponse_Memberships[];
+  result: AddressingFullResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

@@ -4,23 +4,23 @@ package registrarregistration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfo_Address struct {
-	City any
+	City        any
 	CountryCode any
-	PostalCode any
-	State any
-	Street any
+	PostalCode  any
+	State       any
+	Street      any
 }
 
 type RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfo struct {
-	Address any
-	Name any
+	Address      any
+	Name         any
 	Organization any
 }
 
 type RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator struct {
-	Email any
-	Fax any
-	Phone any
+	Email      any
+	Fax        any
+	Phone      any
 	PostalInfo any
 }
 
@@ -35,57 +35,84 @@ type RegistrarApiSandboxRegistrationResponseSingle_Contacts struct {
 	Technical any
 }
 
+type RegistrarApiSandboxRegistrationResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiSandboxRegistrationResponseSingle_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiSandboxRegistrationResponseSingle_Result struct {
+	// Whether automatic renewal occurs before expiration.
+	AutoRenew any
+	// When the domain was registered. Present when the registration resource exists.
+	CreatedAt any
+	// Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
+	DomainName any
+	// When the domain registration expires. Ready registrations include this value; only `registration_pending` may return null.
+	ExpiresAt any
+	// Whether the domain is locked for transfer.
+	Locked any
+	// Current WHOIS privacy mode for the registration.
+	PrivacyMode any
+	// Current registration status. - `active`: The domain operates with an active registration. - `registration_pending`: Registration remains in progress. - `expired`: The domain registration expired. - `suspended`: The registry suspended the domain. - `redemption_period`: The domain entered the redemption grace period. - `pending_delete`: The registry scheduled the domain for deletion.
+	Status any
+}
+
 var RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfo_AddressFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{WireName: "city"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Street": ubx.FieldSpec{WireName: "street"},
-	}
+	"City":        ubx.FieldSpec{WireName: "city"},
+	"CountryCode": ubx.FieldSpec{WireName: "country_code"},
+	"PostalCode":  ubx.FieldSpec{WireName: "postal_code"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"Street":      ubx.FieldSpec{WireName: "street"},
+}
 
 var RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfoFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{
-			WireName: "address",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfo_AddressFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-	}
+	"Address": ubx.FieldSpec{
+		WireName: "address",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfo_AddressFields,
+	},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Organization": ubx.FieldSpec{WireName: "organization"},
+}
 
 var RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Fax": ubx.FieldSpec{WireName: "fax"},
-		"Phone": ubx.FieldSpec{WireName: "phone"},
-		"PostalInfo": ubx.FieldSpec{
-			WireName: "postal_info",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfoFields,
-		},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+	"Fax":   ubx.FieldSpec{WireName: "fax"},
+	"Phone": ubx.FieldSpec{WireName: "phone"},
+	"PostalInfo": ubx.FieldSpec{
+		WireName: "postal_info",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_Administrator_PostalInfoFields,
+	},
+}
 
 var RegistrarApiSandboxRegistrationResponseSingle_ContactsFields = ubx.FieldMap{
-		"Administrator": ubx.FieldSpec{
-			WireName: "administrator",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
-		},
-		"Billing": ubx.FieldSpec{
-			WireName: "billing",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
-		},
-		"Registrant": ubx.FieldSpec{
-			WireName: "registrant",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
-		},
-		"Technical": ubx.FieldSpec{
-			WireName: "technical",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
-		},
-	}
+	"Administrator": ubx.FieldSpec{
+		WireName: "administrator",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
+	},
+	"Billing": ubx.FieldSpec{
+		WireName: "billing",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
+	},
+	"Registrant": ubx.FieldSpec{
+		WireName: "registrant",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
+	},
+	"Technical": ubx.FieldSpec{
+		WireName: "technical",
+		Kind:     "object",
+		Fields:   RegistrarApiSandboxRegistrationResponseSingle_Contacts_AdministratorFields,
+	},
+}
 
 type RegistrarApiSandboxRegistrationResponseSingleConfig struct {
 	// Provides user acknowledgements for a specific extension or premium registration flow. The extension registration schema from the extension discovery endpoint identifies the required keys.
@@ -117,8 +144,14 @@ type RegistrarApiSandboxRegistrationResponseSingleAttrs struct {
 	Contacts any
 	// Provides a fully qualified domain name (FQDN), including the extension (e.g., `example.com`, `mybrand.app`). The domain name uniquely identifies a registration. Cloudflare permits only one registration per domain, making the domain name a natural idempotency key for registration requests.
 	DomainName any
+	Errors     any
+	Messages   any
 	// Sets the WHOIS privacy mode for the registration. Defaults to `redaction`. - `off`: Disables WHOIS privacy. - `redaction`: Requests WHOIS redaction where the extension supports it. Some extensions exclude privacy and redaction.
 	PrivacyMode any
+	// A domain registration resource representing the current state of a registered domain.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Sets the registration term from 1 to 10 years. When omitted, this field defaults to the registry's minimum registration period for the extension. Most extensions require 1 year, while some require longer minimum terms (e.g., `.ai` requires 2 years). Each registry may also enforce its own maximum registration term. A request above that maximum fails. When uncertain, omit this field to use the default.
 	Years any
 	// path parameter, not part of the API's own resource representation
@@ -128,17 +161,17 @@ type RegistrarApiSandboxRegistrationResponseSingleAttrs struct {
 var RegistrarApiSandboxRegistrationResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_registrar_api_sandbox_registration_response_single",
 	Fields: ubx.FieldMap{
-		"Acknowledgements": ubx.FieldSpec{WireName: "acknowledgements"},
-		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
+		"Acknowledgements":  ubx.FieldSpec{WireName: "acknowledgements"},
+		"AutoRenew":         ubx.FieldSpec{WireName: "auto_renew"},
 		"ContactExtensions": ubx.FieldSpec{WireName: "contact_extensions"},
 		"Contacts": ubx.FieldSpec{
 			WireName: "contacts",
-			Kind: "object",
-			Fields: RegistrarApiSandboxRegistrationResponseSingle_ContactsFields,
+			Kind:     "object",
+			Fields:   RegistrarApiSandboxRegistrationResponseSingle_ContactsFields,
 		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":  ubx.FieldSpec{WireName: "domain_name"},
 		"PrivacyMode": ubx.FieldSpec{WireName: "privacy_mode"},
-		"Years": ubx.FieldSpec{WireName: "years"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Years":       ubx.FieldSpec{WireName: "years"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 	},
 }

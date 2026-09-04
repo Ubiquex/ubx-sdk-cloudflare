@@ -9,6 +9,7 @@ export interface ProfileConfig {
 export interface ProfileAttrs {
   accountId: string;
   all: boolean;
+  result: unknown[];
 }
 
 export const Profile: DataSourceBinding<ProfileConfig, ProfileAttrs> = {

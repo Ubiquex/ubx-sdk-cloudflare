@@ -3,6 +3,15 @@ package ipaddressmanagementprefixdelegation
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingResponseCollection2_Result struct {
+	Cidr               any
+	CreatedAt          any
+	DelegatedAccountId any
+	Id                 any
+	ModifiedAt         any
+	ParentPrefixId     any
+}
+
 type AddressingResponseCollection2Config struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -15,12 +24,13 @@ type AddressingResponseCollection2Attrs struct {
 	AccountId any
 	// Identifier of an IP Prefix.
 	PrefixId any
+	Result   any
 }
 
 var AddressingResponseCollection2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_addressing_response_collection_2",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PrefixId": ubx.FieldSpec{WireName: "prefix_id"},
+		"PrefixId":  ubx.FieldSpec{WireName: "prefix_id"},
 	},
 }

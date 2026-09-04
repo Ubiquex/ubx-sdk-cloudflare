@@ -3,18 +3,28 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelTunnelResponseToken_Errors struct {
+	Code    any
+	Message any
+}
+
 type TunnelTunnelResponseTokenConfig struct {
 }
 
 type TunnelTunnelResponseTokenAttrs struct {
 	// Cloudflare account ID
 	AccountId any
+	Errors    any
+	Messages  any
+	// The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// UUID of the tunnel.
 	TunnelId any
 }
 
 var TunnelTunnelResponseToken = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_tunnel_response_token",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

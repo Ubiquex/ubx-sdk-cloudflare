@@ -4,7 +4,7 @@ package origintls
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheAutoOriginTlsKexResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,7 +14,7 @@ type CacheAutoOriginTlsKexResponse_Result_Enabled struct {
 type CacheAutoOriginTlsKexResponse_Result struct {
 	// Whether Auto-Origin TLS KEX selection is enabled for the zone.
 	Enabled any
-	Id any
+	Id      any
 	// Last time this setting was modified.
 	ModifiedOn any
 }
@@ -24,12 +24,12 @@ type CacheAutoOriginTlsKexResponseConfig struct {
 }
 
 type CacheAutoOriginTlsKexResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
+	Result   any
 	// Indicates the API call's success or failure.
 	Success any
-	ZoneId any
+	ZoneId  any
 }
 
 var CacheAutoOriginTlsKexResponse = ubx.DataSourceBinding{

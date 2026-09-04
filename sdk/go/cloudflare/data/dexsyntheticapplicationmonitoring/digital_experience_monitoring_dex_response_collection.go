@@ -3,28 +3,51 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DigitalExperienceMonitoringDexResponseCollection_Result_Data struct {
+	Host   any
+	Kind   any
+	Method any
+}
+
+type DigitalExperienceMonitoringDexResponseCollection_Result_TargetPolicies struct {
+}
+
+type DigitalExperienceMonitoringDexResponseCollection_Result struct {
+	Created        any
+	Data           any
+	Description    any
+	Enabled        any
+	Interval       any
+	Name           any
+	TargetPolicies any
+	Targeted       any
+	TestId         any
+	Updated        any
+}
+
 type DigitalExperienceMonitoringDexResponseCollectionConfig struct {
-	Kind any
-	Page any
-	PerPage any
+	Kind     any
+	Page     any
+	PerPage  any
 	TestName any
 }
 
 type DigitalExperienceMonitoringDexResponseCollectionAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
-	Kind any
-	Page any
-	PerPage any
-	TestName any
+	Kind      any
+	Page      any
+	PerPage   any
+	Result    any
+	TestName  any
 }
 
 var DigitalExperienceMonitoringDexResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_digital_experience_monitoring_dex_response_collection",
 	Fields: ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
+		"Page":     ubx.FieldSpec{WireName: "page"},
+		"PerPage":  ubx.FieldSpec{WireName: "per_page"},
 		"TestName": ubx.FieldSpec{WireName: "test_name"},
 	},
 }

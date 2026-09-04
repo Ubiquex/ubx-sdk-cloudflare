@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Binding_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Binding_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Binding_Result_Provisioning:
+    state: Any = None
+
+@dataclasses.dataclass
+class Binding_Result:
+    cidr: Any = None
+    id: Any = None
+    provisioning: Any = None
+    service_id: Any = None
+    service_name: Any = None
+
+@dataclasses.dataclass
 class BindingConfig:
     # Identifier of a Cloudflare account.
     account_id: Any = None
@@ -17,8 +40,13 @@ class BindingConfig:
 class BindingAttrs:
     # Identifier of a Cloudflare account.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     # Identifier of an IP Prefix.
     prefix_id: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Binding = ubx.DataSourceBinding(
     wire_type="cloudflare_binding",

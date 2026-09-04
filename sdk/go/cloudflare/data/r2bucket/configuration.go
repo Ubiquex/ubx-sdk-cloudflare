@@ -3,6 +3,33 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Configuration_Errors struct {
+	Code    any
+	Message any
+}
+
+type Configuration_Result_Queues_Rules struct {
+	Actions     any
+	CreatedAt   any
+	Description any
+	Prefix      any
+	RuleId      any
+	Suffix      any
+}
+
+type Configuration_Result_Queues struct {
+	QueueId   any
+	QueueName any
+	Rules     any
+}
+
+type Configuration_Result struct {
+	// Name of the bucket.
+	BucketName any
+	// List of queues associated with the bucket.
+	Queues any
+}
+
 type ConfigurationConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +42,17 @@ type ConfigurationAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Configuration = ubx.DataSourceBinding{
 	WireType: "cloudflare_configuration",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

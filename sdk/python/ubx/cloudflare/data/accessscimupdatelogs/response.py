@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Result:
+    cf_resource_id: Any = None
+    error_description: Any = None
+    idp_id: Any = None
+    idp_resource_id: Any = None
+    logged_at: Any = None
+    request_body: Any = None
+    request_method: Any = None
+    resource_group_name: Any = None
+    resource_type: Any = None
+    resource_user_email: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class ResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -65,6 +79,7 @@ class ResponseAttrs:
     resource_type: Any = None
     # The email address of the SCIM User resource. Pass once for a single lookup (`?resource_user_email=A`) or repeat the parameter (`?resource_user_email=A&resource_user_email=B`) to filter by multiple emails in one request.
     resource_user_email: Any = None
+    result: Any = None
     # the timestamp of the earliest update log.
     since: Any = None
     # The status of the SCIM request.

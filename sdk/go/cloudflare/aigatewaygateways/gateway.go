@@ -4,69 +4,69 @@ package aigatewaygateways
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateway_Result_Dlp_Policies struct {
-	Action any
-	Check any
-	Enabled any
-	Id any
+	Action   any
+	Check    any
+	Enabled  any
+	Id       any
 	Profiles any
 }
 
 type Gateway_Result_Dlp struct {
-	Action any
-	Enabled any
+	Action   any
+	Enabled  any
 	Policies any
 	Profiles any
 }
 
 type Gateway_Result_Guardrails_Prompt struct {
-	P1 any
-	S1 any
+	P1  any
+	S1  any
 	S10 any
 	S11 any
 	S12 any
 	S13 any
-	S2 any
-	S3 any
-	S4 any
-	S5 any
-	S6 any
-	S7 any
-	S8 any
-	S9 any
+	S2  any
+	S3  any
+	S4  any
+	S5  any
+	S6  any
+	S7  any
+	S8  any
+	S9  any
 }
 
 type Gateway_Result_Guardrails struct {
-	Prompt any
+	Prompt   any
 	Response any
 }
 
 type Gateway_Result_Otel struct {
 	Authorization any
-	ContentType any
-	Headers any
-	Url any
+	ContentType   any
+	Headers       any
+	Url           any
 }
 
 type Gateway_Result_SpendLimits_Rules_Metadata struct {
-	Mode any
+	Mode   any
 	Values any
 }
 
 type Gateway_Result_SpendLimits_Rules struct {
-	Enabled any
-	Id any
-	Limit any
+	Enabled   any
+	Id        any
+	Limit     any
 	LimitType any
-	Metadata any
-	Model any
-	Provider any
+	Metadata  any
+	Model     any
+	Provider  any
 	Technique any
-	Window any
+	Window    any
 }
 
 type Gateway_Result_SpendLimits struct {
 	Enabled any
-	Rules any
+	Rules   any
 }
 
 type Gateway_Result_Stripe_UsageEvents struct {
@@ -75,29 +75,29 @@ type Gateway_Result_Stripe_UsageEvents struct {
 
 type Gateway_Result_Stripe struct {
 	Authorization any
-	UsageEvents any
+	UsageEvents   any
 }
 
 type Gateway_Result struct {
-	Authentication any
+	Authentication          any
 	CacheInvalidateOnUpdate any
-	CacheTtl any
-	CollectLogs any
-	CreatedAt any
-	Dlp any
-	Guardrails any
+	CacheTtl                any
+	CollectLogs             any
+	CreatedAt               any
+	Dlp                     any
+	Guardrails              any
 	// gateway id
-	Id any
-	IsDefault any
-	LogClassification any
-	LogManagement any
+	Id                    any
+	IsDefault             any
+	LogClassification     any
+	LogManagement         any
 	LogManagementStrategy any
-	Logpush any
-	LogpushPublicKey any
-	ModifiedAt any
-	Otel any
-	RateLimitingInterval any
-	RateLimitingLimit any
+	Logpush               any
+	LogpushPublicKey      any
+	ModifiedAt            any
+	Otel                  any
+	RateLimitingInterval  any
+	RateLimitingLimit     any
 	RateLimitingTechnique any
 	// Backoff strategy for retry delays
 	RetryBackoff any
@@ -105,27 +105,27 @@ type Gateway_Result struct {
 	RetryDelay any
 	// Maximum number of retry attempts for failed requests (1-5)
 	RetryMaxAttempts any
-	SpendLimits any
-	StoreId any
-	Stripe any
+	SpendLimits      any
+	StoreId          any
+	Stripe           any
 	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
 	WorkersAiBillingMode any
-	Zdr any
+	Zdr                  any
 }
 
 type GatewayConfig struct {
-	Authentication any
+	Authentication          any
 	CacheInvalidateOnUpdate any
-	CacheTtl any
-	CollectLogs any
+	CacheTtl                any
+	CollectLogs             any
 	// gateway id
-	Id any
-	LogManagement any
+	Id                    any
+	LogManagement         any
 	LogManagementStrategy any
-	Logpush any
-	LogpushPublicKey any
-	RateLimitingInterval any
-	RateLimitingLimit any
+	Logpush               any
+	LogpushPublicKey      any
+	RateLimitingInterval  any
+	RateLimitingLimit     any
 	RateLimitingTechnique any
 	// Backoff strategy for retry delays
 	RetryBackoff any
@@ -133,40 +133,40 @@ type GatewayConfig struct {
 	RetryDelay any
 	// Maximum number of retry attempts for failed requests (1-5)
 	RetryMaxAttempts any
-	StoreId any
+	StoreId          any
 	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
 	WorkersAiBillingMode any
-	Zdr any
+	Zdr                  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type GatewayAttrs struct {
-	Authentication any
+	Authentication          any
 	CacheInvalidateOnUpdate any
-	CacheTtl any
-	CollectLogs any
+	CacheTtl                any
+	CollectLogs             any
 	// gateway id
-	Id any
-	LogManagement any
+	Id                    any
+	LogManagement         any
 	LogManagementStrategy any
-	Logpush any
-	LogpushPublicKey any
-	RateLimitingInterval any
-	RateLimitingLimit any
+	Logpush               any
+	LogpushPublicKey      any
+	RateLimitingInterval  any
+	RateLimitingLimit     any
 	RateLimitingTechnique any
-	Result any
+	Result                any
 	// Backoff strategy for retry delays
 	RetryBackoff any
 	// Delay between retry attempts in milliseconds (0-5000)
 	RetryDelay any
 	// Maximum number of retry attempts for failed requests (1-5)
 	RetryMaxAttempts any
-	StoreId any
-	Success any
+	StoreId          any
+	Success          any
 	// Controls how Workers AI inference calls routed through this gateway are billed. 'postpaid' bills the account directly through Workers AI; 'unified' deducts credits via AI Gateway using neuron-based pricing and delegates billing to AI Gateway.
 	WorkersAiBillingMode any
-	Zdr any
+	Zdr                  any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -174,24 +174,24 @@ type GatewayAttrs struct {
 var Gateway = ubx.ResourceBinding{
 	WireType: "cloudflare_gateway",
 	Fields: ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
+		"Authentication":          ubx.FieldSpec{WireName: "authentication"},
 		"CacheInvalidateOnUpdate": ubx.FieldSpec{WireName: "cache_invalidate_on_update"},
-		"CacheTtl": ubx.FieldSpec{WireName: "cache_ttl"},
-		"CollectLogs": ubx.FieldSpec{WireName: "collect_logs"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LogManagement": ubx.FieldSpec{WireName: "log_management"},
-		"LogManagementStrategy": ubx.FieldSpec{WireName: "log_management_strategy"},
-		"Logpush": ubx.FieldSpec{WireName: "logpush"},
-		"LogpushPublicKey": ubx.FieldSpec{WireName: "logpush_public_key"},
-		"RateLimitingInterval": ubx.FieldSpec{WireName: "rate_limiting_interval"},
-		"RateLimitingLimit": ubx.FieldSpec{WireName: "rate_limiting_limit"},
-		"RateLimitingTechnique": ubx.FieldSpec{WireName: "rate_limiting_technique"},
-		"RetryBackoff": ubx.FieldSpec{WireName: "retry_backoff"},
-		"RetryDelay": ubx.FieldSpec{WireName: "retry_delay"},
-		"RetryMaxAttempts": ubx.FieldSpec{WireName: "retry_max_attempts"},
-		"StoreId": ubx.FieldSpec{WireName: "store_id"},
-		"WorkersAiBillingMode": ubx.FieldSpec{WireName: "workers_ai_billing_mode"},
-		"Zdr": ubx.FieldSpec{WireName: "zdr"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"CacheTtl":                ubx.FieldSpec{WireName: "cache_ttl"},
+		"CollectLogs":             ubx.FieldSpec{WireName: "collect_logs"},
+		"Id":                      ubx.FieldSpec{WireName: "id"},
+		"LogManagement":           ubx.FieldSpec{WireName: "log_management"},
+		"LogManagementStrategy":   ubx.FieldSpec{WireName: "log_management_strategy"},
+		"Logpush":                 ubx.FieldSpec{WireName: "logpush"},
+		"LogpushPublicKey":        ubx.FieldSpec{WireName: "logpush_public_key"},
+		"RateLimitingInterval":    ubx.FieldSpec{WireName: "rate_limiting_interval"},
+		"RateLimitingLimit":       ubx.FieldSpec{WireName: "rate_limiting_limit"},
+		"RateLimitingTechnique":   ubx.FieldSpec{WireName: "rate_limiting_technique"},
+		"RetryBackoff":            ubx.FieldSpec{WireName: "retry_backoff"},
+		"RetryDelay":              ubx.FieldSpec{WireName: "retry_delay"},
+		"RetryMaxAttempts":        ubx.FieldSpec{WireName: "retry_max_attempts"},
+		"StoreId":                 ubx.FieldSpec{WireName: "store_id"},
+		"WorkersAiBillingMode":    ubx.FieldSpec{WireName: "workers_ai_billing_mode"},
+		"Zdr":                     ubx.FieldSpec{WireName: "zdr"},
+		"AccountId":               ubx.FieldSpec{WireName: "account_id"},
 	},
 }

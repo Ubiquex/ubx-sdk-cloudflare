@@ -6,8 +6,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TaggedResourceResponseSingle_AccountId struct {
 }
 
-var TaggedResourceResponseSingle_AccountIdFields = ubx.FieldMap{
-	}
+type TaggedResourceResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type TaggedResourceResponseSingle_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+var TaggedResourceResponseSingle_AccountIdFields = ubx.FieldMap{}
 
 type TaggedResourceResponseSingleConfig struct {
 	AccountId any
@@ -21,10 +31,15 @@ type TaggedResourceResponseSingleConfig struct {
 
 type TaggedResourceResponseSingleAttrs struct {
 	AccountId any
+	Errors    any
+	Messages  any
 	// Identifies the unique resource.
 	ResourceId any
 	// Identifies the type of account-level resource.
 	ResourceType any
+	Result       any
+	// Whether the API call was successful.
+	Success any
 	// Worker ID is required only for worker_version resources
 	WorkerId any
 }
@@ -34,11 +49,11 @@ var TaggedResourceResponseSingle = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: TaggedResourceResponseSingle_AccountIdFields,
+			Kind:     "object",
+			Fields:   TaggedResourceResponseSingle_AccountIdFields,
 		},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"WorkerId": ubx.FieldSpec{WireName: "worker_id"},
+		"WorkerId":     ubx.FieldSpec{WireName: "worker_id"},
 	},
 }

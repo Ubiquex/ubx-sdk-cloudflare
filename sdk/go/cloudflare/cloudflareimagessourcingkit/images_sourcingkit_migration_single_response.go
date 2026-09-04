@@ -3,6 +3,30 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitMigrationSingleResponse_Result struct {
+	// How to handle objects that already exist at the destination.
+	ConflictBehaviour any
+	CreatedAt         any
+	EndedAt           any
+	// Content types to skip during migration.
+	ExcludedContentTypes any
+	// Migration unique identifier.
+	Id any
+	// Alias for pathPrefix (deprecated).
+	ImagesPathPrefix any
+	// Whether logging was stopped due to excessive log volume.
+	LogStopped any
+	// Prefix to prepend to image custom IDs.
+	PathPrefix any
+	// Only import objects under this prefix in the source bucket.
+	RootDirectory any
+	// The source this migration imports from.
+	SourceId  any
+	StartedAt any
+	// Current status of the migration.
+	Status any
+}
+
 type ImagesSourcingkitMigrationSingleResponseConfig struct {
 	// How to handle objects that already exist at the destination.
 	ConflictBehaviour any
@@ -27,6 +51,7 @@ type ImagesSourcingkitMigrationSingleResponseAttrs struct {
 	ExcludedContentTypes any
 	// Prefix to prepend to image custom IDs.
 	PathPrefix any
+	Result     any
 	// Only import objects under this prefix in the source bucket.
 	RootDirectory any
 	// The identifier of the source to migrate from.
@@ -40,12 +65,12 @@ type ImagesSourcingkitMigrationSingleResponseAttrs struct {
 var ImagesSourcingkitMigrationSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_images_sourcingkit_migration_single_response",
 	Fields: ubx.FieldMap{
-		"ConflictBehaviour": ubx.FieldSpec{WireName: "conflict_behaviour"},
+		"ConflictBehaviour":    ubx.FieldSpec{WireName: "conflict_behaviour"},
 		"ExcludedContentTypes": ubx.FieldSpec{WireName: "excluded_content_types"},
-		"PathPrefix": ubx.FieldSpec{WireName: "path_prefix"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"MigrationId": ubx.FieldSpec{WireName: "migration_id"},
+		"PathPrefix":           ubx.FieldSpec{WireName: "path_prefix"},
+		"RootDirectory":        ubx.FieldSpec{WireName: "root_directory"},
+		"SourceId":             ubx.FieldSpec{WireName: "source_id"},
+		"AccountId":            ubx.FieldSpec{WireName: "account_id"},
+		"MigrationId":          ubx.FieldSpec{WireName: "migration_id"},
 	},
 }

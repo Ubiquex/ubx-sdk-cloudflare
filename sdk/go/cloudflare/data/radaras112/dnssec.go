@@ -4,14 +4,14 @@ package radaras112
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dnssec_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Dnssec_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Dnssec_Result_Meta_ConfidenceInfo struct {
 }
 
 type Dnssec_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Dnssec_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Dnssec_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -50,7 +50,7 @@ type Dnssec_Result_Summary0 struct {
 
 type Dnssec_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -98,22 +98,22 @@ type DnssecAttrs struct {
 	QueryType any
 	// Filters results by DNS response code.
 	ResponseCode any
-	Result any
-	Success any
+	Result       any
+	Success      any
 }
 
 var Dnssec = ubx.DataSourceBinding{
 	WireType: "cloudflare_dnssec",
 	Fields: ubx.FieldMap{
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"QueryType": ubx.FieldSpec{WireName: "query_type"},
+		"Continent":    ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":      ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":    ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":    ubx.FieldSpec{WireName: "date_start"},
+		"Format":       ubx.FieldSpec{WireName: "format"},
+		"Location":     ubx.FieldSpec{WireName: "location"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Protocol":     ubx.FieldSpec{WireName: "protocol"},
+		"QueryType":    ubx.FieldSpec{WireName: "query_type"},
 		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
 	},
 }

@@ -8,33 +8,33 @@ type Repo_Errors_Source struct {
 }
 
 type Repo_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Repo_Result struct {
 	CreatedAt any
 	// Default branch name. Must not contain '..' and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
+	Description   any
 	// Repository display name.
 	DisplayName any
-	Id any
-	LastPushAt any
-	Name any
-	ReadOnly any
-	Remote any
-	Source any
-	UpdatedAt any
+	Id          any
+	LastPushAt  any
+	Name        any
+	ReadOnly    any
+	Remote      any
+	Source      any
+	UpdatedAt   any
 }
 
 type Repo_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -42,9 +42,9 @@ type Repo_ResultInfo struct {
 type RepoConfig struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Name any
-	ReadOnly any
+	Description   any
+	Name          any
+	ReadOnly      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -54,14 +54,14 @@ type RepoConfig struct {
 type RepoAttrs struct {
 	// Git branch name. Must match /^[a-zA-Z0-9][a-zA-Z0-9._/-]*$/, must not contain '..', and must not end with '/' or '.'.
 	DefaultBranch any
-	Description any
-	Errors any
-	Messages any
-	Name any
-	ReadOnly any
-	Result any
-	ResultInfo any
-	Success any
+	Description   any
+	Errors        any
+	Messages      any
+	Name          any
+	ReadOnly      any
+	Result        any
+	ResultInfo    any
+	Success       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -72,10 +72,10 @@ var Repo = ubx.ResourceBinding{
 	WireType: "cloudflare_repo",
 	Fields: ubx.FieldMap{
 		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ReadOnly":      ubx.FieldSpec{WireName: "read_only"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Namespace":     ubx.FieldSpec{WireName: "namespace"},
 	},
 }

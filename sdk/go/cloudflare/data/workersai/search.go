@@ -9,10 +9,10 @@ type SearchConfig struct {
 
 type SearchAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	Result    any
+	Success   any
 }
 
 var Search = ubx.DataSourceBinding{

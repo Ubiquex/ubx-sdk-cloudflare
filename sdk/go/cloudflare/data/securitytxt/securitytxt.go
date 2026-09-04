@@ -3,12 +3,40 @@ package securitytxt
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Securitytxt_Errors_Source struct {
+	Pointer any
+}
+
+type Securitytxt_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Securitytxt_Result struct {
+	Acknowledgments    any
+	Canonical          any
+	Contact            any
+	Enabled            any
+	Encryption         any
+	Expires            any
+	Hiring             any
+	Policy             any
+	PreferredLanguages any
+}
+
 type SecuritytxtConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type SecuritytxtAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

@@ -3,12 +3,16 @@ package zonelevelaccessidentityproviders
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection17_Result struct {
+}
+
 type AccessResponseCollection17Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollection17Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

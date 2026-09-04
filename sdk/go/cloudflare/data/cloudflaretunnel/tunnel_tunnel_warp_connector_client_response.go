@@ -3,6 +3,40 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelTunnelWarpConnectorClientResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelTunnelWarpConnectorClientResponse_Result_Conns_OriginIp struct {
+}
+
+type TunnelTunnelWarpConnectorClientResponse_Result_Conns struct {
+	ClientId      any
+	ClientVersion any
+	ColoName      any
+	Id            any
+	OpenedAt      any
+	OriginIp      any
+}
+
+type TunnelTunnelWarpConnectorClientResponse_Result struct {
+	// The cloudflared OS architecture used to establish this connection.
+	Arch any
+	// The WARP Connector Tunnel connections between your origin and Cloudflare's edge.
+	Conns any
+	// Features enabled for the Cloudflare Tunnel.
+	Features any
+	// The HA status of a WARP Connector client.
+	HaStatus any
+	// UUID of the Cloudflare Tunnel connector.
+	Id any
+	// Timestamp of when the tunnel connection was started.
+	RunAt any
+	// The cloudflared version used to establish this connection.
+	Version any
+}
+
 type TunnelTunnelWarpConnectorClientResponseConfig struct {
 }
 
@@ -11,12 +45,17 @@ type TunnelTunnelWarpConnectorClientResponseAttrs struct {
 	AccountId any
 	// UUID of the Cloudflare Tunnel connector.
 	ConnectorId any
+	Errors      any
+	Messages    any
+	// A WARP Connector client that maintains a connection to a Cloudflare data center.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// UUID of the tunnel.
 	TunnelId any
 }
 
 var TunnelTunnelWarpConnectorClientResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_tunnel_tunnel_warp_connector_client_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

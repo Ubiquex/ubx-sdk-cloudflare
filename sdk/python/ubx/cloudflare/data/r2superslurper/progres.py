@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Progres_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Progres_Result:
+    created_at: Any = None
+    failed_objects: Any = None
+    id: Any = None
+    objects: Any = None
+    skipped_objects: Any = None
+    status: Any = None
+    transferred_objects: Any = None
+
+@dataclasses.dataclass
 class ProgresConfig:
     account_id: Any = None
     job_id: Any = None
@@ -14,7 +29,12 @@ class ProgresConfig:
 @dataclasses.dataclass
 class ProgresAttrs:
     account_id: Any = None
+    errors: Any = None
     job_id: Any = None
+    messages: Any = None
+    result: Any = None
+    # Indicates if the API call was successful or not.
+    success: Any = None
 
 Progres = ubx.DataSourceBinding(
     wire_type="cloudflare_progres",

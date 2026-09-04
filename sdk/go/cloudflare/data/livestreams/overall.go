@@ -16,9 +16,9 @@ type OverallConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	EndTime any
-	Filters any
+	AppId     any
+	EndTime   any
+	Filters   any
 	StartTime any
 }
 
@@ -26,21 +26,21 @@ type OverallAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
-	EndTime any
-	Filters any
+	AppId     any
+	Data      any
+	EndTime   any
+	Filters   any
 	StartTime any
-	Success any
+	Success   any
 }
 
 var Overall = ubx.DataSourceBinding{
 	WireType: "cloudflare_overall",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Filters": ubx.FieldSpec{WireName: "filters"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+		"Filters":   ubx.FieldSpec{WireName: "filters"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},
 }

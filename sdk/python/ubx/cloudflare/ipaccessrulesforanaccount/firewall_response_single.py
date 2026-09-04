@@ -11,6 +11,23 @@ class FirewallResponseSingle_Configuration:
     target: Any = None
     value: Any = None
 
+@dataclasses.dataclass
+class FirewallResponseSingle_Result_Scope:
+    email: Any = None
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class FirewallResponseSingle_Result:
+    allowed_modes: Any = None
+    configuration: Any = None
+    created_on: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    notes: Any = None
+    scope: Any = None
+
 _FirewallResponseSingle_ConfigurationFields = {
     "target": ubx.FieldSpec(wire_name="target"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -35,6 +52,7 @@ class FirewallResponseSingleAttrs:
     # The action to apply to a matched request.
     mode: Any = None
     notes: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

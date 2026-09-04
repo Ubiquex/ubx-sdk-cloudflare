@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Isp_Result_Isps_Ip_Location:
+    city: Any = None
+    country_iso: Any = None
+    state_iso: Any = None
+    zip: Any = None
+
+@dataclasses.dataclass
+class Isp_Result_Isps_Ip:
+    address: Any = None
+    asn: Any = None
+    aso: Any = None
+    location: Any = None
+    name: Any = None
+    netmask: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class Isp_Result_Isps:
+    ip: Any = None
+    test_id: Any = None
+    test_result_id: Any = None
+    time_start: Any = None
+
+@dataclasses.dataclass
+class Isp_Result:
+    isps: Any = None
+
+@dataclasses.dataclass
 class IspConfig:
     cursor: Any = None
     # API Resource UUID tag.
@@ -28,6 +56,7 @@ class IspAttrs:
     from_: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     sort_by: Any = None
     sort_order: Any = None
     to: Any = None

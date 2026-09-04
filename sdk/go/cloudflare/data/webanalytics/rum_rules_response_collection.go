@@ -3,6 +3,37 @@ package webanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RumRulesResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
+type RumRulesResponseCollection_Result_Rules struct {
+	Created   any
+	Host      any
+	Id        any
+	Inclusive any
+	IsPaused  any
+	Paths     any
+	Priority  any
+}
+
+type RumRulesResponseCollection_Result_Ruleset struct {
+	// Whether the ruleset is enabled.
+	Enabled any
+	// The Web Analytics ruleset identifier.
+	Id       any
+	ZoneName any
+	// The zone identifier.
+	ZoneTag any
+}
+
+type RumRulesResponseCollection_Result struct {
+	// A list of rules.
+	Rules   any
+	Ruleset any
+}
+
 type RumRulesResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,8 +44,13 @@ type RumRulesResponseCollectionConfig struct {
 type RumRulesResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// The Web Analytics ruleset identifier.
 	RulesetId any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RumRulesResponseCollection = ubx.DataSourceBinding{

@@ -3,6 +3,32 @@ package zerotrusthostnameroute
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelHostnameRouteResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelHostnameRouteResponseSingle_Result_TunType struct {
+}
+
+type TunnelHostnameRouteResponseSingle_Result struct {
+	// An optional description of the hostname route.
+	Comment any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// The hostname of the route.
+	Hostname any
+	// The hostname route ID.
+	Id      any
+	TunType any
+	// UUID of the tunnel.
+	TunnelId any
+	// A user-friendly name for a tunnel.
+	TunnelName any
+}
+
 type TunnelHostnameRouteResponseSingleConfig struct {
 	// An optional description of the hostname route.
 	Comment any
@@ -19,8 +45,13 @@ type TunnelHostnameRouteResponseSingleConfig struct {
 type TunnelHostnameRouteResponseSingleAttrs struct {
 	// An optional description of the hostname route.
 	Comment any
+	Errors  any
 	// The hostname of the route.
 	Hostname any
+	Messages any
+	Result   any
+	// Whether the API call was successful
+	Success any
 	// UUID of the tunnel.
 	TunnelId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +63,10 @@ type TunnelHostnameRouteResponseSingleAttrs struct {
 var TunnelHostnameRouteResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tunnel_hostname_route_response_single",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Comment":         ubx.FieldSpec{WireName: "comment"},
+		"Hostname":        ubx.FieldSpec{WireName: "hostname"},
+		"TunnelId":        ubx.FieldSpec{WireName: "tunnel_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"HostnameRouteId": ubx.FieldSpec{WireName: "hostname_route_id"},
 	},
 }

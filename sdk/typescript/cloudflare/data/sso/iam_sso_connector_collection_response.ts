@@ -4,6 +4,21 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface IamSsoConnectorCollectionResponse_AccountId {
 }
 
+export interface IamSsoConnectorCollectionResponse_Result_Verification {
+  code?: string | Computed<string>;
+  status?: string | Computed<string>;
+}
+
+export interface IamSsoConnectorCollectionResponse_Result {
+  createdOn?: string | Computed<string>;
+  emailDomain?: string | Computed<string>;
+  enabled?: boolean | Computed<boolean>;
+  id?: IamSsoConnectorCollectionResponse_AccountId | Computed<IamSsoConnectorCollectionResponse_AccountId>;
+  updatedOn?: string | Computed<string>;
+  useFedrampLanguage?: boolean | Computed<boolean>;
+  verification?: IamSsoConnectorCollectionResponse_Result_Verification | Computed<IamSsoConnectorCollectionResponse_Result_Verification>;
+}
+
 const IamSsoConnectorCollectionResponse_AccountIdFields: FieldMap = {
 };
 
@@ -15,6 +30,7 @@ export interface IamSsoConnectorCollectionResponseConfig {
 export interface IamSsoConnectorCollectionResponseAttrs {
   /** Account identifier tag. */
   accountId: IamSsoConnectorCollectionResponse_AccountId;
+  result: IamSsoConnectorCollectionResponse_Result[];
 }
 
 export const IamSsoConnectorCollectionResponse: DataSourceBinding<IamSsoConnectorCollectionResponseConfig, IamSsoConnectorCollectionResponseAttrs> = {

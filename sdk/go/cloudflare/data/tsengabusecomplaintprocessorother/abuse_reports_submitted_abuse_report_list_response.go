@@ -4,7 +4,7 @@ package tsengabusecomplaintprocessorother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AbuseReportsSubmittedAbuseReportListResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -16,20 +16,20 @@ type AbuseReportsSubmittedAbuseReportListResponse_Result_Reports_DenialReason st
 }
 
 type AbuseReportsSubmittedAbuseReportListResponse_Result_Reports_Submitter struct {
-	Company any
-	Email any
-	Name any
+	Company   any
+	Email     any
+	Name      any
 	Telephone any
 }
 
 type AbuseReportsSubmittedAbuseReportListResponse_Result_Reports struct {
-	Cdate any
+	Cdate        any
 	DenialReason any
-	Domain any
-	Id any
-	Status any
-	Submitter any
-	Type any
+	Domain       any
+	Id           any
+	Status       any
+	Submitter    any
+	Type         any
 }
 
 type AbuseReportsSubmittedAbuseReportListResponse_Result struct {
@@ -37,56 +37,56 @@ type AbuseReportsSubmittedAbuseReportListResponse_Result struct {
 }
 
 type AbuseReportsSubmittedAbuseReportListResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type AbuseReportsSubmittedAbuseReportListResponseConfig struct {
-	AccountId any
-	CreatedAfter any
+	AccountId     any
+	CreatedAfter  any
 	CreatedBefore any
-	Domain any
-	Id any
-	Page any
-	PerPage any
-	Sort any
-	Status any
-	Type any
+	Domain        any
+	Id            any
+	Page          any
+	PerPage       any
+	Sort          any
+	Status        any
+	Type          any
 }
 
 type AbuseReportsSubmittedAbuseReportListResponseAttrs struct {
-	AccountId any
-	CreatedAfter any
+	AccountId     any
+	CreatedAfter  any
 	CreatedBefore any
-	Domain any
-	Errors any
-	Id any
-	Messages any
-	Page any
-	PerPage any
-	Result any
-	ResultInfo any
-	Sort any
-	Status any
-	Success any
-	Type any
+	Domain        any
+	Errors        any
+	Id            any
+	Messages      any
+	Page          any
+	PerPage       any
+	Result        any
+	ResultInfo    any
+	Sort          any
+	Status        any
+	Success       any
+	Type          any
 }
 
 var AbuseReportsSubmittedAbuseReportListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_abuse_reports_submitted_abuse_report_list_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Domain":        ubx.FieldSpec{WireName: "domain"},
+		"Id":            ubx.FieldSpec{WireName: "id"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
+		"Sort":          ubx.FieldSpec{WireName: "sort"},
+		"Status":        ubx.FieldSpec{WireName: "status"},
+		"Type":          ubx.FieldSpec{WireName: "type"},
 	},
 }

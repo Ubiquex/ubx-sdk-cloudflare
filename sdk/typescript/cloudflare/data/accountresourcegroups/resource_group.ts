@@ -4,6 +4,38 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface ResourceGroup_AccountId {
 }
 
+export interface ResourceGroup_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface ResourceGroup_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: ResourceGroup_Errors_Source | Computed<ResourceGroup_Errors_Source>;
+}
+
+export interface ResourceGroup_Result_Meta {
+  key?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface ResourceGroup_Result_Scope_Objects {
+  key?: unknown | Computed<unknown>;
+}
+
+export interface ResourceGroup_Result_Scope {
+  key?: unknown | Computed<unknown>;
+  objects?: ResourceGroup_Result_Scope_Objects[] | Computed<ResourceGroup_Result_Scope_Objects[]>;
+}
+
+export interface ResourceGroup_Result {
+  id?: string | Computed<string>;
+  meta?: ResourceGroup_Result_Meta | Computed<ResourceGroup_Result_Meta>;
+  name?: string | Computed<string>;
+  scope?: ResourceGroup_Result_Scope | Computed<ResourceGroup_Result_Scope>;
+}
+
 const ResourceGroup_AccountIdFields: FieldMap = {
 };
 
@@ -19,10 +51,15 @@ export interface ResourceGroupConfig {
 export interface ResourceGroupAttrs {
   /** Account identifier tag. */
   accountId: ResourceGroup_AccountId;
+  errors: ResourceGroup_Errors[];
   /** ID of the resource group to be fetched. */
   id: ResourceGroup_AccountId;
+  messages: ResourceGroup_Errors[];
   /** Name of the resource group to be fetched. */
   name: string;
+  result: ResourceGroup_Result[];
+  /** Whether the API call was successful. */
+  success: boolean;
 }
 
 export const ResourceGroup: DataSourceBinding<ResourceGroupConfig, ResourceGroupAttrs> = {

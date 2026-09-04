@@ -3,12 +3,29 @@ package zaraz
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZarazWorkflowResponse_Errors_Source struct {
+	Pointer any
+}
+
+type ZarazWorkflowResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type ZarazWorkflowResponseConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type ZarazWorkflowResponseAttrs struct {
+	Errors   any
+	Messages any
+	// Zaraz workflow.
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

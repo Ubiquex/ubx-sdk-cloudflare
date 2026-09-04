@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class AllowPolicy_PatternType:
     pass
 
+@dataclasses.dataclass
+class AllowPolicy_Result:
+    comments: Any = None
+    created_at: Any = None
+    id: Any = None
+    is_acceptable_sender: Any = None
+    is_exempt_recipient: Any = None
+    is_recipient: Any = None
+    is_regex: Any = None
+    is_sender: Any = None
+    is_spoof: Any = None
+    is_trusted_sender: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+    pattern: Any = None
+    pattern_type: Any = None
+    verify_sender: Any = None
+
 _AllowPolicy_PatternTypeFields = {
 }
 
@@ -38,6 +56,7 @@ class AllowPolicyAttrs:
     pattern: Any = None
     pattern_type: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
     verify_sender: Any = None
 

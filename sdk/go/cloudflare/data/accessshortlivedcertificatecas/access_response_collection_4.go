@@ -3,6 +3,12 @@ package accessshortlivedcertificatecas
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection4_Result struct {
+	Aud       any
+	Id        any
+	PublicKey any
+}
+
 type AccessResponseCollection4Config struct {
 	// Identifier.
 	AccountId any
@@ -19,13 +25,14 @@ type AccessResponseCollection4Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 }
 
 var AccessResponseCollection4 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_4",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

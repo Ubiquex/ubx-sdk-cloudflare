@@ -4,14 +4,14 @@ package workerspipelinesother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sink_Config_Credentials struct {
-	AccessKeyId any
+	AccessKeyId     any
 	SecretAccessKey any
 }
 
 type Sink_Config_FileNaming struct {
-	Prefix any
+	Prefix   any
 	Strategy any
-	Suffix any
+	Suffix   any
 }
 
 type Sink_Config_Partitioning struct {
@@ -19,57 +19,57 @@ type Sink_Config_Partitioning struct {
 }
 
 type Sink_Config_RollingPolicy struct {
-	FileSizeBytes any
+	FileSizeBytes     any
 	InactivitySeconds any
-	IntervalSeconds any
+	IntervalSeconds   any
 }
 
 type Sink_Config struct {
-	AccountId any
-	Bucket any
-	Credentials any
-	FileNaming any
-	Jurisdiction any
-	Namespace any
-	Partitioning any
-	Path any
+	AccountId     any
+	Bucket        any
+	Credentials   any
+	FileNaming    any
+	Jurisdiction  any
+	Namespace     any
+	Partitioning  any
+	Path          any
 	RollingPolicy any
-	TableName any
-	Token any
+	TableName     any
+	Token         any
 }
 
 type Sink_Result_Config struct {
-	AccountId any
-	Bucket any
-	FileNaming any
-	Jurisdiction any
-	Namespace any
-	Partitioning any
-	Path any
+	AccountId     any
+	Bucket        any
+	FileNaming    any
+	Jurisdiction  any
+	Namespace     any
+	Partitioning  any
+	Path          any
 	RollingPolicy any
-	TableName any
+	TableName     any
 }
 
 type Sink_Result_Schema_Fields struct {
 	MetadataKey any
-	Name any
-	Required any
-	SqlName any
+	Name        any
+	Required    any
+	SqlName     any
 }
 
 type Sink_Result_Schema struct {
-	Fields any
+	Fields   any
 	Inferred any
 }
 
 type Sink_Result struct {
 	// Defines the configuration of the R2 Sink.
-	Config any
+	Config    any
 	CreatedAt any
 	// Defines the data format of the events.
 	Format any
 	// Indicates a unique identifier for this sink.
-	Id any
+	Id         any
 	ModifiedAt any
 	// Defines the name of the Sink.
 	Name any
@@ -80,71 +80,71 @@ type Sink_Result struct {
 }
 
 var Sink_Config_CredentialsFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
-	}
+	"AccessKeyId":     ubx.FieldSpec{WireName: "access_key_id"},
+	"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
+}
 
 var Sink_Config_FileNamingFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Prefix":   ubx.FieldSpec{WireName: "prefix"},
+	"Strategy": ubx.FieldSpec{WireName: "strategy"},
+	"Suffix":   ubx.FieldSpec{WireName: "suffix"},
+}
 
 var Sink_Config_PartitioningFields = ubx.FieldMap{
-		"TimePattern": ubx.FieldSpec{WireName: "time_pattern"},
-	}
+	"TimePattern": ubx.FieldSpec{WireName: "time_pattern"},
+}
 
 var Sink_Config_RollingPolicyFields = ubx.FieldMap{
-		"FileSizeBytes": ubx.FieldSpec{WireName: "file_size_bytes"},
-		"InactivitySeconds": ubx.FieldSpec{WireName: "inactivity_seconds"},
-		"IntervalSeconds": ubx.FieldSpec{WireName: "interval_seconds"},
-	}
+	"FileSizeBytes":     ubx.FieldSpec{WireName: "file_size_bytes"},
+	"InactivitySeconds": ubx.FieldSpec{WireName: "inactivity_seconds"},
+	"IntervalSeconds":   ubx.FieldSpec{WireName: "interval_seconds"},
+}
 
 var Sink_ConfigFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: Sink_Config_CredentialsFields,
-		},
-		"FileNaming": ubx.FieldSpec{
-			WireName: "file_naming",
-			Kind: "object",
-			Fields: Sink_Config_FileNamingFields,
-		},
-		"Jurisdiction": ubx.FieldSpec{WireName: "jurisdiction"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Partitioning": ubx.FieldSpec{
-			WireName: "partitioning",
-			Kind: "object",
-			Fields: Sink_Config_PartitioningFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"RollingPolicy": ubx.FieldSpec{
-			WireName: "rolling_policy",
-			Kind: "object",
-			Fields: Sink_Config_RollingPolicyFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   Sink_Config_CredentialsFields,
+	},
+	"FileNaming": ubx.FieldSpec{
+		WireName: "file_naming",
+		Kind:     "object",
+		Fields:   Sink_Config_FileNamingFields,
+	},
+	"Jurisdiction": ubx.FieldSpec{WireName: "jurisdiction"},
+	"Namespace":    ubx.FieldSpec{WireName: "namespace"},
+	"Partitioning": ubx.FieldSpec{
+		WireName: "partitioning",
+		Kind:     "object",
+		Fields:   Sink_Config_PartitioningFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"RollingPolicy": ubx.FieldSpec{
+		WireName: "rolling_policy",
+		Kind:     "object",
+		Fields:   Sink_Config_RollingPolicyFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+	"Token":     ubx.FieldSpec{WireName: "token"},
+}
 
 var Sink_Result_Schema_FieldsFields = ubx.FieldMap{
-		"MetadataKey": ubx.FieldSpec{WireName: "metadata_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"SqlName": ubx.FieldSpec{WireName: "sql_name"},
-	}
+	"MetadataKey": ubx.FieldSpec{WireName: "metadata_key"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"SqlName":     ubx.FieldSpec{WireName: "sql_name"},
+}
 
 var Sink_Result_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Sink_Result_Schema_FieldsFields,
-		},
-		"Inferred": ubx.FieldSpec{WireName: "inferred"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Sink_Result_Schema_FieldsFields,
+	},
+	"Inferred": ubx.FieldSpec{WireName: "inferred"},
+}
 
 type SinkConfig struct {
 	// Defines the configuration of the R2 Sink.
@@ -169,7 +169,7 @@ type SinkAttrs struct {
 	// Defines the data format of the events.
 	Format any
 	// Defines the name of the Sink.
-	Name any
+	Name   any
 	Result any
 	// Defines the schema of the events in the data stream.
 	Schema any
@@ -188,18 +188,18 @@ var Sink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Sink_ConfigFields,
+			Kind:     "object",
+			Fields:   Sink_ConfigFields,
 		},
 		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Sink_Result_SchemaFields,
+			Kind:     "object",
+			Fields:   Sink_Result_SchemaFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SinkId": ubx.FieldSpec{WireName: "sink_id"},
+		"SinkId":    ubx.FieldSpec{WireName: "sink_id"},
 	},
 }

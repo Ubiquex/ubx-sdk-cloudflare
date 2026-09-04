@@ -3,6 +3,18 @@ package customassetsforanaccount
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPagesCustomAssetResult_Result struct {
+	// A short description of the custom asset.
+	Description any
+	LastUpdated any
+	// The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
+	Name any
+	// The size of the asset content in bytes.
+	SizeBytes any
+	// The URL where the asset content is fetched from.
+	Url any
+}
+
 type CustomPagesCustomAssetResultConfig struct {
 	// The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
 	AssetName any
@@ -13,6 +25,7 @@ type CustomPagesCustomAssetResultConfig struct {
 type CustomPagesCustomAssetResultAttrs struct {
 	// The unique name of the custom asset. Can only contain letters (A-Z, a-z), numbers (0-9), and underscores (_).
 	AssetName any
+	Result    any
 	// Identifier.
 	ZoneIdentifier any
 }
@@ -20,7 +33,7 @@ type CustomPagesCustomAssetResultAttrs struct {
 var CustomPagesCustomAssetResult = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_pages_custom_asset_result",
 	Fields: ubx.FieldMap{
-		"AssetName": ubx.FieldSpec{WireName: "asset_name"},
+		"AssetName":      ubx.FieldSpec{WireName: "asset_name"},
 		"ZoneIdentifier": ubx.FieldSpec{WireName: "zone_identifier"},
 	},
 }

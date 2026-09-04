@@ -7,6 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallOverrideResponseSingle_Result_RewriteAction:
+    # The WAF rule action to apply.
+    block: Any = None
+    # The WAF rule action to apply.
+    challenge: Any = None
+    # The WAF rule action to apply.
+    default: Any = None
+    # The WAF rule action to apply.
+    disable: Any = None
+    # The WAF rule action to apply.
+    simulate: Any = None
+
+@dataclasses.dataclass
+class FirewallOverrideResponseSingle_Result_Rules:
+    pass
+
+@dataclasses.dataclass
+class FirewallOverrideResponseSingle_Result:
+    # An informative summary of the current URI-based WAF override.
+    description: Any = None
+    # An object that allows you to enable or disable WAF rule groups for the current WAF override. Each key of this object must be the ID of a WAF rule group, and each value must be a valid WAF action (usually `default` or `disable`). When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
+    groups: Any = None
+    # The unique identifier of the WAF override.
+    id: Any = None
+    # When true, indicates that the rule is currently paused.
+    paused: Any = None
+    # The relative priority of the current URI-based WAF override when multiple overrides match a single URL. A lower number indicates higher priority. Higher priority overrides may overwrite values set by lower priority overrides.
+    priority: Any = None
+    # Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.
+    rewrite_action: Any = None
+    # An object that allows you to override the action of specific WAF rules. Each key of this object must be the ID of a WAF rule, and each value must be a valid WAF action. Unless you are disabling a rule, ensure that you also enable the rule group that this WAF rule belongs to. When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.
+    rules: Any = None
+    # The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
+    urls: Any = None
+
+@dataclasses.dataclass
 class FirewallOverrideResponseSingleConfig:
     # The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
     urls: Any = None
@@ -17,6 +53,7 @@ class FirewallOverrideResponseSingleConfig:
 
 @dataclasses.dataclass
 class FirewallOverrideResponseSingleAttrs:
+    result: Any = None
     # The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.
     urls: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DosTcpFlowProtectionRuleListResponse_Result:
+    burst_sensitivity: Any = None
+    created_on: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_on: Any = None
+    name: Any = None
+    rate_sensitivity: Any = None
+    scope: Any = None
+
+@dataclasses.dataclass
 class DosTcpFlowProtectionRuleListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -23,6 +34,7 @@ class DosTcpFlowProtectionRuleListResponseAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 DosTcpFlowProtectionRuleListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_dos_tcp_flow_protection_rule_list_response",

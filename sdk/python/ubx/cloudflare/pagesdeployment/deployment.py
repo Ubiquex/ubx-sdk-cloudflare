@@ -7,6 +7,140 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Deployment_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Deployment_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_BuildConfig:
+    # Enable build caching for the project.
+    build_caching: Any = None
+    # Command used to build project.
+    build_command: Any = None
+    # Assets output directory of the build.
+    destination_dir: Any = None
+    # Directory to run the command.
+    root_dir: Any = None
+    # The classifying tag for analytics.
+    web_analytics_tag: Any = None
+    # The auth token for analytics.
+    web_analytics_token: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_DeploymentTrigger_Metadata:
+    # Where the trigger happened.
+    branch: Any = None
+    # Whether the deployment trigger commit was dirty.
+    commit_dirty: Any = None
+    # Hash of the deployment trigger commit.
+    commit_hash: Any = None
+    # Message of the deployment trigger commit.
+    commit_message: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_DeploymentTrigger:
+    # Additional info about the trigger.
+    metadata: Any = None
+    # What caused the deployment.
+    type: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_EnvVars:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_LatestStage:
+    # When the stage ended.
+    ended_on: Any = None
+    # The current build stage.
+    name: Any = None
+    # When the stage started.
+    started_on: Any = None
+    # State of the current stage.
+    status: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_Source_Config:
+    # Whether to enable automatic deployments when pushing to the source repository. When disabled, no deployments (production or preview) will be triggered automatically.
+    deployments_enabled: Any = None
+    # The owner of the repository.
+    owner: Any = None
+    # The owner ID of the repository.
+    owner_id: Any = None
+    # A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+    path_excludes: Any = None
+    # A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+    path_includes: Any = None
+    # Whether to enable PR comments.
+    pr_comments_enabled: Any = None
+    # A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+    preview_branch_excludes: Any = None
+    # A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
+    preview_branch_includes: Any = None
+    # Controls whether commits to preview branches trigger a preview deployment.
+    preview_deployment_setting: Any = None
+    # The production branch of the repository.
+    production_branch: Any = None
+    # Whether to trigger a production deployment on commits to the production branch.
+    production_deployments_enabled: Any = None
+    # The ID of the repository.
+    repo_id: Any = None
+    # The name of the repository.
+    repo_name: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result_Source:
+    config: Any = None
+    # The source control management provider.
+    type: Any = None
+
+@dataclasses.dataclass
+class Deployment_Result:
+    # A list of alias URLs pointing to this deployment.
+    aliases: Any = None
+    # Configs for the project build process.
+    build_config: Any = None
+    # When the deployment was created.
+    created_on: Any = None
+    # Info about what caused the deployment.
+    deployment_trigger: Any = None
+    # Environment variables used for builds and Pages Functions.
+    env_vars: Any = None
+    # Type of deploy.
+    environment: Any = None
+    # Id of the deployment.
+    id: Any = None
+    # If the deployment has been skipped.
+    is_skipped: Any = None
+    # The status of the deployment.
+    latest_stage: Any = None
+    # When the deployment was last modified.
+    modified_on: Any = None
+    # Id of the project.
+    project_id: Any = None
+    # Name of the project.
+    project_name: Any = None
+    # Short Id (8 character) of the deployment.
+    short_id: Any = None
+    # Why the deployment was skipped.
+    skip_reason: Any = None
+    # Configs for the project source control.
+    source: Any = None
+    # List of past stages.
+    stages: Any = None
+    # The live URL to view this deployment.
+    url: Any = None
+    # Whether the deployment uses functions.
+    uses_functions: Any = None
+
+@dataclasses.dataclass
 class DeploymentConfig:
     # Headers configuration file for the deployment.
     headers: Any = None
@@ -61,12 +195,17 @@ class DeploymentAttrs:
     commit_hash: Any = None
     # Git commit message associated with this deployment.
     commit_message: Any = None
+    errors: Any = None
     # Functions routing configuration file.
     functions_filepath_routing_config_json: Any = None
     # JSON string containing a manifest of files to deploy. Maps file paths to their content hashes. Required for direct upload deployments. Maximum 20,000 entries.
     manifest: Any = None
+    messages: Any = None
     # The build output directory path.
     pages_build_output_dir: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Hash of the Wrangler configuration file used for this deployment.
     wrangler_config_hash: Any = None
     # path parameter, not part of the API's own resource representation

@@ -7,6 +7,10 @@ export interface DnsCustomNameserversGetResponseConfig {
 }
 
 export interface DnsCustomNameserversGetResponseAttrs {
+  /** Whether zone uses account-level custom nameservers. */
+  enabled: boolean;
+  /** The number of the name server set to assign to the zone. */
+  nsSet: number;
   /** Identifier. */
   zoneId: string;
 }

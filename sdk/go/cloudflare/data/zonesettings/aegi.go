@@ -3,16 +3,28 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Aegi_Result_Value struct {
+	Enabled any
+	PoolId  any
+}
+
+type Aegi_Result struct {
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type AegiConfig struct {
 }
 
 type AegiAttrs struct {
+	// Aegis provides dedicated egress IPs (from Cloudflare to your origin) for your layer 7 WAF and CDN services. The egress IPs are reserved exclusively for your account so that you can increase your origin security by only allowing traffic from a small list of IP addresses.
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var Aegi = ubx.DataSourceBinding{
 	WireType: "cloudflare_aegi",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

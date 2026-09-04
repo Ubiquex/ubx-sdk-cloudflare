@@ -7,12 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BinaryAst_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class BinaryAst_Result:
+    editable: Any = None
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class BinaryAstConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class BinaryAstAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Controls Binary AST JavaScript parsing for the zone.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

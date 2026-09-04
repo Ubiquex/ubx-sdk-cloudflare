@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntelSinkholesSinkholeCollectionResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesSinkholeCollectionResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class IntelSinkholesSinkholeCollectionResponse_Result:
+    account_tag: Any = None
+    created_on: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    r2_bucket: Any = None
+    r2_id: Any = None
+
+@dataclasses.dataclass
 class IntelSinkholesSinkholeCollectionResponseConfig:
     pass
 
@@ -14,6 +35,11 @@ class IntelSinkholesSinkholeCollectionResponseConfig:
 class IntelSinkholesSinkholeCollectionResponseAttrs:
     # An identifier for the resource.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 IntelSinkholesSinkholeCollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_intel_sinkholes_sinkhole_collection_response",

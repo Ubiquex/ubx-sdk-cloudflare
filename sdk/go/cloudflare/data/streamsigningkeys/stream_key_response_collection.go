@@ -3,6 +3,23 @@ package streamsigningkeys
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamKeyResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type StreamKeyResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type StreamKeyResponseCollection_Result struct {
+	Created any
+	Id      any
+	KeyId   any
+}
+
 type StreamKeyResponseCollectionConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +28,11 @@ type StreamKeyResponseCollectionConfig struct {
 type StreamKeyResponseCollectionAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var StreamKeyResponseCollection = ubx.DataSourceBinding{

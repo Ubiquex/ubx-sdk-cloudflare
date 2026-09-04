@@ -3,6 +3,46 @@ package customsslforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseCollection_Result_GeoRestrictions struct {
+	Label any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseCollection_Result_KeylessServer_Tunnel struct {
+	PrivateIp any
+	VnetId    any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseCollection_Result_KeylessServer struct {
+	CreatedOn   any
+	Enabled     any
+	Host        any
+	Id          any
+	ModifiedOn  any
+	Name        any
+	Permissions any
+	Port        any
+	Status      any
+	Tunnel      any
+}
+
+type TlsCertificatesAndHostnamesCertificateResponseCollection_Result struct {
+	BundleMethod       any
+	CustomCsrId        any
+	ExpiresOn          any
+	GeoRestrictions    any
+	Hosts              any
+	Id                 any
+	Issuer             any
+	KeylessServer      any
+	ModifiedOn         any
+	PolicyRestrictions any
+	Priority           any
+	Signature          any
+	Status             any
+	UploadedOn         any
+	ZoneId             any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseCollectionConfig struct {
 	// Whether to match all search requirements or at least one (any).
 	Match any
@@ -21,6 +61,7 @@ type TlsCertificatesAndHostnamesCertificateResponseCollectionAttrs struct {
 	Page any
 	// Number of zones per page.
 	PerPage any
+	Result  any
 	// Status of the zone's custom SSL.
 	Status any
 	// Identifier.
@@ -30,9 +71,9 @@ type TlsCertificatesAndHostnamesCertificateResponseCollectionAttrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_collection",
 	Fields: ubx.FieldMap{
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Match":   ubx.FieldSpec{WireName: "match"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

@@ -16,7 +16,7 @@ type Workflow_DefaultRetention struct {
 }
 
 type Workflow_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -25,27 +25,27 @@ type Workflow_Limits struct {
 }
 
 type Workflow_Result_Schedules struct {
-	Cron any
+	Cron         any
 	NextInstance any
 }
 
 type Workflow_Result struct {
-	ClassName any
-	CreatedOn any
-	Id any
-	Instances any
-	ModifiedOn any
-	Name any
-	Schedules any
-	ScriptName any
+	ClassName   any
+	CreatedOn   any
+	Id          any
+	Instances   any
+	ModifiedOn  any
+	Name        any
+	Schedules   any
+	ScriptName  any
 	TriggeredOn any
 }
 
 type Workflow_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
@@ -55,30 +55,30 @@ type Workflow_Schedules struct {
 }
 
 var Workflow_ConcurrencyFields = ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-	}
+	"Limit": ubx.FieldSpec{WireName: "limit"},
+}
 
 var Workflow_DefaultRetentionFields = ubx.FieldMap{
-		"ErrorRetention": ubx.FieldSpec{WireName: "error_retention"},
-		"SuccessRetention": ubx.FieldSpec{WireName: "success_retention"},
-	}
+	"ErrorRetention":   ubx.FieldSpec{WireName: "error_retention"},
+	"SuccessRetention": ubx.FieldSpec{WireName: "success_retention"},
+}
 
 var Workflow_LimitsFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{WireName: "steps"},
-	}
+	"Steps": ubx.FieldSpec{WireName: "steps"},
+}
 
 var Workflow_SchedulesFields = ubx.FieldMap{
-		"Cron": ubx.FieldSpec{WireName: "cron"},
-	}
+	"Cron": ubx.FieldSpec{WireName: "cron"},
+}
 
 type WorkflowConfig struct {
-	ClassName any
+	ClassName   any
 	Concurrency any
 	// Default retention applied to instances of this version when they do not set their own retention.
 	DefaultRetention any
-	Limits any
-	Schedules any
-	ScriptName any
+	Limits           any
+	Schedules        any
+	ScriptName       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -86,18 +86,18 @@ type WorkflowConfig struct {
 }
 
 type WorkflowAttrs struct {
-	ClassName any
+	ClassName   any
 	Concurrency any
 	// Default retention applied to instances of this version when they do not set their own retention.
 	DefaultRetention any
-	Errors any
-	Limits any
-	Messages any
-	Result any
-	ResultInfo any
-	Schedules any
-	ScriptName any
-	Success any
+	Errors           any
+	Limits           any
+	Messages         any
+	Result           any
+	ResultInfo       any
+	Schedules        any
+	ScriptName       any
+	Success          any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -110,26 +110,26 @@ var Workflow = ubx.ResourceBinding{
 		"ClassName": ubx.FieldSpec{WireName: "class_name"},
 		"Concurrency": ubx.FieldSpec{
 			WireName: "concurrency",
-			Kind: "object",
-			Fields: Workflow_ConcurrencyFields,
+			Kind:     "object",
+			Fields:   Workflow_ConcurrencyFields,
 		},
 		"DefaultRetention": ubx.FieldSpec{
 			WireName: "default_retention",
-			Kind: "object",
-			Fields: Workflow_DefaultRetentionFields,
+			Kind:     "object",
+			Fields:   Workflow_DefaultRetentionFields,
 		},
 		"Limits": ubx.FieldSpec{
 			WireName: "limits",
-			Kind: "object",
-			Fields: Workflow_LimitsFields,
+			Kind:     "object",
+			Fields:   Workflow_LimitsFields,
 		},
 		"Schedules": ubx.FieldSpec{
 			WireName: "schedules",
-			Kind: "list",
-			Fields: Workflow_SchedulesFields,
+			Kind:     "list",
+			Fields:   Workflow_SchedulesFields,
 		},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"ScriptName":   ubx.FieldSpec{WireName: "script_name"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"WorkflowName": ubx.FieldSpec{WireName: "workflow_name"},
 	},
 }

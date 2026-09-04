@@ -3,52 +3,83 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareResponseCollection_Result_Resources struct {
+	Created           any
+	Id                any
+	Meta              any
+	Modified          any
+	ResourceAccountId any
+	ResourceId        any
+	ResourceType      any
+	ResourceVersion   any
+	Status            any
+}
+
+type ShareResponseCollection_Result struct {
+	AccountId                    any
+	AccountName                  any
+	AssociatedRecipientCount     any
+	AssociatingRecipientCount    any
+	Created                      any
+	DisassociatedRecipientCount  any
+	DisassociatingRecipientCount any
+	Id                           any
+	Kind                         any
+	Modified                     any
+	Name                         any
+	OrganizationId               any
+	Resources                    any
+	Status                       any
+	TargetType                   any
+}
+
 type ShareResponseCollectionConfig struct {
 	// Account identifier.
-	AccountId any
-	Direction any
+	AccountId              any
+	Direction              any
 	IncludeRecipientCounts any
-	IncludeResources any
-	Kind any
-	Order any
-	Page any
-	PerPage any
-	ResourceTypes any
-	Status any
-	Tag any
-	TargetType any
+	IncludeResources       any
+	Kind                   any
+	Order                  any
+	Page                   any
+	PerPage                any
+	ResourceTypes          any
+	Status                 any
+	Tag                    any
+	TargetType             any
 }
 
 type ShareResponseCollectionAttrs struct {
 	// Account identifier.
-	AccountId any
-	Direction any
+	AccountId              any
+	Direction              any
 	IncludeRecipientCounts any
-	IncludeResources any
-	Kind any
-	Order any
-	Page any
-	PerPage any
-	ResourceTypes any
-	Status any
-	Tag any
-	TargetType any
+	IncludeResources       any
+	Kind                   any
+	Order                  any
+	Page                   any
+	PerPage                any
+	ResourceTypes          any
+	Result                 any
+	Status                 any
+	Tag                    any
+	TargetType             any
 }
 
 var ShareResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_resource_sharing_share_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"AccountId":              ubx.FieldSpec{WireName: "account_id"},
+		"Direction":              ubx.FieldSpec{WireName: "direction"},
 		"IncludeRecipientCounts": ubx.FieldSpec{WireName: "include_recipient_counts"},
-		"IncludeResources": ubx.FieldSpec{WireName: "include_resources"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"IncludeResources":       ubx.FieldSpec{WireName: "include_resources"},
+		"Kind":                   ubx.FieldSpec{WireName: "kind"},
+		"Order":                  ubx.FieldSpec{WireName: "order"},
+		"Page":                   ubx.FieldSpec{WireName: "page"},
+		"PerPage":                ubx.FieldSpec{WireName: "per_page"},
+		"ResourceTypes":          ubx.FieldSpec{WireName: "resource_types"},
+		"Status":                 ubx.FieldSpec{WireName: "status"},
+		"Tag":                    ubx.FieldSpec{WireName: "tag"},
+		"TargetType":             ubx.FieldSpec{WireName: "target_type"},
 	},
 }

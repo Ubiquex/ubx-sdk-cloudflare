@@ -7,6 +7,50 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesClientCertificateResponseSingle_Result_CertificateAuthority:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesClientCertificateResponseSingle_Result:
+    # The Client Certificate PEM.
+    certificate: Any = None
+    # Certificate Authority used to issue the Client Certificate.
+    certificate_authority: Any = None
+    # Common Name of the Client Certificate.
+    common_name: Any = None
+    # Country, provided by the CSR.
+    country: Any = None
+    # The Certificate Signing Request (CSR). Must be newline-encoded.
+    csr: Any = None
+    # Date that the Client Certificate expires.
+    expires_on: Any = None
+    # Unique identifier of the Client Certificate.
+    fingerprint_sha256: Any = None
+    # Identifier.
+    id: Any = None
+    # Date that the Client Certificate was issued by the Certificate Authority.
+    issued_on: Any = None
+    # Location, provided by the CSR.
+    location: Any = None
+    # Organization, provided by the CSR.
+    organization: Any = None
+    # Organizational Unit, provided by the CSR.
+    organizational_unit: Any = None
+    # The serial number on the created Client Certificate.
+    serial_number: Any = None
+    # The type of hash used for the Client Certificate..
+    signature: Any = None
+    # Subject Key Identifier.
+    ski: Any = None
+    # State, provided by the CSR.
+    state: Any = None
+    # Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions.
+    status: Any = None
+    # The number of days the Client Certificate will be valid after the issued_on date.
+    validity_days: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesClientCertificateResponseSingleConfig:
     # The Certificate Signing Request (CSR). Must be newline-encoded.
     csr: Any = None
@@ -21,6 +65,7 @@ class TlsCertificatesAndHostnamesClientCertificateResponseSingleConfig:
 class TlsCertificatesAndHostnamesClientCertificateResponseSingleAttrs:
     # The Certificate Signing Request (CSR). Must be newline-encoded.
     csr: Any = None
+    result: Any = None
     # The number of days the Client Certificate will be valid after the issued_on date.
     validity_days: Any = None
     # path parameter, not part of the API's own resource representation

@@ -3,6 +3,33 @@ package priorityintelligencerequirementspir
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Priority_Errors_Source struct {
+	Pointer any
+}
+
+type Priority_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Priority_Result struct {
+	Completed     any
+	Content       any
+	Created       any
+	Id            any
+	MessageTokens any
+	Priority      any
+	ReadableId    any
+	Request       any
+	Status        any
+	Summary       any
+	Tlp           any
+	Tokens        any
+	Updated       any
+}
+
 type PriorityConfig struct {
 	// Page number of results.
 	Page any
@@ -15,10 +42,15 @@ type PriorityConfig struct {
 }
 
 type PriorityAttrs struct {
+	Errors   any
+	Messages any
 	// Page number of results.
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +60,9 @@ type PriorityAttrs struct {
 var Priority = ubx.ResourceBinding{
 	WireType: "cloudflare_priority",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Page":       ubx.FieldSpec{WireName: "page"},
+		"PerPage":    ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"PriorityId": ubx.FieldSpec{WireName: "priority_id"},
 	},
 }

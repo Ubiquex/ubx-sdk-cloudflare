@@ -7,6 +7,93 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_ManagedBy:
+    client_type: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_MonthlyCostEstimate:
+    currency: Any = None
+    monthly_cost: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Observations:
+    first_observed_at: Any = None
+    last_observed_at: Any = None
+    provider_id: Any = None
+    resource_id: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_List_ResourcePreview:
+    cloud_type: Any = None
+    detail: Any = None
+    id: Any = None
+    name: Any = None
+    resource_type: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_List:
+    item_type: Any = None
+    resource_preview: Any = None
+    string: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value_YamlDiff:
+    diff: Any = None
+    left_description: Any = None
+    left_yaml: Any = None
+    right_description: Any = None
+    right_yaml: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections_HiddenItems_Value:
+    item_type: Any = None
+    list: Any = None
+    resource_preview: Any = None
+    string: Any = None
+    yaml: Any = None
+    yaml_diff: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections_HiddenItems:
+    help_text: Any = None
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result_Sections:
+    help_text: Any = None
+    hidden_items: Any = None
+    name: Any = None
+    visible_items: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourceResponse_Result:
+    account_id: Any = None
+    cloud_type: Any = None
+    config: Any = None
+    deployment_provider: Any = None
+    id: Any = None
+    managed: Any = None
+    managed_by: Any = None
+    monthly_cost_estimate: Any = None
+    name: Any = None
+    native_id: Any = None
+    observations: Any = None
+    provider_ids: Any = None
+    provider_names_by_id: Any = None
+    region: Any = None
+    resource_group: Any = None
+    resource_type: Any = None
+    sections: Any = None
+    state: Any = None
+    tags: Any = None
+    updated_at: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
 class McnReadAccountResourceResponseConfig:
     account_id: Any = None
     resource_id: Any = None
@@ -16,6 +103,7 @@ class McnReadAccountResourceResponseConfig:
 class McnReadAccountResourceResponseAttrs:
     account_id: Any = None
     resource_id: Any = None
+    result: Any = None
     v2: Any = None
 
 McnReadAccountResourceResponse = ubx.DataSourceBinding(

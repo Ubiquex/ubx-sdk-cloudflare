@@ -7,6 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RumRulesResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class RumRulesResponseCollection_Result_Rules:
+    created: Any = None
+    host: Any = None
+    id: Any = None
+    inclusive: Any = None
+    is_paused: Any = None
+    paths: Any = None
+    priority: Any = None
+
+@dataclasses.dataclass
+class RumRulesResponseCollection_Result_Ruleset:
+    # Whether the ruleset is enabled.
+    enabled: Any = None
+    # The Web Analytics ruleset identifier.
+    id: Any = None
+    zone_name: Any = None
+    # The zone identifier.
+    zone_tag: Any = None
+
+@dataclasses.dataclass
+class RumRulesResponseCollection_Result:
+    # A list of rules.
+    rules: Any = None
+    ruleset: Any = None
+
+@dataclasses.dataclass
 class RumRulesResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -17,8 +48,13 @@ class RumRulesResponseCollectionConfig:
 class RumRulesResponseCollectionAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
     # The Web Analytics ruleset identifier.
     ruleset_id: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RumRulesResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_rum_rules_response_collection",

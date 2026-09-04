@@ -3,6 +3,30 @@ package sso
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamSsoConnectorResponse_Result_Id struct {
+}
+
+type IamSsoConnectorResponse_Result_Verification struct {
+	// DNS verification code. Add this entire string to the DNS TXT record of the email domain to validate ownership.
+	Code any
+	// The status of the verification code from the verification process.
+	Status any
+}
+
+type IamSsoConnectorResponse_Result struct {
+	// Timestamp for the creation of the SSO connector
+	CreatedOn   any
+	EmailDomain any
+	Enabled     any
+	// SSO Connector identifier tag.
+	Id any
+	// Timestamp for the last update of the SSO connector
+	UpdatedOn any
+	// Controls the display of FedRAMP language to the user during SSO login
+	UseFedrampLanguage any
+	Verification       any
+}
+
 type IamSsoConnectorResponseConfig struct {
 	// Begin the verification process after creation
 	BeginVerification any
@@ -21,6 +45,7 @@ type IamSsoConnectorResponseAttrs struct {
 	BeginVerification any
 	// Email domain of the new SSO connector
 	EmailDomain any
+	Result      any
 	// Controls the display of FedRAMP language to the user during SSO login
 	UseFedrampLanguage any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +57,10 @@ type IamSsoConnectorResponseAttrs struct {
 var IamSsoConnectorResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_iam_sso_connector_response",
 	Fields: ubx.FieldMap{
-		"BeginVerification": ubx.FieldSpec{WireName: "begin_verification"},
-		"EmailDomain": ubx.FieldSpec{WireName: "email_domain"},
+		"BeginVerification":  ubx.FieldSpec{WireName: "begin_verification"},
+		"EmailDomain":        ubx.FieldSpec{WireName: "email_domain"},
 		"UseFedrampLanguage": ubx.FieldSpec{WireName: "use_fedramp_language"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SsoConnectorId": ubx.FieldSpec{WireName: "sso_connector_id"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
+		"SsoConnectorId":     ubx.FieldSpec{WireName: "sso_connector_id"},
 	},
 }

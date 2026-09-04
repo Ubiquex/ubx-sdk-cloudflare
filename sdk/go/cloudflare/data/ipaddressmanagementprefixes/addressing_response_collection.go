@@ -3,6 +3,27 @@ package ipaddressmanagementprefixes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AddressingResponseCollection_Result struct {
+	AccountId                any
+	Advertised               any
+	AdvertisedModifiedAt     any
+	Approved                 any
+	Asn                      any
+	Cidr                     any
+	CreatedAt                any
+	DelegateLoaCreation      any
+	Description              any
+	Id                       any
+	IrrValidationState       any
+	LoaDocumentId            any
+	ModifiedAt               any
+	OnDemandEnabled          any
+	OnDemandLocked           any
+	OwnershipValidationState any
+	OwnershipValidationToken any
+	RpkiValidationState      any
+}
+
 type AddressingResponseCollectionConfig struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
@@ -11,6 +32,7 @@ type AddressingResponseCollectionConfig struct {
 type AddressingResponseCollectionAttrs struct {
 	// Identifier of a Cloudflare account.
 	AccountId any
+	Result    any
 }
 
 var AddressingResponseCollection = ubx.DataSourceBinding{

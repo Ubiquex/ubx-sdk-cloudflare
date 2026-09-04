@@ -3,11 +3,38 @@ package recordings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ActiveRecording_Data struct {
+	// If the audio_config is passed, the URL for downloading the audio recording is returned.
+	AudioDownloadUrl any
+	// URL where the recording can be downloaded.
+	DownloadUrl any
+	// Timestamp when the download URL expires.
+	DownloadUrlExpiry any
+	// File size of the recording, in bytes.
+	FileSize any
+	// ID of the recording
+	Id any
+	// Timestamp when this recording was invoked.
+	InvokedTime any
+	// File name of the recording.
+	OutputFileName any
+	// Total recording time in seconds.
+	RecordingDuration any
+	// ID of the meeting session this recording is for.
+	SessionId any
+	// Timestamp when this recording actually started after being invoked. Usually a few seconds after `invoked_time`.
+	StartedTime any
+	// Current status of the recording.
+	Status any
+	// Timestamp when this recording was stopped. Optional; is present only when the recording has actually been stopped.
+	StoppedTime any
+}
+
 type ActiveRecordingConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
 	MeetingId any
 }
 
@@ -15,15 +42,18 @@ type ActiveRecordingAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
+	Data      any
 	MeetingId any
+	// Success status of the operation
+	Success any
 }
 
 var ActiveRecording = ubx.DataSourceBinding{
 	WireType: "cloudflare_active_recording",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
 	},
 }

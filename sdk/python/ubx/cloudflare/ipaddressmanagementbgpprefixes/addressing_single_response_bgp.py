@@ -7,6 +7,41 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingSingleResponseBgp_Result_BgpSignalOpts:
+    # Whether control of advertisement of the prefix to the Internet is enabled to be performed via BGP signal
+    enabled: Any = None
+    # Last time BGP signaling control was toggled. This field is null if BGP signaling has never been enabled.
+    modified_at: Any = None
+
+@dataclasses.dataclass
+class AddressingSingleResponseBgp_Result_OnDemand:
+    # Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+    advertised: Any = None
+    # Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+    advertised_modified_at: Any = None
+    # Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.
+    on_demand_enabled: Any = None
+    # Whether the advertisement status of the prefix is locked, meaning it cannot be changed.
+    on_demand_locked: Any = None
+
+@dataclasses.dataclass
+class AddressingSingleResponseBgp_Result:
+    # Autonomous System Number (ASN) the prefix will be advertised under.
+    asn: Any = None
+    # Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute
+    asn_prepend_count: Any = None
+    # Determines if Cloudflare advertises a BYOIP BGP prefix even when there is no matching BGP prefix in the Magic routing table. When true, Cloudflare will automatically withdraw the BGP prefix when there are no matching BGP routes, and will resume advertising when there is at least one matching BGP route.
+    auto_advertise_withdraw: Any = None
+    bgp_signal_opts: Any = None
+    # IP Prefix in Classless Inter-Domain Routing format.
+    cidr: Any = None
+    created_at: Any = None
+    # Identifier of BGP Prefix.
+    id: Any = None
+    modified_at: Any = None
+    on_demand: Any = None
+
+@dataclasses.dataclass
 class AddressingSingleResponseBgpConfig:
     # IP Prefix in Classless Inter-Domain Routing format.
     cidr: Any = None
@@ -21,6 +56,7 @@ class AddressingSingleResponseBgpConfig:
 class AddressingSingleResponseBgpAttrs:
     # IP Prefix in Classless Inter-Domain Routing format.
     cidr: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

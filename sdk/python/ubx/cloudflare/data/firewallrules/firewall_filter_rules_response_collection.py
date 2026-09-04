@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FirewallFilterRulesResponseCollection_Result_Filter:
+    deleted: Any = None
+    description: Any = None
+    expression: Any = None
+    id: Any = None
+    paused: Any = None
+    ref: Any = None
+
+@dataclasses.dataclass
+class FirewallFilterRulesResponseCollection_Result:
+    action: Any = None
+    description: Any = None
+    filter: Any = None
+    id: Any = None
+    paused: Any = None
+    priority: Any = None
+    products: Any = None
+    ref: Any = None
+
+@dataclasses.dataclass
 class FirewallFilterRulesResponseCollectionConfig:
     # The action to search for. Must be an exact match.
     action: Any = None
@@ -33,6 +53,7 @@ class FirewallFilterRulesResponseCollectionAttrs:
     paused: Any = None
     # Number of firewall rules per page.
     per_page: Any = None
+    result: Any = None
     # Defines an identifier.
     zone_id: Any = None
 

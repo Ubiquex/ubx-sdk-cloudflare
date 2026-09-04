@@ -15,6 +15,19 @@ export interface Target_Ip {
   ipv6?: Target_Ip_Ipv4 | Computed<Target_Ip_Ipv4>;
 }
 
+export interface Target_Result {
+  /** Date and time at which the target was created */
+  createdAt: string | Computed<string>;
+  /** A non-unique field that refers to a target */
+  hostname: string | Computed<string>;
+  /** Target identifier */
+  id: string | Computed<string>;
+  /** The IPv4/IPv6 address that identifies where to reach a target */
+  ip: Target_Ip | Computed<Target_Ip>;
+  /** Date and time at which the target was modified */
+  modifiedAt: string | Computed<string>;
+}
+
 const Target_Ip_Ipv4Fields: FieldMap = {
   ipAddr: "ip_addr",
   virtualNetworkId: "virtual_network_id",
@@ -49,6 +62,7 @@ export interface TargetAttrs {
   hostname: string;
   /** The IPv4/IPv6 address that identifies where to reach a target */
   ip: Target_Ip;
+  result: Target_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

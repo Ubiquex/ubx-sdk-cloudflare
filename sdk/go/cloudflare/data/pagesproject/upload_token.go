@@ -3,6 +3,22 @@ package pagesproject
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UploadToken_Errors_Source struct {
+	Pointer any
+}
+
+type UploadToken_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type UploadToken_Result struct {
+	// Short-lived JWT used to authenticate Pages Direct Upload asset operations.
+	Jwt any
+}
+
 type UploadTokenConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +29,19 @@ type UploadTokenConfig struct {
 type UploadTokenAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
 	// Name of the project.
 	ProjectName any
+	Result      any
+	// Whether the API call was successful.
+	Success any
 }
 
 var UploadToken = ubx.DataSourceBinding{
 	WireType: "cloudflare_upload_token",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"ProjectName": ubx.FieldSpec{WireName: "project_name"},
 	},
 }

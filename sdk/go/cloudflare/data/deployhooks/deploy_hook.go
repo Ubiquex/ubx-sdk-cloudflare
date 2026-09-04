@@ -3,6 +3,33 @@ package deployhooks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DeployHook_Errors struct {
+	Code    any
+	Message any
+}
+
+type DeployHook_Result_LatestBuild struct {
+	CreatedOn any
+}
+
+type DeployHook_Result struct {
+	Branch           any
+	CreatedOn        any
+	DeployHookName   any
+	DeployHookUuid   any
+	ExternalScriptId any
+	LatestBuild      any
+	ModifiedOn       any
+}
+
+type DeployHook_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type DeployHookConfig struct {
 	// Account identifier.
 	AccountId any
@@ -12,15 +39,20 @@ type DeployHookConfig struct {
 
 type DeployHookAttrs struct {
 	// Account identifier.
-	AccountId any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
+	ResultInfo any
 	// Human-readable name of the worker.
 	ScriptName any
+	Success    any
 }
 
 var DeployHook = ubx.DataSourceBinding{
 	WireType: "cloudflare_deploy_hook",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

@@ -3,6 +3,15 @@ package accesskeyconfiguration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse12_Result struct {
+	// The number of days until the next key rotation.
+	DaysUntilNextRotation any
+	// The number of days between key rotations.
+	KeyRotationIntervalDays any
+	// The timestamp of the previous key rotation.
+	LastKeyRotationAt any
+}
+
 type AccessSingleResponse12Config struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +20,7 @@ type AccessSingleResponse12Config struct {
 type AccessSingleResponse12Attrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessSingleResponse12 = ubx.DataSourceBinding{

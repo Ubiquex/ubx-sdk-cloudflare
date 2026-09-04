@@ -7,6 +7,65 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Policy_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Policy_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions_RemediationTypes:
+    display_name: Any = None
+    remediation_type: Any = None
+    remediation_type_id: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions_WebhookConfigs:
+    display_name: Any = None
+    webhook_config_id: Any = None
+
+@dataclasses.dataclass
+class Policy_Result_Actions:
+    remediation_types: Any = None
+    webhook_configs: Any = None
+
+@dataclasses.dataclass
+class Policy_Result:
+    actions: Any = None
+    applies_to_all_integrations: Any = None
+    created_at: Any = None
+    description: Any = None
+    disabled_at: Any = None
+    display_name: Any = None
+    enabled: Any = None
+    finding_type_id: Any = None
+    id: Any = None
+    integration_ids: Any = None
+    last_triggered_at: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Policy_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PolicyConfig:
     account_id: Any = None
     cursor: Any = None
@@ -15,6 +74,13 @@ class PolicyConfig:
 class PolicyAttrs:
     account_id: Any = None
     cursor: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Policy = ubx.DataSourceBinding(
     wire_type="cloudflare_policy",

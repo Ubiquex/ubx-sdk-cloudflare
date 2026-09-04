@@ -3,12 +3,16 @@ package zonelevelaccessapplications
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection22_Result struct {
+}
+
 type AccessResponseCollection22Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollection22Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

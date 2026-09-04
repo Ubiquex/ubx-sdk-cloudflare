@@ -3,35 +3,53 @@ package dexsyntheticapplicationmonitoring
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Percentile_Result_DnsResponseTimeMs struct {
+	// p50 observed in the time period.
+	P50 any
+	// p90 observed in the time period.
+	P90 any
+	// p95 observed in the time period.
+	P95 any
+	// p99 observed in the time period.
+	P99 any
+}
+
+type Percentile_Result struct {
+	DnsResponseTimeMs    any
+	ResourceFetchTimeMs  any
+	ServerResponseTimeMs any
+}
+
 type PercentileConfig struct {
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	From any
+	From     any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 type PercentileAttrs struct {
 	// Unique identifier linked to an account.
 	AccountId any
 	// Cloudflare colo airport code.
-	Colo any
+	Colo     any
 	DeviceId any
-	From any
+	From     any
+	Result   any
 	// API Resource UUID tag.
 	TestId any
-	To any
+	To     any
 }
 
 var Percentile = ubx.DataSourceBinding{
 	WireType: "cloudflare_percentile",
 	Fields: ubx.FieldMap{
-		"Colo": ubx.FieldSpec{WireName: "colo"},
+		"Colo":     ubx.FieldSpec{WireName: "colo"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"TestId": ubx.FieldSpec{WireName: "test_id"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"From":     ubx.FieldSpec{WireName: "from"},
+		"TestId":   ubx.FieldSpec{WireName: "test_id"},
+		"To":       ubx.FieldSpec{WireName: "to"},
 	},
 }

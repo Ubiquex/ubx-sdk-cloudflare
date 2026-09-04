@@ -3,6 +3,50 @@ package cloudflaretunnel
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelWarpConnectorResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelWarpConnectorResponseSingle_Result_Connections_OriginIp struct {
+}
+
+type TunnelWarpConnectorResponseSingle_Result_Connections struct {
+	ClientId           any
+	ClientVersion      any
+	ColoName           any
+	Id                 any
+	IsPendingReconnect any
+	OpenedAt           any
+	OriginIp           any
+	Uuid               any
+}
+
+type TunnelWarpConnectorResponseSingle_Result struct {
+	// Cloudflare account ID
+	AccountTag any
+	// The Cloudflare Tunnel connections between your origin and Cloudflare's edge.
+	Connections any
+	// Timestamp of when the tunnel established at least one connection to Cloudflare's edge. If `null`, the tunnel is inactive.
+	ConnsActiveAt any
+	// Timestamp of when the tunnel became inactive (no connections to Cloudflare's edge). If `null`, the tunnel is active.
+	ConnsInactiveAt any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// UUID of the tunnel.
+	Id any
+	// Metadata associated with the tunnel.
+	Metadata any
+	// A user-friendly name for a tunnel.
+	Name any
+	// The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).
+	Status any
+	// The type of tunnel.
+	TunType any
+}
+
 type TunnelWarpConnectorResponseSingleConfig struct {
 	// Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
 	Ha any
@@ -15,10 +59,16 @@ type TunnelWarpConnectorResponseSingleConfig struct {
 }
 
 type TunnelWarpConnectorResponseSingleAttrs struct {
+	Errors any
 	// Indicates that the tunnel will be created to be highly available. If omitted, defaults to false.
-	Ha any
+	Ha       any
+	Messages any
 	// A user-friendly name for a tunnel.
 	Name any
+	// A Warp Connector Tunnel that connects your origin to Cloudflare's edge.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +78,9 @@ type TunnelWarpConnectorResponseSingleAttrs struct {
 var TunnelWarpConnectorResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tunnel_warp_connector_response_single",
 	Fields: ubx.FieldMap{
-		"Ha": ubx.FieldSpec{WireName: "ha"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Ha":        ubx.FieldSpec{WireName: "ha"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TunnelId": ubx.FieldSpec{WireName: "tunnel_id"},
+		"TunnelId":  ubx.FieldSpec{WireName: "tunnel_id"},
 	},
 }

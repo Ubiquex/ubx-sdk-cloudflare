@@ -3,6 +3,21 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosProtectionStatusResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosProtectionStatusResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosProtectionStatusResponse_Result struct {
+	Enabled any
+}
+
 type DosProtectionStatusResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +26,11 @@ type DosProtectionStatusResponseConfig struct {
 type DosProtectionStatusResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var DosProtectionStatusResponse = ubx.DataSourceBinding{

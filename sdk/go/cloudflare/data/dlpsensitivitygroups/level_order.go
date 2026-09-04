@@ -3,20 +3,26 @@ package dlpsensitivitygroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LevelOrder_Result struct {
+	LevelIds any
+}
+
 type LevelOrderConfig struct {
-	AccountId any
+	AccountId          any
 	SensitivityGroupId any
 }
 
 type LevelOrderAttrs struct {
 	AccountId any
+	// The ordered list of level IDs for a sensitivity group. Used to get and set the ordering of levels independently of level attributes.
+	Result             any
 	SensitivityGroupId any
 }
 
 var LevelOrder = ubx.DataSourceBinding{
 	WireType: "cloudflare_level_order",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
 		"SensitivityGroupId": ubx.FieldSpec{WireName: "sensitivity_group_id"},
 	},
 }

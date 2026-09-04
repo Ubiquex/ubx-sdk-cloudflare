@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LimitsResponseSingle_Result_Quota:
+    # The time period for the quota.
+    unit: Any = None
+    # The quota limit.
+    value: Any = None
+
+@dataclasses.dataclass
+class LimitsResponseSingle_Result_Usage:
+    # Whether the account has exceeded its daily sending quota.
+    over_quota: Any = None
+    # When the current daily quota window resets. Null when there is no active window.
+    resets_at: Any = None
+    # Emails sent against the daily quota in the current window.
+    sent: Any = None
+
+@dataclasses.dataclass
+class LimitsResponseSingle_Result:
+    # The resolved daily sending quota for the account. Null when the quota is not yet available.
+    quota: Any = None
+    # The account's current daily sending usage. Null when there is no resolved quota or usage is temporarily unavailable.
+    usage: Any = None
+
+@dataclasses.dataclass
 class LimitsResponseSingleConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +38,7 @@ class LimitsResponseSingleConfig:
 class LimitsResponseSingleAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
 
 LimitsResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_email_sending_limits_response_single",

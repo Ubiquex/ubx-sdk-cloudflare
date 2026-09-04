@@ -8,66 +8,66 @@ type Repo_Errors_Source struct {
 }
 
 type Repo_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Repo_Result struct {
-	CreatedAt any
+	CreatedAt     any
 	DefaultBranch any
-	Description any
-	DisplayName any
-	Id any
-	LastPushAt any
-	Name any
-	ReadOnly any
-	Remote any
-	Source any
-	UpdatedAt any
+	Description   any
+	DisplayName   any
+	Id            any
+	LastPushAt    any
+	Name          any
+	ReadOnly      any
+	Remote        any
+	Source        any
+	UpdatedAt     any
 }
 
 type Repo_ResultInfo struct {
-	Count any
-	Cursor any
-	Page any
-	PerPage any
+	Count      any
+	Cursor     any
+	Page       any
+	PerPage    any
 	TotalCount any
 	TotalPages any
 }
 
 type RepoConfig struct {
-	Cursor any
+	Cursor    any
 	Direction any
-	Limit any
+	Limit     any
 	Namespace any
-	Search any
-	Sort any
+	Search    any
+	Sort      any
 }
 
 type RepoAttrs struct {
-	Cursor any
-	Direction any
-	Errors any
-	Limit any
-	Messages any
-	Namespace any
-	Result any
+	Cursor     any
+	Direction  any
+	Errors     any
+	Limit      any
+	Messages   any
+	Namespace  any
+	Result     any
 	ResultInfo any
-	Search any
-	Sort any
-	Success any
+	Search     any
+	Sort       any
+	Success    any
 }
 
 var Repo = ubx.DataSourceBinding{
 	WireType: "cloudflare_repo",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":    ubx.FieldSpec{WireName: "cursor"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
+		"Sort":      ubx.FieldSpec{WireName: "sort"},
 	},
 }

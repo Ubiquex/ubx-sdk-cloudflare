@@ -3,6 +3,17 @@ package streamsubtitlescaptions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StreamLanguageResponseSingle_Result struct {
+	// Whether the caption was generated via AI.
+	Generated any
+	// The language label displayed in the native language to users.
+	Label any
+	// The language tag in BCP 47 format.
+	Language any
+	// The status of a generated caption.
+	Status any
+}
+
 type StreamLanguageResponseSingleConfig struct {
 	// The WebVTT file containing the caption or subtitle content.
 	File any
@@ -16,7 +27,8 @@ type StreamLanguageResponseSingleConfig struct {
 
 type StreamLanguageResponseSingleAttrs struct {
 	// The WebVTT file containing the caption or subtitle content.
-	File any
+	File   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +40,9 @@ type StreamLanguageResponseSingleAttrs struct {
 var StreamLanguageResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_stream_language_response_single",
 	Fields: ubx.FieldMap{
-		"File": ubx.FieldSpec{WireName: "file"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"File":       ubx.FieldSpec{WireName: "file"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":   ubx.FieldSpec{WireName: "language"},
 	},
 }

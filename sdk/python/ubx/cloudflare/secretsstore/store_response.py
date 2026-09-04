@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StoreResponse_Result:
+    # Account Identifier.
+    account_id: Any = None
+    # When the secret was created.
+    created: Any = None
+    # Store Identifier.
+    id: Any = None
+    # When the secret was modified.
+    modified: Any = None
+    # The name of the store.
+    name: Any = None
+
+@dataclasses.dataclass
 class StoreResponseConfig:
     # The name of the store.
     name: Any = None
@@ -19,6 +32,7 @@ class StoreResponseConfig:
 class StoreResponseAttrs:
     # The name of the store.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

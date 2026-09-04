@@ -7,31 +7,31 @@ type PayPerCrawlGetConfigResponse_Errors_ErrorChain struct {
 }
 
 type PayPerCrawlGetConfigResponse_Errors_Source struct {
-	Parameter any
+	Parameter           any
 	ParameterValueIndex any
-	Pointer any
+	Pointer             any
 }
 
 type PayPerCrawlGetConfigResponse_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	ErrorChain any
-	Message any
-	Meta any
-	Source any
+	ErrorChain       any
+	Message          any
+	Meta             any
+	Source           any
 }
 
 type PayPerCrawlGetConfigResponse_Result struct {
 	BotOverrides any
-	Enabled any
+	Enabled      any
 	// Price in microcents 1 USD = 100,000,000 microcents. Must be 0 or a multiple of 100,000 $0.001. Range: $0.001–$9,999.999.
 	PriceUsdMicrocents any
 }
 
 type PayPerCrawlGetConfigResponse_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 	// TotalPages is a pointer so that if TotalPages == 0 we return that there are indeed 0 pages. omitempty would have removed the field otherwise. This is important as a customer may be relying on always reading this property and it should not be absent just because it is 0, only absent if a value is never provided.
 	TotalPages any
@@ -42,12 +42,12 @@ type PayPerCrawlGetConfigResponseConfig struct {
 }
 
 type PayPerCrawlGetConfigResponseAttrs struct {
-	Errors any
-	Messages any
-	Result any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
-	ZoneId any
+	Success    any
+	ZoneId     any
 }
 
 var PayPerCrawlGetConfigResponse = ubx.DataSourceBinding{

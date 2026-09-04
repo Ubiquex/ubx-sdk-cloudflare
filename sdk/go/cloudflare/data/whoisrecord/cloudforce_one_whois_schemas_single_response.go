@@ -3,6 +3,96 @@ package whoisrecord
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CloudforceOneWhoisSchemasSingleResponse_Result struct {
+	AdministrativeCity        any
+	AdministrativeCountry     any
+	AdministrativeEmail       any
+	AdministrativeFax         any
+	AdministrativeFaxExt      any
+	AdministrativeId          any
+	AdministrativeName        any
+	AdministrativeOrg         any
+	AdministrativePhone       any
+	AdministrativePhoneExt    any
+	AdministrativePostalCode  any
+	AdministrativeProvince    any
+	AdministrativeReferralUrl any
+	AdministrativeStreet      any
+	BillingCity               any
+	BillingCountry            any
+	BillingEmail              any
+	BillingFax                any
+	BillingFaxExt             any
+	BillingId                 any
+	BillingName               any
+	BillingOrg                any
+	BillingPhone              any
+	BillingPhoneExt           any
+	BillingPostalCode         any
+	BillingProvince           any
+	BillingReferralUrl        any
+	BillingStreet             any
+	CreatedDate               any
+	CreatedDateRaw            any
+	Dnssec                    any
+	Domain                    any
+	ExpirationDate            any
+	ExpirationDateRaw         any
+	Extension                 any
+	Found                     any
+	Id                        any
+	Nameservers               any
+	Punycode                  any
+	Registrant                any
+	RegistrantCity            any
+	RegistrantCountry         any
+	RegistrantEmail           any
+	RegistrantFax             any
+	RegistrantFaxExt          any
+	RegistrantId              any
+	RegistrantName            any
+	RegistrantOrg             any
+	RegistrantPhone           any
+	RegistrantPhoneExt        any
+	RegistrantPostalCode      any
+	RegistrantProvince        any
+	RegistrantReferralUrl     any
+	RegistrantStreet          any
+	Registrar                 any
+	RegistrarCity             any
+	RegistrarCountry          any
+	RegistrarEmail            any
+	RegistrarFax              any
+	RegistrarFaxExt           any
+	RegistrarId               any
+	RegistrarName             any
+	RegistrarOrg              any
+	RegistrarPhone            any
+	RegistrarPhoneExt         any
+	RegistrarPostalCode       any
+	RegistrarProvince         any
+	RegistrarReferralUrl      any
+	RegistrarStreet           any
+	Status                    any
+	TechnicalCity             any
+	TechnicalCountry          any
+	TechnicalEmail            any
+	TechnicalFax              any
+	TechnicalFaxExt           any
+	TechnicalId               any
+	TechnicalName             any
+	TechnicalOrg              any
+	TechnicalPhone            any
+	TechnicalPhoneExt         any
+	TechnicalPostalCode       any
+	TechnicalProvince         any
+	TechnicalReferralUrl      any
+	TechnicalStreet           any
+	UpdatedDate               any
+	UpdatedDateRaw            any
+	WhoisServer               any
+}
+
 type CloudforceOneWhoisSchemasSingleResponseConfig struct {
 	Domain any
 }
@@ -10,7 +100,8 @@ type CloudforceOneWhoisSchemasSingleResponseConfig struct {
 type CloudforceOneWhoisSchemasSingleResponseAttrs struct {
 	// Use to uniquely identify or reference the resource.
 	AccountId any
-	Domain any
+	Domain    any
+	Result    any
 }
 
 var CloudforceOneWhoisSchemasSingleResponse = ubx.DataSourceBinding{

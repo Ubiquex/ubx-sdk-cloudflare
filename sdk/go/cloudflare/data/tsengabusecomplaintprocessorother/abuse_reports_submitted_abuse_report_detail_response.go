@@ -4,7 +4,7 @@ package tsengabusecomplaintprocessorother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AbuseReportsSubmittedAbuseReportDetailResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -16,71 +16,71 @@ type AbuseReportsSubmittedAbuseReportDetailResponse_Result_DenialReason struct {
 }
 
 type AbuseReportsSubmittedAbuseReportDetailResponse_Result_RegWhoRequest struct {
-	RegWhoAuthorizationStatement any
-	RegWhoGoodFaithAffirmation any
+	RegWhoAuthorizationStatement    any
+	RegWhoGoodFaithAffirmation      any
 	RegWhoLawfulProcessingAgreement any
-	RegWhoLegalBasis any
-	RegWhoRequestType any
-	RegWhoRequestedDataElements any
-	RegWhoRequestorType any
+	RegWhoLegalBasis                any
+	RegWhoRequestType               any
+	RegWhoRequestedDataElements     any
+	RegWhoRequestorType             any
 }
 
 type AbuseReportsSubmittedAbuseReportDetailResponse_Result_Submitter struct {
-	Company any
-	Email any
-	Name any
+	Company   any
+	Email     any
+	Name      any
 	Telephone any
 }
 
 type AbuseReportsSubmittedAbuseReportDetailResponse_Result struct {
-	AgentName any
-	Cdate any
-	Comments any
-	Court any
-	DenialReason any
-	DestinationIps any
-	Domain any
-	DsaAttestation any
-	HostNotification any
-	Id any
-	Justification any
-	NcmecNotification any
+	AgentName                  any
+	Cdate                      any
+	Comments                   any
+	Court                      any
+	DenialReason               any
+	DestinationIps             any
+	Domain                     any
+	DsaAttestation             any
+	HostNotification           any
+	Id                         any
+	Justification              any
+	NcmecNotification          any
 	NcseiSubjectRepresentation any
-	OriginalWork any
-	OwnerNotification any
-	PortsProtocols any
-	RegWhoRequest any
-	ReportedCountry any
-	ReportedUserAgent any
-	SourceIps any
-	Status any
-	Submitter any
-	Subtypes any
-	Title any
-	Type any
-	Udrp any
-	Urls any
-	Urs any
+	OriginalWork               any
+	OwnerNotification          any
+	PortsProtocols             any
+	RegWhoRequest              any
+	ReportedCountry            any
+	ReportedUserAgent          any
+	SourceIps                  any
+	Status                     any
+	Submitter                  any
+	Subtypes                   any
+	Title                      any
+	Type                       any
+	Udrp                       any
+	Urls                       any
+	Urs                        any
 }
 
 type AbuseReportsSubmittedAbuseReportDetailResponseConfig struct {
 	AccountId any
-	ReportId any
+	ReportId  any
 }
 
 type AbuseReportsSubmittedAbuseReportDetailResponseAttrs struct {
 	AccountId any
-	Errors any
-	Messages any
-	ReportId any
-	Result any
-	Success any
+	Errors    any
+	Messages  any
+	ReportId  any
+	Result    any
+	Success   any
 }
 
 var AbuseReportsSubmittedAbuseReportDetailResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_abuse_reports_submitted_abuse_report_detail_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ReportId": ubx.FieldSpec{WireName: "report_id"},
+		"ReportId":  ubx.FieldSpec{WireName: "report_id"},
 	},
 }

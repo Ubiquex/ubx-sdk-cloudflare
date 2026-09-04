@@ -6,8 +6,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type WafProductApiBundleResponseCustomDetection_Id struct {
 }
 
-var WafProductApiBundleResponseCustomDetection_IdFields = ubx.FieldMap{
-	}
+type WafProductApiBundleResponseCustomDetection_Result struct {
+	// Defines the unique ID for this custom detection.
+	Id any
+	// Defines ehe ruleset expression to use in matching the password in a request.
+	Password any
+	// Defines the ruleset expression to use in matching the username in a request.
+	Username any
+}
+
+var WafProductApiBundleResponseCustomDetection_IdFields = ubx.FieldMap{}
 
 type WafProductApiBundleResponseCustomDetectionConfig struct {
 	// Defines the unique ID for this custom detection.
@@ -27,6 +35,8 @@ type WafProductApiBundleResponseCustomDetectionAttrs struct {
 	Id any
 	// Defines ehe ruleset expression to use in matching the password in a request.
 	Password any
+	// Defines a custom set of username/password expressions to match Leaked Credential Checks on.
+	Result any
 	// Defines the ruleset expression to use in matching the username in a request.
 	Username any
 	// path parameter, not part of the API's own resource representation
@@ -40,12 +50,12 @@ var WafProductApiBundleResponseCustomDetection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Id": ubx.FieldSpec{
 			WireName: "id",
-			Kind: "object",
-			Fields: WafProductApiBundleResponseCustomDetection_IdFields,
+			Kind:     "object",
+			Fields:   WafProductApiBundleResponseCustomDetection_IdFields,
 		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Password":    ubx.FieldSpec{WireName: "password"},
+		"Username":    ubx.FieldSpec{WireName: "username"},
+		"ZoneId":      ubx.FieldSpec{WireName: "zone_id"},
 		"DetectionId": ubx.FieldSpec{WireName: "detection_id"},
 	},
 }

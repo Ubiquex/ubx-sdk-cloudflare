@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CollectionResponse_Result_Gre:
+    managed_by: Any = None
+
+@dataclasses.dataclass
+class CollectionResponse_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class CollectionResponse_Result:
+    created_on: Any = None
+    description: Any = None
+    gre: Any = None
+    gre_interconnect: Any = None
+    id: Any = None
+    ipsec: Any = None
+    mconn: Any = None
+    modified_on: Any = None
+    mpls_interconnect: Any = None
+    name: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class CollectionResponseConfig:
     pass
 
@@ -16,6 +38,7 @@ class CollectionResponseAttrs:
     account_id: Any = None
     # Identifier
     cf1_site_id: Any = None
+    result: Any = None
 
 CollectionResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_cf1_site_ramps_collection_response",

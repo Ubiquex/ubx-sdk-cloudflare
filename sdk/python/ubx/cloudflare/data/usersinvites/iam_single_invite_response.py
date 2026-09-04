@@ -7,6 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamSingleInviteResponse_Result:
+    # When the invite is no longer active.
+    expires_on: Any = None
+    # Invite identifier tag.
+    id: Any = None
+    # The email address of the user who created the invite.
+    invited_by: Any = None
+    # Email address of the user to add to the organization.
+    invited_member_email: Any = None
+    # ID of the user to add to the organization.
+    invited_member_id: Any = None
+    # When the invite was sent.
+    invited_on: Any = None
+    # ID of the organization the user will be added to.
+    organization_id: Any = None
+    organization_is_enforcing_twofactor: Any = None
+    # Organization name.
+    organization_name: Any = None
+    # List of role names the membership has for this account.
+    roles: Any = None
+    # Current status of the invitation.
+    status: Any = None
+
+@dataclasses.dataclass
 class IamSingleInviteResponseConfig:
     pass
 
@@ -14,6 +38,7 @@ class IamSingleInviteResponseConfig:
 class IamSingleInviteResponseAttrs:
     # Invite identifier tag.
     invite_id: Any = None
+    result: Any = None
 
 IamSingleInviteResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_single_invite_response",

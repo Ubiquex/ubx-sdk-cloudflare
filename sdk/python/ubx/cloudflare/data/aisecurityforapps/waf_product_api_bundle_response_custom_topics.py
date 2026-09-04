@@ -7,12 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WafProductApiBundleResponseCustomTopics_Result_Topics:
+    label: Any = None
+    topic: Any = None
+
+@dataclasses.dataclass
+class WafProductApiBundleResponseCustomTopics_Result:
+    # Custom topic categories for AI Security for Apps content detection.
+    topics: Any = None
+
+@dataclasses.dataclass
 class WafProductApiBundleResponseCustomTopicsConfig:
     # Defines the zone.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class WafProductApiBundleResponseCustomTopicsAttrs:
+    result: Any = None
     # Defines the zone.
     zone_id: Any = None
 

@@ -3,29 +3,45 @@ package accountresourcegroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ResourceGroup_Scope_Objects struct {
+type ResourceGroup_Result_Meta struct {
+	Key   any
+	Value any
+}
+
+type ResourceGroup_Result_Scope_Objects struct {
 	Key any
 }
 
-type ResourceGroup_Scope struct {
+type ResourceGroup_Result_Scope struct {
 	// This is a combination of pre-defined resource name and identifier (like Account ID etc.)
 	Key any
-	// A list of scope objects for additional context. The number of Scope objects should not be zero.
+	// A list of scope objects for additional context.
 	Objects any
 }
 
-var ResourceGroup_Scope_ObjectsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+type ResourceGroup_Result struct {
+	// Identifier of the resource group.
+	Id any
+	// Attributes associated to the resource group.
+	Meta any
+	// Name of the resource group.
+	Name any
+	// A scope is a combination of scope objects which provides additional context.
+	Scope any
+}
 
-var ResourceGroup_ScopeFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Objects": ubx.FieldSpec{
-			WireName: "objects",
-			Kind: "list",
-			Fields: ResourceGroup_Scope_ObjectsFields,
-		},
-	}
+var ResourceGroup_Result_Scope_ObjectsFields = ubx.FieldMap{
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
+
+var ResourceGroup_Result_ScopeFields = ubx.FieldMap{
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Objects": ubx.FieldSpec{
+		WireName: "objects",
+		Kind:     "list",
+		Fields:   ResourceGroup_Result_Scope_ObjectsFields,
+	},
+}
 
 type ResourceGroupConfig struct {
 	// Name of the resource group
@@ -41,6 +57,8 @@ type ResourceGroupConfig struct {
 type ResourceGroupAttrs struct {
 	// Name of the resource group
 	Name any
+	// A group of scoped resources.
+	Result any
 	// A scope is a combination of scope objects which provides additional context.
 	Scope any
 	// path parameter, not part of the API's own resource representation
@@ -55,10 +73,10 @@ var ResourceGroup = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: ResourceGroup_ScopeFields,
+			Kind:     "object",
+			Fields:   ResourceGroup_Result_ScopeFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
 		"ResourceGroupId": ubx.FieldSpec{WireName: "resource_group_id"},
 	},
 }

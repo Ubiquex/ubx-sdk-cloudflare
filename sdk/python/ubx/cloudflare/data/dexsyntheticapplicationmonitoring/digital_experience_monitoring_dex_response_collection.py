@@ -7,6 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DigitalExperienceMonitoringDexResponseCollection_Result_Data:
+    host: Any = None
+    kind: Any = None
+    method: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringDexResponseCollection_Result_TargetPolicies:
+    pass
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringDexResponseCollection_Result:
+    created: Any = None
+    data: Any = None
+    description: Any = None
+    enabled: Any = None
+    interval: Any = None
+    name: Any = None
+    target_policies: Any = None
+    targeted: Any = None
+    test_id: Any = None
+    updated: Any = None
+
+@dataclasses.dataclass
 class DigitalExperienceMonitoringDexResponseCollectionConfig:
     kind: Any = None
     page: Any = None
@@ -20,6 +43,7 @@ class DigitalExperienceMonitoringDexResponseCollectionAttrs:
     kind: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     test_name: Any = None
 
 DigitalExperienceMonitoringDexResponseCollection = ubx.DataSourceBinding(

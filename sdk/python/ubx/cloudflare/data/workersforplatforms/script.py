@@ -7,6 +7,99 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Script_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Script_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_CacheOptions:
+    cross_version_cache: Any = None
+    enabled: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_Exports:
+    pass
+
+@dataclasses.dataclass
+class Script_Result_Script_NamedHandlers:
+    handlers: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_Observability_Logs:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    invocation_logs: Any = None
+    persist: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_Observability_Traces:
+    destinations: Any = None
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    persist: Any = None
+    propagation_policy: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_Observability:
+    enabled: Any = None
+    head_sampling_rate: Any = None
+    logs: Any = None
+    redact_query_string: Any = None
+    traces: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_Placement:
+    last_analyzed_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script_TailConsumers:
+    environment: Any = None
+    namespace: Any = None
+    service: Any = None
+
+@dataclasses.dataclass
+class Script_Result_Script:
+    cache_options: Any = None
+    compatibility_date: Any = None
+    compatibility_flags: Any = None
+    created_on: Any = None
+    etag: Any = None
+    exports: Any = None
+    handlers: Any = None
+    has_assets: Any = None
+    has_modules: Any = None
+    id: Any = None
+    last_deployed_from: Any = None
+    logpush: Any = None
+    migration_tag: Any = None
+    modified_on: Any = None
+    named_handlers: Any = None
+    observability: Any = None
+    placement: Any = None
+    placement_mode: Any = None
+    placement_status: Any = None
+    tag: Any = None
+    tags: Any = None
+    tail_consumers: Any = None
+    usage_model: Any = None
+
+@dataclasses.dataclass
+class Script_Result:
+    created_on: Any = None
+    dispatch_namespace: Any = None
+    modified_on: Any = None
+    script: Any = None
+
+@dataclasses.dataclass
 class ScriptConfig:
     # Identifier.
     account_id: Any = None
@@ -20,6 +113,11 @@ class ScriptAttrs:
     account_id: Any = None
     # Name of the Workers for Platforms dispatch namespace.
     dispatch_namespace: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     tags: Any = None
 
 Script = ubx.DataSourceBinding(

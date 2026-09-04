@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class Target_Direction:
     pass
 
+@dataclasses.dataclass
+class Target_Result_Ip_Ipv4:
+    ip_addr: Any = None
+    virtual_network_id: Any = None
+
+@dataclasses.dataclass
+class Target_Result_Ip:
+    ipv4: Any = None
+    ipv6: Any = None
+
+@dataclasses.dataclass
+class Target_Result:
+    created_at: Any = None
+    hostname: Any = None
+    id: Any = None
+    ip: Any = None
+    modified_at: Any = None
+
 _Target_DirectionFields = {
 }
 
@@ -60,6 +78,7 @@ class TargetAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     target_ids: Any = None
     virtual_network_id: Any = None
 

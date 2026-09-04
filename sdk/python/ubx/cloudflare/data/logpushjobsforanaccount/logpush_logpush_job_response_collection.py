@@ -7,6 +7,51 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LogpushLogpushJobResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class LogpushLogpushJobResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class LogpushLogpushJobResponseCollection_Result_OutputOptions:
+    batch_prefix: Any = None
+    batch_suffix: Any = None
+    cve_2021_44228: Any = None
+    field_delimiter: Any = None
+    field_names: Any = None
+    merge_subrequests: Any = None
+    output_type: Any = None
+    record_delimiter: Any = None
+    record_prefix: Any = None
+    record_suffix: Any = None
+    record_template: Any = None
+    sample_rate: Any = None
+    timestamp_format: Any = None
+
+@dataclasses.dataclass
+class LogpushLogpushJobResponseCollection_Result:
+    dataset: Any = None
+    destination_conf: Any = None
+    enabled: Any = None
+    error_message: Any = None
+    frequency: Any = None
+    id: Any = None
+    kind: Any = None
+    last_complete: Any = None
+    last_error: Any = None
+    logpull_options: Any = None
+    max_upload_bytes: Any = None
+    max_upload_interval_seconds: Any = None
+    max_upload_records: Any = None
+    name: Any = None
+    output_options: Any = None
+
+@dataclasses.dataclass
 class LogpushLogpushJobResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +64,11 @@ class LogpushLogpushJobResponseCollectionAttrs:
     account_id: Any = None
     # Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).
     dataset_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 LogpushLogpushJobResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_logpush_logpush_job_response_collection",

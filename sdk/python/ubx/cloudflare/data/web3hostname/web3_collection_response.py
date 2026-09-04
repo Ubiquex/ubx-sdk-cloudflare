@@ -7,11 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Web3CollectionResponse_Result:
+    created_on: Any = None
+    description: Any = None
+    dnslink: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    status: Any = None
+    target: Any = None
+
+@dataclasses.dataclass
 class Web3CollectionResponseConfig:
     pass
 
 @dataclasses.dataclass
 class Web3CollectionResponseAttrs:
+    result: Any = None
     # Specify the identifier of the hostname.
     zone_id: Any = None
 

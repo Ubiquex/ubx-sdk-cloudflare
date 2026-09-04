@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailRulesResponseCollection_Result_Actions:
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EmailRulesResponseCollection_Result_Matchers:
+    field: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class EmailRulesResponseCollection_Result:
+    actions: Any = None
+    enabled: Any = None
+    id: Any = None
+    matchers: Any = None
+    name: Any = None
+    priority: Any = None
+    source: Any = None
+    tag: Any = None
+
+@dataclasses.dataclass
+class EmailRulesResponseCollection_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+
+@dataclasses.dataclass
 class EmailRulesResponseCollectionConfig:
     # Filter by enabled routing rules.
     enabled: Any = None
@@ -25,6 +54,8 @@ class EmailRulesResponseCollectionAttrs:
     page: Any = None
     # Maximum number of results per page.
     per_page: Any = None
+    result: Any = None
+    result_info: Any = None
     # Identifier.
     zone_id: Any = None
 

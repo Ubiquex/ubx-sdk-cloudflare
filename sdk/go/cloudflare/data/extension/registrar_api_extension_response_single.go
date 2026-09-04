@@ -3,6 +3,30 @@ package extension
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegistrarApiExtensionResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type RegistrarApiExtensionResponseSingle_Errors struct {
+	Code    any
+	Message any
+	Source  any
+}
+
+type RegistrarApiExtensionResponseSingle_Result_Metadata struct {
+	// The full name of the extension. For example, "co.uk", or "uk".
+	Name any
+	// The TLD of the extension. For example, for "co.uk", it is "uk". For "uk", it is "uk".
+	Tld any
+}
+
+type RegistrarApiExtensionResponseSingle_Result struct {
+	// Extension metadata.
+	Metadata any
+	// JSON Schema describing the expected input structure for registration operations on this extension.
+	RegistrationSchema any
+}
+
 type RegistrarApiExtensionResponseSingleConfig struct {
 	Extension any
 }
@@ -10,7 +34,13 @@ type RegistrarApiExtensionResponseSingleConfig struct {
 type RegistrarApiExtensionResponseSingleAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
 	Extension any
+	Messages  any
+	// Extension entry with metadata and JSON Schema documents for the registration operation.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var RegistrarApiExtensionResponseSingle = ubx.DataSourceBinding{

@@ -3,6 +3,26 @@ package tunnelvirtualnetwork
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelVnetResponseSingle_Errors struct {
+	Code    any
+	Message any
+}
+
+type TunnelVnetResponseSingle_Result struct {
+	// Optional remark describing the virtual network.
+	Comment any
+	// Timestamp of when the resource was created.
+	CreatedAt any
+	// Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.
+	DeletedAt any
+	// UUID of the virtual network.
+	Id any
+	// If `true`, this virtual network is the default for the account.
+	IsDefaultNetwork any
+	// A user-friendly name for the virtual network.
+	Name any
+}
+
 type TunnelVnetResponseSingleConfig struct {
 	// Optional remark describing the virtual network.
 	Comment any
@@ -21,12 +41,17 @@ type TunnelVnetResponseSingleConfig struct {
 type TunnelVnetResponseSingleAttrs struct {
 	// Optional remark describing the virtual network.
 	Comment any
+	Errors  any
 	// If `true`, this virtual network is the default for the account.
 	IsDefault any
 	// If `true`, this virtual network is the default for the account.
 	IsDefaultNetwork any
+	Messages         any
 	// A user-friendly name for the virtual network.
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -36,11 +61,11 @@ type TunnelVnetResponseSingleAttrs struct {
 var TunnelVnetResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tunnel_vnet_response_single",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
+		"Comment":          ubx.FieldSpec{WireName: "comment"},
+		"IsDefault":        ubx.FieldSpec{WireName: "is_default"},
 		"IsDefaultNetwork": ubx.FieldSpec{WireName: "is_default_network"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
 		"VirtualNetworkId": ubx.FieldSpec{WireName: "virtual_network_id"},
 	},
 }

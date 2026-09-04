@@ -7,6 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AddressingSingleResponse_Result:
+    # Identifier of a Cloudflare account.
+    account_id: Any = None
+    # Prefix advertisement status to the Internet. This field is only not 'null' if on demand is enabled.
+    advertised: Any = None
+    # Last time the advertisement status was changed. This field is only not 'null' if on demand is enabled.
+    advertised_modified_at: Any = None
+    # Approval state of the prefix (P = pending, V = active).
+    approved: Any = None
+    # Autonomous System Number (ASN) the prefix will be advertised under.
+    asn: Any = None
+    # IP Prefix in Classless Inter-Domain Routing format.
+    cidr: Any = None
+    created_at: Any = None
+    # Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.
+    delegate_loa_creation: Any = None
+    # Description of the prefix.
+    description: Any = None
+    # Identifier of an IP Prefix.
+    id: Any = None
+    # State of one kind of validation for an IP prefix.
+    irr_validation_state: Any = None
+    # Identifier for the uploaded LOA document.
+    loa_document_id: Any = None
+    modified_at: Any = None
+    # Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.
+    on_demand_enabled: Any = None
+    # Whether advertisement status of the prefix is locked, meaning it cannot be changed.
+    on_demand_locked: Any = None
+    # State of one kind of validation for an IP prefix.
+    ownership_validation_state: Any = None
+    # Token provided to demonstrate ownership of the prefix.
+    ownership_validation_token: Any = None
+    # State of one kind of validation for an IP prefix.
+    rpki_validation_state: Any = None
+
+@dataclasses.dataclass
 class AddressingSingleResponseConfig:
     # Autonomous System Number (ASN) the prefix will be advertised under.
     asn: Any = None
@@ -35,6 +72,7 @@ class AddressingSingleResponseAttrs:
     description: Any = None
     # Identifier for the uploaded LOA document.
     loa_document_id: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

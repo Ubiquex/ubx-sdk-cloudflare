@@ -7,12 +7,33 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Setting_Result_PayloadLogging_MaskingLevel:
+    pass
+
+@dataclasses.dataclass
+class Setting_Result_PayloadLogging:
+    masking_level: Any = None
+    # Base64-encoded public key for encrypting payload logs. Null when payload logging is disabled.
+    public_key: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Setting_Result:
+    # Whether AI context analysis is enabled at the account level.
+    ai_context_analysis: Any = None
+    # Whether OCR is enabled at the account level.
+    ocr: Any = None
+    payload_logging: Any = None
+
+@dataclasses.dataclass
 class SettingConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class SettingAttrs:
     account_id: Any = None
+    # DLP account-level settings response.
+    result: Any = None
 
 Setting = ubx.DataSourceBinding(
     wire_type="cloudflare_setting",

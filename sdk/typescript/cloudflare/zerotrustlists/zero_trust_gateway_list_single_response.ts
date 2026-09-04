@@ -6,6 +6,29 @@ export interface ZeroTrustGatewayListSingleResponse_Items {
   value?: string | Computed<string>;
 }
 
+export interface ZeroTrustGatewayListSingleResponse_Result_Items {
+  createdAt?: string | Computed<string>;
+  description?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface ZeroTrustGatewayListSingleResponse_Result {
+  /** Indicate the number of items in the list. */
+  count?: number | Computed<number>;
+  createdAt?: string | Computed<string>;
+  /** Provide the list description. */
+  description?: string | Computed<string>;
+  /** Identify the API resource with a UUID. */
+  id?: string | Computed<string>;
+  /** Provide the list items. */
+  items?: ZeroTrustGatewayListSingleResponse_Result_Items[] | Computed<ZeroTrustGatewayListSingleResponse_Result_Items[]>;
+  /** Specify the list name. */
+  name?: string | Computed<string>;
+  /** Specify the list type. */
+  type?: string | Computed<string>;
+  updatedAt?: string | Computed<string>;
+}
+
 const ZeroTrustGatewayListSingleResponse_ItemsFields: FieldMap = {
   description: "description",
   value: "value",
@@ -31,6 +54,7 @@ export interface ZeroTrustGatewayListSingleResponseAttrs {
   items: ZeroTrustGatewayListSingleResponse_Items[];
   /** Specify the list name. */
   name: string;
+  result: ZeroTrustGatewayListSingleResponse_Result;
   /** path parameter, not part of the API's own resource representation */
   accountId: string;
   /** path parameter, not part of the API's own resource representation */

@@ -3,6 +3,25 @@ package dnsfirewallanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Bytime_Result_Data struct {
+	Metrics any
+}
+
+type Bytime_Result_Query struct {
+	TimeDelta any
+}
+
+type Bytime_Result struct {
+	Data          any
+	DataLag       any
+	Max           any
+	Min           any
+	Query         any
+	Rows          any
+	TimeIntervals any
+	Totals        any
+}
+
 type BytimeConfig struct {
 	// Identifier.
 	AccountId any
@@ -39,6 +58,7 @@ type BytimeAttrs struct {
 	Limit any
 	// A comma-separated list of metrics to query.
 	Metrics any
+	Result  any
 	// Start date and time of requesting data period in ISO 8601 format.
 	Since any
 	// A comma-separated list of dimensions to sort by, where each dimension may be prefixed by - (descending) or + (ascending).
@@ -52,15 +72,15 @@ type BytimeAttrs struct {
 var Bytime = ubx.DataSourceBinding{
 	WireType: "cloudflare_bytime",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
 		"DnsFirewallId": ubx.FieldSpec{WireName: "dns_firewall_id"},
-		"Filters": ubx.FieldSpec{WireName: "filters"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"Since": ubx.FieldSpec{WireName: "since"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"TimeDelta": ubx.FieldSpec{WireName: "time_delta"},
-		"Until": ubx.FieldSpec{WireName: "until"},
+		"Filters":       ubx.FieldSpec{WireName: "filters"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"Metrics":       ubx.FieldSpec{WireName: "metrics"},
+		"Since":         ubx.FieldSpec{WireName: "since"},
+		"Sort":          ubx.FieldSpec{WireName: "sort"},
+		"TimeDelta":     ubx.FieldSpec{WireName: "time_delta"},
+		"Until":         ubx.FieldSpec{WireName: "until"},
 	},
 }

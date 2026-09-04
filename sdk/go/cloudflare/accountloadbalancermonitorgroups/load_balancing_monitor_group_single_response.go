@@ -3,26 +3,43 @@ package accountloadbalancermonitorgroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LoadBalancingMonitorGroupSingleResponse_Errors struct {
+	Code    any
+	Message any
+}
+
 type LoadBalancingMonitorGroupSingleResponse_Id struct {
 }
 
 type LoadBalancingMonitorGroupSingleResponse_Members struct {
-	CreatedAt any
-	Enabled any
-	MonitorId any
+	CreatedAt      any
+	Enabled        any
+	MonitorId      any
 	MonitoringOnly any
-	MustBeHealthy any
-	UpdatedAt any
+	MustBeHealthy  any
+	UpdatedAt      any
+}
+
+type LoadBalancingMonitorGroupSingleResponse_Result struct {
+	// The timestamp of when the monitor group was created
+	CreatedOn any
+	// A short description of the monitor group
+	Description any
+	Id          any
+	// List of monitors in this group
+	Members any
+	// The timestamp of when the monitor group was last updated
+	ModifiedOn any
 }
 
 var LoadBalancingMonitorGroupSingleResponse_MembersFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-		"MonitoringOnly": ubx.FieldSpec{WireName: "monitoring_only"},
-		"MustBeHealthy": ubx.FieldSpec{WireName: "must_be_healthy"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-	}
+	"CreatedAt":      ubx.FieldSpec{WireName: "created_at"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"MonitorId":      ubx.FieldSpec{WireName: "monitor_id"},
+	"MonitoringOnly": ubx.FieldSpec{WireName: "monitoring_only"},
+	"MustBeHealthy":  ubx.FieldSpec{WireName: "must_be_healthy"},
+	"UpdatedAt":      ubx.FieldSpec{WireName: "updated_at"},
+}
 
 type LoadBalancingMonitorGroupSingleResponseConfig struct {
 	// A short description of the monitor group
@@ -40,11 +57,16 @@ type LoadBalancingMonitorGroupSingleResponseAttrs struct {
 	CreatedOn any
 	// A short description of the monitor group
 	Description any
-	Id any
+	Errors      any
+	Id          any
 	// List of monitors in this group
-	Members any
+	Members  any
+	Messages any
 	// The timestamp of when the monitor group was last updated
 	ModifiedOn any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -57,10 +79,10 @@ var LoadBalancingMonitorGroupSingleResponse = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Members": ubx.FieldSpec{
 			WireName: "members",
-			Kind: "list",
-			Fields: LoadBalancingMonitorGroupSingleResponse_MembersFields,
+			Kind:     "list",
+			Fields:   LoadBalancingMonitorGroupSingleResponse_MembersFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
 		"MonitorGroupId": ubx.FieldSpec{WireName: "monitor_group_id"},
 	},
 }

@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Limit_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Limit_Result:
+    # When build minutes will refresh (only for non-paid plans)
+    build_minutes_refresh_on: Any = None
+    # Whether build minutes limit has been reached (only for non-paid plans)
+    has_reached_build_minutes_limit: Any = None
+
+@dataclasses.dataclass
+class Limit_ResultInfo:
+    count: Any = None
+    page: Any = None
+    per_page: Any = None
+    total_count: Any = None
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class LimitConfig:
     # Account identifier.
     account_id: Any = None
@@ -15,6 +35,11 @@ class LimitConfig:
 class LimitAttrs:
     # Account identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    result_info: Any = None
+    success: Any = None
 
 Limit = ubx.DataSourceBinding(
     wire_type="cloudflare_limit",

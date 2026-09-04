@@ -10,6 +10,33 @@ import ubx_sdk as ubx
 class IamCollectionRoleResponse_AccountId:
     pass
 
+@dataclasses.dataclass
+class IamCollectionRoleResponse_Result_Permissions_Analytics:
+    read: Any = None
+    write: Any = None
+
+@dataclasses.dataclass
+class IamCollectionRoleResponse_Result_Permissions:
+    analytics: Any = None
+    billing: Any = None
+    cache_purge: Any = None
+    dns: Any = None
+    dns_records: Any = None
+    lb: Any = None
+    logs: Any = None
+    organization: Any = None
+    ssl: Any = None
+    waf: Any = None
+    zone_settings: Any = None
+    zones: Any = None
+
+@dataclasses.dataclass
+class IamCollectionRoleResponse_Result:
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    permissions: Any = None
+
 _IamCollectionRoleResponse_AccountIdFields = {
 }
 
@@ -30,6 +57,7 @@ class IamCollectionRoleResponseAttrs:
     page: Any = None
     # Number of roles per page.
     per_page: Any = None
+    result: Any = None
 
 IamCollectionRoleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_iam_collection_role_response",

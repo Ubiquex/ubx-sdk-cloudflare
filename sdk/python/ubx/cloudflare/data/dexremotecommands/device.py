@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Device_Result_Devices:
+    device_id: Any = None
+    device_name: Any = None
+    eligible: Any = None
+    ineligible_reason: Any = None
+    person_email: Any = None
+    platform: Any = None
+    registration_id: Any = None
+    status: Any = None
+    timestamp: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class Device_Result:
+    # List of eligible devices
+    devices: Any = None
+
+@dataclasses.dataclass
 class DeviceConfig:
     page: Any = None
     per_page: Any = None
@@ -18,6 +36,7 @@ class DeviceAttrs:
     account_id: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
 
 Device = ubx.DataSourceBinding(

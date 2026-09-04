@@ -6,15 +6,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AccessSingleResponse11_CreatedAt struct {
 }
 
-var AccessSingleResponse11_CreatedAtFields = ubx.FieldMap{
-	}
-
-type AccessSingleResponse11Config struct {
+type AccessSingleResponse11_Result struct {
 	// Number of apps the custom page is assigned to.
 	AppCount any
 	// Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
 	ContractVersion any
-	CreatedAt any
+	CreatedAt       any
 	// Custom page HTML.
 	CustomHtml any
 	// Custom page name.
@@ -22,7 +19,26 @@ type AccessSingleResponse11Config struct {
 	// Custom page type.
 	Type any
 	// UUID.
-	Uid any
+	Uid       any
+	UpdatedAt any
+}
+
+var AccessSingleResponse11_CreatedAtFields = ubx.FieldMap{}
+
+type AccessSingleResponse11Config struct {
+	// Number of apps the custom page is assigned to.
+	AppCount any
+	// Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
+	ContractVersion any
+	CreatedAt       any
+	// Custom page HTML.
+	CustomHtml any
+	// Custom page name.
+	Name any
+	// Custom page type.
+	Type any
+	// UUID.
+	Uid       any
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -35,15 +51,16 @@ type AccessSingleResponse11Attrs struct {
 	AppCount any
 	// Contract version of the page's Liquid template. Present (>= 1) marks a sanitized template; absent or 0 marks a legacy page served verbatim.
 	ContractVersion any
-	CreatedAt any
+	CreatedAt       any
 	// Custom page HTML.
 	CustomHtml any
 	// Custom page name.
-	Name any
+	Name   any
+	Result any
 	// Custom page type.
 	Type any
 	// UUID.
-	Uid any
+	Uid       any
 	UpdatedAt any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -54,23 +71,23 @@ type AccessSingleResponse11Attrs struct {
 var AccessSingleResponse11 = ubx.ResourceBinding{
 	WireType: "cloudflare_access_single_response_11",
 	Fields: ubx.FieldMap{
-		"AppCount": ubx.FieldSpec{WireName: "app_count"},
+		"AppCount":        ubx.FieldSpec{WireName: "app_count"},
 		"ContractVersion": ubx.FieldSpec{WireName: "contract_version"},
 		"CreatedAt": ubx.FieldSpec{
 			WireName: "created_at",
-			Kind: "object",
-			Fields: AccessSingleResponse11_CreatedAtFields,
+			Kind:     "object",
+			Fields:   AccessSingleResponse11_CreatedAtFields,
 		},
 		"CustomHtml": ubx.FieldSpec{WireName: "custom_html"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
+		"Uid":        ubx.FieldSpec{WireName: "uid"},
 		"UpdatedAt": ubx.FieldSpec{
 			WireName: "updated_at",
-			Kind: "object",
-			Fields: AccessSingleResponse11_CreatedAtFields,
+			Kind:     "object",
+			Fields:   AccessSingleResponse11_CreatedAtFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"CustomPageId": ubx.FieldSpec{WireName: "custom_page_id"},
 	},
 }

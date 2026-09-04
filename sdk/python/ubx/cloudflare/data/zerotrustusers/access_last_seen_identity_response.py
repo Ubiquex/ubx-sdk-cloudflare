@@ -7,6 +7,65 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_DevicePosture_Check:
+    exists: Any = None
+    path: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_DevicePosture:
+    check: Any = None
+    data: Any = None
+    description: Any = None
+    error: Any = None
+    id: Any = None
+    rule_name: Any = None
+    success: Any = None
+    timestamp: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_DeviceSessions:
+    last_authenticated: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_Geo:
+    country: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_Idp:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result_MtlsAuth:
+    auth_status: Any = None
+    cert_issuer_dn: Any = None
+    cert_issuer_ski: Any = None
+    cert_presented: Any = None
+    cert_serial: Any = None
+
+@dataclasses.dataclass
+class AccessLastSeenIdentityResponse_Result:
+    account_id: Any = None
+    auth_status: Any = None
+    common_name: Any = None
+    device_id: Any = None
+    device_posture: Any = None
+    device_sessions: Any = None
+    email: Any = None
+    geo: Any = None
+    iat: Any = None
+    idp: Any = None
+    ip: Any = None
+    is_gateway: Any = None
+    is_warp: Any = None
+    mtls_auth: Any = None
+    service_token_id: Any = None
+    service_token_status: Any = None
+    user_uuid: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class AccessLastSeenIdentityResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +76,7 @@ class AccessLastSeenIdentityResponseConfig:
 class AccessLastSeenIdentityResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     # UUID.
     user_id: Any = None
 

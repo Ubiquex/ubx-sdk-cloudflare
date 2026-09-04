@@ -3,16 +3,28 @@ package zonerateplan
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AvailablePlan_Result struct {
+	CanSubscribe      any
+	Currency          any
+	ExternallyManaged any
+	Frequency         any
+	Id                any
+	IsSubscribed      any
+	LegacyId          any
+	Name              any
+	Price             any
+}
+
 type AvailablePlanConfig struct {
 }
 
 type AvailablePlanAttrs struct {
+	Result any
 	// Identifier
 	ZoneId any
 }
 
 var AvailablePlan = ubx.DataSourceBinding{
 	WireType: "cloudflare_available_plan",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

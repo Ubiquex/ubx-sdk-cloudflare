@@ -4,21 +4,21 @@ package aisearchtokens
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Token_Result struct {
-	CfApiId any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
-	Id any
-	Legacy any
+	CfApiId    any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
+	Id         any
+	Legacy     any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
+	Name       any
 }
 
 type Token_ResultInfo struct {
-	Count any
-	Page any
-	PerPage any
+	Count      any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -37,11 +37,11 @@ type TokenAttrs struct {
 	// Page number (1-indexed).
 	Page any
 	// Number of results per page.
-	PerPage any
-	Result any
+	PerPage    any
+	Result     any
 	ResultInfo any
 	// Filter tokens whose name contains this string (case-insensitive).
-	Search any
+	Search  any
 	Success any
 }
 
@@ -49,8 +49,8 @@ var Token = ubx.DataSourceBinding{
 	WireType: "cloudflare_token",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

@@ -3,16 +3,52 @@ package cloudflareimagesvariants
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImageVariantListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesImageVariantListResponse_Result_Variants_Hero_Options struct {
+	// The fit property describes how the width and height dimensions should be interpreted.
+	Fit any
+	// Maximum height in image pixels.
+	Height any
+	// What EXIF data should be preserved in the output image.
+	Metadata any
+	// Maximum width in image pixels.
+	Width any
+}
+
+type ImagesImageVariantListResponse_Result_Variants_Hero struct {
+	Id any
+	// Indicates whether the variant can access an image without a signature, regardless of image access control.
+	NeverRequireSignedUrls any
+	// Allows you to define image resizing sizes for different use cases.
+	Options any
+}
+
+type ImagesImageVariantListResponse_Result_Variants struct {
+	Hero any
+}
+
+type ImagesImageVariantListResponse_Result struct {
+	Variants any
+}
+
 type ImagesImageVariantListResponseConfig struct {
 }
 
 type ImagesImageVariantListResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesImageVariantListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_image_variant_list_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

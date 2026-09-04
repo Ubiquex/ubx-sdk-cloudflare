@@ -3,12 +3,23 @@ package aisecurityforapps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseCustomTopics_Result_Topics struct {
+	Label any
+	Topic any
+}
+
+type WafProductApiBundleResponseCustomTopics_Result struct {
+	// Custom topic categories for AI Security for Apps content detection.
+	Topics any
+}
+
 type WafProductApiBundleResponseCustomTopicsConfig struct {
 	// Defines the zone.
 	ZoneId any
 }
 
 type WafProductApiBundleResponseCustomTopicsAttrs struct {
+	Result any
 	// Defines the zone.
 	ZoneId any
 }

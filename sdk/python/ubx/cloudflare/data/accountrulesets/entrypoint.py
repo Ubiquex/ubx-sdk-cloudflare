@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Entrypoint_Messages_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Entrypoint_Messages:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Entrypoint_Result_Id:
+    pass
+
+@dataclasses.dataclass
+class Entrypoint_Result:
+    description: Any = None
+    id: Any = None
+    kind: Any = None
+    last_updated: Any = None
+    name: Any = None
+    phase: Any = None
+    rules: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class EntrypointConfig:
     # The unique ID of the account.
     account_id: Any = None
@@ -17,8 +42,13 @@ class EntrypointConfig:
 class EntrypointAttrs:
     # The unique ID of the account.
     account_id: Any = None
+    errors: Any = None
+    # A list of warning messages.
+    messages: Any = None
+    result: Any = None
     # The phase of the ruleset.
     ruleset_phase: Any = None
+    success: Any = None
 
 Entrypoint = ubx.DataSourceBinding(
     wire_type="cloudflare_entrypoint",

@@ -3,6 +3,141 @@ package accessgroups
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection2_Result_CreatedAt struct {
+}
+
+type AccessResponseCollection2_Result_Exclude_AuthContext struct {
+	AcId               any
+	Id                 any
+	IdentityProviderId any
+}
+
+type AccessResponseCollection2_Result_Exclude_AuthMethod struct {
+	AuthMethod any
+}
+
+type AccessResponseCollection2_Result_Exclude_AzureAd struct {
+	Id                 any
+	IdentityProviderId any
+}
+
+type AccessResponseCollection2_Result_Exclude_CloudflareAccountMember struct {
+	AccountId any
+}
+
+type AccessResponseCollection2_Result_Exclude_CommonName struct {
+	CommonName any
+}
+
+type AccessResponseCollection2_Result_Exclude_DevicePosture struct {
+	IntegrationUid any
+}
+
+type AccessResponseCollection2_Result_Exclude_Email struct {
+	Email any
+}
+
+type AccessResponseCollection2_Result_Exclude_EmailDomain struct {
+	Domain any
+}
+
+type AccessResponseCollection2_Result_Exclude_EmailList struct {
+	Id any
+}
+
+type AccessResponseCollection2_Result_Exclude_ExternalEvaluation struct {
+	EvaluateUrl any
+	KeysUrl     any
+}
+
+type AccessResponseCollection2_Result_Exclude_Geo struct {
+	CountryCode any
+}
+
+type AccessResponseCollection2_Result_Exclude_GithubOrganization struct {
+	IdentityProviderId any
+	Name               any
+	Team               any
+}
+
+type AccessResponseCollection2_Result_Exclude_Gsuite struct {
+	Email              any
+	IdentityProviderId any
+}
+
+type AccessResponseCollection2_Result_Exclude_Ip struct {
+	Ip any
+}
+
+type AccessResponseCollection2_Result_Exclude_LinkedAppToken struct {
+	AppUid any
+}
+
+type AccessResponseCollection2_Result_Exclude_Oidc struct {
+	ClaimName          any
+	ClaimValue         any
+	IdentityProviderId any
+}
+
+type AccessResponseCollection2_Result_Exclude_Okta struct {
+	IdentityProviderId any
+	Name               any
+}
+
+type AccessResponseCollection2_Result_Exclude_Saml struct {
+	AttributeName      any
+	AttributeValue     any
+	IdentityProviderId any
+}
+
+type AccessResponseCollection2_Result_Exclude_ServiceToken struct {
+	TokenId any
+}
+
+type AccessResponseCollection2_Result_Exclude_UserRiskScore struct {
+	UserRiskScore any
+}
+
+type AccessResponseCollection2_Result_Exclude struct {
+	AnyValidServiceToken    any
+	AuthContext             any
+	AuthMethod              any
+	AzureAd                 any
+	Certificate             any
+	CloudflareAccountMember any
+	CommonName              any
+	DevicePosture           any
+	Email                   any
+	EmailDomain             any
+	EmailList               any
+	Everyone                any
+	ExternalEvaluation      any
+	Geo                     any
+	GithubOrganization      any
+	Group                   any
+	Gsuite                  any
+	Ip                      any
+	IpList                  any
+	LinkedAppToken          any
+	LoginMethod             any
+	Oidc                    any
+	Okta                    any
+	Saml                    any
+	ServiceToken            any
+	UserRiskScore           any
+}
+
+type AccessResponseCollection2_Result struct {
+	CreatedAt any
+	Exclude   any
+	Id        any
+	Include   any
+	IsDefault any
+	Name      any
+	Require   any
+	UpdatedAt any
+}
+
 type AccessResponseCollection2Config struct {
 	// Identifier.
 	AccountId any
@@ -25,6 +160,7 @@ type AccessResponseCollection2Attrs struct {
 	Page any
 	// Number of results per page.
 	PerPage any
+	Result  any
 	// Search for groups by other listed query parameters.
 	Search any
 }
@@ -33,9 +169,9 @@ var AccessResponseCollection2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_response_collection_2",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

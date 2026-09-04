@@ -3,6 +3,21 @@ package botnetthreatfeed
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Asn_Errors_Source struct {
+	Pointer any
+}
+
+type Asn_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Asn_Result struct {
+	Asn any
+}
+
 type AsnConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +26,11 @@ type AsnConfig struct {
 type AsnAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Asn = ubx.DataSourceBinding{

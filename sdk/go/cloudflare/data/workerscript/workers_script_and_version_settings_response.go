@@ -3,6 +3,143 @@ package workerscript
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersScriptAndVersionSettingsResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_Annotations struct {
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_CacheOptions struct {
+	// Whether cached responses are shared across Worker version uploads. This is independent of `enabled`. It can stay true while caching is off, so the preference survives turning caching off and back on.
+	CrossVersionCache any
+	// Whether caching is enabled for this Worker.
+	Enabled any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Info struct {
+	Class              any
+	Message            any
+	NamespaceId        any
+	ReferencingScripts any
+	Scenario           any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Renamed struct {
+	From any
+	To   any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_TransferPending struct {
+	Class any
+	From  any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Transferred struct {
+	Class any
+	Phase any
+	To    any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation_Warnings struct {
+	Class       any
+	Message     any
+	NamespaceId any
+	Scenario    any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_ExportsReconciliation struct {
+	Created          any
+	Deleted          any
+	Info             any
+	RemovableEntries any
+	Renamed          any
+	TransferPending  any
+	Transferred      any
+	Updated          any
+	Warnings         any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_Limits struct {
+	// The amount of CPU time this Worker can use in milliseconds.
+	CpuMs any
+	// The number of subrequests this Worker can make per request.
+	Subrequests any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_Observability_Logs struct {
+	// A list of destinations where logs will be exported to.
+	Destinations any
+	// Whether logs are enabled for the Worker.
+	Enabled any
+	// The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.
+	InvocationLogs any
+	// Whether log persistence is enabled for the Worker.
+	Persist any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_Observability_Traces struct {
+	// A list of destinations where traces will be exported to.
+	Destinations any
+	// Whether traces are enabled for the Worker.
+	Enabled any
+	// The sampling rate for traces. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Whether trace persistence is enabled for the Worker.
+	Persist any
+	// Controls how inbound trace context (traceparent/tracestate) headers on incoming requests are handled. "authenticated" honors inbound trace context only when accompanied by a valid trace auth token. "accept" unconditionally accepts inbound trace context. Requires the trace propagation feature to be enabled. Returns null when the trace propagation feature is not enabled for the account.
+	PropagationPolicy any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result_Observability struct {
+	// Whether observability is enabled for the Worker.
+	Enabled any
+	// The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.
+	HeadSamplingRate any
+	// Log settings for the Worker.
+	Logs any
+	// Whether query strings are removed from request URLs in logs and traces.
+	RedactQueryString any
+	// Trace settings for the Worker.
+	Traces any
+}
+
+type WorkersScriptAndVersionSettingsResponse_Result struct {
+	// Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.
+	Annotations any
+	Bindings    any
+	// Global CacheW configuration for the Worker. When caching is on, the platform provisions a `cloudflare.app` zone for the Worker. A `type: worker` entry in the `exports` map can override this value for a single entrypoint.
+	CacheOptions       any
+	CompatibilityDate  any
+	CompatibilityFlags any
+	// Declarative exports for the Worker. Worker entrypoint entries (`type: worker`) carry cache configuration for that entrypoint.
+	Exports any
+	// Summary of the declarative exports reconciliation that ran on this upload. Populated only when the uploaded metadata included an `exports` block. Durable Object entries drive reconciliation; `type: worker` entries do not contribute to this summary.
+	ExportsReconciliation any
+	// Limits to apply for this Worker.
+	Limits any
+	// Whether Logpush is turned on for the Worker.
+	Logpush any
+	// Migrations to apply for Durable Objects associated with this Worker.
+	Migrations any
+	// Observability settings for the Worker.
+	Observability any
+	Placement     any
+	Tags          any
+	TailConsumers any
+	// Usage model for the Worker invocations.
+	UsageModel any
+}
+
 type WorkersScriptAndVersionSettingsResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +150,19 @@ type WorkersScriptAndVersionSettingsResponseConfig struct {
 type WorkersScriptAndVersionSettingsResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var WorkersScriptAndVersionSettingsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_workers_script_and_version_settings_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

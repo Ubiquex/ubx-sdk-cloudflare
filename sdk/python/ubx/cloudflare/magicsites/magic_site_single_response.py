@@ -13,6 +13,22 @@ class MagicSiteSingleResponse_Location:
     # Longitude
     lon: Any = None
 
+@dataclasses.dataclass
+class MagicSiteSingleResponse_Result:
+    # Magic Connector identifier tag.
+    connector_id: Any = None
+    description: Any = None
+    # Site high availability mode. If set to true, the site can have two connectors and runs in high availability mode.
+    ha_mode: Any = None
+    # Identifier
+    id: Any = None
+    # Location of site in latitude and longitude.
+    location: Any = None
+    # The name of the site.
+    name: Any = None
+    # Magic Connector identifier tag. Used when high availability mode is on.
+    secondary_connector_id: Any = None
+
 _MagicSiteSingleResponse_LocationFields = {
     "lat": ubx.FieldSpec(wire_name="lat"),
     "lon": ubx.FieldSpec(wire_name="lon"),
@@ -47,6 +63,7 @@ class MagicSiteSingleResponseAttrs:
     location: Any = None
     # The name of the site.
     name: Any = None
+    result: Any = None
     # Magic Connector identifier tag. Used when high availability mode is on.
     secondary_connector_id: Any = None
     # path parameter, not part of the API's own resource representation

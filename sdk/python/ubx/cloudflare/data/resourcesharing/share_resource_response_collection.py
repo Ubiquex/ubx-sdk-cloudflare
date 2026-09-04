@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareResourceResponseCollection_Result:
+    created: Any = None
+    id: Any = None
+    meta: Any = None
+    modified: Any = None
+    resource_account_id: Any = None
+    resource_id: Any = None
+    resource_type: Any = None
+    resource_version: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class ShareResourceResponseCollectionConfig:
     # Account identifier.
     account_id: Any = None
@@ -27,6 +39,7 @@ class ShareResourceResponseCollectionAttrs:
     per_page: Any = None
     # Resource Type.
     resource_type: Any = None
+    result: Any = None
     # Share identifier tag.
     share_id: Any = None
     # Resource Status.

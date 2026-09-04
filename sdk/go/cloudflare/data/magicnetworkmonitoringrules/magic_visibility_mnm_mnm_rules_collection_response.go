@@ -3,12 +3,27 @@ package magicnetworkmonitoringrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicVisibilityMnmMnmRulesCollectionResponse_Result struct {
+	AutomaticAdvertisement any
+	BandwidthThreshold     any
+	Duration               any
+	Id                     any
+	Name                   any
+	PacketThreshold        any
+	PrefixMatch            any
+	Prefixes               any
+	Type                   any
+	ZscoreSensitivity      any
+	ZscoreTarget           any
+}
+
 type MagicVisibilityMnmMnmRulesCollectionResponseConfig struct {
 	AccountId any
 }
 
 type MagicVisibilityMnmMnmRulesCollectionResponseAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var MagicVisibilityMnmMnmRulesCollectionResponse = ubx.DataSourceBinding{

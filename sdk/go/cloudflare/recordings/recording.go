@@ -12,6 +12,50 @@ type Recording_AudioConfig struct {
 	ExportFile any
 }
 
+type Recording_Data_StartReason_Caller struct {
+	Name   any
+	Type   any
+	UserId any
+}
+
+type Recording_Data_StartReason struct {
+	Caller any
+	Reason any
+}
+
+type Recording_Data_StorageConfig struct {
+	AccessKey  any
+	AuthMethod any
+	Bucket     any
+	Host       any
+	Password   any
+	Path       any
+	Port       any
+	PrivateKey any
+	Region     any
+	Secret     any
+	Type       any
+	Username   any
+}
+
+type Recording_Data struct {
+	AudioDownloadUrl  any
+	DownloadUrl       any
+	DownloadUrlExpiry any
+	FileSize          any
+	Id                any
+	InvokedTime       any
+	OutputFileName    any
+	RecordingDuration any
+	SessionId         any
+	StartReason       any
+	StartedTime       any
+	Status            any
+	StopReason        any
+	StoppedTime       any
+	StorageConfig     any
+}
+
 type Recording_InteractiveConfig struct {
 	// The metadata is presented in the form of ID3 tags.
 	Type any
@@ -25,33 +69,6 @@ type Recording_RealtimekitBucketConfig struct {
 type Recording_RtmpOutConfig struct {
 	// RTMP URL to stream to
 	RtmpUrl any
-}
-
-type Recording_StorageConfig struct {
-	// Access key of the storage medium. Access key is not required for the `gcs` storage media type. Note that this field is not readable by clients, only writeable.
-	AccessKey any
-	// Authentication method used for "sftp" type storage medium
-	AuthMethod any
-	// Name of the storage medium's bucket.
-	Bucket any
-	// SSH destination server host for SFTP type storage medium
-	Host any
-	// SSH destination server password for SFTP type storage medium when auth_method is "PASSWORD". If auth_method is "KEY", this specifies the password for the ssh private key.
-	Password any
-	// Path relative to the bucket root at which the recording will be placed.
-	Path any
-	// SSH destination server port for SFTP type storage medium
-	Port any
-	// Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is "KEY"
-	PrivateKey any
-	// Region of the storage medium.
-	Region any
-	// Secret key of the storage medium. Similar to `access_key`, it is only writeable by clients, not readable.
-	Secret any
-	// Type of storage media.
-	Type any
-	// SSH destination server username for SFTP type storage medium
-	Username any
 }
 
 type Recording_VideoConfig_Watermark_Size struct {
@@ -84,64 +101,64 @@ type Recording_VideoConfig struct {
 }
 
 var Recording_AudioConfigFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"ExportFile": ubx.FieldSpec{WireName: "export_file"},
-	}
+	"Channel":    ubx.FieldSpec{WireName: "channel"},
+	"Codec":      ubx.FieldSpec{WireName: "codec"},
+	"ExportFile": ubx.FieldSpec{WireName: "export_file"},
+}
 
 var Recording_InteractiveConfigFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Recording_RealtimekitBucketConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Recording_RtmpOutConfigFields = ubx.FieldMap{
-		"RtmpUrl": ubx.FieldSpec{WireName: "rtmp_url"},
-	}
+	"RtmpUrl": ubx.FieldSpec{WireName: "rtmp_url"},
+}
 
-var Recording_StorageConfigFields = ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+var Recording_Data_StorageConfigFields = ubx.FieldMap{
+	"AccessKey":  ubx.FieldSpec{WireName: "access_key"},
+	"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Host":       ubx.FieldSpec{WireName: "host"},
+	"Password":   ubx.FieldSpec{WireName: "password"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Port":       ubx.FieldSpec{WireName: "port"},
+	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+	"Secret":     ubx.FieldSpec{WireName: "secret"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"Username":   ubx.FieldSpec{WireName: "username"},
+}
 
 var Recording_VideoConfig_Watermark_SizeFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+}
 
 var Recording_VideoConfig_WatermarkFields = ubx.FieldMap{
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Size": ubx.FieldSpec{
-			WireName: "size",
-			Kind: "object",
-			Fields: Recording_VideoConfig_Watermark_SizeFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Size": ubx.FieldSpec{
+		WireName: "size",
+		Kind:     "object",
+		Fields:   Recording_VideoConfig_Watermark_SizeFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Recording_VideoConfigFields = ubx.FieldMap{
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-		"ExportFile": ubx.FieldSpec{WireName: "export_file"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Watermark": ubx.FieldSpec{
-			WireName: "watermark",
-			Kind: "object",
-			Fields: Recording_VideoConfig_WatermarkFields,
-		},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Codec":      ubx.FieldSpec{WireName: "codec"},
+	"ExportFile": ubx.FieldSpec{WireName: "export_file"},
+	"Height":     ubx.FieldSpec{WireName: "height"},
+	"Watermark": ubx.FieldSpec{
+		WireName: "watermark",
+		Kind:     "object",
+		Fields:   Recording_VideoConfig_WatermarkFields,
+	},
+	"Width": ubx.FieldSpec{WireName: "width"},
+}
 
 type RecordingConfig struct {
 	// By default, a meeting allows only one recording to run at a time. Enabling the `allow_multiple_recordings` parameter to true allows you to initiate multiple recordings concurrently in the same meeting. This allows you to record separate videos of the same meeting with different configurations, such as portrait mode or landscape mode.
@@ -155,12 +172,12 @@ type RecordingConfig struct {
 	// Specifies the maximum duration for recording in seconds, ranging from a minimum of 60 seconds to a maximum of 24 hours.
 	MaxSeconds any
 	// ID of the meeting to record.
-	MeetingId any
+	MeetingId               any
 	RealtimekitBucketConfig any
-	RtmpOutConfig any
-	StorageConfig any
+	RtmpOutConfig           any
+	StorageConfig           any
 	// Pass a custom url to record arbitary screen
-	Url any
+	Url         any
 	VideoConfig any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -175,6 +192,7 @@ type RecordingAttrs struct {
 	AllowMultipleRecordings any
 	// Object containing configuration regarding the audio that is being recorded.
 	AudioConfig any
+	Data        any
 	// Update the recording file name.
 	FileNamePrefix any
 	// Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.
@@ -182,12 +200,14 @@ type RecordingAttrs struct {
 	// Specifies the maximum duration for recording in seconds, ranging from a minimum of 60 seconds to a maximum of 24 hours.
 	MaxSeconds any
 	// ID of the meeting to record.
-	MeetingId any
+	MeetingId               any
 	RealtimekitBucketConfig any
-	RtmpOutConfig any
-	StorageConfig any
+	RtmpOutConfig           any
+	StorageConfig           any
+	// Success status of the operation
+	Success any
 	// Pass a custom url to record arbitary screen
-	Url any
+	Url         any
 	VideoConfig any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -203,40 +223,40 @@ var Recording = ubx.ResourceBinding{
 		"AllowMultipleRecordings": ubx.FieldSpec{WireName: "allow_multiple_recordings"},
 		"AudioConfig": ubx.FieldSpec{
 			WireName: "audio_config",
-			Kind: "object",
-			Fields: Recording_AudioConfigFields,
+			Kind:     "object",
+			Fields:   Recording_AudioConfigFields,
 		},
 		"FileNamePrefix": ubx.FieldSpec{WireName: "file_name_prefix"},
 		"InteractiveConfig": ubx.FieldSpec{
 			WireName: "interactive_config",
-			Kind: "object",
-			Fields: Recording_InteractiveConfigFields,
+			Kind:     "object",
+			Fields:   Recording_InteractiveConfigFields,
 		},
 		"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
-		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
+		"MeetingId":  ubx.FieldSpec{WireName: "meeting_id"},
 		"RealtimekitBucketConfig": ubx.FieldSpec{
 			WireName: "realtimekit_bucket_config",
-			Kind: "object",
-			Fields: Recording_RealtimekitBucketConfigFields,
+			Kind:     "object",
+			Fields:   Recording_RealtimekitBucketConfigFields,
 		},
 		"RtmpOutConfig": ubx.FieldSpec{
 			WireName: "rtmp_out_config",
-			Kind: "object",
-			Fields: Recording_RtmpOutConfigFields,
+			Kind:     "object",
+			Fields:   Recording_RtmpOutConfigFields,
 		},
 		"StorageConfig": ubx.FieldSpec{
 			WireName: "storage_config",
-			Kind: "object",
-			Fields: Recording_StorageConfigFields,
+			Kind:     "object",
+			Fields:   Recording_Data_StorageConfigFields,
 		},
 		"Url": ubx.FieldSpec{WireName: "url"},
 		"VideoConfig": ubx.FieldSpec{
 			WireName: "video_config",
-			Kind: "object",
-			Fields: Recording_VideoConfigFields,
+			Kind:     "object",
+			Fields:   Recording_VideoConfigFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"AppId":       ubx.FieldSpec{WireName: "app_id"},
 		"RecordingId": ubx.FieldSpec{WireName: "recording_id"},
 	},
 }

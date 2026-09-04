@@ -4,14 +4,14 @@ package radarhttp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceType_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type DeviceType_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type DeviceType_Result_Meta_ConfidenceInfo struct {
 }
 
 type DeviceType_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type DeviceType_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type DeviceType_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -52,7 +52,7 @@ type DeviceType_Result_Summary0 struct {
 
 type DeviceType_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -121,8 +121,8 @@ type DeviceTypeAttrs struct {
 	// Array of names used to label the series in the response.
 	Name any
 	// Filters results by operating system.
-	Os any
-	Result any
+	Os      any
+	Result  any
 	Success any
 	// Filters results by TLS version.
 	TlsVersion any
@@ -131,21 +131,21 @@ type DeviceTypeAttrs struct {
 var DeviceType = ubx.DataSourceBinding{
 	WireType: "cloudflare_device_type",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"BotClass": ubx.FieldSpec{WireName: "bot_class"},
+		"Asn":           ubx.FieldSpec{WireName: "asn"},
+		"BotClass":      ubx.FieldSpec{WireName: "bot_class"},
 		"BrowserFamily": ubx.FieldSpec{WireName: "browser_family"},
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"GeoId": ubx.FieldSpec{WireName: "geo_id"},
-		"HttpProtocol": ubx.FieldSpec{WireName: "http_protocol"},
-		"HttpVersion": ubx.FieldSpec{WireName: "http_version"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Os": ubx.FieldSpec{WireName: "os"},
-		"TlsVersion": ubx.FieldSpec{WireName: "tls_version"},
+		"Continent":     ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":       ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":     ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":     ubx.FieldSpec{WireName: "date_start"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
+		"GeoId":         ubx.FieldSpec{WireName: "geo_id"},
+		"HttpProtocol":  ubx.FieldSpec{WireName: "http_protocol"},
+		"HttpVersion":   ubx.FieldSpec{WireName: "http_version"},
+		"IpVersion":     ubx.FieldSpec{WireName: "ip_version"},
+		"Location":      ubx.FieldSpec{WireName: "location"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Os":            ubx.FieldSpec{WireName: "os"},
+		"TlsVersion":    ubx.FieldSpec{WireName: "tls_version"},
 	},
 }

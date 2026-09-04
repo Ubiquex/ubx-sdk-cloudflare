@@ -10,6 +10,17 @@ import ubx_sdk as ubx
 class WafManagedRulesRuleGroupResponseCollection_Mode:
     pass
 
+@dataclasses.dataclass
+class WafManagedRulesRuleGroupResponseCollection_Result:
+    allowed_modes: Any = None
+    description: Any = None
+    id: Any = None
+    mode: Any = None
+    modified_rules_count: Any = None
+    name: Any = None
+    package_id: Any = None
+    rules_count: Any = None
+
 _WafManagedRulesRuleGroupResponseCollection_ModeFields = {
 }
 
@@ -44,6 +55,7 @@ class WafManagedRulesRuleGroupResponseCollectionAttrs:
     page: Any = None
     # Defines the number of rule groups per page.
     per_page: Any = None
+    result: Any = None
     # Defines the number of rules in the current rule group.
     rules_count: Any = None
     # Defines an identifier of a schema.

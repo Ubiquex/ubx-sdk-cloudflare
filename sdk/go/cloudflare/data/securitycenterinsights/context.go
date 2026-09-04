@@ -3,22 +3,38 @@ package securitycenterinsights
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Context_Errors_Source struct {
+	Pointer any
+}
+
+type Context_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type ContextConfig struct {
 	// Identifier.
 	AccountId any
-	IssueId any
+	IssueId   any
 }
 
 type ContextAttrs struct {
 	// Identifier.
 	AccountId any
-	IssueId any
+	Errors    any
+	IssueId   any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Context = ubx.DataSourceBinding{
 	WireType: "cloudflare_context",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"IssueId": ubx.FieldSpec{WireName: "issue_id"},
+		"IssueId":   ubx.FieldSpec{WireName: "issue_id"},
 	},
 }

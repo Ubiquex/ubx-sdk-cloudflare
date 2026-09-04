@@ -7,12 +7,62 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_Endpoints_Doh_Networks:
+    network: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_Endpoints_Doh:
+    enabled: Any = None
+    networks: Any = None
+    require_token: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_Endpoints_Dot:
+    enabled: Any = None
+    networks: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_Endpoints_Ipv4:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_Endpoints:
+    doh: Any = None
+    dot: Any = None
+    ipv4: Any = None
+    ipv6: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result_MaxTtl:
+    mode: Any = None
+    ttl_secs: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection5_Result:
+    client_default: Any = None
+    created_at: Any = None
+    dns_destination_ips_id: Any = None
+    dns_destination_ipv6_block_id: Any = None
+    doh_subdomain: Any = None
+    ecs_support: Any = None
+    endpoints: Any = None
+    id: Any = None
+    ip: Any = None
+    ipv4_destination: Any = None
+    ipv4_destination_backup: Any = None
+    max_ttl: Any = None
+    name: Any = None
+    networks: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection5Config:
     account_id: Any = None
 
 @dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection5Attrs:
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayResponseCollection5 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_response_collection_5",

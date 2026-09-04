@@ -4,26 +4,26 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Account_Messages struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Account_Result_Settings struct {
-	AbuseContactEmail any
-	AccessApprovalExpiry any
-	ApiAccessEnabled any
-	DefaultNameservers any
-	EnforceTwofactor any
+	AbuseContactEmail           any
+	AccessApprovalExpiry        any
+	ApiAccessEnabled            any
+	DefaultNameservers          any
+	EnforceTwofactor            any
 	UseAccountCustomNsByDefault any
 }
 
 type Account_Result struct {
 	CreatedOn any
-	Id any
-	Name any
-	Settings any
-	Tags any
-	Type any
+	Id        any
+	Name      any
+	Settings  any
+	Tags      any
+	Type      any
 }
 
 type Account_ResultInfo struct {
@@ -34,60 +34,60 @@ type Account_ResultInfo struct {
 }
 
 type AccountConfig struct {
-	AccountPubname any
-	AccountPubnameContains any
-	AccountPubnameEndsWith any
+	AccountPubname           any
+	AccountPubnameContains   any
+	AccountPubnameEndsWith   any
 	AccountPubnameStartsWith any
-	Direction any
-	IncludeTags any
-	Name any
-	NameContains any
-	NameEndsWith any
-	NameStartsWith any
-	OrderBy any
-	OrganizationId any
-	PageSize any
-	PageToken any
+	Direction                any
+	IncludeTags              any
+	Name                     any
+	NameContains             any
+	NameEndsWith             any
+	NameStartsWith           any
+	OrderBy                  any
+	OrganizationId           any
+	PageSize                 any
+	PageToken                any
 }
 
 type AccountAttrs struct {
-	AccountPubname any
-	AccountPubnameContains any
-	AccountPubnameEndsWith any
+	AccountPubname           any
+	AccountPubnameContains   any
+	AccountPubnameEndsWith   any
 	AccountPubnameStartsWith any
-	Direction any
-	Errors any
-	IncludeTags any
-	Messages any
-	Name any
-	NameContains any
-	NameEndsWith any
-	NameStartsWith any
-	OrderBy any
-	OrganizationId any
-	PageSize any
-	PageToken any
-	Result any
-	ResultInfo any
-	Success any
+	Direction                any
+	Errors                   any
+	IncludeTags              any
+	Messages                 any
+	Name                     any
+	NameContains             any
+	NameEndsWith             any
+	NameStartsWith           any
+	OrderBy                  any
+	OrganizationId           any
+	PageSize                 any
+	PageToken                any
+	Result                   any
+	ResultInfo               any
+	Success                  any
 }
 
 var Account = ubx.DataSourceBinding{
 	WireType: "cloudflare_account",
 	Fields: ubx.FieldMap{
-		"AccountPubname": ubx.FieldSpec{WireName: "account_pubname"},
-		"AccountPubnameContains": ubx.FieldSpec{WireName: "account_pubname_contains"},
-		"AccountPubnameEndsWith": ubx.FieldSpec{WireName: "account_pubname_ends_with"},
+		"AccountPubname":           ubx.FieldSpec{WireName: "account_pubname"},
+		"AccountPubnameContains":   ubx.FieldSpec{WireName: "account_pubname_contains"},
+		"AccountPubnameEndsWith":   ubx.FieldSpec{WireName: "account_pubname_ends_with"},
 		"AccountPubnameStartsWith": ubx.FieldSpec{WireName: "account_pubname_starts_with"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"IncludeTags": ubx.FieldSpec{WireName: "include_tags"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NameContains": ubx.FieldSpec{WireName: "name_contains"},
-		"NameEndsWith": ubx.FieldSpec{WireName: "name_ends_with"},
-		"NameStartsWith": ubx.FieldSpec{WireName: "name_starts_with"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
+		"Direction":                ubx.FieldSpec{WireName: "direction"},
+		"IncludeTags":              ubx.FieldSpec{WireName: "include_tags"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"NameContains":             ubx.FieldSpec{WireName: "name_contains"},
+		"NameEndsWith":             ubx.FieldSpec{WireName: "name_ends_with"},
+		"NameStartsWith":           ubx.FieldSpec{WireName: "name_starts_with"},
+		"OrderBy":                  ubx.FieldSpec{WireName: "order_by"},
+		"OrganizationId":           ubx.FieldSpec{WireName: "organization_id"},
+		"PageSize":                 ubx.FieldSpec{WireName: "page_size"},
+		"PageToken":                ubx.FieldSpec{WireName: "page_token"},
 	},
 }

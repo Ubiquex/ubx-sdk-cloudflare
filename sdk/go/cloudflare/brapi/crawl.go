@@ -4,23 +4,23 @@ package brapi
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Crawl_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type Crawl_Result_Records_Metadata struct {
 	Status any
-	Title any
-	Url any
+	Title  any
+	Url    any
 }
 
 type Crawl_Result_Records struct {
-	Html any
-	Json any
+	Html     any
+	Json     any
 	Markdown any
 	Metadata any
-	Status any
-	Url any
+	Status   any
+	Url      any
 }
 
 type Crawl_Result struct {
@@ -64,6 +64,6 @@ var Crawl = ubx.ResourceBinding{
 	WireType: "cloudflare_crawl",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
 	},
 }

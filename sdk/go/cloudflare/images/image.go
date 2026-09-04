@@ -4,13 +4,13 @@ package images
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Image_Result struct {
-	Creator any
-	Filename any
-	Id any
-	Meta any
+	Creator           any
+	Filename          any
+	Id                any
+	Meta              any
 	RequireSignedUrls any
-	Uploaded any
-	Variants any
+	Uploaded          any
+	Variants          any
 }
 
 type ImageConfig struct {
@@ -39,8 +39,8 @@ type ImageAttrs struct {
 	Metadata any
 	// Indicates whether the image requires a signature token for the access.
 	RequireSignedUrls any
-	Result any
-	Success any
+	Result            any
+	Success           any
 	// A URL to fetch an image from origin. Only needed when type is uploading from a URL.
 	Url any
 }
@@ -48,11 +48,11 @@ type ImageAttrs struct {
 var Image = ubx.ResourceBinding{
 	WireType: "cloudflare_image",
 	Fields: ubx.FieldMap{
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"File": ubx.FieldSpec{WireName: "file"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Creator":           ubx.FieldSpec{WireName: "creator"},
+		"File":              ubx.FieldSpec{WireName: "file"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"RequireSignedUrls": ubx.FieldSpec{WireName: "require_signed_urls"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":               ubx.FieldSpec{WireName: "url"},
 	},
 }

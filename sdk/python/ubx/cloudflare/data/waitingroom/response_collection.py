@@ -7,6 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ResponseCollection_Result_AdditionalRoutes:
+    host: Any = None
+    path: Any = None
+
+@dataclasses.dataclass
+class ResponseCollection_Result_CookieAttributes:
+    samesite: Any = None
+    secure: Any = None
+
+@dataclasses.dataclass
+class ResponseCollection_Result:
+    additional_routes: Any = None
+    cookie_attributes: Any = None
+    cookie_suffix: Any = None
+    created_on: Any = None
+    custom_page_html: Any = None
+    default_template_language: Any = None
+    description: Any = None
+    disable_session_renewal: Any = None
+    enabled_origin_commands: Any = None
+    host: Any = None
+    id: Any = None
+    json_response_enabled: Any = None
+    modified_on: Any = None
+    name: Any = None
+    new_users_per_minute: Any = None
+    next_event_prequeue_start_time: Any = None
+    next_event_start_time: Any = None
+    path: Any = None
+    queue_all: Any = None
+    queueing_method: Any = None
+    queueing_status_code: Any = None
+    session_duration: Any = None
+    suspended: Any = None
+    total_active_users: Any = None
+    turnstile_action: Any = None
+    turnstile_mode: Any = None
+
+@dataclasses.dataclass
 class ResponseCollectionConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +58,7 @@ class ResponseCollectionAttrs:
     account_id: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 ResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_waitingroom_response_collection",

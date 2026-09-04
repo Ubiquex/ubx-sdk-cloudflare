@@ -3,16 +3,25 @@ package leakedcredentialchecks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WafProductApiBundleResponseCustomDetectionCollection_Result_Id struct {
+}
+
+type WafProductApiBundleResponseCustomDetectionCollection_Result struct {
+	Id       any
+	Password any
+	Username any
+}
+
 type WafProductApiBundleResponseCustomDetectionCollectionConfig struct {
 }
 
 type WafProductApiBundleResponseCustomDetectionCollectionAttrs struct {
+	Result any
 	// Defines an identifier.
 	ZoneId any
 }
 
 var WafProductApiBundleResponseCustomDetectionCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_waf_product_api_bundle_response_custom_detection_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

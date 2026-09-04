@@ -3,31 +3,51 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerSnapshotsListSuccess_Errors struct {
+	Code    any
+	Message any
+}
+
+type MconnCustomerSnapshotsListSuccess_Result_Items struct {
+	A any
+	T any
+}
+
+type MconnCustomerSnapshotsListSuccess_Result struct {
+	Count  any
+	Cursor any
+	Items  any
+}
+
 type MconnCustomerSnapshotsListSuccessConfig struct {
 	ConnectorId any
-	Cursor any
-	From any
-	Limit any
-	To any
+	Cursor      any
+	From        any
+	Limit       any
+	To          any
 }
 
 type MconnCustomerSnapshotsListSuccessAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
-	Cursor any
-	From any
-	Limit any
-	To any
+	Cursor      any
+	Errors      any
+	From        any
+	Limit       any
+	Messages    any
+	Result      any
+	Success     any
+	To          any
 }
 
 var MconnCustomerSnapshotsListSuccess = ubx.DataSourceBinding{
 	WireType: "cloudflare_mconn_customer_snapshots_list_success",
 	Fields: ubx.FieldMap{
 		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Cursor":      ubx.FieldSpec{WireName: "cursor"},
+		"From":        ubx.FieldSpec{WireName: "from"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"To":          ubx.FieldSpec{WireName: "to"},
 	},
 }

@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Constant_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Constant_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Constant_Result:
+    priority: Any = None
+    status: Any = None
+    tlp: Any = None
+
+@dataclasses.dataclass
 class ConstantConfig:
     # Identifier.
     account_id: Any = None
@@ -15,6 +32,11 @@ class ConstantConfig:
 class ConstantAttrs:
     # Identifier.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Constant = ubx.DataSourceBinding(
     wire_type="cloudflare_constant",

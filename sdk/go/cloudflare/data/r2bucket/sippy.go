@@ -3,6 +3,41 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Sippy_Errors struct {
+	Code    any
+	Message any
+}
+
+type Sippy_Result_Destination struct {
+	// ID of the Cloudflare API token used when writing objects to this bucket.
+	AccessKeyId any
+	Account     any
+	// Name of the bucket on the provider.
+	Bucket   any
+	Provider any
+}
+
+type Sippy_Result_Source struct {
+	// Name of the bucket on the provider (AWS, GCS only).
+	Bucket any
+	// S3-compatible URL (Generic S3-compatible providers only).
+	BucketUrl any
+	// Name of the Azure Blob Storage container (Azure only).
+	Container any
+	Provider  any
+	// Region where the bucket resides (AWS only).
+	Region any
+}
+
+type Sippy_Result struct {
+	// Details about the configured destination bucket.
+	Destination any
+	// State of Sippy for this bucket.
+	Enabled any
+	// Details about the configured source bucket.
+	Source any
+}
+
 type SippyConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +50,17 @@ type SippyAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	Result     any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Sippy = ubx.DataSourceBinding{
 	WireType: "cloudflare_sippy",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

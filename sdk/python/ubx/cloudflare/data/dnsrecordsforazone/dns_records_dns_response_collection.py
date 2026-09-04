@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DnsRecordsDnsResponseCollection_Result_Meta:
+    dead_glue: Any = None
+    is_glue: Any = None
+    shadowed_by: Any = None
+    shadowed_records_count: Any = None
+
+@dataclasses.dataclass
+class DnsRecordsDnsResponseCollection_Result:
+    comment_modified_on: Any = None
+    created_on: Any = None
+    id: Any = None
+    meta: Any = None
+    modified_on: Any = None
+    proxiable: Any = None
+    tags_modified_on: Any = None
+
+@dataclasses.dataclass
 class DnsRecordsDnsResponseCollectionConfig:
     # Exact value of the DNS record comment. This is a convenience alias for `comment.exact`.
     comment: Any = None
@@ -133,6 +150,7 @@ class DnsRecordsDnsResponseCollectionAttrs:
     per_page: Any = None
     # Whether the record is receiving the performance and security benefits of Cloudflare.
     proxied: Any = None
+    result: Any = None
     # Allows searching in multiple properties of a DNS record simultaneously. This parameter is intended for human users, not automation. Its exact behavior is intentionally left unspecified and is subject to change in the future. This parameter works independently of the `match` setting. For automated searches, please use the other available parameters.
     search: Any = None
     # Filters to records at or below the given NS delegation name, excluding the NS records that form the delegation itself. The value must be a subdomain of the zone; the zone apex is not accepted. Requires `include_shadow_metadata=true`. See [Shadowed records](https://developers.cloudflare.com/dns/manage-dns-records/reference/shadowed-records).

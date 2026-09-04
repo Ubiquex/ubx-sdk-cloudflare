@@ -6,8 +6,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ResourceGroup_AccountId struct {
 }
 
-var ResourceGroup_AccountIdFields = ubx.FieldMap{
-	}
+type ResourceGroup_Errors_Source struct {
+	Pointer any
+}
+
+type ResourceGroup_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type ResourceGroup_Result_Meta struct {
+	Key   any
+	Value any
+}
+
+type ResourceGroup_Result_Scope_Objects struct {
+	Key any
+}
+
+type ResourceGroup_Result_Scope struct {
+	Key     any
+	Objects any
+}
+
+type ResourceGroup_Result struct {
+	Id    any
+	Meta  any
+	Name  any
+	Scope any
+}
+
+var ResourceGroup_AccountIdFields = ubx.FieldMap{}
 
 type ResourceGroupConfig struct {
 	// Account identifier tag.
@@ -21,10 +52,15 @@ type ResourceGroupConfig struct {
 type ResourceGroupAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
 	// ID of the resource group to be fetched.
-	Id any
+	Id       any
+	Messages any
 	// Name of the resource group to be fetched.
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var ResourceGroup = ubx.DataSourceBinding{
@@ -32,13 +68,13 @@ var ResourceGroup = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: ResourceGroup_AccountIdFields,
+			Kind:     "object",
+			Fields:   ResourceGroup_AccountIdFields,
 		},
 		"Id": ubx.FieldSpec{
 			WireName: "id",
-			Kind: "object",
-			Fields: ResourceGroup_AccountIdFields,
+			Kind:     "object",
+			Fields:   ResourceGroup_AccountIdFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

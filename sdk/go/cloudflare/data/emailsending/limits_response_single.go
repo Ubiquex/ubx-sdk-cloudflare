@@ -3,6 +3,29 @@ package emailsending
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LimitsResponseSingle_Result_Quota struct {
+	// The time period for the quota.
+	Unit any
+	// The quota limit.
+	Value any
+}
+
+type LimitsResponseSingle_Result_Usage struct {
+	// Whether the account has exceeded its daily sending quota.
+	OverQuota any
+	// When the current daily quota window resets. Null when there is no active window.
+	ResetsAt any
+	// Emails sent against the daily quota in the current window.
+	Sent any
+}
+
+type LimitsResponseSingle_Result struct {
+	// The resolved daily sending quota for the account. Null when the quota is not yet available.
+	Quota any
+	// The account's current daily sending usage. Null when there is no resolved quota or usage is temporarily unavailable.
+	Usage any
+}
+
 type LimitsResponseSingleConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +34,7 @@ type LimitsResponseSingleConfig struct {
 type LimitsResponseSingleAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var LimitsResponseSingle = ubx.DataSourceBinding{

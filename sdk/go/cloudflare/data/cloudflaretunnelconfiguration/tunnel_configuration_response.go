@@ -3,6 +3,64 @@ package cloudflaretunnelconfiguration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TunnelConfigurationResponse_Result_Config_Ingress_OriginRequest_Access struct {
+	AudTag   any
+	Required any
+	TeamName any
+}
+
+type TunnelConfigurationResponse_Result_Config_Ingress_OriginRequest struct {
+	Access                 any
+	CaPool                 any
+	ConnectTimeout         any
+	DisableChunkedEncoding any
+	Http2Origin            any
+	HttpHostHeader         any
+	KeepAliveConnections   any
+	KeepAliveTimeout       any
+	MatchSnitoHost         any
+	NoHappyEyeballs        any
+	NoTlsverify            any
+	OriginServerName       any
+	ProxyType              any
+	TcpKeepAlive           any
+	TlsTimeout             any
+}
+
+type TunnelConfigurationResponse_Result_Config_Ingress struct {
+	Hostname      any
+	OriginRequest any
+	Path          any
+	Service       any
+}
+
+type TunnelConfigurationResponse_Result_Config_WarpRouting struct {
+	Enabled any
+}
+
+type TunnelConfigurationResponse_Result_Config struct {
+	// List of public hostname definitions. At least one ingress rule needs to be defined for the tunnel.
+	Ingress any
+	// Configuration parameters for the public hostname specific connection settings between cloudflared and origin server.
+	OriginRequest any
+	// Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
+	WarpRouting any
+}
+
+type TunnelConfigurationResponse_Result struct {
+	// Identifier.
+	AccountId any
+	// The tunnel configuration and ingress rules.
+	Config    any
+	CreatedAt any
+	// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
+	Source any
+	// UUID of the tunnel.
+	TunnelId any
+	// The version of the Tunnel Configuration.
+	Version any
+}
+
 type TunnelConfigurationResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +69,8 @@ type TunnelConfigurationResponseConfig struct {
 type TunnelConfigurationResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	// Cloudflare Tunnel configuration
+	Result any
 	// UUID of the tunnel.
 	TunnelId any
 }

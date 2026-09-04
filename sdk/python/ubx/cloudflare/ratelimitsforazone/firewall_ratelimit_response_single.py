@@ -39,6 +39,22 @@ class FirewallRatelimitResponseSingle_Match:
     request: Any = None
     response: Any = None
 
+@dataclasses.dataclass
+class FirewallRatelimitResponseSingle_Result_Bypass:
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class FirewallRatelimitResponseSingle_Result:
+    action: Any = None
+    bypass: Any = None
+    description: Any = None
+    disabled: Any = None
+    id: Any = None
+    match: Any = None
+    period: Any = None
+    threshold: Any = None
+
 _FirewallRatelimitResponseSingle_Action_ResponseFields = {
     "body": ubx.FieldSpec(wire_name="body"),
     "content_type": ubx.FieldSpec(wire_name="content_type"),
@@ -111,6 +127,7 @@ class FirewallRatelimitResponseSingleAttrs:
     match: Any = None
     # The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.
     period: Any = None
+    result: Any = None
     # The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.
     threshold: Any = None
     # path parameter, not part of the API's own resource representation

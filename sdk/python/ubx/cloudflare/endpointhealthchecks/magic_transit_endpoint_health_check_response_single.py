@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class MagicTransitEndpointHealthCheckResponseSingle_Result:
+    check_type: Any = None
+    endpoint: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class MagicTransitEndpointHealthCheckResponseSingleConfig:
     # type of check to perform
     check_type: Any = None
@@ -25,8 +43,13 @@ class MagicTransitEndpointHealthCheckResponseSingleAttrs:
     check_type: Any = None
     # the IP address of the host to perform checks against
     endpoint: Any = None
+    errors: Any = None
+    messages: Any = None
     # Optional name associated with this check
     name: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

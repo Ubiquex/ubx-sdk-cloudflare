@@ -3,12 +3,28 @@ package zonelevelaccessservicetokens
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection19_Result_Id struct {
+}
+
+type AccessResponseCollection19_Result struct {
+	ClientId   any
+	CreatedAt  any
+	Duration   any
+	Enabled    any
+	ExpiresAt  any
+	Id         any
+	LastSeenAt any
+	Name       any
+	UpdatedAt  any
+}
+
 type AccessResponseCollection19Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollection19Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

@@ -14,6 +14,7 @@ class WafManagedRulesRuleResponseSingleConfig:
 class WafManagedRulesRuleResponseSingleAttrs:
     # Defines the unique identifier of a WAF package.
     package_id: Any = None
+    result: Any = None
     # Defines the unique identifier of a WAF package.
     rule_id: Any = None
     # Defines an identifier of a schema.

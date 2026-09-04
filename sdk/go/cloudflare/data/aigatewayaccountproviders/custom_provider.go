@@ -4,42 +4,42 @@ package aigatewayaccountproviders
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomProvider_Result struct {
-	BaseUrl any
-	Beta any
-	CreatedAt any
+	BaseUrl     any
+	Beta        any
+	CreatedAt   any
 	CurlExample any
 	Description any
-	Enable any
-	Headers any
-	Id any
-	JsExample any
-	Link any
-	Logo any
-	ModifiedAt any
-	Name any
-	Position any
-	Slug any
+	Enable      any
+	Headers     any
+	Id          any
+	JsExample   any
+	Link        any
+	Logo        any
+	ModifiedAt  any
+	Name        any
+	Position    any
+	Slug        any
 }
 
 type CustomProviderConfig struct {
 	AccountId any
-	Beta any
-	Enable any
-	Page any
-	PerPage any
+	Beta      any
+	Enable    any
+	Page      any
+	PerPage   any
 	// Search by id, name, slug
 	Search any
 }
 
 type CustomProviderAttrs struct {
 	AccountId any
-	Beta any
-	Enable any
-	Page any
-	PerPage any
-	Result any
+	Beta      any
+	Enable    any
+	Page      any
+	PerPage   any
+	Result    any
 	// Search by id, name, slug
-	Search any
+	Search  any
 	Success any
 }
 
@@ -47,10 +47,10 @@ var CustomProvider = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_provider",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Beta": ubx.FieldSpec{WireName: "beta"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
+		"Beta":      ubx.FieldSpec{WireName: "beta"},
+		"Enable":    ubx.FieldSpec{WireName: "enable"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
+		"Search":    ubx.FieldSpec{WireName: "search"},
 	},
 }

@@ -7,12 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Ip_Result:
+    etag: Any = None
+    ipv4_cidrs: Any = None
+    ipv6_cidrs: Any = None
+    jdcloud_cidrs: Any = None
+
+@dataclasses.dataclass
 class IpConfig:
     networks: Any = None
 
 @dataclasses.dataclass
 class IpAttrs:
     networks: Any = None
+    result: Any = None
 
 Ip = ubx.DataSourceBinding(
     wire_type="cloudflare_ip",

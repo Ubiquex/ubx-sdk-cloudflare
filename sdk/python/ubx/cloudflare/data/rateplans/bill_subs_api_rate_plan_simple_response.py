@@ -7,12 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiRatePlanSimpleResponse_Result:
+    # Pricing components that make up this rate plan.
+    components: Any = None
+    # Currency of the rate plan pricing.
+    currency: Any = None
+    # The uppercase rate plan public key.
+    id: Any = None
+    # Human-readable description of the rate plan.
+    public_name: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiRatePlanSimpleResponseConfig:
     public_key: Any = None
 
 @dataclasses.dataclass
 class BillSubsApiRatePlanSimpleResponseAttrs:
     public_key: Any = None
+    result: Any = None
 
 BillSubsApiRatePlanSimpleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_rate_plan_simple_response",

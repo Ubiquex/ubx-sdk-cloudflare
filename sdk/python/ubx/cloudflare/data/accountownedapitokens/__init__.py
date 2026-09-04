@@ -6,4 +6,5 @@ SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
 from .iam_collection_tokens_response import IamCollectionTokensResponse, IamCollectionTokensResponseConfig
 from .iam_permissions_group_response_collection import IamPermissionsGroupResponseCollection, IamPermissionsGroupResponseCollectionConfig
+from .iam_single_token_response import IamSingleTokenResponse, IamSingleTokenResponseConfig
 from .iam_token_verify_response_single_segment import IamTokenVerifyResponseSingleSegment, IamTokenVerifyResponseSingleSegmentConfig

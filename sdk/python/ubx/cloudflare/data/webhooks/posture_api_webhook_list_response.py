@@ -7,12 +7,46 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiWebhookListResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiWebhookListResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiWebhookListResponse_Result_Headers:
+    key: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class PostureApiWebhookListResponse_Result:
+    authentication_type: Any = None
+    created_at: Any = None
+    destination_url: Any = None
+    headers: Any = None
+    id: Any = None
+    label: Any = None
+    status: Any = None
+    updated_at: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class PostureApiWebhookListResponseConfig:
     account_id: Any = None
 
 @dataclasses.dataclass
 class PostureApiWebhookListResponseAttrs:
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # List of webhook configurations.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PostureApiWebhookListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_posture_api_webhook_list_response",

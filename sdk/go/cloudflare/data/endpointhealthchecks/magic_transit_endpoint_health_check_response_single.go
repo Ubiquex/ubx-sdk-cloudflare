@@ -3,16 +3,38 @@ package endpointhealthchecks
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicTransitEndpointHealthCheckResponseSingle_Errors_Source struct {
+	Pointer any
+}
+
+type MagicTransitEndpointHealthCheckResponseSingle_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type MagicTransitEndpointHealthCheckResponseSingle_Result struct {
+	CheckType any
+	Endpoint  any
+	Id        any
+	Name      any
+}
+
 type MagicTransitEndpointHealthCheckResponseSingleConfig struct {
 }
 
 type MagicTransitEndpointHealthCheckResponseSingleAttrs struct {
 	// Identifier
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var MagicTransitEndpointHealthCheckResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_transit_endpoint_health_check_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

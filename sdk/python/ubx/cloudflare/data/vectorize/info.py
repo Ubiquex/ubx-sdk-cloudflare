@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Info_Result:
+    # Specifies the number of dimensions for the index
+    dimensions: Any = None
+    # Specifies the timestamp the last mutation batch was processed as an ISO8601 string.
+    processed_up_to_datetime: Any = None
+    # The unique identifier for the async mutation operation containing the changeset.
+    processed_up_to_mutation: Any = None
+    # Specifies the number of vectors present in the index
+    vector_count: Any = None
+
+@dataclasses.dataclass
 class InfoConfig:
     index_name: Any = None
 
@@ -15,6 +26,7 @@ class InfoAttrs:
     # Identifier
     account_id: Any = None
     index_name: Any = None
+    result: Any = None
 
 Info = ubx.DataSourceBinding(
     wire_type="cloudflare_info",

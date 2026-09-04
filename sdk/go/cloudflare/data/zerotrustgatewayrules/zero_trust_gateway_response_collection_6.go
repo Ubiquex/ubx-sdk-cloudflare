@@ -3,12 +3,171 @@ package zerotrustgatewayrules
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection6_Result_Expiration_ExpiresAt struct {
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_Expiration struct {
+	Duration  any
+	Expired   any
+	ExpiresAt any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_AuditSsh struct {
+	CommandLogging any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_BisoAdminControls struct {
+	Copy     any
+	Dcp      any
+	Dd       any
+	Dk       any
+	Download any
+	Dp       any
+	Du       any
+	Keyboard any
+	Paste    any
+	Printing any
+	Upload   any
+	Version  any
+	WmId     any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_BlockPage struct {
+	IncludeContext any
+	TargetUri      any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_CheckSession struct {
+	Duration any
+	Enforce  any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_DnsResolvers_Ipv4 struct {
+	Ip                         any
+	Port                       any
+	RouteThroughPrivateNetwork any
+	VnetId                     any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_DnsResolvers struct {
+	Ipv4 any
+	Ipv6 any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Egress struct {
+	Ipv4         any
+	Ipv4Fallback any
+	Ipv6         any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_ForensicCopy struct {
+	Enabled any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_L4override struct {
+	Ip   any
+	Port any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_NotificationSettings struct {
+	Enabled        any
+	IncludeContext any
+	Msg            any
+	SupportUrl     any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Quarantine struct {
+	FileTypes any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_Redirect struct {
+	IncludeContext       any
+	PreservePathAndQuery any
+	TargetUri            any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_ResolveDnsInternally struct {
+	Fallback any
+	ViewId   any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings_UntrustedCert struct {
+	Action any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_RuleSettings struct {
+	AddHeaders                      any
+	AllowChildBypass                any
+	AuditSsh                        any
+	BisoAdminControls               any
+	BlockPage                       any
+	BlockPageEnabled                any
+	BlockReason                     any
+	BypassParentRule                any
+	CheckSession                    any
+	DeleteHeaders                   any
+	DnsResolvers                    any
+	Egress                          any
+	ForensicCopy                    any
+	IgnoreCnameCategoryMatches      any
+	InsecureDisableDnssecValidation any
+	IpCategories                    any
+	IpIndicatorFeeds                any
+	L4override                      any
+	NotificationSettings            any
+	OverrideHost                    any
+	OverrideIps                     any
+	PayloadLog                      any
+	Quarantine                      any
+	Redirect                        any
+	ResolveDnsInternally            any
+	ResolveDnsThroughCloudflare     any
+	SetHeaders                      any
+	UntrustedCert                   any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result_Schedule struct {
+	Fri      any
+	Mon      any
+	Sat      any
+	Sun      any
+	Thu      any
+	TimeZone any
+	Tue      any
+	Wed      any
+}
+
+type ZeroTrustGatewayResponseCollection6_Result struct {
+	Action        any
+	CreatedAt     any
+	DeletedAt     any
+	Description   any
+	DevicePosture any
+	Enabled       any
+	Expiration    any
+	Filters       any
+	Id            any
+	Identity      any
+	Name          any
+	Precedence    any
+	ReadOnly      any
+	RuleSettings  any
+	Schedule      any
+	Sharable      any
+	SourceAccount any
+	Traffic       any
+	UpdatedAt     any
+	Version       any
+	WarningStatus any
+}
+
 type ZeroTrustGatewayResponseCollection6Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollection6Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection6 = ubx.DataSourceBinding{

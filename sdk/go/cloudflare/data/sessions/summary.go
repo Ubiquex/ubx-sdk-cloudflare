@@ -15,7 +15,7 @@ type SummaryConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
 	SessionId any
 }
 
@@ -23,17 +23,17 @@ type SummaryAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
-	Data any
+	AppId     any
+	Data      any
 	SessionId any
-	Success any
+	Success   any
 }
 
 var Summary = ubx.DataSourceBinding{
 	WireType: "cloudflare_summary",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 		"SessionId": ubx.FieldSpec{WireName: "session_id"},
 	},
 }

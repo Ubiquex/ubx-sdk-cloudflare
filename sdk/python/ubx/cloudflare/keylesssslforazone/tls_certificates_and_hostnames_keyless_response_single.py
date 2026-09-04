@@ -7,13 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TlsCertificatesAndHostnamesKeylessResponseSingle_Tunnel:
-    # Private IP of the Key Server Host.
+class TlsCertificatesAndHostnamesKeylessResponseSingle_Result_Tunnel:
     private_ip: Any = None
-    # Cloudflare Tunnel Virtual Network ID.
     vnet_id: Any = None
 
-_TlsCertificatesAndHostnamesKeylessResponseSingle_TunnelFields = {
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesKeylessResponseSingle_Result:
+    created_on: Any = None
+    enabled: Any = None
+    host: Any = None
+    id: Any = None
+    modified_on: Any = None
+    name: Any = None
+    permissions: Any = None
+    port: Any = None
+    status: Any = None
+    tunnel: Any = None
+
+_TlsCertificatesAndHostnamesKeylessResponseSingle_Result_TunnelFields = {
     "private_ip": ubx.FieldSpec(wire_name="private_ip"),
     "vnet_id": ubx.FieldSpec(wire_name="vnet_id"),
 }
@@ -49,6 +60,7 @@ class TlsCertificatesAndHostnamesKeylessResponseSingleAttrs:
     name: Any = None
     # The keyless SSL port used to communicate between Cloudflare and the client's Keyless SSL server.
     port: Any = None
+    result: Any = None
     # Configuration for using Keyless SSL through a Cloudflare Tunnel.
     tunnel: Any = None
     # path parameter, not part of the API's own resource representation
@@ -67,7 +79,7 @@ TlsCertificatesAndHostnamesKeylessResponseSingle = ubx.ResourceBinding(
         "tunnel": ubx.FieldSpec(
             wire_name="tunnel",
             kind="object",
-            fields=_TlsCertificatesAndHostnamesKeylessResponseSingle_TunnelFields,
+            fields=_TlsCertificatesAndHostnamesKeylessResponseSingle_Result_TunnelFields,
         ),
         "zone_id": ubx.FieldSpec(wire_name="zone_id"),
         "keyless_certificate_id": ubx.FieldSpec(wire_name="keyless_certificate_id"),

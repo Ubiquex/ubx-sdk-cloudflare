@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareRecipientResponseCollection_Result_Resources:
+    error: Any = None
+    resource_id: Any = None
+    resource_version: Any = None
+    terminal: Any = None
+
+@dataclasses.dataclass
+class ShareRecipientResponseCollection_Result:
+    account_id: Any = None
+    association_status: Any = None
+    created: Any = None
+    id: Any = None
+    modified: Any = None
+    resources: Any = None
+
+@dataclasses.dataclass
 class ShareRecipientResponseCollectionConfig:
     # Account identifier.
     account_id: Any = None
@@ -23,6 +39,7 @@ class ShareRecipientResponseCollectionAttrs:
     include_resources: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     # Share identifier tag.
     share_id: Any = None
 

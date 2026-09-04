@@ -8,13 +8,13 @@ type TeamsDevicesDeviceSettingsResponse_Description struct {
 
 type TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixes struct {
 	Description any
-	Suffix any
+	Suffix      any
 }
 
 type TeamsDevicesDeviceSettingsResponse_Exclude struct {
-	Address any
+	Address     any
 	Description any
-	Host any
+	Host        any
 }
 
 type TeamsDevicesDeviceSettingsResponse_GlobalAcceleration struct {
@@ -28,50 +28,118 @@ type TeamsDevicesDeviceSettingsResponse_GlobalAcceleration struct {
 	WireguardEndpoints any
 }
 
-type TeamsDevicesDeviceSettingsResponse_ServiceModeV2 struct {
+type TeamsDevicesDeviceSettingsResponse_Result_FallbackDomains struct {
+	Description any
+	DnsServer   any
+	Suffix      any
+}
+
+type TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2 struct {
 	// The mode to run the WARP client under.
 	Mode any
 	// The port number when used with proxy mode.
 	Port any
 }
 
-type TeamsDevicesDeviceSettingsResponse_VirtualNetworks struct {
+type TeamsDevicesDeviceSettingsResponse_Result_TargetTests struct {
+	Id   any
+	Name any
+}
+
+type TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworks struct {
 	// List of virtual network IDs the device is allowed to access. When virtual_networks is set, at least one entry is required.
 	Allowed any
 	// The default virtual network ID. Must be included in the `allowed` list.
 	Default any
 }
 
-var TeamsDevicesDeviceSettingsResponse_DescriptionFields = ubx.FieldMap{
-	}
+type TeamsDevicesDeviceSettingsResponse_Result struct {
+	// Whether to allow the user to switch WARP between modes.
+	AllowModeSwitch any
+	// Whether to receive update notifications when a new version of the client is available.
+	AllowUpdates any
+	// Whether to allow devices to leave the organization.
+	AllowedToLeave any
+	// The amount of time in seconds to reconnect after having been disabled.
+	AutoConnect any
+	// Turn on the captive portal after the specified amount of time.
+	CaptivePortal any
+	// Whether the policy is the default policy for an account.
+	Default any
+	// A description of the policy.
+	Description any
+	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
+	DisableAutoFallback any
+	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
+	DnsSearchSuffixes any
+	// Whether the policy will be applied to matching devices.
+	Enabled any
+	// List of routes excluded in the WARP client's tunnel.
+	Exclude any
+	// Whether to add Microsoft IPs to Split Tunnel exclusions.
+	ExcludeOfficeIps any
+	FallbackDomains  any
+	GatewayUniqueId  any
+	// Global Acceleration settings for China. When configured, WARP clients connect to the Global Accelerator addresses instead of the default ones. Please contact your account representative to enable this feature on your account. See https://developers.cloudflare.com/china-network/concepts/global-acceleration/.
+	GlobalAcceleration any
+	// List of routes included in the WARP client's tunnel.
+	Include any
+	// The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.
+	LanAllowMinutes any
+	// The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.
+	LanAllowSubnetSize any
+	// The wirefilter expression to match devices. Available values: "identity.email", "identity.groups.id", "identity.groups.name", "identity.groups.email", "identity.service_token_uuid", "identity.saml_attributes", "network", "os.name", "os.version".
+	Match any
+	// The name of the device settings profile.
+	Name     any
+	PolicyId any
+	// The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.
+	Precedence any
+	// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
+	RegisterInterfaceIpWithDns any
+	// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
+	SccmVpnBoundarySupport any
+	ServiceModeV2          any
+	// The URL to launch when the Send Feedback button is clicked.
+	SupportUrl any
+	// Whether to allow the user to turn off the WARP switch and disconnect the client.
+	SwitchLocked any
+	TargetTests  any
+	// Determines which tunnel protocol to use.
+	TunnelProtocol any
+	// Virtual network access settings for the device.
+	VirtualNetworks any
+}
+
+var TeamsDevicesDeviceSettingsResponse_DescriptionFields = ubx.FieldMap{}
 
 var TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Suffix":      ubx.FieldSpec{WireName: "suffix"},
+}
 
 var TeamsDevicesDeviceSettingsResponse_ExcludeFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-	}
+	"Address":     ubx.FieldSpec{WireName: "address"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Host":        ubx.FieldSpec{WireName: "host"},
+}
 
 var TeamsDevicesDeviceSettingsResponse_GlobalAccelerationFields = ubx.FieldMap{
-		"ApiEndpoints": ubx.FieldSpec{WireName: "api_endpoints"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MasqueEndpoints": ubx.FieldSpec{WireName: "masque_endpoints"},
-		"WireguardEndpoints": ubx.FieldSpec{WireName: "wireguard_endpoints"},
-	}
+	"ApiEndpoints":       ubx.FieldSpec{WireName: "api_endpoints"},
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"MasqueEndpoints":    ubx.FieldSpec{WireName: "masque_endpoints"},
+	"WireguardEndpoints": ubx.FieldSpec{WireName: "wireguard_endpoints"},
+}
 
-var TeamsDevicesDeviceSettingsResponse_ServiceModeV2Fields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+var TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2Fields = ubx.FieldMap{
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
-var TeamsDevicesDeviceSettingsResponse_VirtualNetworksFields = ubx.FieldMap{
-		"Allowed": ubx.FieldSpec{WireName: "allowed"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-	}
+var TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworksFields = ubx.FieldMap{
+	"Allowed": ubx.FieldSpec{WireName: "allowed"},
+	"Default": ubx.FieldSpec{WireName: "default"},
+}
 
 type TeamsDevicesDeviceSettingsResponseConfig struct {
 	// Whether to allow the user to switch WARP between modes.
@@ -84,7 +152,7 @@ type TeamsDevicesDeviceSettingsResponseConfig struct {
 	AutoConnect any
 	// Turn on the captive portal after the specified amount of time.
 	CaptivePortal any
-	Description any
+	Description   any
 	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
 	DisableAutoFallback any
 	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
@@ -113,7 +181,7 @@ type TeamsDevicesDeviceSettingsResponseConfig struct {
 	RegisterInterfaceIpWithDns any
 	// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 	SccmVpnBoundarySupport any
-	ServiceModeV2 any
+	ServiceModeV2          any
 	// The URL to launch when the Send Feedback button is clicked.
 	SupportUrl any
 	// Whether to allow the user to turn off the WARP switch and disconnect the client.
@@ -139,7 +207,7 @@ type TeamsDevicesDeviceSettingsResponseAttrs struct {
 	AutoConnect any
 	// Turn on the captive portal after the specified amount of time.
 	CaptivePortal any
-	Description any
+	Description   any
 	// If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.
 	DisableAutoFallback any
 	// List of DNS search suffixes to apply to clients. Suffixes are evaluated in order. Use an empty array to clear.
@@ -166,9 +234,10 @@ type TeamsDevicesDeviceSettingsResponseAttrs struct {
 	Precedence any
 	// Determines if the operating system will register WARP's local interface IP with your on-premises DNS server.
 	RegisterInterfaceIpWithDns any
+	Result                     any
 	// Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).
 	SccmVpnBoundarySupport any
-	ServiceModeV2 any
+	ServiceModeV2          any
 	// The URL to launch when the Send Feedback button is clicked.
 	SupportUrl any
 	// Whether to allow the user to turn off the WARP switch and disconnect the client.
@@ -187,59 +256,59 @@ var TeamsDevicesDeviceSettingsResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_teams_devices_device_settings_response",
 	Fields: ubx.FieldMap{
 		"AllowModeSwitch": ubx.FieldSpec{WireName: "allow_mode_switch"},
-		"AllowUpdates": ubx.FieldSpec{WireName: "allow_updates"},
-		"AllowedToLeave": ubx.FieldSpec{WireName: "allowed_to_leave"},
-		"AutoConnect": ubx.FieldSpec{WireName: "auto_connect"},
-		"CaptivePortal": ubx.FieldSpec{WireName: "captive_portal"},
+		"AllowUpdates":    ubx.FieldSpec{WireName: "allow_updates"},
+		"AllowedToLeave":  ubx.FieldSpec{WireName: "allowed_to_leave"},
+		"AutoConnect":     ubx.FieldSpec{WireName: "auto_connect"},
+		"CaptivePortal":   ubx.FieldSpec{WireName: "captive_portal"},
 		"Description": ubx.FieldSpec{
 			WireName: "description",
-			Kind: "object",
-			Fields: TeamsDevicesDeviceSettingsResponse_DescriptionFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesDeviceSettingsResponse_DescriptionFields,
 		},
 		"DisableAutoFallback": ubx.FieldSpec{WireName: "disable_auto_fallback"},
 		"DnsSearchSuffixes": ubx.FieldSpec{
 			WireName: "dns_search_suffixes",
-			Kind: "list",
-			Fields: TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixesFields,
+			Kind:     "list",
+			Fields:   TeamsDevicesDeviceSettingsResponse_DnsSearchSuffixesFields,
 		},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"Exclude": ubx.FieldSpec{
 			WireName: "exclude",
-			Kind: "list",
-			Fields: TeamsDevicesDeviceSettingsResponse_ExcludeFields,
+			Kind:     "list",
+			Fields:   TeamsDevicesDeviceSettingsResponse_ExcludeFields,
 		},
 		"ExcludeOfficeIps": ubx.FieldSpec{WireName: "exclude_office_ips"},
 		"GlobalAcceleration": ubx.FieldSpec{
 			WireName: "global_acceleration",
-			Kind: "object",
-			Fields: TeamsDevicesDeviceSettingsResponse_GlobalAccelerationFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesDeviceSettingsResponse_GlobalAccelerationFields,
 		},
 		"Include": ubx.FieldSpec{
 			WireName: "include",
-			Kind: "list",
-			Fields: TeamsDevicesDeviceSettingsResponse_ExcludeFields,
+			Kind:     "list",
+			Fields:   TeamsDevicesDeviceSettingsResponse_ExcludeFields,
 		},
-		"LanAllowMinutes": ubx.FieldSpec{WireName: "lan_allow_minutes"},
-		"LanAllowSubnetSize": ubx.FieldSpec{WireName: "lan_allow_subnet_size"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Precedence": ubx.FieldSpec{WireName: "precedence"},
+		"LanAllowMinutes":            ubx.FieldSpec{WireName: "lan_allow_minutes"},
+		"LanAllowSubnetSize":         ubx.FieldSpec{WireName: "lan_allow_subnet_size"},
+		"Match":                      ubx.FieldSpec{WireName: "match"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"Precedence":                 ubx.FieldSpec{WireName: "precedence"},
 		"RegisterInterfaceIpWithDns": ubx.FieldSpec{WireName: "register_interface_ip_with_dns"},
-		"SccmVpnBoundarySupport": ubx.FieldSpec{WireName: "sccm_vpn_boundary_support"},
+		"SccmVpnBoundarySupport":     ubx.FieldSpec{WireName: "sccm_vpn_boundary_support"},
 		"ServiceModeV2": ubx.FieldSpec{
 			WireName: "service_mode_v2",
-			Kind: "object",
-			Fields: TeamsDevicesDeviceSettingsResponse_ServiceModeV2Fields,
+			Kind:     "object",
+			Fields:   TeamsDevicesDeviceSettingsResponse_Result_ServiceModeV2Fields,
 		},
-		"SupportUrl": ubx.FieldSpec{WireName: "support_url"},
-		"SwitchLocked": ubx.FieldSpec{WireName: "switch_locked"},
+		"SupportUrl":     ubx.FieldSpec{WireName: "support_url"},
+		"SwitchLocked":   ubx.FieldSpec{WireName: "switch_locked"},
 		"TunnelProtocol": ubx.FieldSpec{WireName: "tunnel_protocol"},
 		"VirtualNetworks": ubx.FieldSpec{
 			WireName: "virtual_networks",
-			Kind: "object",
-			Fields: TeamsDevicesDeviceSettingsResponse_VirtualNetworksFields,
+			Kind:     "object",
+			Fields:   TeamsDevicesDeviceSettingsResponse_Result_VirtualNetworksFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
 	},
 }

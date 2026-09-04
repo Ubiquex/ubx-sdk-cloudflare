@@ -21,6 +21,6 @@ var Dom = ubx.DataSourceBinding{
 	WireType: "cloudflare_dom",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
+		"ScanId":    ubx.FieldSpec{WireName: "scan_id"},
 	},
 }

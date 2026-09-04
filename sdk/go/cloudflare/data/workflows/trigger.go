@@ -3,6 +3,51 @@ package workflows
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Trigger_Errors struct {
+	Code    any
+	Message any
+}
+
+type Trigger_Result_RepoConnection struct {
+	CreatedOn           any
+	DeletedOn           any
+	ModifiedOn          any
+	ProviderAccountId   any
+	ProviderAccountName any
+	ProviderType        any
+	RepoConnectionUuid  any
+	RepoId              any
+	RepoName            any
+}
+
+type Trigger_Result struct {
+	BranchExcludes      any
+	BranchIncludes      any
+	BuildCachingEnabled any
+	BuildCommand        any
+	BuildTokenName      any
+	BuildTokenUuid      any
+	CreatedOn           any
+	DeletedOn           any
+	DeployCommand       any
+	ExternalScriptId    any
+	ModifiedOn          any
+	PathExcludes        any
+	PathIncludes        any
+	RepoConnection      any
+	RootDirectory       any
+	TriggerName         any
+	TriggerUuid         any
+}
+
+type Trigger_ResultInfo struct {
+	Count      any
+	Page       any
+	PerPage    any
+	TotalCount any
+	TotalPages any
+}
+
 type TriggerConfig struct {
 	// Account identifier.
 	AccountId any
@@ -13,14 +58,19 @@ type TriggerConfig struct {
 type TriggerAttrs struct {
 	// Account identifier.
 	AccountId any
+	Errors    any
 	// System-generated worker script tag.
 	ExternalScriptId any
+	Messages         any
+	Result           any
+	ResultInfo       any
+	Success          any
 }
 
 var Trigger = ubx.DataSourceBinding{
 	WireType: "cloudflare_trigger",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
 		"ExternalScriptId": ubx.FieldSpec{WireName: "external_script_id"},
 	},
 }

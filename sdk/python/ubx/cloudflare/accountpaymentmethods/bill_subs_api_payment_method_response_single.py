@@ -7,6 +7,59 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiPaymentMethodResponseSingle_Result:
+    # Billing address line 1.
+    address: Any = None
+    # Billing address line 2.
+    address2: Any = None
+    # Bank account type.
+    bank_account_type: Any = None
+    # Bank code.
+    bank_code: Any = None
+    # Bank country.
+    bank_country: Any = None
+    # Bank name for bank-based payment methods.
+    bank_name: Any = None
+    # Bank routing number.
+    bank_routing_number: Any = None
+    # Cash App cash tag.
+    cashapp_cash_tag: Any = None
+    # Billing city.
+    city: Any = None
+    # Billing country.
+    country: Any = None
+    # Whether this is the default payment method.
+    default: Any = None
+    # Device data for fraud prevention.
+    device_data: Any = None
+    # Card expiration date.
+    expiration_date: Any = None
+    # Billing first name.
+    first_name: Any = None
+    # Payment method identifier.
+    id: Any = None
+    # Last four digits of the card number.
+    last_four: Any = None
+    # Billing last name.
+    last_name: Any = None
+    # A nickname for the payment method.
+    nick_name: Any = None
+    # Email associated with the payment account.
+    payment_account_email: Any = None
+    # Payment email address.
+    payment_email: Any = None
+    # The payment gateway used.
+    payment_gateway: Any = None
+    # Payment nonce for tokenized payments.
+    payment_nonce: Any = None
+    # Billing state.
+    state: Any = None
+    # The payment method type.
+    type: Any = None
+    # Billing zip code.
+    zipcode: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiPaymentMethodResponseSingleConfig:
     # Billing address line 1.
     address: Any = None
@@ -103,6 +156,7 @@ class BillSubsApiPaymentMethodResponseSingleAttrs:
     payment_gateway: Any = None
     # Payment nonce for tokenized payments.
     payment_nonce: Any = None
+    result: Any = None
     # Billing state.
     state: Any = None
     # The payment method type.

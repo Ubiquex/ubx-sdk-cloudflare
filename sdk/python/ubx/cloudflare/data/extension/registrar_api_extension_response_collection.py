@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegistrarApiExtensionResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiExtensionResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiExtensionResponseCollection_Result_Metadata:
+    name: Any = None
+    tld: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiExtensionResponseCollection_Result:
+    metadata: Any = None
+    registration_schema: Any = None
+
+@dataclasses.dataclass
+class RegistrarApiExtensionResponseCollection_ResultInfo:
+    # Number of items in the current result set.
+    count: Any = None
+    # Opaque token for the next page. Empty string when no more pages.
+    cursor: Any = None
+    # Number of items per page.
+    per_page: Any = None
+
+@dataclasses.dataclass
 class RegistrarApiExtensionResponseCollectionConfig:
     cursor: Any = None
     direction: Any = None
@@ -20,9 +49,16 @@ class RegistrarApiExtensionResponseCollectionAttrs:
     account_id: Any = None
     cursor: Any = None
     direction: Any = None
+    errors: Any = None
+    messages: Any = None
     name: Any = None
     per_page: Any = None
+    result: Any = None
+    # Cursor-based pagination metadata.
+    result_info: Any = None
     sort_by: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 RegistrarApiExtensionResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_registrar_api_extension_response_collection",

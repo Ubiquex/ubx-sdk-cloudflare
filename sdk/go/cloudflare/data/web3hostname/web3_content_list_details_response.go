@@ -3,18 +3,23 @@ package web3hostname
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Web3ContentListDetailsResponse_Result struct {
+	// Behavior of the content list.
+	Action any
+}
+
 type Web3ContentListDetailsResponseConfig struct {
 }
 
 type Web3ContentListDetailsResponseAttrs struct {
 	// Specify the identifier of the hostname.
 	Identifier any
+	Result     any
 	// Specify the identifier of the hostname.
 	ZoneId any
 }
 
 var Web3ContentListDetailsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_web3_content_list_details_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

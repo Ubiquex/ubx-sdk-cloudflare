@@ -3,6 +3,23 @@ package zerotrustgatewayoperations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewaySingleResponse2_Result struct {
+	CreatedAt any
+	// Provide metadata describing the resource the operation acts on. The fields present depend on the `operation_type`.
+	Data any
+	// Identify the API resource with a UUID.
+	Id any
+	// The type of operation.
+	OperationType any
+	// A human-readable error message if the operation failed. Only present when the operation status is `failed`.
+	ProcessingError any
+	// The result of the operation. Only present when the operation has completed successfully.
+	Result any
+	// The status of the operation.
+	Status    any
+	UpdatedAt any
+}
+
 type ZeroTrustGatewaySingleResponse2Config struct {
 	// Provide the identifier string.
 	AccountId any
@@ -15,12 +32,13 @@ type ZeroTrustGatewaySingleResponse2Attrs struct {
 	AccountId any
 	// Identify the API resource with a UUID.
 	OperationId any
+	Result      any
 }
 
 var ZeroTrustGatewaySingleResponse2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_zero_trust_gateway_single_response_2",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
 	},
 }

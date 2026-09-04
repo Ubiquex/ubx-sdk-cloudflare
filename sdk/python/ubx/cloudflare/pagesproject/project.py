@@ -106,39 +106,109 @@ class Project_DeploymentConfigs:
     production: Any = None
 
 @dataclasses.dataclass
-class Project_Source_Config:
-    # Whether to enable automatic deployments when pushing to the source repository. When disabled, no deployments (production or preview) will be triggered automatically.
+class Project_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class Project_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_DeploymentTrigger_Metadata:
+    branch: Any = None
+    commit_dirty: Any = None
+    commit_hash: Any = None
+    commit_message: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_DeploymentTrigger:
+    metadata: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_LatestStage:
+    ended_on: Any = None
+    name: Any = None
+    started_on: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment_Source_Config:
     deployments_enabled: Any = None
-    # The owner of the repository.
     owner: Any = None
-    # The owner ID of the repository.
     owner_id: Any = None
-    # A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
     path_excludes: Any = None
-    # A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
     path_includes: Any = None
-    # Whether to enable PR comments.
     pr_comments_enabled: Any = None
-    # A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
     preview_branch_excludes: Any = None
-    # A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.
     preview_branch_includes: Any = None
-    # Controls whether commits to preview branches trigger a preview deployment.
     preview_deployment_setting: Any = None
-    # The production branch of the repository.
     production_branch: Any = None
-    # Whether to trigger a production deployment on commits to the production branch.
     production_deployments_enabled: Any = None
-    # The ID of the repository.
     repo_id: Any = None
-    # The name of the repository.
     repo_name: Any = None
 
 @dataclasses.dataclass
-class Project_Source:
+class Project_Result_CanonicalDeployment_Source:
     config: Any = None
-    # The source control management provider.
     type: Any = None
+
+@dataclasses.dataclass
+class Project_Result_CanonicalDeployment:
+    aliases: Any = None
+    build_config: Any = None
+    created_on: Any = None
+    deployment_trigger: Any = None
+    env_vars: Any = None
+    environment: Any = None
+    id: Any = None
+    is_skipped: Any = None
+    latest_stage: Any = None
+    modified_on: Any = None
+    project_id: Any = None
+    project_name: Any = None
+    short_id: Any = None
+    skip_reason: Any = None
+    source: Any = None
+    stages: Any = None
+    url: Any = None
+    uses_functions: Any = None
+
+@dataclasses.dataclass
+class Project_Result:
+    # Configs for the project build process.
+    build_config: Any = None
+    canonical_deployment: Any = None
+    # When the project was created.
+    created_on: Any = None
+    # Configs for deployments in a project.
+    deployment_configs: Any = None
+    # A list of associated custom domains for the project.
+    domains: Any = None
+    # Framework the project is using.
+    framework: Any = None
+    # Version of the framework the project is using.
+    framework_version: Any = None
+    # ID of the project.
+    id: Any = None
+    latest_deployment: Any = None
+    # Name of the project.
+    name: Any = None
+    # Name of the preview script.
+    preview_script_name: Any = None
+    # Production branch of the project. Used to identify production deployments.
+    production_branch: Any = None
+    # Name of the production script.
+    production_script_name: Any = None
+    # Configs for the project source control.
+    source: Any = None
+    # The Cloudflare subdomain associated with the project.
+    subdomain: Any = None
+    # Whether the project uses functions.
+    uses_functions: Any = None
 
 _Project_BuildConfigFields = {
     "build_caching": ubx.FieldSpec(wire_name="build_caching"),
@@ -295,7 +365,7 @@ _Project_DeploymentConfigsFields = {
     ),
 }
 
-_Project_Source_ConfigFields = {
+_Project_Result_CanonicalDeployment_Source_ConfigFields = {
     "deployments_enabled": ubx.FieldSpec(wire_name="deployments_enabled"),
     "owner": ubx.FieldSpec(wire_name="owner"),
     "owner_id": ubx.FieldSpec(wire_name="owner_id"),
@@ -311,11 +381,11 @@ _Project_Source_ConfigFields = {
     "repo_name": ubx.FieldSpec(wire_name="repo_name"),
 }
 
-_Project_SourceFields = {
+_Project_Result_CanonicalDeployment_SourceFields = {
     "config": ubx.FieldSpec(
         wire_name="config",
         kind="object",
-        fields=_Project_Source_ConfigFields,
+        fields=_Project_Result_CanonicalDeployment_Source_ConfigFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
@@ -343,12 +413,17 @@ class ProjectAttrs:
     build_config: Any = None
     # Configs for deployments in a project.
     deployment_configs: Any = None
+    errors: Any = None
+    messages: Any = None
     # Name of the project.
     name: Any = None
     # Production branch of the project. Used to identify production deployments.
     production_branch: Any = None
+    result: Any = None
     # Configs for the project source control.
     source: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation
@@ -372,7 +447,7 @@ Project = ubx.ResourceBinding(
         "source": ubx.FieldSpec(
             wire_name="source",
             kind="object",
-            fields=_Project_SourceFields,
+            fields=_Project_Result_CanonicalDeployment_SourceFields,
         ),
         "account_id": ubx.FieldSpec(wire_name="account_id"),
         "project_name": ubx.FieldSpec(wire_name="project_name"),

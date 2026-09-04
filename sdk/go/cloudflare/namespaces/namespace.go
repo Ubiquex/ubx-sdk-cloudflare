@@ -8,10 +8,10 @@ type Namespace_Errors_Source struct {
 }
 
 type Namespace_Errors struct {
-	Code any
+	Code             any
 	DocumentationUrl any
-	Message any
-	Source any
+	Message          any
+	Source           any
 }
 
 type Namespace_Result struct {
@@ -40,7 +40,7 @@ type NamespaceAttrs struct {
 	// Informational, non-error messages, if any.
 	Messages any
 	// Namespace name.
-	Name any
+	Name   any
 	Result any
 	// Always true for a successful response.
 	Success any
@@ -53,8 +53,8 @@ type NamespaceAttrs struct {
 var Namespace = ubx.ResourceBinding{
 	WireType: "cloudflare_namespace",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
 	},
 }

@@ -7,12 +7,133 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZarazConfigResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Analytics:
+    default_purpose: Any = None
+    enabled: Any = None
+    session_exp_time: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Consent_ButtonTextTranslations:
+    accept_all: Any = None
+    confirm_my_choices: Any = None
+    reject_all: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Consent_Purposes:
+    description: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Consent_PurposesWithTranslations:
+    description: Any = None
+    name: Any = None
+    order: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Consent:
+    button_text_translations: Any = None
+    company_email: Any = None
+    company_name: Any = None
+    company_street_address: Any = None
+    consent_modal_intro_html: Any = None
+    consent_modal_intro_htmlwith_translations: Any = None
+    cookie_name: Any = None
+    custom_css: Any = None
+    custom_intro_disclaimer_dismissed: Any = None
+    default_language: Any = None
+    enabled: Any = None
+    hide_modal: Any = None
+    purposes: Any = None
+    purposes_with_translations: Any = None
+    tcf_compliant: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Settings_ContextEnricher:
+    escaped_worker_name: Any = None
+    worker_tag: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Settings:
+    auto_inject_script: Any = None
+    context_enricher: Any = None
+    cookie_domain: Any = None
+    ecommerce: Any = None
+    events_api_path: Any = None
+    hide_external_referer: Any = None
+    hide_ipaddress: Any = None
+    hide_query_params: Any = None
+    hide_user_agent: Any = None
+    init_path: Any = None
+    inject_iframes: Any = None
+    mc_root_path: Any = None
+    script_path: Any = None
+    track_path: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Triggers_ExcludeRules_Settings:
+    selector: Any = None
+    type: Any = None
+    wait_for_tags: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Triggers_ExcludeRules:
+    action: Any = None
+    id: Any = None
+    match: Any = None
+    op: Any = None
+    settings: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Triggers:
+    description: Any = None
+    exclude_rules: Any = None
+    load_rules: Any = None
+    name: Any = None
+    system: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result_Variables:
+    name: Any = None
+    type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class ZarazConfigResponse_Result:
+    analytics: Any = None
+    consent: Any = None
+    data_layer: Any = None
+    debug_key: Any = None
+    history_change: Any = None
+    settings: Any = None
+    tools: Any = None
+    triggers: Any = None
+    variables: Any = None
+    zaraz_version: Any = None
+
+@dataclasses.dataclass
 class ZarazConfigResponseConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class ZarazConfigResponseAttrs:
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

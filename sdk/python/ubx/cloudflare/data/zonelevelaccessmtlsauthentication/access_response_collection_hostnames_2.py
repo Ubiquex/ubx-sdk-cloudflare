@@ -7,12 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessResponseCollectionHostnames2_Result:
+    china_network: Any = None
+    client_certificate_forwarding: Any = None
+    hostname: Any = None
+
+@dataclasses.dataclass
 class AccessResponseCollectionHostnames2Config:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class AccessResponseCollectionHostnames2Attrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

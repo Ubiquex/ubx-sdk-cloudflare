@@ -3,6 +3,14 @@ package workerskvnamespace
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Metadata_Errors struct {
+	Code    any
+	Message any
+}
+
+type Metadata_Result struct {
+}
+
 type MetadataConfig struct {
 	// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
 	KeyName any
@@ -11,10 +19,15 @@ type MetadataConfig struct {
 type MetadataAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
 	// A key's name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid. Use percent-encoding to define key names as part of a URL.
-	KeyName any
+	KeyName  any
+	Messages any
 	// Namespace identifier tag.
 	NamespaceId any
+	Result      any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Metadata = ubx.DataSourceBinding{

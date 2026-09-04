@@ -3,6 +3,18 @@ package accesstags
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse14_Result_CreatedAt struct {
+}
+
+type AccessSingleResponse14_Result struct {
+	// The number of applications that have this tag
+	AppCount  any
+	CreatedAt any
+	// The name of the tag
+	Name      any
+	UpdatedAt any
+}
+
 type AccessSingleResponse14Config struct {
 	// The name of the tag
 	Name any
@@ -15,6 +27,8 @@ type AccessSingleResponse14Config struct {
 type AccessSingleResponse14Attrs struct {
 	// The name of the tag
 	Name any
+	// A tag
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +38,8 @@ type AccessSingleResponse14Attrs struct {
 var AccessSingleResponse14 = ubx.ResourceBinding{
 	WireType: "cloudflare_access_single_response_14",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"TagName": ubx.FieldSpec{WireName: "tag_name"},
+		"TagName":   ubx.FieldSpec{WireName: "tag_name"},
 	},
 }

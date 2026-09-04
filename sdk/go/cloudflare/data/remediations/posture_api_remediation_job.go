@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PostureApiRemediationJob_Result_Asset_Category struct {
 	Service any
-	Type any
-	Vendor any
+	Type    any
+	Vendor  any
 }
 
 type PostureApiRemediationJob_Result_Asset_Fields struct {
-	Link any
-	Name any
+	Link  any
+	Name  any
 	Value any
 }
 
 type PostureApiRemediationJob_Result_Asset struct {
-	Category any
+	Category   any
 	ExternalId any
-	Fields any
-	Id any
-	Link any
-	Name any
+	Fields     any
+	Id         any
+	Link       any
+	Name       any
 }
 
 type PostureApiRemediationJob_Result struct {
-	Asset any
-	CreatedAt any
-	FindingId any
+	Asset             any
+	CreatedAt         any
+	FindingId         any
 	FindingInstanceId any
-	FindingTypeId any
-	FindingTypeName any
-	Id any
-	IntegrationName any
-	LastUpdated any
-	RemediationType any
-	Status any
-	TriggeredByActor any
-	TriggeredById any
-	TriggeredByUser any
+	FindingTypeId     any
+	FindingTypeName   any
+	Id                any
+	IntegrationName   any
+	LastUpdated       any
+	RemediationType   any
+	Status            any
+	TriggeredByActor  any
+	TriggeredById     any
+	TriggeredByUser   any
 }
 
 type PostureApiRemediationJob_ResultInfo struct {
@@ -55,60 +55,60 @@ type PostureApiRemediationJob_ResultInfo struct {
 }
 
 type PostureApiRemediationJobConfig struct {
-	AccountId any
-	Cursor any
-	Direction any
+	AccountId     any
+	Cursor        any
+	Direction     any
 	IntegrationId any
-	MaxUpdatedAt any
-	MinUpdatedAt any
-	Order any
-	Page any
-	PerPage any
-	Search any
+	MaxUpdatedAt  any
+	MinUpdatedAt  any
+	Order         any
+	Page          any
+	PerPage       any
+	Search        any
 	// Status of a remediation job.
-	Status any
+	Status           any
 	TriggeredByActor any
 }
 
 type PostureApiRemediationJobAttrs struct {
 	AccountId any
-	Cursor any
+	Cursor    any
 	Direction any
 	// Array of error messages.
-	Errors any
+	Errors        any
 	IntegrationId any
-	MaxUpdatedAt any
+	MaxUpdatedAt  any
 	// Array of informational messages.
-	Messages any
+	Messages     any
 	MinUpdatedAt any
-	Order any
-	Page any
-	PerPage any
+	Order        any
+	Page         any
+	PerPage      any
 	// Array of remediation job objects.
-	Result any
+	Result     any
 	ResultInfo any
-	Search any
+	Search     any
 	// Status of a remediation job.
 	Status any
 	// Whether the API call was successful.
-	Success any
+	Success          any
 	TriggeredByActor any
 }
 
 var PostureApiRemediationJob = ubx.DataSourceBinding{
 	WireType: "cloudflare_posture_api_remediation_job",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"MaxUpdatedAt": ubx.FieldSpec{WireName: "max_updated_at"},
-		"MinUpdatedAt": ubx.FieldSpec{WireName: "min_updated_at"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"AccountId":        ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":           ubx.FieldSpec{WireName: "cursor"},
+		"Direction":        ubx.FieldSpec{WireName: "direction"},
+		"IntegrationId":    ubx.FieldSpec{WireName: "integration_id"},
+		"MaxUpdatedAt":     ubx.FieldSpec{WireName: "max_updated_at"},
+		"MinUpdatedAt":     ubx.FieldSpec{WireName: "min_updated_at"},
+		"Order":            ubx.FieldSpec{WireName: "order"},
+		"Page":             ubx.FieldSpec{WireName: "page"},
+		"PerPage":          ubx.FieldSpec{WireName: "per_page"},
+		"Search":           ubx.FieldSpec{WireName: "search"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 		"TriggeredByActor": ubx.FieldSpec{WireName: "triggered_by_actor"},
 	},
 }

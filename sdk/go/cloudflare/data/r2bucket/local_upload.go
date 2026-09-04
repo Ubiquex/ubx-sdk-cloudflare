@@ -3,6 +3,16 @@ package r2bucket
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LocalUpload_Errors struct {
+	Code    any
+	Message any
+}
+
+type LocalUpload_Result struct {
+	// Whether local uploads is enabled for this bucket. When enabled, object's data is written to the nearest region first, then asynchronously replicated to the bucket's primary region.
+	Enabled any
+}
+
 type LocalUploadConfig struct {
 	// Account ID.
 	AccountId any
@@ -15,12 +25,18 @@ type LocalUploadAttrs struct {
 	AccountId any
 	// Name of the bucket.
 	BucketName any
+	Errors     any
+	Messages   any
+	// Configuration for local uploads on a bucket.
+	Result any
+	// Whether the API call was successful.
+	Success any
 }
 
 var LocalUpload = ubx.DataSourceBinding{
 	WireType: "cloudflare_local_upload",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 	},
 }

@@ -7,11 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsSingleResponseIncoming_Result:
+    # How often should a secondary zone auto refresh regardless of DNS NOTIFY. Not applicable for primary zones.
+    auto_refresh_seconds: Any = None
+    # The time for a specific event.
+    checked_time: Any = None
+    # The time for a specific event.
+    created_time: Any = None
+    id: Any = None
+    # The time for a specific event.
+    modified_time: Any = None
+    # Zone name.
+    name: Any = None
+    # A list of peer tags.
+    peers: Any = None
+    # The serial number of the SOA for the given zone.
+    soa_serial: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsSingleResponseIncomingConfig:
     pass
 
 @dataclasses.dataclass
 class SecondaryDnsSingleResponseIncomingAttrs:
+    result: Any = None
     zone_id: Any = None
 
 SecondaryDnsSingleResponseIncoming = ubx.DataSourceBinding(

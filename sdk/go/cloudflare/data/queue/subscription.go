@@ -3,28 +3,76 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Subscription_Errors struct {
+	Code    any
+	Message any
+}
+
+type Subscription_Result_Destination struct {
+	QueueId any
+	Type    any
+}
+
+type Subscription_Result_Source struct {
+	ModelName    any
+	ScriptTag    any
+	Type         any
+	WorkerName   any
+	WorkflowName any
+}
+
+type Subscription_Result struct {
+	CreatedAt   any
+	Destination any
+	Enabled     any
+	Events      any
+	Id          any
+	ModifiedAt  any
+	Name        any
+	Source      any
+}
+
+type Subscription_ResultInfo struct {
+	// Number of items in current page
+	Count any
+	// Current page number
+	Page any
+	// Items per page
+	PerPage any
+	// Total number of items
+	TotalCount any
+	// Total number of pages
+	TotalPages any
+}
+
 type SubscriptionConfig struct {
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type SubscriptionAttrs struct {
 	// A Resource identifier.
-	AccountId any
-	Direction any
-	Order any
-	Page any
-	PerPage any
+	AccountId  any
+	Direction  any
+	Errors     any
+	Messages   any
+	Order      any
+	Page       any
+	PerPage    any
+	Result     any
+	ResultInfo any
+	// Indicates if the API call was successful or not.
+	Success any
 }
 
 var Subscription = ubx.DataSourceBinding{
 	WireType: "cloudflare_subscription",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

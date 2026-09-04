@@ -3,6 +3,25 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitSourceListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesSourcingkitSourceListResponse_Result_Sources struct {
+	Bucket    any
+	CreatedAt any
+	Id        any
+	Name      any
+	Region    any
+	UpdatedAt any
+	Vendor    any
+}
+
+type ImagesSourcingkitSourceListResponse_Result struct {
+	Sources any
+}
+
 type ImagesSourcingkitSourceListResponseConfig struct {
 	// Maximum number of items to return.
 	Limit any
@@ -15,19 +34,24 @@ type ImagesSourcingkitSourceListResponseConfig struct {
 type ImagesSourcingkitSourceListResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
 	// Maximum number of items to return.
-	Limit any
+	Limit    any
+	Messages any
 	// Filter sources by name (partial match).
 	Name any
 	// Number of items to skip before returning results.
 	Offset any
+	Result any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesSourcingkitSourceListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_sourcingkit_source_list_response",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},
 }

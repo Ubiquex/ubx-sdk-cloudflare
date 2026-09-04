@@ -4,13 +4,13 @@ package workersaifinetune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Public_Result struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Id any
-	Model any
-	ModifiedAt any
-	Name any
-	Public any
+	Id          any
+	Model       any
+	ModifiedAt  any
+	Name        any
+	Public      any
 }
 
 type PublicConfig struct {
@@ -31,7 +31,7 @@ type PublicAttrs struct {
 	Offset any
 	// Order By Column Name.
 	OrderBy any
-	Result any
+	Result  any
 	Success any
 }
 
@@ -39,8 +39,8 @@ var Public = ubx.DataSourceBinding{
 	WireType: "cloudflare_public",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
+		"Offset":    ubx.FieldSpec{WireName: "offset"},
+		"OrderBy":   ubx.FieldSpec{WireName: "order_by"},
 	},
 }

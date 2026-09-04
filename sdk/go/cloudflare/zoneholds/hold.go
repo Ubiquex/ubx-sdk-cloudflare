@@ -26,7 +26,7 @@ type HoldAttrs struct {
 var Hold = ubx.ResourceBinding{
 	WireType: "cloudflare_hold",
 	Fields: ubx.FieldMap{
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":   ubx.FieldSpec{WireName: "zone_id"},
 		"ZoneName": ubx.FieldSpec{WireName: "zone_name"},
 	},
 }

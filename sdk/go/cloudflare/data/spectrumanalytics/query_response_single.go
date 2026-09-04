@@ -3,11 +3,45 @@ package spectrumanalytics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type QueryResponseSingle_Since struct {
+type QueryResponseSingle_Result_Data struct {
+	Dimensions any
+	Metrics    any
 }
 
-var QueryResponseSingle_SinceFields = ubx.FieldMap{
-	}
+type QueryResponseSingle_Result_Max struct {
+}
+
+type QueryResponseSingle_Result_Query struct {
+	// Can be used to break down the data by given attributes. Options are: Dimension | Name | Example --------------------------|---------------------------------|-------------------------- event | Connection Event | connect, progress, disconnect, originError, clientFiltered appID | Application ID | 40d67c87c6cd4b889a4fd57805225e85 coloName | Colo Name | SFO ipVersion | IP version used by the client | 4, 6.
+	Dimensions any
+	// Used to filter rows by one or more dimensions. Filters can be combined using OR and AND boolean logic. AND takes precedence over OR in all the expressions. The OR operator is defined using a comma (,) or OR keyword surrounded by whitespace. The AND operator is defined using a semicolon (;) or AND keyword surrounded by whitespace. Note that the semicolon is a reserved character in URLs (rfc1738) and needs to be percent-encoded as %3B. Comparison options are: Operator | Name | URL Encoded --------------------------|---------------------------------|-------------------------- == | Equals | %3D%3D != | Does not equals | !%3D \> | Greater Than | %3E \< | Less Than | %3C \>= | Greater than or equal to | %3E%3D \<= | Less than or equal to | %3C%3D Use the above to construct filters.
+	Filters any
+	// Limit number of returned metrics.
+	Limit any
+	// One or more metrics to compute. Options are: Metric | Name | Example | Unit --------------------------|-------------------------------------|--------------------------|-------------------------- count | Count of total events | 1000 | Count bytesIngress | Sum of ingress bytes | 1000 | Sum bytesEgress | Sum of egress bytes | 1000 | Sum durationAvg | Average connection duration | 1.0 | Time in milliseconds durationMedian | Median connection duration | 1.0 | Time in milliseconds duration90th | 90th percentile connection duration | 1.0 | Time in milliseconds duration99th | 99th percentile connection duration | 1.0 | Time in milliseconds.
+	Metrics any
+	Since   any
+	// The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
+	Sort  any
+	Until any
+}
+
+type QueryResponseSingle_Result struct {
+	// List of columns returned by the analytics query.
+	Data any
+	// Number of seconds between current time and last processed event, i.e. how many seconds of data could be missing.
+	DataLag any
+	Max     any
+	Min     any
+	Query   any
+	// Total number of rows in the result.
+	Rows any
+	// List of time interval buckets: [start, end].
+	TimeIntervals any
+	Totals        any
+}
+
+var QueryResponseSingle_Result_MaxFields = ubx.FieldMap{}
 
 type QueryResponseSingleConfig struct {
 	// Can be used to break down the data by given attributes. Options are: Dimension | Name | Example --------------------------|---------------------------------|-------------------------- event | Connection Event | connect, progress, disconnect, originError, clientFiltered appID | Application ID | 40d67c87c6cd4b889a4fd57805225e85 coloName | Colo Name | SFO ipVersion | IP version used by the client | 4, 6.
@@ -16,12 +50,12 @@ type QueryResponseSingleConfig struct {
 	Filters any
 	// One or more metrics to compute. Options are: Metric | Name | Example | Unit --------------------------|-------------------------------------|--------------------------|-------------------------- count | Count of total events | 1000 | Count bytesIngress | Sum of ingress bytes | 1000 | Sum bytesEgress | Sum of egress bytes | 1000 | Sum durationAvg | Average connection duration | 1.0 | Time in milliseconds durationMedian | Median connection duration | 1.0 | Time in milliseconds duration90th | 90th percentile connection duration | 1.0 | Time in milliseconds duration99th | 99th percentile connection duration | 1.0 | Time in milliseconds.
 	Metrics any
-	Since any
+	Since   any
 	// The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
 	Sort any
 	// Used to select time series resolution.
 	TimeDelta any
-	Until any
+	Until     any
 	// Identifier.
 	ZoneId any
 }
@@ -33,12 +67,13 @@ type QueryResponseSingleAttrs struct {
 	Filters any
 	// One or more metrics to compute. Options are: Metric | Name | Example | Unit --------------------------|-------------------------------------|--------------------------|-------------------------- count | Count of total events | 1000 | Count bytesIngress | Sum of ingress bytes | 1000 | Sum bytesEgress | Sum of egress bytes | 1000 | Sum durationAvg | Average connection duration | 1.0 | Time in milliseconds durationMedian | Median connection duration | 1.0 | Time in milliseconds duration90th | 90th percentile connection duration | 1.0 | Time in milliseconds duration99th | 99th percentile connection duration | 1.0 | Time in milliseconds.
 	Metrics any
-	Since any
+	Result  any
+	Since   any
 	// The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
 	Sort any
 	// Used to select time series resolution.
 	TimeDelta any
-	Until any
+	Until     any
 	// Identifier.
 	ZoneId any
 }
@@ -47,19 +82,19 @@ var QueryResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_spectrum_analytics_query_response_single",
 	Fields: ubx.FieldMap{
 		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"Filters": ubx.FieldSpec{WireName: "filters"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
+		"Filters":    ubx.FieldSpec{WireName: "filters"},
+		"Metrics":    ubx.FieldSpec{WireName: "metrics"},
 		"Since": ubx.FieldSpec{
 			WireName: "since",
-			Kind: "object",
-			Fields: QueryResponseSingle_SinceFields,
+			Kind:     "object",
+			Fields:   QueryResponseSingle_Result_MaxFields,
 		},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":      ubx.FieldSpec{WireName: "sort"},
 		"TimeDelta": ubx.FieldSpec{WireName: "time_delta"},
 		"Until": ubx.FieldSpec{
 			WireName: "until",
-			Kind: "object",
-			Fields: QueryResponseSingle_SinceFields,
+			Kind:     "object",
+			Fields:   QueryResponseSingle_Result_MaxFields,
 		},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
 	},

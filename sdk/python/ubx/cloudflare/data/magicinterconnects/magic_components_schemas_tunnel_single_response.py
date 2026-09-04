@@ -7,6 +7,75 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_Bgp:
+    # Deprecated. Use customer_asn.
+    as_no: Any = None
+    # Read-only for v1.5; derived from interface_address.
+    cloudflare_endpoint: Any = None
+    # ASN used on the customer end of the BGP session.
+    customer_asn: Any = None
+    # Read-only for v1.5; derived from interface_address.
+    customer_endpoint: Any = None
+    # ID of the BGP filter profile applied to routes advertised to the customer.
+    export_filter_id: Any = None
+    # Prefixes in this list will be advertised to the customer device, in addition to the routes in the Magic routing table.
+    extra_prefixes: Any = None
+    # ID of the BGP filter profile applied to routes received from the customer.
+    import_filter_id: Any = None
+    # MD5 key to use for session authentication. Note that *this is not a security measure*. MD5 is not a valid security mechanism, and the key is not treated as a secret value. This is *only* supported for preventing misconfiguration, not for defending against malicious attacks. The MD5 key, if set, must be of non-zero length and consist only of the following types of character: * ASCII alphanumerics: `[a-zA-Z0-9]` * Special characters in the set `'!@#$%^&*()+[]{}<>/.,;:_-~`= \|` In other words, MD5 keys may contain any printable ASCII character aside from newline (0x0A), quotation mark (`"`), vertical tab (0x0B), carriage return (0x0D), tab (0x09), form feed (0x0C), and the question mark (`?`). Requests specifying an MD5 key with one or more of these disallowed characters will be rejected.
+    md5_key: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_Gre:
+    cloudflare_endpoint: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_HealthCheck:
+    direction: Any = None
+    enabled: Any = None
+    rate: Any = None
+    source: Any = None
+    target: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect_VirtualPortReservationId:
+    pass
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result_Interconnect:
+    # True if automatic stateful return routing should be enabled for a tunnel, false otherwise. Requires the `coupler_integration` account flag to be enabled; requests setting this to `true` without that flag will be rejected.
+    automatic_return_routing: Any = None
+    bgp: Any = None
+    # The name of the interconnect. The name cannot share a name with other tunnels.
+    colo_name: Any = None
+    # The date and time the tunnel was created.
+    created_on: Any = None
+    # An optional description of the interconnect.
+    description: Any = None
+    gre: Any = None
+    health_check: Any = None
+    # Identifier
+    id: Any = None
+    # The IPv4 interface address for the interconnect. For MPLS Interconnects, use a /30 or /31 prefix. For GRE Interconnects, a /30 or /31 prefix may be used. Version 1.5 interconnects require a /31 prefix and may also use a prefix from the account's authorized prefixes; otherwise, select the subnet from RFC 1918 or the approved link-local ranges.
+    interface_address: Any = None
+    # A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127
+    interface_address6: Any = None
+    # The date and time the tunnel was last modified.
+    modified_on: Any = None
+    # The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.
+    mtu: Any = None
+    # The name of the interconnect. The name cannot share a name with other tunnels.
+    name: Any = None
+    # Immutable interconnect version configured at creation time. One of: - "1" - "1.5" - "2"
+    version: Any = None
+    virtual_port_reservation_id: Any = None
+
+@dataclasses.dataclass
+class MagicComponentsSchemasTunnelSingleResponse_Result:
+    interconnect: Any = None
+
+@dataclasses.dataclass
 class MagicComponentsSchemasTunnelSingleResponseConfig:
     pass
 
@@ -16,6 +85,7 @@ class MagicComponentsSchemasTunnelSingleResponseAttrs:
     account_id: Any = None
     # Identifier
     cf_interconnect_id: Any = None
+    result: Any = None
 
 MagicComponentsSchemasTunnelSingleResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_components_schemas_tunnel_single_response",

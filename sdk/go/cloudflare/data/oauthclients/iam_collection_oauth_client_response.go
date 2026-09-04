@@ -6,8 +6,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamCollectionOauthClientResponse_AccountId struct {
 }
 
-var IamCollectionOauthClientResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamCollectionOauthClientResponse_Result_ClientUriVerification struct {
+	Status any
+	Text   any
+}
+
+type IamCollectionOauthClientResponse_Result struct {
+	AllowedCorsOrigins      any
+	ClientId                any
+	ClientName              any
+	ClientUri               any
+	ClientUriVerification   any
+	CreatedAt               any
+	GrantTypes              any
+	HasRotatedSecret        any
+	LogoUri                 any
+	OptionalScopes          any
+	PolicyUri               any
+	PostLogoutRedirectUris  any
+	PromotedAt              any
+	RedirectUris            any
+	ResponseTypes           any
+	Scopes                  any
+	TokenEndpointAuthMethod any
+	TosUri                  any
+	UpdatedAt               any
+	Visibility              any
+}
+
+var IamCollectionOauthClientResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamCollectionOauthClientResponseConfig struct {
 	// Account identifier tag.
@@ -17,6 +44,7 @@ type IamCollectionOauthClientResponseConfig struct {
 type IamCollectionOauthClientResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var IamCollectionOauthClientResponse = ubx.DataSourceBinding{
@@ -24,8 +52,8 @@ var IamCollectionOauthClientResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamCollectionOauthClientResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamCollectionOauthClientResponse_AccountIdFields,
 		},
 	},
 }

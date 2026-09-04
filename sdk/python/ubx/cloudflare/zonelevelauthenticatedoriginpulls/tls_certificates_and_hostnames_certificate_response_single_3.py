@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TlsCertificatesAndHostnamesCertificateResponseSingle3_Result:
+    # The zone's leaf certificate.
+    certificate: Any = None
+    # Indicates whether zone-level authenticated origin pulls is enabled.
+    enabled: Any = None
+    # Identifier.
+    id: Any = None
+    # The zone's private key.
+    private_key: Any = None
+
+@dataclasses.dataclass
 class TlsCertificatesAndHostnamesCertificateResponseSingle3Config:
     # The zone's leaf certificate.
     certificate: Any = None
@@ -23,6 +34,7 @@ class TlsCertificatesAndHostnamesCertificateResponseSingle3Attrs:
     certificate: Any = None
     # The zone's private key.
     private_key: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

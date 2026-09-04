@@ -7,6 +7,106 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_ManagedBy:
+    client_type: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_MonthlyCostEstimate:
+    currency: Any = None
+    monthly_cost: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Observations:
+    first_observed_at: Any = None
+    last_observed_at: Any = None
+    provider_id: Any = None
+    resource_id: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_List_ResourcePreview:
+    cloud_type: Any = None
+    detail: Any = None
+    id: Any = None
+    name: Any = None
+    resource_type: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_List:
+    item_type: Any = None
+    resource_preview: Any = None
+    string: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value_YamlDiff:
+    diff: Any = None
+    left_description: Any = None
+    left_yaml: Any = None
+    right_description: Any = None
+    right_yaml: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections_HiddenItems_Value:
+    item_type: Any = None
+    list: Any = None
+    resource_preview: Any = None
+    string: Any = None
+    yaml: Any = None
+    yaml_diff: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections_HiddenItems:
+    help_text: Any = None
+    name: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result_Sections:
+    help_text: Any = None
+    hidden_items: Any = None
+    name: Any = None
+    visible_items: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_Result:
+    account_id: Any = None
+    cloud_type: Any = None
+    config: Any = None
+    deployment_provider: Any = None
+    id: Any = None
+    managed: Any = None
+    managed_by: Any = None
+    monthly_cost_estimate: Any = None
+    name: Any = None
+    native_id: Any = None
+    observations: Any = None
+    provider_ids: Any = None
+    provider_names_by_id: Any = None
+    region: Any = None
+    resource_group: Any = None
+    resource_type: Any = None
+    sections: Any = None
+    state: Any = None
+    tags: Any = None
+    updated_at: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountResourcesResponse_ResultInfo:
+    # The number of items in the current result set.
+    count: Any = None
+    # The current page (starts from zero).
+    page: Any = None
+    # The maximum number of items per page.
+    per_page: Any = None
+    # The total number of items in the entire result set.
+    total_count: Any = None
+    # The number of total pages in the entire result set.
+    total_pages: Any = None
+
+@dataclasses.dataclass
 class McnReadAccountResourcesResponseConfig:
     account_id: Any = None
     cloudflare: Any = None
@@ -37,6 +137,8 @@ class McnReadAccountResourcesResponseAttrs:
     resource_group: Any = None
     resource_id: Any = None
     resource_type: Any = None
+    result: Any = None
+    result_info: Any = None
     search: Any = None
     v2: Any = None
 

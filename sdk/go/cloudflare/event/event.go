@@ -4,33 +4,33 @@ package event
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Event_Raw struct {
-	Data any
+	Data   any
 	Source any
-	Tlp any
+	Tlp    any
 }
 
 var Event_RawFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Tlp": ubx.FieldSpec{WireName: "tlp"},
-	}
+	"Data":   ubx.FieldSpec{WireName: "data"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Tlp":    ubx.FieldSpec{WireName: "tlp"},
+}
 
 type EventConfig struct {
-	Attacker any
+	Attacker        any
 	AttackerCountry any
-	Category any
-	CreatedAt any
+	Category        any
+	CreatedAt       any
 	// Dataset ID containing the event to update.
-	DatasetId any
-	Date any
-	Event any
-	Indicator any
-	IndicatorType any
-	Insight any
-	Raw any
-	TargetCountry any
+	DatasetId      any
+	Date           any
+	Event          any
+	Indicator      any
+	IndicatorType  any
+	Insight        any
+	Raw            any
+	TargetCountry  any
 	TargetIndustry any
-	Tlp any
+	Tlp            any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -38,38 +38,38 @@ type EventConfig struct {
 }
 
 type EventAttrs struct {
-	Attacker any
-	AttackerCountry any
+	Attacker              any
+	AttackerCountry       any
 	AttackerCountryAlpha3 any
-	Category any
-	CreatedAt any
+	Category              any
+	CreatedAt             any
 	// Dataset ID containing the event to update.
-	DatasetId any
-	Date any
-	Event any
-	HasChildren any
-	Indicator any
-	IndicatorType any
-	IndicatorTypeId any
-	Insight any
-	KillChain any
-	MitreAttack any
-	MitreCapec any
-	NumReferenced any
-	NumReferences any
-	Raw any
-	RawId any
-	Referenced any
-	ReferencedIds any
-	References any
-	ReferencesIds any
-	ReleasabilityId any
-	Tags any
-	TargetCountry any
+	DatasetId           any
+	Date                any
+	Event               any
+	HasChildren         any
+	Indicator           any
+	IndicatorType       any
+	IndicatorTypeId     any
+	Insight             any
+	KillChain           any
+	MitreAttack         any
+	MitreCapec          any
+	NumReferenced       any
+	NumReferences       any
+	Raw                 any
+	RawId               any
+	Referenced          any
+	ReferencedIds       any
+	References          any
+	ReferencesIds       any
+	ReleasabilityId     any
+	Tags                any
+	TargetCountry       any
 	TargetCountryAlpha3 any
-	TargetIndustry any
-	Tlp any
-	Uuid any
+	TargetIndustry      any
+	Tlp                 any
+	Uuid                any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -79,25 +79,25 @@ type EventAttrs struct {
 var Event = ubx.ResourceBinding{
 	WireType: "cloudflare_event",
 	Fields: ubx.FieldMap{
-		"Attacker": ubx.FieldSpec{WireName: "attacker"},
+		"Attacker":        ubx.FieldSpec{WireName: "attacker"},
 		"AttackerCountry": ubx.FieldSpec{WireName: "attacker_country"},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Event": ubx.FieldSpec{WireName: "event"},
-		"Indicator": ubx.FieldSpec{WireName: "indicator"},
-		"IndicatorType": ubx.FieldSpec{WireName: "indicator_type"},
-		"Insight": ubx.FieldSpec{WireName: "insight"},
+		"Category":        ubx.FieldSpec{WireName: "category"},
+		"CreatedAt":       ubx.FieldSpec{WireName: "created_at"},
+		"DatasetId":       ubx.FieldSpec{WireName: "dataset_id"},
+		"Date":            ubx.FieldSpec{WireName: "date"},
+		"Event":           ubx.FieldSpec{WireName: "event"},
+		"Indicator":       ubx.FieldSpec{WireName: "indicator"},
+		"IndicatorType":   ubx.FieldSpec{WireName: "indicator_type"},
+		"Insight":         ubx.FieldSpec{WireName: "insight"},
 		"Raw": ubx.FieldSpec{
 			WireName: "raw",
-			Kind: "object",
-			Fields: Event_RawFields,
+			Kind:     "object",
+			Fields:   Event_RawFields,
 		},
-		"TargetCountry": ubx.FieldSpec{WireName: "target_country"},
+		"TargetCountry":  ubx.FieldSpec{WireName: "target_country"},
 		"TargetIndustry": ubx.FieldSpec{WireName: "target_industry"},
-		"Tlp": ubx.FieldSpec{WireName: "tlp"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
+		"Tlp":            ubx.FieldSpec{WireName: "tlp"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+		"EventId":        ubx.FieldSpec{WireName: "event_id"},
 	},
 }

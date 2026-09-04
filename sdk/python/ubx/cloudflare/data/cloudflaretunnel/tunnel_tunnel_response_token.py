@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelTunnelResponseToken_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class TunnelTunnelResponseTokenConfig:
     pass
 
@@ -14,6 +19,12 @@ class TunnelTunnelResponseTokenConfig:
 class TunnelTunnelResponseTokenAttrs:
     # Cloudflare account ID
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    # The Tunnel Token is used as a mechanism to authenticate the operation of a tunnel.
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
     # UUID of the tunnel.
     tunnel_id: Any = None
 

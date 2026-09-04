@@ -3,6 +3,27 @@ package zerotrustusers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessActiveSessionsResponse_Result_Metadata_Apps struct {
+	Hostname any
+	Name     any
+	Type     any
+	Uid      any
+}
+
+type AccessActiveSessionsResponse_Result_Metadata struct {
+	Apps    any
+	Expires any
+	Iat     any
+	Nonce   any
+	Ttl     any
+}
+
+type AccessActiveSessionsResponse_Result struct {
+	Expiration any
+	Metadata   any
+	Name       any
+}
+
 type AccessActiveSessionsResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,6 +34,7 @@ type AccessActiveSessionsResponseConfig struct {
 type AccessActiveSessionsResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 	// UUID.
 	UserId any
 }
@@ -21,6 +43,6 @@ var AccessActiveSessionsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_active_sessions_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 	},
 }

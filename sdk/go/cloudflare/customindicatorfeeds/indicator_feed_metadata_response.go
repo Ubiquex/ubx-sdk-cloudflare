@@ -3,6 +3,71 @@ package customindicatorfeeds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IndicatorFeedMetadataResponse_Result_LastUploadSummary_Persisted struct {
+	DomainsAdded   any
+	DomainsRemoved any
+	IpsAdded       any
+	IpsRemoved     any
+	UrlsAdded      any
+	UrlsRemoved    any
+}
+
+type IndicatorFeedMetadataResponse_Result_LastUploadSummary_Skipped struct {
+	// Domains filtered by the global popularity allowlist at QS provisioning time. Popular domains (bing.com, naver.com, etc.) are protected from custom-threat-feed enforcement.
+	AllowlistedDomains any
+	// Indicators in the upload whose valid_until is already in the past. These are not added to QS; the expiration cron handles cleanup.
+	ExpiredIndicators any
+	// Reserved for future use. Currently always 0 — the unifier aborts the entire upload on a single bad indicator.
+	InvalidIndicators any
+}
+
+type IndicatorFeedMetadataResponse_Result_LastUploadSummary_Uploaded struct {
+	// Number of domain indicators in the upload
+	Domains any
+	// Number of IP indicators in the upload
+	Ips any
+	// Number of URL indicators in the upload
+	Urls any
+}
+
+type IndicatorFeedMetadataResponse_Result_LastUploadSummary struct {
+	// Net delta applied to feed indicators by this upload. Snapshot uploads emit both *_added and *_removed; delta-add emits only *_added; delta-remove emits only *_removed.
+	Persisted any
+	// Counts of indicators that were uploaded but did not reach QuickSilver, broken down by reason.
+	Skipped any
+	// Indicator counts from the unified file the loader received
+	Uploaded any
+}
+
+type IndicatorFeedMetadataResponse_Result struct {
+	// The date and time when the data entry was created
+	CreatedOn any
+	// The description of the example test
+	Description any
+	// The unique identifier for the indicator feed
+	Id any
+	// Whether the indicator feed can be attributed to a provider
+	IsAttributable any
+	// Whether the indicator feed can be downloaded
+	IsDownloadable any
+	// Whether the indicator feed is exposed to customers
+	IsPublic any
+	// Summary of indicator counts from the last successful upload to this feed. Populated by the custom-threat-feeds loader at the end of each successful load. Absent (omitted) when no upload has completed successfully or the upload errored before the summary write. Surfaces silent-failure paths so operators can see when their indicators were dropped (popularity allowlist, expired valid_until, etc.) without reading loader logs.
+	LastUploadSummary any
+	// Human-readable error message describing why the latest upload failed. Populated only when `latest_upload_status` is `Error`. Returns one of a small fixed set of category-level messages (invalid domain / IP / URL entries, malformed row or header, invalid valid_until timestamp, etc.) or the generic `Upload failed` for unknown or infrastructure-level errors. Never echoes raw error text from the underlying loader. Intel accounts receive the verbatim loader/API error text (including specific offending values) instead of these category-level messages.
+	LatestUploadError any
+	// Status of the latest snapshot uploaded
+	LatestUploadStatus any
+	// The date and time when the data entry was last modified
+	ModifiedOn any
+	// The name of the indicator feed
+	Name any
+	// The unique identifier for the provider
+	ProviderId any
+	// The provider of the indicator feed
+	ProviderName any
+}
+
 type IndicatorFeedMetadataResponseConfig struct {
 	// The description of the example test
 	Description any
@@ -18,7 +83,8 @@ type IndicatorFeedMetadataResponseAttrs struct {
 	// The description of the example test
 	Description any
 	// The name of the indicator feed
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -29,8 +95,8 @@ var IndicatorFeedMetadataResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_custom_indicator_feeds_indicator_feed_metadata_response",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"FeedId": ubx.FieldSpec{WireName: "feed_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"FeedId":      ubx.FieldSpec{WireName: "feed_id"},
 	},
 }

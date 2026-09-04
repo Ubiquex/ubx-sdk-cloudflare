@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessCertificateSetListResponse_Result_CurrentCertificate:
+    is_current: Any = None
+    not_after: Any = None
+    public_certificate: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
+class AccessCertificateSetListResponse_Result:
+    created_at: Any = None
+    current_certificate: Any = None
+    previous_certificate: Any = None
+    uid: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class AccessCertificateSetListResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -21,6 +36,7 @@ class AccessCertificateSetListResponseAttrs:
     id: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 AccessCertificateSetListResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_access_certificate_set_list_response",

@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class EmailDestinationAddressResponseSingle_Result:
+    created: Any = None
+    email: Any = None
+    id: Any = None
+    modified: Any = None
+    tag: Any = None
+    verified: Any = None
+
+@dataclasses.dataclass
 class EmailDestinationAddressResponseSingleConfig:
     # The contact email address of the user.
     email: Any = None
@@ -19,6 +28,7 @@ class EmailDestinationAddressResponseSingleConfig:
 class EmailDestinationAddressResponseSingleAttrs:
     # The contact email address of the user.
     email: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

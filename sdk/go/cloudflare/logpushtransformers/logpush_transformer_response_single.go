@@ -3,6 +3,30 @@ package logpushtransformers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type LogpushTransformerResponseSingle_Result_AssociatedJobs struct {
+	Id         any
+	Name       any
+	ObjectTag  any
+	ObjectType any
+}
+
+type LogpushTransformerResponseSingle_Result struct {
+	// Logpush jobs that reference this transformer.
+	AssociatedJobs any
+	// When the transformer was created (RFC 3339).
+	CreatedAt any
+	// The dataset this transformer operates on, derived from the SQL query's FROM clause. Informational only. May be absent if the dataset cannot be determined from the query.
+	Dataset any
+	// Optional customer-provided description.
+	Description any
+	// The transformer ID.
+	Id any
+	// Customer-provided name for identification.
+	Name any
+	// When the transformer was last modified (RFC 3339).
+	UpdatedAt any
+}
+
 type LogpushTransformerResponseSingleConfig struct {
 	// The SQL transformer query. Maximum 32 KB. The query must contain a FROM clause referencing a valid logpush dataset.
 	Code any
@@ -22,7 +46,8 @@ type LogpushTransformerResponseSingleAttrs struct {
 	// Optional customer-provided description.
 	Description any
 	// Customer-provided name for identification.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -32,10 +57,10 @@ type LogpushTransformerResponseSingleAttrs struct {
 var LogpushTransformerResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_logpush_transformer_response_single",
 	Fields: ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Code":          ubx.FieldSpec{WireName: "code"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"TransformerId": ubx.FieldSpec{WireName: "transformer_id"},
 	},
 }

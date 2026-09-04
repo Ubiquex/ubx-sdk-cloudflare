@@ -10,6 +10,24 @@ import ubx_sdk as ubx
 class TagKeysResponseCollection_AccountId:
     pass
 
+@dataclasses.dataclass
+class TagKeysResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class TagKeysResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TagKeysResponseCollection_ResultInfo:
+    # Indicates the number of results returned in the current page.
+    count: Any = None
+    # Provides a cursor for the next page of results. Include this value in the next request to continue pagination.
+    cursor: Any = None
+
 _TagKeysResponseCollection_AccountIdFields = {
 }
 
@@ -22,6 +40,13 @@ class TagKeysResponseCollectionConfig:
 class TagKeysResponseCollectionAttrs:
     account_id: Any = None
     cursor: Any = None
+    errors: Any = None
+    messages: Any = None
+    # Contains an array of distinct tag keys.
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 TagKeysResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_resource_tagging_tag_keys_response_collection",

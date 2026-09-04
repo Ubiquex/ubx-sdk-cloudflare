@@ -3,14 +3,309 @@ package magicconnectors
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MconnCustomerSnapshotsLatestGetSuccess_Errors struct {
+	Code    any
+	Message any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Bonds struct {
+	Name   any
+	Status any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_DhcpLeases struct {
+	ClientId      any
+	ExpiryTime    any
+	Hostname      any
+	InterfaceName any
+	IpAddress     any
+	MacAddress    any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Disks struct {
+	Discards                 any
+	DiscardsMerged           any
+	Flushes                  any
+	InProgress               any
+	Major                    any
+	Merged                   any
+	Minor                    any
+	Name                     any
+	Reads                    any
+	SectorsDiscarded         any
+	SectorsRead              any
+	SectorsWritten           any
+	TimeDiscardingMs         any
+	TimeFlushingMs           any
+	TimeInProgressMs         any
+	TimeReadingMs            any
+	TimeWritingMs            any
+	WeightedTimeInProgressMs any
+	Writes                   any
+	WritesMerged             any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Interfaces_IpAddresses struct {
+	InterfaceName any
+	IpAddress     any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Interfaces struct {
+	IpAddresses any
+	Name        any
+	Operstate   any
+	Speed       any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Mounts struct {
+	AvailableBytes  any
+	AvailableInodes any
+	FileSystem      any
+	IsReadOnly      any
+	IsRemovable     any
+	Kind            any
+	MountPoint      any
+	Name            any
+	TotalBytes      any
+	TotalInodes     any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Netdevs struct {
+	Name           any
+	RecvBytes      any
+	RecvCompressed any
+	RecvDrop       any
+	RecvErrs       any
+	RecvFifo       any
+	RecvFrame      any
+	RecvMulticast  any
+	RecvPackets    any
+	SentBytes      any
+	SentCarrier    any
+	SentColls      any
+	SentCompressed any
+	SentDrop       any
+	SentErrs       any
+	SentFifo       any
+	SentPackets    any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Thermals struct {
+	CriticalCelcius any
+	CurrentCelcius  any
+	Label           any
+	MaxCelcius      any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items_Tunnels struct {
+	HealthState          any
+	HealthValue          any
+	InterfaceName        any
+	JitterMs             any
+	LatencyMs            any
+	NatdResult           any
+	NatdState            any
+	NatdTarget           any
+	ProbedMtu            any
+	RecentHealthyPings   any
+	RecentUnhealthyPings any
+	TunnelId             any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result_Items struct {
+	Bonds                          any
+	CountReclaimFailures           any
+	CountReclaimedPaths            any
+	CountRecordFailed              any
+	CountTransmitFailures          any
+	CpuCount                       any
+	CpuPressure10s                 any
+	CpuPressure300s                any
+	CpuPressure60s                 any
+	CpuPressureTotalUs             any
+	CpuTimeGuestMs                 any
+	CpuTimeGuestNiceMs             any
+	CpuTimeIdleMs                  any
+	CpuTimeIowaitMs                any
+	CpuTimeIrqMs                   any
+	CpuTimeNiceMs                  any
+	CpuTimeSoftirqMs               any
+	CpuTimeStealMs                 any
+	CpuTimeSystemMs                any
+	CpuTimeUserMs                  any
+	Delta                          any
+	DhcpLeases                     any
+	Disks                          any
+	Epsilon                        any
+	HaState                        any
+	HaValue                        any
+	Interfaces                     any
+	IoPressureFull10s              any
+	IoPressureFull300s             any
+	IoPressureFull60s              any
+	IoPressureFullTotalUs          any
+	IoPressureSome10s              any
+	IoPressureSome300s             any
+	IoPressureSome60s              any
+	IoPressureSomeTotalUs          any
+	KernelBtime                    any
+	KernelCtxt                     any
+	KernelProcesses                any
+	KernelProcessesBlocked         any
+	KernelProcessesRunning         any
+	LoadAverage15m                 any
+	LoadAverage1m                  any
+	LoadAverage5m                  any
+	LoadAverageCur                 any
+	LoadAverageMax                 any
+	MemoryActiveBytes              any
+	MemoryAnonHugepagesBytes       any
+	MemoryAnonPagesBytes           any
+	MemoryAvailableBytes           any
+	MemoryBounceBytes              any
+	MemoryBuffersBytes             any
+	MemoryCachedBytes              any
+	MemoryCmaFreeBytes             any
+	MemoryCmaTotalBytes            any
+	MemoryCommitLimitBytes         any
+	MemoryCommittedAsBytes         any
+	MemoryDirtyBytes               any
+	MemoryFreeBytes                any
+	MemoryHighFreeBytes            any
+	MemoryHighTotalBytes           any
+	MemoryHugepagesFree            any
+	MemoryHugepagesRsvd            any
+	MemoryHugepagesSurp            any
+	MemoryHugepagesTotal           any
+	MemoryHugepagesizeBytes        any
+	MemoryInactiveBytes            any
+	MemoryKReclaimableBytes        any
+	MemoryKernelStackBytes         any
+	MemoryLowFreeBytes             any
+	MemoryLowTotalBytes            any
+	MemoryMappedBytes              any
+	MemoryPageTablesBytes          any
+	MemoryPerCpuBytes              any
+	MemoryPressureFull10s          any
+	MemoryPressureFull300s         any
+	MemoryPressureFull60s          any
+	MemoryPressureFullTotalUs      any
+	MemoryPressureSome10s          any
+	MemoryPressureSome300s         any
+	MemoryPressureSome60s          any
+	MemoryPressureSomeTotalUs      any
+	MemorySReclaimableBytes        any
+	MemorySUnreclaimBytes          any
+	MemorySecondaryPageTablesBytes any
+	MemoryShmemBytes               any
+	MemoryShmemHugepagesBytes      any
+	MemoryShmemPmdMappedBytes      any
+	MemorySlabBytes                any
+	MemorySwapCachedBytes          any
+	MemorySwapFreeBytes            any
+	MemorySwapTotalBytes           any
+	MemoryTotalBytes               any
+	MemoryVmallocChunkBytes        any
+	MemoryVmallocTotalBytes        any
+	MemoryVmallocUsedBytes         any
+	MemoryWritebackBytes           any
+	MemoryWritebackTmpBytes        any
+	MemoryZSwapBytes               any
+	MemoryZSwappedBytes            any
+	Mounts                         any
+	Netdevs                        any
+	Platform                       any
+	SiteId                         any
+	SnmpIcmpInAddrMaskReps         any
+	SnmpIcmpInAddrMasks            any
+	SnmpIcmpInCsumErrors           any
+	SnmpIcmpInDestUnreachs         any
+	SnmpIcmpInEchoReps             any
+	SnmpIcmpInEchos                any
+	SnmpIcmpInErrors               any
+	SnmpIcmpInMsgs                 any
+	SnmpIcmpInParmProbs            any
+	SnmpIcmpInRedirects            any
+	SnmpIcmpInSrcQuenchs           any
+	SnmpIcmpInTimeExcds            any
+	SnmpIcmpInTimestampReps        any
+	SnmpIcmpInTimestamps           any
+	SnmpIcmpOutAddrMaskReps        any
+	SnmpIcmpOutAddrMasks           any
+	SnmpIcmpOutDestUnreachs        any
+	SnmpIcmpOutEchoReps            any
+	SnmpIcmpOutEchos               any
+	SnmpIcmpOutErrors              any
+	SnmpIcmpOutMsgs                any
+	SnmpIcmpOutParmProbs           any
+	SnmpIcmpOutRedirects           any
+	SnmpIcmpOutSrcQuenchs          any
+	SnmpIcmpOutTimeExcds           any
+	SnmpIcmpOutTimestampReps       any
+	SnmpIcmpOutTimestamps          any
+	SnmpIpDefaultTtl               any
+	SnmpIpForwDatagrams            any
+	SnmpIpForwardingEnabled        any
+	SnmpIpFragCreates              any
+	SnmpIpFragFails                any
+	SnmpIpFragOks                  any
+	SnmpIpInAddrErrors             any
+	SnmpIpInDelivers               any
+	SnmpIpInDiscards               any
+	SnmpIpInHdrErrors              any
+	SnmpIpInReceives               any
+	SnmpIpInUnknownProtos          any
+	SnmpIpOutDiscards              any
+	SnmpIpOutNoRoutes              any
+	SnmpIpOutRequests              any
+	SnmpIpReasmFails               any
+	SnmpIpReasmOks                 any
+	SnmpIpReasmReqds               any
+	SnmpIpReasmTimeout             any
+	SnmpTcpActiveOpens             any
+	SnmpTcpAttemptFails            any
+	SnmpTcpCurrEstab               any
+	SnmpTcpEstabResets             any
+	SnmpTcpInCsumErrors            any
+	SnmpTcpInErrs                  any
+	SnmpTcpInSegs                  any
+	SnmpTcpMaxConn                 any
+	SnmpTcpOutRsts                 any
+	SnmpTcpOutSegs                 any
+	SnmpTcpPassiveOpens            any
+	SnmpTcpRetransSegs             any
+	SnmpTcpRtoMax                  any
+	SnmpTcpRtoMin                  any
+	SnmpUdpInDatagrams             any
+	SnmpUdpInErrors                any
+	SnmpUdpNoPorts                 any
+	SnmpUdpOutDatagrams            any
+	SystemBootTimeS                any
+	T                              any
+	Thermals                       any
+	Tunnels                        any
+	UptimeIdleMs                   any
+	UptimeTotalMs                  any
+	V                              any
+}
+
+type MconnCustomerSnapshotsLatestGetSuccess_Result struct {
+	Count any
+	Items any
+}
+
 type MconnCustomerSnapshotsLatestGetSuccessConfig struct {
 	ConnectorId any
 }
 
 type MconnCustomerSnapshotsLatestGetSuccessAttrs struct {
 	// Account identifier
-	AccountId any
+	AccountId   any
 	ConnectorId any
+	Errors      any
+	Messages    any
+	Result      any
+	Success     any
 }
 
 var MconnCustomerSnapshotsLatestGetSuccess = ubx.DataSourceBinding{

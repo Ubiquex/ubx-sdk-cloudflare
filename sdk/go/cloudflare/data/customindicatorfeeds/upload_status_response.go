@@ -3,9 +3,27 @@ package customindicatorfeeds
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UploadStatusResponse_Result struct {
+	Attempts  any
+	CreatedAt any
+	// Sanitized terminal error; omitted for non-error states.
+	Error any
+	// Indicator feed ID
+	FeedId   any
+	Filename any
+	// Recommended delay before the next poll; 0 means terminal.
+	PollAfterSeconds any
+	// Sanitized durable loader stage, when available.
+	Stage any
+	// `Unifying` while work is queued or active, optionally with attempt progress; `Unified` or `Error` when terminal.
+	Status    any
+	UpdatedAt any
+	UploadId  any
+}
+
 type UploadStatusResponseConfig struct {
 	// Indicator feed ID
-	FeedId any
+	FeedId   any
 	UploadId any
 }
 
@@ -13,14 +31,15 @@ type UploadStatusResponseAttrs struct {
 	// Identifier
 	AccountId any
 	// Indicator feed ID
-	FeedId any
+	FeedId   any
+	Result   any
 	UploadId any
 }
 
 var UploadStatusResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_custom_indicator_feeds_upload_status_response",
 	Fields: ubx.FieldMap{
-		"FeedId": ubx.FieldSpec{WireName: "feed_id"},
+		"FeedId":   ubx.FieldSpec{WireName: "feed_id"},
 		"UploadId": ubx.FieldSpec{WireName: "upload_id"},
 	},
 }

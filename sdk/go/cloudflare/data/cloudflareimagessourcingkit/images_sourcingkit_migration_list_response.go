@@ -3,6 +3,30 @@ package cloudflareimagessourcingkit
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesSourcingkitMigrationListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesSourcingkitMigrationListResponse_Result_Migrations struct {
+	ConflictBehaviour    any
+	CreatedAt            any
+	EndedAt              any
+	ExcludedContentTypes any
+	Id                   any
+	ImagesPathPrefix     any
+	LogStopped           any
+	PathPrefix           any
+	RootDirectory        any
+	SourceId             any
+	StartedAt            any
+	Status               any
+}
+
+type ImagesSourcingkitMigrationListResponse_Result struct {
+	Migrations any
+}
+
 type ImagesSourcingkitMigrationListResponseConfig struct {
 	// Maximum number of items to return.
 	Limit any
@@ -13,16 +37,21 @@ type ImagesSourcingkitMigrationListResponseConfig struct {
 type ImagesSourcingkitMigrationListResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Errors    any
 	// Maximum number of items to return.
-	Limit any
+	Limit    any
+	Messages any
 	// Number of items to skip before returning results.
 	Offset any
+	Result any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesSourcingkitMigrationListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_sourcingkit_migration_list_response",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},
 }

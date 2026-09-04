@@ -105,6 +105,27 @@ class AaaSingleResponse_Mechanisms:
     pagerduty: Any = None
     webhooks: Any = None
 
+@dataclasses.dataclass
+class AaaSingleResponse_Result:
+    # Optional specification of how often to re-alert from the same incident, not support on all alert types.
+    alert_interval: Any = None
+    # Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
+    alert_type: Any = None
+    created: Any = None
+    # Optional description for the Notification policy.
+    description: Any = None
+    # Whether or not the Notification policy is enabled.
+    enabled: Any = None
+    # Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.
+    filters: Any = None
+    # The unique identifier of a notification policy
+    id: Any = None
+    # List of IDs that will be used when dispatching a notification. IDs for email type will be the email address.
+    mechanisms: Any = None
+    modified: Any = None
+    # Name of the policy.
+    name: Any = None
+
 _AaaSingleResponse_FiltersFields = {
     "actions": ubx.FieldSpec(wire_name="actions"),
     "affected_asns": ubx.FieldSpec(wire_name="affected_asns"),
@@ -210,6 +231,7 @@ class AaaSingleResponseAttrs:
     mechanisms: Any = None
     # Name of the policy.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

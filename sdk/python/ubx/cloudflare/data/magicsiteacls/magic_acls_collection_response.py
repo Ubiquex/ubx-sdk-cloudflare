@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicAclsCollectionResponse_Result_Lan1:
+    lan_id: Any = None
+    lan_name: Any = None
+    port_ranges: Any = None
+    ports: Any = None
+    subnets: Any = None
+
+@dataclasses.dataclass
+class MagicAclsCollectionResponse_Result:
+    description: Any = None
+    forward_locally: Any = None
+    id: Any = None
+    lan_1: Any = None
+    lan_2: Any = None
+    name: Any = None
+    protocols: Any = None
+    unidirectional: Any = None
+
+@dataclasses.dataclass
 class MagicAclsCollectionResponseConfig:
     pass
 
@@ -14,6 +33,7 @@ class MagicAclsCollectionResponseConfig:
 class MagicAclsCollectionResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
     # Identifier
     site_id: Any = None
 

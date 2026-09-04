@@ -3,6 +3,34 @@ package accountpaymentmethods
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type BillSubsApiPaymentMethodResponseCollection_Result struct {
+	Address             any
+	Address2            any
+	BankAccountType     any
+	BankCode            any
+	BankCountry         any
+	BankName            any
+	BankRoutingNumber   any
+	CashappCashTag      any
+	City                any
+	Country             any
+	Default             any
+	DeviceData          any
+	ExpirationDate      any
+	FirstName           any
+	Id                  any
+	LastFour            any
+	LastName            any
+	NickName            any
+	PaymentAccountEmail any
+	PaymentEmail        any
+	PaymentGateway      any
+	PaymentNonce        any
+	State               any
+	Type                any
+	Zipcode             any
+}
+
 type BillSubsApiPaymentMethodResponseCollectionConfig struct {
 	// Page number of paginated results.
 	Page any
@@ -17,12 +45,13 @@ type BillSubsApiPaymentMethodResponseCollectionAttrs struct {
 	Page any
 	// Number of items per page.
 	PerPage any
+	Result  any
 }
 
 var BillSubsApiPaymentMethodResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_bill_subs_api_payment_method_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

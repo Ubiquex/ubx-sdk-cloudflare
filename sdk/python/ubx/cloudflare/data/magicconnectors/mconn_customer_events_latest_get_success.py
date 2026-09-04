@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerEventsLatestGetSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsLatestGetSuccess_Result_Items_E:
+    k: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsLatestGetSuccess_Result_Items:
+    e: Any = None
+    n: Any = None
+    t: Any = None
+    v: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerEventsLatestGetSuccess_Result:
+    count: Any = None
+    items: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerEventsLatestGetSuccessConfig:
     connector_id: Any = None
 
@@ -15,6 +36,10 @@ class MconnCustomerEventsLatestGetSuccessAttrs:
     # Account identifier
     account_id: Any = None
     connector_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    success: Any = None
 
 MconnCustomerEventsLatestGetSuccess = ubx.DataSourceBinding(
     wire_type="cloudflare_mconn_customer_events_latest_get_success",

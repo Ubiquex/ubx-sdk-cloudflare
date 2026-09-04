@@ -11,6 +11,24 @@ class SensitivityGroup_Levels:
     description: Any = None
     name: Any = None
 
+@dataclasses.dataclass
+class SensitivityGroup_Result_Levels:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class SensitivityGroup_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    levels: Any = None
+    name: Any = None
+    template_id: Any = None
+    updated_at: Any = None
+
 _SensitivityGroup_LevelsFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -34,6 +52,7 @@ class SensitivityGroupAttrs:
     # Levels to create with the group. Mutually exclusive with `template_id`.
     levels: Any = None
     name: Any = None
+    result: Any = None
     template_id: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

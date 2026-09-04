@@ -7,6 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedRemediationTypeList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedRemediationTypeList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedRemediationTypeList_Result:
+    description: Any = None
+    display_name: Any = None
+    finding_type_id: Any = None
+    id: Any = None
+    remediation_type: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedRemediationTypeList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedRemediationTypeListConfig:
     account_id: Any = None
     cursor: Any = None
@@ -19,10 +55,18 @@ class PostureApiPaginatedRemediationTypeListConfig:
 class PostureApiPaginatedRemediationTypeListAttrs:
     account_id: Any = None
     cursor: Any = None
+    errors: Any = None
     finding_type_id: Any = None
     integration_id: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    # Array of remediation type objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PostureApiPaginatedRemediationTypeList = ubx.DataSourceBinding(
     wire_type="cloudflare_posture_api_paginated_remediation_type_list",

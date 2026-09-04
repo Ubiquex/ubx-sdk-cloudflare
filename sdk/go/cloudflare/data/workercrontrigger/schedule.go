@@ -3,6 +3,27 @@ package workercrontrigger
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Schedule_Errors_Source struct {
+	Pointer any
+}
+
+type Schedule_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type Schedule_Result_Schedules struct {
+	CreatedOn  any
+	Cron       any
+	ModifiedOn any
+}
+
+type Schedule_Result struct {
+	Schedules any
+}
+
 type ScheduleConfig struct {
 	// Identifier.
 	AccountId any
@@ -13,14 +34,19 @@ type ScheduleConfig struct {
 type ScheduleAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
 	// Name of the script, used in URLs and route configuration.
 	ScriptName any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Schedule = ubx.DataSourceBinding{
 	WireType: "cloudflare_schedule",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
 	},
 }

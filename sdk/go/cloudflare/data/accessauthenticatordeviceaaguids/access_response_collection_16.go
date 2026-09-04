@@ -3,6 +3,11 @@ package accessauthenticatordeviceaaguids
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollection16_Result struct {
+	Aaguid any
+	Name   any
+}
+
 type AccessResponseCollection16Config struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +16,7 @@ type AccessResponseCollection16Config struct {
 type AccessResponseCollection16Attrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessResponseCollection16 = ubx.DataSourceBinding{

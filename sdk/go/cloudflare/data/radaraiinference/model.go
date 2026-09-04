@@ -4,14 +4,14 @@ package radaraiinference
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Model_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Model_Result_Meta_ConfidenceInfo struct {
@@ -21,18 +21,18 @@ type Model_Result_Meta_ConfidenceInfo struct {
 }
 
 type Model_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Model_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Model_Result_Meta struct {
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
@@ -43,7 +43,7 @@ type Model_Result_Meta struct {
 
 type Model_Result struct {
 	// Metadata for the results.
-	Meta any
+	Meta     any
 	Summary0 any
 }
 
@@ -74,19 +74,19 @@ type ModelAttrs struct {
 	// Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an "other" category. Only supported on high-cardinality dimensions; otherwise the request is rejected. Minimum value is 2.
 	LimitPerGroup any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 }
 
 var Model = ubx.DataSourceBinding{
 	WireType: "cloudflare_model",
 	Fields: ubx.FieldMap{
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateRange": ubx.FieldSpec{WireName: "date_range"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"DateEnd":       ubx.FieldSpec{WireName: "date_end"},
+		"DateRange":     ubx.FieldSpec{WireName: "date_range"},
+		"DateStart":     ubx.FieldSpec{WireName: "date_start"},
+		"Format":        ubx.FieldSpec{WireName: "format"},
 		"LimitPerGroup": ubx.FieldSpec{WireName: "limit_per_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

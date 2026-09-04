@@ -5,18 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfileConfig struct {
 	AccountId any
-	All any
+	All       any
 }
 
 type ProfileAttrs struct {
 	AccountId any
-	All any
+	All       any
+	Result    any
 }
 
 var Profile = ubx.DataSourceBinding{
 	WireType: "cloudflare_profile",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"All": ubx.FieldSpec{WireName: "all"},
+		"All":       ubx.FieldSpec{WireName: "all"},
 	},
 }

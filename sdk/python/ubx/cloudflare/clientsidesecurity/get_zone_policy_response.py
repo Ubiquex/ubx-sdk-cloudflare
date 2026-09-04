@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class GetZonePolicyResponse_Result:
+    action: Any = None
+    description: Any = None
+    enabled: Any = None
+    expression: Any = None
+    id: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class GetZonePolicyResponseConfig:
     # The action to take if the expression matches
     action: Any = None
@@ -33,6 +42,7 @@ class GetZonePolicyResponseAttrs:
     enabled: Any = None
     # The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax
     expression: Any = None
+    result: Any = None
     # The policy which will be applied
     value: Any = None
     # path parameter, not part of the API's own resource representation

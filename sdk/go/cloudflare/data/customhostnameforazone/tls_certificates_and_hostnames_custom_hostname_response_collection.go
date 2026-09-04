@@ -3,6 +3,82 @@ package customhostnameforazone
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Errors_Source struct {
+	Pointer any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_DcvDelegationRecords struct {
+	Cname       any
+	CnameTarget any
+	Emails      any
+	HttpBody    any
+	HttpUrl     any
+	Status      any
+	TxtName     any
+	TxtValue    any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_Settings struct {
+	Ciphers       any
+	EarlyHints    any
+	Http2         any
+	MinTlsVersion any
+	Tls13         any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl_ValidationErrors struct {
+	Message any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result_Ssl struct {
+	BundleMethod         any
+	CertificateAuthority any
+	CustomCertificate    any
+	CustomCsrId          any
+	CustomKey            any
+	DcvDelegationRecords any
+	ExpiresOn            any
+	Hosts                any
+	Id                   any
+	Issuer               any
+	Method               any
+	SerialNumber         any
+	Settings             any
+	Signature            any
+	Status               any
+	Type                 any
+	UploadedOn           any
+	ValidationErrors     any
+	ValidationRecords    any
+	Wildcard             any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_Result struct {
+	Hostname any
+	Id       any
+	Ssl      any
+}
+
+type TlsCertificatesAndHostnamesCustomHostnameResponseCollection_ResultInfo struct {
+	// Total number of results for the requested service.
+	Count any
+	// Current page within paginated list of results.
+	Page any
+	// Number of results per page of results.
+	PerPage any
+	// Total results available without any search parameters.
+	TotalCount any
+	// The number of total pages in the entire result set.
+	TotalPages any
+}
+
 type TlsCertificatesAndHostnamesCustomHostnameResponseCollectionConfig struct {
 	// Filter by the certificate authority that issued the SSL certificate.
 	CertificateAuthority any
@@ -45,6 +121,7 @@ type TlsCertificatesAndHostnamesCustomHostnameResponseCollectionAttrs struct {
 	CustomOriginServer any
 	// Direction to order hostnames.
 	Direction any
+	Errors    any
 	// Fully qualified domain name to match against. This parameter cannot be used with the 'id', 'hostname.exact', 'hostname.contain', or 'hostname.startsWith' parameters.
 	Hostname any
 	// Filters hostnames by a substring match on the hostname value. This parameter cannot be used with the 'id', 'hostname', 'hostname.exact', or 'hostname.startsWith' parameters.
@@ -57,16 +134,22 @@ type TlsCertificatesAndHostnamesCustomHostnameResponseCollectionAttrs struct {
 	HostnameStatus any
 	// Hostname ID to match against. This ID was generated and returned during the initial custom_hostname creation. This parameter cannot be used with the 'hostname', 'hostname.exact', 'hostname.contain', or 'hostname.startsWith' parameters.
 	Id any
+	// Informational messages returned by the custom hostname API.
+	Messages any
 	// Field to order hostnames by.
 	Order any
 	// Page number of paginated results.
 	Page any
 	// Number of hostnames per page.
-	PerPage any
+	PerPage    any
+	Result     any
+	ResultInfo any
 	// Whether to filter hostnames based on if they have SSL enabled.
 	Ssl any
 	// Filter by SSL certificate status.
 	SslStatus any
+	// Whether the API call was successful.
+	Success any
 	// Filter by whether the custom hostname is a wildcard hostname.
 	Wildcard any
 	// Identifier.
@@ -77,20 +160,20 @@ var TlsCertificatesAndHostnamesCustomHostnameResponseCollection = ubx.DataSource
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_hostname_response_collection",
 	Fields: ubx.FieldMap{
 		"CertificateAuthority": ubx.FieldSpec{WireName: "certificate_authority"},
-		"CustomOriginServer": ubx.FieldSpec{WireName: "custom_origin_server"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"HostnameContain": ubx.FieldSpec{WireName: "hostname_contain"},
-		"HostnameExact": ubx.FieldSpec{WireName: "hostname_exact"},
-		"HostnameStartsWith": ubx.FieldSpec{WireName: "hostname_starts_with"},
-		"HostnameStatus": ubx.FieldSpec{WireName: "hostname_status"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Ssl": ubx.FieldSpec{WireName: "ssl"},
-		"SslStatus": ubx.FieldSpec{WireName: "ssl_status"},
-		"Wildcard": ubx.FieldSpec{WireName: "wildcard"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"CustomOriginServer":   ubx.FieldSpec{WireName: "custom_origin_server"},
+		"Direction":            ubx.FieldSpec{WireName: "direction"},
+		"Hostname":             ubx.FieldSpec{WireName: "hostname"},
+		"HostnameContain":      ubx.FieldSpec{WireName: "hostname_contain"},
+		"HostnameExact":        ubx.FieldSpec{WireName: "hostname_exact"},
+		"HostnameStartsWith":   ubx.FieldSpec{WireName: "hostname_starts_with"},
+		"HostnameStatus":       ubx.FieldSpec{WireName: "hostname_status"},
+		"Id":                   ubx.FieldSpec{WireName: "id"},
+		"Order":                ubx.FieldSpec{WireName: "order"},
+		"Page":                 ubx.FieldSpec{WireName: "page"},
+		"PerPage":              ubx.FieldSpec{WireName: "per_page"},
+		"Ssl":                  ubx.FieldSpec{WireName: "ssl"},
+		"SslStatus":            ubx.FieldSpec{WireName: "ssl_status"},
+		"Wildcard":             ubx.FieldSpec{WireName: "wildcard"},
+		"ZoneId":               ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

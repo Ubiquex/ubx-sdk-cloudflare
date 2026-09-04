@@ -7,6 +7,22 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MconnCustomerSnapshotsListSuccess_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsListSuccess_Result_Items:
+    a: Any = None
+    t: Any = None
+
+@dataclasses.dataclass
+class MconnCustomerSnapshotsListSuccess_Result:
+    count: Any = None
+    cursor: Any = None
+    items: Any = None
+
+@dataclasses.dataclass
 class MconnCustomerSnapshotsListSuccessConfig:
     connector_id: Any = None
     cursor: Any = None
@@ -20,8 +36,12 @@ class MconnCustomerSnapshotsListSuccessAttrs:
     account_id: Any = None
     connector_id: Any = None
     cursor: Any = None
+    errors: Any = None
     from_: Any = None
     limit: Any = None
+    messages: Any = None
+    result: Any = None
+    success: Any = None
     to: Any = None
 
 MconnCustomerSnapshotsListSuccess = ubx.DataSourceBinding(

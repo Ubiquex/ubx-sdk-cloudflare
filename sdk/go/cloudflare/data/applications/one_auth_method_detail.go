@@ -8,13 +8,13 @@ type OneAuthMethodDetail_Result_Instructions struct {
 }
 
 type OneAuthMethodDetail_Result struct {
-	DisplayName any
+	DisplayName              any
 	HumanInteractionRequired any
-	Id any
-	Instructions any
-	PayloadExample any
-	PayloadSchema any
-	RedirectUrl any
+	Id                       any
+	Instructions             any
+	PayloadExample           any
+	PayloadSchema            any
+	RedirectUrl              any
 }
 
 type OneAuthMethodDetail_ResultInfo struct {
@@ -33,20 +33,20 @@ type OneAuthMethodDetail_ResultInfo struct {
 }
 
 type OneAuthMethodDetailConfig struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
-	Page any
-	PageSize any
+	Page          any
+	PageSize      any
 }
 
 type OneAuthMethodDetailAttrs struct {
-	AccountId any
+	AccountId     any
 	ApplicationId any
 	// List of errors.
 	Errors any
 	// List of messages.
 	Messages any
-	Page any
+	Page     any
 	PageSize any
 	// List of items.
 	Result any
@@ -59,9 +59,9 @@ type OneAuthMethodDetailAttrs struct {
 var OneAuthMethodDetail = ubx.DataSourceBinding{
 	WireType: "cloudflare_one_auth_method_detail",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
 	},
 }

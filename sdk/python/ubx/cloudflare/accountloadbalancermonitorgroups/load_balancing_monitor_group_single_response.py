@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class LoadBalancingMonitorGroupSingleResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class LoadBalancingMonitorGroupSingleResponse_Id:
     pass
 
@@ -18,6 +23,18 @@ class LoadBalancingMonitorGroupSingleResponse_Members:
     monitoring_only: Any = None
     must_be_healthy: Any = None
     updated_at: Any = None
+
+@dataclasses.dataclass
+class LoadBalancingMonitorGroupSingleResponse_Result:
+    # The timestamp of when the monitor group was created
+    created_on: Any = None
+    # A short description of the monitor group
+    description: Any = None
+    id: Any = None
+    # List of monitors in this group
+    members: Any = None
+    # The timestamp of when the monitor group was last updated
+    modified_on: Any = None
 
 _LoadBalancingMonitorGroupSingleResponse_MembersFields = {
     "created_at": ubx.FieldSpec(wire_name="created_at"),
@@ -45,11 +62,16 @@ class LoadBalancingMonitorGroupSingleResponseAttrs:
     created_on: Any = None
     # A short description of the monitor group
     description: Any = None
+    errors: Any = None
     id: Any = None
     # List of monitors in this group
     members: Any = None
+    messages: Any = None
     # The timestamp of when the monitor group was last updated
     modified_on: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

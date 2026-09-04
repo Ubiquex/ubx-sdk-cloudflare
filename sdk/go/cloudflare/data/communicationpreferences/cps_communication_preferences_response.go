@@ -4,7 +4,7 @@ package communicationpreferences
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CpsCommunicationPreferencesResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -16,9 +16,9 @@ type CpsCommunicationPreferencesResponse_Result_Email struct {
 }
 
 type CpsCommunicationPreferencesResponse_Result_Preferences struct {
-	CreatedOn any
+	CreatedOn  any
 	Subscribed any
-	UpdatedOn any
+	UpdatedOn  any
 }
 
 type CpsCommunicationPreferencesResponse_Result struct {
@@ -38,7 +38,7 @@ type CpsCommunicationPreferencesResponseConfig struct {
 }
 
 type CpsCommunicationPreferencesResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
 	// The user's communication preferences.
 	Result any
@@ -48,6 +48,5 @@ type CpsCommunicationPreferencesResponseAttrs struct {
 
 var CpsCommunicationPreferencesResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_cps_communication_preferences_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

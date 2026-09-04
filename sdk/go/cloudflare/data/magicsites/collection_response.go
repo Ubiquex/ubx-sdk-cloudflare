@@ -3,6 +3,21 @@ package magicsites
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CollectionResponse_Result_Location struct {
+	Lat any
+	Lon any
+}
+
+type CollectionResponse_Result struct {
+	ConnectorId          any
+	Description          any
+	HaMode               any
+	Id                   any
+	Location             any
+	Name                 any
+	SecondaryConnectorId any
+}
+
 type CollectionResponseConfig struct {
 }
 
@@ -11,10 +26,10 @@ type CollectionResponseAttrs struct {
 	AccountId any
 	// Identifier
 	Connectorid any
+	Result      any
 }
 
 var CollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_sites_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

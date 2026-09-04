@@ -12,30 +12,47 @@ class Pagerule_Actions:
     value: Any = None
 
 @dataclasses.dataclass
-class Pagerule_Targets_Constraint:
+class Pagerule_Result_Targets_Constraint:
     operator: Any = None
     value: Any = None
 
 @dataclasses.dataclass
-class Pagerule_Targets:
+class Pagerule_Result_Targets:
     constraint: Any = None
     target: Any = None
+
+@dataclasses.dataclass
+class Pagerule_Result:
+    # The set of actions to perform if the targets of this rule match the request. Actions can redirect to another URL or override settings, but not both.
+    actions: Any = None
+    # The timestamp of when the Page Rule was created.
+    created_on: Any = None
+    # Identifier.
+    id: Any = None
+    # The timestamp of when the Page Rule was last modified.
+    modified_on: Any = None
+    # The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A.
+    priority: Any = None
+    # The status of the Page Rule.
+    status: Any = None
+    # The rule targets to evaluate on each request.
+    targets: Any = None
 
 _Pagerule_ActionsFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Pagerule_Targets_ConstraintFields = {
+_Pagerule_Result_Targets_ConstraintFields = {
     "operator": ubx.FieldSpec(wire_name="operator"),
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_Pagerule_TargetsFields = {
+_Pagerule_Result_TargetsFields = {
     "constraint": ubx.FieldSpec(
         wire_name="constraint",
         kind="object",
-        fields=_Pagerule_Targets_ConstraintFields,
+        fields=_Pagerule_Result_Targets_ConstraintFields,
     ),
     "target": ubx.FieldSpec(wire_name="target"),
 }
@@ -61,6 +78,7 @@ class PageruleAttrs:
     actions: Any = None
     # The priority of the rule, used to define which Page Rule is processed over another. A higher number indicates a higher priority. For example, if you have a catch-all Page Rule (rule A: `/images/*`) but want a more specific Page Rule to take precedence (rule B: `/images/special/*`), specify a higher priority for rule B so it overrides rule A.
     priority: Any = None
+    result: Any = None
     # The status of the Page Rule.
     status: Any = None
     # The rule targets to evaluate on each request.
@@ -83,7 +101,7 @@ Pagerule = ubx.ResourceBinding(
         "targets": ubx.FieldSpec(
             wire_name="targets",
             kind="list",
-            fields=_Pagerule_TargetsFields,
+            fields=_Pagerule_Result_TargetsFields,
         ),
         "zone_id": ubx.FieldSpec(wire_name="zone_id"),
         "pagerule_id": ubx.FieldSpec(wire_name="pagerule_id"),

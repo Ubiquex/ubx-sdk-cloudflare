@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamWatermarkResponseSingle_Result:
+    # The date and a time a watermark profile was created.
+    created: Any = None
+    # The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.
+    downloaded_from: Any = None
+    # The height of the image in pixels.
+    height: Any = None
+    # A short description of the watermark profile.
+    name: Any = None
+    # The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.
+    opacity: Any = None
+    # The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.
+    padding: Any = None
+    # The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
+    position: Any = None
+    # The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
+    scale: Any = None
+    # The size of the image in bytes.
+    size: Any = None
+    # The unique identifier for a watermark profile.
+    uid: Any = None
+    # The width of the image in pixels.
+    width: Any = None
+
+@dataclasses.dataclass
 class StreamWatermarkResponseSingleConfig:
     # A short description of the watermark profile.
     name: Any = None
@@ -35,6 +60,7 @@ class StreamWatermarkResponseSingleAttrs:
     padding: Any = None
     # The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.
     position: Any = None
+    result: Any = None
     # The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.
     scale: Any = None
     # URL of the watermark image to copy.

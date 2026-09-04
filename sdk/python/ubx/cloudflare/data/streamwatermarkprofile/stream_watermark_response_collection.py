@@ -7,6 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamWatermarkResponseCollection_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class StreamWatermarkResponseCollection_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class StreamWatermarkResponseCollection_Result:
+    created: Any = None
+    downloaded_from: Any = None
+    height: Any = None
+    name: Any = None
+    opacity: Any = None
+    padding: Any = None
+    position: Any = None
+    scale: Any = None
+    size: Any = None
+    uid: Any = None
+    width: Any = None
+
+@dataclasses.dataclass
 class StreamWatermarkResponseCollectionConfig:
     # The account identifier tag.
     account_id: Any = None
@@ -15,6 +40,11 @@ class StreamWatermarkResponseCollectionConfig:
 class StreamWatermarkResponseCollectionAttrs:
     # The account identifier tag.
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 StreamWatermarkResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_watermark_response_collection",

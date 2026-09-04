@@ -7,6 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Key_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Key_Result_Metadata:
+    pass
+
+@dataclasses.dataclass
+class Key_Result:
+    expiration: Any = None
+    metadata: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class Key_ResultInfo:
+    # Total results returned based on your list parameters.
+    count: Any = None
+    # Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the cursors object in the result_info structure.
+    cursor: Any = None
+
+@dataclasses.dataclass
 class KeyConfig:
     # Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the `cursors` object in the `result_info` structure.
     cursor: Any = None
@@ -21,12 +43,18 @@ class KeyAttrs:
     account_id: Any = None
     # Opaque token indicating the position from which to continue when requesting the next set of records if the amount of list results was limited by the limit parameter. A valid value for the cursor can be obtained from the `cursors` object in the `result_info` structure.
     cursor: Any = None
+    errors: Any = None
     # Limits the number of keys returned in the response. The cursor attribute may be used to iterate over the next batch of keys if there are more than the limit.
     limit: Any = None
+    messages: Any = None
     # Namespace identifier tag.
     namespace_id: Any = None
     # Filters returned keys by a name prefix. Exact matches and any key names that begin with the prefix will be returned.
     prefix: Any = None
+    result: Any = None
+    result_info: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 Key = ubx.DataSourceBinding(
     wire_type="cloudflare_key",

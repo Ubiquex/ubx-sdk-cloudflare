@@ -3,6 +3,32 @@ package sinkholeconfig
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSinkholesIngressSingleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type IntelSinkholesIngressSingleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type IntelSinkholesIngressSingleResponse_Result struct {
+	// The CIDR block for the ingress rule.
+	Cidr any
+	// The date and time when the ingress rule was created.
+	CreatedOn any
+	// The unique identifier for the ingress rule.
+	Id any
+	// The date and time when the ingress rule was last modified.
+	ModifiedOn any
+	// The sinkhole this ingress rule belongs to.
+	SinkholeId any
+	// The zone tag associated with this ingress rule.
+	ZoneTag any
+}
+
 type IntelSinkholesIngressSingleResponseConfig struct {
 	// The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns.
 	Cidr any
@@ -16,7 +42,12 @@ type IntelSinkholesIngressSingleResponseConfig struct {
 
 type IntelSinkholesIngressSingleResponseAttrs struct {
 	// The CIDR block for the ingress rule in IPv4 or IPv6 notation (e.g., 192.0.2.0/24). Provide a Cloudflare BYOIP CIDR that your account owns.
-	Cidr any
+	Cidr     any
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -28,9 +59,9 @@ type IntelSinkholesIngressSingleResponseAttrs struct {
 var IntelSinkholesIngressSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_intel_sinkholes_ingress_single_response",
 	Fields: ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Cidr":       ubx.FieldSpec{WireName: "cidr"},
+		"ZoneId":     ubx.FieldSpec{WireName: "zone_id"},
 		"SinkholeId": ubx.FieldSpec{WireName: "sinkhole_id"},
-		"IngressId": ubx.FieldSpec{WireName: "ingress_id"},
+		"IngressId":  ubx.FieldSpec{WireName: "ingress_id"},
 	},
 }

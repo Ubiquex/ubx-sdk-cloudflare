@@ -3,16 +3,23 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type OriginMaxHttpVersion_Result struct {
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type OriginMaxHttpVersionConfig struct {
 }
 
 type OriginMaxHttpVersionAttrs struct {
+	// Origin Max HTTP Setting Version sets the highest HTTP version Cloudflare will attempt to use with your origin. This setting allows Cloudflare to make HTTP/2 requests to your origin. (Refer to [Enable HTTP/2 to Origin](https://developers.cloudflare.com/cache/how-to/enable-http2-to-origin/), for more information.). The default value is "2" for all plan types except Enterprise where it is "1".
+	Result any
 	// Identifier.
 	ZoneId any
 }
 
 var OriginMaxHttpVersion = ubx.DataSourceBinding{
 	WireType: "cloudflare_origin_max_http_version",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

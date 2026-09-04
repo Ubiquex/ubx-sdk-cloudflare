@@ -3,12 +3,23 @@ package dlpcustomprompttopics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type CustomPromptTopic_Result struct {
+	CreatedAt   any
+	Description any
+	Enabled     any
+	Id          any
+	Name        any
+	ProfileId   any
+	Topic       any
+	UpdatedAt   any
+}
+
 type CustomPromptTopicConfig struct {
 	Description any
-	Enabled any
-	Name any
-	ProfileId any
-	Topic any
+	Enabled     any
+	Name        any
+	ProfileId   any
+	Topic       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -17,10 +28,11 @@ type CustomPromptTopicConfig struct {
 
 type CustomPromptTopicAttrs struct {
 	Description any
-	Enabled any
-	Name any
-	ProfileId any
-	Topic any
+	Enabled     any
+	Name        any
+	ProfileId   any
+	Result      any
+	Topic       any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -31,11 +43,11 @@ var CustomPromptTopic = ubx.ResourceBinding{
 	WireType: "cloudflare_custom_prompt_topic",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"ProfileId":   ubx.FieldSpec{WireName: "profile_id"},
+		"Topic":       ubx.FieldSpec{WireName: "topic"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"EntryId":     ubx.FieldSpec{WireName: "entry_id"},
 	},
 }

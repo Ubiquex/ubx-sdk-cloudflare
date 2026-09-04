@@ -6,26 +6,26 @@ export interface MagicLanSingleResponse_Nat {
   staticPrefix?: string | Computed<string>;
 }
 
-export interface MagicLanSingleResponse_RoutedSubnets {
+export interface MagicLanSingleResponse_Result_RoutedSubnets {
   nat?: MagicLanSingleResponse_Nat | Computed<MagicLanSingleResponse_Nat>;
   nextHop?: string | Computed<string>;
   prefix?: string | Computed<string>;
 }
 
-export interface MagicLanSingleResponse_StaticAddressing_DhcpRelay {
+export interface MagicLanSingleResponse_Result_StaticAddressing_DhcpRelay {
   /** List of DHCP server IPs. */
   serverAddresses?: string[] | Computed<string[]>;
 }
 
-export interface MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptions {
+export interface MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptions {
   code?: number | Computed<number>;
   type?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
-export interface MagicLanSingleResponse_StaticAddressing_DhcpServer {
+export interface MagicLanSingleResponse_Result_StaticAddressing_DhcpServer {
   /** Optional list of custom DHCP options to include in DHCP responses. Only valid when DHCP server is enabled. */
-  dhcpOptions?: MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptions[] | Computed<MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptions[]>;
+  dhcpOptions?: MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptions[] | Computed<MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptions[]>;
   /** A valid IPv4 address. */
   dhcpPoolEnd?: string | Computed<string>;
   /** A valid IPv4 address. */
@@ -37,22 +37,44 @@ export interface MagicLanSingleResponse_StaticAddressing_DhcpServer {
   reservations?: Record<string, string> | Computed<Record<string, string>>;
 }
 
-export interface MagicLanSingleResponse_StaticAddressing {
+export interface MagicLanSingleResponse_Result_StaticAddressing {
   /** A valid CIDR notation representing an IP range. */
   address: string | Computed<string>;
-  dhcpRelay?: MagicLanSingleResponse_StaticAddressing_DhcpRelay | Computed<MagicLanSingleResponse_StaticAddressing_DhcpRelay>;
-  dhcpServer?: MagicLanSingleResponse_StaticAddressing_DhcpServer | Computed<MagicLanSingleResponse_StaticAddressing_DhcpServer>;
+  dhcpRelay?: MagicLanSingleResponse_Result_StaticAddressing_DhcpRelay | Computed<MagicLanSingleResponse_Result_StaticAddressing_DhcpRelay>;
+  dhcpServer?: MagicLanSingleResponse_Result_StaticAddressing_DhcpServer | Computed<MagicLanSingleResponse_Result_StaticAddressing_DhcpServer>;
   /** A valid CIDR notation representing an IP range. */
   secondaryAddress?: string | Computed<string>;
   /** A valid CIDR notation representing an IP range. */
   virtualAddress?: string | Computed<string>;
 }
 
+export interface MagicLanSingleResponse_Result {
+  bondId?: number | Computed<number>;
+  /** mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link. */
+  haLink?: boolean | Computed<boolean>;
+  /** Identifier */
+  id?: string | Computed<string>;
+  /** mark true to use this LAN for source-based breakout traffic */
+  isBreakout?: boolean | Computed<boolean>;
+  /** mark true to use this LAN for source-based prioritized traffic */
+  isPrioritized?: boolean | Computed<boolean>;
+  name?: string | Computed<string>;
+  nat?: MagicLanSingleResponse_Nat | Computed<MagicLanSingleResponse_Nat>;
+  physport?: number | Computed<number>;
+  routedSubnets?: MagicLanSingleResponse_Result_RoutedSubnets[] | Computed<MagicLanSingleResponse_Result_RoutedSubnets[]>;
+  /** Identifier */
+  siteId?: string | Computed<string>;
+  /** If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address. */
+  staticAddressing?: MagicLanSingleResponse_Result_StaticAddressing | Computed<MagicLanSingleResponse_Result_StaticAddressing>;
+  /** VLAN ID. Use zero for untagged. */
+  vlanTag?: number | Computed<number>;
+}
+
 const MagicLanSingleResponse_NatFields: FieldMap = {
   staticPrefix: "static_prefix",
 };
 
-const MagicLanSingleResponse_RoutedSubnetsFields: FieldMap = {
+const MagicLanSingleResponse_Result_RoutedSubnetsFields: FieldMap = {
   nat: {
     wireName: "nat",
     kind: "object",
@@ -62,21 +84,21 @@ const MagicLanSingleResponse_RoutedSubnetsFields: FieldMap = {
   prefix: "prefix",
 };
 
-const MagicLanSingleResponse_StaticAddressing_DhcpRelayFields: FieldMap = {
+const MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields: FieldMap = {
   serverAddresses: "server_addresses",
 };
 
-const MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields: FieldMap = {
+const MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields: FieldMap = {
   code: "code",
   type: "type",
   value: "value",
 };
 
-const MagicLanSingleResponse_StaticAddressing_DhcpServerFields: FieldMap = {
+const MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields: FieldMap = {
   dhcpOptions: {
     wireName: "dhcp_options",
     kind: "list",
-    fields: MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields,
+    fields: MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields,
   },
   dhcpPoolEnd: "dhcp_pool_end",
   dhcpPoolStart: "dhcp_pool_start",
@@ -85,17 +107,17 @@ const MagicLanSingleResponse_StaticAddressing_DhcpServerFields: FieldMap = {
   reservations: "reservations",
 };
 
-const MagicLanSingleResponse_StaticAddressingFields: FieldMap = {
+const MagicLanSingleResponse_Result_StaticAddressingFields: FieldMap = {
   address: "address",
   dhcpRelay: {
     wireName: "dhcp_relay",
     kind: "object",
-    fields: MagicLanSingleResponse_StaticAddressing_DhcpRelayFields,
+    fields: MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields,
   },
   dhcpServer: {
     wireName: "dhcp_server",
     kind: "object",
-    fields: MagicLanSingleResponse_StaticAddressing_DhcpServerFields,
+    fields: MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields,
   },
   secondaryAddress: "secondary_address",
   virtualAddress: "virtual_address",
@@ -112,9 +134,9 @@ export interface MagicLanSingleResponseConfig {
   name?: string | Computed<string>;
   nat?: MagicLanSingleResponse_Nat | Computed<MagicLanSingleResponse_Nat>;
   physport?: number | Computed<number>;
-  routedSubnets?: MagicLanSingleResponse_RoutedSubnets[] | Computed<MagicLanSingleResponse_RoutedSubnets[]>;
+  routedSubnets?: MagicLanSingleResponse_Result_RoutedSubnets[] | Computed<MagicLanSingleResponse_Result_RoutedSubnets[]>;
   /** If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address. */
-  staticAddressing?: MagicLanSingleResponse_StaticAddressing | Computed<MagicLanSingleResponse_StaticAddressing>;
+  staticAddressing?: MagicLanSingleResponse_Result_StaticAddressing | Computed<MagicLanSingleResponse_Result_StaticAddressing>;
   /** VLAN ID. Use zero for untagged. */
   vlanTag?: number | Computed<number>;
   /** path parameter, not part of the API's own resource representation */
@@ -136,9 +158,10 @@ export interface MagicLanSingleResponseAttrs {
   name: string;
   nat: MagicLanSingleResponse_Nat;
   physport: number;
-  routedSubnets: MagicLanSingleResponse_RoutedSubnets[];
+  result: MagicLanSingleResponse_Result;
+  routedSubnets: MagicLanSingleResponse_Result_RoutedSubnets[];
   /** If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address. */
-  staticAddressing: MagicLanSingleResponse_StaticAddressing;
+  staticAddressing: MagicLanSingleResponse_Result_StaticAddressing;
   /** VLAN ID. Use zero for untagged. */
   vlanTag: number;
   /** path parameter, not part of the API's own resource representation */
@@ -166,12 +189,12 @@ export const MagicLanSingleResponse: ResourceBinding<MagicLanSingleResponseConfi
     routedSubnets: {
       wireName: "routed_subnets",
       kind: "list",
-      fields: MagicLanSingleResponse_RoutedSubnetsFields,
+      fields: MagicLanSingleResponse_Result_RoutedSubnetsFields,
     },
     staticAddressing: {
       wireName: "static_addressing",
       kind: "object",
-      fields: MagicLanSingleResponse_StaticAddressingFields,
+      fields: MagicLanSingleResponse_Result_StaticAddressingFields,
     },
     vlanTag: "vlan_tag",
     accountId: "account_id",

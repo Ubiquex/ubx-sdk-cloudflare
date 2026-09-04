@@ -4,6 +4,17 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface TaggedResourceResponseSingle_AccountId {
 }
 
+export interface TaggedResourceResponseSingle_Errors_Source {
+  pointer?: string | Computed<string>;
+}
+
+export interface TaggedResourceResponseSingle_Errors {
+  code?: number | Computed<number>;
+  documentationUrl?: string | Computed<string>;
+  message?: string | Computed<string>;
+  source?: TaggedResourceResponseSingle_Errors_Source | Computed<TaggedResourceResponseSingle_Errors_Source>;
+}
+
 const TaggedResourceResponseSingle_AccountIdFields: FieldMap = {
 };
 
@@ -19,10 +30,15 @@ export interface TaggedResourceResponseSingleConfig {
 
 export interface TaggedResourceResponseSingleAttrs {
   accountId: TaggedResourceResponseSingle_AccountId;
+  errors: TaggedResourceResponseSingle_Errors[];
+  messages: TaggedResourceResponseSingle_Errors[];
   /** Identifies the unique resource. */
   resourceId: string;
   /** Identifies the type of account-level resource. */
   resourceType: string;
+  result: unknown;
+  /** Whether the API call was successful. */
+  success: boolean;
   /** Worker ID is required only for worker_version resources */
   workerId: string;
 }

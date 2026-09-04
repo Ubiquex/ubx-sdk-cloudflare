@@ -3,6 +3,36 @@ package workersforplatforms
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type WorkersNamespaceSingleResponse_Errors_Source struct {
+	Pointer any
+}
+
+type WorkersNamespaceSingleResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type WorkersNamespaceSingleResponse_Result struct {
+	// Identifier.
+	CreatedBy any
+	// When the script was created.
+	CreatedOn any
+	// Identifier.
+	ModifiedBy any
+	// When the script was last modified.
+	ModifiedOn any
+	// API Resource UUID tag.
+	NamespaceId any
+	// Name of the Workers for Platforms dispatch namespace.
+	NamespaceName any
+	// The current number of scripts in this Dispatch Namespace.
+	ScriptCount any
+	// Whether the Workers in the namespace are executed in a "trusted" manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are "untrusted".
+	TrustedWorkers any
+}
+
 type WorkersNamespaceSingleResponseConfig struct {
 	// The name of the dispatch namespace.
 	Name any
@@ -13,8 +43,13 @@ type WorkersNamespaceSingleResponseConfig struct {
 }
 
 type WorkersNamespaceSingleResponseAttrs struct {
+	Errors   any
+	Messages any
 	// The name of the dispatch namespace.
-	Name any
+	Name   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +59,8 @@ type WorkersNamespaceSingleResponseAttrs struct {
 var WorkersNamespaceSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_workers_namespace_single_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
 	},
 }

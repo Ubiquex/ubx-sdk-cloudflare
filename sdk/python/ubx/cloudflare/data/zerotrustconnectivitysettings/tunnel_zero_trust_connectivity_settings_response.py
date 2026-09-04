@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class TunnelZeroTrustConnectivitySettingsResponse_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class TunnelZeroTrustConnectivitySettingsResponse_Result:
+    # A flag to enable the ICMP proxy for the account network.
+    icmp_proxy_enabled: Any = None
+    # A flag to enable WARP to WARP traffic.
+    offramp_warp_enabled: Any = None
+
+@dataclasses.dataclass
 class TunnelZeroTrustConnectivitySettingsResponseConfig:
     pass
 
@@ -14,6 +26,11 @@ class TunnelZeroTrustConnectivitySettingsResponseConfig:
 class TunnelZeroTrustConnectivitySettingsResponseAttrs:
     # Cloudflare account ID
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 TunnelZeroTrustConnectivitySettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_tunnel_zero_trust_connectivity_settings_response",

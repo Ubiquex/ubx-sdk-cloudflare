@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type NscDefaultNameResponseConfig struct {
 	// Customer account tag
 	AccountId any
-	Icon any
+	Icon      any
 }
 
 type NscDefaultNameResponseAttrs struct {
 	// Customer account tag
 	AccountId any
-	Icon any
+	Icon      any
 	// The default customer name for the interconnect
 	Name any
 }
@@ -21,6 +21,6 @@ var NscDefaultNameResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_nsc_default_name_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
+		"Icon":      ubx.FieldSpec{WireName: "icon"},
 	},
 }

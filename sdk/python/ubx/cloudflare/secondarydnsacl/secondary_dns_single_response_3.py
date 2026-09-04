@@ -7,6 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecondaryDnsSingleResponse3_Result:
+    id: Any = None
+    # Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.
+    ip_range: Any = None
+    # The name of the acl.
+    name: Any = None
+
+@dataclasses.dataclass
 class SecondaryDnsSingleResponse3Config:
     # Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.
     ip_range: Any = None
@@ -23,6 +31,7 @@ class SecondaryDnsSingleResponse3Attrs:
     ip_range: Any = None
     # The name of the acl.
     name: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

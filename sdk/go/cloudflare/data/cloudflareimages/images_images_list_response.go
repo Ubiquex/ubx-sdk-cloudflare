@@ -3,6 +3,25 @@ package cloudflareimages
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ImagesImagesListResponse_Errors struct {
+	Code    any
+	Message any
+}
+
+type ImagesImagesListResponse_Result_Images struct {
+	Creator           any
+	Filename          any
+	Id                any
+	Meta              any
+	RequireSignedUrls any
+	Uploaded          any
+	Variants          any
+}
+
+type ImagesImagesListResponse_Result struct {
+	Images any
+}
+
 type ImagesImagesListResponseConfig struct {
 	// Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
 	Creator any
@@ -16,18 +35,23 @@ type ImagesImagesListResponseAttrs struct {
 	// Account identifier tag.
 	AccountId any
 	// Internal user ID set within the creator field. Setting to empty string "" will return images where creator field is not set
-	Creator any
+	Creator  any
+	Errors   any
+	Messages any
 	// Page number of paginated results.
 	Page any
 	// Number of items per page.
 	PerPage any
+	Result  any
+	// Whether the API call was successful
+	Success any
 }
 
 var ImagesImagesListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_images_images_list_response",
 	Fields: ubx.FieldMap{
 		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

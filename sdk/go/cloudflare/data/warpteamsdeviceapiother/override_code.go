@@ -4,7 +4,7 @@ package warpteamsdeviceapiother
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OverrideCode_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -13,16 +13,16 @@ type OverrideCode_Result struct {
 }
 
 type OverrideCodeConfig struct {
-	AccountId any
+	AccountId      any
 	RegistrationId any
 }
 
 type OverrideCodeAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
+	AccountId      any
+	Errors         any
+	Messages       any
 	RegistrationId any
-	Result any
+	Result         any
 	// Whether the API call was successful.
 	Success any
 }
@@ -30,7 +30,7 @@ type OverrideCodeAttrs struct {
 var OverrideCode = ubx.DataSourceBinding{
 	WireType: "cloudflare_override_code",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":      ubx.FieldSpec{WireName: "account_id"},
 		"RegistrationId": ubx.FieldSpec{WireName: "registration_id"},
 	},
 }

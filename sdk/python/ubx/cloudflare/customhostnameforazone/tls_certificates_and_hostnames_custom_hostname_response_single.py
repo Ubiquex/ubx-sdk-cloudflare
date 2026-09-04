@@ -7,17 +7,72 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundle:
-    custom_certificate: Any = None
-    custom_key: Any = None
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Errors_Source:
+    pointer: Any = None
 
 @dataclasses.dataclass
-class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_Settings:
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_DcvDelegationRecords:
+    cname: Any = None
+    cname_target: Any = None
+    emails: Any = None
+    http_body: Any = None
+    http_url: Any = None
+    status: Any = None
+    txt_name: Any = None
+    txt_value: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_Settings:
     ciphers: Any = None
     early_hints: Any = None
     http2: Any = None
     min_tls_version: Any = None
     tls_1_3: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_ValidationErrors:
+    message: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl:
+    bundle_method: Any = None
+    certificate_authority: Any = None
+    custom_certificate: Any = None
+    custom_csr_id: Any = None
+    custom_key: Any = None
+    dcv_delegation_records: Any = None
+    expires_on: Any = None
+    hosts: Any = None
+    id: Any = None
+    issuer: Any = None
+    method: Any = None
+    serial_number: Any = None
+    settings: Any = None
+    signature: Any = None
+    status: Any = None
+    type: Any = None
+    uploaded_on: Any = None
+    validation_errors: Any = None
+    validation_records: Any = None
+    wildcard: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result:
+    hostname: Any = None
+    id: Any = None
+    ssl: Any = None
+
+@dataclasses.dataclass
+class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundle:
+    custom_certificate: Any = None
+    custom_key: Any = None
 
 @dataclasses.dataclass
 class TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl:
@@ -38,7 +93,7 @@ _TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_CustomCertBundleFie
     "custom_key": ubx.FieldSpec(wire_name="custom_key"),
 }
 
-_TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_SettingsFields = {
+_TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_SettingsFields = {
     "ciphers": ubx.FieldSpec(wire_name="ciphers"),
     "early_hints": ubx.FieldSpec(wire_name="early_hints"),
     "http2": ubx.FieldSpec(wire_name="http2"),
@@ -62,7 +117,7 @@ _TlsCertificatesAndHostnamesCustomHostnameResponseSingle_SslFields = {
     "settings": ubx.FieldSpec(
         wire_name="settings",
         kind="object",
-        fields=_TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Ssl_SettingsFields,
+        fields=_TlsCertificatesAndHostnamesCustomHostnameResponseSingle_Result_Ssl_SettingsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
     "wildcard": ubx.FieldSpec(wire_name="wildcard"),
@@ -93,10 +148,16 @@ class TlsCertificatesAndHostnamesCustomHostnameResponseSingleAttrs:
     custom_origin_server: Any = None
     # A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string ':request_host_header:' which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.
     custom_origin_sni: Any = None
+    errors: Any = None
     # The custom hostname that will point to your hostname via CNAME.
     hostname: Any = None
+    # Informational messages returned by the custom hostname API.
+    messages: Any = None
+    result: Any = None
     # SSL properties used when creating the custom hostname.
     ssl: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     zone_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -6,8 +6,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IamSinglePermissionGroupsResponse_AccountId struct {
 }
 
-var IamSinglePermissionGroupsResponse_AccountIdFields = ubx.FieldMap{
-	}
+type IamSinglePermissionGroupsResponse_Result_Meta struct {
+	Key   any
+	Value any
+}
+
+type IamSinglePermissionGroupsResponse_Result struct {
+	// Identifier of the permission group.
+	Id any
+	// Attributes associated to the permission group.
+	Meta any
+	// Name of the permission group.
+	Name any
+}
+
+var IamSinglePermissionGroupsResponse_AccountIdFields = ubx.FieldMap{}
 
 type IamSinglePermissionGroupsResponseConfig struct {
 	// Account identifier tag.
@@ -21,6 +34,8 @@ type IamSinglePermissionGroupsResponseAttrs struct {
 	AccountId any
 	// Permission Group identifier tag.
 	PermissionGroupId any
+	// A named group of permissions that map to a group of operations against resources.
+	Result any
 }
 
 var IamSinglePermissionGroupsResponse = ubx.DataSourceBinding{
@@ -28,13 +43,13 @@ var IamSinglePermissionGroupsResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamSinglePermissionGroupsResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamSinglePermissionGroupsResponse_AccountIdFields,
 		},
 		"PermissionGroupId": ubx.FieldSpec{
 			WireName: "permission_group_id",
-			Kind: "object",
-			Fields: IamSinglePermissionGroupsResponse_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamSinglePermissionGroupsResponse_AccountIdFields,
 		},
 	},
 }

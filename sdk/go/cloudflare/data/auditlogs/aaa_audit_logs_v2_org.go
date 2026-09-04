@@ -9,19 +9,19 @@ type AaaAuditLogsV2Org_Errors struct {
 
 type AaaAuditLogsV2Org_Result_Action struct {
 	Description any
-	Result any
-	Time any
-	Type any
+	Result      any
+	Time        any
+	Type        any
 }
 
 type AaaAuditLogsV2Org_Result_Actor struct {
-	Context any
-	Email any
-	Id any
+	Context   any
+	Email     any
+	Id        any
 	IpAddress any
-	TokenId any
+	TokenId   any
 	TokenName any
-	Type any
+	Type      any
 }
 
 type AaaAuditLogsV2Org_Result_Organization struct {
@@ -29,29 +29,29 @@ type AaaAuditLogsV2Org_Result_Organization struct {
 }
 
 type AaaAuditLogsV2Org_Result_Raw struct {
-	CfRayId any
-	Method any
+	CfRayId    any
+	Method     any
 	StatusCode any
-	Uri any
-	UserAgent any
+	Uri        any
+	UserAgent  any
 }
 
 type AaaAuditLogsV2Org_Result_Resource struct {
-	Id any
-	Product any
-	Request any
+	Id       any
+	Product  any
+	Request  any
 	Response any
-	Scope any
-	Type any
+	Scope    any
+	Type     any
 }
 
 type AaaAuditLogsV2Org_Result struct {
-	Action any
-	Actor any
-	Id any
+	Action       any
+	Actor        any
+	Id           any
 	Organization any
-	Raw any
-	Resource any
+	Raw          any
+	Resource     any
 }
 
 type AaaAuditLogsV2Org_ResultInfo struct {
@@ -65,7 +65,7 @@ type AaaAuditLogsV2Org_ResultInfo struct {
 
 type AaaAuditLogsV2OrgConfig struct {
 	ActionTime any
-	Before any
+	Before     any
 	// The cursor is an opaque token used to paginate through large sets of records. It indicates the position from which to continue when requesting the next set of records. A valid cursor value can be obtained from the cursor object in the result_info structure of a previous response.
 	Cursor any
 	// Sets sorting order.
@@ -76,27 +76,27 @@ type AaaAuditLogsV2OrgConfig struct {
 	Limit any
 	// The unique ID that identifies the organization.
 	OrganizationId any
-	Since any
+	Since          any
 }
 
 type AaaAuditLogsV2OrgAttrs struct {
 	ActionTime any
-	Before any
+	Before     any
 	// The cursor is an opaque token used to paginate through large sets of records. It indicates the position from which to continue when requesting the next set of records. A valid cursor value can be obtained from the cursor object in the result_info structure of a previous response.
 	Cursor any
 	// Sets sorting order.
 	Direction any
-	Errors any
+	Errors    any
 	// The ID of the audit log to fetch resource history for.
 	Id any
 	// The number limits the objects to return. The cursor attribute may be used to iterate over the next batch of objects if there are more than the limit.
 	Limit any
 	// The unique ID that identifies the organization.
 	OrganizationId any
-	Result any
+	Result         any
 	// Provides information about the result of the request, including count, cursor, and identification quality.
 	ResultInfo any
-	Since any
+	Since      any
 	// Indicates whether the API call was successful
 	Success any
 }
@@ -104,13 +104,13 @@ type AaaAuditLogsV2OrgAttrs struct {
 var AaaAuditLogsV2Org = ubx.DataSourceBinding{
 	WireType: "cloudflare_aaa_audit_logs_v2_org",
 	Fields: ubx.FieldMap{
-		"ActionTime": ubx.FieldSpec{WireName: "action_time"},
-		"Before": ubx.FieldSpec{WireName: "before"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"ActionTime":     ubx.FieldSpec{WireName: "action_time"},
+		"Before":         ubx.FieldSpec{WireName: "before"},
+		"Cursor":         ubx.FieldSpec{WireName: "cursor"},
+		"Direction":      ubx.FieldSpec{WireName: "direction"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Limit":          ubx.FieldSpec{WireName: "limit"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-		"Since": ubx.FieldSpec{WireName: "since"},
+		"Since":          ubx.FieldSpec{WireName: "since"},
 	},
 }

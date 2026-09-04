@@ -7,6 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Web3ContentListEntryCollectionResponse_Result_Entries:
+    content: Any = None
+    created_on: Any = None
+    description: Any = None
+    id: Any = None
+    modified_on: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Web3ContentListEntryCollectionResponse_Result:
+    # Provides content list entries.
+    entries: Any = None
+
+@dataclasses.dataclass
 class Web3ContentListEntryCollectionResponseConfig:
     pass
 
@@ -14,6 +28,7 @@ class Web3ContentListEntryCollectionResponseConfig:
 class Web3ContentListEntryCollectionResponseAttrs:
     # Specify the identifier of the hostname.
     identifier: Any = None
+    result: Any = None
     # Specify the identifier of the hostname.
     zone_id: Any = None
 

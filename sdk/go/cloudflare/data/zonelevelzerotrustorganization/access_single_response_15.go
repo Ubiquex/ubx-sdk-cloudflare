@@ -3,11 +3,45 @@ package zonelevelzerotrustorganization
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse15_Result_LoginDesign struct {
+	// The background color on your login page.
+	BackgroundColor any
+	// The text at the bottom of your login page.
+	FooterText any
+	// The text at the top of your login page.
+	HeaderText any
+	// The URL of the logo on your login page.
+	LogoPath any
+	// The text color on your login page.
+	TextColor any
+}
+
+type AccessSingleResponse15_Result struct {
+	// The unique subdomain assigned to your Zero Trust organization.
+	AuthDomain any
+	CreatedAt  any
+	// Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.
+	DenyUnmatchedRequests any
+	// Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.
+	DenyUnmatchedRequestsExemptedZoneNames any
+	// Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.
+	IsUiReadOnly any
+	LoginDesign  any
+	// The name of your Zero Trust organization.
+	Name any
+	// A description of the reason why the UI read only field is being toggled.
+	UiReadOnlyToggleReason any
+	UpdatedAt              any
+	// The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.
+	UserSeatExpirationInactiveTime any
+}
+
 type AccessSingleResponse15Config struct {
 	ZoneId any
 }
 
 type AccessSingleResponse15Attrs struct {
+	Result any
 	ZoneId any
 }
 

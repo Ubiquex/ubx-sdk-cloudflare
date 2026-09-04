@@ -18,16 +18,16 @@ type BannerAttrs struct {
 	AccountId any
 	// Defines the Config ID.
 	ConfigId any
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var Banner = ubx.DataSourceBinding{
 	WireType: "cloudflare_banner",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
+		"ConfigId":  ubx.FieldSpec{WireName: "config_id"},
 	},
 }

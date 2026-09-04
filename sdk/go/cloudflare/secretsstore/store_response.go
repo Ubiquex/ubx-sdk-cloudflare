@@ -3,6 +3,19 @@ package secretsstore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type StoreResponse_Result struct {
+	// Account Identifier.
+	AccountId any
+	// When the secret was created.
+	Created any
+	// Store Identifier.
+	Id any
+	// When the secret was modified.
+	Modified any
+	// The name of the store.
+	Name any
+}
+
 type StoreResponseConfig struct {
 	// The name of the store.
 	Name any
@@ -14,7 +27,8 @@ type StoreResponseConfig struct {
 
 type StoreResponseAttrs struct {
 	// The name of the store.
-	Name any
+	Name   any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +38,8 @@ type StoreResponseAttrs struct {
 var StoreResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_secrets_store_store_response",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"StoreId": ubx.FieldSpec{WireName: "store_id"},
+		"StoreId":   ubx.FieldSpec{WireName: "store_id"},
 	},
 }

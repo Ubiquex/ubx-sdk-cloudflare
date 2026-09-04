@@ -7,6 +7,19 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class StreamDownloadsResponse_Result_Audio:
+    percent_complete: Any = None
+    status: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class StreamDownloadsResponse_Result:
+    # The audio-only download. Only present if this download type has been created.
+    audio: Any = None
+    # The default video download. Only present if this download type has been created.
+    default: Any = None
+
+@dataclasses.dataclass
 class StreamDownloadsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -19,6 +32,8 @@ class StreamDownloadsResponseAttrs:
     account_id: Any = None
     # A Cloudflare-generated unique identifier for a media item.
     identifier: Any = None
+    # An object with download type keys. Each key is optional and only present if that download type has been created.
+    result: Any = None
 
 StreamDownloadsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_stream_downloads_response",

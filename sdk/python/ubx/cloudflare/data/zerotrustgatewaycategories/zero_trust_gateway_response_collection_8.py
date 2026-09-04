@@ -7,6 +7,23 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection8_Result_Subcategories:
+    beta: Any = None
+    class_: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class ZeroTrustGatewayResponseCollection8_Result:
+    beta: Any = None
+    class_: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+    subcategories: Any = None
+
+@dataclasses.dataclass
 class ZeroTrustGatewayResponseCollection8Config:
     # Provide the identifier string.
     account_id: Any = None
@@ -15,6 +32,7 @@ class ZeroTrustGatewayResponseCollection8Config:
 class ZeroTrustGatewayResponseCollection8Attrs:
     # Provide the identifier string.
     account_id: Any = None
+    result: Any = None
 
 ZeroTrustGatewayResponseCollection8 = ubx.DataSourceBinding(
     wire_type="cloudflare_zero_trust_gateway_response_collection_8",

@@ -4,7 +4,7 @@ package aisearchinstances
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_CustomMetadata struct {
-	DataType any
+	DataType  any
 	FieldName any
 }
 
@@ -22,7 +22,7 @@ type Instance_IndexingOptions struct {
 
 type Instance_Metadata struct {
 	CreatedFromAisearchWizard any
-	WorkerDomain any
+	WorkerDomain              any
 }
 
 type Instance_PublicEndpointParams_ChatCompletionsEndpoint struct {
@@ -37,27 +37,27 @@ type Instance_PublicEndpointParams_Mcp struct {
 }
 
 type Instance_PublicEndpointParams_RateLimit struct {
-	PeriodMs any
-	Requests any
+	PeriodMs  any
+	Requests  any
 	Technique any
 }
 
 type Instance_PublicEndpointParams struct {
-	AuthorizedHosts any
+	AuthorizedHosts         any
 	ChatCompletionsEndpoint any
 	// Custom domain hostnames that alias this public endpoint. GET and create responses return the current set; on update (PUT) this field is only echoed back when supplied in the request body, otherwise it is null (omit it to leave domains unchanged).
 	CustomDomains any
 	// When false, the instance is reachable only via a registered custom domain and the default <public_endpoint_id>.search.ai.cloudflare.com host returns 404. Requires at least one custom domain. Defaults to true. public_endpoint_params is replaced wholesale on update, so resend default_domain_enabled on every update to keep the default host off — omitting it resets to true.
 	DefaultDomainEnabled any
-	Enabled any
-	Mcp any
-	RateLimit any
-	SearchEndpoint any
+	Enabled              any
+	Mcp                  any
+	RateLimit            any
+	SearchEndpoint       any
 }
 
 type Instance_Result_RetrievalOptions_BoostBy struct {
 	Direction any
-	Field any
+	Field     any
 }
 
 type Instance_Result_RetrievalOptions struct {
@@ -83,7 +83,7 @@ type Instance_Result_SourceParams_WebCrawler_DiscoverOptions struct {
 }
 
 type Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelector struct {
-	Path any
+	Path     any
 	Selector any
 }
 
@@ -92,16 +92,16 @@ type Instance_Result_SourceParams_WebCrawler_ParseOptions struct {
 	ContentSelector any
 	// Up to 5 custom HTTP headers sent with each crawl request. Names must be RFC-7230 token characters (no spaces, colons, or control characters); values must be HTAB + printable ASCII (no CR/LF).
 	IncludeHeaders any
-	IncludeImages any
+	IncludeImages  any
 	// List of specific sitemap URLs to use for crawling. Only valid when parse_type is 'sitemap'.
-	SpecificSitemaps any
+	SpecificSitemaps    any
 	UseBrowserRendering any
 }
 
 type Instance_Result_SourceParams_WebCrawler struct {
 	// Options for parse_type 'discover', where Browser Run discovers URLs by link following and sitemaps. Ignored for 'sitemap'.
 	DiscoverOptions any
-	ParseOptions any
+	ParseOptions    any
 	// How URLs are discovered. 'sitemap' reads XML sitemaps; 'discover' follows links recursively and requires the source to be a Verified zone on this account.
 	ParseType any
 }
@@ -110,225 +110,225 @@ type Instance_Result_SourceParams struct {
 	// List of path patterns to exclude. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /admin/** matches /admin/users and /admin/settings/advanced). Most accounts are limited to 10 rules; contact support to raise it.
 	ExcludeItems any
 	// List of path patterns to include. Uses micromatch glob syntax: * matches within a path segment, ** matches across path segments (e.g., /blog/** matches /blog/post and /blog/2024/post). Most accounts are limited to 10 rules; contact support to raise it.
-	IncludeItems any
-	Prefix any
+	IncludeItems   any
+	Prefix         any
 	R2Jurisdiction any
-	WebCrawler any
+	WebCrawler     any
 }
 
 type Instance_Result struct {
 	AiGatewayId any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	AiSearchModel any
-	Cache any
+	AiSearchModel  any
+	Cache          any
 	CacheThreshold any
 	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
-	CacheTtl any
-	ChunkOverlap any
-	ChunkSize any
-	CreatedAt any
-	CreatedBy any
+	CacheTtl       any
+	ChunkOverlap   any
+	ChunkSize      any
+	CreatedAt      any
+	CreatedBy      any
 	CustomMetadata any
 	EmbeddingModel any
-	Enable any
-	EngineVersion any
-	FusionMethod any
+	Enable         any
+	EngineVersion  any
+	FusionMethod   any
 	// Deprecated — use index_method instead.
 	HybridSearchEnabled any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
 	// Controls which storage backends are used during indexing. Defaults to vector-only.
-	IndexMethod any
-	IndexingOptions any
-	LastActivity any
-	MaxNumResults any
-	Metadata any
-	ModifiedAt any
-	ModifiedBy any
-	Namespace any
-	Paused any
-	PublicEndpointId any
+	IndexMethod          any
+	IndexingOptions      any
+	LastActivity         any
+	MaxNumResults        any
+	Metadata             any
+	ModifiedAt           any
+	ModifiedBy           any
+	Namespace            any
+	Paused               any
+	PublicEndpointId     any
 	PublicEndpointParams any
-	Reranking any
-	RerankingModel any
-	RetrievalOptions any
+	Reranking            any
+	RerankingModel       any
+	RetrievalOptions     any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	RewriteModel any
-	RewriteQuery any
+	RewriteModel   any
+	RewriteQuery   any
 	ScoreThreshold any
-	Source any
-	SourceParams any
-	Status any
+	Source         any
+	SourceParams   any
+	Status         any
 	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
 	SyncInterval any
-	TokenId any
-	Type any
+	TokenId      any
+	Type         any
 }
 
 var Instance_CustomMetadataFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-	}
+	"DataType":  ubx.FieldSpec{WireName: "data_type"},
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+}
 
 var Instance_IndexMethodFields = ubx.FieldMap{
-		"Keyword": ubx.FieldSpec{WireName: "keyword"},
-		"Vector": ubx.FieldSpec{WireName: "vector"},
-	}
+	"Keyword": ubx.FieldSpec{WireName: "keyword"},
+	"Vector":  ubx.FieldSpec{WireName: "vector"},
+}
 
 var Instance_IndexingOptionsFields = ubx.FieldMap{
-		"KeywordTokenizer": ubx.FieldSpec{WireName: "keyword_tokenizer"},
-	}
+	"KeywordTokenizer": ubx.FieldSpec{WireName: "keyword_tokenizer"},
+}
 
 var Instance_MetadataFields = ubx.FieldMap{
-		"CreatedFromAisearchWizard": ubx.FieldSpec{WireName: "created_from_aisearch_wizard"},
-		"WorkerDomain": ubx.FieldSpec{WireName: "worker_domain"},
-	}
+	"CreatedFromAisearchWizard": ubx.FieldSpec{WireName: "created_from_aisearch_wizard"},
+	"WorkerDomain":              ubx.FieldSpec{WireName: "worker_domain"},
+}
 
 var Instance_PublicEndpointParams_ChatCompletionsEndpointFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var Instance_PublicEndpointParams_McpFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+}
 
 var Instance_PublicEndpointParams_RateLimitFields = ubx.FieldMap{
-		"PeriodMs": ubx.FieldSpec{WireName: "period_ms"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-		"Technique": ubx.FieldSpec{WireName: "technique"},
-	}
+	"PeriodMs":  ubx.FieldSpec{WireName: "period_ms"},
+	"Requests":  ubx.FieldSpec{WireName: "requests"},
+	"Technique": ubx.FieldSpec{WireName: "technique"},
+}
 
 var Instance_PublicEndpointParamsFields = ubx.FieldMap{
-		"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
-		"ChatCompletionsEndpoint": ubx.FieldSpec{
-			WireName: "chat_completions_endpoint",
-			Kind: "object",
-			Fields: Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
-		},
-		"CustomDomains": ubx.FieldSpec{WireName: "custom_domains"},
-		"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Mcp": ubx.FieldSpec{
-			WireName: "mcp",
-			Kind: "object",
-			Fields: Instance_PublicEndpointParams_McpFields,
-		},
-		"RateLimit": ubx.FieldSpec{
-			WireName: "rate_limit",
-			Kind: "object",
-			Fields: Instance_PublicEndpointParams_RateLimitFields,
-		},
-		"SearchEndpoint": ubx.FieldSpec{
-			WireName: "search_endpoint",
-			Kind: "object",
-			Fields: Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
-		},
-	}
+	"AuthorizedHosts": ubx.FieldSpec{WireName: "authorized_hosts"},
+	"ChatCompletionsEndpoint": ubx.FieldSpec{
+		WireName: "chat_completions_endpoint",
+		Kind:     "object",
+		Fields:   Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
+	},
+	"CustomDomains":        ubx.FieldSpec{WireName: "custom_domains"},
+	"DefaultDomainEnabled": ubx.FieldSpec{WireName: "default_domain_enabled"},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"Mcp": ubx.FieldSpec{
+		WireName: "mcp",
+		Kind:     "object",
+		Fields:   Instance_PublicEndpointParams_McpFields,
+	},
+	"RateLimit": ubx.FieldSpec{
+		WireName: "rate_limit",
+		Kind:     "object",
+		Fields:   Instance_PublicEndpointParams_RateLimitFields,
+	},
+	"SearchEndpoint": ubx.FieldSpec{
+		WireName: "search_endpoint",
+		Kind:     "object",
+		Fields:   Instance_PublicEndpointParams_ChatCompletionsEndpointFields,
+	},
+}
 
 var Instance_Result_RetrievalOptions_BoostByFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"Field":     ubx.FieldSpec{WireName: "field"},
+}
 
 var Instance_Result_RetrievalOptionsFields = ubx.FieldMap{
-		"BoostBy": ubx.FieldSpec{
-			WireName: "boost_by",
-			Kind: "list",
-			Fields: Instance_Result_RetrievalOptions_BoostByFields,
-		},
-		"KeywordMatchMode": ubx.FieldSpec{WireName: "keyword_match_mode"},
-	}
+	"BoostBy": ubx.FieldSpec{
+		WireName: "boost_by",
+		Kind:     "list",
+		Fields:   Instance_Result_RetrievalOptions_BoostByFields,
+	},
+	"KeywordMatchMode": ubx.FieldSpec{WireName: "keyword_match_mode"},
+}
 
 var Instance_Result_SourceParams_WebCrawler_DiscoverOptionsFields = ubx.FieldMap{
-		"Depth": ubx.FieldSpec{WireName: "depth"},
-		"IncludeExternalLinks": ubx.FieldSpec{WireName: "include_external_links"},
-		"IncludeSubdomains": ubx.FieldSpec{WireName: "include_subdomains"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Depth":                ubx.FieldSpec{WireName: "depth"},
+	"IncludeExternalLinks": ubx.FieldSpec{WireName: "include_external_links"},
+	"IncludeSubdomains":    ubx.FieldSpec{WireName: "include_subdomains"},
+	"Limit":                ubx.FieldSpec{WireName: "limit"},
+	"MaxAge":               ubx.FieldSpec{WireName: "max_age"},
+	"Source":               ubx.FieldSpec{WireName: "source"},
+}
 
 var Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Instance_Result_SourceParams_WebCrawler_ParseOptionsFields = ubx.FieldMap{
-		"ContentSelector": ubx.FieldSpec{
-			WireName: "content_selector",
-			Kind: "list",
-			Fields: Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields,
-		},
-		"IncludeHeaders": ubx.FieldSpec{WireName: "include_headers"},
-		"IncludeImages": ubx.FieldSpec{WireName: "include_images"},
-		"SpecificSitemaps": ubx.FieldSpec{WireName: "specific_sitemaps"},
-		"UseBrowserRendering": ubx.FieldSpec{WireName: "use_browser_rendering"},
-	}
+	"ContentSelector": ubx.FieldSpec{
+		WireName: "content_selector",
+		Kind:     "list",
+		Fields:   Instance_Result_SourceParams_WebCrawler_ParseOptions_ContentSelectorFields,
+	},
+	"IncludeHeaders":      ubx.FieldSpec{WireName: "include_headers"},
+	"IncludeImages":       ubx.FieldSpec{WireName: "include_images"},
+	"SpecificSitemaps":    ubx.FieldSpec{WireName: "specific_sitemaps"},
+	"UseBrowserRendering": ubx.FieldSpec{WireName: "use_browser_rendering"},
+}
 
 var Instance_Result_SourceParams_WebCrawlerFields = ubx.FieldMap{
-		"DiscoverOptions": ubx.FieldSpec{
-			WireName: "discover_options",
-			Kind: "object",
-			Fields: Instance_Result_SourceParams_WebCrawler_DiscoverOptionsFields,
-		},
-		"ParseOptions": ubx.FieldSpec{
-			WireName: "parse_options",
-			Kind: "object",
-			Fields: Instance_Result_SourceParams_WebCrawler_ParseOptionsFields,
-		},
-		"ParseType": ubx.FieldSpec{WireName: "parse_type"},
-	}
+	"DiscoverOptions": ubx.FieldSpec{
+		WireName: "discover_options",
+		Kind:     "object",
+		Fields:   Instance_Result_SourceParams_WebCrawler_DiscoverOptionsFields,
+	},
+	"ParseOptions": ubx.FieldSpec{
+		WireName: "parse_options",
+		Kind:     "object",
+		Fields:   Instance_Result_SourceParams_WebCrawler_ParseOptionsFields,
+	},
+	"ParseType": ubx.FieldSpec{WireName: "parse_type"},
+}
 
 var Instance_Result_SourceParamsFields = ubx.FieldMap{
-		"ExcludeItems": ubx.FieldSpec{WireName: "exclude_items"},
-		"IncludeItems": ubx.FieldSpec{WireName: "include_items"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"R2Jurisdiction": ubx.FieldSpec{WireName: "r2_jurisdiction"},
-		"WebCrawler": ubx.FieldSpec{
-			WireName: "web_crawler",
-			Kind: "object",
-			Fields: Instance_Result_SourceParams_WebCrawlerFields,
-		},
-	}
+	"ExcludeItems":   ubx.FieldSpec{WireName: "exclude_items"},
+	"IncludeItems":   ubx.FieldSpec{WireName: "include_items"},
+	"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+	"R2Jurisdiction": ubx.FieldSpec{WireName: "r2_jurisdiction"},
+	"WebCrawler": ubx.FieldSpec{
+		WireName: "web_crawler",
+		Kind:     "object",
+		Fields:   Instance_Result_SourceParams_WebCrawlerFields,
+	},
+}
 
 type InstanceConfig struct {
 	AiGatewayId any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	AiSearchModel any
-	Cache any
+	AiSearchModel  any
+	Cache          any
 	CacheThreshold any
 	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
-	CacheTtl any
-	Chunk any
-	ChunkOverlap any
-	ChunkSize any
+	CacheTtl       any
+	Chunk          any
+	ChunkOverlap   any
+	ChunkSize      any
 	CustomMetadata any
 	EmbeddingModel any
-	FusionMethod any
+	FusionMethod   any
 	// Deprecated — use index_method instead.
 	HybridSearchEnabled any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
 	// Controls which storage backends are used during indexing. Defaults to vector-only.
-	IndexMethod any
-	IndexingOptions any
-	MaxNumResults any
-	Metadata any
+	IndexMethod          any
+	IndexingOptions      any
+	MaxNumResults        any
+	Metadata             any
 	PublicEndpointParams any
-	Reranking any
-	RerankingModel any
-	RetrievalOptions any
+	Reranking            any
+	RerankingModel       any
+	RetrievalOptions     any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	RewriteModel any
-	RewriteQuery any
+	RewriteModel   any
+	RewriteQuery   any
 	ScoreThreshold any
-	Source any
-	SourceParams any
+	Source         any
+	SourceParams   any
 	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
 	SyncInterval any
-	TokenId any
-	Type any
+	TokenId      any
+	Type         any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -336,42 +336,42 @@ type InstanceConfig struct {
 type InstanceAttrs struct {
 	AiGatewayId any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	AiSearchModel any
-	Cache any
+	AiSearchModel  any
+	Cache          any
 	CacheThreshold any
 	// Cache entry TTL in seconds. Allowed values: 600 (10min), 1800 (30min), 3600 (1h), 7200 (2h), 21600 (6h), 43200 (12h), 86400 (24h), 172800 (48h), 259200 (72h), 518400 (6d).
-	CacheTtl any
-	Chunk any
-	ChunkOverlap any
-	ChunkSize any
+	CacheTtl       any
+	Chunk          any
+	ChunkOverlap   any
+	ChunkSize      any
 	CustomMetadata any
 	EmbeddingModel any
-	FusionMethod any
+	FusionMethod   any
 	// Deprecated — use index_method instead.
 	HybridSearchEnabled any
 	// AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.
 	Id any
 	// Controls which storage backends are used during indexing. Defaults to vector-only.
-	IndexMethod any
-	IndexingOptions any
-	MaxNumResults any
-	Metadata any
+	IndexMethod          any
+	IndexingOptions      any
+	MaxNumResults        any
+	Metadata             any
 	PublicEndpointParams any
-	Reranking any
-	RerankingModel any
-	Result any
-	RetrievalOptions any
+	Reranking            any
+	RerankingModel       any
+	Result               any
+	RetrievalOptions     any
 	// A Workers AI model ID or an AI Gateway model ID compatible with the OpenAI Chat Completions API. An empty string uses the configured or default model.
-	RewriteModel any
-	RewriteQuery any
+	RewriteModel   any
+	RewriteQuery   any
 	ScoreThreshold any
-	Source any
-	SourceParams any
-	Success any
+	Source         any
+	SourceParams   any
+	Success        any
 	// Interval between automatic syncs, in seconds. Allowed values: 900 (15min), 1800 (30min), 3600 (1h), 7200 (2h), 14400 (4h), 21600 (6h), 43200 (12h), 86400 (24h).
 	SyncInterval any
-	TokenId any
-	Type any
+	TokenId      any
+	Type         any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -379,63 +379,63 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "cloudflare_instance",
 	Fields: ubx.FieldMap{
-		"AiGatewayId": ubx.FieldSpec{WireName: "ai_gateway_id"},
-		"AiSearchModel": ubx.FieldSpec{WireName: "ai_search_model"},
-		"Cache": ubx.FieldSpec{WireName: "cache"},
+		"AiGatewayId":    ubx.FieldSpec{WireName: "ai_gateway_id"},
+		"AiSearchModel":  ubx.FieldSpec{WireName: "ai_search_model"},
+		"Cache":          ubx.FieldSpec{WireName: "cache"},
 		"CacheThreshold": ubx.FieldSpec{WireName: "cache_threshold"},
-		"CacheTtl": ubx.FieldSpec{WireName: "cache_ttl"},
-		"Chunk": ubx.FieldSpec{WireName: "chunk"},
-		"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
-		"ChunkSize": ubx.FieldSpec{WireName: "chunk_size"},
+		"CacheTtl":       ubx.FieldSpec{WireName: "cache_ttl"},
+		"Chunk":          ubx.FieldSpec{WireName: "chunk"},
+		"ChunkOverlap":   ubx.FieldSpec{WireName: "chunk_overlap"},
+		"ChunkSize":      ubx.FieldSpec{WireName: "chunk_size"},
 		"CustomMetadata": ubx.FieldSpec{
 			WireName: "custom_metadata",
-			Kind: "list",
-			Fields: Instance_CustomMetadataFields,
+			Kind:     "list",
+			Fields:   Instance_CustomMetadataFields,
 		},
-		"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
-		"FusionMethod": ubx.FieldSpec{WireName: "fusion_method"},
+		"EmbeddingModel":      ubx.FieldSpec{WireName: "embedding_model"},
+		"FusionMethod":        ubx.FieldSpec{WireName: "fusion_method"},
 		"HybridSearchEnabled": ubx.FieldSpec{WireName: "hybrid_search_enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 		"IndexMethod": ubx.FieldSpec{
 			WireName: "index_method",
-			Kind: "object",
-			Fields: Instance_IndexMethodFields,
+			Kind:     "object",
+			Fields:   Instance_IndexMethodFields,
 		},
 		"IndexingOptions": ubx.FieldSpec{
 			WireName: "indexing_options",
-			Kind: "object",
-			Fields: Instance_IndexingOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_IndexingOptionsFields,
 		},
 		"MaxNumResults": ubx.FieldSpec{WireName: "max_num_results"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Instance_MetadataFields,
+			Kind:     "object",
+			Fields:   Instance_MetadataFields,
 		},
 		"PublicEndpointParams": ubx.FieldSpec{
 			WireName: "public_endpoint_params",
-			Kind: "object",
-			Fields: Instance_PublicEndpointParamsFields,
+			Kind:     "object",
+			Fields:   Instance_PublicEndpointParamsFields,
 		},
-		"Reranking": ubx.FieldSpec{WireName: "reranking"},
+		"Reranking":      ubx.FieldSpec{WireName: "reranking"},
 		"RerankingModel": ubx.FieldSpec{WireName: "reranking_model"},
 		"RetrievalOptions": ubx.FieldSpec{
 			WireName: "retrieval_options",
-			Kind: "object",
-			Fields: Instance_Result_RetrievalOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_Result_RetrievalOptionsFields,
 		},
-		"RewriteModel": ubx.FieldSpec{WireName: "rewrite_model"},
-		"RewriteQuery": ubx.FieldSpec{WireName: "rewrite_query"},
+		"RewriteModel":   ubx.FieldSpec{WireName: "rewrite_model"},
+		"RewriteQuery":   ubx.FieldSpec{WireName: "rewrite_query"},
 		"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
-		"Source": ubx.FieldSpec{WireName: "source"},
+		"Source":         ubx.FieldSpec{WireName: "source"},
 		"SourceParams": ubx.FieldSpec{
 			WireName: "source_params",
-			Kind: "object",
-			Fields: Instance_Result_SourceParamsFields,
+			Kind:     "object",
+			Fields:   Instance_Result_SourceParamsFields,
 		},
 		"SyncInterval": ubx.FieldSpec{WireName: "sync_interval"},
-		"TokenId": ubx.FieldSpec{WireName: "token_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"TokenId":      ubx.FieldSpec{WireName: "token_id"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 	},
 }

@@ -3,6 +3,17 @@ package requestforinformationrfi
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Type_Errors_Source struct {
+	Pointer any
+}
+
+type Type_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
 type TypeConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +22,11 @@ type TypeConfig struct {
 type TypeAttrs struct {
 	// Identifier.
 	AccountId any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var Type = ubx.DataSourceBinding{

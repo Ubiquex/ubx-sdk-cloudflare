@@ -3,22 +3,36 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosDnsProtectionRuleListResponse_Result struct {
+	BlockAnyQueries    any
+	BurstSensitivity   any
+	CreatedOn          any
+	Id                 any
+	Mode               any
+	ModifiedOn         any
+	Name               any
+	ProfileSensitivity any
+	RateSensitivity    any
+	Scope              any
+}
+
 type DosDnsProtectionRuleListResponseConfig struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type DosDnsProtectionRuleListResponseAttrs struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var DosDnsProtectionRuleListResponse = ubx.DataSourceBinding{
@@ -26,8 +40,8 @@ var DosDnsProtectionRuleListResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

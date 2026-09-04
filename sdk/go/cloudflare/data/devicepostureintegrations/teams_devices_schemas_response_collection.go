@@ -3,12 +3,27 @@ package devicepostureintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TeamsDevicesSchemasResponseCollection_Result_Config struct {
+	ApiUrl   any
+	AuthUrl  any
+	ClientId any
+}
+
+type TeamsDevicesSchemasResponseCollection_Result struct {
+	Config   any
+	Id       any
+	Interval any
+	Name     any
+	Type     any
+}
+
 type TeamsDevicesSchemasResponseCollectionConfig struct {
 	AccountId any
 }
 
 type TeamsDevicesSchemasResponseCollectionAttrs struct {
 	AccountId any
+	Result    any
 }
 
 var TeamsDevicesSchemasResponseCollection = ubx.DataSourceBinding{

@@ -3,6 +3,25 @@ package customorigintruststore
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle_Result struct {
+	// The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
+	Certificate any
+	// When the certificate expires.
+	ExpiresOn any
+	// Identifier.
+	Id any
+	// The certificate authority that issued the certificate.
+	Issuer any
+	// The type of hash used for the certificate.
+	Signature any
+	// Status of the zone's custom SSL.
+	Status any
+	// When the certificate was last modified.
+	UpdatedAt any
+	// When the certificate was uploaded to Cloudflare.
+	UploadedOn any
+}
+
 type TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleConfig struct {
 	// The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
 	Certificate any
@@ -15,6 +34,7 @@ type TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleConfig struct {
 type TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleAttrs struct {
 	// The root CA certificate in PEM format. Only root CA certificates are accepted; intermediate and leaf certificates are not supported.
 	Certificate any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -24,8 +44,8 @@ type TlsCertificatesAndHostnamesCustomTrustStoreResponseSingleAttrs struct {
 var TlsCertificatesAndHostnamesCustomTrustStoreResponseSingle = ubx.ResourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_custom_trust_store_response_single",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Certificate":              ubx.FieldSpec{WireName: "certificate"},
+		"ZoneId":                   ubx.FieldSpec{WireName: "zone_id"},
 		"CustomOriginTrustStoreId": ubx.FieldSpec{WireName: "custom_origin_trust_store_id"},
 	},
 }

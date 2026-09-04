@@ -7,6 +7,7 @@ export interface ArgoAnalyticsResponseSingleConfig {
 
 export interface ArgoAnalyticsResponseSingleAttrs {
   bins: string;
+  result: unknown;
   /** Identifier */
   zoneId: string;
 }

@@ -3,21 +3,39 @@ package dlpdatatagcategories
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DataTagCategory_Result_Tags struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
+type DataTagCategory_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	Tags        any
+	TemplateId  any
+	UpdatedAt   any
+}
+
 type DataTagCategory_Tags struct {
 	Description any
-	Name any
+	Name        any
 }
 
 var DataTagCategory_TagsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 type DataTagCategoryConfig struct {
 	Description any
-	Name any
+	Name        any
 	// Tags to create with the category. Mutually exclusive with `template_id`.
-	Tags any
+	Tags       any
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -27,9 +45,10 @@ type DataTagCategoryConfig struct {
 
 type DataTagCategoryAttrs struct {
 	Description any
-	Name any
+	Name        any
+	Result      any
 	// Tags to create with the category. Mutually exclusive with `template_id`.
-	Tags any
+	Tags       any
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -41,14 +60,14 @@ var DataTagCategory = ubx.ResourceBinding{
 	WireType: "cloudflare_data_tag_category",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "list",
-			Fields: DataTagCategory_TagsFields,
+			Kind:     "list",
+			Fields:   DataTagCategory_TagsFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
 	},
 }

@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecretsResponseCollection_Result:
+    comment: Any = None
+    created: Any = None
+    id: Any = None
+    modified: Any = None
+    name: Any = None
+    scopes: Any = None
+    status: Any = None
+    store_id: Any = None
+
+@dataclasses.dataclass
 class SecretsResponseCollectionConfig:
     account_id: Any = None
     direction: Any = None
@@ -24,6 +35,7 @@ class SecretsResponseCollectionAttrs:
     order: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
     scopes: Any = None
     search: Any = None
     store_id: Any = None

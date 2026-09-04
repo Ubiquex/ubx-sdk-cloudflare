@@ -7,6 +7,25 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusLiveResponse_Result_DeviceStats_ByColo:
+    unique_devices_total: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusLiveResponse_Result_DeviceStats:
+    by_colo: Any = None
+    by_mode: Any = None
+    by_platform: Any = None
+    by_status: Any = None
+    by_version: Any = None
+    # Number of unique devices
+    unique_devices_total: Any = None
+
+@dataclasses.dataclass
+class DigitalExperienceMonitoringFleetStatusLiveResponse_Result:
+    device_stats: Any = None
+
+@dataclasses.dataclass
 class DigitalExperienceMonitoringFleetStatusLiveResponseConfig:
     # Number of minutes before current time.
     since_minutes: Any = None
@@ -15,6 +34,7 @@ class DigitalExperienceMonitoringFleetStatusLiveResponseConfig:
 class DigitalExperienceMonitoringFleetStatusLiveResponseAttrs:
     # Unique identifier linked to an account.
     account_id: Any = None
+    result: Any = None
     # Number of minutes before current time.
     since_minutes: Any = None
 

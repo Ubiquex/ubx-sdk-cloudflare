@@ -11,6 +11,17 @@ class TeamsDevicesComponentsSchemasSingleResponse_Config:
     sha256: Any = None
     tls_sockaddr: Any = None
 
+@dataclasses.dataclass
+class TeamsDevicesComponentsSchemasSingleResponse_Result:
+    # The configuration object containing information for the WARP client to detect the managed network.
+    config: Any = None
+    # The name of the device managed network. This name must be unique.
+    name: Any = None
+    # API UUID.
+    network_id: Any = None
+    # The type of device managed network.
+    type: Any = None
+
 _TeamsDevicesComponentsSchemasSingleResponse_ConfigFields = {
     "sha256": ubx.FieldSpec(wire_name="sha256"),
     "tls_sockaddr": ubx.FieldSpec(wire_name="tls_sockaddr"),
@@ -35,6 +46,7 @@ class TeamsDevicesComponentsSchemasSingleResponseAttrs:
     config: Any = None
     # The name of the device managed network. This name must be unique.
     name: Any = None
+    result: Any = None
     # The type of device managed network.
     type: Any = None
     # path parameter, not part of the API's own resource representation

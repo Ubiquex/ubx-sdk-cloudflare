@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Relay_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Relay_Result_Config_Upstreams_Upstreams:
+    url: Any = None
+
+@dataclasses.dataclass
+class Relay_Result_Config_Upstreams:
+    enabled: Any = None
+    # Ordered list of upstream MOQT server publishers. Each entry is an object (not a bare string) so per-upstream configuration can be added in the future without another breaking change.
+    upstreams: Any = None
+
+@dataclasses.dataclass
+class Relay_Result_Config:
+    # Upstreams are external MOQT server publishers that a relay falls back to when it has no local publisher for a requested namespace/track.
+    upstreams: Any = None
+
+@dataclasses.dataclass
+class Relay_Result:
+    config: Any = None
+    created: Any = None
+    modified: Any = None
+    name: Any = None
+    # "connected" when active, omitted otherwise.
+    status: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
 class RelayConfig:
     # Human-readable name for the relay.
     name: Any = None
@@ -17,8 +47,13 @@ class RelayConfig:
 
 @dataclasses.dataclass
 class RelayAttrs:
+    errors: Any = None
+    messages: Any = None
     # Human-readable name for the relay.
     name: Any = None
+    # Full relay details (no tokens).
+    result: Any = None
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

@@ -3,6 +3,28 @@ package wafoverrides
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FirewallOverrideResponseCollection_Result_RewriteAction struct {
+	Block     any
+	Challenge any
+	Default   any
+	Disable   any
+	Simulate  any
+}
+
+type FirewallOverrideResponseCollection_Result_Rules struct {
+}
+
+type FirewallOverrideResponseCollection_Result struct {
+	Description   any
+	Groups        any
+	Id            any
+	Paused        any
+	Priority      any
+	RewriteAction any
+	Rules         any
+	Urls          any
+}
+
 type FirewallOverrideResponseCollectionConfig struct {
 	// The page number of paginated results.
 	Page any
@@ -15,6 +37,7 @@ type FirewallOverrideResponseCollectionAttrs struct {
 	Page any
 	// The number of WAF overrides per page.
 	PerPage any
+	Result  any
 	// Defines an identifier.
 	ZoneId any
 }
@@ -22,7 +45,7 @@ type FirewallOverrideResponseCollectionAttrs struct {
 var FirewallOverrideResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_override_response_collection",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 	},
 }

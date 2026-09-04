@@ -3,25 +3,47 @@ package botnetthreatfeed
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DayReport_Errors_Source struct {
+	Pointer any
+}
+
+type DayReport_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DayReport_Result struct {
+	Cidr         any
+	Date         any
+	OffenseCount any
+}
+
 type DayReportConfig struct {
 	// Identifier.
 	AccountId any
-	AsnId any
-	Date any
+	AsnId     any
+	Date      any
 }
 
 type DayReportAttrs struct {
 	// Identifier.
 	AccountId any
-	AsnId any
-	Date any
+	AsnId     any
+	Date      any
+	Errors    any
+	Messages  any
+	Result    any
+	// Whether the API call was successful.
+	Success any
 }
 
 var DayReport = ubx.DataSourceBinding{
 	WireType: "cloudflare_day_report",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AsnId": ubx.FieldSpec{WireName: "asn_id"},
-		"Date": ubx.FieldSpec{WireName: "date"},
+		"AsnId":     ubx.FieldSpec{WireName: "asn_id"},
+		"Date":      ubx.FieldSpec{WireName: "date"},
 	},
 }

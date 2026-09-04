@@ -3,29 +3,78 @@ package cloudintegrations
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type McnReadAccountProvidersResponse_Result_Status_DiscoveryProgress struct {
+	Done  any
+	Total any
+	Unit  any
+}
+
+type McnReadAccountProvidersResponse_Result_Status_InUseBy struct {
+	ClientType any
+	Id         any
+	Name       any
+}
+
+type McnReadAccountProvidersResponse_Result_Status struct {
+	CredentialsGoodSince       any
+	CredentialsMissingSince    any
+	CredentialsRejectedSince   any
+	DiscoveryMessage           any
+	DiscoveryMessageV2         any
+	DiscoveryProgress          any
+	DiscoveryProgressV2        any
+	InUseBy                    any
+	LastDiscoveryCompletedAt   any
+	LastDiscoveryCompletedAtV2 any
+	LastDiscoveryStartedAt     any
+	LastDiscoveryStartedAtV2   any
+	LastDiscoveryStatus        any
+	LastDiscoveryStatusV2      any
+	LastUpdated                any
+	Regions                    any
+}
+
+type McnReadAccountProvidersResponse_Result struct {
+	AwsArn                 any
+	AzureSubscriptionId    any
+	AzureTenantId          any
+	CloudType              any
+	Description            any
+	FriendlyName           any
+	GcpProjectId           any
+	GcpServiceAccountEmail any
+	Id                     any
+	LastUpdated            any
+	LifecycleState         any
+	State                  any
+	StateV2                any
+	Status                 any
+}
+
 type McnReadAccountProvidersResponseConfig struct {
-	AccountId any
+	AccountId  any
 	Cloudflare any
-	Desc any
-	OrderBy any
-	Status any
+	Desc       any
+	OrderBy    any
+	Status     any
 }
 
 type McnReadAccountProvidersResponseAttrs struct {
-	AccountId any
+	AccountId  any
 	Cloudflare any
-	Desc any
-	OrderBy any
-	Status any
+	Desc       any
+	OrderBy    any
+	Result     any
+	Status     any
 }
 
 var McnReadAccountProvidersResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_mcn_read_account_providers_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"Cloudflare": ubx.FieldSpec{WireName: "cloudflare"},
-		"Desc": ubx.FieldSpec{WireName: "desc"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Desc":       ubx.FieldSpec{WireName: "desc"},
+		"OrderBy":    ubx.FieldSpec{WireName: "order_by"},
+		"Status":     ubx.FieldSpec{WireName: "status"},
 	},
 }

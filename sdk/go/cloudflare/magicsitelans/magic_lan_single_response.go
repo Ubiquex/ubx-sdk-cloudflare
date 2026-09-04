@@ -8,24 +8,24 @@ type MagicLanSingleResponse_Nat struct {
 	StaticPrefix any
 }
 
-type MagicLanSingleResponse_RoutedSubnets struct {
-	Nat any
+type MagicLanSingleResponse_Result_RoutedSubnets struct {
+	Nat     any
 	NextHop any
-	Prefix any
+	Prefix  any
 }
 
-type MagicLanSingleResponse_StaticAddressing_DhcpRelay struct {
+type MagicLanSingleResponse_Result_StaticAddressing_DhcpRelay struct {
 	// List of DHCP server IPs.
 	ServerAddresses any
 }
 
-type MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptions struct {
-	Code any
-	Type any
+type MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptions struct {
+	Code  any
+	Type  any
 	Value any
 }
 
-type MagicLanSingleResponse_StaticAddressing_DhcpServer struct {
+type MagicLanSingleResponse_Result_StaticAddressing_DhcpServer struct {
 	// Optional list of custom DHCP options to include in DHCP responses. Only valid when DHCP server is enabled.
 	DhcpOptions any
 	// A valid IPv4 address.
@@ -33,16 +33,16 @@ type MagicLanSingleResponse_StaticAddressing_DhcpServer struct {
 	// A valid IPv4 address.
 	DhcpPoolStart any
 	// A valid IPv4 address.
-	DnsServer any
+	DnsServer  any
 	DnsServers any
 	// Mapping of MAC addresses to IP addresses
 	Reservations any
 }
 
-type MagicLanSingleResponse_StaticAddressing struct {
+type MagicLanSingleResponse_Result_StaticAddressing struct {
 	// A valid CIDR notation representing an IP range.
-	Address any
-	DhcpRelay any
+	Address    any
+	DhcpRelay  any
 	DhcpServer any
 	// A valid CIDR notation representing an IP range.
 	SecondaryAddress any
@@ -50,58 +50,80 @@ type MagicLanSingleResponse_StaticAddressing struct {
 	VirtualAddress any
 }
 
+type MagicLanSingleResponse_Result struct {
+	BondId any
+	// mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.
+	HaLink any
+	// Identifier
+	Id any
+	// mark true to use this LAN for source-based breakout traffic
+	IsBreakout any
+	// mark true to use this LAN for source-based prioritized traffic
+	IsPrioritized any
+	Name          any
+	Nat           any
+	Physport      any
+	RoutedSubnets any
+	// Identifier
+	SiteId any
+	// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
+	StaticAddressing any
+	// VLAN ID. Use zero for untagged.
+	VlanTag any
+}
+
 var MagicLanSingleResponse_NatFields = ubx.FieldMap{
-		"StaticPrefix": ubx.FieldSpec{WireName: "static_prefix"},
-	}
+	"StaticPrefix": ubx.FieldSpec{WireName: "static_prefix"},
+}
 
-var MagicLanSingleResponse_RoutedSubnetsFields = ubx.FieldMap{
-		"Nat": ubx.FieldSpec{
-			WireName: "nat",
-			Kind: "object",
-			Fields: MagicLanSingleResponse_NatFields,
-		},
-		"NextHop": ubx.FieldSpec{WireName: "next_hop"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+var MagicLanSingleResponse_Result_RoutedSubnetsFields = ubx.FieldMap{
+	"Nat": ubx.FieldSpec{
+		WireName: "nat",
+		Kind:     "object",
+		Fields:   MagicLanSingleResponse_NatFields,
+	},
+	"NextHop": ubx.FieldSpec{WireName: "next_hop"},
+	"Prefix":  ubx.FieldSpec{WireName: "prefix"},
+}
 
-var MagicLanSingleResponse_StaticAddressing_DhcpRelayFields = ubx.FieldMap{
-		"ServerAddresses": ubx.FieldSpec{WireName: "server_addresses"},
-	}
+var MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields = ubx.FieldMap{
+	"ServerAddresses": ubx.FieldSpec{WireName: "server_addresses"},
+}
 
-var MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+var MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields = ubx.FieldMap{
+	"Code":  ubx.FieldSpec{WireName: "code"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
-var MagicLanSingleResponse_StaticAddressing_DhcpServerFields = ubx.FieldMap{
-		"DhcpOptions": ubx.FieldSpec{
-			WireName: "dhcp_options",
-			Kind: "list",
-			Fields: MagicLanSingleResponse_StaticAddressing_DhcpServer_DhcpOptionsFields,
-		},
-		"DhcpPoolEnd": ubx.FieldSpec{WireName: "dhcp_pool_end"},
-		"DhcpPoolStart": ubx.FieldSpec{WireName: "dhcp_pool_start"},
-		"DnsServer": ubx.FieldSpec{WireName: "dns_server"},
-		"DnsServers": ubx.FieldSpec{WireName: "dns_servers"},
-		"Reservations": ubx.FieldSpec{WireName: "reservations"},
-	}
+var MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields = ubx.FieldMap{
+	"DhcpOptions": ubx.FieldSpec{
+		WireName: "dhcp_options",
+		Kind:     "list",
+		Fields:   MagicLanSingleResponse_Result_StaticAddressing_DhcpServer_DhcpOptionsFields,
+	},
+	"DhcpPoolEnd":   ubx.FieldSpec{WireName: "dhcp_pool_end"},
+	"DhcpPoolStart": ubx.FieldSpec{WireName: "dhcp_pool_start"},
+	"DnsServer":     ubx.FieldSpec{WireName: "dns_server"},
+	"DnsServers":    ubx.FieldSpec{WireName: "dns_servers"},
+	"Reservations":  ubx.FieldSpec{WireName: "reservations"},
+}
 
-var MagicLanSingleResponse_StaticAddressingFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"DhcpRelay": ubx.FieldSpec{
-			WireName: "dhcp_relay",
-			Kind: "object",
-			Fields: MagicLanSingleResponse_StaticAddressing_DhcpRelayFields,
-		},
-		"DhcpServer": ubx.FieldSpec{
-			WireName: "dhcp_server",
-			Kind: "object",
-			Fields: MagicLanSingleResponse_StaticAddressing_DhcpServerFields,
-		},
-		"SecondaryAddress": ubx.FieldSpec{WireName: "secondary_address"},
-		"VirtualAddress": ubx.FieldSpec{WireName: "virtual_address"},
-	}
+var MagicLanSingleResponse_Result_StaticAddressingFields = ubx.FieldMap{
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"DhcpRelay": ubx.FieldSpec{
+		WireName: "dhcp_relay",
+		Kind:     "object",
+		Fields:   MagicLanSingleResponse_Result_StaticAddressing_DhcpRelayFields,
+	},
+	"DhcpServer": ubx.FieldSpec{
+		WireName: "dhcp_server",
+		Kind:     "object",
+		Fields:   MagicLanSingleResponse_Result_StaticAddressing_DhcpServerFields,
+	},
+	"SecondaryAddress": ubx.FieldSpec{WireName: "secondary_address"},
+	"VirtualAddress":   ubx.FieldSpec{WireName: "virtual_address"},
+}
 
 type MagicLanSingleResponseConfig struct {
 	BondId any
@@ -111,9 +133,9 @@ type MagicLanSingleResponseConfig struct {
 	IsBreakout any
 	// mark true to use this LAN for source-based prioritized traffic
 	IsPrioritized any
-	Name any
-	Nat any
-	Physport any
+	Name          any
+	Nat           any
+	Physport      any
 	RoutedSubnets any
 	// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
 	StaticAddressing any
@@ -135,9 +157,10 @@ type MagicLanSingleResponseAttrs struct {
 	IsBreakout any
 	// mark true to use this LAN for source-based prioritized traffic
 	IsPrioritized any
-	Name any
-	Nat any
-	Physport any
+	Name          any
+	Nat           any
+	Physport      any
+	Result        any
 	RoutedSubnets any
 	// If the site is not configured in high availability mode, this configuration is optional (if omitted, use DHCP). However, if in high availability mode, static_address is required along with secondary and virtual address.
 	StaticAddressing any
@@ -154,30 +177,30 @@ type MagicLanSingleResponseAttrs struct {
 var MagicLanSingleResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_magic_lan_single_response",
 	Fields: ubx.FieldMap{
-		"BondId": ubx.FieldSpec{WireName: "bond_id"},
-		"HaLink": ubx.FieldSpec{WireName: "ha_link"},
-		"IsBreakout": ubx.FieldSpec{WireName: "is_breakout"},
+		"BondId":        ubx.FieldSpec{WireName: "bond_id"},
+		"HaLink":        ubx.FieldSpec{WireName: "ha_link"},
+		"IsBreakout":    ubx.FieldSpec{WireName: "is_breakout"},
 		"IsPrioritized": ubx.FieldSpec{WireName: "is_prioritized"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Nat": ubx.FieldSpec{
 			WireName: "nat",
-			Kind: "object",
-			Fields: MagicLanSingleResponse_NatFields,
+			Kind:     "object",
+			Fields:   MagicLanSingleResponse_NatFields,
 		},
 		"Physport": ubx.FieldSpec{WireName: "physport"},
 		"RoutedSubnets": ubx.FieldSpec{
 			WireName: "routed_subnets",
-			Kind: "list",
-			Fields: MagicLanSingleResponse_RoutedSubnetsFields,
+			Kind:     "list",
+			Fields:   MagicLanSingleResponse_Result_RoutedSubnetsFields,
 		},
 		"StaticAddressing": ubx.FieldSpec{
 			WireName: "static_addressing",
-			Kind: "object",
-			Fields: MagicLanSingleResponse_StaticAddressingFields,
+			Kind:     "object",
+			Fields:   MagicLanSingleResponse_Result_StaticAddressingFields,
 		},
-		"VlanTag": ubx.FieldSpec{WireName: "vlan_tag"},
+		"VlanTag":   ubx.FieldSpec{WireName: "vlan_tag"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
-		"LanId": ubx.FieldSpec{WireName: "lan_id"},
+		"SiteId":    ubx.FieldSpec{WireName: "site_id"},
+		"LanId":     ubx.FieldSpec{WireName: "lan_id"},
 	},
 }

@@ -3,6 +3,11 @@ package lists
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ListResponseCollection_Errors struct {
+	Code    any
+	Message any
+}
+
 type ListResponseCollectionConfig struct {
 	// An informative summary of the list.
 	Description any
@@ -19,10 +24,15 @@ type ListResponseCollectionConfig struct {
 type ListResponseCollectionAttrs struct {
 	// An informative summary of the list.
 	Description any
+	Errors      any
 	// The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).
-	Kind any
+	Kind     any
+	Messages any
 	// An informative name for the list. Use this name in filter and rule expressions.
-	Name any
+	Name   any
+	Result any
+	// Defines whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -33,9 +43,9 @@ var ListResponseCollection = ubx.ResourceBinding{
 	WireType: "cloudflare_lists_list_response_collection",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ListId": ubx.FieldSpec{WireName: "list_id"},
+		"Kind":        ubx.FieldSpec{WireName: "kind"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"ListId":      ubx.FieldSpec{WireName: "list_id"},
 	},
 }

@@ -4,7 +4,7 @@ package aigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AigBillingGetCreditBalanceResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -14,25 +14,25 @@ type AigBillingGetCreditBalanceResponse_Result_PaymentMethod struct {
 }
 
 type AigBillingGetCreditBalanceResponse_Result_TopupConfig struct {
-	Amount any
+	Amount         any
 	DisabledReason any
-	Error any
-	LastFailedAt any
-	Threshold any
+	Error          any
+	LastFailedAt   any
+	Threshold      any
 }
 
 type AigBillingGetCreditBalanceResponse_Result struct {
-	Balance any
-	FirstTopupSuccess any
+	Balance                 any
+	FirstTopupSuccess       any
 	HasDefaultPaymentMethod any
-	PaymentMethod any
-	TopupConfig any
+	PaymentMethod           any
+	TopupConfig             any
 }
 
 type AigBillingGetCreditBalanceResponse_ResultInfo struct {
-	HasMore any
-	Page any
-	PerPage any
+	HasMore    any
+	Page       any
+	PerPage    any
 	TotalCount any
 }
 
@@ -41,12 +41,12 @@ type AigBillingGetCreditBalanceResponseConfig struct {
 }
 
 type AigBillingGetCreditBalanceResponseAttrs struct {
-	AccountId any
-	Errors any
-	Messages any
-	Result any
+	AccountId  any
+	Errors     any
+	Messages   any
+	Result     any
 	ResultInfo any
-	Success any
+	Success    any
 }
 
 var AigBillingGetCreditBalanceResponse = ubx.DataSourceBinding{

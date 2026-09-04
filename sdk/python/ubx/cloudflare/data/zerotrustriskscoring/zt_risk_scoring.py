@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ZtRiskScoring_Result_Events:
+    event_details: Any = None
+    id: Any = None
+    name: Any = None
+    risk_level: Any = None
+    timestamp: Any = None
+
+@dataclasses.dataclass
+class ZtRiskScoring_Result_RiskLevel:
+    pass
+
+@dataclasses.dataclass
+class ZtRiskScoring_Result:
+    email: Any = None
+    events: Any = None
+    last_reset_time: Any = None
+    name: Any = None
+    risk_level: Any = None
+
+@dataclasses.dataclass
 class ZtRiskScoringConfig:
     account_id: Any = None
     user_id: Any = None
@@ -14,6 +34,7 @@ class ZtRiskScoringConfig:
 @dataclasses.dataclass
 class ZtRiskScoringAttrs:
     account_id: Any = None
+    result: Any = None
     user_id: Any = None
 
 ZtRiskScoring = ubx.DataSourceBinding(

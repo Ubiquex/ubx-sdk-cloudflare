@@ -3,16 +3,37 @@ package magicstaticroutes
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicRoutesCollectionResponse_Result_Routes_Scope struct {
+	ColoNames   any
+	ColoRegions any
+}
+
+type MagicRoutesCollectionResponse_Result_Routes struct {
+	CreatedOn   any
+	Description any
+	Id          any
+	ModifiedOn  any
+	Nexthop     any
+	Prefix      any
+	Priority    any
+	Scope       any
+	Weight      any
+}
+
+type MagicRoutesCollectionResponse_Result struct {
+	Routes any
+}
+
 type MagicRoutesCollectionResponseConfig struct {
 }
 
 type MagicRoutesCollectionResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var MagicRoutesCollectionResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_routes_collection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

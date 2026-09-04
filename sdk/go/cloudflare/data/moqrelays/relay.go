@@ -3,31 +3,53 @@ package moqrelays
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Relay_Errors struct {
+	Code    any
+	Message any
+}
+
+type Relay_Result struct {
+	Created  any
+	Modified any
+	Name     any
+	Uid      any
+}
+
+type Relay_ResultInfo struct {
+	Count any
+	Total any
+}
+
 type RelayConfig struct {
 	// Cloudflare account identifier.
-	AccountId any
-	Asc any
-	CreatedAfter any
+	AccountId     any
+	Asc           any
+	CreatedAfter  any
 	CreatedBefore any
-	PerPage any
+	PerPage       any
 }
 
 type RelayAttrs struct {
 	// Cloudflare account identifier.
-	AccountId any
-	Asc any
-	CreatedAfter any
+	AccountId     any
+	Asc           any
+	CreatedAfter  any
 	CreatedBefore any
-	PerPage any
+	Errors        any
+	Messages      any
+	PerPage       any
+	Result        any
+	ResultInfo    any
+	Success       any
 }
 
 var Relay = ubx.DataSourceBinding{
 	WireType: "cloudflare_relay",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Asc": ubx.FieldSpec{WireName: "asc"},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
+		"Asc":           ubx.FieldSpec{WireName: "asc"},
+		"CreatedAfter":  ubx.FieldSpec{WireName: "created_after"},
 		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"PerPage":       ubx.FieldSpec{WireName: "per_page"},
 	},
 }

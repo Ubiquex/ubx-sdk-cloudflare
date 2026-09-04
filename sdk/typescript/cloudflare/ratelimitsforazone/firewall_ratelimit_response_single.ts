@@ -34,6 +34,22 @@ export interface FirewallRatelimitResponseSingle_Match {
   response?: FirewallRatelimitResponseSingle_Match_Response | Computed<FirewallRatelimitResponseSingle_Match_Response>;
 }
 
+export interface FirewallRatelimitResponseSingle_Result_Bypass {
+  name?: string | Computed<string>;
+  value?: string | Computed<string>;
+}
+
+export interface FirewallRatelimitResponseSingle_Result {
+  action?: FirewallRatelimitResponseSingle_Action | Computed<FirewallRatelimitResponseSingle_Action>;
+  bypass?: FirewallRatelimitResponseSingle_Result_Bypass[] | Computed<FirewallRatelimitResponseSingle_Result_Bypass[]>;
+  description?: string | Computed<string>;
+  disabled?: boolean | Computed<boolean>;
+  id?: string | Computed<string>;
+  match?: FirewallRatelimitResponseSingle_Match | Computed<FirewallRatelimitResponseSingle_Match>;
+  period?: number | Computed<number>;
+  threshold?: number | Computed<number>;
+}
+
 const FirewallRatelimitResponseSingle_Action_ResponseFields: FieldMap = {
   body: "body",
   contentType: "content_type",
@@ -105,6 +121,7 @@ export interface FirewallRatelimitResponseSingleAttrs {
   match: FirewallRatelimitResponseSingle_Match;
   /** The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action. */
   period: number;
+  result: FirewallRatelimitResponseSingle_Result;
   /** The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period. */
   threshold: number;
   /** path parameter, not part of the API's own resource representation */

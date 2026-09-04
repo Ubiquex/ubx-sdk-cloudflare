@@ -10,6 +10,17 @@ import ubx_sdk as ubx
 class BlockSender_PatternType:
     pass
 
+@dataclasses.dataclass
+class BlockSender_Result:
+    comments: Any = None
+    created_at: Any = None
+    id: Any = None
+    is_regex: Any = None
+    last_modified: Any = None
+    modified_at: Any = None
+    pattern: Any = None
+    pattern_type: Any = None
+
 _BlockSender_PatternTypeFields = {
 }
 
@@ -31,6 +42,7 @@ class BlockSenderAttrs:
     pattern: Any = None
     pattern_type: Any = None
     per_page: Any = None
+    result: Any = None
     search: Any = None
 
 BlockSender = ubx.DataSourceBinding(

@@ -3,6 +3,15 @@ package accessidpfederationgrants
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessIdpFederationGrantListResponse_Result_CreatedAt struct {
+}
+
+type AccessIdpFederationGrantListResponse_Result struct {
+	CreatedAt any
+	Id        any
+	IdpId     any
+}
+
 type AccessIdpFederationGrantListResponseConfig struct {
 	// Identifier.
 	AccountId any
@@ -11,6 +20,7 @@ type AccessIdpFederationGrantListResponseConfig struct {
 type AccessIdpFederationGrantListResponseAttrs struct {
 	// Identifier.
 	AccountId any
+	Result    any
 }
 
 var AccessIdpFederationGrantListResponse = ubx.DataSourceBinding{

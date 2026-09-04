@@ -24,8 +24,8 @@ type JsonAttrs struct {
 var Json = ubx.DataSourceBinding{
 	WireType: "cloudflare_json",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":              ubx.FieldSpec{WireName: "account_id"},
 		"LiveViewUrlExpiresInMs": ubx.FieldSpec{WireName: "live_view_url_expires_in_ms"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
+		"SessionId":              ubx.FieldSpec{WireName: "session_id"},
 	},
 }

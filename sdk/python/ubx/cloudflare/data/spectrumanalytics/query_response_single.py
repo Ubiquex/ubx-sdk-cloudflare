@@ -7,10 +7,45 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class QueryResponseSingle_Since:
+class QueryResponseSingle_Result_Data:
+    dimensions: Any = None
+    metrics: Any = None
+
+@dataclasses.dataclass
+class QueryResponseSingle_Result_Max:
     pass
 
-_QueryResponseSingle_SinceFields = {
+@dataclasses.dataclass
+class QueryResponseSingle_Result_Query:
+    # Can be used to break down the data by given attributes. Options are: Dimension | Name | Example --------------------------|---------------------------------|-------------------------- event | Connection Event | connect, progress, disconnect, originError, clientFiltered appID | Application ID | 40d67c87c6cd4b889a4fd57805225e85 coloName | Colo Name | SFO ipVersion | IP version used by the client | 4, 6.
+    dimensions: Any = None
+    # Used to filter rows by one or more dimensions. Filters can be combined using OR and AND boolean logic. AND takes precedence over OR in all the expressions. The OR operator is defined using a comma (,) or OR keyword surrounded by whitespace. The AND operator is defined using a semicolon (;) or AND keyword surrounded by whitespace. Note that the semicolon is a reserved character in URLs (rfc1738) and needs to be percent-encoded as %3B. Comparison options are: Operator | Name | URL Encoded --------------------------|---------------------------------|-------------------------- == | Equals | %3D%3D != | Does not equals | !%3D \> | Greater Than | %3E \< | Less Than | %3C \>= | Greater than or equal to | %3E%3D \<= | Less than or equal to | %3C%3D Use the above to construct filters.
+    filters: Any = None
+    # Limit number of returned metrics.
+    limit: Any = None
+    # One or more metrics to compute. Options are: Metric | Name | Example | Unit --------------------------|-------------------------------------|--------------------------|-------------------------- count | Count of total events | 1000 | Count bytesIngress | Sum of ingress bytes | 1000 | Sum bytesEgress | Sum of egress bytes | 1000 | Sum durationAvg | Average connection duration | 1.0 | Time in milliseconds durationMedian | Median connection duration | 1.0 | Time in milliseconds duration90th | 90th percentile connection duration | 1.0 | Time in milliseconds duration99th | 99th percentile connection duration | 1.0 | Time in milliseconds.
+    metrics: Any = None
+    since: Any = None
+    # The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
+    sort: Any = None
+    until: Any = None
+
+@dataclasses.dataclass
+class QueryResponseSingle_Result:
+    # List of columns returned by the analytics query.
+    data: Any = None
+    # Number of seconds between current time and last processed event, i.e. how many seconds of data could be missing.
+    data_lag: Any = None
+    max: Any = None
+    min: Any = None
+    query: Any = None
+    # Total number of rows in the result.
+    rows: Any = None
+    # List of time interval buckets: [start, end].
+    time_intervals: Any = None
+    totals: Any = None
+
+_QueryResponseSingle_Result_MaxFields = {
 }
 
 @dataclasses.dataclass
@@ -38,6 +73,7 @@ class QueryResponseSingleAttrs:
     filters: Any = None
     # One or more metrics to compute. Options are: Metric | Name | Example | Unit --------------------------|-------------------------------------|--------------------------|-------------------------- count | Count of total events | 1000 | Count bytesIngress | Sum of ingress bytes | 1000 | Sum bytesEgress | Sum of egress bytes | 1000 | Sum durationAvg | Average connection duration | 1.0 | Time in milliseconds durationMedian | Median connection duration | 1.0 | Time in milliseconds duration90th | 90th percentile connection duration | 1.0 | Time in milliseconds duration99th | 99th percentile connection duration | 1.0 | Time in milliseconds.
     metrics: Any = None
+    result: Any = None
     since: Any = None
     # The sort order for the result set; sort fields must be included in `metrics` or `dimensions`.
     sort: Any = None
@@ -56,14 +92,14 @@ QueryResponseSingle = ubx.DataSourceBinding(
         "since": ubx.FieldSpec(
             wire_name="since",
             kind="object",
-            fields=_QueryResponseSingle_SinceFields,
+            fields=_QueryResponseSingle_Result_MaxFields,
         ),
         "sort": ubx.FieldSpec(wire_name="sort"),
         "time_delta": ubx.FieldSpec(wire_name="time_delta"),
         "until": ubx.FieldSpec(
             wire_name="until",
             kind="object",
-            fields=_QueryResponseSingle_SinceFields,
+            fields=_QueryResponseSingle_Result_MaxFields,
         ),
         "zone_id": ubx.FieldSpec(wire_name="zone_id"),
     },

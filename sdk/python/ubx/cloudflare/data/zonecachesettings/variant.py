@@ -7,11 +7,30 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Variant_Result_Value:
+    avif: Any = None
+    bmp: Any = None
+    gif: Any = None
+    jp2: Any = None
+    jpeg: Any = None
+    jpg: Any = None
+    jpg2: Any = None
+    png: Any = None
+    tif: Any = None
+    tiff: Any = None
+    webp: Any = None
+
+@dataclasses.dataclass
+class Variant_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class VariantConfig:
     pass
 
 @dataclasses.dataclass
 class VariantAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

@@ -3,21 +3,32 @@ package dlpdataclasses
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type DataClass_SensitivityLevels struct {
+type DataClass_Result_SensitivityLevels struct {
 	GroupId any
 	LevelId any
 }
 
-var DataClass_SensitivityLevelsFields = ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"LevelId": ubx.FieldSpec{WireName: "level_id"},
-	}
+type DataClass_Result struct {
+	CreatedAt         any
+	DataTags          any
+	Description       any
+	Expression        any
+	Id                any
+	Name              any
+	SensitivityLevels any
+	UpdatedAt         any
+}
+
+var DataClass_Result_SensitivityLevelsFields = ubx.FieldMap{
+	"GroupId": ubx.FieldSpec{WireName: "group_id"},
+	"LevelId": ubx.FieldSpec{WireName: "level_id"},
+}
 
 type DataClassConfig struct {
-	DataTags any
-	Description any
-	Expression any
-	Name any
+	DataTags          any
+	Description       any
+	Expression        any
+	Name              any
 	SensitivityLevels any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -26,10 +37,11 @@ type DataClassConfig struct {
 }
 
 type DataClassAttrs struct {
-	DataTags any
-	Description any
-	Expression any
-	Name any
+	DataTags          any
+	Description       any
+	Expression        any
+	Name              any
+	Result            any
 	SensitivityLevels any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -40,16 +52,16 @@ type DataClassAttrs struct {
 var DataClass = ubx.ResourceBinding{
 	WireType: "cloudflare_data_class",
 	Fields: ubx.FieldMap{
-		"DataTags": ubx.FieldSpec{WireName: "data_tags"},
+		"DataTags":    ubx.FieldSpec{WireName: "data_tags"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Expression":  ubx.FieldSpec{WireName: "expression"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SensitivityLevels": ubx.FieldSpec{
 			WireName: "sensitivity_levels",
-			Kind: "list",
-			Fields: DataClass_SensitivityLevelsFields,
+			Kind:     "list",
+			Fields:   DataClass_Result_SensitivityLevelsFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"DataClassId": ubx.FieldSpec{WireName: "data_class_id"},
 	},
 }

@@ -4,14 +4,14 @@ package automaticssltls
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheApiResponseSingleId_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type CacheApiResponseSingleId_Result struct {
 	// Whether this setting can be updated or not.
 	Editable any
-	Id any
+	Id       any
 	// Last time this setting was modified.
 	ModifiedOn any
 	// Next time this zone will be scanned by the Automatic SSL/TLS.
@@ -25,12 +25,12 @@ type CacheApiResponseSingleIdConfig struct {
 }
 
 type CacheApiResponseSingleIdAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
+	Result   any
 	// Indicates the API call's success or failure.
 	Success any
-	ZoneId any
+	ZoneId  any
 }
 
 var CacheApiResponseSingleId = ubx.DataSourceBinding{

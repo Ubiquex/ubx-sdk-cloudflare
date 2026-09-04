@@ -8,18 +8,18 @@ type Change_Result_AsnInfo struct {
 
 type Change_Result_Changes_Entries struct {
 	CustomerAsn any
-	Providers any
-	Type any
+	Providers   any
+	Type        any
 }
 
 type Change_Result_Changes struct {
-	CustomersAdded any
+	CustomersAdded   any
 	CustomersRemoved any
-	Date any
-	Entries any
-	ProvidersAdded any
+	Date             any
+	Entries          any
+	ProvidersAdded   any
 	ProvidersRemoved any
-	TotalCount any
+	TotalCount       any
 }
 
 type Change_Result_Meta struct {
@@ -32,7 +32,7 @@ type Change_Result_Meta struct {
 type Change_Result struct {
 	AsnInfo any
 	Changes any
-	Meta any
+	Meta    any
 }
 
 type ChangeConfig struct {
@@ -59,17 +59,17 @@ type ChangeAttrs struct {
 	Format any
 	// Include ASN metadata (name, country) in response.
 	IncludeAsnInfo any
-	Result any
-	Success any
+	Result         any
+	Success        any
 }
 
 var Change = ubx.DataSourceBinding{
 	WireType: "cloudflare_change",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"DateStart": ubx.FieldSpec{WireName: "date_start"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Asn":            ubx.FieldSpec{WireName: "asn"},
+		"DateEnd":        ubx.FieldSpec{WireName: "date_end"},
+		"DateStart":      ubx.FieldSpec{WireName: "date_start"},
+		"Format":         ubx.FieldSpec{WireName: "format"},
 		"IncludeAsnInfo": ubx.FieldSpec{WireName: "include_asn_info"},
 	},
 }

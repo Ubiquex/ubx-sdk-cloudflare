@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AaaAlertsResponseCollection_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class AaaAlertsResponseCollection_Result:
+    description: Any = None
+    display_name: Any = None
+    filter_options: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class AaaAlertsResponseCollectionConfig:
     pass
 
@@ -14,6 +26,11 @@ class AaaAlertsResponseCollectionConfig:
 class AaaAlertsResponseCollectionAttrs:
     # The account id
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful
+    success: Any = None
 
 AaaAlertsResponseCollection = ubx.DataSourceBinding(
     wire_type="cloudflare_aaa_alerts_response_collection",

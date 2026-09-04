@@ -7,12 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PrecursorConfigResponseBody_Result_EnforcementRules:
+    description: Any = None
+    enabled: Any = None
+    expression: Any = None
+    id: Any = None
+    mode: Any = None
+
+@dataclasses.dataclass
+class PrecursorConfigResponseBody_Result:
+    # The zone-level Precursor enforcement mode applied to requests that do not match a more specific enforcement rule.
+    default_mode: Any = None
+    # The ordered list of enforcement rules for the zone.
+    enforcement_rules: Any = None
+
+@dataclasses.dataclass
 class PrecursorConfigResponseBodyConfig:
     # Identifier.
     zone_id: Any = None
 
 @dataclasses.dataclass
 class PrecursorConfigResponseBodyAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

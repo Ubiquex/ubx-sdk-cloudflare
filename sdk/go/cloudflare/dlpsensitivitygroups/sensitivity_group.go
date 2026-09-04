@@ -5,19 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SensitivityGroup_Levels struct {
 	Description any
-	Name any
+	Name        any
+}
+
+type SensitivityGroup_Result_Levels struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Name        any
+	UpdatedAt   any
+}
+
+type SensitivityGroup_Result struct {
+	CreatedAt   any
+	Description any
+	Id          any
+	Levels      any
+	Name        any
+	TemplateId  any
+	UpdatedAt   any
 }
 
 var SensitivityGroup_LevelsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 type SensitivityGroupConfig struct {
 	Description any
 	// Levels to create with the group. Mutually exclusive with `template_id`.
-	Levels any
-	Name any
+	Levels     any
+	Name       any
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -28,8 +46,9 @@ type SensitivityGroupConfig struct {
 type SensitivityGroupAttrs struct {
 	Description any
 	// Levels to create with the group. Mutually exclusive with `template_id`.
-	Levels any
-	Name any
+	Levels     any
+	Name       any
+	Result     any
 	TemplateId any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -43,12 +62,12 @@ var SensitivityGroup = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Levels": ubx.FieldSpec{
 			WireName: "levels",
-			Kind: "list",
-			Fields: SensitivityGroup_LevelsFields,
+			Kind:     "list",
+			Fields:   SensitivityGroup_LevelsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"TemplateId":         ubx.FieldSpec{WireName: "template_id"},
+		"AccountId":          ubx.FieldSpec{WireName: "account_id"},
 		"SensitivityGroupId": ubx.FieldSpec{WireName: "sensitivity_group_id"},
 	},
 }

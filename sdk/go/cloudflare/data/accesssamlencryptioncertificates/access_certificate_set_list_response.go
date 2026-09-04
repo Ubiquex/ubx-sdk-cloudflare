@@ -3,28 +3,44 @@ package accesssamlencryptioncertificates
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessCertificateSetListResponse_Result_CurrentCertificate struct {
+	IsCurrent         any
+	NotAfter          any
+	PublicCertificate any
+	Uid               any
+}
+
+type AccessCertificateSetListResponse_Result struct {
+	CreatedAt           any
+	CurrentCertificate  any
+	PreviousCertificate any
+	Uid                 any
+	UpdatedAt           any
+}
+
 type AccessCertificateSetListResponseConfig struct {
 	// Identifier.
 	AccountId any
-	Id any
-	Page any
-	PerPage any
+	Id        any
+	Page      any
+	PerPage   any
 }
 
 type AccessCertificateSetListResponseAttrs struct {
 	// Identifier.
 	AccountId any
-	Id any
-	Page any
-	PerPage any
+	Id        any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var AccessCertificateSetListResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_certificate_set_list_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

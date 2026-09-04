@@ -7,28 +7,36 @@ type Entry_Pattern_Validation struct {
 }
 
 type Entry_Pattern struct {
-	Regex any
+	Regex      any
 	Validation any
 }
 
-var Entry_Pattern_ValidationFields = ubx.FieldMap{
-	}
+type Entry_Result_Profiles struct {
+	Id   any
+	Name any
+}
+
+type Entry_Result struct {
+	Profiles any
+}
+
+var Entry_Pattern_ValidationFields = ubx.FieldMap{}
 
 var Entry_PatternFields = ubx.FieldMap{
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-		"Validation": ubx.FieldSpec{
-			WireName: "validation",
-			Kind: "object",
-			Fields: Entry_Pattern_ValidationFields,
-		},
-	}
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+	"Validation": ubx.FieldSpec{
+		WireName: "validation",
+		Kind:     "object",
+		Fields:   Entry_Pattern_ValidationFields,
+	},
+}
 
 type EntryConfig struct {
 	Description any
-	Enabled any
-	Name any
-	Pattern any
-	ProfileId any
+	Enabled     any
+	Name        any
+	Pattern     any
+	ProfileId   any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -37,10 +45,11 @@ type EntryConfig struct {
 
 type EntryAttrs struct {
 	Description any
-	Enabled any
-	Name any
-	Pattern any
-	ProfileId any
+	Enabled     any
+	Name        any
+	Pattern     any
+	ProfileId   any
+	Result      any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -51,15 +60,15 @@ var Entry = ubx.ResourceBinding{
 	WireType: "cloudflare_entry",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Pattern": ubx.FieldSpec{
 			WireName: "pattern",
-			Kind: "object",
-			Fields: Entry_PatternFields,
+			Kind:     "object",
+			Fields:   Entry_PatternFields,
 		},
 		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"EntryId": ubx.FieldSpec{WireName: "entry_id"},
+		"EntryId":   ubx.FieldSpec{WireName: "entry_id"},
 	},
 }

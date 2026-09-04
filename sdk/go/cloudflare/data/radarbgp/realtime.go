@@ -4,52 +4,52 @@ package radarbgp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Realtime_Result_Meta_AsnInfo struct {
-	AsName any
-	Asn any
+	AsName      any
+	Asn         any
 	CountryCode any
-	OrgId any
-	OrgName any
+	OrgId       any
+	OrgName     any
 }
 
 type Realtime_Result_Meta_Collectors struct {
-	Collector any
+	Collector        any
 	LatestRealtimeTs any
-	LatestRibTs any
-	LatestUpdatesTs any
-	PeersCount any
-	PeersV4Count any
-	PeersV6Count any
+	LatestRibTs      any
+	LatestUpdatesTs  any
+	PeersCount       any
+	PeersV4Count     any
+	PeersV6Count     any
 }
 
 type Realtime_Result_Meta_PrefixOrigins struct {
-	Origin any
-	Prefix any
+	Origin         any
+	Prefix         any
 	RpkiValidation any
-	TotalPeers any
-	TotalVisible any
-	Visibility any
+	TotalPeers     any
+	TotalVisible   any
+	Visibility     any
 }
 
 type Realtime_Result_Meta struct {
-	AsnInfo any
+	AsnInfo    any
 	Collectors any
 	// The most recent data timestamp for from the real-time sources.
-	DataTime any
+	DataTime      any
 	PrefixOrigins any
 	// The timestamp of this query.
 	QueryTime any
 }
 
 type Realtime_Result_Routes struct {
-	AsPath any
-	Collector any
+	AsPath      any
+	Collector   any
 	Communities any
-	Prefix any
-	Timestamp any
+	Prefix      any
+	Timestamp   any
 }
 
 type Realtime_Result struct {
-	Meta any
+	Meta   any
 	Routes any
 }
 
@@ -61,9 +61,9 @@ type RealtimeConfig struct {
 
 type RealtimeAttrs struct {
 	// Format in which results will be returned.
-	Format any
-	Prefix any
-	Result any
+	Format  any
+	Prefix  any
+	Result  any
 	Success any
 }
 

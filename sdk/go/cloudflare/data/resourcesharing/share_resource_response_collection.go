@@ -3,11 +3,23 @@ package resourcesharing
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ShareResourceResponseCollection_Result struct {
+	Created           any
+	Id                any
+	Meta              any
+	Modified          any
+	ResourceAccountId any
+	ResourceId        any
+	ResourceType      any
+	ResourceVersion   any
+	Status            any
+}
+
 type ShareResourceResponseCollectionConfig struct {
 	// Account identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Resource Type.
 	ResourceType any
 	// Share identifier tag.
@@ -19,10 +31,11 @@ type ShareResourceResponseCollectionConfig struct {
 type ShareResourceResponseCollectionAttrs struct {
 	// Account identifier.
 	AccountId any
-	Page any
-	PerPage any
+	Page      any
+	PerPage   any
 	// Resource Type.
 	ResourceType any
+	Result       any
 	// Share identifier tag.
 	ShareId any
 	// Resource Status.
@@ -32,11 +45,11 @@ type ShareResourceResponseCollectionAttrs struct {
 var ShareResourceResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_resource_sharing_share_resource_response_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
+		"Page":         ubx.FieldSpec{WireName: "page"},
+		"PerPage":      ubx.FieldSpec{WireName: "per_page"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ShareId": ubx.FieldSpec{WireName: "share_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"ShareId":      ubx.FieldSpec{WireName: "share_id"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

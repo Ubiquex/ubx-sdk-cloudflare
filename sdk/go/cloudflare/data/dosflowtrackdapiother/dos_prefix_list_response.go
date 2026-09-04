@@ -3,22 +3,32 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosPrefixListResponse_Result struct {
+	Comment    any
+	CreatedOn  any
+	Excluded   any
+	Id         any
+	ModifiedOn any
+	Prefix     any
+}
+
 type DosPrefixListResponseConfig struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
 }
 
 type DosPrefixListResponseAttrs struct {
 	// Identifier.
 	AccountId any
 	Direction any
-	Order any
-	Page any
-	PerPage any
+	Order     any
+	Page      any
+	PerPage   any
+	Result    any
 }
 
 var DosPrefixListResponse = ubx.DataSourceBinding{
@@ -26,8 +36,8 @@ var DosPrefixListResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Order":     ubx.FieldSpec{WireName: "order"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

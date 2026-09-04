@@ -4,6 +4,24 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 export interface AllowPolicy_PatternType {
 }
 
+export interface AllowPolicy_Result {
+  comments?: string | Computed<string>;
+  createdAt?: AllowPolicy_PatternType | Computed<AllowPolicy_PatternType>;
+  id?: AllowPolicy_PatternType | Computed<AllowPolicy_PatternType>;
+  isAcceptableSender?: boolean | Computed<boolean>;
+  isExemptRecipient?: boolean | Computed<boolean>;
+  isRecipient?: boolean | Computed<boolean>;
+  isRegex?: boolean | Computed<boolean>;
+  isSender?: boolean | Computed<boolean>;
+  isSpoof?: boolean | Computed<boolean>;
+  isTrustedSender?: boolean | Computed<boolean>;
+  lastModified?: AllowPolicy_PatternType | Computed<AllowPolicy_PatternType>;
+  modifiedAt?: AllowPolicy_PatternType | Computed<AllowPolicy_PatternType>;
+  pattern?: string | Computed<string>;
+  patternType?: string | Computed<string>;
+  verifySender?: boolean | Computed<boolean>;
+}
+
 const AllowPolicy_PatternTypeFields: FieldMap = {
 };
 
@@ -31,6 +49,7 @@ export interface AllowPolicyAttrs {
   pattern: string;
   patternType: AllowPolicy_PatternType;
   perPage: number;
+  result: AllowPolicy_Result[];
   search: string;
   verifySender: boolean;
 }

@@ -3,16 +3,27 @@ package magicbgpsettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MagicMagicBgpSettingsResponse_Result_Redistribute struct {
+}
+
+type MagicMagicBgpSettingsResponse_Result struct {
+	// Route advertisements from Cloudflare to ramps in this account will use this ASN.
+	CloudflareAsn any
+	ModifiedOn    any
+	// Per-source toggles controlling which route sources are redistributed into BGP. Each property enables redistribution for one route source.
+	Redistribute any
+}
+
 type MagicMagicBgpSettingsResponseConfig struct {
 }
 
 type MagicMagicBgpSettingsResponseAttrs struct {
 	// Identifier
 	AccountId any
+	Result    any
 }
 
 var MagicMagicBgpSettingsResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_magic_magic_bgp_settings_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

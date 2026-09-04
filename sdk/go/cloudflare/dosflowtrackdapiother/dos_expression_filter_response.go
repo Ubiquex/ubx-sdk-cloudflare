@@ -3,6 +3,30 @@ package dosflowtrackdapiother
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DosExpressionFilterResponse_Errors_Source struct {
+	Pointer any
+}
+
+type DosExpressionFilterResponse_Errors struct {
+	Code             any
+	DocumentationUrl any
+	Message          any
+	Source           any
+}
+
+type DosExpressionFilterResponse_Result struct {
+	// The creation timestamp of the expression filter.
+	CreatedOn any
+	// The filter expression.
+	Expression any
+	// The unique ID of the expression filter.
+	Id any
+	// The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
+	Mode any
+	// The last modification timestamp of the expression filter.
+	ModifiedOn any
+}
+
 type DosExpressionFilterResponseConfig struct {
 	// The filter expression.
 	Expression any
@@ -15,10 +39,15 @@ type DosExpressionFilterResponseConfig struct {
 }
 
 type DosExpressionFilterResponseAttrs struct {
+	Errors any
 	// The filter expression.
 	Expression any
+	Messages   any
 	// The filter's mode. Must be one of 'enabled', 'disabled', 'monitoring'.
-	Mode any
+	Mode   any
+	Result any
+	// Whether the API call was successful.
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -29,8 +58,8 @@ var DosExpressionFilterResponse = ubx.ResourceBinding{
 	WireType: "cloudflare_dos_expression_filter_response",
 	Fields: ubx.FieldMap{
 		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
+		"Mode":       ubx.FieldSpec{WireName: "mode"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
+		"FilterId":   ubx.FieldSpec{WireName: "filter_id"},
 	},
 }

@@ -7,6 +7,26 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PermissionListItemResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PermissionListItemResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PermissionListItemResponse_Result:
+    description: Any = None
+    id: Any = None
+    is_attributable: Any = None
+    is_downloadable: Any = None
+    is_public: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class PermissionListItemResponseConfig:
     pass
 
@@ -14,6 +34,11 @@ class PermissionListItemResponseConfig:
 class PermissionListItemResponseAttrs:
     # Identifier
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
 
 PermissionListItemResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_custom_indicator_feeds_permission_list_item_response",

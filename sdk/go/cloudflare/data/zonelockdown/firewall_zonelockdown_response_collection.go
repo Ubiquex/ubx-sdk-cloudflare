@@ -6,42 +6,57 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FirewallZonelockdownResponseCollection_Description struct {
 }
 
-var FirewallZonelockdownResponseCollection_DescriptionFields = ubx.FieldMap{
-	}
+type FirewallZonelockdownResponseCollection_Result_Configurations struct {
+	Target any
+	Value  any
+}
+
+type FirewallZonelockdownResponseCollection_Result struct {
+	Configurations any
+	CreatedOn      any
+	Description    any
+	Id             any
+	ModifiedOn     any
+	Paused         any
+	Urls           any
+}
+
+var FirewallZonelockdownResponseCollection_DescriptionFields = ubx.FieldMap{}
 
 type FirewallZonelockdownResponseCollectionConfig struct {
 	Description any
 	// A string to search for in the description of existing rules.
 	DescriptionSearch any
-	Ip any
-	IpRangeSearch any
+	Ip                any
+	IpRangeSearch     any
 	// A single IP address to search for in existing rules.
-	IpSearch any
+	IpSearch   any
 	ModifiedOn any
 	// Page number of paginated results.
 	Page any
 	// The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
-	PerPage any
-	Priority any
+	PerPage   any
+	Priority  any
 	UriSearch any
 }
 
 type FirewallZonelockdownResponseCollectionAttrs struct {
 	// The timestamp of when the rule was created.
-	CreatedOn any
+	CreatedOn   any
 	Description any
 	// A string to search for in the description of existing rules.
 	DescriptionSearch any
-	Ip any
-	IpRangeSearch any
+	Ip                any
+	IpRangeSearch     any
 	// A single IP address to search for in existing rules.
-	IpSearch any
+	IpSearch   any
 	ModifiedOn any
 	// Page number of paginated results.
 	Page any
 	// The maximum number of results per page. You can only set the value to `1` or to a multiple of 5 such as `5`, `10`, `15`, or `20`.
-	PerPage any
-	Priority any
+	PerPage   any
+	Priority  any
+	Result    any
 	UriSearch any
 	// Defines an identifier.
 	ZoneId any
@@ -52,37 +67,37 @@ var FirewallZonelockdownResponseCollection = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{
 			WireName: "description",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
 		"DescriptionSearch": ubx.FieldSpec{WireName: "description_search"},
 		"Ip": ubx.FieldSpec{
 			WireName: "ip",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
 		"IpRangeSearch": ubx.FieldSpec{
 			WireName: "ip_range_search",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
 		"IpSearch": ubx.FieldSpec{WireName: "ip_search"},
 		"ModifiedOn": ubx.FieldSpec{
 			WireName: "modified_on",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
 		"Priority": ubx.FieldSpec{
 			WireName: "priority",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
 		"UriSearch": ubx.FieldSpec{
 			WireName: "uri_search",
-			Kind: "object",
-			Fields: FirewallZonelockdownResponseCollection_DescriptionFields,
+			Kind:     "object",
+			Fields:   FirewallZonelockdownResponseCollection_DescriptionFields,
 		},
 	},
 }

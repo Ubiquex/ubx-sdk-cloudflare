@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ShareResponseSingle_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
 class ShareResponseSingle_Recipients_AccountId:
     pass
 
@@ -22,6 +27,48 @@ class ShareResponseSingle_Resources:
     resource_account_id: Any = None
     resource_id: Any = None
     resource_type: Any = None
+
+@dataclasses.dataclass
+class ShareResponseSingle_Result_Resources:
+    created: Any = None
+    id: Any = None
+    meta: Any = None
+    modified: Any = None
+    resource_account_id: Any = None
+    resource_id: Any = None
+    resource_type: Any = None
+    resource_version: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class ShareResponseSingle_Result:
+    # Account identifier.
+    account_id: Any = None
+    # The display name of an account.
+    account_name: Any = None
+    # The number of recipients in the 'associated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+    associated_recipient_count: Any = None
+    # The number of recipients in the 'associating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+    associating_recipient_count: Any = None
+    # When the share was created.
+    created: Any = None
+    # The number of recipients in the 'disassociated' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+    disassociated_recipient_count: Any = None
+    # The number of recipients in the 'disassociating' state. This field is only included when requested via the 'include_recipient_counts' parameter.
+    disassociating_recipient_count: Any = None
+    # Share identifier tag.
+    id: Any = None
+    kind: Any = None
+    # When the share was modified.
+    modified: Any = None
+    # The name of the share.
+    name: Any = None
+    # Organization identifier.
+    organization_id: Any = None
+    # A list of resources that are part of the share. This field is only included when requested via the 'include_resources' parameter.
+    resources: Any = None
+    status: Any = None
+    target_type: Any = None
 
 _ShareResponseSingle_Recipients_AccountIdFields = {
 }
@@ -60,10 +107,14 @@ class ShareResponseSingleConfig:
 
 @dataclasses.dataclass
 class ShareResponseSingleAttrs:
+    errors: Any = None
     # The name of the share.
     name: Any = None
     recipients: Any = None
     resources: Any = None
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

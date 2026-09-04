@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MagicMagicBgpSettingsResponse_Result_Redistribute:
+    pass
+
+@dataclasses.dataclass
+class MagicMagicBgpSettingsResponse_Result:
+    # Route advertisements from Cloudflare to ramps in this account will use this ASN.
+    cloudflare_asn: Any = None
+    modified_on: Any = None
+    # Per-source toggles controlling which route sources are redistributed into BGP. Each property enables redistribution for one route source.
+    redistribute: Any = None
+
+@dataclasses.dataclass
 class MagicMagicBgpSettingsResponseConfig:
     pass
 
@@ -14,6 +26,7 @@ class MagicMagicBgpSettingsResponseConfig:
 class MagicMagicBgpSettingsResponseAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 MagicMagicBgpSettingsResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_magic_magic_bgp_settings_response",

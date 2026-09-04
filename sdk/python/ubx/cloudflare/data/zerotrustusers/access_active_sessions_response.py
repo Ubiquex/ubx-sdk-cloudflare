@@ -7,6 +7,27 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AccessActiveSessionsResponse_Result_Metadata_Apps:
+    hostname: Any = None
+    name: Any = None
+    type: Any = None
+    uid: Any = None
+
+@dataclasses.dataclass
+class AccessActiveSessionsResponse_Result_Metadata:
+    apps: Any = None
+    expires: Any = None
+    iat: Any = None
+    nonce: Any = None
+    ttl: Any = None
+
+@dataclasses.dataclass
+class AccessActiveSessionsResponse_Result:
+    expiration: Any = None
+    metadata: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class AccessActiveSessionsResponseConfig:
     # Identifier.
     account_id: Any = None
@@ -17,6 +38,7 @@ class AccessActiveSessionsResponseConfig:
 class AccessActiveSessionsResponseAttrs:
     # Identifier.
     account_id: Any = None
+    result: Any = None
     # UUID.
     user_id: Any = None
 

@@ -24,8 +24,8 @@ type ContentAttrs struct {
 var Content = ubx.DataSourceBinding{
 	WireType: "cloudflare_content",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":         ubx.FieldSpec{WireName: "account_id"},
 		"DispatchNamespace": ubx.FieldSpec{WireName: "dispatch_namespace"},
-		"ScriptName": ubx.FieldSpec{WireName: "script_name"},
+		"ScriptName":        ubx.FieldSpec{WireName: "script_name"},
 	},
 }

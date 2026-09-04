@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Histogram_Result_Histogram0 struct {
 	BandwidthDownload any
-	BandwidthUpload any
-	BucketMin any
+	BandwidthUpload   any
+	BucketMin         any
 }
 
 type Histogram_Result_Meta_ConfidenceInfo_Annotations struct {
-	DataSource any
-	Description any
-	EndDate any
-	EventType any
+	DataSource      any
+	Description     any
+	EndDate         any
+	EventType       any
 	IsInstantaneous any
-	LinkedUrl any
-	StartDate any
-	Tags any
+	LinkedUrl       any
+	StartDate       any
+	Tags            any
 }
 
 type Histogram_Result_Meta_ConfidenceInfo struct {
@@ -27,25 +27,25 @@ type Histogram_Result_Meta_ConfidenceInfo struct {
 }
 
 type Histogram_Result_Meta_DateRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type Histogram_Result_Meta_Units struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Histogram_Result_Meta struct {
 	// The width for every bucket in the histogram.
-	BucketSize any
+	BucketSize     any
 	ConfidenceInfo any
-	DateRange any
+	DateRange      any
 	// Timestamp of the last dataset update.
 	LastUpdated any
 	// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
 	Normalization any
-	TotalTests any
+	TotalTests    any
 	// Measurement units for the results.
 	Units any
 }
@@ -91,21 +91,21 @@ type HistogramAttrs struct {
 	// Metrics to be returned.
 	MetricGroup any
 	// Array of names used to label the series in the response.
-	Name any
-	Result any
+	Name    any
+	Result  any
 	Success any
 }
 
 var Histogram = ubx.DataSourceBinding{
 	WireType: "cloudflare_histogram",
 	Fields: ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"BucketSize": ubx.FieldSpec{WireName: "bucket_size"},
-		"Continent": ubx.FieldSpec{WireName: "continent"},
-		"DateEnd": ubx.FieldSpec{WireName: "date_end"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"Asn":         ubx.FieldSpec{WireName: "asn"},
+		"BucketSize":  ubx.FieldSpec{WireName: "bucket_size"},
+		"Continent":   ubx.FieldSpec{WireName: "continent"},
+		"DateEnd":     ubx.FieldSpec{WireName: "date_end"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"Location":    ubx.FieldSpec{WireName: "location"},
 		"MetricGroup": ubx.FieldSpec{WireName: "metric_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

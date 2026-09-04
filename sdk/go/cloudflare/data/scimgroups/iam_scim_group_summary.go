@@ -12,14 +12,13 @@ type IamScimGroupSummary_Resources_Meta struct {
 
 type IamScimGroupSummary_Resources struct {
 	DisplayName any
-	ExternalId any
-	Id any
-	Meta any
-	Schemas any
+	ExternalId  any
+	Id          any
+	Meta        any
+	Schemas     any
 }
 
-var IamScimGroupSummary_AccountIdFields = ubx.FieldMap{
-	}
+var IamScimGroupSummary_AccountIdFields = ubx.FieldMap{}
 
 type IamScimGroupSummaryConfig struct {
 	// Account identifier tag.
@@ -41,8 +40,8 @@ type IamScimGroupSummaryAttrs struct {
 	Filter any
 	// The number of resources returned in this page.
 	ItemsPerPage any
-	Resources any
-	Schemas any
+	Resources    any
+	Schemas      any
 	// The 1-based index of the first result in the current set of list results. Values less than 1 are treated as 1.
 	StartIndex any
 	// The total number of results matching the query.
@@ -54,11 +53,11 @@ var IamScimGroupSummary = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{
 			WireName: "account_id",
-			Kind: "object",
-			Fields: IamScimGroupSummary_AccountIdFields,
+			Kind:     "object",
+			Fields:   IamScimGroupSummary_AccountIdFields,
 		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Count":      ubx.FieldSpec{WireName: "count"},
+		"Filter":     ubx.FieldSpec{WireName: "filter"},
 		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
 	},
 }

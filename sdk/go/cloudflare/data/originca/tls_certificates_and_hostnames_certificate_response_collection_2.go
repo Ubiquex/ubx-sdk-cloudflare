@@ -3,6 +3,16 @@ package originca
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type TlsCertificatesAndHostnamesCertificateResponseCollection2_Result struct {
+	Certificate       any
+	Csr               any
+	ExpiresOn         any
+	Hostnames         any
+	Id                any
+	RequestType       any
+	RequestedValidity any
+}
+
 type TlsCertificatesAndHostnamesCertificateResponseCollection2Config struct {
 	// Limit to the number of records returned.
 	Limit any
@@ -25,6 +35,7 @@ type TlsCertificatesAndHostnamesCertificateResponseCollection2Attrs struct {
 	Page any
 	// Number of records per page.
 	PerPage any
+	Result  any
 	// Identifier.
 	ZoneId any
 }
@@ -32,10 +43,10 @@ type TlsCertificatesAndHostnamesCertificateResponseCollection2Attrs struct {
 var TlsCertificatesAndHostnamesCertificateResponseCollection2 = ubx.DataSourceBinding{
 	WireType: "cloudflare_tls_certificates_and_hostnames_certificate_response_collection_2",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Offset":  ubx.FieldSpec{WireName: "offset"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"ZoneId":  ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

@@ -7,6 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class ScriptsSearch_Result:
+    created_on: Any = None
+    environment_is_default: Any = None
+    environment_name: Any = None
+    id: Any = None
+    modified_on: Any = None
+    script_name: Any = None
+    service_name: Any = None
+
+@dataclasses.dataclass
 class ScriptsSearchConfig:
     # Identifier.
     account_id: Any = None
@@ -31,6 +41,7 @@ class ScriptsSearchAttrs:
     order_by: Any = None
     page: Any = None
     per_page: Any = None
+    result: Any = None
 
 ScriptsSearch = ubx.DataSourceBinding(
     wire_type="cloudflare_scripts_search",

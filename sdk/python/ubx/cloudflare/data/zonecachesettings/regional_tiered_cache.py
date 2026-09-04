@@ -7,11 +7,16 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RegionalTieredCache_Result:
+    value: Any = None
+
+@dataclasses.dataclass
 class RegionalTieredCacheConfig:
     pass
 
 @dataclasses.dataclass
 class RegionalTieredCacheAttrs:
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

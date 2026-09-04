@@ -3,12 +3,23 @@ package dlsregionalservices
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RegionalHostname_Result_CreatedOn struct {
+}
+
+type RegionalHostname_Result struct {
+	CreatedOn any
+	Hostname  any
+	RegionKey any
+	Routing   any
+}
+
 type RegionalHostnameConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type RegionalHostnameAttrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

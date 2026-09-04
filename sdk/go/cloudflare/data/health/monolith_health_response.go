@@ -4,7 +4,7 @@ package health
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonolithHealthResponse_Errors struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -17,14 +17,13 @@ type MonolithHealthResponseConfig struct {
 }
 
 type MonolithHealthResponseAttrs struct {
-	Errors any
+	Errors   any
 	Messages any
-	Result any
-	Success any
+	Result   any
+	Success  any
 }
 
 var MonolithHealthResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_monolith_health_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

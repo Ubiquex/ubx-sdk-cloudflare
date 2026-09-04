@@ -3,25 +3,67 @@ package domainintelligence
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IntelSingleResponse_Result_AdditionalInformation struct {
+	// Suspected DGA malware family.
+	SuspectedMalwareFamily any
+}
+
+type IntelSingleResponse_Result_Application struct {
+	Id   any
+	Name any
+}
+
+type IntelSingleResponse_Result_ContentCategories struct {
+	Id              any
+	Name            any
+	SuperCategoryId any
+}
+
+type IntelSingleResponse_Result_ResolvesToRefs struct {
+	Id    any
+	Value any
+}
+
+type IntelSingleResponse_Result struct {
+	// Additional information related to the host name.
+	AdditionalInformation any
+	// Application that the hostname belongs to.
+	Application                any
+	ContentCategories          any
+	Domain                     any
+	InheritedContentCategories any
+	// Domain from which `inherited_content_categories` and `inherited_risk_types` are inherited, if applicable.
+	InheritedFrom      any
+	InheritedRiskTypes any
+	// Global Cloudflare 100k ranking for the last 30 days, if available for the hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.
+	PopularityRank any
+	// Specifies a list of references to one or more IP addresses or domain names that the domain name currently resolves to.
+	ResolvesToRefs any
+	// Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest risk).
+	RiskScore any
+	RiskTypes any
+}
+
 type IntelSingleResponseConfig struct {
-	Domain any
-	SkipDns any
+	Domain      any
+	SkipDns     any
 	SkipRanking any
 }
 
 type IntelSingleResponseAttrs struct {
 	// Identifier.
-	AccountId any
-	Domain any
-	SkipDns any
+	AccountId   any
+	Domain      any
+	Result      any
+	SkipDns     any
 	SkipRanking any
 }
 
 var IntelSingleResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_intel_single_response",
 	Fields: ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"SkipDns": ubx.FieldSpec{WireName: "skip_dns"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
+		"SkipDns":     ubx.FieldSpec{WireName: "skip_dns"},
 		"SkipRanking": ubx.FieldSpec{WireName: "skip_ranking"},
 	},
 }

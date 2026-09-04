@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IamResponseSingleAccount_Result_ManagedBy:
+    # ID of the parent Organization, if one exists
+    parent_org_id: Any = None
+    # Name of the parent Organization, if one exists
+    parent_org_name: Any = None
+
+@dataclasses.dataclass
+class IamResponseSingleAccount_Result_Settings:
+    # Sets an abuse contact email to notify for abuse reports.
+    abuse_contact_email: Any = None
+    # Indicates whether membership in this account requires that Two-Factor Authentication is enabled
+    enforce_twofactor: Any = None
+
+@dataclasses.dataclass
+class IamResponseSingleAccount_Result:
+    # Timestamp for the creation of the account
+    created_on: Any = None
+    # Identifier
+    id: Any = None
+    # Parent container details
+    managed_by: Any = None
+    # Account name
+    name: Any = None
+    # Account settings
+    settings: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class IamResponseSingleAccount_Unit:
     # Tenant unit ID
     id: Any = None
@@ -29,6 +57,7 @@ class IamResponseSingleAccountConfig:
 class IamResponseSingleAccountAttrs:
     # Account name
     name: Any = None
+    result: Any = None
     type: Any = None
     # information related to the tenant unit, and optionally, an id of the unit to create the account on. see https://developers.cloudflare.com/tenant/how-to/manage-accounts/
     unit: Any = None

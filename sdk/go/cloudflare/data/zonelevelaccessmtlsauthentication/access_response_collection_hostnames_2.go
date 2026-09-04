@@ -3,12 +3,19 @@ package zonelevelaccessmtlsauthentication
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessResponseCollectionHostnames2_Result struct {
+	ChinaNetwork                any
+	ClientCertificateForwarding any
+	Hostname                    any
+}
+
 type AccessResponseCollectionHostnames2Config struct {
 	// Identifier.
 	ZoneId any
 }
 
 type AccessResponseCollectionHostnames2Attrs struct {
+	Result any
 	// Identifier.
 	ZoneId any
 }

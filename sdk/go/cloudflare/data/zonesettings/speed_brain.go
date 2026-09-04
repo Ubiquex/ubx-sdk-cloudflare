@@ -3,12 +3,29 @@ package zonesettings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SpeedBrain_Errors struct {
+	Code    any
+	Message any
+}
+
+type SpeedBrain_Result struct {
+	Editable   any
+	Id         any
+	ModifiedOn any
+	Value      any
+}
+
 type SpeedBrainConfig struct {
 	// Identifier.
 	ZoneId any
 }
 
 type SpeedBrainAttrs struct {
+	Errors   any
+	Messages any
+	Result   any
+	// Whether the API call was successful.
+	Success any
 	// Identifier.
 	ZoneId any
 }

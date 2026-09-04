@@ -7,6 +7,35 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class BillSubsApiBadDebtResponseSingle_Result_Invoices:
+    action: Any = None
+    amount: Any = None
+    amount_to_pay: Any = None
+    currency: Any = None
+    description: Any = None
+    external_invoice_id: Any = None
+    hosted_invoice_url: Any = None
+    id: Any = None
+    invoice_id: Any = None
+    occurred_at: Any = None
+    receipt_id: Any = None
+    source: Any = None
+    source_invoice_id: Any = None
+    status: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class BillSubsApiBadDebtResponseSingle_Result:
+    # Amount already paid towards the debt.
+    already_paid: Any = None
+    # The current bad debt status of the account.
+    bad_debt_status: Any = None
+    # List of outstanding invoices contributing to bad debt.
+    invoices: Any = None
+    # Total outstanding debt amount.
+    total_debt_amount: Any = None
+
+@dataclasses.dataclass
 class BillSubsApiBadDebtResponseSingleConfig:
     pass
 
@@ -14,6 +43,7 @@ class BillSubsApiBadDebtResponseSingleConfig:
 class BillSubsApiBadDebtResponseSingleAttrs:
     # Identifier
     account_id: Any = None
+    result: Any = None
 
 BillSubsApiBadDebtResponseSingle = ubx.DataSourceBinding(
     wire_type="cloudflare_bill_subs_api_bad_debt_response_single",

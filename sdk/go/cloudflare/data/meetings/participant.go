@@ -3,33 +3,52 @@ package meetings
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Participant_Data struct {
+	CreatedAt           any
+	CustomParticipantId any
+	Id                  any
+	Name                any
+	Picture             any
+	PresetName          any
+	UpdatedAt           any
+}
+
+type Participant_Paging struct {
+	EndOffset   any
+	StartOffset any
+	TotalCount  any
+}
+
 type ParticipantConfig struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
 	MeetingId any
-	PageNo any
-	PerPage any
+	PageNo    any
+	PerPage   any
 }
 
 type ParticipantAttrs struct {
 	// The account identifier tag.
 	AccountId any
 	// The app identifier tag.
-	AppId any
+	AppId     any
+	Data      any
 	MeetingId any
-	PageNo any
-	PerPage any
+	PageNo    any
+	Paging    any
+	PerPage   any
+	Success   any
 }
 
 var Participant = ubx.DataSourceBinding{
 	WireType: "cloudflare_participant",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 		"MeetingId": ubx.FieldSpec{WireName: "meeting_id"},
-		"PageNo": ubx.FieldSpec{WireName: "page_no"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"PageNo":    ubx.FieldSpec{WireName: "page_no"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

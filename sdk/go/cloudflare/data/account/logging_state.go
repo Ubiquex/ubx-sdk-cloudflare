@@ -4,9 +4,9 @@ package account
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggingState_Result struct {
-	MigratedAt any
+	MigratedAt         any
 	MigrationAvailable any
-	Platform any
+	Platform           any
 }
 
 type LoggingStateConfig struct {
@@ -15,8 +15,8 @@ type LoggingStateConfig struct {
 
 type LoggingStateAttrs struct {
 	AccountId any
-	Result any
-	Success any
+	Result    any
+	Success   any
 }
 
 var LoggingState = ubx.DataSourceBinding{

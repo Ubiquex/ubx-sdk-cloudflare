@@ -3,12 +3,20 @@ package zerotrustgatewaydnsdestinationipv4addresspairs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type ZeroTrustGatewayResponseCollection2_Result struct {
+	BackupIp  any
+	Id        any
+	PairType  any
+	PrimaryIp any
+}
+
 type ZeroTrustGatewayResponseCollection2Config struct {
 	AccountId any
 }
 
 type ZeroTrustGatewayResponseCollection2Attrs struct {
 	AccountId any
+	Result    any
 }
 
 var ZeroTrustGatewayResponseCollection2 = ubx.DataSourceBinding{

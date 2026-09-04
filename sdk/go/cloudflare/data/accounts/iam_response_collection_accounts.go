@@ -3,6 +3,25 @@ package accounts
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type IamResponseCollectionAccounts_Result_ManagedBy struct {
+	ParentOrgId   any
+	ParentOrgName any
+}
+
+type IamResponseCollectionAccounts_Result_Settings struct {
+	AbuseContactEmail any
+	EnforceTwofactor  any
+}
+
+type IamResponseCollectionAccounts_Result struct {
+	CreatedOn any
+	Id        any
+	ManagedBy any
+	Name      any
+	Settings  any
+	Type      any
+}
+
 type IamResponseCollectionAccountsConfig struct {
 	// Direction to order results.
 	Direction any
@@ -21,13 +40,14 @@ type IamResponseCollectionAccountsAttrs struct {
 	Page any
 	// Maximum number of results per page.
 	PerPage any
+	Result  any
 }
 
 var IamResponseCollectionAccounts = ubx.DataSourceBinding{
 	WireType: "cloudflare_iam_response_collection_accounts",
 	Fields: ubx.FieldMap{
 		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
+		"Page":      ubx.FieldSpec{WireName: "page"},
+		"PerPage":   ubx.FieldSpec{WireName: "per_page"},
 	},
 }

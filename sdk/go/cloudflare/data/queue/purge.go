@@ -3,18 +3,34 @@ package queue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Purge_Errors struct {
+	Code    any
+	Message any
+}
+
+type Purge_Result struct {
+	// Indicates if the last purge operation completed successfully.
+	Completed any
+	// Timestamp when the last purge operation started.
+	StartedAt any
+}
+
 type PurgeConfig struct {
 }
 
 type PurgeAttrs struct {
 	// A Resource identifier.
 	AccountId any
+	Errors    any
+	Messages  any
 	// A Resource identifier.
 	QueueId any
+	Result  any
+	// Indicates if the API call was successful or not.
+	Success any
 }
 
 var Purge = ubx.DataSourceBinding{
 	WireType: "cloudflare_purge",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

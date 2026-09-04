@@ -3,14 +3,36 @@ package d1
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Database_Errors struct {
+	Code    any
+	Message any
+}
+
 type Database_ReadReplication struct {
 	// The read replication mode for the database. Use 'auto' to create replicas and allow D1 automatically place them around the world, or 'disabled' to not use any database replicas (it can take a few hours for all replicas to be deleted).
 	Mode any
 }
 
+type Database_Result struct {
+	// Specifies the timestamp the resource was created as an ISO8601 string.
+	CreatedAt any
+	// The D1 database's size, in bytes.
+	FileSize any
+	// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
+	Jurisdiction any
+	// D1 database name.
+	Name      any
+	NumTables any
+	// Configuration for D1 read replication.
+	ReadReplication any
+	// D1 database identifier (UUID).
+	Uuid    any
+	Version any
+}
+
 var Database_ReadReplicationFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 type DatabaseConfig struct {
 	// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
@@ -28,14 +50,20 @@ type DatabaseConfig struct {
 }
 
 type DatabaseAttrs struct {
+	Errors any
 	// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
 	Jurisdiction any
+	Messages     any
 	// D1 database name.
 	Name any
 	// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
 	PrimaryLocationHint any
 	// Configuration for D1 read replication.
 	ReadReplication any
+	// The details of the D1 database.
+	Result any
+	// Whether the API call was successful
+	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 	// path parameter, not part of the API's own resource representation
@@ -45,15 +73,15 @@ type DatabaseAttrs struct {
 var Database = ubx.ResourceBinding{
 	WireType: "cloudflare_database",
 	Fields: ubx.FieldMap{
-		"Jurisdiction": ubx.FieldSpec{WireName: "jurisdiction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Jurisdiction":        ubx.FieldSpec{WireName: "jurisdiction"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"PrimaryLocationHint": ubx.FieldSpec{WireName: "primary_location_hint"},
 		"ReadReplication": ubx.FieldSpec{
 			WireName: "read_replication",
-			Kind: "object",
-			Fields: Database_ReadReplicationFields,
+			Kind:     "object",
+			Fields:   Database_ReadReplicationFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
 	},
 }

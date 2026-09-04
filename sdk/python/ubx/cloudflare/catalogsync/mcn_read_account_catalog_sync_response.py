@@ -7,6 +7,42 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class McnReadAccountCatalogSyncResponse_Result_Errors_Meta:
+    l10n_key: Any = None
+    loggable_error: Any = None
+    template_data: Any = None
+    trace_id: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountCatalogSyncResponse_Result_Errors_Source:
+    parameter: Any = None
+    parameter_value_index: Any = None
+    pointer: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountCatalogSyncResponse_Result_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    meta: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class McnReadAccountCatalogSyncResponse_Result:
+    description: Any = None
+    destination_id: Any = None
+    destination_type: Any = None
+    errors: Any = None
+    id: Any = None
+    includes_discoveries_until: Any = None
+    last_attempted_update_at: Any = None
+    last_successful_update_at: Any = None
+    last_user_update_at: Any = None
+    name: Any = None
+    policy: Any = None
+    update_mode: Any = None
+
+@dataclasses.dataclass
 class McnReadAccountCatalogSyncResponseConfig:
     description: Any = None
     destination_type: Any = None
@@ -24,6 +60,7 @@ class McnReadAccountCatalogSyncResponseAttrs:
     destination_type: Any = None
     name: Any = None
     policy: Any = None
+    result: Any = None
     update_mode: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None

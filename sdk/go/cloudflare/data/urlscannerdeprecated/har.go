@@ -9,75 +9,75 @@ type Har_Errors struct {
 
 type Har_Result_Har_Log_Creator struct {
 	Comment any
-	Name any
+	Name    any
 	Version any
 }
 
 type Har_Result_Har_Log_Entries_Request_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Har_Result_Har_Log_Entries_Request struct {
-	BodySize any
-	Headers any
+	BodySize    any
+	Headers     any
 	HeadersSize any
 	HttpVersion any
-	Method any
-	Url any
+	Method      any
+	Url         any
 }
 
 type Har_Result_Har_Log_Entries_Response_Content struct {
 	Compression any
-	MimeType any
-	Size any
+	MimeType    any
+	Size        any
 }
 
 type Har_Result_Har_Log_Entries_Response struct {
 	TransferSize any
-	BodySize any
-	Content any
-	Headers any
-	HeadersSize any
-	HttpVersion any
-	RedirectUrl any
-	Status any
-	StatusText any
+	BodySize     any
+	Content      any
+	Headers      any
+	HeadersSize  any
+	HttpVersion  any
+	RedirectUrl  any
+	Status       any
+	StatusText   any
 }
 
 type Har_Result_Har_Log_Entries struct {
 	InitialPriority any
-	InitiatorType any
-	Priority any
-	RequestId any
-	RequestTime any
-	ResourceType any
-	Cache any
-	Connection any
-	Pageref any
-	Request any
-	Response any
+	InitiatorType   any
+	Priority        any
+	RequestId       any
+	RequestTime     any
+	ResourceType    any
+	Cache           any
+	Connection      any
+	Pageref         any
+	Request         any
+	Response        any
 	ServerIpaddress any
 	StartedDateTime any
-	Time any
+	Time            any
 }
 
 type Har_Result_Har_Log_Pages_PageTimings struct {
 	OnContentLoad any
-	OnLoad any
+	OnLoad        any
 }
 
 type Har_Result_Har_Log_Pages struct {
-	Id any
-	PageTimings any
+	Id              any
+	PageTimings     any
 	StartedDateTime any
-	Title any
+	Title           any
 }
 
 type Har_Result_Har_Log struct {
 	Creator any
 	Entries any
-	Pages any
+	Pages   any
 	Version any
 }
 
@@ -99,9 +99,9 @@ type HarConfig struct {
 type HarAttrs struct {
 	// Account ID.
 	AccountId any
-	Errors any
-	Messages any
-	Result any
+	Errors    any
+	Messages  any
+	Result    any
 	// Scan UUID.
 	ScanId any
 	// Whether search request was successful or not
@@ -112,6 +112,6 @@ var Har = ubx.DataSourceBinding{
 	WireType: "cloudflare_har",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ScanId": ubx.FieldSpec{WireName: "scan_id"},
+		"ScanId":    ubx.FieldSpec{WireName: "scan_id"},
 	},
 }

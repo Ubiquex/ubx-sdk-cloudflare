@@ -4,33 +4,33 @@ package aigatewaydynamicroutes
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_Data_Versions struct {
-	Active any
+	Active    any
 	CreatedAt any
-	Data any
-	IsValid any
+	Data      any
+	IsValid   any
 	VersionId any
 }
 
 type Version_Data struct {
-	OrderBy any
+	OrderBy          any
 	OrderByDirection any
-	Page any
-	PerPage any
-	Versions any
+	Page             any
+	PerPage          any
+	Versions         any
 }
 
 type VersionConfig struct {
 	AccountId any
 	GatewayId any
-	Id any
+	Id        any
 }
 
 type VersionAttrs struct {
 	AccountId any
-	Data any
+	Data      any
 	GatewayId any
-	Id any
-	Success any
+	Id        any
+	Success   any
 }
 
 var Version = ubx.DataSourceBinding{
@@ -38,6 +38,6 @@ var Version = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"GatewayId": ubx.FieldSpec{WireName: "gateway_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

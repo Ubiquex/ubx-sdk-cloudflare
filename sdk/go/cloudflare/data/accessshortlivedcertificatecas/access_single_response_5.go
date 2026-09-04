@@ -3,6 +3,15 @@ package accessshortlivedcertificatecas
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type AccessSingleResponse5_Result struct {
+	// The Application Audience (AUD) tag. Identifies the application associated with the CA.
+	Aud any
+	// The ID of the CA.
+	Id any
+	// The public key to add to your SSH server configuration.
+	PublicKey any
+}
+
 type AccessSingleResponse5Config struct {
 	// Identifier.
 	AccountId any
@@ -14,13 +23,14 @@ type AccessSingleResponse5Attrs struct {
 	// Identifier.
 	AccountId any
 	// UUID.
-	AppId any
+	AppId  any
+	Result any
 }
 
 var AccessSingleResponse5 = ubx.DataSourceBinding{
 	WireType: "cloudflare_access_single_response_5",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":     ubx.FieldSpec{WireName: "app_id"},
 	},
 }

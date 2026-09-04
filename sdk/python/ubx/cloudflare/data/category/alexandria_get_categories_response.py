@@ -7,6 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class AlexandriaGetCategoriesResponse_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class AlexandriaGetCategoriesResponse_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class AlexandriaGetCategoriesResponse_Result:
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class AlexandriaGetCategoriesResponseConfig:
     account_id: Any = None
     limit: Any = None
@@ -15,8 +33,14 @@ class AlexandriaGetCategoriesResponseConfig:
 @dataclasses.dataclass
 class AlexandriaGetCategoriesResponseAttrs:
     account_id: Any = None
+    errors: Any = None
     limit: Any = None
+    messages: Any = None
     offset: Any = None
+    # Returns the list of categories.
+    result: Any = None
+    # Indicates whether the API call was successful.
+    success: Any = None
 
 AlexandriaGetCategoriesResponse = ubx.DataSourceBinding(
     wire_type="cloudflare_alexandria_get_categories_response",

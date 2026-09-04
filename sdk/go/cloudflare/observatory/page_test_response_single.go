@@ -6,8 +6,64 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PageTestResponseSingle_Region struct {
 }
 
-var PageTestResponseSingle_RegionFields = ubx.FieldMap{
-	}
+type PageTestResponseSingle_Result_DesktopReport_Error struct {
+	// The error code of the Lighthouse result.
+	Code any
+	// Detailed error message.
+	Detail any
+	// The final URL displayed to the user.
+	FinalDisplayedUrl any
+}
+
+type PageTestResponseSingle_Result_DesktopReport struct {
+	// Cumulative Layout Shift.
+	Cls any
+	// The type of device.
+	DeviceType any
+	Error      any
+	// First Contentful Paint.
+	Fcp any
+	// The URL to the full Lighthouse JSON report.
+	JsonReportUrl any
+	// Largest Contentful Paint.
+	Lcp any
+	// The Lighthouse performance score.
+	PerformanceScore any
+	// Speed Index.
+	Si any
+	// The state of the Lighthouse report.
+	State any
+	// Total Blocking Time.
+	Tbt any
+	// Time To First Byte.
+	Ttfb any
+	// Time To Interactive.
+	Tti any
+}
+
+type PageTestResponseSingle_Result_Region struct {
+	Label any
+	// A test region.
+	Value any
+}
+
+type PageTestResponseSingle_Result struct {
+	Date any
+	// The Lighthouse report.
+	DesktopReport any
+	// UUID.
+	Id any
+	// The Lighthouse report.
+	MobileReport any
+	// A test region with a label.
+	Region any
+	// The frequency of the test.
+	ScheduleFrequency any
+	// A URL.
+	Url any
+}
+
+var PageTestResponseSingle_RegionFields = ubx.FieldMap{}
 
 type PageTestResponseSingleConfig struct {
 	Region any
@@ -21,6 +77,7 @@ type PageTestResponseSingleConfig struct {
 
 type PageTestResponseSingleAttrs struct {
 	Region any
+	Result any
 	// path parameter, not part of the API's own resource representation
 	ZoneId any
 	// path parameter, not part of the API's own resource representation
@@ -34,11 +91,11 @@ var PageTestResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Region": ubx.FieldSpec{
 			WireName: "region",
-			Kind: "object",
-			Fields: PageTestResponseSingle_RegionFields,
+			Kind:     "object",
+			Fields:   PageTestResponseSingle_RegionFields,
 		},
 		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":    ubx.FieldSpec{WireName: "url"},
 		"TestId": ubx.FieldSpec{WireName: "test_id"},
 	},
 }

@@ -3,16 +3,29 @@ package accountlevelcustomnameservers
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type DnsCustomNameserversAcnsResponseCollection_Result_DnsRecords struct {
+	Type  any
+	Value any
+}
+
+type DnsCustomNameserversAcnsResponseCollection_Result struct {
+	DnsRecords any
+	NsName     any
+	NsSet      any
+	Status     any
+	ZoneTag    any
+}
+
 type DnsCustomNameserversAcnsResponseCollectionConfig struct {
 }
 
 type DnsCustomNameserversAcnsResponseCollectionAttrs struct {
 	// Account identifier tag.
 	AccountId any
+	Result    any
 }
 
 var DnsCustomNameserversAcnsResponseCollection = ubx.DataSourceBinding{
 	WireType: "cloudflare_dns_custom_nameservers_acns_response_collection",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

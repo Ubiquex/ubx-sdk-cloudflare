@@ -54,12 +54,12 @@ type QueryAttrs struct {
 var Query = ubx.ResourceBinding{
 	WireType: "cloudflare_query",
 	Fields: ubx.FieldMap{
-		"AlertEnabled": ubx.FieldSpec{WireName: "alert_enabled"},
+		"AlertEnabled":       ubx.FieldSpec{WireName: "alert_enabled"},
 		"AlertRollupEnabled": ubx.FieldSpec{WireName: "alert_rollup_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryJson": ubx.FieldSpec{WireName: "query_json"},
-		"RuleEnabled": ubx.FieldSpec{WireName: "rule_enabled"},
-		"RuleScope": ubx.FieldSpec{WireName: "rule_scope"},
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"QueryJson":          ubx.FieldSpec{WireName: "query_json"},
+		"RuleEnabled":        ubx.FieldSpec{WireName: "rule_enabled"},
+		"RuleScope":          ubx.FieldSpec{WireName: "rule_scope"},
+		"QueryId":            ubx.FieldSpec{WireName: "query_id"},
 	},
 }

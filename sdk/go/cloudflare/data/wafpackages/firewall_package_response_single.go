@@ -15,6 +15,5 @@ type FirewallPackageResponseSingleAttrs struct {
 
 var FirewallPackageResponseSingle = ubx.DataSourceBinding{
 	WireType: "cloudflare_firewall_package_response_single",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

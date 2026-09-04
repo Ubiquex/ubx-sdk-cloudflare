@@ -7,6 +7,36 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Table_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class Table_Result_Details_Identifier:
+    name: Any = None
+    namespace: Any = None
+
+@dataclasses.dataclass
+class Table_Result_Details:
+    created_at: Any = None
+    identifier: Any = None
+    location: Any = None
+    metadata_location: Any = None
+    table_uuid: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
+class Table_Result:
+    # Contains detailed metadata for each table when return_details is true. Each object includes identifier, UUID, timestamps, and locations.
+    details: Any = None
+    # Lists tables in the namespace.
+    identifiers: Any = None
+    # Use this opaque token to fetch the next page of results. A null or absent value indicates the last page.
+    next_page_token: Any = None
+    # Contains UUIDs for each table when return_uuids is true. The order corresponds to the identifiers array.
+    table_uuids: Any = None
+
+@dataclasses.dataclass
 class TableConfig:
     # Use this to identify the account.
     account_id: Any = None
@@ -24,11 +54,19 @@ class TableAttrs:
     account_id: Any = None
     # Specifies the R2 bucket name.
     bucket_name: Any = None
+    # Contains errors if the API call was unsuccessful.
+    errors: Any = None
+    # Contains informational messages.
+    messages: Any = None
     namespace: Any = None
     page_size: Any = None
     page_token: Any = None
+    # Contains the list of tables with optional pagination.
+    result: Any = None
     return_details: Any = None
     return_uuids: Any = None
+    # Indicates whether the API call was successful.
+    success: Any = None
 
 Table = ubx.DataSourceBinding(
     wire_type="cloudflare_table",

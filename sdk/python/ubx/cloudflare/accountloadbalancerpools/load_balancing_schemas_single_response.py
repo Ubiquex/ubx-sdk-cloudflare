@@ -52,6 +52,46 @@ class LoadBalancingSchemasSingleResponse_Origins:
     virtual_network_id: Any = None
     weight: Any = None
 
+@dataclasses.dataclass
+class LoadBalancingSchemasSingleResponse_Result:
+    # A list of regions from which to run health checks. Null means every Cloudflare data center.
+    check_regions: Any = None
+    created_on: Any = None
+    # A human-readable description of the pool.
+    description: Any = None
+    # This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.
+    disabled_at: Any = None
+    # Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).
+    enabled: Any = None
+    # A list of health sources, ordered from highest to lowest priority, used to evaluate individual origin health and overall pool health. The load balancer uses the first source that has data and falls back to the next. Currently accepted values are null or the exact array ["regional", "global"]; any other combination is rejected. Null (the default) behaves like ["local", "global"]. ["regional", "global"] makes each region steer on its own health, falling back to the global decision when a region has no fresh data. Setting regional requires at least one region in check_regions.
+    health_sources: Any = None
+    id: Any = None
+    # The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.
+    latitude: Any = None
+    # Configures load shedding policies and percentages for the pool.
+    load_shedding: Any = None
+    # The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.
+    longitude: Any = None
+    # The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.
+    minimum_origins: Any = None
+    modified_on: Any = None
+    # The ID of the Monitor to use for checking the health of origins within this pool.
+    monitor: Any = None
+    # The ID of the Monitor Group to use for checking the health of origins within this pool.
+    monitor_group: Any = None
+    # A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.
+    name: Any = None
+    # List of networks where Load Balancer or Pool is enabled.
+    networks: Any = None
+    # This field is now deprecated. It has been moved to Cloudflare's Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.
+    notification_email: Any = None
+    # Filter pool and origin health notifications by resource type or health status. Use null to reset.
+    notification_filter: Any = None
+    # Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.
+    origin_steering: Any = None
+    # The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
+    origins: Any = None
+
 _LoadBalancingSchemasSingleResponse_LoadSheddingFields = {
     "default_percent": ubx.FieldSpec(wire_name="default_percent"),
     "default_policy": ubx.FieldSpec(wire_name="default_policy"),
@@ -174,6 +214,7 @@ class LoadBalancingSchemasSingleResponseAttrs:
     origin_steering: Any = None
     # The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.
     origins: Any = None
+    result: Any = None
     # path parameter, not part of the API's own resource representation
     account_id: Any = None
     # path parameter, not part of the API's own resource representation

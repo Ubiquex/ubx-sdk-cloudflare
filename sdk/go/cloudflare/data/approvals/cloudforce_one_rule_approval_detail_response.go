@@ -5,80 +5,80 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CompilerWarnings_Footers struct {
 	Level any
-	Text any
+	Text  any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CompilerWarnings_Labels_Span struct {
-	End any
+	End   any
 	Start any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CompilerWarnings_Labels struct {
 	CodeOrigin any
-	Column any
-	Level any
-	Line any
-	Span any
-	Text any
+	Column     any
+	Level      any
+	Line       any
+	Span       any
+	Text       any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CompilerWarnings struct {
-	Code any
-	Column any
+	Code    any
+	Column  any
 	Footers any
-	Labels any
-	Line any
-	Text any
-	Title any
+	Labels  any
+	Line    any
+	Text    any
+	Title   any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CurrentRule_Meta struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CurrentRule_PendingChange struct {
-	ApprovalId any
+	ApprovalId  any
 	RequestedAt any
 	RequestedBy any
-	Type any
+	Type        any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_CurrentRule struct {
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Enabled any
-	Id any
-	IsPublic any
-	Meta any
-	Name any
-	Namespaces any
-	Path any
+	Content           any
+	CreatedAt         any
+	CreatedBy         any
+	Description       any
+	Enabled           any
+	Id                any
+	IsPublic          any
+	Meta              any
+	Name              any
+	Namespaces        any
+	Path              any
 	PendingApprovalId any
-	PendingChange any
-	StructuredSource any
-	UpdatedAt any
-	UpdatedBy any
+	PendingChange     any
+	StructuredSource  any
+	UpdatedAt         any
+	UpdatedBy         any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval_ProposedChanges struct {
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Enabled any
-	Id any
-	IsPublic any
-	Name any
-	Namespaces any
-	Path any
+	Content          any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
+	Enabled          any
+	Id               any
+	IsPublic         any
+	Name             any
+	Namespaces       any
+	Path             any
 	StructuredSource any
-	SyncMessage any
-	SyncSource any
-	Type any
+	SyncMessage      any
+	SyncSource       any
+	Type             any
 }
 
 type CloudforceOneRuleApprovalDetailResponse_Approval struct {
@@ -88,28 +88,28 @@ type CloudforceOneRuleApprovalDetailResponse_Approval struct {
 	// Time at which the requester cancelled the approval.
 	CancelledAt any
 	// Requester who cancelled the pending approval.
-	CancelledBy any
+	CancelledBy       any
 	ChangeDescription any
-	ChangeType any
+	ChangeType        any
 	// The requester supplies this human-readable justification with the change. Internal-account mutations require it; customer accounts and sync-originated changes may omit it.
-	CommitMessage any
+	CommitMessage    any
 	CompilerWarnings any
-	CurrentRule any
-	Id any
+	CurrentRule      any
+	Id               any
 	// Contains structured proposed rule changes, or null for unresolved persisted data.
 	ProposedChanges any
 	// The reviewer may supply a reason when rejecting the change.
 	RejectionReason any
-	RequestedAt any
-	RequestedBy any
-	ReviewedAt any
+	RequestedAt     any
+	RequestedBy     any
+	ReviewedAt      any
 	// Review policy: general Nomos approvers for default; general approvers or Phishguard for email.
 	ReviewerScope any
 	// Revision number within this approval request chain.
 	RevisionNumber any
-	RuleId any
-	RuleName any
-	Status any
+	RuleId         any
+	RuleName       any
+	Status         any
 	// Newer approval revision that replaced this approval.
 	SupersededByApprovalId any
 	// This approval replaces the referenced approval revision.
@@ -124,7 +124,7 @@ type CloudforceOneRuleApprovalDetailResponseConfig struct {
 
 type CloudforceOneRuleApprovalDetailResponseAttrs struct {
 	AccountId any
-	Approval any
+	Approval  any
 	// The unique identifier for the approval.
 	Id any
 }
@@ -133,6 +133,6 @@ var CloudforceOneRuleApprovalDetailResponse = ubx.DataSourceBinding{
 	WireType: "cloudflare_cloudforce_one_rule_approval_detail_response",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 	},
 }

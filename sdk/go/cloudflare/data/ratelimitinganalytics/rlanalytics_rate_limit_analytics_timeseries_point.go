@@ -4,10 +4,10 @@ package ratelimitinganalytics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RlanalyticsRateLimitAnalyticsTimeseriesPoint_Timeseries_Rules_Actions struct {
-	All any
-	Allow any
-	Ban any
-	Error any
+	All      any
+	Allow    any
+	Ban      any
+	Error    any
 	Simulate any
 }
 
@@ -16,8 +16,8 @@ type RlanalyticsRateLimitAnalyticsTimeseriesPoint_Timeseries_Rules_Colos struct 
 }
 
 type RlanalyticsRateLimitAnalyticsTimeseriesPoint_Timeseries_Rules struct {
-	Actions any
-	Colos any
+	Actions  any
+	Colos    any
 	Versions any
 }
 
@@ -28,29 +28,29 @@ type RlanalyticsRateLimitAnalyticsTimeseriesPoint_Timeseries struct {
 }
 
 type RlanalyticsRateLimitAnalyticsTimeseriesPointConfig struct {
-	Since any
+	Since     any
 	TimeDelta any
-	Until any
-	ZoneId any
+	Until     any
+	ZoneId    any
 }
 
 type RlanalyticsRateLimitAnalyticsTimeseriesPointAttrs struct {
 	// Mapping from rule ID to human-readable description of the rule.
-	Labels any
-	Since any
+	Labels    any
+	Since     any
 	TimeDelta any
 	// Time series with analytics data for each time segment.
 	Timeseries any
-	Until any
-	ZoneId any
+	Until      any
+	ZoneId     any
 }
 
 var RlanalyticsRateLimitAnalyticsTimeseriesPoint = ubx.DataSourceBinding{
 	WireType: "cloudflare_rlanalytics_rate_limit_analytics_timeseries_point",
 	Fields: ubx.FieldMap{
-		"Since": ubx.FieldSpec{WireName: "since"},
+		"Since":     ubx.FieldSpec{WireName: "since"},
 		"TimeDelta": ubx.FieldSpec{WireName: "time_delta"},
-		"Until": ubx.FieldSpec{WireName: "until"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
+		"Until":     ubx.FieldSpec{WireName: "until"},
+		"ZoneId":    ubx.FieldSpec{WireName: "zone_id"},
 	},
 }

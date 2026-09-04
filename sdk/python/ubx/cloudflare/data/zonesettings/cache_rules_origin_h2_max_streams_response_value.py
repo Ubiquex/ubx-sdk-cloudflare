@@ -7,11 +7,28 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CacheRulesOriginH2MaxStreamsResponseValue_Errors:
+    code: Any = None
+    message: Any = None
+
+@dataclasses.dataclass
+class CacheRulesOriginH2MaxStreamsResponseValue_Result:
+    id: Any = None
+    modified_on: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
 class CacheRulesOriginH2MaxStreamsResponseValueConfig:
     pass
 
 @dataclasses.dataclass
 class CacheRulesOriginH2MaxStreamsResponseValueAttrs:
+    errors: Any = None
+    messages: Any = None
+    # Origin H2 Max Streams configures the max number of concurrent requests that Cloudflare will send within the same connection when communicating with the origin server, if the origin supports it. Note that if your origin does not support H2 multiplexing, 5xx errors may be observed, particularly 520s. Also note that the default value is `100` for all plan types except Enterprise where it is `1`. `1` means that H2 multiplexing is disabled.
+    result: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     # Identifier.
     zone_id: Any = None
 

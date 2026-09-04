@@ -4,5 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "cloudflare", "version": "dynamic"}
 
+from .allow_policy import AllowPolicy, AllowPolicyConfig
+from .block_sender import BlockSender, BlockSenderConfig
+from .content_policy import ContentPolicy, ContentPolicyConfig
 from .domain import Domain, DomainConfig
+from .impersonation_registry import ImpersonationRegistry, ImpersonationRegistryConfig
+from .sending_domain_restriction import SendingDomainRestriction, SendingDomainRestrictionConfig
+from .trusted_domain import TrustedDomain, TrustedDomainConfig
 from .url_ignore_pattern import UrlIgnorePattern, UrlIgnorePatternConfig

@@ -29,6 +29,6 @@ var BrandProtectionApiError = ubx.ResourceBinding{
 	WireType: "cloudflare_brand_protection_api_error",
 	Fields: ubx.FieldMap{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"LogoId": ubx.FieldSpec{WireName: "logo_id"},
+		"LogoId":    ubx.FieldSpec{WireName: "logo_id"},
 	},
 }

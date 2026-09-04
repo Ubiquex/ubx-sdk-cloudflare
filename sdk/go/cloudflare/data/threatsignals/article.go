@@ -8,101 +8,101 @@ type Article_Errors struct {
 }
 
 type Article_Result_Articles_Tags struct {
-	AppliedBy any
+	AppliedBy  any
 	CategoryId any
-	Uuid any
-	Value any
+	Uuid       any
+	Value      any
 }
 
 type Article_Result_Articles struct {
-	DatasetId any
-	EventId any
+	DatasetId       any
+	EventId         any
 	FeedDisplayName any
-	FeedId any
-	FetchedAt any
-	Id any
-	Link any
-	PublishedAt any
-	Read any
-	ReadAt any
-	Summary any
-	Tags any
-	Title any
+	FeedId          any
+	FetchedAt       any
+	Id              any
+	Link            any
+	PublishedAt     any
+	Read            any
+	ReadAt          any
+	Summary         any
+	Tags            any
+	Title           any
 }
 
 type Article_Result struct {
-	Articles any
-	HasMore any
-	NextCursor any
-	TotalCount any
+	Articles          any
+	HasMore           any
+	NextCursor        any
+	TotalCount        any
 	TotalCountIsExact any
 }
 
 type ArticleConfig struct {
-	AccountId any
-	Cursor any
-	FeedCategory any
-	FeedId any
-	FetchedAfter any
-	FetchedBefore any
-	IncludeTotal any
-	PerPage any
-	PublishedAfter any
+	AccountId       any
+	Cursor          any
+	FeedCategory    any
+	FeedId          any
+	FetchedAfter    any
+	FetchedBefore   any
+	IncludeTotal    any
+	PerPage         any
+	PublishedAfter  any
 	PublishedBefore any
-	Read any
-	Search any
-	Sort any
-	SourceType any
-	Tag any
-	TagAppliedBy any
-	TagCategory any
-	TagId any
+	Read            any
+	Search          any
+	Sort            any
+	SourceType      any
+	Tag             any
+	TagAppliedBy    any
+	TagCategory     any
+	TagId           any
 }
 
 type ArticleAttrs struct {
-	AccountId any
-	Cursor any
-	Errors any
-	FeedCategory any
-	FeedId any
-	FetchedAfter any
-	FetchedBefore any
-	IncludeTotal any
-	PerPage any
-	PublishedAfter any
+	AccountId       any
+	Cursor          any
+	Errors          any
+	FeedCategory    any
+	FeedId          any
+	FetchedAfter    any
+	FetchedBefore   any
+	IncludeTotal    any
+	PerPage         any
+	PublishedAfter  any
 	PublishedBefore any
-	Read any
-	Result any
-	Search any
-	Sort any
-	SourceType any
-	Success any
-	Tag any
-	TagAppliedBy any
-	TagCategory any
-	TagId any
+	Read            any
+	Result          any
+	Search          any
+	Sort            any
+	SourceType      any
+	Success         any
+	Tag             any
+	TagAppliedBy    any
+	TagCategory     any
+	TagId           any
 }
 
 var Article = ubx.DataSourceBinding{
 	WireType: "cloudflare_article",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
-		"FeedCategory": ubx.FieldSpec{WireName: "feed_category"},
-		"FeedId": ubx.FieldSpec{WireName: "feed_id"},
-		"FetchedAfter": ubx.FieldSpec{WireName: "fetched_after"},
-		"FetchedBefore": ubx.FieldSpec{WireName: "fetched_before"},
-		"IncludeTotal": ubx.FieldSpec{WireName: "include_total"},
-		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"PublishedAfter": ubx.FieldSpec{WireName: "published_after"},
+		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"Cursor":          ubx.FieldSpec{WireName: "cursor"},
+		"FeedCategory":    ubx.FieldSpec{WireName: "feed_category"},
+		"FeedId":          ubx.FieldSpec{WireName: "feed_id"},
+		"FetchedAfter":    ubx.FieldSpec{WireName: "fetched_after"},
+		"FetchedBefore":   ubx.FieldSpec{WireName: "fetched_before"},
+		"IncludeTotal":    ubx.FieldSpec{WireName: "include_total"},
+		"PerPage":         ubx.FieldSpec{WireName: "per_page"},
+		"PublishedAfter":  ubx.FieldSpec{WireName: "published_after"},
 		"PublishedBefore": ubx.FieldSpec{WireName: "published_before"},
-		"Read": ubx.FieldSpec{WireName: "read"},
-		"Search": ubx.FieldSpec{WireName: "search"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"TagAppliedBy": ubx.FieldSpec{WireName: "tag_applied_by"},
-		"TagCategory": ubx.FieldSpec{WireName: "tag_category"},
-		"TagId": ubx.FieldSpec{WireName: "tag_id"},
+		"Read":            ubx.FieldSpec{WireName: "read"},
+		"Search":          ubx.FieldSpec{WireName: "search"},
+		"Sort":            ubx.FieldSpec{WireName: "sort"},
+		"SourceType":      ubx.FieldSpec{WireName: "source_type"},
+		"Tag":             ubx.FieldSpec{WireName: "tag"},
+		"TagAppliedBy":    ubx.FieldSpec{WireName: "tag_applied_by"},
+		"TagCategory":     ubx.FieldSpec{WireName: "tag_category"},
+		"TagId":           ubx.FieldSpec{WireName: "tag_id"},
 	},
 }

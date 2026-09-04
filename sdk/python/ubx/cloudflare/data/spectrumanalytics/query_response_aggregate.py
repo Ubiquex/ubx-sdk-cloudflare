@@ -7,6 +7,18 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class QueryResponseAggregate_Result_AppId:
+    pass
+
+@dataclasses.dataclass
+class QueryResponseAggregate_Result:
+    app_id: Any = None
+    bytes_egress: Any = None
+    bytes_ingress: Any = None
+    connections: Any = None
+    duration_avg: Any = None
+
+@dataclasses.dataclass
 class QueryResponseAggregateConfig:
     # Comma-delimited list of Spectrum Application Id(s). If provided, the response will be limited to Spectrum Application Id(s) that match.
     app_id: Any = None
@@ -21,6 +33,7 @@ class QueryResponseAggregateAttrs:
     app_id: Any = None
     # Co-location identifier.
     colo_name: Any = None
+    result: Any = None
     # Identifier.
     zone_id: Any = None
 

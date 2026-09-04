@@ -7,6 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PostureApiPaginatedFindingTypeList_Errors_Source:
+    pointer: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingTypeList_Errors:
+    code: Any = None
+    documentation_url: Any = None
+    message: Any = None
+    source: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingTypeList_Result_Category:
+    observation: Any = None
+    product: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingTypeList_Result:
+    category: Any = None
+    id: Any = None
+    name: Any = None
+    severity: Any = None
+    vendor: Any = None
+
+@dataclasses.dataclass
+class PostureApiPaginatedFindingTypeList_ResultInfo:
+    # Total number of results for the requested service.
+    count: Any = None
+    # Cursor for cursor-based pagination.
+    cursor: Any = None
+    # URL to the next page of results.
+    next: Any = None
+    # Current page within paginated list of results.
+    page: Any = None
+    # Number of results per page of results.
+    per_page: Any = None
+    # URL to the previous page of results.
+    previous: Any = None
+    # Total results available without any search parameters.
+    total_count: Any = None
+
+@dataclasses.dataclass
 class PostureApiPaginatedFindingTypeListConfig:
     account_id: Any = None
     page: Any = None
@@ -17,9 +59,17 @@ class PostureApiPaginatedFindingTypeListConfig:
 @dataclasses.dataclass
 class PostureApiPaginatedFindingTypeListAttrs:
     account_id: Any = None
+    errors: Any = None
+    messages: Any = None
     page: Any = None
     per_page: Any = None
+    # Array of finding type objects.
+    result: Any = None
+    # Pagination and result information.
+    result_info: Any = None
     search: Any = None
+    # Whether the API call was successful.
+    success: Any = None
     vendors: Any = None
 
 PostureApiPaginatedFindingTypeList = ubx.DataSourceBinding(

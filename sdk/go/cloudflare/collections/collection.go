@@ -4,23 +4,23 @@ package collections
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Collection_Result_Columns struct {
-	Default any
-	Id any
-	Name any
+	Default  any
+	Id       any
+	Name     any
 	Position any
 	Required any
-	Type any
+	Type     any
 }
 
 type Collection_Result struct {
-	Columns any
+	Columns   any
 	CreatedAt any
 	CreatedBy any
-	Id any
+	Id        any
 	ItemCount any
-	Metadata any
-	Name any
-	Status any
+	Metadata  any
+	Name      any
+	Status    any
 	UpdatedAt any
 }
 
@@ -32,7 +32,7 @@ type CollectionConfig struct {
 }
 
 type CollectionAttrs struct {
-	Result any
+	Result  any
 	Success any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
@@ -43,7 +43,7 @@ type CollectionAttrs struct {
 var Collection = ubx.ResourceBinding{
 	WireType: "cloudflare_collection",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":    ubx.FieldSpec{WireName: "account_id"},
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
 	},
 }

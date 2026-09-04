@@ -6,126 +6,126 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type CloudforceOneRulePreview_Condition_Conditions_Conditions struct {
 	Operator any
 	Subfield any
-	Value any
+	Value    any
 }
 
 type CloudforceOneRulePreview_Condition_Conditions struct {
 	Conditions any
-	Field any
+	Field      any
 	HeaderName any
-	MatchType any
-	Operator any
+	MatchType  any
+	Operator   any
 	Quantifier any
-	Type any
-	Value any
+	Type       any
+	Value      any
 }
 
 type CloudforceOneRulePreview_Condition struct {
 	Conditions any
-	Operator any
-	Type any
+	Operator   any
+	Type       any
 }
 
 type CloudforceOneRulePreview_Meta struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type CloudforceOneRulePreview_PendingChange struct {
-	ApprovalId any
+	ApprovalId  any
 	RequestedAt any
 	RequestedBy any
-	Type any
+	Type        any
 }
 
 type CloudforceOneRulePreview_Strings struct {
 	Identifier any
-	MatchType any
-	Modifiers any
-	Type any
-	Value any
+	MatchType  any
+	Modifiers  any
+	Type       any
+	Value      any
 }
 
 var CloudforceOneRulePreview_Condition_Conditions_ConditionsFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Subfield": ubx.FieldSpec{WireName: "subfield"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Subfield": ubx.FieldSpec{WireName: "subfield"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var CloudforceOneRulePreview_Condition_ConditionsFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: CloudforceOneRulePreview_Condition_Conditions_ConditionsFields,
-		},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Quantifier": ubx.FieldSpec{WireName: "quantifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   CloudforceOneRulePreview_Condition_Conditions_ConditionsFields,
+	},
+	"Field":      ubx.FieldSpec{WireName: "field"},
+	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+	"MatchType":  ubx.FieldSpec{WireName: "match_type"},
+	"Operator":   ubx.FieldSpec{WireName: "operator"},
+	"Quantifier": ubx.FieldSpec{WireName: "quantifier"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var CloudforceOneRulePreview_ConditionFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: CloudforceOneRulePreview_Condition_ConditionsFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   CloudforceOneRulePreview_Condition_ConditionsFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var CloudforceOneRulePreview_MetaFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CloudforceOneRulePreview_StringsFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-		"Modifiers": ubx.FieldSpec{WireName: "modifiers"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"MatchType":  ubx.FieldSpec{WireName: "match_type"},
+	"Modifiers":  ubx.FieldSpec{WireName: "modifiers"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 type CloudforceOneRulePreviewConfig struct {
 	// Nested condition groups support up to 10 levels of depth.
-	Condition any
+	Condition   any
 	Description any
-	Enabled any
-	Meta any
-	Name any
-	Strings any
+	Enabled     any
+	Meta        any
+	Name        any
+	Strings     any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
 
 type CloudforceOneRulePreviewAttrs struct {
 	// Nested condition groups support up to 10 levels of depth.
-	Condition any
-	Content any
-	CreatedAt any
-	CreatedBy any
+	Condition   any
+	Content     any
+	CreatedAt   any
+	CreatedBy   any
 	Description any
-	Enabled any
-	Id any
+	Enabled     any
+	Id          any
 	// Whether this rule is visible to other internal accounts.
-	IsPublic any
-	Meta any
-	Name any
+	IsPublic   any
+	Meta       any
+	Name       any
 	Namespaces any
-	Path any
+	Path       any
 	// ID of an open approval workflow targeting this rule, or null if none is pending.
 	PendingApprovalId any
 	// Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.
 	PendingChange any
-	Strings any
+	Strings       any
 	// Original JSON payload for rules created via the structured rules API. Null for hand-written rules.
 	StructuredSource any
-	UpdatedAt any
-	UpdatedBy any
+	UpdatedAt        any
+	UpdatedBy        any
 	// path parameter, not part of the API's own resource representation
 	AccountId any
 }
@@ -135,21 +135,21 @@ var CloudforceOneRulePreview = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: CloudforceOneRulePreview_ConditionFields,
+			Kind:     "object",
+			Fields:   CloudforceOneRulePreview_ConditionFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
 		"Meta": ubx.FieldSpec{
 			WireName: "meta",
-			Kind: "list",
-			Fields: CloudforceOneRulePreview_MetaFields,
+			Kind:     "list",
+			Fields:   CloudforceOneRulePreview_MetaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Strings": ubx.FieldSpec{
 			WireName: "strings",
-			Kind: "list",
-			Fields: CloudforceOneRulePreview_StringsFields,
+			Kind:     "list",
+			Fields:   CloudforceOneRulePreview_StringsFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},
